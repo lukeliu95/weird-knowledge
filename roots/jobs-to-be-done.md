@@ -28,3 +28,7 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [帮家具厂建 AI 产品库月入一万八](../clips/2026-10-18-miles-mazy-furniture-factory-ai-product-library.md) | 相近 | 弱（待 Luke 确认） |
+| [NVIDIA DGX Spark 从买机器到变现指南](../clips/2026-10-18-ai-goge-dgx-spark-monetization-guide.md) | 相近 | 弱（待 Luke 确认） |
+| [技术领导者要知道的生成式 AI 五个真相](../clips/2026-10-18-dotey-five-hard-truths-genai.md) | 相近 | 弱（待 Luke 确认） |
+| [征求产品意见别只问程序员群体](../clips/2026-10-18-gorden-sun-dont-ask-programmers-product-feedback.md) | 相近 | 弱（待 Luke 确认） |
+| [同城 IP 团队的真实 Agent 需求](../clips/2026-10-18-wanghao8080-local-ip-agent-need.md) | 相近 | 弱（待 Luke 确认） |

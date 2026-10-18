@@ -26,3 +26,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [Ilya TED 谈通往 AGI 之路](../clips/2026-10-18-dotey-ilya-ted-agi-journey.md) | 相近 | 弱（待 Luke 确认） |
+| [传闻：头部实验室已实现自我改进](../clips/2026-10-18-maxforai-frontier-labs-rsi-claim.md) | 相近 | 弱（待 Luke 确认） |

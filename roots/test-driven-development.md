@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [吴恩达讲做产品的三个循环](../clips/2026-10-18-andrewyng-andrew-ng-three-product-loops.md) | 相近 | 弱（待 Luke 确认） |
 | [AlphaCodium 与流程工程](../clips/2026-10-18-dotey-alphacodium-flow-engineering.md) | 相近 | 弱（待 Luke 确认） |
+| [OpenAI 企业用 AI 的七条经验](../clips/2026-10-18-shao-meng-openai-enterprise-ai-lessons.md) | 相近 | 弱（待 Luke 确认） |

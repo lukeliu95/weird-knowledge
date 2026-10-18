@@ -32,3 +32,4 @@ verified: true
 | [LeCun：下个万亿AI公司不靠LLM](../clips/2026-10-18-phosphenq-lecun-lecture-beyond-llms.md) | 挑战 | 强 |
 | [Kimi 创始人谈 AGI 需要新组织](../clips/2026-10-18-vartekxx-kimi-founder-agi-organization.md) | 相近 | 弱（待 Luke 确认） |
 | [Anthropic 多智能体研究系统详解](../clips/2026-10-18-oran-ge-anthropic-multi-agent-research.md) | 相近 | 弱（待 Luke 确认） |
+| [AI 应用及格线与文艺行业首当其冲](../clips/2026-10-18-dotey-ai-passing-line-creative-industry.md) | 直接源自 | 强 |

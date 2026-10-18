@@ -7,10 +7,10 @@ published: 2025-03-06 07:56 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [arthur-2009-nature-of-technology, anthropic-2024-building-effective-agents, overchoice, whole-product]
 ---
 
 ## 原文
@@ -31,3 +31,11 @@ ps. 目前在输出代码的生产环境还是Claude+Trae
 
 ## 溯源
 
+- 核心主张：Manus 技术上是把现成的 agent 和工作流拼起来交给大模型调度，并不新；它的价值在于替普通人解决了“在一大堆 agent 里挑出适合自己的”这个难题，体验做得好。
+- 源知识：
+  - [技术的本质](../roots/arthur-2009-nature-of-technology.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“本质上是缝合怪”：新技术由已有技术组合而成，正是 Arthur 的“组合进化”观点；作者没引用。
+  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“定制不同 agent（工作流）、由大模型不断调用”，对应该文的“编排者-执行者”模式。
+  - [选择过载](../roots/overchoice.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“在庞大的 agent 工作室里找到一个适合自己的难度不小”就是选择过载；Manus 替用户把选择做掉了。
+  - [整体产品](../roots/whole-product.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。普通人要的是拼好、拿来就能用的完整方案，不是一堆零件，这是整体产品的思路。
+- 本质：这条新知识本质上是“创新就是重新组合”和“整体产品”在 AI agent 产品上的应用：技术不新，价值在于替用户把零件组装好、把选择做掉。
+- 整理于：2026-10-18（第 2 轮）

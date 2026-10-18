@@ -30,3 +30,5 @@ verified: true
 |---|---|---|
 | [Anthropic 讲前线部署工程师](../clips/2026-10-18-dotey-fde-101-forward-deployed-engineer.md) | 相近 | 弱（待 Luke 确认） |
 | [前线部署工程师为何是 AI 落地时代的关键职业](../clips/2026-10-18-indigox-forward-deployed-engineer-ai-era.md) | 相近 | 弱（待 Luke 确认） |
+| [国内 ToB 智能体至少还要一年](../clips/2026-10-18-frxiaobei-tob-agent-one-year-away.md) | 相近 | 弱（待 Luke 确认） |
+| [范冰免费开源新书《前置部署工程师》](../clips/2026-10-18-iluciddreaming-fde-book-free-open-source.md) | 相近 | 弱（待 Luke 确认） |

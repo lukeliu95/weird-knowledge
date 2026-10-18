@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Pi 作者：代码即真相，Bash 够用](../clips/2026-10-18-dotey-pi-authors-code-bash-insights.md) | 相近 | 弱（待 Luke 确认） |
+| [做到千万美元ARR的B2B代理路径](../clips/2026-10-18-financeyf5-b2b-ai-agent-10m-arr.md) | 相近 | 弱（待 Luke 确认） |

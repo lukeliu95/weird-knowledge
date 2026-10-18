@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Samuel 的跳棋程序：机器靠自己对弈学习，下得比写它的人还好](../clips/2026-10-18-samuel-machine-learning-checkers.md) | 挑战 | 弱（待 Luke 确认） |
+| [Sam 谈我们创造的是工具还是生物](../clips/2026-10-18-dotey-altman-tool-or-creature.md) | 相近 | 弱（待 Luke 确认） |

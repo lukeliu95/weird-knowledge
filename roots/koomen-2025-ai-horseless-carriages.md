@@ -26,3 +26,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [人和电脑的关系可能从一开始就是反的](../clips/2026-10-18-zuozizhen-human-computer-relationship-inverted.md) | 相近 | 弱（待 Luke 确认） |
+| [人与智能体协作的产品形态之争](../clips/2026-10-18-hilng77042-human-agent-collaboration-paradigm.md) | 相近 | 弱（待 Luke 确认） |

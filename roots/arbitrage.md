@@ -26,3 +26,6 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [AI 工具周刊年入七万美元](../clips/2026-10-18-indiehackercase-ai-tools-newsletter-revenue.md) | 相近 | 弱（待 Luke 确认） |
+| [出租屋卖亚马逊爆款配件月销二十万](../clips/2026-10-18-vincent-ainotes-amazon-accessories-side-hustle.md) | 相近 | 弱（待 Luke 确认） |
+| [TikTok头部机构创始人讲跨境价差生意](../clips/2026-10-18-vincent-ainotes-tiktok-mcn-arbitrage-talk.md) | 换了说法 | 强 |

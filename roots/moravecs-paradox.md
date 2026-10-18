@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [LeCun：下个万亿AI公司不靠LLM](../clips/2026-10-18-phosphenq-lecun-lecture-beyond-llms.md) | 相近 | 弱（待 Luke 确认） |
+| [AI 应用及格线与文艺行业首当其冲](../clips/2026-10-18-dotey-ai-passing-line-creative-industry.md) | 相近 | 强 |

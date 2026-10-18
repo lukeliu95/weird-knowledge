@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [杨立昆谈智能不等于控制欲](../clips/2026-10-18-dotey-lecun-intelligence-not-domination.md) | 挑战 | 强 |
+| [Sam 谈我们创造的是工具还是生物](../clips/2026-10-18-dotey-altman-tool-or-creature.md) | 挑战 | 弱（待 Luke 确认） |

@@ -7,10 +7,10 @@ published: 2026-05-07 09:22 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [arbitrage, complementary-good, stigler-1961-economics-of-information]
 ---
 
 ## 原文
@@ -31,3 +31,10 @@ roots: []
 
 ## 溯源
 
+- 核心主张：围绕爆款大件商品卖低成本配件，借国内制造成本和海外售价之间的巨大差距、不碰货的轻资产模式，在亚马逊拿到高利润；主动公开比价打破物流报价的信息差，还能再压成本。
+- 源知识：
+  - [套利](../roots/arbitrage.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。成本不到 1 元人民币、卖 9.99 美元，本质是在两个市场之间低买高卖赚差价；作者没用“套利”这个词。
+  - [互补品](../roots/complementary-good.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。专卖沙冰机、空气炸锅的配件，靠主产品的销量带动配件需求。
+  - [信息经济学（搜寻成本与价格离散）](../roots/stigler-1961-economics-of-information.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。在小红书公开询价找物流，相当于多做一轮搜寻来拿到更低价格；Stigler 指出同一服务价格不一，来自买方不了解行情和搜寻成本。
+- 本质：这条新知识本质上是「跨市场套利」加「互补品搭便车」在跨境电商选品上的应用。
+- 整理于：2026-10-18（第 2 轮）

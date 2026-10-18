@@ -7,10 +7,10 @@ published: 2025-06-04 11:09 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [meeker-2025-trends-ai, diffusion-of-innovations, experience-curve-effect, technological-revolutions-and-financial-capital, leapfrogging]
 ---
 
 ## 原文
@@ -30,3 +30,12 @@ roots: []
 
 ## 溯源
 
+- 核心主张：AI 是史上普及最快的技术：大厂投入空前、使用成本暴跌、企业重视度快速上升，变现不错但估值偏高，中国已经追上，新网民会直接从 AI 起步。
+- 源知识：
+  - [玛丽·米克尔《AI 趋势报告》](../roots/meeker-2025-trends-ai.md) · 关系：直接源自 · 强弱：强。推文明说是读完 Mary Meeker 340 页报告《Trends – Artificial Intelligence》后总结的 8 条。
+  - [创新扩散理论](../roots/diffusion-of-innovations.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“普及速度比过去任何新技术都快”是在拿采用速度比较不同技术，属于创新扩散研究的范畴。
+  - [经验曲线效应](../roots/experience-curve-effect.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。投入越大、用量越多，单位使用成本越低，和经验曲线“累计产量越大、成本按比例下降”是同一类规律；报告引用的是推理成本两年降约 99% 的数据，没提经验曲线。
+  - [《技术革命与金融资本》](../roots/technological-revolutions-and-financial-capital.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。大厂砸钱建基础设施、估值偏高，和佩蕾丝说的技术革命“安装期”资本狂热很像。
+  - [蛙跳（跨越式发展）](../roots/leapfrogging.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。26 亿还没上网的人一上网就用 AI，跳过中间阶段，和“手机让发展中国家跳过固定电话”的蛙跳现象相同。
+- 本质：这条新知识本质上是创新扩散和成本下降曲线在 AI 这一轮技术革命上的一次数据盘点。
+- 整理于：2026-10-18（第 2 轮）

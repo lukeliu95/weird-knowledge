@@ -30,3 +30,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Thiel一小时讲透从零做垄断的底层逻辑](../clips/2026-10-18-kkawsb-peter-thiel-monopoly-lecture.md) | 直接源自 | 强 |
+| [Gumloop四人团队冲击十亿公司](../clips/2026-10-18-wanghao8080-gumloop-small-team-unicorn.md) | 相近 | 弱（待 Luke 确认） |

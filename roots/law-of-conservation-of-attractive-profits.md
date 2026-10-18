@@ -29,3 +29,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [大模型是冰箱，赚钱的是卖冷饮的人](../clips/2026-10-18-mubeitech-llm-fridge-coca-cola-analogy.md) | 相近 | 弱（待 Luke 确认） |
+| [NVIDIA DGX Spark 从买机器到变现指南](../clips/2026-10-18-ai-goge-dgx-spark-monetization-guide.md) | 相近 | 弱（待 Luke 确认） |
+| [Gumloop四人团队冲击十亿公司](../clips/2026-10-18-wanghao8080-gumloop-small-team-unicorn.md) | 相近 | 弱（待 Luke 确认） |

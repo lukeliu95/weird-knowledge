@@ -7,10 +7,10 @@ published: 2024-01-14 09:11 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [moses-2024-generative-ai-hard-truths, retrieval-augmented-generation, garbage-in-garbage-out, resource-based-view, jobs-to-be-done]
 ---
 
 ## 原文
@@ -138,3 +138,12 @@ Snowflake Cortex 现在让各个组织能够在 Snowflake 平台上快速分析�
 
 ## 溯源
 
+- 核心主张：企业的生成式 AI 要创造商业价值，不能只是再套一层 ChatGPT：要围绕用户的具体问题来设计，差异化来自高质量的专有数据，要用 RAG 或微调把大模型接到可靠的数据管道上，先把分散的数据整理好，并把数据工程师放进团队。
+- 源知识：
+  - [技术领导者需要知道的生成式 AI 五个残酷真相](../roots/moses-2024-generative-ai-hard-truths.md) · 关系：直接源自 · 强弱：强。宝玉这条就是 Barr Moses（Monte Carlo CEO）文章的译文，五条真相原样来自原文。
+  - [检索增强生成（RAG）](../roots/retrieval-augmented-generation.md) · 关系：直接源自 · 强弱：强。原文明说 RAG（2020 年由 Meta AI 提出）和微调是企业生成式 AI 的核心技术，并描述了它的架构。
+  - [垃圾进，垃圾出](../roots/garbage-in-garbage-out.md) · 关系：换了说法 · 强弱：强。“RAG 依赖的数据如果异常、过时或不可靠，项目前景就无从谈起”“缺乏高质量数据的生成式 AI 不过是泡沫”，就是垃圾进、垃圾出。
+  - [资源基础观](../roots/resource-based-view.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“你的竞争优势在哪里？为什么用户选你而不是 ChatGPT？答案是高质量的专有数据”，是资源基础观“持续优势来自稀缺、难模仿的资源”的说法。作者没有引用。
+  - [待完成的任务](../roots/jobs-to-be-done.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“AI 功能不是为解决用户的具体问题而设计的，所以没人用”，和待完成任务理论“围绕客户要完成的事来设计产品”方向一致。属于推断。
+- 本质：这条新知识本质上是“竞争优势来自稀缺资源 + 垃圾进垃圾出”在企业落地生成式 AI 上的应用。
+- 整理于：2026-10-18（第 2 轮）

@@ -7,10 +7,10 @@ published: 2023-11-21 03:47 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [technological-singularity, existential-risk-from-artificial-intelligence, ai-alignment]
 ---
 
 ## 原文
@@ -24,3 +24,10 @@ roots: []
 
 ## 溯源
 
+- 核心主张：AGI 可能全面超过人类智能、改变生活的方方面面，机会和风险都极大；要让它安全、有益，需要各方前所未有的合作。
+- 源知识：
+  - [技术奇点](../roots/technological-singularity.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“AGI 超越人类智能、彻底改变一切”和技术奇点（智能爆炸）的设想一致；演讲简介没有引用。
+  - [AI 生存风险](../roots/existential-risk-from-artificial-intelligence.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。标题里的“充满危险”指向超级智能可能带来不可逆灾难的讨论；简介没展开具体风险。
+  - [AI 对齐](../roots/ai-alignment.md) · 关系：直接源自 · 强弱：弱（待 Luke 确认）。“确保 AGI 安全、有益地发展”就是 AI 对齐要解决的问题；Sutskever 2023 年 7 月起和 Jan Leike 共同领导 OpenAI 的超级对齐团队，但简介里没出现“对齐”一词。
+- 本质：这条新知识本质上是“AI 对齐与超级智能风险”这套论证在 AGI 公共讨论（TED 演讲）场景下的应用。
+- 整理于：2026-10-18（第 2 轮）

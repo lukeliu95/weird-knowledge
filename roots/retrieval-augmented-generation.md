@@ -27,3 +27,6 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Pi 作者：代码即真相，Bash 够用](../clips/2026-10-18-dotey-pi-authors-code-bash-insights.md) | 挑战 | 强 |
+| [Juchats谈AI搜索产品思路](../clips/2026-10-18-cydiar404-ai-search-product-design.md) | 直接源自 | 强 |
+| [技术领导者要知道的生成式 AI 五个真相](../clips/2026-10-18-dotey-five-hard-truths-genai.md) | 直接源自 | 强 |
+| [Dify CEO 谈创业和 RAG](../clips/2026-10-18-tumeng05-dify-ceo-startup-rag-views.md) | 直接源自 | 强 |

@@ -28,3 +28,5 @@ verified: true
 |---|---|---|
 | [前Meta工程师的AI优先团队落地报告](../clips/2026-10-18-ayi-ainotes-peter-pang-ai-first-report.md) | 换了说法 | 强 |
 | [Codex 28天做出Sora安卓版](../clips/2026-10-18-dotey-codex-sora-android-28-days.md) | 相近 | 弱（待 Luke 确认） |
+| [AI 时代最值钱的是懂 AI 的产品经理](../clips/2026-10-18-dotey-ai-product-manager-skills.md) | 相近 | 弱（待 Luke 确认） |
+| [同城 IP 团队的真实 Agent 需求](../clips/2026-10-18-wanghao8080-local-ip-agent-need.md) | 相近 | 弱（待 Luke 确认） |

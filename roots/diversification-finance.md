@@ -28,3 +28,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [三旗理论：合法减税、保护资产、自由生活](../clips/2026-10-18-eric-make-money-three-flags-theory.md) | 相近 | 弱（待 Luke 确认） |
+| [工具站出海月入 3000 刀的一年踩坑记](../clips/2026-10-18-gefei55-tool-site-overseas-lessons.md) | 相近 | 弱（待 Luke 确认） |
+| [Marc Lou 六月赚 8.3 万美元](../clips/2026-10-18-marclou-marclou-june-2026-revenue.md) | 相近 | 弱（待 Luke 确认） |

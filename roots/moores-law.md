@@ -28,3 +28,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [买两台 DGX 出租视频算力的生意](../clips/2026-10-18-boxmrchen-dgx-video-compute-rental.md) | 挑战 | 弱（待 Luke 确认） |

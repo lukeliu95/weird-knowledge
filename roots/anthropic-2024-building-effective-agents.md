@@ -31,3 +31,7 @@ verified: true
 | [多数 Agent 其实只是工作流](../clips/2026-10-18-eze-is-1-agent-vs-workflow-definition.md) | 直接源自 | 强 |
 | [Anthropic 六种工作流与智能体](../clips/2026-10-18-eze-is-1-anthropic-workflow-patterns.md) | 直接源自 | 强 |
 | [什么才是 AI Native：别写死步骤](../clips/2026-10-18-programerjohann-ai-native-agent-four-things.md) | 相近 | 弱（待 Luke 确认） |
+| [工作流与智能体：用户为什么更兴奋](../clips/2026-10-18-dotey-workflow-vs-agent-excitement.md) | 相近 | 弱（待 Luke 确认） |
+| [做到千万美元ARR的B2B代理路径](../clips/2026-10-18-financeyf5-b2b-ai-agent-10m-arr.md) | 相近 | 弱（待 Luke 确认） |
+| [Manus 本质是缝合怪但体验做得漂亮](../clips/2026-10-18-stlightleon-manus-polished-agent-take.md) | 相近 | 弱（待 Luke 确认） |
+| [与Claude Code讨论艺术与约束](../clips/2026-10-18-turingou-constraint-in-live-music-product.md) | 相近 | 弱（待 Luke 确认） |

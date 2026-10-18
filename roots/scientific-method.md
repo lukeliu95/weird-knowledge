@@ -27,3 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [开 100 家便利店经验写成选址指南](../clips/2026-10-18-hitw93-convenience-store-site-selection.md) | 直接源自 | 强 |

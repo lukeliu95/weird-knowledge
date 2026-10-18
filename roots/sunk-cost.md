@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [张一鸣 66 条成长心得与延迟满足](../clips/2026-10-18-sea-bitcoin-zhang-yiming-66-growth-tips.md) | 换了说法 | 强 |
+| [买两台 DGX 出租视频算力的生意](../clips/2026-10-18-boxmrchen-dgx-video-compute-rental.md) | 直接源自 | 强 |

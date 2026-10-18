@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [世界需要、擅长、热爱、能谋生的交集](../clips/2026-10-18-zutaomin-ikigai-meaning-of-life.md) | 相近 | 弱（待 Luke 确认） |
+| [潜入 Cursor 60 天看到的公司文化](../clips/2026-10-18-dotey-inside-cursor-culture.md) | 相近 | 弱（待 Luke 确认） |

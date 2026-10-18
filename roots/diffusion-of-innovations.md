@@ -28,3 +28,5 @@ verified: true
 |---|---|---|
 | [帮家具厂建 AI 产品库月入一万八](../clips/2026-10-18-miles-mazy-furniture-factory-ai-product-library.md) | 相近 | 弱（待 Luke 确认） |
 | [公司推广 AI 编程为何要靠内部](../clips/2026-10-18-dotey-promote-ai-coding-in-company.md) | 相近 | 弱（待 Luke 确认） |
+| [世界分成会用与不会用 ChatGPT](../clips/2026-10-18-dotey-chatgpt-two-kinds-of-people.md) | 相近 | 弱（待 Luke 确认） |
+| [Mary Meeker 340 页 AI 趋势八点](../clips/2026-10-18-reportify-xu-mary-meeker-ai-trends-report.md) | 相近 | 弱（待 Luke 确认） |

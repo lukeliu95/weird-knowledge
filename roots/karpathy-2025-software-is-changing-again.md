@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [前线部署工程师为何是 AI 落地时代的关键职业](../clips/2026-10-18-indigox-forward-deployed-engineer-ai-era.md) | 相近 | 弱（待 Luke 确认） |
 | [Karpathy 的 YC 演讲：软件 3.0](../clips/2026-10-18-op7418-karpathy-software-3-talk.md) | 直接源自 | 强 |
+| [游戏公司为何要做通用 Agent](../clips/2026-10-18-dashhuang-game-company-general-agent.md) | 相近 | 弱（待 Luke 确认） |
