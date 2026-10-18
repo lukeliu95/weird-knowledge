@@ -5,11 +5,11 @@
 
 ## 一、我的原则
 
-第 1 轮从 65 条里提炼出 7 条。第 2 轮又溯源了 151 条：7 条都补上了新证据，另外新增 4 条（原则 8～11）。全部是草稿，等 Luke 确认。
+第 1 轮从 65 条里提炼出 7 条。第 2 轮又溯源了 151 条：7 条都补上了新证据，另外新增 4 条（原则 8～11）。2026-10-18 Luke 全部确认，其中原则 2、6、8 按建议改了说法。
 
 ### 原则 1：质量靠闭环：回路越短、越能自动判对错，进步越快
 
-- 状态：草稿
+- 状态：已确认（2026-10-18）
 - 支撑的新知识：[吴恩达讲做产品的三个循环](clips/2026-10-18-andrewyng-andrew-ng-three-product-loops.md)、[AlphaCodium 与流程工程](clips/2026-10-18-dotey-alphacodium-flow-engineering.md)、[外层harness让智能体连跑数小时](clips/2026-10-18-baoweiheihei-harness-unattended-long-running.md)、[Monolith论文：实时推荐致瘾](clips/2026-10-18-interjc-tiktok-monolith-realtime-recsys.md)、[陶哲轩谈 AI 与数学的演讲要点](clips/2026-10-18-dotey-terence-tao-ai-math-talk.md)、[Samuel 的跳棋程序：机器靠自己对弈学习，下得比写它的人还好](clips/2026-10-18-samuel-machine-learning-checkers.md)、[DeepSeek R1 论文解读：自学成才之路](clips/2026-10-18-oran-ge-deepseek-r1-paper-explained.md)、[开源模型自我验证跑赢闭源模型](clips/2026-10-18-jackyk02-self-verification-open-model-beats-closed.md)
 - 第 2 轮新增：[Anthropic：让模型验证自己的输出](clips/2026-10-18-0xcodez-anthropic-agent-loop-self-verify.md)、[吴恩达：自我改进循环将取代提示](clips/2026-10-18-0xmovez-andrew-ng-self-improving-loops.md)、[智谱让 GLM-5.3 自己优化推理系统](clips/2026-10-18-dotey-glm-5-3-optimizes-own-inference.md)、[Astra 电脑操作让验收成闭环](clips/2026-10-18-dotey-astra-computer-use-acceptance-loop.md)、[Claude Code之父的三条心得](clips/2026-10-18-ayi-ainotes-boris-cherny-workflow-three-rules.md)、[自然语言 Agent 应像好员工的七点](clips/2026-10-18-remixdesigner-agent-as-good-employee.md)、[Anthropic专家谈提示词工程师](clips/2026-10-18-eze-is-1-anthropic-prompt-engineering-notes.md)、[开 100 家便利店经验写成选址指南](clips/2026-10-18-hitw93-convenience-store-site-selection.md)（共 16 条）
 - 对应的源知识：[控制论](roots/cybernetics.md)、[反馈](roots/feedback.md)、[效果律](roots/law-of-effect.md)、[测试驱动开发](roots/test-driven-development.md)；第 2 轮新增 [验收测试](roots/acceptance-testing.md)、[PDCA 循环（计划-执行-检查-处置）](roots/pdca.md)、[复合工程](roots/compounding-engineering.md)、[奖励塑形（势函数塑形下的策略不变性）](roots/ng-1999-reward-shaping.md)
@@ -18,9 +18,9 @@
 - 第 2 轮的新线索：智谱那条给了缩短回路的具体办法：结果信号太稀疏（只知道最后成没成）时，把它拆成一层层便宜、能马上验证的过程信号。Boris Cherny 那条补了另一半：每次纠正都写进 CLAUDE.md，回路才会越转越好，而不是每次从头来。
 - 没想清楚的问题：获客这种反馈慢、难归因的事怎么缩短回路？按智谱的思路，可以把“签单”拆成“打开、回信、约到会”这几层过程信号分别优化（推断，待 Luke 确认）。复旦那条“看能说明因果的指标，不看虚荣指标”（[复旦分享：脑科学视角拆品牌营销](clips/2026-10-18-yangyi-fudan-brand-marketing-neuroscience.md)）提醒：拆出来的过程信号要真的能预测结果。
 
-### 原则 2：能力还在快速变强时，给目标、工具和边界，不写死步骤；脚手架按需加、定期删
+### 原则 2：能力还在快速变强时，给目标、工具和边界，不写死步骤；脚手架按需加、定期删；要长期保持一致、出错代价大的部分照样写死
 
-- 状态：草稿
+- 状态：已确认（2026-10-18，说法按建议改过）
 - 支撑的新知识：[什么才是 AI Native：别写死步骤](clips/2026-10-18-programerjohann-ai-native-agent-four-things.md)、[Claude Code之父：配置越少越好](clips/2026-10-18-xiaohu-claude-code-minimal-claude-md.md)、[Claude Code播客：工具终将消失](clips/2026-10-18-genie0309-claude-code-podcast-tools-disappear.md)、[合成数据与苦涩的教训讨论](clips/2026-10-18-dotey-synthetic-data-bitter-lesson.md)、[Agent 基础设施的一线观察](clips/2026-10-18-dotey-anthropic-agent-infrastructure-talk.md)
 - 第 2 轮新增：[谈用 Claude 做智能体：少搭脚手架](clips/2026-10-18-alexalbert-agent-scaffolding-context-talk.md)、[提示词精髓：有什么、做什么、怎么做](clips/2026-10-18-dotey-prompt-context-task-how.md)、[Sora 团队伯克利课堂分享字幕翻译](clips/2026-10-18-dotey-sora-team-berkeley-talk.md)（共 8 条）
 - 对应的源知识：[苦涩的教训](roots/bitter-lesson.md)、[摩尔定律](roots/moores-law.md)；第 2 轮新增 [归纳偏置](roots/inductive-bias.md)、[OpenAI 推理模型提示建议（提示要简单直接、不必写思维链）](roots/openai-2024-o1-prompting-advice.md)、[任务式指挥](roots/mission-type-tactics.md)
@@ -32,7 +32,7 @@
 
 ### 原则 3：一种能力变得人人可得，价值就转到和它互补、仍然稀缺的东西上
 
-- 状态：草稿
+- 状态：已确认（2026-10-18）
 - 支撑的新知识：[智力平权之后，行动力成最大差异](clips/2026-10-18-oran-ge-agency-after-intelligence-equality.md)、[DeepResearch小众话题更有价值](clips/2026-10-18-dotey-deep-research-knowledge-value.md)、[大模型是冰箱，赚钱的是卖冷饮的人](clips/2026-10-18-mubeitech-llm-fridge-coca-cola-analogy.md)、[AI 是独立产品还是平台功能](clips/2026-10-18-dotey-ai-product-or-feature.md)、[Thiel一小时讲透从零做垄断的底层逻辑](clips/2026-10-18-kkawsb-peter-thiel-monopoly-lecture.md)
 - 第 2 轮新增：[AI 时代最值钱的是懂 AI 的产品经理](clips/2026-10-18-dotey-ai-product-manager-skills.md)、[稀缺从怎么做转向做什么](clips/2026-10-18-lijigang-scarcity-how-to-what.md)、[品味可以被模仿，决策才不可替代](clips/2026-10-18-mengkepm-taste-copyable-decision-irreplaceable.md)、[AIGC 作品的关键是加上人味](clips/2026-10-18-jesselaunz-aigc-add-human-touch.md)、[NVIDIA DGX Spark 从买机器到变现指南](clips/2026-10-18-ai-goge-dgx-spark-monetization-guide.md)、[Gumloop四人团队冲击十亿公司](clips/2026-10-18-wanghao8080-gumloop-small-team-unicorn.md)、[对接 SD 做细分领域插画生成器](clips/2026-10-18-yangyi-niche-illustration-generator.md)、[写好Spec后让Agent整周自动开发](clips/2026-10-18-timyangnet-spec-driven-agent-development.md)、[吴恩达的智能体编程时代软件工程能力图](clips/2026-10-18-andrewyng-andrew-ng-ai-engineering-skills-map.md)、[技术领导者要知道的生成式 AI 五个真相](clips/2026-10-18-dotey-five-hard-truths-genai.md)（共 15 条，是支撑最多的一条）
 - 对应的源知识：[互补品](roots/complementary-good.md)、[商品化（同质化）](roots/commoditization.md)、[诱人利润守恒定律](roots/law-of-conservation-of-attractive-profits.md)、[完全竞争](roots/perfect-competition.md)；第 2 轮新增 [《预测机器：人工智能的简单经济学》](roots/agrawal-2018-prediction-machines.md)、[杰文斯悖论](roots/jevons-paradox.md)、[没有银弹（本质复杂度与偶然复杂度）](roots/no-silver-bullet.md)、[资源基础观](roots/resource-based-view.md)
@@ -42,7 +42,7 @@
 
 ### 原则 4：说不清的知识只能去现场取，取回来要沉淀成可复用的东西
 
-- 状态：草稿
+- 状态：已确认（2026-10-18）
 - 支撑的新知识：[Anthropic 讲前线部署工程师](clips/2026-10-18-dotey-fde-101-forward-deployed-engineer.md)、[前线部署工程师为何是 AI 落地时代的关键职业](clips/2026-10-18-indigox-forward-deployed-engineer-ai-era.md)、[AIDE：让用户给样本打"相关/不相关"，用主动学习猜出他真正想查的数据](clips/2026-10-18-dimitriadou-aide-active-learning-data-exploration.md)、[帮家具厂建 AI 产品库月入一万八](clips/2026-10-18-miles-mazy-furniture-factory-ai-product-library.md)、[OpenAI 报告：用户最常用的是懒脑力活](clips/2026-10-18-frxiaobei-chatgpt-usage-lazy-moments.md)
 - 第 2 轮新增：[范冰免费开源新书《前置部署工程师》](clips/2026-10-18-iluciddreaming-fde-book-free-open-source.md)、[国内 ToB 智能体至少还要一年](clips/2026-10-18-frxiaobei-tob-agent-one-year-away.md)、[同城 IP 团队的真实 Agent 需求](clips/2026-10-18-wanghao8080-local-ip-agent-need.md)、[Anthropic：用技能代替独立智能体](clips/2026-10-18-hongming731-anthropic-agent-skills-talk.md)、[征求产品意见别只问程序员群体](clips/2026-10-18-gorden-sun-dont-ask-programmers-product-feedback.md)、[做到千万美元ARR的B2B代理路径](clips/2026-10-18-financeyf5-b2b-ai-agent-10m-arr.md)、[Clay：给 ToB 销售补全客户数据](clips/2026-10-18-wanghao8080-clay-sales-data-enrichment.md)（共 12 条）
 - 对应的源知识：[默会知识（隐性知识）](roots/tacit-knowledge.md)、[粘滞信息](roots/sticky-information.md)、[《知识在社会中的运用》](roots/the-use-of-knowledge-in-society.md)、[SECI 知识转化模型](roots/seci-model-of-knowledge-dimensions.md)、[待完成的任务](roots/jobs-to-be-done.md)；第 2 轮新增 [知识获取瓶颈](roots/knowledge-acquisition-bottleneck.md)、[知识原则：智能体的本事主要来自专门知识](roots/feigenbaum-1977-knowledge-engineering.md)、[过程性知识（知道怎么做）](roots/procedural-knowledge.md)、[苦差事盲区](roots/graham-2012-schlep-blindness.md)
@@ -52,7 +52,7 @@
 
 ### 原则 5：先在最小单位验证见效，再逐层放大；需求不清时，先做一个准备扔掉的原型
 
-- 状态：草稿
+- 状态：已确认（2026-10-18）
 - 支撑的新知识：[Agent 基础设施的一线观察](clips/2026-10-18-dotey-anthropic-agent-infrastructure-talk.md)、[Thiel一小时讲透从零做垄断的底层逻辑](clips/2026-10-18-kkawsb-peter-thiel-monopoly-lecture.md)、[Vibe Coding：原型加重设计两步法](clips/2026-10-18-dotey-vibe-coding-prototype-method.md)、[多数 Agent 其实只是工作流](clips/2026-10-18-eze-is-1-agent-vs-workflow-definition.md)
 - 第 2 轮新增：[工具站出海月入 3000 刀的一年踩坑记](clips/2026-10-18-gefei55-tool-site-overseas-lessons.md)、[Marc Lou 六月赚 8.3 万美元](clips/2026-10-18-marclou-marclou-june-2026-revenue.md)、[宝玉写提示词的原则：做成可玩的模板](clips/2026-10-18-dotey-dotey-prompt-writing-principles.md)、[OpenAI 企业用 AI 的七条经验](clips/2026-10-18-shao-meng-openai-enterprise-ai-lessons.md)（共 8 条）
 - 对应的源知识：[加尔定律](roots/galls-law.md)、[《人月神话》（准备扔掉一个）](roots/the-mythical-man-month.md)、[从 0 到 1](roots/zero-to-one.md)；第 2 轮新增 [精益创业](roots/lean-startup.md)、[小赌注组合](roots/portfolio-of-small-bets.md)、[过早优化是万恶之源（Knuth《带 goto 语句的结构化编程》）](roots/knuth-1974-structured-programming-go-to.md)
@@ -60,9 +60,9 @@
 - 矛盾：暂时没看到反例。
 - 没想清楚的问题：“最小单位”在 GTM 里是什么：一个客户、一个行业，还是一封邮件？B2B 代理那条给了一个答案：一个行业里一条还靠人和表格硬撑的苦活流程，做透了再复制到相邻行业（推断，待 Luke 确认）。
 
-### 原则 6：执行者越多，协调和验收越贵；整体速度由最慢的环节决定
+### 原则 6：执行者越多，协调和验收越贵；整体速度由最慢的环节决定。执行一变快，瓶颈就移到定义需求、验收和获客上
 
-- 状态：草稿
+- 状态：已确认（2026-10-18，说法按建议改过）
 - 支撑的新知识：[Anthropic 多智能体研究系统详解](clips/2026-10-18-oran-ge-anthropic-multi-agent-research.md)、[Codex 28天做出Sora安卓版](clips/2026-10-18-dotey-codex-sora-android-28-days.md)、[玉伯谈 AI 时代小团队生产力的真相](clips/2026-10-18-saitowu-small-team-productivity-ai-era.md)、[前Meta工程师的AI优先团队落地报告](clips/2026-10-18-ayi-ainotes-peter-pang-ai-first-report.md)、[唐杰谈缩放定律：不只是堆参数](clips/2026-10-18-jietang-scaling-law-beyond-parameters.md)
 - 第 2 轮新增：[两天用完 AI 额度，四天做营销的周节奏](clips/2026-10-18-yihui-indie-ai-two-day-dev-week-rhythm.md)、[Anthropic 设计负责人谈 AI 时代设计流程](clips/2026-10-18-dotey-anthropic-design-process-ai-era.md)、[Claude Code 的 Task 工具原理](clips/2026-10-18-dotey-claude-code-task-subagent.md)、[用个人AI编排者带动一支永不睡觉的开发队](clips/2026-10-18-ayi-ainotes-personal-ai-orchestrator-openclaw.md)、[备忘录加 worktree 就够了](clips/2026-10-18-hilng77042-opc-agents-notes-worktrees.md)、[Kimi-code重构一个月的架构复盘](clips/2026-10-18-real-kai42-kimi-code-rewrite-retrospective.md)（共 11 条）
 - 对应的源知识：[布鲁克斯定律](roots/brookss-law.md)、[管理幅度](roots/span-of-control.md)、[约束理论](roots/theory-of-constraints.md)、[阿姆达尔定律](roots/amdahls-law.md)；第 2 轮新增 [分治法](roots/divide-and-conquer-algorithm.md)、[别做多智能体](roots/yan-2025-dont-build-multi-agents.md)
@@ -72,7 +72,7 @@
 
 ### 原则 7：先保证不出局：不拿输不起的去换用不上的，把关键依赖分散开
 
-- 状态：草稿
+- 状态：已确认（2026-10-18）
 - 支撑的新知识：[巴菲特经典演讲：先保证不穷回去](clips/2026-10-18-nextbullready-buffett-classic-speech.md)、[三旗理论：合法减税、保护资产、自由生活](clips/2026-10-18-eric-make-money-three-flags-theory.md)、[张一鸣 66 条成长心得与延迟满足](clips/2026-10-18-sea-bitcoin-zhang-yiming-66-growth-tips.md)
 - 第 2 轮新增：[Marc Lou 六月赚 8.3 万美元](clips/2026-10-18-marclou-marclou-june-2026-revenue.md)、[离职大厂做 OPC 第一年收入报告](clips/2026-10-18-weiyipei-opc-first-year-income-report.md)（共 5 条）
 - 对应的源知识：[破产风险](roots/risk-of-ruin.md)、[赌徒破产问题](roots/gamblers-ruin.md)、[凯利公式](roots/kelly-criterion.md)、[分散投资](roots/diversification-finance.md)；第 2 轮新增 [小赌注组合](roots/portfolio-of-small-bets.md)、[机会成本](roots/opportunity-cost.md)
@@ -80,18 +80,18 @@
 - 第 2 轮的新线索：Marc Lou 和 OPC 两条是个人版本：AI 把每次尝试的成本压低后，同时押很多小赌注、靠多条收入线兜底，比押一个大项目更不容易出局。
 - 没想清楚的问题：三旗理论的具体做法在配图里，没核对到。
 
-### 原则 8：工具放大的是判断力：自己判断不了好坏的产出，用得越多越危险
+### 原则 8：AI 在它擅长的事上拉平差距，在它不擅长、要判断好坏的地方，放大会判断的人
 
-- 状态：草稿（第 2 轮新增）
+- 状态：已确认（2026-10-18，第 2 轮新增，说法按建议改过）
 - 支撑的新知识：[会写代码才玩得好 vibe coding](clips/2026-10-18-aryanlabde-vibe-coding-needs-coding-skill.md)、[Agent 智能体是模型能力的放大器](clips/2026-10-18-waytoagi-agent-model-capability-amplifier.md)、[Kimi-code重构一个月的架构复盘](clips/2026-10-18-real-kai42-kimi-code-rewrite-retrospective.md)、[吴恩达的智能体编程时代软件工程能力图](clips/2026-10-18-andrewyng-andrew-ng-ai-engineering-skills-map.md)、[Agent 循环工程晚宴讨论要点](clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md)、[哈萨比斯：懂 AI 的一个人胜过团队](clips/2026-10-18-anatolikopadze-hassabis-ai-person-outperforms-team.md)（共 6 条）
 - 对应的源知识：[技术放大定律](roots/law-of-amplification.md)、[智力放大](roots/intelligence-amplification.md)、[吸收能力](roots/absorptive-capacity.md)、[自动化的反讽](roots/ironies-of-automation.md)、[人类监督控制](roots/sheridan-1992-human-supervisory-control.md)
 - 和你已有原则的关系：对应你的“模型出草稿，人来定稿”：定稿的人得自己看得出好坏。
-- 矛盾：这是这一轮最大的一处冲突。实验数据站在另一边：BCG 顾问实验（[在参差不齐的技术边界上航行（BCG 顾问实验）](roots/dellacqua-2023-jagged-technological-frontier.md)）和 GitHub Copilot 对照实验（[AI 对开发者生产率的影响：GitHub Copilot 对照实验](roots/peng-2023-copilot-developer-productivity.md)）都发现，原本水平低的人提升最多；[世界分成会用与不会用 ChatGPT](clips/2026-10-18-dotey-chatgpt-two-kinds-of-people.md) 也说 AI 先缩小新手和高手的差距。一种调和（推断，待 Luke 确认）：在模型擅长的任务里，它拉平差距；在模型不擅长、或者要判断好坏的地方，它放大会判断的人。BCG 实验里，超出 AI 能力边界的任务，用 AI 的人反而做得更差。
+- 矛盾：这是这一轮最大的一处冲突。实验数据站在另一边：BCG 顾问实验（[在参差不齐的技术边界上航行（BCG 顾问实验）](roots/dellacqua-2023-jagged-technological-frontier.md)）和 GitHub Copilot 对照实验（[AI 对开发者生产率的影响：GitHub Copilot 对照实验](roots/peng-2023-copilot-developer-productivity.md)）都发现，原本水平低的人提升最多；[世界分成会用与不会用 ChatGPT](clips/2026-10-18-dotey-chatgpt-two-kinds-of-people.md) 也说 AI 先缩小新手和高手的差距。所以草稿原来的说法“工具放大的是判断力，自己判断不了好坏的产出用得越多越危险”只对了一半，确认时改成了现在这样：两边都对，只是适用的任务不同。BCG 实验里，超出 AI 能力边界的任务，用 AI 的人反而做得更差。
 - 没想清楚的问题：哈萨比斯那句“懂 AI 的一个人胜过团队”查不到出处，最接近的证据只是“一个人用 AI 追平两人团队”。说法比证据强得多。
 
 ### 原则 9：红利和信息差都会被挤平：越早进越便宜，要按时间点重估
 
-- 状态：草稿（第 2 轮新增）
+- 状态：已确认（2026-10-18，第 2 轮新增）
 - 支撑的新知识：[TikTok头部机构创始人讲跨境价差生意](clips/2026-10-18-vincent-ainotes-tiktok-mcn-arbitrage-talk.md)、[出租屋卖亚马逊爆款配件月销二十万](clips/2026-10-18-vincent-ainotes-amazon-accessories-side-hustle.md)、[Reddit 是被低估的软件出海分发渠道](clips/2026-10-18-wanghao8080-reddit-distribution-channel.md)、[北美增长负责人谈各平台获客要点](clips/2026-10-18-oran-ge-na-growth-channel-notes.md)、[阿里国际站用590万AI页面冲SEO](clips/2026-10-18-willlhhh-alibaba-5-9m-ai-pages-seo.md)、[巴西青年靠 AI 工地女孩赚订阅费](clips/2026-10-18-bober-smart-ai-construction-girl-subscription.md)（共 6 条）
 - 对应的源知识：[套利](roots/arbitrage.md)、[完全竞争](roots/perfect-competition.md)、[信息经济学（搜寻成本与价格离散）](roots/stigler-1961-economics-of-information.md)、[烂点击率定律（营销渠道衰减）](roots/law-of-shitty-clickthroughs.md)、[牛眼框架（《Traction》19 种获客渠道）](roots/bullseye-framework.md)、[古德哈特定律](roots/goodharts-law.md)、[蓝海战略](roots/blue-ocean-strategy.md)
 - 和你已有原则的关系：和你的 GTM 主线直接相关。“烂点击率定律”说的是：任何获客渠道，用的人一多，点击率和回信率都会往下掉。冷邮件、表单营销应该也逃不掉（推断）。
@@ -100,7 +100,7 @@
 
 ### 原则 10：转述每多一层就多走样一层：下结论前回到一手材料
 
-- 状态：草稿（第 2 轮新增）
+- 状态：已确认（2026-10-18，第 2 轮新增）
 - 支撑的新知识：[Jeff Dean 一小时讲 AI 系统](clips/2026-10-18-huxlab-jeff-dean-ai-course-hour.md)、[X推荐算法权重表：回复比点赞值钱](clips/2026-10-18-ityouknows-x-algorithm-weights-reply-vs-like.md)、[传闻：头部实验室已实现自我改进](clips/2026-10-18-maxforai-frontier-labs-rsi-claim.md)、[亿万富翁 42 分钟讲清全球经济运转](clips/2026-10-18-engmoelgaraihy-billionaire-global-economy-video.md)，以及这一轮核对时抓到走样的 [黄亚生预测中国模式走到尽头](clips/2026-10-18-bingliu34173809-huang-yasheng-china-model.md)、[Claude Code之父的三条心得](clips/2026-10-18-ayi-ainotes-boris-cherny-workflow-three-rules.md)、[哈萨比斯：懂 AI 的一个人胜过团队](clips/2026-10-18-anatolikopadze-hassabis-ai-person-outperforms-team.md)（共 7 条）
 - 对应的源知识：[一手史料（原始资料）](roots/primary-source.md)、[传递链方法（传话实验）](roots/transmission-chain-method.md)、[信息处理不等式](roots/data-processing-inequality.md)
 - 和你已有原则的关系：就是你全局规则里的“不编造：每个数字要能指回出处”，也是这个仓库本身的做法。这一轮核对一手材料时，151 条里查出十几处转述和原文对不上（见「三、待查 · 顺手查出来的误传」）。
@@ -109,7 +109,7 @@
 
 ### 原则 11：上下文是稀缺资源：常驻只放索引，细节按需加载，子任务各带干净的上下文
 
-- 状态：草稿（第 2 轮新增）
+- 状态：已确认（2026-10-18，第 2 轮新增）
 - 支撑的新知识：[上下文工程：智能体的核心实践指南](clips/2026-10-18-shao-meng-context-engineering-guide.md)、[Agent Skills 是上下文卸载](clips/2026-10-18-yonah-x-skills-context-offloading.md)、[Manus 把工具分成三层的设计](clips/2026-10-18-dotey-manus-three-layer-tools.md)、[ADK 开发者该懂的五种 Agent Skill 设计模式](clips/2026-10-18-googlecloudtech-adk-agent-skill-design-patterns.md)、[Agent Skills设计哲学与迭代](clips/2026-10-18-dotey-agent-skills-design-philosophy.md)、[Claude Code 的 Task 工具原理](clips/2026-10-18-dotey-claude-code-task-subagent.md)、[用个人AI编排者带动一支永不睡觉的开发队](clips/2026-10-18-ayi-ainotes-personal-ai-orchestrator-openclaw.md)（共 7 条）
 - 对应的源知识：[AI 智能体的上下文工程](roots/anthropic-2025-effective-context-engineering.md)、[上下文工程](roots/context-engineering.md)、[用 Agent Skills 让智能体胜任真实工作](roots/anthropic-2025-agent-skills.md)、[渐进式披露](roots/progressive-disclosure.md)、[Unix 哲学](roots/unix-philosophy.md)、[虚拟内存](roots/virtual-memory.md)
 - 和你已有原则的关系：你做 skill 的规矩“主文件要小，细节拆出去按需加载”就是这一条。根是 1985 年苹果界面设计里的渐进式披露，和操作系统的虚拟内存（常用的放内存，其余放磁盘，用到再调）。
@@ -185,7 +185,7 @@
 
 几组值得对照着看：
 - **规模还是结构**：杨立昆、Tripo Eden 认为光靠规模不够，要有新的结构或显式保存的状态；唐杰、Sora 团队押规模继续有效，能力会自己冒出来。
-- **AI 放大高手还是拉平差距**：kimi-code、vibe coding 两条说只放大高手，BCG 和 Copilot 的实验说新手受益最多。已写成原则 8，待你判断。
+- **AI 放大高手还是拉平差距**：kimi-code、vibe coding 两条说只放大高手，BCG 和 Copilot 的实验说新手受益最多。已写成原则 8（已确认）。
 - **流程还要不要**：Anthropic 设计负责人说双钻石流程“基本已死”，worktree 那条说连看板都不需要了。两条都是执行变快之后，围绕新瓶颈重组流程。
 
 ### 没找到源头的
