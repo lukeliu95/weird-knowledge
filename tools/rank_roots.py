@@ -10,6 +10,8 @@
 - 挑战：关系是“挑战”的行
 - 没核实的源知识（verified: false）
 - 没找到源头的新知识（「溯源」里写了“没找到已知的源头”）
+
+补课找来、Luke 还没认可的新知识（`adopted: false`）不计入排名和挑战，见 AGENTS.md「流程四」。
 """
 import argparse
 import collections
@@ -39,6 +41,7 @@ def main():
     ap.add_argument("--top", type=int, default=15)
     args = ap.parse_args()
 
+    pending = {f.stem for f in (ROOT / "clips").glob("*.md") if field(f.read_text(), "adopted") == "false"}
     roots, direct, deeper, challenges = {}, collections.defaultdict(set), {}, []
     for f in sorted((ROOT / "roots").glob("*.md")):
         t = f.read_text()
@@ -48,6 +51,8 @@ def main():
             m = LINK.search(row)
             if row.startswith("| [") and m:
                 clip = Path(m.group(2)).name
+                if clip in pending:
+                    continue
                 direct[f.stem].add(clip)
                 cells = [c.strip() for c in row.strip("|").split("|")]
                 if cells[1] == "挑战":
@@ -70,7 +75,7 @@ def main():
         return reach[slug]
 
     rank = sorted(roots, key=lambda s: (-len(reached(s)), -len(direct[s]), s))
-    print(f"## 知识底座（共 {len(roots)} 个源知识）\n")
+    print(f"## 知识底座（共 {len(roots)} 个源知识；未计入还没认可的补课条目 {len(pending)} 条）\n")
     print("| 排名 | 源知识 | 被几条新知识指向（直接 / 连同间接） | 更底层的源头 |")
     print("|---|---|---|---|")
     for i, s in enumerate(rank[: args.top], 1):

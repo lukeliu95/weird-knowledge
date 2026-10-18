@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """生成 framework.md 里的「主题地图」：按 topic × 发布年份统计全部新知识（含已归档）。
+补课找来、Luke 还没认可的新知识（`adopted: false`）不计入，见 AGENTS.md「流程四」。
 
 用法：
   python3 tools/topic_map.py          写进 framework.md 的 <!-- topic-map:begin --> 和 <!-- topic-map:end --> 之间
@@ -25,12 +26,15 @@ def main():
     ap.add_argument("--print", action="store_true")
     args = ap.parse_args()
 
-    items = []
+    items, pending = [], 0
     for f in sorted((ROOT / "clips").glob("*.md")):
         m = re.match(r"---\n(.*?)\n---\n", f.read_text(), re.S)
         if not m:
             continue
         fr = m.group(1)
+        if field(fr, "adopted") == "false":
+            pending += 1
+            continue
         year = re.match(r"(\d{4})", field(fr, "published"))
         y = year.group(1) if year else "未知"
         if y != "未知" and int(y) < EARLY:
@@ -46,7 +50,8 @@ def main():
         by_topic[i["topic"]].append(i)
     order = sorted(by_topic, key=lambda t: -len(by_topic[t]))
 
-    out = [f"共 {len(items)} 条新知识（含已归档）。数字是每年存下的条数；按发布年份算，不是保存日期。", ""]
+    note = f"补课找来、还没认可的 {pending} 条不计入。" if pending else ""
+    out = [f"共 {len(items)} 条新知识（含已归档）。{note}数字是每年存下的条数；按发布年份算，不是保存日期。", ""]
     out.append("| 主题 | " + " | ".join(years) + " | 合计 | 观点 / 工具 / 教程 |")
     out.append("|---|" + "---|" * (len(years) + 2))
     for t in order:
