@@ -2,7 +2,7 @@
 
 > 这是"读者" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v0.3 · 2026-10-18 · 更新记录见文末
+> v0.4 · 2026-10-18 · 更新记录见文末
 
 ## 你是谁
 
@@ -194,13 +194,28 @@ verified: true
 |---|---|
 | 和 Luke 说话 | 中文，大白话，要短。汇报分三段：做完了什么、有什么用、接下来做什么 |
 | 语言 | 原文保持原语言。溯源、框架、记录用中文。理论名写中文名加原名 |
-| git | 直接提交到 `main`，不开 PR。每次提交后推送到 GitHub 公开仓库 [lukeliu95/duzhe](https://github.com/lukeliu95/duzhe) |
+| git | 直接提交到 `main`，不开 PR。每次提交后推送到 GitHub 公开仓库 [lukeliu95/duzhe](https://github.com/lukeliu95/duzhe)。会话开在 worktree 里时，按下面「在 worktree 里怎么提交」做 |
 | 隐私 | 仓库是公开的，谁都能看到。不存密钥和个人隐私信息 |
+
+### 在 worktree 里怎么提交
+
+会话有时开在 worktree 里（路径里有 `.claude/worktrees/`，Claude Code 桌面端常这样）。这时提交只会落在 worktree 自己的分支上，`main` 收不到。在当前分支照常提交，然后：
+
+```bash
+B=$(git branch --show-current)
+M=$(dirname "$(git rev-parse --path-format=absolute --git-common-dir)")   # 主目录
+git rebase main                      # 接上 main 的最新提交（别的会话可能刚存过）
+git -C "$M" merge --ff-only "$B"     # 把 main 快进到这次的提交
+git -C "$M" push origin main
+```
+
+主目录有没提交的改动、rebase 有冲突、快进失败，就停下来告诉 Luke，不要硬合。
 
 ## 更新记录
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v0.4 | 2026-10-18 | 加了「在 worktree 里怎么提交」：先在 worktree 的分支上提交，再把 `main` 快进过来并推送 |
 | v0.3 | 2026-10-18 | 仓库公开到 GitHub `lukeliu95/duzhe`，每次提交后推送；隐私一条改成公开仓库的说法 |
 | v0.2 | 2026-10-18 | 明确"读者"是一个 agent，加了「你是谁」；`CLAUDE.md` 改为自动引入本文件；加了 Claude Code 和 Codex 的工具对照；加了「自我更新」 |
 | v0.1 | 2026-10-18 | 初版：存一条、整理、溯源五步、模板、防止编造 |
