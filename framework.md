@@ -5,7 +5,7 @@
 
 ## 一、我的原则
 
-第 1 轮从 65 条里提炼出 7 条。第 2 轮又溯源了 151 条：7 条都补上了新证据，另外新增 4 条（原则 8～11）。2026-10-18 Luke 全部确认，其中原则 2、6、8 按建议改了说法。第 3 轮溯源了 7 条：原则 1、2、5、7、8、10、11 补了新证据，另外新增 1 条草稿（原则 12）。
+第 1 轮从 65 条里提炼出 7 条。第 2 轮又溯源了 151 条：7 条都补上了新证据，另外新增 4 条（原则 8～11）。2026-10-18 Luke 全部确认，其中原则 2、6、8 按建议改了说法。第 3 轮溯源了 7 条：原则 1、2、5、7、8、10、11 补了新证据，另外新增 1 条（原则 12），Luke 当天确认。
 
 ### 原则 1：质量靠闭环：回路越短、越能自动判对错，进步越快
 
@@ -137,7 +137,7 @@
 
 ### 原则 12：放权按后果分级、靠证据升级：碰钱、对外、删除、难撤销的留给人；其余先只起草，记录好了再一级级放宽，一次意外就收回
 
-- 状态：草稿（第 3 轮新增，待 Luke 确认）
+- 状态：已确认（2026-10-18，第 3 轮新增）
 - 支撑的新知识：[OpenAI Dots 放权指南：动作分进 6 个权限区，每周按证据升降](clips/2026-10-18-choopyplug1-openai-dots-agent-permission-zones.md)、[常驻 agent 的 6 层结构（推文作者据 OpenAI 资料自制的 PDF）](clips/2026-10-18-choopyplug1-openai-always-on-agent-six-layers.md)、[yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md)（共 3 条）
 - 对应的源知识：[最小权限原则](roots/principle-of-least-privilege.md)、[失效安全默认（默认拒绝）](roots/fail-safe-defaults.md)、[自动化的类型与等级模型](roots/parasuraman-2000-levels-of-automation.md)、[对自动化的信任：为恰当依赖而设计](roots/lee-2004-trust-in-automation.md)、[纵深防御](roots/defense-in-depth.md)、[瑞士奶酪模型](roots/swiss-cheese-model.md)、[例外管理（例外原则）](roots/management-by-exception.md)
 - 和你已有原则的关系：你全局规则第 3 节写的“只有这几类事才停下来问他：要花钱、要对外发送、要删除东西、要合并或上线……”，就是 Dots 那条说的“必须交回人”那一区。这一条补的是另一半：其余的事不是一次放开，而是按记录一级级放宽，出一次意外就退一级。
