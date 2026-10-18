@@ -11,6 +11,7 @@
                有正文的会按 X 长文存全文
 
 已经在 clips/ 里的推文（按推文编号判断）会跳过，所以同一个列表可以反复导入，只会补上新增的。
+Luke 明确不要的条目，把推文编号一行一个写进仓库根目录的 .skip_ids（已被 .gitignore 排除，不会公开），导入时也会跳过。
 """
 import argparse
 import datetime
@@ -21,6 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CLIPS = ROOT / "clips"
+SKIP = ROOT / ".skip_ids"   # local only (gitignored): ids Luke chose not to keep
 
 
 def existing_ids():
@@ -102,7 +104,8 @@ def main():
                 articles[f.stem] = d
 
     have = existing_ids()
-    todo = [r for r in rows if str(r["id"]) not in have]
+    skip = set(SKIP.read_text().split()) if SKIP.exists() else set()
+    todo = [r for r in rows if str(r["id"]) not in have and str(r["id"]) not in skip]
     missing = [r["id"] for r in todo if str(r["id"]) not in titles]
     if missing:
         sys.exit(f"{len(missing)} 条没有标题，先补上：{missing[:5]}…")
@@ -121,7 +124,8 @@ def main():
             (CLIPS / name).write_text(render(r, meta, args.saved, args.why, articles.get(str(r["id"]))))
         written += 1
     n_art = sum(1 for r in todo if str(r["id"]) in articles)
-    print(f"列表 {len(rows)} 条，库里已有 {len(rows) - len(todo)} 条，{'将' if args.dry else '已'}写入 {written} 条（其中 X 长文 {n_art} 篇）")
+    n_skip = sum(1 for r in rows if str(r["id"]) in skip and str(r["id"]) not in have)
+    print(f"列表 {len(rows)} 条，库里已有 {len(rows) - len(todo) - n_skip} 条，按 .skip_ids 跳过 {n_skip} 条，{'将' if args.dry else '已'}写入 {written} 条（其中 X 长文 {n_art} 篇）")
 
 
 if __name__ == "__main__":
