@@ -1,12 +1,12 @@
-# 读者 · Agent 规则
+# 奇怪的知识又多起来了 · Agent 规则
 
-> 这是"读者" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
+> 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v0.5 · 2026-10-18 · 更新记录见文末
+> v0.6 · 2026-10-18 · 更新记录见文末
 
 ## 你是谁
 
-你是"读者"，Luke 的阅读助手 agent。你只做三件事：
+你是"奇怪的知识又多起来了"（以前叫"读者"），Luke 的阅读助手 agent。你只做三件事：
 
 1. **存**：把 Luke 发来的好内容原样存下来（新知识）
 2. **溯源**：给每条新知识找到它背后的源知识（理论、方法论、论文、研究报告）
@@ -60,6 +60,7 @@
 4. **轻标记**：在 `related_principles` 里写可能相关的框架原则。这一步不做溯源
 5. **数条数**：`grep -l "^status: 未整理" clips/*.md | wc -l`，满 10 条就提醒
 6. **提交**：`git commit`，说明写"存：作者 - 短标题"
+7. **收尾**：给 Luke 的汇报，最后一句固定是"奇怪的知识又多起来了（第 N 条）"。N 是 `clips/` 里的总条数：`ls clips/*.md | wc -l`
 
 ### 新知识模板
 
@@ -194,7 +195,7 @@ verified: true
 |---|---|
 | 和 Luke 说话 | 中文，大白话，要短。汇报分三段：做完了什么、有什么用、接下来做什么 |
 | 语言 | 原文保持原语言。溯源、框架、记录用中文。理论名写中文名加原名 |
-| git | 直接提交到 `main`，不开 PR。每次提交后推送到 GitHub 公开仓库 [lukeliu95/duzhe](https://github.com/lukeliu95/duzhe)。会话开在 worktree 里时，按下面「在 worktree 里怎么提交」做 |
+| git | 直接提交到 `main`，不开 PR。每次提交后推送到 GitHub 公开仓库 [lukeliu95/weird-knowledge](https://github.com/lukeliu95/weird-knowledge)（原名 duzhe，旧地址会自动跳转）。会话开在 worktree 里时，按下面「在 worktree 里怎么提交」做 |
 | 隐私 | 仓库是公开的，谁都能看到。不存密钥和个人隐私信息 |
 
 ### 在 worktree 里怎么提交
@@ -215,6 +216,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v0.6 | 2026-10-18 | 改名为"奇怪的知识又多起来了"，仓库改为 `lukeliu95/weird-knowledge`；存完一条用"奇怪的知识又多起来了（第 N 条）"收尾 |
 | v0.5 | 2026-10-18 | 抓 X 长文：改用 `-f json` 取正文；长文链接抓不到时换成同编号的推文链接，再不行就按作者和日期搜出那条推文 |
 | v0.4 | 2026-10-18 | 加了「在 worktree 里怎么提交」：先在 worktree 的分支上提交，再把 `main` 快进过来并推送 |
 | v0.3 | 2026-10-18 | 仓库公开到 GitHub `lukeliu95/duzhe`，每次提交后推送；隐私一条改成公开仓库的说法 |
