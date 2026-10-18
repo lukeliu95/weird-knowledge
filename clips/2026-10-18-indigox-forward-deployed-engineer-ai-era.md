@@ -7,10 +7,10 @@ published: 2026-07-06 07:19 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [forward-deployed-engineer, sticky-information, tacit-knowledge, seci-model-of-knowledge-dimensions, experience-curve-effect, vendor-lock-in, kerr-1975-rewarding-a-hoping-for-b, leavitt-1958-management-in-the-1980s, karpathy-2025-software-is-changing-again]
 ---
 
 ## 原文
@@ -323,3 +323,16 @@ FDE 是"部署"，更是一场知识形态的迁移。 这期对谈最深的一�
 
 ## 溯源
 
+- 核心主张：AI 落地的瓶颈是企业的业务诀窍说不清、写不下，必须派工程师到现场把它翻译成模型能执行的上下文；FDE 和外包的区别在于把现场摩擦回流进产品、沉淀成可复用的 Skill，越做越快，而这要靠合适的组织归属和人与人的信任才能转起来。
+- 源知识：
+  - [前线部署工程师](../roots/forward-deployed-engineer.md) · 关系：直接源自 · 强弱：强。文章明说 FDE 源于 Palantir 的实践，全篇围绕这个岗位展开。
+  - [粘滞信息](../roots/sticky-information.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。von Hippel 说难以转移的本地信息会让解决问题的地点挪到信息所在处；文中“需求复杂到无法用文档说清，必须人到现场”是同一个道理，但没有引用。
+  - [默会知识（隐性知识）](../roots/tacit-knowledge.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“主管脑子里的 SOP 和接线员实际做的不一样”“接地气的 Know-How 只有在场才能获得”对应波兰尼的“我们知道的比能说出来的多”；维基也写到默会知识的转移需要密切接触和信任，与文中“信任是人类最后的堡垒”呼应。
+  - [SECI 知识转化模型](../roots/seci-model-of-knowledge-dimensions.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。把客户现场经验写成 Markdown / Skill 再复用给下一个客户，对应 SECI 模型里“外化（默会变显性）”和“组合”两步。
+  - [经验曲线效应](../roots/experience-curve-effect.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“做到第五家，两个月的活变成两天”是经验曲线（累计做得越多、单位耗时越少）在部署服务上的体现。
+  - [供应商锁定](../roots/vendor-lock-in.md) · 关系：直接源自 · 强弱：强。文章明确讨论“没人想被绑死在某个模型上”“企业一旦选择，就被锁进云端”“迁移成本就是护城河”。
+  - [奖励 A 却指望 B 的愚蠢](../roots/kerr-1975-rewarding-a-hoping-for-b.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。文中说 FDE 归专业服务部门管就只算人头和工时、退化成外包——考核什么就得到什么，正是 Kerr 讲的“奖励 A 却指望 B”。
+  - [《1980 年代的管理》](../roots/leavitt-1958-management-in-the-1980s.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“Agent 让战场对指挥官透明、传话型中层被抽离”与 1958 年 Leavitt 和 Whisler 预言信息技术会让中层管理大幅减少几乎是同一个判断。
+  - [软件又变了（软件 3.0 演讲）](../roots/karpathy-2025-software-is-changing-again.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“Skill 不是 If-Then-Else 代码，而是由模型按上下文动态执行的 Markdown”与 Karpathy 的“软件 3.0：用自然语言给大模型编程”相近。
+- 本质：这条新知识本质上是“粘滞信息 / 默会知识只能在现场获取”在 AI 企业部署场景下的应用，再叠加经验曲线带来的复利。
+- 整理于：2026-10-18（第 1 轮）

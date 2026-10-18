@@ -7,10 +7,10 @@ published: 2023-11-26 00:01 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 思维与成长
-roots: []
+roots: [matthew-effect, exponential-growth, winner-take-all-market, rosen-1981-economics-of-superstars, efficient-market-hypothesis]
 ---
 
 ## 原文
@@ -160,3 +160,12 @@ Y Combinator 倡导创始人更多关注增长率而非绝对数值。这不仅�
 
 ## 溯源
 
+- 核心主张：绩效带来的回报常常是超线性的，来源有两个：指数增长（成果建立在以往成果之上）和阈值（赢者通吃）；所以要选能复利的工作、一直学习、跟着好奇心走，并尽量做到顶尖。
+- 源知识：
+  - [马太效应（累积优势）](../roots/matthew-effect.md) · 关系：换了说法 · 强弱：强。原文英文版写 In all of these, the rich get richer（中译“成功者往往会越来越成功”），和马太效应的经典表述几乎一字不差，但作者没点名
+  - [指数增长](../roots/exponential-growth.md) · 关系：直接源自 · 强弱：强。作者明说超线性回报的第一来源是指数增长，并举了米粒翻倍的故事
+  - [赢者通吃市场](../roots/winner-take-all-market.md) · 关系：直接源自 · 强弱：强。作者直接用“赢者通吃”作为第二个来源，并说只比别人好一点就能拿走全部奖励
+  - [超级明星经济学](../roots/rosen-1981-economics-of-superstars.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者说名声集中是因为人们注意力有限、明星名单只有那么多，和 Rosen 解释超级明星收入的思路很像，但未引用
+  - [有效市场假说](../roots/efficient-market-hypothesis.md) · 关系：直接源自 · 强弱：强。“如果所有人都看好，股价已经反映了这一预期”几乎就是有效市场假说的原话，作者用它说明投资必须独立思考
+- 本质：这条新知识本质上是正反馈（复利、马太效应）和赢者通吃（超级明星经济学）在个人职业选择与创业场景下的应用。
+- 整理于：2026-10-18（第 1 轮）

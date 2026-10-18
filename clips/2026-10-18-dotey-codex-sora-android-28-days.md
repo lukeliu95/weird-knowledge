@@ -7,10 +7,10 @@ published: 2025-12-18 02:43 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [hum-2025-sora-android-codex, brookss-law, span-of-control, sheridan-1992-human-supervisory-control, theory-of-constraints, brown-2020-few-shot-learners, boehm-1981-software-engineering-economics]
 ---
 
 ## 原文
@@ -96,3 +96,14 @@ AI把搬砖的活儿接走了，但画图纸的活儿还是你的。
 
 ## 溯源
 
+- 核心主张：AI agent 能放大团队产出，但放大多少取决于人分解任务、定规范、审查结果的能力；做法是先定架构、先让 AI 理解系统并出计划、给好的参考样例，而人的审查速度成了新瓶颈，agent 也不能无限加。
+- 源知识：
+  - [OpenAI：用 Codex 28 天做出 Sora 安卓版](../roots/hum-2025-sora-android-codex.md) · 关系：直接源自 · 强弱：强。原文就是对 OpenAI 这篇文章的解读，4 人团队、架构先行、写 AGENT.md、先计划后写代码、参考 iOS 代码都出自原文
+  - [布鲁克斯定律](../roots/brookss-law.md) · 关系：直接源自 · 强弱：强。作者直接引用了 Brooks「向延期的软件项目增加人力只会让它更延期」，并推出「也不能无限增加 agent」（这是宝玉自己的引申，OpenAI 原文没提）
+  - [管理幅度](../roots/span-of-control.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「韩信带兵多多益善」和「需要人去分配任务、验证结果，所以不能无限加 agent」讨论的就是一个人能有效带多少下属
+  - [人类监督控制](../roots/sheridan-1992-human-supervisory-control.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。工程师从写代码变成写规范教 AI、审计划、看汇报给反馈，和人类监督控制里「计划、教导、监控、介入」的角色一致
+  - [约束理论](../roots/theory-of-constraints.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「瓶颈不再是敲代码多快，而是大脑审查验证代码的速度多快」说的是瓶颈转移到了人的审查环节
+  - [语言模型是少样本学习者（GPT-3 论文）](../roots/brown-2020-few-shot-learners.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「给 AI 好的参考，让它照葫芦画瓢」依靠的就是大模型在上下文里照着示例做事的能力
+  - [《软件工程经济学》（错误越晚修越贵）](../roots/boehm-1981-software-engineering-economics.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「规划环节看起来慢了，其实省了大量返工」与 Boehm「错误越晚发现修起来越贵」一致
+- 本质：这条新知识本质上是布鲁克斯定律和管理幅度（协作者越多协调成本越高、一个人能带的下属有限）在「人带一群 AI agent 开发软件」场景下的应用。
+- 整理于：2026-10-18（第 1 轮）

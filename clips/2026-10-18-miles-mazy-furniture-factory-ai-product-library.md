@@ -7,10 +7,10 @@ published: 2026-09-12 17:23 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [jobs-to-be-done, disruptive-innovation, diffusion-of-innovations, appropriate-technology]
 ---
 
 ## 原文
@@ -63,3 +63,11 @@ roots: []
 
 ## 溯源
 
+- 核心主张：赚钱的 AI 生意可以很“土”：把传统行业散乱的产品资料整理成能查的库，解决一个具体痛点（找产品从 20 分钟变 2 分钟）；技术刚好够用、客户听得懂，比技术高级更重要。
+- 源知识：
+  - [待完成的任务](../roots/jobs-to-be-done.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。老板不在乎有没有 Agent、RAG 做得糙不糙，只在乎“客户问型号两分钟能回”，是“客户雇产品来完成一件事”的典型。
+  - [颠覆式创新](../roots/disruptive-innovation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“我最怕同行把技术做得太高级”对应低端颠覆：高端方案性能过剩，“够用就好”的简单方案反而能拿下被忽视的客户。
+  - [创新扩散理论](../roots/diffusion-of-innovations.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Rogers 说创新越容易理解、相对优势越明显、效果越看得见，扩散越快；“高级了老板听不懂，我这个刚好”正是复杂度这一条。
+  - [适用技术](../roots/appropriate-technology.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。适用技术主张选用户负担得起、能理解、能维护的最简单技术，与“刚好”的说法相近。
+- 本质：这条新知识本质上是“待完成的任务”和“低端颠覆 / 够用就好”在传统中小企业 AI 落地场景下的应用。
+- 整理于：2026-10-18（第 1 轮）

@@ -7,10 +7,10 @@ published: 2026-08-22 06:53 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [write-ahead-logging, database-transaction, packer-2023-memgpt-llm-os, data-processing-inequality, separation-of-concerns, dataset-shift, modularity-theory]
 ---
 
 ## 原文
@@ -94,3 +94,14 @@ Harness 这东西，开始越来越像 AI 时代的操作系统了🤔
 
 ## 溯源
 
+- 核心主张：长时间运行的 Agent，难点从工具多少变成状态管理：上下文压缩要能找回原文，执行要像数据库事务一样先记意图再记结果以便崩溃恢复，各部分边界要清楚；而且模型越强越和自家 harness 绑在一起，harness 越来越像操作系统。
+- 源知识：
+  - [预写日志](../roots/write-ahead-logging.md) · 关系：换了说法 · 强弱：强。「工具执行前先写 intent，结束再写结果，崩溃后要知道执行过没有」几乎一字不差就是预写日志。
+  - [数据库事务](../roots/database-transaction.md) · 关系：直接源自 · 强弱：强。作者明说把一次 Agent Run 当成「接近数据库事务的东西」来设计。
+  - [MemGPT：让大模型像操作系统一样管理内存](../roots/packer-2023-memgpt-llm-os.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「上下文只留一小段、完整结果落盘留路径、需要时再读回」以及「harness 像操作系统」，都与 MemGPT 的虚拟上下文管理一致；作者未引用。
+  - [信息处理不等式](../roots/data-processing-inequality.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「永久有损裁剪后，模型再聪明也读不回来」就是信息处理不等式「后处理不能增加信息」。
+  - [关注点分离](../roots/separation-of-concerns.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。强调对话、运行状态、UI、扩展各自分开，哪些能持久化、哪些只能观察，是关注点分离。
+  - [数据集偏移](../roots/dataset-shift.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。模型按自家 harness 的工具格式做后训练，换到别家 harness 就编造不存在的参数，是训练和部署分布不一致的表现；作者自己也说这是猜测。
+  - [相互依赖与模块化理论](../roots/modularity-theory.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「模型和 harness 逐渐变成一个整体」与克里斯坦森「产品还不够好时，一体化架构占优」相符。
+- 本质：这条新知识本质上是数据库事务恢复、虚拟内存和模块化这些操作系统与数据库的老方法在长时间运行 Agent 上的应用。
+- 整理于：2026-10-18（第 1 轮）

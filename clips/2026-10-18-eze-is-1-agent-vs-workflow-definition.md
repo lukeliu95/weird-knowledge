@@ -7,10 +7,10 @@ published: 2025-10-27 09:27 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [anthropic-2024-building-effective-agents, occams-razor, galls-law, observability-software, intelligent-agent]
 ---
 
 ## 原文
@@ -35,3 +35,12 @@ Anthropic 分享了他们与数十个团队、客户合作构建智能体后，�
 
 ## 溯源
 
+- 核心主张：由代码预设执行路径的是工作流，由模型自己决定下一步的才是 Agent；搭建时应从最简单的方案起步、确有必要才加复杂度，并让每一步规划保持透明。
+- 源知识：
+  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：直接源自 · 强弱：强。作者明说引用 Anthropic 的划分，工作流和 Agent 的定义、三条建议都与原文一致。
+  - [奥卡姆剃刀](../roots/occams-razor.md) · 关系：直接源自 · 强弱：强。作者原文写了「如无必要，无增实体」，就是奥卡姆剃刀的流行表述。
+  - [加尔定律](../roots/galls-law.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「先用简单提示做出第一版，智能不足时再加步骤」与加尔定律「从能运转的简单系统演化」一致。
+  - [可观测性（软件）](../roots/observability-software.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「不可解释就无法维护、无法针对生产问题调优」，与软件可观测性「能从外部看清内部状态才能排障」是同一个道理。
+  - [智能体](../roots/intelligent-agent.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。经典 AI 教科书的 agent 定义更宽（恒温器也算），Anthropic 用「谁决定下一步」即自主程度来划线，口径更窄，是在经典定义里切出一类。
+- 本质：这条新知识本质上是奥卡姆剃刀（简约原则）和可观测性原则在大模型系统架构选型上的应用。
+- 整理于：2026-10-18（第 1 轮）

@@ -7,10 +7,10 @@ published: 2023-09-17 12:00 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 思维与成长
-roots: []
+roots: [delayed-gratification, stanford-marshmallow-experiment, kidd-2013-rational-snacking, grit-personality-trait, the-7-habits-of-highly-effective-people, delivering-happiness, sunk-cost, tao-te-ching]
 ---
 
 ## 原文
@@ -186,3 +186,15 @@ roots: []
 
 ## 溯源
 
+- 核心主张：张一鸣认为成长靠延迟满足、克服惰性、积极主动和长期专注，这些比天赋更决定成就；转述者补了一句反思：延迟满足对人和环境要求极高，及时兑现也是合理选项。
+- 源知识：
+  - [延迟满足](../roots/delayed-gratification.md) · 关系：直接源自 · 强弱：强。原文多次直接用“延迟满足感”，并把它和努力、天赋并列为成功三要素。
+  - [斯坦福棉花糖实验](../roots/stanford-marshmallow-experiment.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。张一鸣在用棉花糖实验那套“能等的人更成功”的经典结论；转述者 Sea 说“大佬的话不要全信，落袋为安也是选项”，是在反对这个结论。
+  - [理性吃零食：环境可靠性影响孩子等不等](../roots/kidd-2013-rational-snacking.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Sea 说践行延迟满足“对人和事有极高要求”，和 Kidd 等发现“环境不可靠时，孩子不等反而是理性的”很像，Sea 没有引用。
+  - [坚毅](../roots/grit-personality-trait.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“以大多数人努力程度之低，根本轮不到拼天赋”和 Duckworth“坚毅比天赋更能预测长期成就”的主张很像。
+  - [《高效能人士的七个习惯》](../roots/the-7-habits-of-highly-effective-people.md) · 关系：直接源自 · 强弱：强。第 15 条直接写“Be Proactive（积极主动）的修炼方法之一”，这是柯维七个习惯里的第一个。
+  - [《三双鞋》（传递幸福）](../roots/delivering-happiness.md) · 关系：直接源自 · 强弱：强。第 20 条“快乐有三种：pleasure、passion、higher purpose，理想最持久”和谢家华（Tony Hsieh）的三种快乐说法一字不差。
+  - [沉没成本](../roots/sunk-cost.md) · 关系：换了说法 · 强弱：强。第 13 条“不能舍（因过去付出而不放弃）”就是沉没成本谬误。
+  - [《道德经》](../roots/tao-te-ching.md) · 关系：直接源自 · 强弱：强。第 51 条明说引用老子“祸兮福之所倚，福兮祸之所伏”（《道德经》第五十八章）。
+- 本质：这条新知识本质上是延迟满足（跨期选择里“为更大的未来回报放弃眼前回报”）在个人成长和职业选择场景下的应用，外加一层反思：只有环境可靠时，等待才划算。
+- 整理于：2026-10-18（第 1 轮）

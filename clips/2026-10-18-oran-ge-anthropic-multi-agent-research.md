@@ -7,10 +7,10 @@ published: 2025-06-14 00:41 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [anthropic-2025-multi-agent-research-system, collective-intelligence, division-of-labour, amdahls-law, neural-scaling-law]
 ---
 
 ## 原文
@@ -82,3 +82,12 @@ LeadResearcher 首先仔细考虑方法并将其计划保存到内存中以保�
 
 ## 溯源
 
+- 核心主张：把复杂的研究任务拆给多个各带独立上下文的子 Agent 并行搜索，再由主 Agent 汇总，能用更多 token 换来明显更好的结果；但成本约为聊天的 15 倍，只适合价值高、可以并行的任务。
+- 源知识：
+  - [Anthropic 多智能体研究系统](../roots/anthropic-2025-multi-agent-research-system.md) · 关系：直接源自 · 强弱：强。原帖就是 Anthropic 2025-06-13 这篇文章的中文转述，90.2%、token 用量解释 80% 差异、4 倍和 15 倍 token、“搜索的本质是压缩”都和原文一致。
+  - [集体智能](../roots/collective-intelligence.md) · 关系：直接源自 · 强弱：强。原文明确拿“人类社会靠集体智能在信息时代指数级变强”来类比 Agent 群体。
+  - [分工](../roots/division-of-labour.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。子 Agent 各有分工、各用不同工具和提示词，是分工原理在 Agent 上的翻版（推断，待 Luke 确认）。
+  - [阿姆达尔定律](../roots/amdahls-law.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。原文说需要共享上下文、彼此依赖的任务（比如多数编码任务）不适合多 Agent，这和“不能并行的部分决定加速上限”一致（推断，待 Luke 确认）。
+  - [神经网络规模定律](../roots/neural-scaling-law.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“80% 的性能差异由 token 用量解释”是推理时算力越多效果越好的一个实例（推断，待 Luke 确认）。
+- 本质：这条新知识本质上是分工和集体智能（同时受阿姆达尔定律约束）在大模型 Agent 做研究这个场景下的应用：多花 token、多路并行，换更广的覆盖。
+- 整理于：2026-10-18（第 1 轮）

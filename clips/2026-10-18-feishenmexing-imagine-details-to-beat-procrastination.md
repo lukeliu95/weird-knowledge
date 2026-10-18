@@ -7,10 +7,10 @@ published: 未知
 saved: 2026-10-18
 why: 未说明
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 思维与成长
-roots: []
+roots: [pham-1999-process-mental-simulation, implementation-intention, galla-2015-habits-self-control]
 ---
 
 ## 原文
@@ -21,3 +21,10 @@ roots: []
 
 ## 溯源
 
+- 核心主张：不想动手时，把这件事打算怎么做在脑子里一步步想到细节，会生出动手的劲头；长期这样做会养成自律，之后不再靠意志力硬扛。
+- 源知识：
+  - [过程型心理模拟比结果型更能促成行动](../roots/pham-1999-process-mental-simulation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。实验发现“想象怎么做的过程”比“想象好结果”更能促成行动、提高成绩，和“想细节就能动手”很像，作者未引用
+  - [执行意图（如果-那么计划）](../roots/implementation-intention.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。执行意图要求把何时、何地、怎么做想具体，能显著提高执行率，和“具体到每个细节”相近
+  - [自控力强的人靠好习惯而不是硬扛](../roots/galla-2015-habits-self-control.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。研究发现自控力强的人更少靠硬压冲动、更多靠好习惯，和“越来越自律、不再需要对抗”相近
+- 本质：这条新知识本质上是“过程型心理模拟”和执行意图（行动阶段模型里的计划环节）在克服拖延场景下的应用；后半段对应“自控力强的人靠习惯而不是硬扛”。
+- 整理于：2026-10-18（第 1 轮）

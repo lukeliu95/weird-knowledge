@@ -7,10 +7,10 @@ published: 2026-09-16 06:34 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [zheng-2026-dream-rsi-replay, sutton-1990-dyna, ha-2018-world-models, recursive-self-improvement, zelikman-2023-self-taught-optimizer, exploration-exploitation-dilemma]
 ---
 
 ## 原文
@@ -57,3 +57,13 @@ ConvDiv 和 ConvMax 在相近预算下，性能分别提高了 2.09× 和 1.44×
 
 ## 溯源
 
+- 核心主张：把 Agent 过去的探索历史做成回放模拟器，在里面低成本反复试验新的探索策略再部署回真实任务，就能在不改模型权重的前提下递归改进 Agent 的外层编排；而把经验总结塞回提示词，反而会因偏见损失探索多样性。
+- 源知识：
+  - [Dream-RSI：在演化的世界里递归自我改进](../roots/zheng-2026-dream-rsi-replay.md) · 关系：直接源自 · 强弱：强。作者明说在介绍这篇论文；回放模拟器、做梦、把经验当提示反而更差，都与论文一致。
+  - [Dyna：学习、规划与反应的一体化架构](../roots/sutton-1990-dyna.md) · 关系：直接源自 · 强弱：强。论文引用 Sutton 1990，并以「学一个环境模型、用想象的轨迹改进策略」作为核心类比，这正是 Dyna 的思路。
+  - [世界模型](../roots/ha-2018-world-models.md) · 关系：直接源自 · 强弱：强。论文引用 World Models；「在自己的梦里训练策略、再搬回真实环境」是 World Models 摘要里的原话思路。
+  - [递归自我改进](../roots/recursive-self-improvement.md) · 关系：直接源自 · 强弱：强。论文标题就是 Recursive Self-Improvement。
+  - [自学优化器（STOP）：递归自我改进的代码生成](../roots/zelikman-2023-self-taught-optimizer.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「模型不变，改进的是外层脚手架」与 STOP 的做法相同；抓取到的论文引用列表里没看到 STOP。
+  - [探索与利用困境](../roots/exploration-exploitation-dilemma.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「总结出的经验变成偏见，让 Agent 过早集中在少数方向」是过度利用、探索不足的典型表现；论文只泛泛说会限制探索。
+- 本质：这条新知识本质上是基于模型的强化学习（Dyna 和世界模型里的「做梦」）在 Agent 外层编排自我改进上的应用。
+- 整理于：2026-10-18（第 1 轮）

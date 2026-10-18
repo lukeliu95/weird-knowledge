@@ -7,10 +7,10 @@ published: 2026-04-14 10:02 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [pang-2026-ai-first-harness, theory-of-constraints, business-process-re-engineering, productivity-paradox, devops-research-and-assessment, sheridan-1992-human-supervisory-control]
 ---
 
 ## 原文
@@ -85,3 +85,13 @@ CTO花在日常管理上的时间，直接从60%降到了不到10%。
 
 ## 溯源
 
+- 核心主张：在旧流程上叠加 AI 工具只能小幅提效，因为真正的瓶颈在上下游的人工环节；AI 优先要以「AI 是主要开发者」为前提重建工程体系和组织分工，人只做定规则的架构师和判风险的验证者。
+- 源知识：
+  - [Peter Pang：CREAO 的 AI 优先改造长文](../roots/pang-2026-ai-first-harness.md) · 关系：直接源自 · 强弱：强。原文就是对 Peter Pang 这篇长文的转述，10-20% 提效、PM 两周和 QA 三天的瓶颈、单一仓库、三路 AI 评审、自愈引擎、架构师和验证者两种角色都可在原文编译稿里核对到
+  - [约束理论](../roots/theory-of-constraints.md) · 关系：换了说法 · 强弱：强。「AI 再快，只要有一个环节是人在拖，整体效率就还是人的效率」几乎就是约束理论的「链条强度取决于最弱一环」
+  - [业务流程再造](../roots/business-process-re-engineering.md) · 关系：换了说法 · 强弱：强。「在旧流程上叠 AI 最多提效 10-20%，结构没变；要把架构、流程、组织全部推倒重来」与 Hammer「不要自动化旧流程，要消灭它」几乎一致
+  - [生产率悖论](../roots/productivity-paradox.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。新技术只叠在旧组织上看不到生产率提升、要配合组织重构才见效，和 IT 生产率悖论的主流解释同构
+  - [DORA 研究与《Accelerate》](../roots/devops-research-and-assessment.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。用每天部署次数、当天发现并回滚来衡量团队，并说部署频率上去后业务指标反而上升，与 DORA 四项指标和《Accelerate》的结论方向一致
+  - [人类监督控制](../roots/sheridan-1992-human-supervisory-control.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。人只剩「设计规则和 SOP、批判 AI 输出」的架构师和「判断风险和质量」的验证者，对应监督控制里人从操作者变成计划、教导、监控、介入者
+- 本质：这条新知识本质上是约束理论（整体产出由最慢的环节决定）和业务流程再造（不要自动化旧流程，要重新设计流程）在 AI 编程团队改造场景下的应用。
+- 整理于：2026-10-18（第 1 轮）

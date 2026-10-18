@@ -7,10 +7,10 @@ published: 2026-07-12 05:17 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [bitter-lesson, anthropic-2024-building-effective-agents, ensemble-learning, galls-law, productivity-paradox]
 ---
 
 ## 原文
@@ -58,3 +58,12 @@ Agent 降低了开发和试错成本，也可能带来新的问题。
 
 ## 溯源
 
+- 核心主张：模型变强后，Agent 不再需要写死每一步的流程代码，重点转向设计多个 Agent 如何协作；企业落地要从一个人的提效做起再逐步推广，而个人能力被放大并不会自动解决团队的协调和取舍。
+- 源知识：
+  - [苦涩的教训](../roots/bitter-lesson.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「手写流程控制被更强模型的通用能力取代、编排层变薄」与 Sutton 的苦涩教训同一方向；对谈没有引用。
+  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。多个 Agent 同解一题选最佳、一个提方案一个挑错，对应 Anthropic 自家文章里的并行（投票）和评估-优化模式；对谈未明说。
+  - [集成学习](../roots/ensemble-learning.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。让多个 Agent 解同一个问题再选出最好的，是集成方法「多个模型合起来比单个好」的思路。
+  - [加尔定律](../roots/galls-law.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「先在一个人身上见效，再推到团队、最后跨部门，别先画宏大蓝图」与加尔定律「能运转的复杂系统都从能运转的简单系统演化而来」一致。
+  - [生产率悖论](../roots/productivity-paradox.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「个体变强不等于团队变好」与生产率悖论研究的结论相近：新技术要配合组织层面的改变，整体效益才会出现。
+- 本质：这条新知识本质上是「通用能力替代手工规则」（苦涩教训）和「从简单可运转的系统逐步演化」（加尔定律）在企业落地 Agent 场景下的应用。
+- 整理于：2026-10-18（第 1 轮）

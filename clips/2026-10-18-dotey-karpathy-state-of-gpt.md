@@ -7,10 +7,10 @@ published: 2023-05-27 23:36 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 模型与本地部署
-roots: []
+roots: [reinforcement-learning-from-human-feedback, language-model, wei-2022-chain-of-thought-prompting, wang-2022-self-consistency, dual-process-theory]
 ---
 
 ## 原文
@@ -84,3 +84,12 @@ YouTube地址：https://t.co/fnRwGdmL1K
 
 ## 溯源
 
+- 核心主张：GPT 助手是按四步训练出来的：预训练（预测下一个词）→ 监督微调 → 奖励建模 → 强化学习。但模型只是一个接一个地生成 token，不会自己反思和检查，所以用的时候要给它留出推理步骤、多抽样几次挑最好的，并明确要求它自检。
+- 源知识：
+  - [基于人类反馈的强化学习（RLHF）](../roots/reinforcement-learning-from-human-feedback.md) · 关系：直接源自 · 强弱：强。预训练、监督微调、奖励建模、强化学习这四个阶段，就是 InstructGPT 公开的 RLHF 流程；演讲本身也以 RLHF 为主线
+  - [语言模型](../roots/language-model.md) · 关系：直接源自 · 强弱：强。原文写明预训练的目标是“预测文本序列中的下一个单词”
+  - [思维链提示](../roots/wei-2022-chain-of-thought-prompting.md) · 关系：直接源自 · 强弱：强。原文点名 CoT（Chain of Thought），也就是让模型先展示推理过程
+  - [自洽性（多路径投票）](../roots/wang-2022-self-consistency.md) · 关系：直接源自 · 强弱：强。原文说“多次抽样然后选择最佳结果”；演讲内容摘要也记录了 self-consistency 这一技巧
+  - [双过程理论（系统一 / 系统二）](../roots/dual-process-theory.md) · 关系：直接源自 · 强弱：强。人写作时脑子里算了很多步、模型只顺着往下生成，这段对比在演讲里引的是 Kahneman 的系统一和系统二（量子位的演讲报道有记录）
+- 本质：这条新知识本质上是“用最大似然训练语言模型，再加人类偏好强化学习”在打造聊天助手上的应用。用的时候，再用“系统二式”的显式推理、多次投票和自检，去补模型只会“系统一式”逐词凭直觉生成的短板。
+- 整理于：2026-10-18（第 1 轮）

@@ -7,10 +7,10 @@ published: 2026-10-17 09:34
 saved: 2026-10-18
 why: 冷知识做为知识佐料很有趣
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 历史与冷知识
-roots: []
+roots: [struve-1993-voices-ming-qing-cataclysm, empress-dowager-wang-southern-ming, michal-boym, xu-guangqi, affinity-fraud]
 ---
 
 ## 原文
@@ -23,3 +23,12 @@ roots: []
 
 ## 溯源
 
+- 核心主张：南明永历朝廷的王太后（教名海伦娜）、太子（教名康斯坦丁）等确实受洗入了天主教，明末重臣徐光启教名保禄（保罗），这些在美国出版的学术书里都查得到；作者借此调侃：拿这种外人没听过、却查得到出处的冷知识，最容易混进教会圈子博取信任。
+- 源知识：
+  - [《明清巨变亲历者文献选译》](../roots/struve-1993-voices-ming-qing-cataclysm.md) · 关系：直接源自 · 强弱：强。原帖配图就是这本书的封面；维基 Michał Boym 条目引用此书第 235–238 页作为南明皇室受洗的出处。
+  - [南明王太后（孝正太后）受洗](../roots/empress-dowager-wang-southern-ming.md) · 关系：直接源自 · 强弱：强。维基载王太后 1648 年 4 月由耶稣会士 Koffler 施洗，教名 Helena，和原帖“海伦娜·王”一致。
+  - [卜弥格出使罗马](../roots/michal-boym.md) · 关系：直接源自 · 强弱：强。维基 Michał Boym 条目列出受洗的皇室成员“Helena Wang”和“Prince Constantine (Dangding), Zhu Cuxuan”，和原帖“康斯坦丁·朱”几乎一字不差。
+  - [徐光启（教名保禄）](../roots/xu-guangqi.md) · 关系：直接源自 · 强弱：强。徐光启 1603 年受洗，教名 Paul，就是原帖的“保罗·徐”。但他的实际官职是礼部尚书、文渊阁大学士（内阁次辅），“枢密院高级国务大臣”不是明朝的正式官名，应是调侃式的说法（待确认）。
+  - [亲和诈骗](../roots/affinity-fraud.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者设想的“混进教会、编身世、熟了再开店做生意”正是亲和诈骗的套路：借同一信仰群体内部的信任牟利（推断，原帖是讽刺，待 Luke 确认）。
+- 本质：这条新知识本质上是耶稣会在华传教史里的一段冷门史实（南明皇室受洗），被作者放进“亲和诈骗”式的讽刺场景里使用。
+- 整理于：2026-10-18（第 1 轮）

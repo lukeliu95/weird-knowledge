@@ -7,10 +7,10 @@ published: 2026-10-06 12:50 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 提示词与写作
-roots: []
+roots: [simplified-technical-english, rfc-2119, cooperative-principle, data-processing-inequality]
 ---
 
 ## 原文
@@ -43,3 +43,11 @@ https://t.co/ogGSjIXGhN
 
 ## 溯源
 
+- 核心主张：借用航空维修文档的简化技术英语规范（ASD-STE100）约束 AI：同一对象用同一名称、条件贴着动作写、保留先后顺序、分清建议/要求/可能性，就能减少理解和执行的偏差。
+- 源知识：
+  - [简化技术英语（ASD-STE100）](../roots/simplified-technical-english.md) · 关系：直接源自 · 强弱：强。作者明说规则来自 ASD-STE100，并读了官方的 AI 白皮书。
+  - [RFC 2119 要求等级关键词](../roots/rfc-2119.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“分清建议、要求和可能性”和 RFC 2119 用 MUST / SHOULD / MAY 区分要求等级是同一个做法，作者没提。
+  - [合作原则（格莱斯会话准则）](../roots/cooperative-principle.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“指代清楚、保留先后关系、不为简短删掉原因”和 Grice 方式准则里的“避免歧义、有条理”很像。
+  - [信息处理不等式](../roots/data-processing-inequality.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“CEO 的想法多轮传递后失真”对应信息论里“信息经过多次处理只会减少、不会增加”的结论。
+- 本质：这条新知识本质上是受控自然语言（ASD-STE100 简化技术英语）在给 AI 写指令、让 AI 汇报结果场景下的应用。
+- 整理于：2026-10-18（第 1 轮）

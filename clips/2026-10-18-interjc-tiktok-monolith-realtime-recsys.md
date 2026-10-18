@@ -7,10 +7,10 @@ published: 2024-12-20 16:37 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: []
+roots: [liu-2022-monolith-realtime-recommendation, interest-graph, operant-conditioning]
 ---
 
 ## 原文
@@ -37,3 +37,10 @@ TikTok 的 Monolith 论文有点东西啊
 
 ## 溯源
 
+- 核心主张：推荐系统只要能在用户刷内容的过程中实时更新，即使没有社交关系，也能做出让人停不下来的产品；创作者应顺着这种实时反馈来做内容（追新、引互动、做垂直、写清标题标签、快速迭代）。
+- 源知识：
+  - [Monolith：字节跳动的实时推荐系统](../roots/liu-2022-monolith-realtime-recommendation.md) · 关系：直接源自 · 强弱：强。原帖点名 TikTok 的 Monolith 论文（字节跳动，arXiv 2209.07663），论文核心就是在线训练、实时吸收用户反馈。但论文本身没谈“上瘾”和“社交关系”，这是原帖作者的引申；五条创作建议是 o1 生成的总结，不是论文内容。
+  - [兴趣图谱](../roots/interest-graph.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“没有社交关系图也能做成”和 Eugene Wei 2020 年《TikTok and the Sorting Hat》的兴趣图谱论点一致；原帖没引用（推断，待 Luke 确认）。
+  - [操作性条件反射](../roots/operant-conditioning.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“上瘾”的机制是每刷一次都可能得到不确定的奖励，也就是可变比率强化（推断，待 Luke 确认）。
+- 本质：这条新知识本质上是在线学习（快速反馈闭环）加可变奖励强化在短视频推荐上的应用：反馈越快，系统越快学会你的口味，你也越难停下。
+- 整理于：2026-10-18（第 1 轮）

@@ -7,10 +7,10 @@ published: 2025-09-01 18:26 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [software-prototyping, the-mythical-man-month, cone-of-uncertainty]
 ---
 
 ## 原文
@@ -32,3 +32,10 @@ Vibe Coding 最佳实践之原型开发法：
 
 ## 溯源
 
+- 核心主张：需求不清时，第一版让 AI 快速做一个用完就扔的原型来确认需求；需求和范围明确后，第二版由人主导做数据库、接口、模块等系统设计，再让 AI 按设计实现并配上单元测试和代码审查。
+- 源知识：
+  - [软件原型法（抛弃型原型）](../roots/software-prototyping.md) · 关系：换了说法 · 强弱：强。「第一版只求跑通、用来确认需求、代码是抛弃型的」就是抛弃型原型的定义
+  - [《人月神话》（准备扔掉一个）](../roots/the-mythical-man-month.md) · 关系：换了说法 · 强弱：强。Brooks「第一个系统注定要扔，应该交付吸取教训后的第二版」，与「原型抛弃、第二版重新设计」几乎一致
+  - [不确定性锥](../roots/cone-of-uncertainty.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「需求确定后 Scope 就明确了，更好做系统设计」对应不确定性随项目推进而收窄，重要设计应在收窄之后再定
+- 本质：这条新知识本质上是抛弃型原型法和 Brooks「准备扔掉一个」在 AI 辅助编程场景下的应用：第一版用 AI 低成本试错弄清需求，第二版由人主导认真设计。
+- 整理于：2026-10-18（第 1 轮）

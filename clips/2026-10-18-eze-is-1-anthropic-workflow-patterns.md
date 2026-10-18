@@ -7,10 +7,10 @@ published: 2025-10-27 09:28 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [anthropic-2024-building-effective-agents, pipeline-software, mixture-of-experts, ensemble-learning, divide-and-conquer-algorithm, madaan-2023-self-refine, yao-2022-react]
 ---
 
 ## 原文
@@ -57,3 +57,14 @@ Agent：
 
 ## 溯源
 
+- 核心主张：大模型系统可以归纳成几种可组合的基本模式：增强型 LLM、提示链、路由、并行、协调-执行、评估-优化，以及基于环境反馈循环调用工具的自主 Agent。
+- 源知识：
+  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：直接源自 · 强弱：强。作者明说是 Anthropic 总结的类型，列表与原文逐条对应。
+  - [管道（软件）](../roots/pipeline-software.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。提示链「前一环节的输出交给下一个 LLM 处理」就是软件管道「前一个单元的输出是后一个的输入」。
+  - [混合专家](../roots/mixture-of-experts.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。路由「先给输入分类，再交给更合适的子任务」与混合专家用门控把输入分给擅长的专家是同一结构。
+  - [集成学习](../roots/ensemble-learning.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。并行里的投票（多个模型或提示分别评估，再按投票阈值过滤）就是集成学习的多数投票。
+  - [分治法](../roots/divide-and-conquer-algorithm.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。协调-执行「中央拆任务、工人分别做、再综合」是分治的思路，只是子任务由模型动态决定。
+  - [自我改进：用自我反馈迭代改写](../roots/madaan-2023-self-refine.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。评估-优化「一个生成、一个给反馈、循环改进」与 Self-Refine 的生成-反馈-改写循环一致；Anthropic 原文没有引用。
+  - [ReAct：推理与行动协同](../roots/yao-2022-react.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Agent「基于环境反馈循环使用工具、能从错误中恢复」就是 ReAct 的推理-行动-观察循环；Anthropic 原文没有引用。
+- 本质：这条新知识本质上是管道、分治、集成投票、反馈循环这些经典计算与控制思想在大模型编排上的重新组合。
+- 整理于：2026-10-18（第 1 轮）

@@ -1,0 +1,30 @@
+---
+name_zh: "吸收能力"
+name_en: "Absorptive capacity"
+proposer: "Wesley M. Cohen, Daniel A. Levinthal"
+year: "1990"
+type: 理论
+verified: true
+---
+
+# 吸收能力（Absorptive capacity）
+
+## 一句话
+
+企业识别、消化并商业化利用新知识的能力，取决于它已有的相关知识积累，而且是逐期累积的，中断投入就可能再也跟不上。
+
+## 原始出处
+
+- Absorptive Capacity: A New Perspective on Learning and Innovation，Cohen & Levinthal，1990，Administrative Science Quarterly 35(1)，https://doi.org/10.2307/2393553
+- Absorptive capacity，英文维基百科，https://en.wikipedia.org/wiki/Absorptive_capacity
+- 争议：Zahra 与 George 后来重新定义，并拆成“潜在吸收能力”和“实现吸收能力”；也有学者批评这个概念过宽、缺少清晰的维度。
+
+## 更底层的源头
+
+- [路径依赖](path-dependence.md) · 关系：相近
+
+## 指向它的新知识
+
+| 新知识 | 关系 | 强弱 |
+|---|---|---|
+| [为什么大多数公司不该有 AI 战略](../clips/2026-10-18-dotey-why-no-ai-strategy.md) | 相近 | 弱（待 Luke 确认） |

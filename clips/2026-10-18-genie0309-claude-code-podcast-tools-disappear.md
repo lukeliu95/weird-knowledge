@@ -7,10 +7,10 @@ published: 2025-10-30 15:52 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [bitter-lesson, ubiquitous-computing, latent-demand, lead-user, compounding-engineering, seci-model-of-knowledge-dimensions, kiss-principle]
 ---
 
 ## 原文
@@ -339,3 +339,14 @@ Claude Code 正在走向这个方向。从 IDE 到 CLI，是第一步简化。�
 
 ## 溯源
 
+- 核心主张：模型每一代都在吸收外部脚手架，所以 agent 工具应只给最通用的接口（bash）、让人和模型共用同一套界面、持续删掉已被模型内化的功能，并从用户的“滥用”里发现需求；工具的终极形态是隐形。
+- 源知识：
+  - [苦涩的教训](../roots/bitter-lesson.md) · 关系：直接源自 · 强弱：强。“模型吞噬脚手架”就是 Sutton 说的通用方法加算力终将胜过人工设计的结构；据 YC Light Cone 访谈笔记，Claude Code 团队区域挂着这篇文章的装裱版。
+  - [普适计算（会消失的技术）](../roots/ubiquitous-computing.md) · 关系：换了说法 · 强弱：强。“工具的终极形态是消失”和 Weiser 1991 年开篇句“最深刻的技术是那些会消失的技术”几乎一字不差，搜索引擎的例子也是他“用得够熟就不再察觉”的意思。
+  - [潜在需求](../roots/latent-demand.md) · 关系：直接源自 · 强弱：强。原文明说 Cat 用的是“latent demand（潜在需求）”这个老产品理念。
+  - [领先用户](../roots/lead-user.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。让用户“破解”产品、再把他们的自制用法产品化，和 von Hippel 的领先用户 / 用户创新思路很像，但原文没提他。
+  - [复合工程](../roots/compounding-engineering.md) · 关系：直接源自 · 强弱：强。原文明说“复合工程”是 Every 团队发明的词，并按 Every 的定义复述。
+  - [SECI 知识转化模型](../roots/seci-model-of-knowledge-dimensions.md) · 关系：直接源自 · 强弱：强。原文直接提出“如何让团队的隐性知识显性化”，这正是野中郁次郎 SECI 模型里“外化”要解决的问题。
+  - [KISS 原则（保持简单）](../roots/kiss-principle.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“删到只剩本质”“新用户不需要用户教育”与 KISS 把简单当成设计目标一致，原文没引用。
+- 本质：这条新知识本质上是“苦涩的教训”（通用方法加算力终将胜过人工搭的结构）和 Weiser“最好的技术会隐形”在 AI 编程工具产品设计上的应用。
+- 整理于：2026-10-18（第 1 轮）

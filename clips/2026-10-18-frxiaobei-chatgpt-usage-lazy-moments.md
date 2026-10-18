@@ -7,10 +7,10 @@ published: 2025-09-21 12:21 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [chatterji-2025-how-people-use-chatgpt, principle-of-least-effort, cognitive-miser, fogg-behavior-model]
 ---
 
 ## 原文
@@ -62,3 +62,11 @@ roots: []
 
 ## 溯源
 
+- 核心主张：人们最常用 AI 做的是写作、实用建议、查信息这类高频的小脑力活，所以 AI 应用的机会在于替用户省掉“不想动脑”的那一下，而不是比谁更聪明。
+- 源知识：
+  - [人们如何使用 ChatGPT（OpenAI 研究报告）](../roots/chatterji-2025-how-people-use-chatgpt.md) · 关系：直接源自 · 强弱：强。作者点名引用 OpenAI 的《How People Use ChatGPT》，“写作、实用建议、信息查询占大头”与报告结论一致（报告称这三类合计近八成对话）。
+  - [最省力原则](../roots/principle-of-least-effort.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。最省力原则说人会走最省力的路、拿到够用的结果就停；作者说的“不是不会做，是不想费力”几乎同义，但作者没提这个原理。
+  - [认知吝啬者](../roots/cognitive-miser.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。认知吝啬者理论说人不论多聪明都倾向少花脑力；作者观察到高学历、高收入人群同样用 AI 省脑子，正好对应这一点。
+  - [福格行为模型](../roots/fogg-behavior-model.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者主张把动脑门槛降到最低、让偷懒动作被频繁触发而变成习惯，对应福格模型里“能力（越简单越容易发生）+ 提示”的部分。
+- 本质：这条新知识本质上是“最省力原则 / 认知吝啬”在 AI 产品选题场景下的应用：哪里让人最不想费脑，哪里就有高频需求。
+- 整理于：2026-10-18（第 1 轮）

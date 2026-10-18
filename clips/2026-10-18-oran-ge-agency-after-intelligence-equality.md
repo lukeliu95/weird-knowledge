@@ -7,10 +7,10 @@ published: 2025-02-25 23:38 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 思维与成长
-roots: []
+roots: [self-efficacy, locus-of-control, proactivity, agrawal-2018-prediction-machines]
 ---
 
 ## 原文
@@ -26,3 +26,11 @@ roots: []
 
 ## 溯源
 
+- 核心主张：当 AI 让人人都能用上同等的智力，人与人之间最大的差别就变成行动力：主动做决定、掌控自己的行为和环境、相信自己能做成。
+- 源知识：
+  - [自我效能](../roots/self-efficacy.md) · 关系：直接源自 · 强弱：强。引文明说行动力是“自我效能、决心和主人翁意识的混合体”，自我效能是 Bandura 1977 年提出的概念。
+  - [控制点（内控 / 外控）](../roots/locus-of-control.md) · 关系：换了说法 · 强弱：强。“行动力低的人像自己生活里的乘客，等运气、别人或环境来决定”几乎就是 Rotter 外控型控制点的定义。
+  - [主动性 / 主动型人格](../roots/proactivity.md) · 关系：换了说法 · 强弱：弱（待 Luke 确认）。“主动而不是被动、塑造生活和环境”和 Bateman 与 Crant 的“主动型人格：不受情境束缚、主动改变环境”很像，但原文没提。
+  - [《预测机器：人工智能的简单经济学》](../roots/agrawal-2018-prediction-machines.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“智力平权之后行动力成最大差异”和《Prediction Machines》的“AI 让预测变便宜，判断和行动这些互补品就更值钱”是同一个逻辑，作者没有引用。
+- 本质：这条新知识本质上是“自我效能 / 内控型控制点”在“AI 让智力变成廉价品”场景下的应用：一种投入变便宜后，和它互补的稀缺能力（行动力）变得更值钱。
+- 整理于：2026-10-18（第 1 轮）

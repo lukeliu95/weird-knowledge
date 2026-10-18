@@ -7,10 +7,10 @@ published: 2026-08-14 21:15 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [shi-2026-spatiotemporal-composability, effect-system, petricek-2014-coeffects-context-dependent, dependency-injection, resource-acquisition-is-initialization]
 ---
 
 ## 原文
@@ -48,3 +48,12 @@ Cordis 很有创造性的把这个问题归纳为两个维度：Temporal composa
 
 ## 溯源
 
+- 核心主张：Agent 运行框架应建立在可动态组合的插件范式上：组件退出时它的副作用能被完整撤销（时间可组合），组件只声明依赖、由运行时随上下文变化动态管理（空间可组合），从而做到一切皆插件。
+- 源知识：
+  - [时空可组合性编程范式（Cordis 论文）](../roots/shi-2026-spatiotemporal-composability.md) · 关系：直接源自 · 强弱：强。推文讲的就是这篇论文（arXiv 2608.25512，作者含 DeepSeek 的崔添翼 Tianyi Cui），两个维度的定义与论文摘要一致。
+  - [效应系统](../roots/effect-system.md) · 关系：直接源自 · 强弱：强。推文点名 effect；论文第 2 节以 Lucassen 与 Gifford 1988 年的效应系统为理论基础，把它搬到运行时变成“可撤销的效应”。
+  - [余效应：依赖上下文的计算演算](../roots/petricek-2014-coeffects-context-dependent.md) · 关系：直接源自 · 强弱：强。推文点名 coeffect；论文引用 Petricek 等人的 coeffect 演算，把它变成运行时的“响应式依赖”。
+  - [依赖注入](../roots/dependency-injection.md) · 关系：相近 · 强弱：强。“组件只声明依赖，由运行时管理”就是依赖注入的做法；论文自己拿它和传统依赖注入做对比，并引用了 Fowler 的文章。
+  - [资源获取即初始化（RAII）](../roots/resource-acquisition-is-initialization.md) · 关系：相近 · 强弱：强。论文明说：在静态场景下，时间可组合退化成 RAII 这类按作用域自动回收的做法。
+- 本质：这条新知识本质上是编程语言理论里的效应 / 余效应（effect / coeffect）思想，在运行时插件系统（agent 运行框架）上的应用。
+- 整理于：2026-10-18（第 1 轮）

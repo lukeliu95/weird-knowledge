@@ -7,10 +7,10 @@ published: 2025-12-26 17:50 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [zero-to-one, perfect-competition, economic-moat, network-effect, economies-of-scale, discounted-cash-flow, mimetic-theory, creative-destruction, brandenburger-1996-value-based-strategy, crossing-the-chasm]
 ---
 
 ## 原文
@@ -160,3 +160,17 @@ Thiel 并不是在说“垄断是善的”。
 
 ## 溯源
 
+- 核心主张：有价值的公司要同时创造价值和捕获价值；完全竞争会把利润打没，所以创业要从能完全占领的小市场做起，靠 10 倍好的专有技术、网络效应、规模优势和品牌形成垄断，并且看重长期存活带来的现金流。
+- 源知识：
+  - [从 0 到 1](../roots/zero-to-one.md) · 关系：直接源自 · 强弱：强。内容就是 Thiel 2014 年在斯坦福 How to Start a Startup 课第 5 讲“Competition is for Losers”的要点，也是《从 0 到 1》的核心论点。
+  - [完全竞争](../roots/perfect-competition.md) · 关系：直接源自 · 强弱：强。原文“完全竞争会摧毁价值……没有差异、没有定价权、没有利润”，就是完全竞争下长期经济利润为零的结论。
+  - [经济护城河](../roots/economic-moat.md) · 关系：直接源自 · 强弱：强。原文明说“单独一个，算护城河”。
+  - [网络效应](../roots/network-effect.md) · 关系：直接源自 · 强弱：强。原文点名的四样东西之一。
+  - [规模经济](../roots/economies-of-scale.md) · 关系：直接源自 · 强弱：强。原文点名的四样东西之一（规模优势）。
+  - [现金流折现](../roots/discounted-cash-flow.md) · 关系：直接源自 · 强弱：强。原文说 Thiel 做过 PayPal 的现金流折现分析，结论是 75% 的价值来自 10 年之后。
+  - [模仿欲望理论](../roots/mimetic-theory.md) · 关系：直接源自 · 强弱：弱（待 Luke 确认）。“竞争教你模仿……竞争奖励更会竞争的人”带着吉拉尔模仿欲望理论的痕迹；Thiel 公开深受吉拉尔影响，但这条原文没有点名。
+  - [创造性破坏](../roots/creative-destruction.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。熊彼特认为创新带来的暂时垄断利润是推动进步的动力，与 Thiel 的“创造性垄断”思路相近。
+  - [基于价值的商业战略](../roots/brandenburger-1996-value-based-strategy.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“创造价值和捕获价值是两件完全不同的事”与 Brandenburger 和 Stuart 的价值创造 / 增量价值框架一致，原文没有引用。
+  - [跨越鸿沟](../roots/crossing-the-chasm.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“先在一个能完全吃下的小市场封王，再扩张”与 Moore 的“先拿下一个细分市场作滩头堡，再向相邻市场推进”相近。
+- 本质：这条新知识本质上是“完全竞争使利润归零”这一微观经济学结论在创业选市场、建护城河场景下的应用。
+- 整理于：2026-10-18（第 1 轮）

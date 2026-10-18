@@ -7,10 +7,10 @@ published: 2025-12-09 02:42 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 提示词与写作
-roots: []
+roots: [janus-2022-simulators, shanahan-2023-role-play-llms, karpathy-2023-state-of-gpt, chen-2025-persona-vectors, zheng-2023-personas-system-prompts]
 ---
 
 ## 原文
@@ -40,3 +40,12 @@ Andrej Karpathy：
 
 ## 溯源
 
+- 核心主张：大语言模型不是有观点的“实体”，而是能模拟各种视角的模拟器；与其问“你怎么看”，不如先让它列出最合适的专家，再模拟他们会怎么说。
+- 源知识：
+  - [模拟器理论（GPT 是模拟器）](../roots/janus-2022-simulators.md) · 关系：直接源自 · 强弱：弱（待 Luke 确认）。“把模型看成模拟器，人格只是被模拟出来的角色”和 janus 2022 年《Simulators》的主张几乎一样，连“模拟器”这个词都相同，但 Karpathy 没有点名引用。
+  - [大语言模型的角色扮演](../roots/shanahan-2023-role-play-llms.md) · 关系：相近 · 强弱：强。Shanahan 等在 Nature 上提出用“角色扮演、多个角色叠加”来描述对话模型，避免把它当成有人格的实体，和这条主张几乎一致。
+  - [State of GPT 演讲](../roots/karpathy-2023-state-of-gpt.md) · 关系：直接源自 · 强弱：强。宝玉明说 Karpathy 两年前在 State of GPT 演讲里讲过类似的话，即模型只是在模仿，需要在提示里指定专家级表现。
+  - [人格向量](../roots/chen-2025-persona-vectors.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Karpathy 说问“你”时模型会调用微调形成的“人格嵌入向量”；Chen 等在激活空间里找到了人格方向，并发现微调带来的性格变化就沿这些方向移动。
+  - [系统提示里的角色不能提升表现](../roots/zheng-2023-personas-system-prompts.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。Zheng 等在 2410 道事实题上测试，发现在系统提示里加专家等角色并不能稳定提高准确率，和“让 AI 扮演专家效果更好”相反；但它只测事实问答，不是测“探索多种视角”。
+- 本质：这条新知识本质上是“语言模型是模拟器、人格是被模拟出的角色”这一框架在日常提问技巧场景下的应用。
+- 整理于：2026-10-18（第 1 轮）

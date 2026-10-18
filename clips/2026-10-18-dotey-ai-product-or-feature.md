@@ -7,10 +7,10 @@ published: 2024-06-22 03:48 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [platform-envelopment, feature-not-a-product]
 ---
 
 ## 原文
@@ -32,3 +32,9 @@ AI 是产品还是功能这一问题尚无定论，我个人是倾向于 AI 更�
 
 ## 溯源
 
+- 核心主张：当大平台把某个独立产品的核心功能整合进自己的系统，这个独立产品通常就失去存在理由（Clubhouse、AI Pin、Rabbit r1），除非它把这个功能做到平台追不上（TikTok）；作者倾向认为 AI 更可能成为大平台里的一项功能，而不是独立产品。
+- 源知识：
+  - [平台包抄](../roots/platform-envelopment.md) · 关系：换了说法 · 强弱：弱（待 Luke 确认）。“平台把独立产品的功能捆绑进来，独立产品只能转型或被收购”正是平台包抄理论的核心，Clubhouse 被 Spotify、Discord、Twitter 吃掉是典型案例；作者没引用该理论，是推断。
+  - [“你们是功能，不是产品”（乔布斯评 Dropbox）](../roots/feature-not-a-product.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“AI 是产品还是功能”这个二分法，和乔布斯 2009 年对 Dropbox 说的“你们是功能，不是产品”是同一个判断框架；原文未提这段史料。
+- 本质：这条新知识本质上是“平台包抄”（平台借助已有用户和捆绑，把相邻独立产品的功能吃掉）在 AI 硬件和 AI 应用场景下的应用。
+- 整理于：2026-10-18（第 1 轮）

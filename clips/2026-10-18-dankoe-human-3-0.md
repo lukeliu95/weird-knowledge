@@ -7,10 +7,10 @@ published: 2026-02-17
 saved: 2026-10-18
 why: 未说明
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 思维与成长
-roots: []
+roots: [integral-theory, spiral-dynamics, loevingers-stages-of-ego-development, flow-psychology]
 ---
 
 ## 原文
@@ -270,3 +270,11 @@ Join here if you want these articles sent directly to you, just in case the algo
 
 ## 溯源
 
+- 核心主张：个人成长可以用一张地图来规划：心智、身体、精神、事业四个领域，各自从“从众”到“个人主义”再到“综合”三个层级，每次升级都要经过失调、不确定、发现三个阶段；挑战和能力匹配时进步最快，太难会焦虑，太易会无聊。
+- 源知识：
+  - [整合理论（AQAL 四象限）](../roots/integral-theory.md) · 关系：直接源自 · 强弱：强。作者原话写明四象限 Adapted from Ken Wilber's AQAL model，还直接引用了 Wilber 的“前/超谬误”和“超越并包含”
+  - [螺旋动力学](../roots/spiral-dynamics.md) · 关系：直接源自 · 强弱：强。作者明说三个层级改编自 Spiral Dynamics，并用它的“螺旋”解释在自我和他人之间来回切换
+  - [卢文格自我发展阶段论](../roots/loevingers-stages-of-ego-development.md) · 关系：直接源自 · 强弱：强。作者点名“9 Stages of Ego Development”；层级名 Conformist、Individualist 和 Loevinger 阶段名一致
+  - [心流](../roots/flow-psychology.md) · 关系：直接源自 · 强弱：强。作者点名 flow psychology；“太难会焦虑、太易会无聊”就是心流的挑战-技能模型，Channel 就是心流状态
+- 本质：这条新知识本质上是 Wilber 整合理论（四象限）加上发展阶段论（螺旋动力学、自我发展阶段）和心流的挑战-技能平衡，在个人成长规划场景下的拼合应用。
+- 整理于：2026-10-18（第 1 轮）

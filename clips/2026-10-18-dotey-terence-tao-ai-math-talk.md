@@ -7,10 +7,10 @@ published: 2024-08-27 04:57 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: []
+roots: [tao-2024-ai-mathematics, lean-proof-assistant, wei-2022-chain-of-thought-prompting, davies-2021-guiding-human-intuition, bubeck-2023-sparks-agi, polymath-project, division-of-labour, cybernetics, ironies-of-automation, man-computer-symbiosis]
 ---
 
 ## 原文
@@ -78,3 +78,17 @@ roots: []
 
 ## 溯源
 
+- 核心主张：AI 现在是数学研究很有用的辅助（给思路、补全证明、规模化地探索一类问题），但离独立解决数学问题还很远；可靠性要靠 Lean 这类自动验证器把关，验证器还让大规模、陌生人之间的分工协作成为可能；人自己必须会做，才能引导 AI。
+- 源知识：
+  - [陶哲轩 IMO 2024 演讲《AI 与数学》](../roots/tao-2024-ai-mathematics.md) · 关系：直接源自 · 强弱：强。整条推文是陶哲轩 IMO 2024 演讲的摘录和转述，附了原视频链接。
+  - [Lean 证明助手](../roots/lean-proof-assistant.md) · 关系：直接源自 · 强弱：强。演讲明说用 Lean、mathlib 和蓝图工具，约 20 人三周完成一个组合问题的形式化（即 2023 年 PFR 猜想的 Lean 形式化，陶哲轩博客有记录）；编译不过的内容会被拒绝。
+  - [思维链提示](../roots/wei-2022-chain-of-thought-prompting.md) · 关系：直接源自 · 强弱：强。演讲点名 CoT：模型直接算会错，让它一步步解释就可能算对。
+  - [用 AI 引导人类直觉来推进数学](../roots/davies-2021-guiding-human-intuition.md) · 关系：直接源自 · 强弱：强。演讲举的「在纽结理论里，AI 推测出两个统计量之间的关系」正是这篇 Nature 论文的结果（纽结的代数结构和几何结构之间的新联系）。
+  - [通用人工智能的火花：GPT-4 早期实验](../roots/bubeck-2023-sparks-agi.md) · 关系：挑战 · 强弱：强。演讲指出某篇 GPT-4 论文里的 IMO 题其实是简化版、是挑出来的，整体成功率只有约 1%；查 Sparks 论文原文，第 4 节确实用了「2022 年 IMO 题的简化版」并承认例子是特意挑选的。宝玉是猜的这篇，但内容吻合。
+  - [Polymath 大规模协作数学项目](../roots/polymath-project.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「很多人、包括互不相识的人一起证明一个定理」延续了 Gowers 2009 年发起、陶哲轩也参与过的大规模协作数学；区别是 Polymath 靠人互相检查，Lean 把信任交给编译器（待 Luke 确认）。
+  - [分工](../roots/division-of-labour.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。蓝图把一个大证明拆成几百个可以单独完成的小步骤，每人认领一块，连非数学家的程序员也能参与，是分工原理在证明上的应用（待 Luke 确认）。
+  - [控制论](../roots/cybernetics.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。让 AI 给出证明、编译器把报错回传给 AI、再改再验，直到通过，是典型的反馈闭环（待 Luke 确认）。
+  - [自动化的反讽](../roots/ironies-of-automation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「如果我们自己都不知道怎么做，就无法引导 AI」和 Bainbridge「自动化越多，人越需要保持技能，才能监督和接手」是同一个道理（待 Luke 确认）。
+  - [人机共生](../roots/man-computer-symbiosis.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。把 GPT 当交流伙伴给思路、让 Copilot 补全、由人判断取舍，正是 Licklider 设想的人和计算机各做擅长的事、紧密合作（待 Luke 确认）。
+- 本质：这条新知识本质上是「人机共生」加「机器可检查的验证反馈」在数学研究场景下的应用：AI 负责生成和规模化尝试，编译器负责把关，人负责方向和判断。
+- 整理于：2026-10-18（第 1 轮）

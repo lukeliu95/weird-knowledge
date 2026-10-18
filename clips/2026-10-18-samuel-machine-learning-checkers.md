@@ -7,10 +7,10 @@ published: 1959-07（IBM Journal of Research and Development, 3(3): 210-229, DOI
 saved: 2026-10-18
 why: 机器可以通过自学习可以超越创作他的人
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: []
+roots: [shannon-1950-programming-chess, minimax, temporal-difference-learning, reinforcement-learning, lady-lovelaces-objection, computing-machinery-and-intelligence, cybernetics]
 ---
 
 ## 原文
@@ -109,4 +109,14 @@ Shannon 1950 年的下棋程序设计（国际象棋）、Strachey 1952 年的�
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：只给程序规则、一个努力方向和一份不完整的特征清单，让它靠记忆下过的局面和自己对弈、自己修正打分公式，几小时后它就能下得比写它的人更好。
+- 源知识：
+  - [编程让计算机下国际象棋](../roots/shannon-1950-programming-chess.md) · 关系：直接源自 · 强弱：强。论文明说引了 Shannon 1950；往前推演形成走法树、在叶子上给局面打分、再往回倒推选着法的基础下棋程序，就是 Shannon 的框架。
+  - [极小极大法](../roots/minimax.md) · 关系：直接源自 · 强弱：强。论文明说从叶子往回推时，自己走选最高分、对手走选最低分，即极小极大法。
+  - [时序差分学习](../roots/temporal-difference-learning.md) · 关系：相近 · 强弱：强。Samuel 用「推演之后的分数」去修正「推演之前的打分」（他叫 delta），当时还没有时序差分这个名字；Sutton 1988 和 Sutton & Barto 都明确说 Samuel 1959 是第一个提出并实现含时序差分思想的学习方法。
+  - [强化学习](../roots/reinforcement-learning.md) · 关系：相近 · 强弱：强。靠自我对弈的输赢调整策略、作者自己点出的「功劳该算给哪一步」难题，都是强化学习的核心问题；Sutton & Barto 把 Samuel 的跳棋程序写进强化学习的早期历史。
+  - [洛夫莱斯夫人的异议（机器不能原创）](../roots/lady-lovelaces-objection.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。Luke 存它的理由「机器能通过自学习超越创作它的人」正好反对「机器产出不了人没放进去的东西」；论文本身没提 Lovelace，但 Wiener 1960 年在 Science 上明确用「会学习的跳棋机已经能赢过编程者」来反驳这个观点（Samuel 本人同年撰文不同意这种解读）。
+  - [计算机器与智能（图灵 1950）](../roots/computing-machinery-and-intelligence.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。图灵 1950 设想先造一个「儿童机器」、再用奖惩去教育它，Samuel 用自我对弈和打分修正把类似的想法做成了能跑的程序；论文引了图灵，但引的是「死局面」那一点，不是学习机器（待 Luke 确认）。
+  - [控制论](../roots/cybernetics.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。论文拿电路里反馈回路延迟太长引起的不稳定来比喻调整过猛的振荡，打分修正本身就是误差反馈；Wiener 1960 也在控制论的语境下专门讨论了会学习的跳棋机（待 Luke 确认）。
+- 本质：这条新知识本质上是试错学习加误差反馈（后来叫强化学习、时序差分）在跳棋博弈上的最早实现，并用实验结果挑战了「机器只能做人教它做的事」。
+- 整理于：2026-10-18（第 1 轮）
