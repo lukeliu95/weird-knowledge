@@ -16,7 +16,7 @@ EARLY = 2023   # older papers and books go into one 更早 column
 
 
 def field(front, key):
-    m = re.search(rf'^{key}:\s*"?(.*?)"?\s*$', front, re.M)
+    m = re.search(rf'^{key}:[ \t]*"?(.*?)"?[ \t]*$', front, re.M)
     return m.group(1) if m else ""
 
 
