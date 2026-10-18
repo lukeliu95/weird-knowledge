@@ -8,6 +8,8 @@ saved: 2026-10-18
 why: 冷知识做为知识佐料很有趣
 related_principles: []
 status: 未整理
+kind: 观点
+topic: 历史与冷知识
 roots: []
 ---
 

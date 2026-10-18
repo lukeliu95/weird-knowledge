@@ -7,7 +7,9 @@ published: 2025-09-25 10:05 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已归档
+kind: 教程
+topic: 提示词与写作
 roots: []
 ---
 

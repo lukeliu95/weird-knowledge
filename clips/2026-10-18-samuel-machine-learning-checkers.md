@@ -8,6 +8,8 @@ saved: 2026-10-18
 why: 机器可以通过自学习可以超越创作他的人
 related_principles: []
 status: 未整理
+kind: 观点
+topic: 学习与研究
 roots: []
 ---
 

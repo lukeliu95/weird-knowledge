@@ -8,6 +8,8 @@ saved: 2026-10-18
 why: 未说明
 related_principles: []
 status: 未整理
+kind: 观点
+topic: 思维与成长
 roots: []
 ---
 

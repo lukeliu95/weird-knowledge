@@ -7,7 +7,9 @@ published: 2026-09-20 02:43 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已归档
+kind: 教程
+topic: 模型与本地部署
 roots: []
 ---
 
