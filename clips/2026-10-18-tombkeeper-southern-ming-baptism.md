@@ -5,7 +5,7 @@ url: 无（Luke 发来的截图）
 source: 微博截图
 published: 2026-10-17 09:34
 saved: 2026-10-18
-why: 未说明
+why: 冷知识做为知识佐料很有趣
 related_principles: []
 status: 未整理
 roots: []
