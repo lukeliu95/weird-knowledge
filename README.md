@@ -133,4 +133,4 @@ weird-knowledge/
 
 ## 作者
 
-Luke（X：[@LukeLiu95](https://x.com/LukeLiu95)），一个奇怪的知识正在不断增多的人。
+Luke（X：[@simprr](https://x.com/simprr)），一个奇怪的知识正在不断增多的人。
