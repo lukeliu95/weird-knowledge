@@ -67,6 +67,8 @@ saved: {saved}
 why: {q(why)}
 related_principles: []
 status: 未整理
+kind:
+topic:
 roots: []
 ---
 
