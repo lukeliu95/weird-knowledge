@@ -1,0 +1,19 @@
+---
+title: "一句吐槽 WiFi 太差"
+author: "Holly (@hollllyli)"
+url: https://x.com/hollllyli/status/2105073501455720731
+source: X
+published: 2026-09-29 23:13 UTC
+saved: 2026-10-18
+why: "X 点赞（批量导入）"
+related_principles: []
+status: 未整理
+roots: []
+---
+
+## 原文
+
+damn wifi
+
+## 溯源
+
