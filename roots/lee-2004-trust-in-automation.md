@@ -26,3 +26,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [无方向盘的 Cybercab 乘坐体验](../clips/2026-10-18-davelee-cybercab-no-steering-wheel-ride.md) | 相近 | 弱（待 Luke 确认） |
+| [OpenAI Dots 放权指南：动作分进 6 个权限区，每周按证据升降](../clips/2026-10-18-choopyplug1-openai-dots-agent-permission-zones.md) | 相近 | 弱（待 Luke 确认） |

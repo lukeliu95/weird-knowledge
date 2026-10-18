@@ -7,10 +7,10 @@ published: 2026-10-03 19:42 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: Agent 与 Skill
+roots: [principle-of-least-privilege, fail-safe-defaults, openai-2026-dots-safety-security-privacy, openai-2026-gpt-6-astra-system-card, prompt-injection, swiss-cheese-model, parasuraman-2000-levels-of-automation, lee-2004-trust-in-automation, management-by-exception]
 ---
 
 ## 原文
@@ -274,3 +274,16 @@ Start with one responsibility, everything in Draft, and one change per week.
 
 ## 溯源
 
+- 核心主张：给常驻 agent 放权不是一次设好，而是先列出它所有动作，按后果分区（碰钱、凭证、永久删除的交回人做；别人看得到或难撤销的要先批准；新动作只起草；排除完所有停下的理由才算能自己做），每项工作写清范围和到期日，批准要窄、要有期限，遇到模糊、新情况、冲突就停下交回；之后每周按证据一次只升或降一项，一次意外就降级。（6 个权限区、4 个问题、升降阈值是作者自创框架，不是 OpenAI 发布的；文中标 Official 的部分大多能在 OpenAI 官方资料里查到）
+- 源知识：
+  - [最小权限原则](../roots/principle-of-least-privilege.md) · 关系：换了说法 · 强弱：强。"最安全的权限是 agent 从来没拿到的那个"、少连应用、Free 区几乎是空的，几乎就是最小权限原则的原话
+  - [失效安全默认（默认拒绝）](../roots/fail-safe-defaults.md) · 关系：换了说法 · 强弱：强。"Free 不是默认""批准里没写到的一律退回到先问""默认什么都不做，沉默应该冻结动作而不是放行"，和 Saltzer 与 Schroeder 的"按明确允许而不是明确排除来决定，默认无权"几乎一字不差
+  - [OpenAI dots 的安全设计（《我们如何将安全性、信息安全和隐私保护融入 dots》及帮助中心）](../roots/openai-2026-dots-safety-security-privacy.md) · 关系：直接源自 · 强弱：强。文中标 Official 的内容（改密码和转账必须交回、自定义规则只能在内置框内收紧、4 种规则行为、预先批准的含义、外部内容不授予权限、记忆不能单条删）都能在 OpenAI 的 dots 安全文和帮助中心查到
+  - [GPT-6 Astra 系统卡（含 dots 附录）](../roots/openai-2026-gpt-6-astra-system-card.md) · 关系：直接源自 · 强弱：强。作者明确引用系统卡里 UK AISI 的数字（范围不明时 499 次里 60 次越界，写明后 500 次里 2 次），用来论证"先写范围再写规则"；核对属实
+  - [提示注入](../roots/prompt-injection.md) · 关系：直接源自 · 强弱：强。"指令来自你，不来自收件箱"转述的是 OpenAI 帮助中心"如何防范提示注入"一节的原话：工作中读到的内容本身不授予权限
+  - [瑞士奶酪模型](../roots/swiss-cheese-model.md) · 关系：换了说法 · 强弱：强。"出事不是 agent 失控，而是一串小而合理的缺口，每一层都只差一点；没有哪一层单独失败，所以要把范围、规则、批准、交回叠起来"，就是瑞士奶酪模型说的各层漏洞对齐
+  - [自动化的类型与等级模型](../roots/parasuraman-2000-levels-of-automation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。6 个区从只看、只起草、先问、预批准到自己做、交回人，相当于给每个动作定自动化等级；用"碰不碰钱、别人看不看得到、能不能一步撤销"来定区，正是该模型说的按出错后果的代价定等级
+  - [对自动化的信任：为恰当依赖而设计](../roots/lee-2004-trust-in-automation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。"信任靠证据升级、靠意外降级"、先用一周草稿看它会做什么，是在让人对 agent 的信任和它实际表现对齐（校准信任），也提到全都要批准会让人盲目点通过
+  - [例外管理（例外原则）](../roots/management-by-exception.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。日常动作按规则自己跑，只有模糊、新情况、冲突这三类例外才交回人，和 Taylor 的例外原则（只把偏离标准的情况交给管理者）同一个思路
+- 本质：这条新知识本质上是最小权限、默认拒绝和按后果定自动化等级、按证据校准信任，在给常驻 AI agent 一步步放权场景下的应用。
+- 整理于：2026-10-18（第 3 轮）

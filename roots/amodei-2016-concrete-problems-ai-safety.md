@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [腾讯 Agent 反复爬高德被抓](../clips/2026-10-18-sleepy0x13-tencent-agents-amap-scraping.md) | 相近 | 弱（待 Luke 确认） |
+| [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](../clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | 直接源自 | 强 |

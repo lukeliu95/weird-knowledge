@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [上下文工程：智能体的核心实践指南](../clips/2026-10-18-shao-meng-context-engineering-guide.md) | 相近 | 弱（待 Luke 确认） |
+| [常驻 agent 的 6 层结构（推文作者据 OpenAI 资料自制的 PDF）](../clips/2026-10-18-choopyplug1-openai-always-on-agent-six-layers.md) | 相近 | 弱（待 Luke 确认） |

@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [腾讯 Agent 反复爬高德被抓](../clips/2026-10-18-sleepy0x13-tencent-agents-amap-scraping.md) | 直接源自 | 强 |
+| [OpenAI Dots 放权指南：动作分进 6 个权限区，每周按证据升降](../clips/2026-10-18-choopyplug1-openai-dots-agent-permission-zones.md) | 直接源自 | 强 |

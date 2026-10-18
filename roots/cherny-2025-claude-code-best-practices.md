@@ -31,3 +31,4 @@ verified: true
 | [Anthropic：让模型验证自己的输出](../clips/2026-10-18-0xcodez-anthropic-agent-loop-self-verify.md) | 直接源自 | 强 |
 | [Claude Code之父的三条心得](../clips/2026-10-18-ayi-ainotes-boris-cherny-workflow-three-rules.md) | 直接源自 | 强 |
 | [Astra 电脑操作让验收成闭环](../clips/2026-10-18-dotey-astra-computer-use-acceptance-loop.md) | 相近 | 弱（待 Luke 确认） |
+| [yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](../clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md) | 相近 | 弱（待 Luke 确认） |

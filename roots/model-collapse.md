@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [合成数据与苦涩的教训讨论](../clips/2026-10-18-dotey-synthetic-data-bitter-lesson.md) | 相近 | 弱（待 Luke 确认） |
+| [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](../clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | 挑战 | 弱（待 Luke 确认） |

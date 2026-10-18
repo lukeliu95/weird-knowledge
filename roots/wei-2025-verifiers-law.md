@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [智谱让 GLM-5.3 自己优化推理系统](../clips/2026-10-18-dotey-glm-5-3-optimizes-own-inference.md) | 相近 | 弱（待 Luke 确认） |
 | [MiMo-V2.6 的强化学习之路](../clips/2026-10-18-luofuli-mimo-v2-6-scaling-rl.md) | 相近 | 弱（待 Luke 确认） |
+| [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](../clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | 相近 | 弱（待 Luke 确认） |

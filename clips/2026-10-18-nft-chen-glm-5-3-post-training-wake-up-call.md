@@ -7,10 +7,10 @@ published: 2026-10-18 06:53 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 模型与本地部署
+roots: [zai-2026-glm-5-3-post-training, davidson-2023-ai-capabilities-without-retraining, transfer-learning, zhou-2023-lima, aghajanyan-2020-intrinsic-dimensionality, guo-2025-deepseek-r1, yao-2025-second-half]
 ---
 
 ## 原文
@@ -34,3 +34,14 @@ https://t.co/4qzDrCmjxb https://t.co/ULmPTsXAv9
 
 ## 溯源
 
+- 核心主张：GLM-5.3 不换底座、不改架构、不加参数，只靠后训练就把 Terminal-Bench（3.0）从 4.6 提到 28.3、网安能力大涨；后训练比从头预训练省得多算力，所以有私有数据的公司可以在开源底座上后训练、追上部分闭源模型，后训练是接下来的主战场。
+- 源知识：
+  - [GLM-5.3：同一底座只靠扩展后训练](../roots/zai-2026-glm-5-3-post-training.md) · 关系：直接源自 · 强弱：强。“同一基座”和“Terminal-Bench 4.6→28.3”都能在智谱官方模型卡和开发文档里找到原句（基准是 Terminal-Bench 3.0），唐杰本人在 X 长文里也说过同底座、同参数、只多做后训练。
+  - [不重新训练也能大幅提升 AI 能力（训练后增强）](../roots/davidson-2023-ai-capabilities-without-retraining.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“后训练比从头预训练省 GPU 太多”，和这篇“训练后增强用不到 1% 的成本换来相当于多倍训练算力的提升”是同一笔账；推文没引用，属推断。
+  - [迁移学习（机器学习）](../roots/transfer-learning.md) · 关系：换了说法 · 强弱：弱（待 Luke 确认）。“有私有数据的公司在开源底座上后训练”，就是“先预训练、再拿自己的数据微调”的迁移学习，换了“后训练”这个新叫法；推文没提，属推断。
+  - [LIMA：对齐少即是多（表层对齐假说）](../roots/zhou-2023-lima.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“基座潜力远未触顶”和 LIMA“能力基本在预训练时学到，后训练负责引出来”相近；但 LIMA 认为少量数据就够，GLM-5.3 是靠大规模强化学习换来能力跳涨，两者对后训练分量的判断不同（推断）。
+  - [内在维度解释了语言模型微调为什么有效](../roots/aghajanyan-2020-intrinsic-dimensionality.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。预训练好的底座微调时只需要动很小的一块，可以解释为什么后训练花小钱能撬动大提升；推文没提，属推断。
+  - [DeepSeek-R1：用强化学习激发推理能力](../roots/guo-2025-deepseek-r1.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。DeepSeek-R1 也是在已有底座（V3）上靠大规模强化学习把能力拉上去，是“只靠后训练大涨”的前例；推文没提，属推断。
+  - [AI 下半场](../roots/yao-2025-second-half.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“后训练才是下半场的战场”借的是姚顺雨《The Second Half》（AI 下半场）的说法；但原文说下半场的重点是重新定义任务和评测，强化学习只是让这件事成立的配方，推文把它窄化成了“后训练”（推断）。
+- 本质：这条新知识本质上是“先预训练、再微调”（迁移学习）在大模型时代的放大版：底座里的能力远没用完，用强化学习和更像真实工作的训练环境把它激发出来，花的算力比重新预训练少得多。
+- 整理于：2026-10-18（第 3 轮）

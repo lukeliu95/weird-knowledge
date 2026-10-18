@@ -28,3 +28,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [DeepSeek-R1训练流程图解](../clips/2026-10-18-bookwormengr-deepseek-r1-training-flow.md) | 相近 | 弱（待 Luke 确认） |
+| [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](../clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | 直接源自 | 强 |
+| [Terminal-RSI：两轮自重写加强化学习，27B 终端 agent 从 51.7% 涨到 86.5%](../clips/2026-10-18-nft-chen-terminal-rsi-recursive-self-improvement.md) | 换了说法 | 强 |

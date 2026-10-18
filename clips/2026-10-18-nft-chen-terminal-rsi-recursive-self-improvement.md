@@ -7,10 +7,10 @@ published: 2026-10-18 07:37 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 模型与本地部署
+roots: [yang-2026-terminal-rsi, zelikman-2022-star, recursive-self-improvement]
 ---
 
 ## 原文
@@ -44,3 +44,10 @@ roots: []
 
 ## 溯源
 
+- 核心主张：腾讯混元的 Terminal-RSI 用“成功轨迹自我改写 + 继承评分员的强化学习精炼”交替两轮，让 Qwen3.8-27B 在终端任务上大涨（Terminal-Bench 2.1 从 51.7% 到 86.5%），说明递归自我改进能在终端 agent 上稳定爬坡、小模型能追上大模型。
+- 源知识：
+  - [Terminal-RSI：命令行 agent 的递归自我改进（成功记录自我改写 + 继承评分员的策略精炼）](../roots/yang-2026-terminal-rsi.md) · 关系：直接源自 · 强弱：强。推文是在转述这篇论文，附了论文链接，方法名、阶段顺序和各项数字都出自论文。
+  - [STaR：用推理自举推理（自学推理者）](../roots/zelikman-2022-star.md) · 关系：换了说法 · 强弱：强。“前一轮模型生成下一轮训练数据”“把验证过的成功经验反复炼成能力”，和 STaR“只留答对的自生成推理来微调、反复迭代”几乎一字不差；推文链接的论文也明说引用了 STaR。
+  - [递归自我改进](../roots/recursive-self-improvement.md) · 关系：直接源自 · 强弱：强。推文通篇以 RSI（递归自我改进）为卖点；但“可稳定爬坡”的说法超出了论文自己的结论。
+- 本质：这条新知识本质上是 Terminal-RSI 论文（STaR 式“拿自己验证过的成功经验训练自己”加 PPO 强化学习）的宣传版转述，把有限几轮的实验说成了能“稳定爬坡”的递归自我改进。
+- 整理于：2026-10-18（第 3 轮）

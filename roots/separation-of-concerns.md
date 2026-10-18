@@ -29,3 +29,4 @@ verified: true
 | [Pi 开发笔记：长时间运行智能体的难题](../clips/2026-10-18-maxforai-pi-notes-agent-harness-critique.md) | 相近 | 弱（待 Luke 确认） |
 | [ADK 开发者该懂的五种 Agent Skill 设计模式](../clips/2026-10-18-googlecloudtech-adk-agent-skill-design-patterns.md) | 相近 | 弱（待 Luke 确认） |
 | [宝玉写提示词的原则：做成可玩的模板](../clips/2026-10-18-dotey-dotey-prompt-writing-principles.md) | 相近 | 弱（待 Luke 确认） |
+| [yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](../clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md) | 相近 | 弱（待 Luke 确认） |

@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [智谱让 GLM-5.3 自己优化推理系统](../clips/2026-10-18-dotey-glm-5-3-optimizes-own-inference.md) | 换了说法 | 弱（待 Luke 确认） |
+| [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](../clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | 直接源自 | 强 |

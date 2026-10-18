@@ -27,3 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [GLM 5.3 只靠后训练大涨，被 SemiAnalysis 嘉宾称为警钟](../clips/2026-10-18-nft-chen-glm-5-3-post-training-wake-up-call.md) | 相近 | 弱（待 Luke 确认） |

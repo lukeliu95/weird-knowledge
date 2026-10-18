@@ -32,3 +32,4 @@ verified: true
 | [Agent Skills设计哲学与迭代](../clips/2026-10-18-dotey-agent-skills-design-philosophy.md) | 换了说法 | 强 |
 | [Manus 把工具分成三层的设计](../clips/2026-10-18-dotey-manus-three-layer-tools.md) | 相近 | 弱（待 Luke 确认） |
 | [Agent Skills 是上下文卸载](../clips/2026-10-18-yonah-x-skills-context-offloading.md) | 直接源自 | 强 |
+| [常驻 agent 的 6 层结构（推文作者据 OpenAI 资料自制的 PDF）](../clips/2026-10-18-choopyplug1-openai-always-on-agent-six-layers.md) | 相近 | 弱（待 Luke 确认） |
