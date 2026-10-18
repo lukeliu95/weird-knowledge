@@ -2,7 +2,7 @@
 
 > 这是"读者" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v0.4 · 2026-10-18 · 更新记录见文末
+> v0.5 · 2026-10-18 · 更新记录见文末
 
 ## 你是谁
 
@@ -43,7 +43,7 @@
 | 要做的事 | Claude Code | Codex |
 |---|---|---|
 | 抓 X 推文、串推 | `opencli twitter thread <链接> -f json` | 同左。沙箱默认不联网，要先申请联网权限 |
-| 抓 X 长文（Article） | `opencli twitter article <链接> -f md` | 同左 |
+| 抓 X 长文（Article） | `opencli twitter article <链接> -f json`，正文在 `content` 字段（`-f md` 会把正文塞进表格，换行变成 `<br>`，不要用）。长文链接 `x.com/作者/article/编号` 抓不到时，换成推文链接 `x.com/作者/status/同一个编号` 再抓；还不行，就用 `opencli twitter search` 按作者和发布日期找到发这篇长文的推文，用它的链接 | 同左 |
 | 读其他网页 | WebFetch，或者用内置浏览器读页面文字 | `opencli browser`，或者用自带的网页工具 |
 | 联网搜索 | WebSearch | 自带的网页搜索（如果开着） |
 | 查理论、提出者、年份 | `opencli wikipedia summary <词条>` | 同左 |
@@ -215,6 +215,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v0.5 | 2026-10-18 | 抓 X 长文：改用 `-f json` 取正文；长文链接抓不到时换成同编号的推文链接，再不行就按作者和日期搜出那条推文 |
 | v0.4 | 2026-10-18 | 加了「在 worktree 里怎么提交」：先在 worktree 的分支上提交，再把 `main` 快进过来并推送 |
 | v0.3 | 2026-10-18 | 仓库公开到 GitHub `lukeliu95/duzhe`，每次提交后推送；隐私一条改成公开仓库的说法 |
 | v0.2 | 2026-10-18 | 明确"读者"是一个 agent，加了「你是谁」；`CLAUDE.md` 改为自动引入本文件；加了 Claude Code 和 Codex 的工具对照；加了「自我更新」 |
