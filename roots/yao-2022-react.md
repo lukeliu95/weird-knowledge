@@ -29,3 +29,4 @@ verified: true
 | [Anthropic 六种工作流与智能体](../clips/2026-10-18-eze-is-1-anthropic-workflow-patterns.md) | 相近 | 弱（待 Luke 确认） |
 | [Operator靠CUA操作屏幕的原理](../clips/2026-10-18-dotey-openai-operator-cua-how.md) | 相近 | 弱（待 Luke 确认） |
 | [大白话讲清 Agent、工作流与 ReACT](../clips/2026-10-18-yangyi-agent-workflow-react-explained.md) | 直接源自 | 强 |
+| [Claude Code 的 Task 工具原理](../clips/2026-10-18-dotey-claude-code-task-subagent.md) | 相近 | 弱（待 Luke 确认） |

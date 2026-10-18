@@ -27,3 +27,4 @@ verified: true
 |---|---|---|
 | [Agent 基础设施的一线观察](../clips/2026-10-18-dotey-anthropic-agent-infrastructure-talk.md) | 相近 | 弱（待 Luke 确认） |
 | [多数 Agent 其实只是工作流](../clips/2026-10-18-eze-is-1-agent-vs-workflow-definition.md) | 相近 | 弱（待 Luke 确认） |
+| [宝玉写提示词的原则：做成可玩的模板](../clips/2026-10-18-dotey-dotey-prompt-writing-principles.md) | 相近 | 弱（待 Luke 确认） |

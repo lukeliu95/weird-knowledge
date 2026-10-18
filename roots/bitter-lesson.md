@@ -33,3 +33,7 @@ verified: true
 | [Claude Code播客：工具终将消失](../clips/2026-10-18-genie0309-claude-code-podcast-tools-disappear.md) | 直接源自 | 强 |
 | [Claude Code之父：配置越少越好](../clips/2026-10-18-xiaohu-claude-code-minimal-claude-md.md) | 直接源自 | 强 |
 | [谈用 Claude 做智能体：少搭脚手架](../clips/2026-10-18-alexalbert-agent-scaffolding-context-talk.md) | 相近 | 弱（待 Luke 确认） |
+| [宝玉写提示词的原则：做成可玩的模板](../clips/2026-10-18-dotey-dotey-prompt-writing-principles.md) | 相近 | 弱（待 Luke 确认） |
+| [MiMo-V2.6 的强化学习之路](../clips/2026-10-18-luofuli-mimo-v2-6-scaling-rl.md) | 相近 | 弱（待 Luke 确认） |
+| [Sora 团队伯克利课堂分享字幕翻译](../clips/2026-10-18-dotey-sora-team-berkeley-talk.md) | 换了说法 | 强 |
+| [Tripo Eden：先建地图再渲染](../clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | 挑战 | 弱（待 Luke 确认） |

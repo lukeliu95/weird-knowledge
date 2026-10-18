@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Samuel 的跳棋程序：机器靠自己对弈学习，下得比写它的人还好](../clips/2026-10-18-samuel-machine-learning-checkers.md) | 相近 | 弱（待 Luke 确认） |
+| [谁是傀儡：刘慈欣谈外星智慧判断](../clips/2026-10-18-zho-zho-zho-who-is-the-puppet-liu-cixin.md) | 相近 | 弱（待 Luke 确认） |

@@ -26,3 +26,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Pi 作者：代码即真相，Bash 够用](../clips/2026-10-18-dotey-pi-authors-code-bash-insights.md) | 相近 | 弱（待 Luke 确认） |
+| [Tripo Eden：先建地图再渲染](../clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | 相近 | 弱（待 Luke 确认） |

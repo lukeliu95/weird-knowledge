@@ -28,3 +28,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [DeepSeek R1 论文解读：自学成才之路](../clips/2026-10-18-oran-ge-deepseek-r1-paper-explained.md) | 直接源自 | 强 |
+| [MiMo-V2.6 的强化学习之路](../clips/2026-10-18-luofuli-mimo-v2-6-scaling-rl.md) | 直接源自 | 强 |
+| [论文从闭源模型里偷出隐藏思维链](../clips/2026-10-18-maxforai-stealing-hidden-chain-of-thought.md) | 直接源自 | 强 |

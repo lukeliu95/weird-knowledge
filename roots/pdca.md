@@ -27,3 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [Anthropic专家谈提示词工程师](../clips/2026-10-18-eze-is-1-anthropic-prompt-engineering-notes.md) | 相近 | 弱（待 Luke 确认） |

@@ -30,3 +30,4 @@ Anthropic 用“一个主 Agent 规划、多个子 Agent 各带独立上下文�
 | [Anthropic 多智能体研究系统详解](../clips/2026-10-18-oran-ge-anthropic-multi-agent-research.md) | 直接源自 | 强 |
 | [用个人AI编排者带动一支永不睡觉的开发队](../clips/2026-10-18-ayi-ainotes-personal-ai-orchestrator-openclaw.md) | 相近 | 弱（待 Luke 确认） |
 | [Matrix：Agent 公司架构](../clips/2026-10-18-bruceguai-matrix-agent-company-architecture.md) | 相近 | 弱（待 Luke 确认） |
+| [Claude Code 的 Task 工具原理](../clips/2026-10-18-dotey-claude-code-task-subagent.md) | 相近 | 弱（待 Luke 确认） |

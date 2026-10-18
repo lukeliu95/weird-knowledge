@@ -32,3 +32,4 @@ verified: true
 | [智谱让 GLM-5.3 自己优化推理系统](../clips/2026-10-18-dotey-glm-5-3-optimizes-own-inference.md) | 相近 | 弱（待 Luke 确认） |
 | [Agent 循环工程晚宴讨论要点](../clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | 相近 | 弱（待 Luke 确认） |
 | [把推特运营交给 AI 62 天的结果](../clips/2026-10-18-weiyipei-ai-agent-runs-twitter-62-days.md) | 相近 | 弱（待 Luke 确认） |
+| [DeepSeek 工程师：手艺在过时](../clips/2026-10-18-maxforai-deepseek-kernel-engineer-essay.md) | 相近 | 弱（待 Luke 确认） |

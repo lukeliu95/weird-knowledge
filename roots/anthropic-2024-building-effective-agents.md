@@ -40,3 +40,4 @@ verified: true
 | [给公司业务接入智能体的五点思考](../clips/2026-10-18-dotey-enterprise-agent-integration-tips.md) | 换了说法 | 强 |
 | [ADK 开发者该懂的五种 Agent Skill 设计模式](../clips/2026-10-18-googlecloudtech-adk-agent-skill-design-patterns.md) | 相近 | 弱（待 Luke 确认） |
 | [大白话讲清 Agent、工作流与 ReACT](../clips/2026-10-18-yangyi-agent-workflow-react-explained.md) | 换了说法 | 弱（待 Luke 确认） |
+| [写好Spec后让Agent整周自动开发](../clips/2026-10-18-timyangnet-spec-driven-agent-development.md) | 相近 | 弱（待 Luke 确认） |

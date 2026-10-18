@@ -7,10 +7,10 @@ published: 2026-03-02 22:34 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 设计与前端
-roots: []
+roots: [double-diamond-design-process-model, no-silver-bullet, theory-of-constraints, lean-startup, the-cathedral-and-the-bazaar, ibm-1979-computer-accountable, radical-candor, psychological-safety, t-shaped-skills, tana-2025-legibility-matrix, high-output-management, genchi-genbutsu]
 ---
 
 ## 原文
@@ -285,3 +285,19 @@ Anthropic 设计团队正在招人。如果“设计流程已死”这件事让�
 
 ## 溯源
 
+- 核心主张：工程速度被 AI 拉高后，“先调研、发散收敛、再交付设计稿”的双钻石流程跟不上了；设计师要贴着工程、用原型和真实模型快速迭代，而人真正的价值在于决定做什么、并为决定负责。
+- 源知识：
+  - [双钻石设计流程](../roots/double-diamond-design-process-model.md) · 关系：挑战 · 强弱：强。Jenny Wen 点名经典的双钻石模型（发散-收敛-发散-收敛），说这套被当圣经的流程“基本已经死了”
+  - [没有银弹（本质复杂度与偶然复杂度）](../roots/no-silver-bullet.md) · 关系：相近 · 强弱：强。她说“构建软件最难的部分其实不是构建它本身”，难在争论该不该做、做成什么样；Brooks 原话是“造软件最难的一件事是精确决定要造什么”，几乎一致，她没引用
+  - [约束理论](../roots/theory-of-constraints.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。工程师能同时开 7 个 Claude 造功能，工程不再是瓶颈，设计流程必须围绕新的瓶颈重排，符合约束理论，属推断
+  - [精益创业](../roots/lean-startup.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。AI 模型输出不确定，设计稿模拟不了所有状态，只能用真实模型、看真实用户怎么用，接近“构建-测量-学习”的验证式学习，属推断
+  - [大教堂与集市](../roots/the-cathedral-and-the-bazaar.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“发布早期版本后什么都不做才最伤信任”，以及团队在 Twitter 上回复反馈、快速修复，和 Raymond 的“早发布、常发布、听用户的”几乎同义，她没引用
+  - [“计算机不能被问责，所以不能做管理决策”（IBM 1979 培训资料）](../roots/ibm-1979-computer-accountable.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。AI 能给建议，但决策和责任仍在人身上，放射科医生要签字是因为出错时得有人担责；与流传的 IBM 1979 培训资料“计算机永远不能被问责，所以不能让它做管理决策”相近
+  - [彻底坦率](../roots/radical-candor.md) · 关系：直接源自 · 强弱：强。Lenny 明说这就是“极度坦诚（Radical Candor）的经典公式：深深关心加直接挑战”
+  - [心理安全感](../roots/psychological-safety.md) · 关系：直接源自 · 强弱：弱（待 Luke 确认）。文中明说“有了心理安全感作为基础，提出高标准反而变得更容易”，用的是 Edmondson 的心理安全概念，但没注明出处
+  - [T 型人才（T 型技能）](../roots/t-shaped-skills.md) · 关系：直接源自 · 强弱：强。她把想招的人和“传统的 T 型人才”对比，提出方块型通才和深 T 型专家，直接建立在 T 型人才这个比喻上
+  - [可读性矩阵（创始人可读性 × 想法可读性）](../roots/tana-2025-legibility-matrix.md) · 关系：直接源自 · 强弱：强。她点名用 SPC 合伙人 Evan Tana 的“可读性矩阵”（创始人可读性 × 想法可读性）在内部原型里找“看不懂但有能量”的东西
+  - [《格鲁夫给经理人的第一课》（管理杠杆）](../roots/high-output-management.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。她表面上在反驳管理培训里“砍掉低杠杆的事”，但结论是领导亲手做的事因为影响很多人而变成高杠杆，这正符合 Grove 说的“影响很多人的活动就是高杠杆”
+  - [现地现物](../roots/genchi-genbutsu.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。高管亲自测产品、复现问题、跟工程师看日志，以建立对产品的深度熟悉，就是丰田“现地现物”（到现场亲眼看）的做法，她没提，属推断
+- 本质：这条新知识本质上是约束理论（瓶颈转移）在 AI 时代设计流程上的应用：工程不再是瓶颈后，设计从“前置把关”变成“贴身引导”，难点回到 Brooks 说的“决定到底做什么”，而这一步的决策和责任仍归人。
+- 整理于：2026-10-18（第 2 轮）

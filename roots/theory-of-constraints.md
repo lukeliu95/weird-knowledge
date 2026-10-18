@@ -31,3 +31,5 @@ verified: true
 | [AI 时代最值钱的是懂 AI 的产品经理](../clips/2026-10-18-dotey-ai-product-manager-skills.md) | 相近 | 弱（待 Luke 确认） |
 | [同城 IP 团队的真实 Agent 需求](../clips/2026-10-18-wanghao8080-local-ip-agent-need.md) | 相近 | 弱（待 Luke 确认） |
 | [两天用完 AI 额度，四天做营销的周节奏](../clips/2026-10-18-yihui-indie-ai-two-day-dev-week-rhythm.md) | 相近 | 弱（待 Luke 确认） |
+| [写好Spec后让Agent整周自动开发](../clips/2026-10-18-timyangnet-spec-driven-agent-development.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic 设计负责人谈 AI 时代设计流程](../clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | 相近 | 弱（待 Luke 确认） |

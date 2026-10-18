@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [智谱让 GLM-5.3 自己优化推理系统](../clips/2026-10-18-dotey-glm-5-3-optimizes-own-inference.md) | 直接源自 | 强 |
+| [DeepSeek 工程师：手艺在过时](../clips/2026-10-18-maxforai-deepseek-kernel-engineer-essay.md) | 相近 | 弱（待 Luke 确认） |

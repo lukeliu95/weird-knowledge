@@ -31,3 +31,4 @@ verified: true
 |---|---|---|
 | [Karpathy 谈 GPT 现状](../clips/2026-10-18-dotey-karpathy-state-of-gpt.md) | 直接源自 | 强 |
 | [Agent 智能体是模型能力的放大器](../clips/2026-10-18-waytoagi-agent-model-capability-amplifier.md) | 相近 | 弱（待 Luke 确认） |
+| [DeepSeek-R1训练流程图解](../clips/2026-10-18-bookwormengr-deepseek-r1-training-flow.md) | 直接源自 | 强 |

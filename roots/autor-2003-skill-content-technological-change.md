@@ -27,3 +27,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [OpenAI 企业用 AI 的七条经验](../clips/2026-10-18-shao-meng-openai-enterprise-ai-lessons.md) | 相近 | 弱（待 Luke 确认） |
+| [吴恩达的智能体编程时代软件工程能力图](../clips/2026-10-18-andrewyng-andrew-ng-ai-engineering-skills-map.md) | 相近 | 弱（待 Luke 确认） |
+| [AI 辅助编程带来的需求开发范式变化](../clips/2026-10-18-dotey-ai-coding-requirements-shift.md) | 相近 | 弱（待 Luke 确认） |

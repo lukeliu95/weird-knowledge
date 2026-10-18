@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [用航空维修英语规范让 AI 讲清楚话](../clips/2026-10-18-hitw93-asd-ste100-clarity-waza.md) | 相近 | 弱（待 Luke 确认） |
 | [一年涨到四万关注的三条心得](../clips/2026-10-18-lifesinger-twitter-40k-followers-lessons.md) | 相近 | 弱（待 Luke 确认） |
+| [日本公司邮件与外资邮件的对比段子](../clips/2026-10-18-hikaru-hackjpn-japan-vs-foreign-email-meme.md) | 相近 | 弱（待 Luke 确认） |

@@ -25,3 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [稀缺从怎么做转向做什么](../clips/2026-10-18-lijigang-scarcity-how-to-what.md) | 相近 | 弱（待 Luke 确认） |

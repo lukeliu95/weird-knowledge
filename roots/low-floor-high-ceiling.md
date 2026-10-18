@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [潜入 Cursor 60 天看到的公司文化](../clips/2026-10-18-dotey-inside-cursor-culture.md) | 直接源自 | 弱（待 Luke 确认） |
+| [宝玉写提示词的原则：做成可玩的模板](../clips/2026-10-18-dotey-dotey-prompt-writing-principles.md) | 相近 | 弱（待 Luke 确认） |

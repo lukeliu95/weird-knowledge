@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [世界分成会用与不会用 ChatGPT](../clips/2026-10-18-dotey-chatgpt-two-kinds-of-people.md) | 挑战 | 弱（待 Luke 确认） |
+| [Kimi-code重构一个月的架构复盘](../clips/2026-10-18-real-kai42-kimi-code-rewrite-retrospective.md) | 相近 | 弱（待 Luke 确认） |

@@ -28,3 +28,5 @@ verified: true
 |---|---|---|
 | [大模型是冰箱，赚钱的是卖冷饮的人](../clips/2026-10-18-mubeitech-llm-fridge-coca-cola-analogy.md) | 相近 | 弱（待 Luke 确认） |
 | [技术领导者要知道的生成式 AI 五个真相](../clips/2026-10-18-dotey-five-hard-truths-genai.md) | 相近 | 弱（待 Luke 确认） |
+| [品味可以被模仿，决策才不可替代](../clips/2026-10-18-mengkepm-taste-copyable-decision-irreplaceable.md) | 相近 | 弱（待 Luke 确认） |
+| [热情是最大的护城河](../clips/2026-10-18-zarazhangrui-passion-biggest-moat.md) | 相近 | 弱（待 Luke 确认） |

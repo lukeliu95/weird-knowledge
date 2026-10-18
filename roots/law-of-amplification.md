@@ -30,3 +30,5 @@ verified: true
 | [玉伯谈 AI 时代小团队生产力的真相](../clips/2026-10-18-saitowu-small-team-productivity-ai-era.md) | 换了说法 | 弱（待 Luke 确认） |
 | [Agent 循环工程晚宴讨论要点](../clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | 相近 | 弱（待 Luke 确认） |
 | [Agent 智能体是模型能力的放大器](../clips/2026-10-18-waytoagi-agent-model-capability-amplifier.md) | 相近 | 弱（待 Luke 确认） |
+| [哈萨比斯：懂 AI 的一个人胜过团队](../clips/2026-10-18-anatolikopadze-hassabis-ai-person-outperforms-team.md) | 相近 | 弱（待 Luke 确认） |
+| [Kimi-code重构一个月的架构复盘](../clips/2026-10-18-real-kai42-kimi-code-rewrite-retrospective.md) | 相近 | 弱（待 Luke 确认） |

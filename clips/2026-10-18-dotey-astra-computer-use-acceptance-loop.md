@@ -7,10 +7,10 @@ published: 2026-09-05 01:44 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [acceptance-testing, cherny-2025-claude-code-best-practices, openai-2025-computer-using-agent, feedback]
 ---
 
 ## 原文
@@ -32,3 +32,11 @@ roots: []
 
 ## 溯源
 
+- 核心主张：电脑操作能力跨过“又准又快”的门槛后，agent 可以自己点界面测试验收，开发到验收形成闭环，既减少人工验收，也能覆盖端到端测试框架做不到或太贵的场景。
+- 源知识：
+  - [验收测试](../roots/acceptance-testing.md) · 关系：直接源自 · 强弱：强。作者讲的就是验收：开发完后按需求逐项检查，并点名 Playwright 这类端到端测试框架做对比。
+  - [Claude Code 最佳实践（给 Claude 一个验证自己工作的办法）](../roots/cherny-2025-claude-code-best-practices.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Claude Code 最佳实践的核心是给 agent 一个能自己跑的检查（测试、截图对比），做完、检查、再改；本条把这个检查换成了 agent 自己操作电脑验收。
+  - [OpenAI 计算机使用智能体（CUA）](../roots/openai-2025-computer-using-agent.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。OpenAI 的 CUA 只看屏幕像素、用虚拟鼠标键盘操作，本条说的电脑操作是同一类能力；GPT 6 Astra 与 CUA 的具体关系未核实。
+  - [反馈](../roots/feedback.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“形成完整的闭环”就是反馈回路：让 agent 看到自己产出的实际效果，再据此纠正。
+- 本质：这条新知识本质上是反馈闭环（让执行者自己检查结果再修正）在编码 agent 验收环节的应用：电脑操作够准够快之后，验收这一步也能交给 agent。
+- 整理于：2026-10-18（第 2 轮）

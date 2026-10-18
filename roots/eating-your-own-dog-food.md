@@ -29,3 +29,4 @@ verified: true
 | [Claude Code之父：配置越少越好](../clips/2026-10-18-xiaohu-claude-code-minimal-claude-md.md) | 相近 | 弱（待 Luke 确认） |
 | [Agent Skills设计哲学与迭代](../clips/2026-10-18-dotey-agent-skills-design-philosophy.md) | 相近 | 弱（待 Luke 确认） |
 | [11 个月做到 350 万美元 ARR](../clips/2026-10-18-pierreeliottlal-gojiberry-ai-3-5m-arr.md) | 直接源自 | 强 |
+| [独立开发者每天只工作四小时](../clips/2026-10-18-marclou-marclou-meets-jesse-thanley.md) | 相近 | 弱（待 Luke 确认） |

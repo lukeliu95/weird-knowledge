@@ -27,3 +27,4 @@ verified: true
 |---|---|---|
 | [AI 时代最值钱的是懂 AI 的产品经理](../clips/2026-10-18-dotey-ai-product-manager-skills.md) | 相近 | 弱（待 Luke 确认） |
 | [出租屋卖亚马逊爆款配件月销二十万](../clips/2026-10-18-vincent-ainotes-amazon-accessories-side-hustle.md) | 相近 | 弱（待 Luke 确认） |
+| [WorkBuddy 播客：编程不再稀缺](../clips/2026-10-18-ayi-ainotes-workbuddy-podcast-ai-era-skills.md) | 相近 | 弱（待 Luke 确认） |

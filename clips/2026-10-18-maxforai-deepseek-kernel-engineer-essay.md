@@ -7,10 +7,10 @@ published: 2026-09-15 00:55 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 思维与成长
-roots: []
+roots: [liu-2026-burying-talent-yesterday, deskilling, sheridan-1992-human-supervisory-control, zai-2026-glm-inference-infrastructure, drago-2025-intelligence-curse, matthew-effect]
 ---
 
 ## 原文
@@ -74,3 +74,13 @@ Liu做的是模型底层的 kernel 设计和优化，DeepSeek V4.1 的 Main Atte
 
 ## 溯源
 
+- 核心主张：AI 很快会在写 kernel 这种顶尖手艺上追平甚至超过人类专家，专家的工作从亲手做变成指挥 Agent 做；如果最强的 AI 被少数公司垄断，社会会走向强者愈强的固化，所以要用开源让 AI 普及。
+- 源知识：
+  - [刘胜与《我不得不把才华埋葬在昨天》](../roots/liu-2026-burying-talent-yesterday.md) · 关系：直接源自 · 强弱：强。推文是在转述 DeepSeek 工程师刘胜与的随笔《我不得不把才华埋葬在昨天》，“机甲驾驶员”、半年到一年被 AI 追平、拿《赛博朋克 2077》作比、留在 DeepSeek 做开源等内容都出自原文（据 36 氪转载和界面新闻报道）。
+  - [去技能化](../roots/deskilling.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。原本要多年练就的 kernel 优化手艺被 AI 吸收，人的手艺不再重要，和去技能化（技术把熟练工的活变成机器或非熟练者也能做）相近。
+  - [人类监督控制](../roots/sheridan-1992-human-supervisory-control.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。从“亲手写 kernel”变成“驾驶 Agent 写 kernel”（定目标、划边界、评估方案），就是谢里丹说的自动化程度提高后人从操作者变成监督者。
+  - [走向递归自我改进：GLM 如何搭建自己的推理基础设施](../roots/zai-2026-glm-inference-infrastructure.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。同一时期智谱报告让 Agent 承担推理系统的大部分优化、工程师只负责定目标和划边界，和刘胜与描述的转变是同一现象；两者之间没有互相引用。
+  - [智能诅咒](../roots/drago-2025-intelligence-curse.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“少数公司掌握最强 AI，其他人只能用削弱版、阶层流动停滞”和《智能诅咒》的担忧几乎一致，后者开出的药方也是让 AI 扩散到普通人手里；刘胜与没有引用这篇文章。
+  - [马太效应（累积优势）](../roots/matthew-effect.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“先有最强 AI 才能拿到更多资源，先有更多资源才能用上最强 AI”的死循环，就是累积优势（富者愈富）的自我强化。
+- 本质：这条新知识本质上是自动化让人从操作者变成监督者（去技能化）、以及关键生产要素被少数人垄断时的累积优势与“资源诅咒”，在 AI 写 kernel 和前沿模型开源与否这一场景下的应用。
+- 整理于：2026-10-18（第 2 轮）

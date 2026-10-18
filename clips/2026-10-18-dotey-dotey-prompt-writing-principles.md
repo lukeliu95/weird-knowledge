@@ -7,10 +7,10 @@ published: 2025-12-04 17:23 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 提示词与写作
-roots: []
+roots: [low-floor-high-ceiling, separation-of-concerns, galls-law, bitter-lesson, knuth-1974-structured-programming-go-to, ensemble-learning]
 ---
 
 ## 原文
@@ -49,3 +49,13 @@ roots: []
 
 ## 溯源
 
+- 核心主张：写提示词要先针对一个具体情况跑通原型，再抽象成可替换输入的模板；充分借用模型自己的能力，不人为限制；先保证能用、能生长，成熟后再精简；同一任务交给几个模型并行生成，挑最好的。
+- 源知识：
+  - [低地板、高天花板](../roots/low-floor-high-ceiling.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“做成模板，给用户一个能玩的框架，而不是规定他们必须怎么写”，对应 Papert、Resnick 的“低地板、高天花板”：容易上手，又留够发挥空间。
+  - [关注点分离](../roots/separation-of-concerns.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者明说“就像写程序，不 hardcode，而是留好接口灵活组合”：把固定的结构和可变的输入分开，是关注点分离在提示词上的用法。
+  - [加尔定律](../roots/galls-law.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“先跑通一个具体原型，再扩展成模板，优先确保能用、能生长”，和“能运转的复杂系统都是从能运转的简单系统演化来的”一致。
+  - [苦涩的教训](../roots/bitter-lesson.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“充分结合模型自身的能力，不去人为限制它”，和苦涩的教训“依靠能随算力扩展的通用能力，少往系统里塞人设计的规则”方向一致。
+  - [过早优化是万恶之源（Knuth《带 goto 语句的结构化编程》）](../roots/knuth-1974-structured-programming-go-to.md) · 关系：换了说法 · 强弱：弱（待 Luke 确认）。“不过度花时间压缩 prompt，等功能成熟后再考虑精简”，就是 Knuth“过早优化是万恶之源”换到提示词上的说法。
+  - [集成学习](../roots/ensemble-learning.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“把同一个任务同时发给几个模型，挑表现最好的”，对应集成学习里的“模型桶”（bucket of models）：用一个选择机制给每个问题挑最好的模型。
+- 本质：这条新知识本质上是软件工程的老原则（先做原型、再抽象成接口、别硬编码、别过早优化）在提示词设计场景下的应用。
+- 整理于：2026-10-18（第 2 轮）

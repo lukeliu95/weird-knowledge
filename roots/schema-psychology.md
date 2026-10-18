@@ -26,3 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [孩子听企业家播客缺的是判断框架](../clips/2026-10-18-reyjudgementos-kids-entrepreneur-podcast-judgment.md) | 相近 | 弱（待 Luke 确认） |

@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [智力平权之后，行动力成最大差异](../clips/2026-10-18-oran-ge-agency-after-intelligence-equality.md) | 直接源自 | 强 |
+| [WorkBuddy 播客：编程不再稀缺](../clips/2026-10-18-ayi-ainotes-workbuddy-podcast-ai-era-skills.md) | 相近 | 弱（待 Luke 确认） |

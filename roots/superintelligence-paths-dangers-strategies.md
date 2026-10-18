@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [伯克利 AGI House 谈安全](../clips/2026-10-18-indigox-agi-house-berkeley-safety.md) | 相近 | 弱（待 Luke 确认） |
+| [谁是傀儡：刘慈欣谈外星智慧判断](../clips/2026-10-18-zho-zho-zho-who-is-the-puppet-liu-cixin.md) | 相近 | 弱（待 Luke 确认） |

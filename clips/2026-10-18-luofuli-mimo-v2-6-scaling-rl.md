@@ -7,10 +7,10 @@ published: 2026-09-21 22:27 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 模型与本地部署
-roots: []
+roots: [xiaomi-2026-mimo-v2-6-scaling-rl, ma-2026-mopd, multi-task-learning, espeholt-2018-impala, wei-2025-verifiers-law, wang-2025-octothinker-mid-training, bitter-lesson, conways-law, knowledge-distillation]
 ---
 
 ## 原文
@@ -34,3 +34,16 @@ MiMo-V2.6 is only the beginning. In an era when intelligence is easy to replicat
 
 ## 溯源
 
+- 核心主张：模型潜力靠中期训练打底、靠大规模强化学习释放；中等难度、可验证的任务放进同一次混合强化学习，泛化很好；难验证、超长程或太难的任务单独训练，再用多教师在线策略蒸馏（MOPD）合并，免得拖慢采样或让采样数据落后于最新模型；团队扁平、没有部门墙，混合训练才做得起来。
+- 源知识：
+  - [MiMo-V2.6：扩展强化学习走向自我改进](../roots/xiaomi-2026-mimo-v2-6-scaling-rl.md) · 关系：直接源自 · 强弱：强。推文就是在介绍这份技术报告；报告摘要写明先做中期训练扩大探索空间、再扩展强化学习算力，正文写明用 GRPO 和异步部分采样（滞后度 4）
+  - [MOPD：多教师在线策略蒸馏](../roots/ma-2026-mopd.md) · 关系：直接源自 · 强弱：强。推文明说单独训练的能力用 MOPD 合并；MOPD 由同一个小米 MiMo 团队提出
+  - [多任务学习](../roots/multi-task-learning.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。相关任务一起训练能互相当归纳偏置、提升泛化，冲突的任务会互相拖累（负迁移），正对应“能一起练的混练、练不到一起的分开”；属推断
+  - [IMPALA：可扩展的分布式深度强化学习](../roots/espeholt-2018-impala.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。推文说的 rollout staleness，就是采样用的策略落后于正在更新的策略；IMPALA 是处理这个问题的经典异步架构；属推断
+  - [验证的不对称与验证者法则](../roots/wei-2025-verifiers-law.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。可验证任务直接上强化学习、难验证任务另想办法，符合“越好验证越容易被强化学习训好”；属推断
+  - [OctoThinker：中期训练让强化学习更能扩展](../roots/wang-2025-octothinker-mid-training.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“潜力靠中期训练打底、靠强化学习释放”与 OctoThinker 的“中期训练让强化学习更能扩展”几乎是同一个主张；推文没有引用
+  - [苦涩的教训](../roots/bitter-lesson.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。在算力稀缺时仍押重注扩展强化学习算力，是“能随算力扩展的通用方法终将胜出”的思路；属推断
+  - [康威定律](../roots/conways-law.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者说团队扁平、没有部门墙，所以混合强化学习不难：训练方式（联合训练还是各领域分开再合并）跟着组织的沟通结构走；MOPD 专文也说它让各领域老师能独立并行开发
+  - [知识蒸馏](../roots/knowledge-distillation.md) · 关系：直接源自 · 强弱：强。推文明说开源了用 MiMo 强化学习轨迹蒸馏出的 Qwen 模型
+- 本质：这条新知识本质上是“多任务联合训练加知识蒸馏”在大模型强化学习后训练上的组合应用，而选联合训练还是分开再合并，又受团队组织结构（康威定律）影响。
+- 整理于：2026-10-18（第 2 轮）

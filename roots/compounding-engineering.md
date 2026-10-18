@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [Claude Code播客：工具终将消失](../clips/2026-10-18-genie0309-claude-code-podcast-tools-disappear.md) | 直接源自 | 强 |
 | [Matrix：Agent 公司架构](../clips/2026-10-18-bruceguai-matrix-agent-company-architecture.md) | 相近 | 弱（待 Luke 确认） |
+| [Claude Code之父的三条心得](../clips/2026-10-18-ayi-ainotes-boris-cherny-workflow-three-rules.md) | 直接源自 | 强 |

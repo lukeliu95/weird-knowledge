@@ -7,10 +7,10 @@ published: 2025-06-19 20:17 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [divide-and-conquer-algorithm, anthropic-2025-multi-agent-research-system, martin-2025-context-engineering-agents, yao-2022-react, yan-2025-dont-build-multi-agents]
 ---
 
 ## 原文
@@ -60,3 +60,12 @@ Claude Code 真的没有做什么工程上的优化，什么上下文压缩、�
 
 ## 溯源
 
+- 核心主张：Claude Code 的 Task 工具是把自己克隆成一个工具（递归）：主 agent 按待办清单把每一步交给只带必要上下文的子 agent，主线只保留子任务的结果，所以长时间运行上下文也不爆；整个系统就是“把历史和工具发给模型、执行它选的工具、把结果追加回去”的循环。
+- 源知识：
+  - [分治法](../roots/divide-and-conquer-algorithm.md) · 关系：相近 · 强弱：强。作者明说“懂递归就很好理解”：大任务拆成同类子任务交给自己的分身去做，结果再汇总回主任务。
+  - [Anthropic 多智能体研究系统](../roots/anthropic-2025-multi-agent-research-system.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Anthropic 一周前（2025-06-13）发布的编排-工人架构：主 agent 规划，子 agent 各带独立上下文干活，与本条描述的主任务/子任务结构一致。
+  - [智能体的上下文工程（写入、选取、压缩、隔离）](../roots/martin-2025-context-engineering-agents.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。上下文管理四类做法里的“隔离”：把上下文拆给子 agent，主线只接收结果，就是本条说的“上下文分摊到子任务”。
+  - [ReAct：推理与行动协同](../roots/yao-2022-react.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。第 1～7 步“问模型下一步用什么工具、执行、把结果连同历史再发回去”就是 ReAct 式的推理-行动循环。
+  - [别做多智能体](../roots/yan-2025-dont-build-multi-agents.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。Cognition 同期文章说 Claude Code 的子 agent 从不和主 agent 并行干活、通常只回答问题不写代码，和本条“子任务修 bug、写测试、可以并行多任务”的说法相反。另外本条说 Claude Code“没有上下文压缩”，但官方更新记录在研究预览期的 0.2.47 版就列有“自动压缩对话”，这一句与事实不符。
+- 本质：这条新知识本质上是分治（递归拆成同类子问题）加上下文隔离在编码 agent 场景下的应用：子 agent 就是 agent 对自己的递归调用，用来分摊上下文。
+- 整理于：2026-10-18（第 2 轮）

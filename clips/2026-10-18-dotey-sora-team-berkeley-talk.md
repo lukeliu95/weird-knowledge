@@ -7,10 +7,10 @@ published: 2024-03-17 07:23 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 视频生成
-roots: []
+roots: [bitter-lesson, brooks-2024-video-world-simulators, inductive-bias, betker-2023-better-captions, dataset-shift, meng-2021-sdedit]
 ---
 
 ## 原文
@@ -42,3 +42,13 @@ Bill Peebles:
 
 ## 溯源
 
+- 核心主张：只要算力和数据足够，少往模型里塞人为的归纳偏置、让大网络自己学，3D 一致性、长程连贯这些能力会自己冒出来；推理时再把用户的短提示扩写成和训练时一样详细的描述，贴合训练分布，效果最好。
+- 源知识：
+  - [苦涩的教训](../roots/bitter-lesson.md) · 关系：换了说法 · 强弱：强。Peebles 说“在某个时点，过度的归纳偏见会成为阻碍；有足够的算力和数据，让大网络自由学习往往最成功”，几乎是 Sutton“通用方法 + 算力终将胜过人为知识”的原话
+  - [视频生成模型是世界模拟器（Sora 技术报告）](../roots/brooks-2024-video-world-simulators.md) · 关系：直接源自 · 强弱：强。两位讲者就是 Sora 技术报告的作者；报告原文写着这些能力“没有任何针对 3D、物体的显式归纳偏置，纯粹是规模现象”，讲座里的 3D 一致性、长程连贯、提示扩写、SDEdit、视频延展和插值都和报告一一对应
+  - [归纳偏置](../roots/inductive-bias.md) · 关系：直接源自 · 强弱：强。讲者明确用“归纳偏见”这个机器学习术语，并说算力有限时才值得把先验直接写进模型
+  - [用更好的图片描述改进图像生成（DALL·E 3 论文）](../roots/betker-2023-better-captions.md) · 关系：直接源自 · 强弱：强。Sora 报告明说沿用 DALL·E 3 的重新标注和“用 GPT 把短提示扩写成详细描述”；DALL·E 3 论文第 3.5 节原话是生成模型在训练分布之外采样效果差，所以要扩写提示，Tim Brooks 也是该论文作者之一
+  - [数据集偏移](../roots/dataset-shift.md) · 关系：相近 · 强弱：强。讲者明说扩写后的提示“非常符合训练分布，从而产生最高质量的结果”，就是在避免训练和推理之间的分布偏移
+  - [SDEdit：用随机微分方程做引导式图像合成与编辑](../roots/meng-2021-sdedit.md) · 关系：直接源自 · 强弱：强。讲者点名用 SDEdit 做视频风格转换，Sora 报告也写明对 Sora 应用了 SDEdit
+- 本质：这条新知识本质上是“苦涩的教训”（规模和通用学习胜过人为先验）在视频生成模型上的应用，外加“让推理输入贴近训练分布”的工程技巧。
+- 整理于：2026-10-18（第 2 轮）

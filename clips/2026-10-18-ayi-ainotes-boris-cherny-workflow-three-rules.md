@@ -7,10 +7,10 @@ published: 2026-04-03 15:04 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [cherny-2026-claude-code-setup-thread, cherny-2025-claude-code-best-practices, compounding-engineering, feedback, whole-life-cost, organizational-learning]
 ---
 
 ## 原文
@@ -40,3 +40,13 @@ roots: []
 
 ## 溯源
 
+- 核心主张：用 AI 写代码要做三件事：用最强的模型（少返工，总体反而更快更省）；团队共同维护一份记录 AI 犯过的错的规则文件，让它不在同一个地方摔倒两次；让 AI 能运行并看到自己代码的结果。
+- 源知识：
+  - [Boris Cherny 公开自己的 Claude Code 用法（串推）](../roots/cherny-2026-claude-code-setup-thread.md) · 关系：直接源自 · 强弱：强。三条都出自 Boris Cherny 2026-01-02 的串推：第 3 条说用 Opus 4.5 带思考，因为要纠偏的少、总体更快；第 4 条说团队共用一份进 git 的 CLAUDE.md，Claude 做错就记一笔；第 13 条说给 Claude 验证自己工作的办法，质量能提高 2 到 3 倍。转述有走样：原文是 Opus 4.5 不是 4.6，理由是更快而不是更省 token，文件是 CLAUDE.md 不是 txt，画家比喻原串推里没有。
+  - [Claude Code 最佳实践（给 Claude 一个验证自己工作的办法）](../roots/cherny-2025-claude-code-best-practices.md) · 关系：直接源自 · 强弱：强。第三条“让 Claude 看到运行结果”和“先把计划做好”，就是 Boris Cherny 2025 年《Claude Code 最佳实践》里的“给它明确的验证目标、先探索和规划再写代码”。
+  - [复合工程](../roots/compounding-engineering.md) · 关系：直接源自 · 强弱：强。Boris 串推第 5 条明说：在代码评审时让 Claude 把教训补进 CLAUDE.md，“是我们版本的 @danshipper 的 Compounding Engineering”。
+  - [反馈](../roots/feedback.md) · 关系：直接源自 · 强弱：强。Boris 原话用的就是“feedback loop”（反馈回路）：Claude 有了这个回路，最终质量能提高 2 到 3 倍；蒙眼作画的比喻说的就是没有反馈的开环。
+  - [全生命周期成本（总拥有成本）](../roots/whole-life-cost.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。第一条“贵模型一次想清楚，便宜模型来回试错反而更费”，是按总成本而不是单价算账；作者没提这个概念，是推断。
+  - [组织学习](../roots/organizational-learning.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。第二条把每次犯错沉淀成团队共享的长期记忆，是组织学习的做法；是推断。
+- 本质：这条新知识本质上是闭环反馈和组织学习在 AI 编程智能体上的应用：让智能体看到结果来自我纠错，把每次犯错沉淀成团队共享的规则文件，并按总成本而不是单价选模型。
+- 整理于：2026-10-18（第 2 轮）

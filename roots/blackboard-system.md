@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Matrix：Agent 公司架构](../clips/2026-10-18-bruceguai-matrix-agent-company-architecture.md) | 相近 | 弱（待 Luke 确认） |
+| [备忘录加 worktree 就够了](../clips/2026-10-18-hilng77042-opc-agents-notes-worktrees.md) | 相近 | 弱（待 Luke 确认） |

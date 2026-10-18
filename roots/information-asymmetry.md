@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [TikTok头部机构创始人讲跨境价差生意](../clips/2026-10-18-vincent-ainotes-tiktok-mcn-arbitrage-talk.md) | 换了说法 | 强 |
+| [靠谱工程师毫不费力，管理者要给认可](../clips/2026-10-18-ixiaowenz-reliable-engineers-credit.md) | 相近 | 弱（待 Luke 确认） |
