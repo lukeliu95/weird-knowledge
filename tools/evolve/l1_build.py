@@ -32,12 +32,14 @@ def opencli(*args):
     return d.get("data") or []
 
 
-def author_tweets(h, limit, sleep):
-    """Fetch once per author and cache, so a rate-limited run can resume on the next loop tick."""
+def author_tweets(h, limit, sleep, since):
+    """Fetch once per author and cache, so a rate-limited run can resume on the next loop tick.
+    Uses search (from:h since:date) because the UserTweets endpoint allows only ~5 authors per quota window."""
     cache = PRIVATE / "l1" / "cache" / f"{h}.json"
     if cache.exists():
         return json.loads(cache.read_text())
-    data = opencli("tweets", h, "--limit", str(limit))
+    data = opencli("search", f"since:{since} -filter:nativeretweets -filter:replies", "--from", h,
+                   "--product", "live", "--limit", str(limit))
     cache.parent.mkdir(parents=True, exist_ok=True)
     cache.write_text(json.dumps(data, ensure_ascii=False))
     time.sleep(sleep)
@@ -69,7 +71,8 @@ def main():
     ap.add_argument("--n", type=int, default=100)
     ap.add_argument("--per-author", type=int, default=40)
     ap.add_argument("--seed", type=int, default=7)
-    ap.add_argument("--sleep", type=float, default=20, help="seconds between authors, to stay under X's rate limit")
+    ap.add_argument("--neg-from", help="take negatives from a timeline snapshot (private/l1/prospective/snapshot-*.jsonl) instead of per-author fetching")
+    ap.add_argument("--sleep", type=float, default=8, help="seconds between authors, to stay under X's rate limit")
     a = ap.parse_args()
     random.seed(a.seed)
 
@@ -93,12 +96,24 @@ def main():
     pos = pos[: a.n]
     oldest = min(p["published"][:10] for p in pos)
 
+    if a.neg_from:
+        snap = [json.loads(l) for l in Path(a.neg_from).read_text().split("\n") if l.strip()]
+        snap = [dict(id=r["id"], author=r["author"], published=r["published"], text=r["text"], label=0)
+                for r in snap if r["id"] not in liked_ids]
+        random.shuffle(snap)
+        rows = pos + snap[: len(pos)]
+        random.shuffle(rows)
+        out = PRIVATE / "l1" / f"testset-tl-{dt.date.today():%Y%m%d}.jsonl"
+        out.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
+        print(f"{out}: 正样本 {len(pos)}，负样本 {len(rows) - len(pos)}（来自时间线快照）")
+        return
+
     neg_pool = []
     authors = collections.Counter(p["author"] for p in pos if p["author"])
     missing = []
     for h in authors:
         try:
-            tweets = author_tweets(h, a.per_author, a.sleep)
+            tweets = author_tweets(h, a.per_author, a.sleep, oldest)
         except RateLimited:
             missing = [x for x in authors if not (PRIVATE / "l1" / "cache" / f"{x}.json").exists()]
             print(f"被 X 限流，还差 {len(missing)} 位作者没抓，下次接着抓", flush=True)
