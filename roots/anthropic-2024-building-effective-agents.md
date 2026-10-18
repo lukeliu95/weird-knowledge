@@ -35,3 +35,8 @@ verified: true
 | [做到千万美元ARR的B2B代理路径](../clips/2026-10-18-financeyf5-b2b-ai-agent-10m-arr.md) | 相近 | 弱（待 Luke 确认） |
 | [Manus 本质是缝合怪但体验做得漂亮](../clips/2026-10-18-stlightleon-manus-polished-agent-take.md) | 相近 | 弱（待 Luke 确认） |
 | [与Claude Code讨论艺术与约束](../clips/2026-10-18-turingou-constraint-in-live-music-product.md) | 相近 | 弱（待 Luke 确认） |
+| [谈用 Claude 做智能体：少搭脚手架](../clips/2026-10-18-alexalbert-agent-scaffolding-context-talk.md) | 相近 | 弱（待 Luke 确认） |
+| [Agent Skills设计哲学与迭代](../clips/2026-10-18-dotey-agent-skills-design-philosophy.md) | 相近 | 强 |
+| [给公司业务接入智能体的五点思考](../clips/2026-10-18-dotey-enterprise-agent-integration-tips.md) | 换了说法 | 强 |
+| [ADK 开发者该懂的五种 Agent Skill 设计模式](../clips/2026-10-18-googlecloudtech-adk-agent-skill-design-patterns.md) | 相近 | 弱（待 Luke 确认） |
+| [大白话讲清 Agent、工作流与 ReACT](../clips/2026-10-18-yangyi-agent-workflow-react-explained.md) | 换了说法 | 弱（待 Luke 确认） |

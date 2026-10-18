@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [人和电脑的关系可能从一开始就是反的](../clips/2026-10-18-zuozizhen-human-computer-relationship-inverted.md) | 换了说法 | 弱（待 Luke 确认） |
+| [自然语言 Agent 应像好员工的七点](../clips/2026-10-18-remixdesigner-agent-as-good-employee.md) | 相近 | 弱（待 Luke 确认） |

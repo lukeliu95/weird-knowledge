@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [同城 IP 团队的真实 Agent 需求](../clips/2026-10-18-wanghao8080-local-ip-agent-need.md) | 相近 | 弱（待 Luke 确认） |
+| [王煜全访谈：这波 AI 机会在哪](../clips/2026-10-18-yilunaiyyds-wang-yuquan-ai-opportunity-interview.md) | 相近 | 弱（待 Luke 确认） |

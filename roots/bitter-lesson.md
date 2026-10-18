@@ -32,3 +32,4 @@ verified: true
 | [DeepSeek R1 论文解读：自学成才之路](../clips/2026-10-18-oran-ge-deepseek-r1-paper-explained.md) | 相近 | 弱（待 Luke 确认） |
 | [Claude Code播客：工具终将消失](../clips/2026-10-18-genie0309-claude-code-podcast-tools-disappear.md) | 直接源自 | 强 |
 | [Claude Code之父：配置越少越好](../clips/2026-10-18-xiaohu-claude-code-minimal-claude-md.md) | 直接源自 | 强 |
+| [谈用 Claude 做智能体：少搭脚手架](../clips/2026-10-18-alexalbert-agent-scaffolding-context-talk.md) | 相近 | 弱（待 Luke 确认） |

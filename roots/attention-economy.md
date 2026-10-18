@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [AI 工具周刊年入七万美元](../clips/2026-10-18-indiehackercase-ai-tools-newsletter-revenue.md) | 相近 | 弱（待 Luke 确认） |
 | [Headway：书籍摘要月入300万美元](../clips/2026-10-18-wanghao8080-headway-book-summary-app.md) | 相近 | 弱（待 Luke 确认） |
+| [MrBeast的YouTube上瘾蓝图](../clips/2026-10-18-0xcheshire-youtube-addiction-blueprint.md) | 相近 | 弱（待 Luke 确认） |

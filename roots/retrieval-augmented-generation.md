@@ -30,3 +30,4 @@ verified: true
 | [Juchats谈AI搜索产品思路](../clips/2026-10-18-cydiar404-ai-search-product-design.md) | 直接源自 | 强 |
 | [技术领导者要知道的生成式 AI 五个真相](../clips/2026-10-18-dotey-five-hard-truths-genai.md) | 直接源自 | 强 |
 | [Dify CEO 谈创业和 RAG](../clips/2026-10-18-tumeng05-dify-ceo-startup-rag-views.md) | 直接源自 | 强 |
+| [大白话讲清 Agent、工作流与 ReACT](../clips/2026-10-18-yangyi-agent-workflow-react-explained.md) | 直接源自 | 强 |

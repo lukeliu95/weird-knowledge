@@ -26,3 +26,6 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Pi 开发笔记：长时间运行智能体的难题](../clips/2026-10-18-maxforai-pi-notes-agent-harness-critique.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic：长任务智能体交接机制](../clips/2026-10-18-dotey-long-running-agent-harness.md) | 相近 | 弱（待 Luke 确认） |
+| [上下文工程：智能体的核心实践指南](../clips/2026-10-18-shao-meng-context-engineering-guide.md) | 相近 | 弱（待 Luke 确认） |
+| [Agent Skills 是上下文卸载](../clips/2026-10-18-yonah-x-skills-context-offloading.md) | 相近 | 弱（待 Luke 确认） |

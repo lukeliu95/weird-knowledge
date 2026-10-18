@@ -29,3 +29,4 @@ AI 系统反复设计出比自己更强的下一代，可能引发「智能爆�
 |---|---|---|
 | [Dream-RSI：回放里做梦改策略](../clips/2026-10-18-maxforai-dream-rsi-replay-simulator.md) | 直接源自 | 强 |
 | [传闻：头部实验室已实现自我改进](../clips/2026-10-18-maxforai-frontier-labs-rsi-claim.md) | 直接源自 | 强 |
+| [智谱让 GLM-5.3 自己优化推理系统](../clips/2026-10-18-dotey-glm-5-3-optimizes-own-inference.md) | 直接源自 | 强 |

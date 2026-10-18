@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Pi 开发笔记：长时间运行智能体的难题](../clips/2026-10-18-maxforai-pi-notes-agent-harness-critique.md) | 相近 | 弱（待 Luke 确认） |
+| [ADK 开发者该懂的五种 Agent Skill 设计模式](../clips/2026-10-18-googlecloudtech-adk-agent-skill-design-patterns.md) | 相近 | 弱（待 Luke 确认） |

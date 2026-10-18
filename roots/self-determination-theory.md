@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [玉伯谈 AI 时代小团队生产力的真相](../clips/2026-10-18-saitowu-small-team-productivity-ai-era.md) | 相近 | 弱（待 Luke 确认） |
 | [潜入 Cursor 60 天看到的公司文化](../clips/2026-10-18-dotey-inside-cursor-culture.md) | 相近 | 弱（待 Luke 确认） |
+| [一年涨到四万关注的三条心得](../clips/2026-10-18-lifesinger-twitter-40k-followers-lessons.md) | 相近 | 弱（待 Luke 确认） |

@@ -27,3 +27,5 @@ verified: true
 |---|---|---|
 | [人和电脑的关系可能从一开始就是反的](../clips/2026-10-18-zuozizhen-human-computer-relationship-inverted.md) | 相近 | 弱（待 Luke 确认） |
 | [人与智能体协作的产品形态之争](../clips/2026-10-18-hilng77042-human-agent-collaboration-paradigm.md) | 相近 | 弱（待 Luke 确认） |
+| [给公司业务接入智能体的五点思考](../clips/2026-10-18-dotey-enterprise-agent-integration-tips.md) | 相近 | 弱（待 Luke 确认） |
+| [无方向盘的 Cybercab 乘坐体验](../clips/2026-10-18-davelee-cybercab-no-steering-wheel-ride.md) | 相近 | 弱（待 Luke 确认） |

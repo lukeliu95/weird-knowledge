@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [陶哲轩谈 AI 与数学的演讲要点](../clips/2026-10-18-dotey-terence-tao-ai-math-talk.md) | 直接源自 | 强 |
 | [Karpathy 谈 GPT 现状](../clips/2026-10-18-dotey-karpathy-state-of-gpt.md) | 直接源自 | 强 |
+| [Operator靠CUA操作屏幕的原理](../clips/2026-10-18-dotey-openai-operator-cua-how.md) | 直接源自 | 强 |

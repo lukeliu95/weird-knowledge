@@ -27,3 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [Anthropic：用技能代替独立智能体](../clips/2026-10-18-hongming731-anthropic-agent-skills-talk.md) | 相近 | 弱（待 Luke 确认） |

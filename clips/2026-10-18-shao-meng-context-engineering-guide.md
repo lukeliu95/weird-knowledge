@@ -7,10 +7,10 @@ published: 2025-09-25 00:40 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [martin-2025-context-engineering-agents, context-engineering, anthropic-2025-effective-context-engineering, shi-2023-irrelevant-context-distraction, packer-2023-memgpt-llm-os]
 ---
 
 ## 原文
@@ -49,3 +49,12 @@ AI Agent 的6种上下文类型
 
 ## 溯源
 
+- 核心主张：上下文工程是管理 agent 输入信息的方法：通过写入、读取（选取）、压缩、隔离四类手段，让模型在每一步只拿到正确且必要的信息，从而减少噪声、提高准确率、控制成本。
+- 源知识：
+  - [智能体的上下文工程（写入、选取、压缩、隔离）](../roots/martin-2025-context-engineering-agents.md) · 关系：直接源自 · 强弱：强。文中“写入、阅读、压缩、隔离”四个阶段，与 Lance Martin（LangChain）提出的 write、select、compress、isolate 四类策略一一对应，连示例（草稿本、长短期记忆、给每个子 agent 独立上下文）都一样；原帖只致谢了画图的 Akshay Pachaar。
+  - [上下文工程](../roots/context-engineering.md) · 关系：直接源自 · 强弱：强。“管理输入信息的艺术与科学，帮助模型在正确时机获取正确信息”，几乎就是 Karpathy 那句“用恰好正确的信息填满上下文窗口的精细艺术与科学”。
+  - [AI 智能体的上下文工程](../roots/anthropic-2025-effective-context-engineering.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Anthropic 把上下文当有限的注意力预算，靠压缩、结构化笔记和子 agent 保持上下文干净，思路相同；它比原帖晚 4 天发布，不是原帖的来源。
+  - [大模型很容易被无关上下文带偏](../roots/shi-2023-irrelevant-context-distraction.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“避免模型迷失在无关信息中、提高准确性”有实验依据：题目里掺入无关信息后，模型准确率会大幅下降。
+  - [MemGPT：让大模型像操作系统一样管理内存](../roots/packer-2023-memgpt-llm-os.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。把上下文分成长时记忆和短时记忆、按需读入和压缩，与 MemGPT 把上下文窗口当内存、外部存储当硬盘来换入换出的做法相近。
+- 本质：这条新知识本质上是“容量有限的工作记忆要精挑细选放什么”（提高信噪比、分层存储）在大模型 agent 上下文窗口管理场景下的应用。
+- 整理于：2026-10-18（第 2 轮）

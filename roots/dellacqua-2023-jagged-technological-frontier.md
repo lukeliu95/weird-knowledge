@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [世界分成会用与不会用 ChatGPT](../clips/2026-10-18-dotey-chatgpt-two-kinds-of-people.md) | 直接源自 | 强 |
+| [Agent 循环工程晚宴讨论要点](../clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | 相近 | 弱（待 Luke 确认） |

@@ -7,10 +7,10 @@ published: 2024-11-14 01:49 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: []
+roots: [bullseye-framework, law-of-shitty-clickthroughs, interest-graph, long-tail]
 ---
 
 ## 原文
@@ -19,3 +19,11 @@ roots: []
 
 ## 溯源
 
+- 核心主张：软件出海要重视被低估的渠道：Reddit 流量极大、帖子上首页能瞬间带来几十万访问，而且按主题分成无数细分社区，潜在用户天天就在里面。
+- 源知识：
+  - [牛眼框架（《Traction》19 种获客渠道）](../roots/bullseye-framework.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。《Traction》说“一个行业里最被忽视的渠道往往最有希望”，和“被严重低估的分发渠道”几乎同一个意思，但作者没引用
+  - [烂点击率定律（营销渠道衰减）](../roots/law-of-shitty-clickthroughs.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。渠道被低估、还没挤满人的时候回报最高，用的人多了效果就会变差，所以“被低估”本身就是机会
+  - [兴趣图谱](../roots/interest-graph.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Reddit 按兴趣主题组织社区而不是按好友关系，所以能按兴趣直接找到潜在用户
+  - [长尾](../roots/long-tail.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“几乎任何细分领域都有主题社区”——互联网把大量小众需求聚到一起，触达小众客群的成本变低
+- 本质：这条新知识本质上是“在还没挤满人的渠道里拿便宜的注意力”（牛眼框架 + 烂点击率定律）在中国软件出海找欧美用户场景下的应用。
+- 整理于：2026-10-18（第 2 轮）

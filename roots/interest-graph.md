@@ -28,3 +28,6 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Monolith论文：实时推荐致瘾](../clips/2026-10-18-interjc-tiktok-monolith-realtime-recsys.md) | 相近 | 弱（待 Luke 确认） |
+| [张咋啦一年涨粉到七万的X方法笔记](../clips/2026-10-18-cnyzgkc-x-growth-zara-zhang-notes.md) | 相近 | 弱（待 Luke 确认） |
+| [AI 播客在抖音一个月涨粉 10 万](../clips/2026-10-18-oran-ge-ai-podcast-douyin-growth.md) | 相近 | 弱（待 Luke 确认） |
+| [Reddit 是被低估的软件出海分发渠道](../clips/2026-10-18-wanghao8080-reddit-distribution-channel.md) | 相近 | 弱（待 Luke 确认） |

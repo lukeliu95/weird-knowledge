@@ -7,10 +7,10 @@ published: 2025-01-25 04:15 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [openai-2025-computer-using-agent, intelligent-agent, wei-2022-chain-of-thought-prompting, yao-2022-react, robotic-process-automation, human-in-the-loop]
 ---
 
 ## 原文
@@ -38,3 +38,13 @@ CUA 通过处理原始像素数据来理解屏幕上发生的内容，并通过�
 
 ## 溯源
 
+- 核心主张：OpenAI 的 Operator 靠 CUA 模型工作：在每个用户专属的虚拟机浏览器里，循环执行“截屏感知、用思维链推理下一步、用虚拟鼠标键盘执行”，不需要专门的 API 就能操作各种界面，直到判断任务完成；遇到登录、验证码等敏感操作交给用户确认。
+- 源知识：
+  - [OpenAI 计算机使用智能体（CUA）](../roots/openai-2025-computer-using-agent.md) · 关系：直接源自 · 强弱：强。原文大段是在转述 OpenAI 2025 年 1 月发布的 CUA 介绍：GPT-4o 视觉加强化学习、处理原始像素、虚拟鼠标键盘、感知—推理—动作三步、敏感操作请用户确认，几乎逐句对应。
+  - [智能体](../roots/intelligent-agent.md) · 关系：换了说法 · 强弱：弱（待 Luke 确认）。“感知—推理—动作”的迭代循环就是教科书里智能体“感知环境、采取行动实现目标”的定义，只是把环境换成了电脑屏幕。
+  - [思维链提示](../roots/wei-2022-chain-of-thought-prompting.md) · 关系：直接源自 · 强弱：强。原文明说 CUA“使用链式思考（chain-of-thought）来推断下一步的行动”，把思维链当成“内在独白”。
+  - [ReAct：推理与行动协同](../roots/yao-2022-react.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。先推理下一步、执行动作、再看新截图继续推理，是 ReAct 把推理和行动交替进行、读环境反馈再调整的模式；原文没有引用 ReAct。
+  - [机器人流程自动化（RPA）](../roots/robotic-process-automation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“通过虚拟的鼠标和键盘来执行操作……而无需使用专门的 API”，和 RPA 模仿人在界面上点击输入、绕开 API 的做法一样；区别是 RPA 照着录好的脚本走，CUA 每一步看屏幕自己判断。
+  - [人在环中](../roots/human-in-the-loop.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。大多数步骤自动完成，但输入登录信息、回答验证码等敏感操作要请用户确认，是在关键节点保留人的介入。
+- 本质：这条新知识本质上是“感知—推理—行动”的智能体反馈循环，在只靠屏幕像素和鼠标键盘去操作通用电脑界面的场景下的应用。
+- 整理于：2026-10-18（第 2 轮）

@@ -26,3 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [Anthropic：让模型验证自己的输出](../clips/2026-10-18-0xcodez-anthropic-agent-loop-self-verify.md) | 换了说法 | 强 |

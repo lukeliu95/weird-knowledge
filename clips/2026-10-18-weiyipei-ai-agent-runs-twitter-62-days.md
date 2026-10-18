@@ -7,10 +7,10 @@ published: 2026-06-25 01:37 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: []
+roots: [how-brands-grow, mere-exposure-effect, sheridan-1992-human-supervisory-control]
 ---
 
 ## 原文
@@ -63,3 +63,10 @@ Agent 不会。
 
 ## 溯源
 
+- 核心主张：在社交平台上，天天不断更比单条内容写得好更重要；把每天发帖和回复交给 agent 自动执行，人每周看一次数据、调一次方向，就能保住这种持续性。
+- 源知识：
+  - [《品牌如何成长》（心智显著性与持续触达）](../roots/how-brands-grow.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Sharp 主张持续不断地触达、保持让人想得起来，停停走走会让品牌被淡忘，和“断更比内容差更致命”是同一个道理
+  - [曝光效应（单纯曝光效应）](../roots/mere-exposure-effect.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。天天出现、被反复看到，本身就会增加熟悉感和好感，这是持续发帖起作用的一种心理机制
+  - [人类监督控制](../roots/sheridan-1992-human-supervisory-control.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。agent 每天执行，人每周看数据复盘、调方向，正是人从“自己动手”变成“定计划、监控、必要时介入”的监督控制
+- 本质：这条新知识本质上是“持续曝光才能让人记得你”（对抗遗忘、维持心智显著性）在个人账号运营场景下的应用，agent 执行加人每周监督让持续曝光几乎不花人力。
+- 整理于：2026-10-18（第 2 轮）

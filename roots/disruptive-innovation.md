@@ -31,3 +31,4 @@ verified: true
 | [工作流与智能体：用户为什么更兴奋](../clips/2026-10-18-dotey-workflow-vs-agent-excitement.md) | 相近 | 弱（待 Luke 确认） |
 | [Sora 加 Vision Pro 展望](../clips/2026-10-18-indigox-sora-vision-pro-immersive.md) | 相近 | 弱（待 Luke 确认） |
 | [OpenAI 称九成潜在市场来自企业](../clips/2026-10-18-raycat2021-openai-enterprise-market-90.md) | 相近 | 弱（待 Luke 确认） |
+| [AIGC 作品的关键是加上人味](../clips/2026-10-18-jesselaunz-aigc-add-human-touch.md) | 相近 | 弱（待 Luke 确认） |

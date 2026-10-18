@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [吴恩达讲做产品的三个循环](../clips/2026-10-18-andrewyng-andrew-ng-three-product-loops.md) | 直接源自 | 强 |
+| [Operator靠CUA操作屏幕的原理](../clips/2026-10-18-dotey-openai-operator-cua-how.md) | 相近 | 弱（待 Luke 确认） |

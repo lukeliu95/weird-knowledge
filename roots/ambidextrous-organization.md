@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [Qwen技术负责人离职与大厂内部创业](../clips/2026-10-18-dexteryy-qwen-lead-departure-big-tech.md) | 相近 | 弱（待 Luke 确认） |
 | [36氪专访：AI 原生公司转型实录](../clips/2026-10-18-oran-ge-ai-native-company-transformation-story.md) | 相近 | 弱（待 Luke 确认） |
+| [大白话讲清 Agent、工作流与 ReACT](../clips/2026-10-18-yangyi-agent-workflow-react-explained.md) | 相近 | 弱（待 Luke 确认） |

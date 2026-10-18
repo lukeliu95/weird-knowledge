@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Pocus：销售Agent一年百万ARR](../clips/2026-10-18-wanghao8080-pocus-sales-agent-arr.md) | 换了说法 | 弱（待 Luke 确认） |
+| [11 个月做到 350 万美元 ARR](../clips/2026-10-18-pierreeliottlal-gojiberry-ai-3-5m-arr.md) | 相近 | 弱（待 Luke 确认） |

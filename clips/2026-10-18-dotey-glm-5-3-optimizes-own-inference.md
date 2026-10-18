@@ -7,10 +7,10 @@ published: 2026-09-17 07:58 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [zai-2026-glm-inference-infrastructure, minsky-1961-steps-toward-ai, lightman-2023-lets-verify-step-by-step, ng-1999-reward-shaping, tacit-knowledge, seci-model-of-knowledge-dimensions, recursive-self-improvement, wei-2025-verifiers-law, sheridan-1992-human-supervisory-control]
 ---
 
 ## 原文
@@ -49,3 +49,16 @@ roots: []
 
 ## 溯源
 
+- 核心主张：智能体做系统优化时卡住，通常不是写不出代码，而是只拿到稀疏的端到端结果、不知道问题出在哪一层（信用分配问题）；把资深工程师脑中隐性的“过程奖励”显性化成分层、局部、便宜、可客观验证的密集反馈接口，智能体就能自己定位和修复真实问题；人转为定目标、搭反馈环境、审高风险变更，而这种可验证的环境又能训练下一代模型，形成递归自我改进的最小闭环。
+- 源知识：
+  - [走向递归自我改进：GLM 如何搭建自己的推理基础设施](../roots/zai-2026-glm-inference-infrastructure.md) · 关系：直接源自 · 强弱：强。推文是在转述智谱官方文章，文末给出了原文标题和链接；“密集反馈”、把稀疏的端到端结果变成细粒度可归因的反馈、工程师负责定目标和边界，都出自原文。
+  - [迈向人工智能的步骤（提出信用分配问题）](../roots/minsky-1961-steps-toward-ai.md) · 关系：直接源自 · 强弱：强。原文明说“用强化学习的话说，这是一个稀疏奖励加信用分配的问题”；信用分配问题出自 Minsky 1961 年这篇论文，而且 Minsky 当年给的办法“在层级结构里对部分目标做局部强化”，正是“分层、足够局部”的密集反馈。
+  - [逐步验证（过程监督优于结果监督）](../roots/lightman-2023-lets-verify-step-by-step.md) · 关系：直接源自 · 强弱：弱（待 Luke 确认）。原文直接用了“过程奖励”一词，并和只看最终结果的稀疏奖励对照，概念明显借自过程监督研究；但没有引用具体论文，挂到 Lightman 2023 是推断（更早有 Uesato 2022）。
+  - [奖励塑形（势函数塑形下的策略不变性）](../roots/ng-1999-reward-shaping.md) · 关系：换了说法 · 强弱：弱（待 Luke 确认）。在稀疏的最终奖励之外补上中间信号来加快学习，就是强化学习里的奖励塑形；作者没有用这个词。
+  - [默会知识（隐性知识）](../roots/tacit-knowledge.md) · 关系：换了说法 · 强弱：强。原文说资深工程师靠“脑子里一套隐性的过程奖励”定位问题：会用但说不清，正是默会知识。
+  - [SECI 知识转化模型](../roots/seci-model-of-knowledge-dimensions.md) · 关系：换了说法 · 强弱：强。“把这套隐性经验显性化”几乎就是 SECI 模型里“外化”（把默会知识变成显性知识）的原话。
+  - [递归自我改进](../roots/recursive-self-improvement.md) · 关系：直接源自 · 强弱：强。原文标题就是“走向递归自我改进”，唐杰说“离递归自我改进还很远，但最小的闭环已经存在了”。
+  - [验证的不对称与验证者法则](../roots/wei-2025-verifiers-law.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。原文要求反馈“获取成本低、可客观验证”，并说可验证的反馈环境正是训练下一代模型最需要的东西，和“任务越容易验证，越容易训练 AI 解决”一致；作者没有引用。
+  - [人类监督控制](../roots/sheridan-1992-human-supervisory-control.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“目标设定、反馈环境搭建、高风险变更审查仍然由人负责”，人从动手解决问题变成规划和监督，是人类监督控制的分工。
+- 本质：这条新知识本质上是强化学习里的“信用分配 + 奖励塑形（过程奖励）”在智能体做基础设施工程优化时的应用：把专家的隐性判断外化成密集、可验证的反馈。
+- 整理于：2026-10-18（第 2 轮）

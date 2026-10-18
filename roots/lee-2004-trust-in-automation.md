@@ -1,0 +1,28 @@
+---
+name_zh: "对自动化的信任：为恰当依赖而设计"
+name_en: "Trust in Automation: Designing for Appropriate Reliance"
+proposer: "John D. Lee、Katrina A. See"
+year: "2004"
+type: 论文
+verified: true
+---
+
+# 对自动化的信任：为恰当依赖而设计（Trust in Automation: Designing for Appropriate Reliance）
+
+## 一句话
+
+人用不用、怎么用自动化，很大程度取决于信任；信任要和系统真实能力相匹配，过高会误用、过低会弃用，而情境和界面呈现都会影响信任，所以要为「恰当依赖」而设计。
+
+## 原始出处
+
+- Trust in Automation: Designing for Appropriate Reliance, John D. Lee & Katrina A. See, Human Factors 46(1): 50–80, 2004，https://journals.sagepub.com/doi/10.1518/hfes.46.1.50_30392
+
+## 更底层的源头
+
+- [自动化的类型与等级模型](parasuraman-2000-levels-of-automation.md) · 关系：相近
+
+## 指向它的新知识
+
+| 新知识 | 关系 | 强弱 |
+|---|---|---|
+| [无方向盘的 Cybercab 乘坐体验](../clips/2026-10-18-davelee-cybercab-no-steering-wheel-ride.md) | 相近 | 弱（待 Luke 确认） |

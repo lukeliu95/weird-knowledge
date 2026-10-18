@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Claude Code播客：工具终将消失](../clips/2026-10-18-genie0309-claude-code-podcast-tools-disappear.md) | 直接源自 | 强 |
+| [Matrix：Agent 公司架构](../clips/2026-10-18-bruceguai-matrix-agent-company-architecture.md) | 相近 | 弱（待 Luke 确认） |

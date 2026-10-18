@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Karpathy：让AI模拟专家来答](../clips/2026-10-18-dotey-karpathy-simulator-not-entity.md) | 直接源自 | 强 |
+| [Agent 智能体是模型能力的放大器](../clips/2026-10-18-waytoagi-agent-model-capability-amplifier.md) | 相近 | 弱（待 Luke 确认） |

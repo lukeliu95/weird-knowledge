@@ -30,3 +30,6 @@ verified: true
 |---|---|---|
 | [工具站出海月入 3000 刀的一年踩坑记](../clips/2026-10-18-gefei55-tool-site-overseas-lessons.md) | 相近 | 弱（待 Luke 确认） |
 | [对接 SD 做细分领域插画生成器](../clips/2026-10-18-yangyi-niche-illustration-generator.md) | 相近 | 弱（待 Luke 确认） |
+| [AI 播客在抖音一个月涨粉 10 万](../clips/2026-10-18-oran-ge-ai-podcast-douyin-growth.md) | 相近 | 弱（待 Luke 确认） |
+| [Reddit 是被低估的软件出海分发渠道](../clips/2026-10-18-wanghao8080-reddit-distribution-channel.md) | 相近 | 弱（待 Luke 确认） |
+| [阿里国际站用590万AI页面冲SEO](../clips/2026-10-18-willlhhh-alibaba-5-9m-ai-pages-seo.md) | 直接源自 | 强 |

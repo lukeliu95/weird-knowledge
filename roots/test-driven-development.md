@@ -30,3 +30,5 @@ verified: true
 | [吴恩达讲做产品的三个循环](../clips/2026-10-18-andrewyng-andrew-ng-three-product-loops.md) | 相近 | 弱（待 Luke 确认） |
 | [AlphaCodium 与流程工程](../clips/2026-10-18-dotey-alphacodium-flow-engineering.md) | 相近 | 弱（待 Luke 确认） |
 | [OpenAI 企业用 AI 的七条经验](../clips/2026-10-18-shao-meng-openai-enterprise-ai-lessons.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic：长任务智能体交接机制](../clips/2026-10-18-dotey-long-running-agent-harness.md) | 相近 | 弱（待 Luke 确认） |
+| [自然语言 Agent 应像好员工的七点](../clips/2026-10-18-remixdesigner-agent-as-good-employee.md) | 直接源自 | 强 |

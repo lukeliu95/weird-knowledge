@@ -7,10 +7,10 @@ published: 2026-03-17 17:08 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [anthropic-2025-agent-skills, software-design-pattern, progressive-disclosure, anthropic-2024-building-effective-agents, separation-of-concerns, fagan-inspection, requirements-elicitation, phase-gate-model]
 ---
 
 ## 原文
@@ -111,3 +111,15 @@ The Agent Skills specification is open-source and natively supported across ADK.
 
 ## 溯源
 
+- 核心主张：SKILL.md 的格式已经统一，真正的难点是技能里面的内容怎么设计；常见五种模式：工具包装（用到某个库时才加载它的规范）、生成器（模板加风格指南填空）、评审者（检查清单和检查流程分开，按严重程度出结果）、反转（智能体先采访用户，问齐了才动手）、流水线（多步流程加硬性检查点）；这些模式可以互相组合，配合渐进式披露只在需要时占用上下文。
+- 源知识：
+  - [用 Agent Skills 让智能体胜任真实工作](../roots/anthropic-2025-agent-skills.md) · 关系：直接源自 · 强弱：强。文章讨论的就是 Anthropic 提出、后来成为开放标准的 Agent Skills（SKILL.md 加 references/、assets/ 目录），并明说研究了 Anthropic 的技能仓库。
+  - [软件设计模式](../roots/software-design-pattern.md) · 关系：直接源自 · 强弱：强。标题就叫“design patterns”，按“每种模式回答一类问题、模式之间可以组合”的方式来写，沿用了软件设计模式的说法和写法。
+  - [渐进式披露](../roots/progressive-disclosure.md) · 关系：直接源自 · 强弱：强。原文明说靠 ADK 的 SkillToolset 和“progressive disclosure”，让智能体只为运行时真正需要的模式花上下文。
+  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。流水线模式“步骤之间设关口”和评审者模式，对应 Anthropic《构建高效的智能体》里带关口检查的提示链和评估-优化循环；文章没有引用这篇。
+  - [关注点分离](../roots/separation-of-concerns.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。评审者模式“把查什么和怎么查分开”，生成器把模板和风格指南放进外部文件，换一份清单就变成另一种审查，是关注点分离。
+  - [Fagan 审查（正式代码审查）](../roots/fagan-inspection.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。评审者模式对照外部清单逐项检查、按严重程度分组输出，和 Fagan 审查对照标准逐项查缺陷、按主要和次要分级的做法相近。
+  - [需求获取（需求诱导）](../roots/requirements-elicitation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。反转模式让智能体按阶段提结构化问题，问齐需求和部署约束才动手，是需求获取（访谈式收集需求）的做法。
+  - [阶段-关口模型（Stage-Gate）](../roots/phase-gate-model.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。流水线模式在步骤之间设“菱形关口”，用户确认前不许进入下一阶段，和阶段-关口模型“过了关口才能进下一阶段”的结构一样。
+- 本质：这条新知识本质上是软件设计模式的思路（给反复出现的问题起名字、给出可复用的解法），加上关注点分离和渐进式披露，在编写智能体技能文件场景下的应用。
+- 整理于：2026-10-18（第 2 轮）

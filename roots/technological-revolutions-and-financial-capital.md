@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [大模型是冰箱，赚钱的是卖冷饮的人](../clips/2026-10-18-mubeitech-llm-fridge-coca-cola-analogy.md) | 相近 | 弱（待 Luke 确认） |
 | [Mary Meeker 340 页 AI 趋势八点](../clips/2026-10-18-reportify-xu-mary-meeker-ai-trends-report.md) | 相近 | 弱（待 Luke 确认） |
+| [王煜全访谈：这波 AI 机会在哪](../clips/2026-10-18-yilunaiyyds-wang-yuquan-ai-opportunity-interview.md) | 相近 | 弱（待 Luke 确认） |

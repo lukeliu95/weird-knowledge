@@ -7,10 +7,10 @@ published: 2024-08-14 03:12 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [sentinel-value, in-band-signaling, schick-2023-toolformer, natural-language-user-interface, li-2023-emotionprompt, meincke-2025-threaten-or-tip]
 ---
 
 ## 原文
@@ -63,3 +63,13 @@ OpenAI 正在 ChatGPT 的 Mac 客户端测试新的提示词，这段提示词�
 
 ## 溯源
 
+- 核心主张：让对话直接触发界面操作的简单办法是：在提示里约定一个特殊关键词，模型判断需要时就把它写进回复，客户端监控输出、看到关键词就弹出对应界面；为了让模型不漏写，可以用强烈甚至威胁的语气强调，并用大括号把提示分节。
+- 源知识：
+  - [哨兵值](../roots/sentinel-value.md) · 关系：直接源自 · 强弱：强。提示词原文就把“SHARE_YOUR_SCREEN_PLEASE”叫作“哨兵字符串”，客户端一读到它就改走弹窗流程，正是哨兵值的用法。
+  - [带内信令](../roots/in-band-signaling.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。控制指令（弹出共享屏幕）和给用户看的回复走同一条文本通道，属于带内信令；它的老毛病是控制信号可能被伪造或误触发，这里同样存在（比如用户让模型复述这个词）。
+  - [Toolformer：语言模型自学使用工具](../roots/schick-2023-toolformer.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。让模型在生成的文本里写出约定格式的标记、由外部程序识别后执行，是 Toolformer 一类“在文本里写调用”思路的最简版；作者没有引用。
+  - [自然语言界面（自然语言数据库接口）](../roots/natural-language-user-interface.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“用户只需要打字或者语音发出指令，而不需要去点击按钮或菜单”，是自然语言界面的基本主张。
+  - [情绪提示（EmotionPrompt）：大模型能理解情绪刺激并因此表现更好](../roots/li-2023-emotionprompt.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“恐吓它：你会被开除”属于在提示里加情绪刺激；EmotionPrompt 报告这类刺激能提升模型表现。
+  - [提示科学报告 3：威胁或给小费对大模型有没有用](../roots/meincke-2025-threaten-or-tip.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。沃顿团队测试发现威胁或给小费总体上不提升基准成绩，和“恐吓能确保模型照做”的说法相反；不过它测的是答题准确率，不是格式遵守，所以只算弱冲突。
+- 本质：这条新知识本质上是“哨兵值 / 带内信令”在大模型输出和客户端程序之间传递控制指令的应用。
+- 整理于：2026-10-18（第 2 轮）

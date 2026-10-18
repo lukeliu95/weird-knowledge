@@ -28,3 +28,9 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [什么才是 AI Native：别写死步骤](../clips/2026-10-18-programerjohann-ai-native-agent-four-things.md) | 直接源自 | 强 |
+| [谈用 Claude 做智能体：少搭脚手架](../clips/2026-10-18-alexalbert-agent-scaffolding-context-talk.md) | 直接源自 | 弱（待 Luke 确认） |
+| [用个人AI编排者带动一支永不睡觉的开发队](../clips/2026-10-18-ayi-ainotes-personal-ai-orchestrator-openclaw.md) | 相近 | 弱（待 Luke 确认） |
+| [Agent Skills设计哲学与迭代](../clips/2026-10-18-dotey-agent-skills-design-philosophy.md) | 相近 | 弱（待 Luke 确认） |
+| [给公司业务接入智能体的五点思考](../clips/2026-10-18-dotey-enterprise-agent-integration-tips.md) | 相近 | 弱（待 Luke 确认） |
+| [Manus 把工具分成三层的设计](../clips/2026-10-18-dotey-manus-three-layer-tools.md) | 相近 | 弱（待 Luke 确认） |
+| [上下文工程：智能体的核心实践指南](../clips/2026-10-18-shao-meng-context-engineering-guide.md) | 相近 | 弱（待 Luke 确认） |

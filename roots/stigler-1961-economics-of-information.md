@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [出租屋卖亚马逊爆款配件月销二十万](../clips/2026-10-18-vincent-ainotes-amazon-accessories-side-hustle.md) | 相近 | 弱（待 Luke 确认） |
+| [Clay：给 ToB 销售补全客户数据](../clips/2026-10-18-wanghao8080-clay-sales-data-enrichment.md) | 相近 | 弱（待 Luke 确认） |

@@ -27,3 +27,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Claude Code之父：配置越少越好](../clips/2026-10-18-xiaohu-claude-code-minimal-claude-md.md) | 相近 | 弱（待 Luke 确认） |
+| [Agent Skills设计哲学与迭代](../clips/2026-10-18-dotey-agent-skills-design-philosophy.md) | 相近 | 弱（待 Luke 确认） |
+| [11 个月做到 350 万美元 ARR](../clips/2026-10-18-pierreeliottlal-gojiberry-ai-3-5m-arr.md) | 直接源自 | 强 |

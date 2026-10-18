@@ -31,3 +31,4 @@ verified: true
 | [NVIDIA DGX Spark 从买机器到变现指南](../clips/2026-10-18-ai-goge-dgx-spark-monetization-guide.md) | 相近 | 弱（待 Luke 确认） |
 | [工具站出海月入 3000 刀的一年踩坑记](../clips/2026-10-18-gefei55-tool-site-overseas-lessons.md) | 直接源自 | 强 |
 | [OpenAI 企业用 AI 的七条经验](../clips/2026-10-18-shao-meng-openai-enterprise-ai-lessons.md) | 相近 | 弱（待 Luke 确认） |
+| [复旦分享：脑科学视角拆品牌营销](../clips/2026-10-18-yangyi-fudan-brand-marketing-neuroscience.md) | 直接源自 | 强 |

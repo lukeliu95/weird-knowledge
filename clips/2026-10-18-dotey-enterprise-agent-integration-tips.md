@@ -7,10 +7,10 @@ published: 2025-10-04 17:01 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [anthropic-2024-building-effective-agents, anthropic-2025-writing-effective-tools, anthropic-2025-effective-context-engineering, ronacher-2025-code-is-all-you-need, yan-2025-dont-build-multi-agents, koomen-2025-ai-horseless-carriages]
 ---
 
 ## 原文
@@ -54,3 +54,13 @@ Agent 的交互和传统的软件交互是不一样的，通常以对话为主�
 
 ## 溯源
 
+- 核心主张：给现有业务接 AI 时：流程确定且高效就只在原流程里加 AI 功能，不必做成 agent；要为 agent 重新设计工具（描述清楚、参数明确、输出精简，长输出存文件按需读）；工具只给自己的 agent 用就不必做成 MCP；工具不能太多，多了就按功能拆子 agent 并给独立上下文，有依赖的任务不要并行；交互方式也要为 agent 重新设计。
+- 源知识：
+  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：换了说法 · 强弱：强。第 1 点“Agent 没有固定流程，由 LLM 决策调用什么工具”几乎就是该文对智能体的定义（模型自己决定过程和工具使用，区别于走预设路径的工作流）；“流程确定就不必做成 Agent”对应它“先找最简单的方案，可能根本不需要 agent”；第 2 点对应它附录里的“智能体-计算机接口（ACI）”。
+  - [为智能体写好用的工具（并借助智能体来写）](../roots/anthropic-2025-writing-effective-tools.md) · 关系：换了说法 · 强弱：强。第 2、4 点和该文几乎一致：常见错误是把现有软件功能或 API 原样包成工具；工具不是越多越好；描述要清楚、参数命名无歧义、只返回高信号信息。该文早约三周发表，作者没有引用。
+  - [AI 智能体的上下文工程](../roots/anthropic-2025-effective-context-engineering.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“工具输出会进入上下文，长输出存到外部文件按需读取”“拆子 agent 并给独立上下文”，对应上下文工程里的即时检索、结构化笔记和子 agent 架构。
+  - [Armin Ronacher：工具——代码就是你需要的一切](../roots/ronacher-2025-code-is-all-you-need.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。第 3 点“工具只给自己的 Agent 用就没必要做 MCP，命令行、脚本、API 都可以”，和 Ronacher 主张让模型写脚本、少用 MCP 一致；作者没有引用。
+  - [别做多智能体](../roots/yan-2025-dont-build-multi-agents.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“子 Agent 或工具的结果之间有依赖关系就不要并行，否则会搞乱上下文”，和 Cognition 的“行动里暗含决策，决策冲突就出坏结果”是同一个道理。
+  - [AI 时代的「没有马的马车」](../roots/koomen-2025-ai-horseless-carriages.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。第 5 点“要为 Agent 重新设计交互，不要沿用原有软件的交互方式”，和 Koomen 批评 AI 应用照搬旧软件做法（没有马的马车）一致。
+- 本质：这条新知识本质上是“先用最简单的方案、为使用者重新设计接口、上下文是稀缺资源”这几条 agent 工程原则在企业业务改造中的应用。
+- 整理于：2026-10-18（第 2 轮）
