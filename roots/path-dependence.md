@@ -30,3 +30,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [为什么大多数公司不该有 AI 战略](../clips/2026-10-18-dotey-why-no-ai-strategy.md) | 换了说法 | 强 |
+| [经产省 DXレポート：日本 CIO 倾向选大厂、接受老供应商的提案](../clips/2026-10-18-meti-dx-report-2025-digital-cliff.md) | 相近 | 弱（待 Luke 确认） |

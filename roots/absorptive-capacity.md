@@ -31,3 +31,4 @@ verified: true
 | [OpenAI 企业用 AI 的七条经验](../clips/2026-10-18-shao-meng-openai-enterprise-ai-lessons.md) | 相近 | 弱（待 Luke 确认） |
 | [Dify CEO 谈创业和 RAG](../clips/2026-10-18-tumeng05-dify-ceo-startup-rag-views.md) | 相近 | 弱（待 Luke 确认） |
 | [会写代码才玩得好 vibe coding](../clips/2026-10-18-aryanlabde-vibe-coding-needs-coding-skill.md) | 相近 | 弱（待 Luke 确认） |
+| [IPA DX白書2023：日本 IT 人才 73.6% 在 IT 企业，美国只有 35.1%](../clips/2026-10-18-ipa-dx-white-paper-2023-it-talent.md) | 相近 | 弱（待 Luke 确认） |

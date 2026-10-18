@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [学超级个体 Jack Butcher](../clips/2026-10-18-starzq-jack-butcher-solo-brand.md) | 相近 | 弱（待 Luke 确认） |
+| [IPA DX白書2023：日本 IT 人才 73.6% 在 IT 企业，美国只有 35.1%](../clips/2026-10-18-ipa-dx-white-paper-2023-it-talent.md) | 相近 | 弱（待 Luke 确认） |

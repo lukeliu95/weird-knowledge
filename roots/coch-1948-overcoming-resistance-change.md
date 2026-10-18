@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [公司推广 AI 编程为何要靠内部](../clips/2026-10-18-dotey-promote-ai-coding-in-company.md) | 相近 | 弱（待 Luke 确认） |
+| [稟議和根回し：日本大企业里真正拍板的是起案人和事前协商](../clips/2026-10-18-vogel-japanese-organization-decision-making.md) | 相近 | 弱（待 Luke 确认） |

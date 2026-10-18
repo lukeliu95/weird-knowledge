@@ -32,3 +32,4 @@ verified: true
 | [MrBeast的YouTube上瘾蓝图](../clips/2026-10-18-0xcheshire-youtube-addiction-blueprint.md) | 相近 | 弱（待 Luke 确认） |
 | [30288篇新闻，95%不值得读](../clips/2026-10-18-howie-serious-news-95-percent-not-worth-reading.md) | 换了说法 | 强 |
 | [品味可以被模仿，决策才不可替代](../clips/2026-10-18-mengkepm-taste-copyable-decision-irreplaceable.md) | 相近 | 弱（待 Luke 确认） |
+| [ラクス 营业邮件调查：日本收件人最看重“和我的行业课题有关”和“有数字有案例”](../clips/2026-10-18-rakus-sales-email-to-meeting-survey-2026.md) | 相近 | 弱（待 Luke 确认） |

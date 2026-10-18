@@ -25,3 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [采购中心和五种角色：企业买东西是一群人在组织里一起决定](../clips/2026-10-18-webster-wind-organizational-buying-behavior.md) | 直接源自 | 强 |

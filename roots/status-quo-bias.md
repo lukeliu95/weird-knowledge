@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [公司推广 AI 编程为何要靠内部](../clips/2026-10-18-dotey-promote-ai-coding-in-company.md) | 相近 | 弱（待 Luke 确认） |
+| [采购中心和五种角色：企业买东西是一群人在组织里一起决定](../clips/2026-10-18-webster-wind-organizational-buying-behavior.md) | 相近 | 弱（待 Luke 确认） |

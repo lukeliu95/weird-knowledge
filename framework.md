@@ -234,7 +234,7 @@
 全部新知识按主题和发布年份分布，看关注点这几年怎么变。由 `tools/topic_map.py` 生成。
 
 <!-- topic-map:begin -->
-共 1734 条新知识（含已归档）。数字是每年存下的条数；按发布年份算，不是保存日期。
+共 1745 条新知识（含已归档）。补课找来、还没认可的 25 条不计入。数字是每年存下的条数；按发布年份算，不是保存日期。
 
 | 主题 | 更早 | 2023 | 2024 | 2025 | 2026 | 未知 | 合计 | 观点 / 工具 / 教程 |
 |---|---|---|---|---|---|---|---|---|
@@ -253,7 +253,7 @@
 | 思维与成长 |  | 6 | 12 | 8 | 24 | 1 | 51 | 50 / 1 / 0 |
 | 日本 |  | 5 | 4 | 6 | 9 |  | 24 | 12 / 11 / 1 |
 | 历史与冷知识 |  | 3 | 1 | 3 | 6 |  | 13 | 11 / 1 / 1 |
-| 未分类 |  |  |  |  | 1 |  | 1 | 0 / 0 / 0 |
+| 未分类 |  |  |  |  | 12 |  | 12 | 0 / 0 / 0 |
 
 **每个主题的代表**（先选已溯源的，再选观点类，最后按发布时间取最新）
 
@@ -272,5 +272,18 @@
 - **思维与成长**：[张一鸣 66 条成长心得与延迟满足](clips/2026-10-18-sea-bitcoin-zhang-yiming-66-growth-tips.md)、[Paul Graham 谈超线性回报](clips/2026-10-18-dotey-paul-graham-superlinear-returns.md)、[一句话总结 AI 算法的含义](clips/2026-10-18-dotey-ai-algorithm-one-liner.md)
 - **日本**：[大阪府各区划与公立小学教育概况](clips/2026-10-18-qiancaobuzhiqiu-osaka-areas-public-schools.md)、[日语学习的素读法与家庭使用整理](clips/2026-10-18-interjc-sodoku-japanese-learning.md)、[GA决算说明资料的结构化设计](clips/2026-10-18-powerpoint-jp-ga-technologies-earnings-deck-design.md)
 - **历史与冷知识**：[日本稻田能否收二茬的回复](clips/2026-10-18-wangtianlaw-japan-rice-ratoon-crop.md)、[南明皇室受洗的冷知识：借调侃“历史老师去美国”说出来](clips/2026-10-18-tombkeeper-southern-ming-baptism.md)、[美国人一天生活的数据可视化](clips/2026-10-18-alexxubyte-day-in-life-americans-dataviz.md)
-- **未分类**：[Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md)
+- **未分类**：[Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md)、[Terminal-RSI：两轮自重写加强化学习，27B 终端 agent 从 51.7% 涨到 86.5%](clips/2026-10-18-nft-chen-terminal-rsi-recursive-self-improvement.md)、[GLM 5.3 只靠后训练大涨，被 SemiAnalysis 嘉宾称为警钟](clips/2026-10-18-nft-chen-glm-5-3-post-training-wake-up-call.md)
 <!-- topic-map:end -->
+
+## 五、补课
+
+agent 主动去找一手材料，补框架里薄的地方，规则见 [AGENTS.md「流程四」](AGENTS.md)。补课找来的新知识在 Luke 认可之前，不计入上面的知识底座排名和主题地图。
+
+| 题 | 简报 | 材料 | 新增源知识 | 状态 |
+|---|---|---|---|---|
+| 1 日本企业怎么买 B2B 产品 | [2026-10-18](docs/study/2026-10-18-topic-1-japan-b2b-buying.md) | 25 份 | 14 个，如 [采购中心](roots/buying-center.md)、[稟議制](roots/ringi-system.md)、[根回し](roots/nemawashi.md)、[许可营销](roots/permission-marketing.md) | 等 Luke 回答 |
+
+第 1 题和已有原则的关系（草稿，待 Luke 确认）：
+- 原则 10（回到一手材料）：这一题又查出 10 处误传，包括"57% 的买家联系销售前已经做好决定"和"冷电话成功率 0.3%"
+- 原则 4（需求去现场取）：日本企业的采购决定多在根回し里做完，卖方从外面看不到，这正是要去现场才能取回的那类知识
+- 原则 9（渠道打法看时间）：表单营销里"平时少收到营业信息的企业反应更好"，是一条弱证据

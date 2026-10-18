@@ -26,3 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [谢斯工业品购买者模型：几个部门一起买，冲突怎么解决决定了快慢](../clips/2026-10-18-sheth-industrial-buyer-behavior.md) | 相近 | 弱（待 Luke 确认） |

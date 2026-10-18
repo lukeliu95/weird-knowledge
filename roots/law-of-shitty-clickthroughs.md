@@ -30,3 +30,5 @@ verified: true
 |---|---|---|
 | [北美增长负责人谈各平台获客要点](../clips/2026-10-18-oran-ge-na-growth-channel-notes.md) | 相近 | 弱（待 Luke 确认） |
 | [Reddit 是被低估的软件出海分发渠道](../clips/2026-10-18-wanghao8080-reddit-distribution-channel.md) | 相近 | 弱（待 Luke 确认） |
+| [FUTUREWOODS 表单营销分析：点击率机器发 4.4%、人工发 6.6%，不是回信率](../clips/2026-10-18-futurewoods-form-sales-response-analysis.md) | 相近 | 弱（待 Luke 确认） |
+| [Instantly 冷邮件基准 2026：工具商自报平均回信率 3.43%，58% 回信来自第一封](../clips/2026-10-18-instantly-cold-email-benchmark-2026.md) | 相近 | 弱（待 Luke 确认） |

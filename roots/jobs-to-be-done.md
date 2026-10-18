@@ -33,3 +33,4 @@ verified: true
 | [征求产品意见别只问程序员群体](../clips/2026-10-18-gorden-sun-dont-ask-programmers-product-feedback.md) | 相近 | 弱（待 Luke 确认） |
 | [同城 IP 团队的真实 Agent 需求](../clips/2026-10-18-wanghao8080-local-ip-agent-need.md) | 相近 | 弱（待 Luke 确认） |
 | [Clay：给 ToB 销售补全客户数据](../clips/2026-10-18-wanghao8080-clay-sales-data-enrichment.md) | 相近 | 弱（待 Luke 确认） |
+| [Gartner 新 B2B 购买旅程：买方只花 17% 的时间见供应商](../clips/2026-10-18-gartner-new-b2b-buying-journey.md) | 相近 | 弱（待 Luke 确认） |

@@ -30,3 +30,4 @@ verified: true
 |---|---|---|
 | [北美增长负责人谈各平台获客要点](../clips/2026-10-18-oran-ge-na-growth-channel-notes.md) | 相近 | 弱（待 Luke 确认） |
 | [Reddit 是被低估的软件出海分发渠道](../clips/2026-10-18-wanghao8080-reddit-distribution-channel.md) | 相近 | 弱（待 Luke 确认） |
+| [BtoB 商材购买行为调查 2025：日本买家八成只比较 3 家以内，展会在回升](../clips/2026-10-18-itcommunications-btob-buying-behavior-survey-2025.md) | 相近 | 弱（待 Luke 确认） |

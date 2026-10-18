@@ -28,3 +28,5 @@ verified: true
 |---|---|---|
 | [前线部署工程师为何是 AI 落地时代的关键职业](../clips/2026-10-18-indigox-forward-deployed-engineer-ai-era.md) | 直接源自 | 强 |
 | [OpenAI 称九成潜在市场来自企业](../clips/2026-10-18-raycat2021-openai-enterprise-market-90.md) | 相近 | 弱（待 Luke 确认） |
+| [JUAS 企業IT動向調査 2026：大企业自己定需求、外包开发，生成 AI 最怕泄密](../clips/2026-10-18-juas-corporate-it-trends-survey-2026.md) | 相近 | 弱（待 Luke 确认） |
+| [经产省 DXレポート：日本 CIO 倾向选大厂、接受老供应商的提案](../clips/2026-10-18-meti-dx-report-2025-digital-cliff.md) | 相近 | 强 |
