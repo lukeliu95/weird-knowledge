@@ -7,7 +7,7 @@ published: 2024-08-13 10:23 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已归档
 kind: 观点
 topic: AI 产品与创业
 roots: []

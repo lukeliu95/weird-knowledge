@@ -7,7 +7,7 @@ published: 2023-10-04 05:21 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已归档
 kind: 观点
 topic: 日本
 roots: []

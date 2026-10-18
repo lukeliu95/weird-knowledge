@@ -7,7 +7,7 @@ published: 2023-12-04 11:45 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已归档
 kind: 观点
 topic: 其他
 roots: []

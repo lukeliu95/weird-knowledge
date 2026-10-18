@@ -7,7 +7,7 @@ published: 2026-07-29 04:45 UTC
 saved: 2026-10-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已归档
 kind: 观点
 topic: 思维与成长
 roots: []

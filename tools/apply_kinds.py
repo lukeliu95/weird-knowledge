@@ -4,11 +4,11 @@
 用法：
   python3 tools/apply_kinds.py --input <分类结果目录或文件> [--dry]
 
-分类结果：JSON 数组，每条 {"id": 推文编号, "kind": "观点|工具|教程", "topic": "固定主题之一"}；
+分类结果：JSON 数组，每条 {"id": 推文编号, "kind": "观点|工具|教程", "topic": "固定主题之一", "value": 0-3}；
 也可以用 {"file": "clips/xxx.md", ...} 直接指定文件（给不是推文的条目用）。
 
 - 填上（或改写）kind、topic 两行
-- kind 是 工具 或 教程、且 status 还是 未整理 的，status 改成 已归档
+- kind 是 工具 或 教程、或者是溯源价值 1 分的观点，且 status 还是 未整理 的，status 改成 已归档
 - 已整理的条目只更新 kind、topic，不动 status
 """
 import argparse
@@ -63,7 +63,8 @@ def main():
         text = path.read_text()
         m = re.match(r"---\n(.*?)\n---\n", text, re.S)
         front = set_field(set_field(m.group(1), "kind", kind), "topic", topic)
-        if kind in ("工具", "教程") and re.search(r"^status: 未整理$", front, re.M):
+        low_value = kind == "观点" and it.get("value") == 1
+        if (kind in ("工具", "教程") or low_value) and re.search(r"^status: 未整理$", front, re.M):
             front = re.sub(r"^status: 未整理$", "status: 已归档", front, count=1, flags=re.M)
             archived += 1
         if not args.dry:
