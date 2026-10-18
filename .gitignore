@@ -2,3 +2,4 @@
 .env
 .env.*
 .skip_ids
+private/
