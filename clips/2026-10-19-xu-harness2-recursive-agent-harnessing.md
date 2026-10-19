@@ -5,7 +5,7 @@ url: https://arxiv.org/abs/2610.14224
 source: 论文
 published: "2026-10（arXiv 预印本 2610.14224v1，2026-10-09 提交，未经同行评审）"
 saved: 2026-10-19
-why: 未说明
+why: "给这个 agent 的自我进化找方法"
 related_principles: [原则 1, 原则 11]
 status: 未整理
 kind: 观点
