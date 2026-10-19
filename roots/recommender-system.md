@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [AI 播客在抖音一个月涨粉 10 万](../clips/2026-10-18-oran-ge-ai-podcast-douyin-growth.md) | 直接源自 | 强 |
+| [举例批评加提示样本：先给例子让用户挑毛病，再混入几条“多说一个条件就会变最好”的样本](../clips/2026-10-19-viappiani-example-critiquing-suggestions.md) | 相近 | 强 |

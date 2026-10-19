@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [Manus 本质是缝合怪但体验做得漂亮](../clips/2026-10-18-stlightleon-manus-polished-agent-take.md) | 相近 | 弱（待 Luke 确认） |
 | [与Claude Code讨论艺术与约束](../clips/2026-10-18-turingou-constraint-in-live-music-product.md) | 相近 | 弱（待 Luke 确认） |
+| [必应 7,460 万次澄清面板日志：具体的问题比万能问题好点得多，选项 3～5 个差别不大](../clips/2026-10-19-zamani-user-interactions-search-clarification.md) | 相近 | 弱（待 Luke 确认） |

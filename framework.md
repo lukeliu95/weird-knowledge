@@ -274,11 +274,11 @@
 全部新知识按主题和发布年份分布，看关注点这几年怎么变。由 `tools/topic_map.py` 生成。
 
 <!-- topic-map:begin -->
-共 1745 条新知识（含已归档）。补课找来、还没认可的 25 条不计入。数字是每年存下的条数；按发布年份算，不是保存日期。
+共 1748 条新知识（含已归档）。补课找来、还没认可的 46 条不计入。数字是每年存下的条数；按发布年份算，不是保存日期。
 
 | 主题 | 更早 | 2023 | 2024 | 2025 | 2026 | 未知 | 合计 | 观点 / 工具 / 教程 |
 |---|---|---|---|---|---|---|---|---|
-| Agent 与 Skill |  | 8 | 38 | 115 | 101 |  | 262 | 40 / 171 / 51 |
+| Agent 与 Skill |  | 8 | 38 | 115 | 102 |  | 263 | 41 / 171 / 51 |
 | 其他 |  | 25 | 32 | 47 | 93 |  | 197 | 72 / 110 / 15 |
 | AI 产品与创业 |  | 18 | 32 | 43 | 83 |  | 176 | 125 / 41 / 10 |
 | 视频生成 |  | 2 | 10 | 18 | 139 |  | 169 | 13 / 66 / 90 |
@@ -289,10 +289,11 @@
 | 提示词与写作 |  | 5 | 17 | 61 | 13 |  | 96 | 7 / 15 / 74 |
 | 语音与数字人 |  | 9 | 41 | 19 | 24 |  | 93 | 0 / 82 / 11 |
 | 学习与研究 | 2 | 11 | 31 | 16 | 21 |  | 81 | 16 / 32 / 33 |
-| 增长与获客 |  | 1 | 15 | 16 | 41 |  | 73 | 24 / 22 / 27 |
+| 增长与获客 |  | 1 | 15 | 16 | 42 |  | 74 | 25 / 22 / 27 |
 | 思维与成长 |  | 6 | 12 | 8 | 24 | 1 | 51 | 50 / 1 / 0 |
 | 日本 |  | 5 | 4 | 6 | 9 |  | 24 | 12 / 11 / 1 |
 | 历史与冷知识 |  | 3 | 1 | 3 | 6 |  | 13 | 11 / 1 / 1 |
+| 未分类 | 1 |  |  |  |  |  | 1 | 0 / 0 / 0 |
 
 **每个主题的代表**（先选已溯源的，再选观点类，最后按发布时间取最新）
 
@@ -311,6 +312,7 @@
 - **思维与成长**：[张一鸣 66 条成长心得与延迟满足](clips/2026-10-18-sea-bitcoin-zhang-yiming-66-growth-tips.md)、[Paul Graham 谈超线性回报](clips/2026-10-18-dotey-paul-graham-superlinear-returns.md)、[一句话总结 AI 算法的含义](clips/2026-10-18-dotey-ai-algorithm-one-liner.md)
 - **日本**：[大阪府各区划与公立小学教育概况](clips/2026-10-18-qiancaobuzhiqiu-osaka-areas-public-schools.md)、[日语学习的素读法与家庭使用整理](clips/2026-10-18-interjc-sodoku-japanese-learning.md)、[GA决算说明资料的结构化设计](clips/2026-10-18-powerpoint-jp-ga-technologies-earnings-deck-design.md)
 - **历史与冷知识**：[日本稻田能否收二茬的回复](clips/2026-10-18-wangtianlaw-japan-rice-ratoon-crop.md)、[南明皇室受洗的冷知识：借调侃“历史老师去美国”说出来](clips/2026-10-18-tombkeeper-southern-ming-baptism.md)、[美国人一天生活的数据可视化](clips/2026-10-18-alexxubyte-day-in-life-americans-dataviz.md)
+- **未分类**：[Taylor 1968：提问协商——四层需求（Q1～Q4）和馆员问清需求的五个过滤器](clips/2026-10-19-taylor-question-negotiation-information-seeking.md)
 <!-- topic-map:end -->
 
 ## 五、补课
@@ -320,6 +322,7 @@ agent 主动去找一手材料，补框架里薄的地方，规则见 [AGENTS.md
 | 题 | 简报 | 材料 | 新增源知识 | 状态 |
 |---|---|---|---|---|
 | 1 日本企业怎么买 B2B 产品 | [2026-10-18](docs/study/2026-10-18-topic-1-japan-b2b-buying.md) | 25 份 | 14 个，如 [采购中心](roots/buying-center.md)、[稟議制](roots/ringi-system.md)、[根回し](roots/nemawashi.md)、[许可营销](roots/permission-marketing.md) | 等 Luke 回答 |
+| 4 问题协商 | [2026-10-19](docs/study/2026-10-19-topic-4-question-negotiation.md) | 21 份 | 18 个，如 [问题协商](roots/question-negotiation.md)、[知识异常状态](roots/anomalous-state-of-knowledge.md)、[偏好建构](roots/constructive-preferences.md)、[封闭世界假设](roots/closed-world-assumption.md) | 等 Luke 回答 |
 
 第 1 题和已有原则的关系（草稿，待 Luke 确认）：
 - 原则 10（回到一手材料）：这一题又查出 10 处误传，包括"57% 的买家联系销售前已经做好决定"和"冷电话成功率 0.3%"

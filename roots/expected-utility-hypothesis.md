@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [巴菲特经典演讲：先保证不穷回去](../clips/2026-10-18-nextbullready-buffett-classic-speech.md) | 相近 | 弱（待 Luke 确认） |
+| [偏好是在被问的时候才建构出来的：问法不同，答案就不同](../clips/2026-10-19-slovic-construction-of-preference.md) | 挑战 | 强 |

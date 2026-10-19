@@ -31,3 +31,5 @@ verified: true
 | [ラクス 营业邮件调查：日本收件人最看重“和我的行业课题有关”和“有数字有案例”](../clips/2026-10-18-rakus-sales-email-to-meeting-survey-2026.md) | 相近 | 强 |
 | [贝勒大学冷电话研究：“成功率 0.3%”出自 B2C 房产随机拨号的小研究](../clips/2026-10-18-lampertz-has-cold-calling-gone-cold.md) | 相近 | 弱（待 Luke 确认） |
 | [Instantly 冷邮件基准 2026：工具商自报平均回信率 3.43%，58% 回信来自第一封](../clips/2026-10-18-instantly-cold-email-benchmark-2026.md) | 相近 | 强 |
+| [主动学习在实际使用中的六个问题：一批样本要彼此不同，问“这个条件要不要”可能更省时间](../clips/2026-10-19-settles-active-learning-in-practice.md) | 相近 | 强 |
+| [“随机缺失”不是“缺得很随机”：数据为什么缺，决定了能不能当它不存在](../clips/2026-10-19-seaman-what-is-missing-at-random.md) | 相近 | 弱（待 Luke 确认） |

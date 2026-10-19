@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [AIDE：让用户给样本打"相关/不相关"，用主动学习猜出他真正想查的数据](../clips/2026-10-18-dimitriadou-aide-active-learning-data-exploration.md) | 直接源自 | 强 |
+| [线索评分系统综述：预测型评分有效，但漂亮数字多来自厂商](../clips/2026-10-19-wu-lead-scoring-models-review.md) | 相近 | 强 |

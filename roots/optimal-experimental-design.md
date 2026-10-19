@@ -27,3 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [主动学习在实际使用中的六个问题：一批样本要彼此不同，问“这个条件要不要”可能更省时间](../clips/2026-10-19-settles-active-learning-in-practice.md) | 相近 | 强 |

@@ -26,3 +26,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [举例批评加提示样本：先给例子让用户挑毛病，再混入几条“多说一个条件就会变最好”的样本](../clips/2026-10-19-viappiani-example-critiquing-suggestions.md) | 直接源自 | 强 |
+| [偏好是在被问的时候才建构出来的：问法不同，答案就不同](../clips/2026-10-19-slovic-construction-of-preference.md) | 相近 | 强 |

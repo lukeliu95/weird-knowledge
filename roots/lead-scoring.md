@@ -28,3 +28,5 @@ verified: true
 |---|---|---|
 | [Pocus：销售Agent一年百万ARR](../clips/2026-10-18-wanghao8080-pocus-sales-agent-arr.md) | 换了说法 | 弱（待 Luke 确认） |
 | [11 个月做到 350 万美元 ARR](../clips/2026-10-18-pierreeliottlal-gojiberry-ai-3-5m-arr.md) | 相近 | 弱（待 Luke 确认） |
+| [只有正例和未标注数据时怎么学：没被标注的不等于反例](../clips/2026-10-19-elkan-positive-unlabeled-learning.md) | 相近 | 弱（待 Luke 确认） |
+| [线索评分系统综述：预测型评分有效，但漂亮数字多来自厂商](../clips/2026-10-19-wu-lead-scoring-models-review.md) | 直接源自 | 强 |
