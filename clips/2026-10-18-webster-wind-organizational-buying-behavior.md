@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 增长与获客
 roots: [buying-center, behavioral-theory-of-the-firm, derived-demand, status-quo-bias]
-adopted: false
+adopted: true
 ---
 
 ## 原文

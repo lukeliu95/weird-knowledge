@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 增长与获客
 roots: [dixon-2011-challenger-sale, ceb-2012-digital-evolution-b2b-marketing, rackham-1988-spin-selling]
-adopted: false
+adopted: true
 ---
 
 ## 原文

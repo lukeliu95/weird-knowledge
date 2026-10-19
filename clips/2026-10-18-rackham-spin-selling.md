@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 增长与获客
 roots: [rackham-1988-spin-selling]
-adopted: false
+adopted: true
 ---
 
 ## 原文

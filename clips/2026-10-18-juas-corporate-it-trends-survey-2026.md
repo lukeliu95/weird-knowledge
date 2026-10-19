@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 日本
 roots: [business-it-alignment, vendor-lock-in]
-adopted: false
+adopted: true
 ---
 
 ## 原文

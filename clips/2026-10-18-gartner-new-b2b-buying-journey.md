@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 增长与获客
 roots: [gartner-2019-b2b-buying-journey, buying-center, jobs-to-be-done, robinson-1967-industrial-buying-creative-marketing]
-adopted: false
+adopted: true
 ---
 
 ## 原文

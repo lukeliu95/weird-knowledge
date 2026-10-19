@@ -152,10 +152,10 @@
 | 排名 | 源知识 | 被几条新知识指向（直接 / 连同间接） | 更底层的源头 |
 |---|---|---|---|
 | 1 | [反馈](roots/feedback.md) | 3 / 68 | 已到基础层 |
-| 2 | [控制论](roots/cybernetics.md) | 4 / 64 | 已到基础层 |
-| 3 | [自然选择](roots/natural-selection.md) | 0 / 45 | 已到基础层 |
-| 4 | [比较优势](roots/comparative-advantage.md) | 0 / 38 | 已到基础层 |
-| 5 | [有限理性](roots/bounded-rationality.md) | 0 / 35 | 已到基础层 |
+| 2 | [控制论](roots/cybernetics.md) | 4 / 67 | 已到基础层 |
+| 3 | [有限理性](roots/bounded-rationality.md) | 1 / 45 | 已到基础层 |
+| 4 | [自然选择](roots/natural-selection.md) | 0 / 45 | 已到基础层 |
+| 5 | [比较优势](roots/comparative-advantage.md) | 0 / 38 | 已到基础层 |
 | 6 | [分工](roots/division-of-labour.md) | 5 / 33 | [比较优势](roots/comparative-advantage.md) |
 | 7 | [经验曲线效应](roots/experience-curve-effect.md) | 2 / 33 | [学习曲线](roots/learning-curve.md) |
 | 8 | [学习曲线](roots/learning-curve.md) | 0 / 33 | 已到基础层 |
@@ -164,12 +164,14 @@
 | 11 | [苦涩的教训](roots/bitter-lesson.md) | 11 / 29 | [摩尔定律](roots/moores-law.md) |
 | 12 | [控制理论](roots/control-theory.md) | 0 / 28 | [反馈](roots/feedback.md) |
 | 13 | [构建高效的智能体](roots/anthropic-2024-building-effective-agents.md) | 15 / 25 | [智能体](roots/intelligent-agent.md)、[分工](roots/division-of-labour.md) |
-| 14 | [完全竞争](roots/perfect-competition.md) | 3 / 23 | 已到基础层 |
-| 15 | [效果律](roots/law-of-effect.md) | 0 / 21 | [自然选择](roots/natural-selection.md) |
+| 14 | [完全竞争](roots/perfect-competition.md) | 3 / 25 | 已到基础层 |
+| 15 | [正反馈](roots/positive-feedback.md) | 0 / 24 | [控制论](roots/cybernetics.md) |
 
 和第 2 轮比：前 5 名没变，反馈从 62 条涨到 68 条，控制论从 59 条涨到 64 条。效果律重新进了前 15：这一轮的强化学习论文（PPO、GAE、ReST）都顺着强化学习追到了它；正反馈掉了出去。
 
-直接被指向最多的：构建高效的智能体（15）、苦涩的教训（11）、AI 智能体的上下文工程（8）、约束理论（7）、颠覆式创新（6）、待完成的任务（6）、精益创业（6）、SECI 知识转化模型（6）。这一轮新建的 27 个源知识里，被指向最多的是 [GPT-6 Astra 系统卡](roots/openai-2026-gpt-6-astra-system-card.md)、[OpenAI dots 的安全设计](roots/openai-2026-dots-safety-security-privacy.md) 和 [例外管理](roots/management-by-exception.md)，各 2 条。
+2026-10-19 Luke 认可补课第 1 题的 25 份材料后重排：有限理性从第 5 名（35 条）升到第 3 名（45 条），因为组织购买那几条（BuyGrid、购买类型三分法、企业行为理论）都追到了它；控制论 64 条涨到 67 条；正反馈回到前 15，效果律掉了出去。补课第 4 题的 21 条 Luke 还没认可，不计入。
+
+直接被指向最多的：构建高效的智能体（15）、苦涩的教训（11）、AI 智能体的上下文工程（8）、待完成的任务（7）、约束理论（7）、注意力经济（6）、颠覆式创新（6）、精益创业（6）。第 3 轮新建的 27 个源知识里，被指向最多的是 [GPT-6 Astra 系统卡](roots/openai-2026-gpt-6-astra-system-card.md)、[OpenAI dots 的安全设计](roots/openai-2026-dots-safety-security-privacy.md) 和 [例外管理](roots/management-by-exception.md)，各 2 条。
 
 ## 三、待查
 
@@ -177,7 +179,7 @@
 
 ### 和经典理论对着干的
 
-第 1 轮 9 处，第 2 轮新增 21 处，第 3 轮新增 3 处，共 33 处。强的 9 处排在前面。
+第 1 轮 9 处，第 2 轮新增 21 处，第 3 轮新增 3 处，2026-10-19 认可补课第 1 题后计入 2 处，共 35 处。强的 10 处排在前面。
 
 | 新知识 | 对着干的经典 | 强弱 |
 |---|---|---|
@@ -190,6 +192,7 @@
 | [Pi 作者：代码即真相，Bash 够用](clips/2026-10-18-dotey-pi-authors-code-bash-insights.md) | [检索增强生成（RAG）](roots/retrieval-augmented-generation.md) | 强 |
 | [与Claude Code讨论艺术与约束](clips/2026-10-18-turingou-constraint-in-live-music-product.md) | [Cloudflare Code Mode：让模型写代码放进沙箱执行](roots/varda-2025-code-mode.md) | 强 |
 | [保险建议：孩子重疾险在香港买，成人买医疗险不买重疾](clips/2026-10-18-captainlufei999-insurance-advice-hk-critical-illness.md) | [保监会未成年人身故保险金限额通知（保监发〔2015〕90号）](roots/circ-2015-minor-death-benefit-cap.md) | 强（其实是推文说错了：内地是有上限，不是不赔） |
+| [Gartner 新 B2B 购买旅程：买方只花 17% 的时间见供应商](clips/2026-10-18-gartner-new-b2b-buying-journey.md) | [购买类型三分法与 BuyGrid](roots/robinson-1967-industrial-buying-creative-marketing.md) | 强 |
 | [Tripo Eden：先建地图再渲染](clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | [苦涩的教训](roots/bitter-lesson.md) | 弱（待 Luke 确认） |
 | [Tripo Eden：先建地图再渲染](clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | [视频生成模型是世界模拟器（Sora 技术报告）](roots/brooks-2024-video-world-simulators.md) | 弱（待 Luke 确认） |
 | [Kimi-code重构一个月的架构复盘](clips/2026-10-18-real-kai42-kimi-code-rewrite-retrospective.md) | [在参差不齐的技术边界上航行（BCG 顾问实验）](roots/dellacqua-2023-jagged-technological-frontier.md) | 弱（待 Luke 确认） |
@@ -214,6 +217,7 @@
 | [Karpathy：让AI模拟专家来答](clips/2026-10-18-dotey-karpathy-simulator-not-entity.md) | [系统提示里的角色不能提升表现](roots/zheng-2023-personas-system-prompts.md) | 弱（待 Luke 确认） |
 | [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | [模型崩溃](roots/model-collapse.md) | 弱（待 Luke 确认） |
 | [yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md) | [AI 智能体的上下文工程](roots/anthropic-2025-effective-context-engineering.md) | 弱（待 Luke 确认） |
+| [挑战者销售：明星销售靠教给客户他没看到的问题，而不是靠关系](clips/2026-10-18-dixon-adamson-challenger-sale.md) | [SPIN 销售法](roots/rackham-1988-spin-selling.md) | 弱（待 Luke 确认） |
 
 几组值得对照着看：
 - **规模还是结构**：杨立昆、Tripo Eden 认为光靠规模不够，要有新的结构或显式保存的状态；唐杰、Sora 团队押规模继续有效，能力会自己冒出来。
@@ -274,7 +278,7 @@
 全部新知识按主题和发布年份分布，看关注点这几年怎么变。由 `tools/topic_map.py` 生成。
 
 <!-- topic-map:begin -->
-共 1748 条新知识（含已归档）。补课找来、还没认可的 46 条不计入。数字是每年存下的条数；按发布年份算，不是保存日期。
+共 1773 条新知识（含已归档）。补课找来、还没认可的 21 条不计入。数字是每年存下的条数；按发布年份算，不是保存日期。
 
 | 主题 | 更早 | 2023 | 2024 | 2025 | 2026 | 未知 | 合计 | 观点 / 工具 / 教程 |
 |---|---|---|---|---|---|---|---|---|
@@ -288,10 +292,10 @@
 | 图像生成 |  | 11 | 29 | 45 | 21 |  | 106 | 1 / 62 / 43 |
 | 提示词与写作 |  | 5 | 17 | 61 | 13 |  | 96 | 7 / 15 / 74 |
 | 语音与数字人 |  | 9 | 41 | 19 | 24 |  | 93 | 0 / 82 / 11 |
+| 增长与获客 | 10 | 1 | 15 | 19 | 45 | 1 | 91 | 42 / 22 / 27 |
 | 学习与研究 | 2 | 11 | 31 | 16 | 21 |  | 81 | 16 / 32 / 33 |
-| 增长与获客 |  | 1 | 15 | 16 | 42 |  | 74 | 25 / 22 / 27 |
 | 思维与成长 |  | 6 | 12 | 8 | 24 | 1 | 51 | 50 / 1 / 0 |
-| 日本 |  | 5 | 4 | 6 | 9 |  | 24 | 12 / 11 / 1 |
+| 日本 | 4 | 6 | 4 | 6 | 11 | 1 | 32 | 20 / 11 / 1 |
 | 历史与冷知识 |  | 3 | 1 | 3 | 6 |  | 13 | 11 / 1 / 1 |
 | 未分类 | 1 |  |  |  |  |  | 1 | 0 / 0 / 0 |
 
@@ -307,10 +311,10 @@
 - **图像生成**：[Qwen 生图 Turbo 开放权重](clips/2026-10-18-qwendevs-qwen-image-turbo-open-weights.md)、[Qwen 换脸换头 LoRA 更新](clips/2026-10-18-lonely-mh-qwen-image-face-swap-lora.md)、[Qwen-Image 2.1 即将开源](clips/2026-10-18-qwendevs-qwen-image-2-1-early-access.md)
 - **提示词与写作**：[Anthropic专家谈提示词工程师](clips/2026-10-18-eze-is-1-anthropic-prompt-engineering-notes.md)、[提示词精髓：有什么、做什么、怎么做](clips/2026-10-18-dotey-prompt-context-task-how.md)、[写提示词的三条路与第四条路：故事](clips/2026-10-18-lijigang-prompt-writing-fourth-path-story.md)
 - **语音与数字人**：[Fish 开源 Drama3 语音模型](clips/2026-10-18-kay2289123-fish-audio-drama3-open-source.md)、[Griffin 全双工视频模型解读](clips/2026-10-18-maxforai-griffin-full-duplex-video-model.md)、[Griffin 通过视频图灵测试](clips/2026-10-18-tavus-tavus-griffin-video-turing-test.md)
+- **增长与获客**：[采购中心和五种角色：企业买东西是一群人在组织里一起决定](clips/2026-10-18-webster-wind-organizational-buying-behavior.md)、[谢斯工业品购买者模型：几个部门一起买，冲突怎么解决决定了快慢](clips/2026-10-18-sheth-industrial-buyer-behavior.md)、[SPIN 销售法：大单靠按顺序提问让客户自己说出需求](clips/2026-10-18-rackham-spin-selling.md)
 - **学习与研究**：[Samuel 的跳棋程序：机器靠自己对弈学习，下得比写它的人还好](clips/2026-10-18-samuel-machine-learning-checkers.md)、[AIDE：让用户给样本打"相关/不相关"，用主动学习猜出他真正想查的数据](clips/2026-10-18-dimitriadou-aide-active-learning-data-exploration.md)、[吴恩达对话李飞飞谈以人为本的 AI](clips/2026-10-18-dotey-andrew-ng-fei-fei-li-interview.md)
-- **增长与获客**：[MrBeast的YouTube上瘾蓝图](clips/2026-10-18-0xcheshire-youtube-addiction-blueprint.md)、[Reddit 是被低估的软件出海分发渠道](clips/2026-10-18-wanghao8080-reddit-distribution-channel.md)、[北美增长负责人谈各平台获客要点](clips/2026-10-18-oran-ge-na-growth-channel-notes.md)
 - **思维与成长**：[张一鸣 66 条成长心得与延迟满足](clips/2026-10-18-sea-bitcoin-zhang-yiming-66-growth-tips.md)、[Paul Graham 谈超线性回报](clips/2026-10-18-dotey-paul-graham-superlinear-returns.md)、[一句话总结 AI 算法的含义](clips/2026-10-18-dotey-ai-algorithm-one-liner.md)
-- **日本**：[大阪府各区划与公立小学教育概况](clips/2026-10-18-qiancaobuzhiqiu-osaka-areas-public-schools.md)、[日语学习的素读法与家庭使用整理](clips/2026-10-18-interjc-sodoku-japanese-learning.md)、[GA决算说明资料的结构化设计](clips/2026-10-18-powerpoint-jp-ga-technologies-earnings-deck-design.md)
+- **日本**：[稟議和根回し：日本大企业里真正拍板的是起案人和事前协商](clips/2026-10-18-vogel-japanese-organization-decision-making.md)、[今天的上市公司还在用稟議管花钱：有预算也要再走一次稟議](clips/2026-10-18-kamiyama-budgeting-and-ringi-system.md)、[经产省 DXレポート：日本 CIO 倾向选大厂、接受老供应商的提案](clips/2026-10-18-meti-dx-report-2025-digital-cliff.md)
 - **历史与冷知识**：[日本稻田能否收二茬的回复](clips/2026-10-18-wangtianlaw-japan-rice-ratoon-crop.md)、[南明皇室受洗的冷知识：借调侃“历史老师去美国”说出来](clips/2026-10-18-tombkeeper-southern-ming-baptism.md)、[美国人一天生活的数据可视化](clips/2026-10-18-alexxubyte-day-in-life-americans-dataviz.md)
 - **未分类**：[Taylor 1968：提问协商——四层需求（Q1～Q4）和馆员问清需求的五个过滤器](clips/2026-10-19-taylor-question-negotiation-information-seeking.md)
 <!-- topic-map:end -->

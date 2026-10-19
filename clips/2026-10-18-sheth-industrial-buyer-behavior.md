@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 增长与获客
 roots: [sheth-1973-industrial-buyer-behavior, behavioral-theory-of-the-firm, perceived-risk, cognitive-dissonance]
-adopted: false
+adopted: true
 ---
 
 ## 原文

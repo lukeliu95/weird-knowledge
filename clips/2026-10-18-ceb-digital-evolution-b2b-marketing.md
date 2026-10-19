@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 增长与获客
 roots: [ceb-2012-digital-evolution-b2b-marketing, information-asymmetry]
-adopted: false
+adopted: true
 ---
 
 ## 原文
