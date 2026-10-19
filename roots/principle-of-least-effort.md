@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [OpenAI 报告：用户最常用的是懒脑力活](../clips/2026-10-18-frxiaobei-chatgpt-usage-lazy-moments.md) | 相近 | 弱（待 Luke 确认） |
+| [写给 7,002 名美国学区委员的邮件实验：49 词的版本回应率 4.8%，127 词的版本 2.7%，短的多出近一倍](../clips/2026-10-19-rogers-lasky-fink-busy-readers-concise-email.md) | 相近 | 弱（待 Luke 确认） |

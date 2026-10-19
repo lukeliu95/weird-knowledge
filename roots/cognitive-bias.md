@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [举例批评加提示样本：先给例子让用户挑毛病，再混入几条“多说一个条件就会变最好”的样本](../clips/2026-10-19-viappiani-example-critiquing-suggestions.md) | 直接源自 | 强 |
 | [偏好是在被问的时候才建构出来的：问法不同，答案就不同](../clips/2026-10-19-slovic-construction-of-preference.md) | 相近 | 强 |
+| [Gartner 2025 调查：74% 的买方小组内部有“不健康的冲突”，达成共识的小组报告高质量成交的可能性高 2.5 倍](../clips/2026-10-19-gartner-buying-group-consensus-2025.md) | 相近 | 弱（待 Luke 确认） |

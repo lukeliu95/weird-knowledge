@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [霍夫斯泰德文化维度：日本不确定性规避 92 分，但不是世界最高](../clips/2026-10-18-hofstede-japan-uncertainty-avoidance.md) | 直接源自 | 强 |
+| [日美中小企业买服务的对比研究：日本企业比美国同类企业参考更多推荐来源（只读了摘要）](../clips/2026-10-19-money-1998-referral-industrial-services-japan.md) | 相近 | 弱（待 Luke 确认） |

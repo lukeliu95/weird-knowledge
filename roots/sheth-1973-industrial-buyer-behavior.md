@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [谢斯工业品购买者模型：几个部门一起买，冲突怎么解决决定了快慢](../clips/2026-10-18-sheth-industrial-buyer-behavior.md) | 直接源自 | 强 |
+| [Gartner 2025 调查：74% 的买方小组内部有“不健康的冲突”，达成共识的小组报告高质量成交的可能性高 2.5 倍](../clips/2026-10-19-gartner-buying-group-consensus-2025.md) | 相近 | 强 |

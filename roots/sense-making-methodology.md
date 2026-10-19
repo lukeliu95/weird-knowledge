@@ -28,3 +28,4 @@ verified: false
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [中立提问法：开放地问，但只问情境、缺口、用途三件事](../clips/2026-10-19-dervin-dewdney-neutral-questioning.md) | 直接源自 | 强 |
+| [Gartner 2019：客户觉得销售在“帮自己理清信息”时，80% 的情况拿下了高质量、不后悔的单子](../clips/2026-10-19-gartner-customer-confidence-sense-making-2019.md) | 相近 | 弱（待 Luke 确认） |

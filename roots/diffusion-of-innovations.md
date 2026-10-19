@@ -30,3 +30,6 @@ verified: true
 | [公司推广 AI 编程为何要靠内部](../clips/2026-10-18-dotey-promote-ai-coding-in-company.md) | 相近 | 弱（待 Luke 确认） |
 | [世界分成会用与不会用 ChatGPT](../clips/2026-10-18-dotey-chatgpt-two-kinds-of-people.md) | 相近 | 弱（待 Luke 确认） |
 | [Mary Meeker 340 页 AI 趋势八点](../clips/2026-10-18-reportify-xu-mary-meeker-ai-trends-report.md) | 相近 | 弱（待 Luke 确认） |
+| [促进者“三驾马车”：133 个创新项目里，有权的人、懂技术的人、负责沟通协调的人三者都在时，商业上最成功](../clips/2026-10-19-hauschildt-kirchmann-troika-of-promotors.md) | 相近 | 弱（待 Luke 确认） |
+| [中小機構 2026 AI 利用调查：88% 的中小企业没有专门部门，AI/IT 都靠经营者和现场自己推；最缺同行案例（83.3% 说不够）](../clips/2026-10-19-smrj-sme-ai-adoption-survey-2026.md) | 相近 | 弱（待 Luke 确认） |
+| [日本公库 2025 数字化调查：中小企业推数字化时第一个找的是 IT 厂商（50.5%），其次税理士（32.8%）；49 人以下的企业近一半谁也不找](../clips/2026-10-19-jfc-sme-digitalization-advisors-2025.md) | 相近 | 弱（待 Luke 确认） |
