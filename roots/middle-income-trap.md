@@ -16,7 +16,7 @@ verified: true
 ## 原始出处
 
 - Middle income trap，英文维基百科，https://en.wikipedia.org/wiki/Middle_income_trap
-- An East Asian Renaissance: Ideas for Economic Growth, Indermit Gill & Homi Kharas 等, World Bank, 2007，https://documents1.worldbank.org/curated/en/517971468025502862/pdf/399860REPLACEM1601OFFICAL0USE0ONLY1.pdf
+- An East Asian Renaissance: Ideas for Economic Growth, Indermit Gill & Homi Kharas 等, World Bank, 2007，https://documents1.worldbank.org/curated/en/517971468025502862/pdf/399860REPLACEM1601OFFICAL0USE0ONLY1.pdf（原链接 2026-10-19 已打不开，存档：http://web.archive.org/web/20250619113215/https://documents1.worldbank.org/curated/en/517971468025502862/pdf/399860REPLACEM1601OFFICAL0USE0ONLY1.pdf）
 - 争议：这个陷阱在实证上是否存在有很大争论：有经济学家认为根本没有这种陷阱，也有人指出 1980 年代中期以来中等收入国家增长比其他国家都快。
 
 ## 更底层的源头

@@ -16,7 +16,7 @@ verified: true
 ## 原始出处
 
 - Overcoming Resistance to Change, Lester Coch & John R. P. French, Human Relations, 1948，https://doi.org/10.1177/001872674800100408
-- LIUC 综述（介绍 Coch & French 实验设计与结论），https://biblio.liuc.it/liucpap/pdf/79.pdf
+- LIUC 综述（介绍 Coch & French 实验设计与结论），https://biblio.liuc.it/liucpap/pdf/79.pdf（原链接 2026-10-19 已打不开，存档：http://web.archive.org/web/20251213004952/https://biblio.liuc.it/liucpap/pdf/79.pdf）
 - 争议：Burnes 2015 年重新解读：阻力来自变革所处的情境，而不是个人。
 
 ## 更底层的源头

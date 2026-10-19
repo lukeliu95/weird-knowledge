@@ -16,7 +16,7 @@ verified: true
 ## 原始出处
 
 - Wikipedia: Span of control（Graicunas 1933，收入 Gulick & Urwick 1937 Papers on the Science of Administration），https://en.wikipedia.org/wiki/Span_of_control
-- The Proverbs of Administration, Herbert A. Simon, Public Administration Review, 1946（重印本），https://drtktopecollege.in/wp/wp-content/uploads/2020/10/The-Proverbs-of-Administration.pdf
+- The Proverbs of Administration, Herbert A. Simon, Public Administration Review, 1946（重印本），https://drtktopecollege.in/wp/wp-content/uploads/2020/10/The-Proverbs-of-Administration.pdf（这个第三方重印本 2026-10-19 已打不开，原刊：Public Administration Review 6(1): 53–67，DOI https://doi.org/10.2307/973030）
 - 争议：最优幅度至今没有公认的理论；Herbert Simon 1946 年批评它和其他管理原则一样像互相矛盾的谚语。
 
 ## 更底层的源头

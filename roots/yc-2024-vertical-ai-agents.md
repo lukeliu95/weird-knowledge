@@ -16,7 +16,7 @@ verified: true
 ## 原始出处
 
 - Vertical AI Agents Could Be 10X Bigger Than SaaS, Y Combinator Lightcone 播客, 2024-11（YouTube 页面，标题已核对），https://www.youtube.com/watch?v=ASABxNenD_U
-- Y Combinator：垂直领域 AI Agent 的市场规模将是 SaaS 的十倍，华尔街见闻（节目摘要），https://wallstreetcn.com/articles/3735041
+- Y Combinator：垂直领域 AI Agent 的市场规模将是 SaaS 的十倍，华尔街见闻（节目摘要），https://wallstreetcn.com/articles/3735041（原链接 2026-10-19 已打不开，存档：http://web.archive.org/web/20250723201038/https://wallstreetcn.com/articles/3735041）
 - 争议：“十倍”是主持人的判断，节目里没有给出人力预算的具体测算；也有评论认为这期节目内容偏空。
 
 ## 更底层的源头

@@ -8,6 +8,7 @@
   c0  不给任何档案
   c1  给 Luke 档案
   c2  给 Luke 档案 + 检索到的相似点赞（排除测试集里的条目）
+  c3  c2 再加检索到的"刷到但没点"的推文做对照（取自时间线快照，排除测试集）
 
 私密内容（档案、点赞例子）只发给本地 Qwen；jev 只能配 c0（只有公开的推文文本）。
 结果写进 private/l1/runs/ 和 private/l1/metrics.jsonl。
@@ -80,12 +81,28 @@ def liked_docs(exclude):
 SYS = "你在模拟一个具体的人：Luke。判断他在 X 上刷到这条推文时会不会点赞。只回答一个字母：A 表示会点赞，B 表示不会。"
 
 
-def prompt(row, cond, profile, examples):
+def skipped_docs(exclude):
+    """Tweets that showed up on Luke's home timeline but were never liked (weak negatives)."""
+    liked = {d["id"] for d in liked_docs(set())}
+    out, seen = [], set()
+    for f in sorted((PRIVATE / "l1" / "prospective").glob("snapshot-*.jsonl")):
+        for l in f.read_text().split("\n"):
+            if l.strip():
+                r = json.loads(l)
+                if r["id"] not in exclude and r["id"] not in liked and r["id"] not in seen:
+                    seen.add(r["id"])
+                    out.append({"id": r["id"], "text": r["text"][:600]})
+    return out
+
+
+def prompt(row, cond, profile, examples, negatives=()):
     parts = []
-    if cond in ("c1", "c2"):
+    if cond in ("c1", "c2", "c3"):
         parts.append("【Luke 的档案】\n" + profile)
-    if cond == "c2":
+    if cond in ("c2", "c3"):
         parts.append("【他以前点赞过的相似推文】\n" + "\n\n".join(f"- {e['text'][:400]}" for e in examples))
+    if cond == "c3" and negatives:
+        parts.append("【他刷到过、但没有点赞的相似推文】\n" + "\n\n".join(f"- {e['text'][:400]}" for e in negatives))
     if cond == "c0":
         parts.append("你对 Luke 只知道一点：他是 X 用户。")
     parts.append(f"【要判断的推文】作者 @{row['author']}\n{row['text'][:1200]}")
@@ -135,7 +152,8 @@ def metrics(rows):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("testset")
-    ap.add_argument("--cond", default="c1", choices=["c0", "c1", "c2"])
+    ap.add_argument("--cond", default="c1", choices=["c0", "c1", "c2", "c3"])
+    ap.add_argument("--kneg", type=int, default=4)
     ap.add_argument("--engine", default="qwen", choices=["qwen", "jev"])
     ap.add_argument("--profile", default=str(PRIVATE / "luke" / "profile.md"))
     ap.add_argument("--k", type=int, default=8)
@@ -146,7 +164,9 @@ def main():
     load_env()
     rows = [json.loads(l) for l in Path(a.testset).read_text().split("\n") if l.strip()]
     profile = Path(a.profile).read_text() if a.cond != "c0" else ""
-    index = Index(liked_docs({r["id"] for r in rows})) if a.cond == "c2" else None
+    ids = {r["id"] for r in rows}
+    index = Index(liked_docs(ids)) if a.cond in ("c2", "c3") else None
+    nindex = Index(skipped_docs(ids)) if a.cond == "c3" else None
     tokens = 0
     for i, r in enumerate(rows, 1):
         if a.engine == "jev":
@@ -154,7 +174,8 @@ def main():
             tokens += t
         else:
             ex = index.top(r["text"], a.k) if index else []
-            r["p"] = qwen(prompt(r, a.cond, profile, ex))
+            neg = nindex.top(r["text"], a.kneg) if nindex else []
+            r["p"] = qwen(prompt(r, a.cond, profile, ex, neg))
         if i % 25 == 0:
             print(f"  {i}/{len(rows)}", file=sys.stderr, flush=True)
     m = metrics(rows)

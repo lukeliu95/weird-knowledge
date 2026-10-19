@@ -13,7 +13,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 PRIVATE = REPO / "private"
 UA = {"User-Agent": "Mozilla/5.0 (compatible; weird-knowledge-research-bot)"}
-URL = re.compile(r"https?://[^\s）\]>，。；、\"`]+")
+URL = re.compile(r"https?://[^\s（）\]>，。；、\"`]+")
 
 
 def clean(u):
@@ -50,22 +50,27 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=6)
     a = ap.parse_args()
-    items = []
+    items, repaired = [], set()
     for f in sorted((REPO / "roots").glob("*.md")):
-        for u in dict.fromkeys(URL.findall(section(f.read_text(), "原始出处"))):
-            items.append((f.stem, clean(u)))
+        for line in section(f.read_text(), "原始出处").split("\n"):
+            urls = [clean(u) for u in URL.findall(line)]
+            if ("web.archive.org" in line or "doi.org" in line) and "打不开" in line:
+                repaired.update((f.stem, u) for u in urls if "web.archive.org" not in u and "doi.org" not in u)
+            items += [(f.stem, u) for u in urls]
+        items = list(dict.fromkeys(items))
     out = []
     with cf.ThreadPoolExecutor(a.workers) as ex:
         for (slug, url), (status, final) in zip(items, ex.map(lambda x: check(x[1]), items)):
             out.append(dict(root=slug, url=url, status=status, final=final))
     ok = [r for r in out if isinstance(r["status"], int) and r["status"] < 400]
     blocked = [r for r in out if r["status"] in (401, 403, 429)]
-    dead = [r for r in out if r not in ok and r not in blocked]
+    fixed = [r for r in out if (r["root"], r["url"]) in repaired and r not in ok]
+    dead = [r for r in out if r not in ok and r not in blocked and r not in fixed]
     stamp = f"{dt.datetime.now():%Y%m%d-%H%M}"
     d = PRIVATE / "d1"
     d.mkdir(parents=True, exist_ok=True)
     (d / f"links-{stamp}.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in out))
-    rec = dict(time=stamp, links=len(out), roots=len({r['root'] for r in out}), ok=len(ok), blocked=len(blocked),
+    rec = dict(time=stamp, links=len(out), roots=len({r['root'] for r in out}), ok=len(ok), blocked=len(blocked), repaired=len(fixed),
                dead=len(dead), dead_rate=round(len(dead) / max(1, len(out)), 3))
     with open(d / "metrics.jsonl", "a") as f:
         f.write(json.dumps(rec) + "\n")

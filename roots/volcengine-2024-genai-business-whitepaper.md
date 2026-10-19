@@ -16,7 +16,7 @@ verified: true
 ## 原始出处
 
 - 生成式 AI 落地不再难，六大问题一网打尽！《生成式 AI 商业落地白皮书》为 CXO 答疑解惑，InfoQ，2024-07-29，https://www.infoq.cn/article/nsx4t2otoicoc6a8los8
-- 生成式AI商业落地白皮书（InfoQ 迷你书下载页），https://www.infoq.cn/minibook/E2hbDbQTdoffVOGc9PSN
+- 生成式AI商业落地白皮书（InfoQ 迷你书下载页），https://www.infoq.cn/minibook/E2hbDbQTdoffVOGc9PSN（原链接 2026-10-19 已打不开，存档：http://web.archive.org/web/20250707211909/https://www.infoq.cn/minibook/E2hbDbQTdoffVOGc9PSN）
 - 火山引擎联合RollingAI、InfoQ共同发布《生成式 AI 商业落地白皮书》，飞象网，2024-07-29，http://www.cctime.com/html/2024-7-29/1688670.htm
 
 ## 更底层的源头

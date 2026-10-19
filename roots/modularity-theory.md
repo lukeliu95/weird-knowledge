@@ -15,7 +15,7 @@ verified: true
 
 ## 原始出处
 
-- Modularity Theory, Clayton Christensen Institute，https://christenseninstitute.org/theory/modularity
+- Modularity Theory, Clayton Christensen Institute，https://christenseninstitute.org/theory/modularity（原链接 2026-10-19 已打不开，存档：http://web.archive.org/web/20260902214116/https://www.christenseninstitute.org/theory/modularity/）
 - Disruption, disintegration and the dissipation of differentiability, Christensen, Verlinden, Westerman, Industrial and Corporate Change 11(5), 2002，https://ideas.repec.org/r/oup/indcch/v11y2002i5p955-993.html
 - 争议：克里斯坦森研究所页面没写提出者；一般归于 Christensen，常引自 2002 年论文和 Christensen 与 Raynor 2003 年《The Innovator's Solution》第 5 章。
 
