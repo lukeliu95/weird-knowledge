@@ -5,7 +5,7 @@ url: https://doi.org/10.5860/crl_29_03_178
 source: 论文
 published: 1968-03（College & Research Libraries 第 29 卷第 3 期，pp. 178–194，DOI: 10.5860/crl_29_03_178；页眉印的是 March 1968）
 saved: 2026-10-19
-why: 供 ICP 问题协商流程引用（取自 Luke 所贴节选开头的说明，待他确认）
+why: 存这篇就是为了客户画像问题协商流程引用
 related_principles: [原则 4, 原则 1]
 status: 未整理
 kind:
