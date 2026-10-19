@@ -64,12 +64,18 @@ class Index:
         return [self.docs[i] for _, i in scores[:k]]
 
 
+def labels():
+    """Luke's own answers from the "ask" step (private/l1/labels.jsonl): the strongest labels we have."""
+    f = PRIVATE / "l1" / "labels.jsonl"
+    return [json.loads(l) for l in f.read_text().split("\n") if l.strip()] if f.exists() else []
+
+
 def liked_docs(exclude):
-    out = []
+    out = [{"id": r["id"], "text": r["text"][:600]} for r in labels() if r["label"] == 1 and r["id"] not in exclude]
     for f in (REPO / "clips").glob("*.md"):
         t = f.read_text()
         m = re.search(r"/status/(\d+)", t.split("\n---", 1)[0])
-        if not m or m.group(1) in exclude or "X 点赞" not in t.split("\n---", 1)[0]:
+        if not m or m.group(1) in exclude or m.group(1) in {d["id"] for d in out} or "X 点赞" not in t.split("\n---", 1)[0]:
             continue
         body = t.split("## 原文", 1)[-1].split("## 溯源", 1)[0]
         body = re.split(r"^> 媒体：", body, flags=re.M)[0].strip()
@@ -84,7 +90,8 @@ SYS = "你在模拟一个具体的人：Luke。判断他在 X 上刷到这条推
 def skipped_docs(exclude):
     """Tweets that showed up on Luke's home timeline but were never liked (weak negatives)."""
     liked = {d["id"] for d in liked_docs(set())}
-    out, seen = [], set()
+    out = [{"id": r["id"], "text": r["text"][:600]} for r in labels() if r["label"] == 0 and r["id"] not in exclude]
+    seen = {r["id"] for r in out}
     for f in sorted((PRIVATE / "l1" / "prospective").glob("snapshot-*.jsonl")):
         for l in f.read_text().split("\n"):
             if l.strip():

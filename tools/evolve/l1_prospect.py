@@ -92,7 +92,8 @@ def score(a):
     stem = Path(a.snapshot).stem.replace("snapshot", "pred")
     for pf in sorted(Path(a.snapshot).parent.glob(stem + "-*.jsonl")):
         preds = [json.loads(l) for l in pf.read_text().split("\n") if l.strip()]
-        rs = [dict(p=x["p"], label=int(x["id"] in liked)) for x in preds]
+        told = {r["id"]: r["label"] for r in E.labels()}   # Luke's own answer overrides "liked or not"
+        rs = [dict(p=x["p"], label=told.get(x["id"], int(x["id"] in liked))) for x in preds]
         m = E.metrics(rs)
         rec = dict(time=f"{dt.datetime.now():%Y%m%d-%H%M}", testset=Path(a.snapshot).name, engine="qwen",
                    cond=pf.stem.split("-")[-2], profile=pf.stem.split("-")[-1], tag="prospective", **m)
