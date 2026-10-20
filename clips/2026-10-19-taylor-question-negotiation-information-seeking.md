@@ -8,8 +8,8 @@ saved: 2026-10-19
 why: 存这篇就是为了客户画像问题协商流程引用
 related_principles: [原则 4, 原则 1]
 status: 未整理
-kind:
-topic:
+kind: 观点
+topic: 学习与研究
 roots: []
 ---
 

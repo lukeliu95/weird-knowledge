@@ -7,7 +7,7 @@ published: 2026-10-18
 saved: 2026-10-20
 why: 探索日报：Luke 想看
 related_principles: ["原则 3"]
-status: 未整理
+status: 已归档
 kind: 工具
 topic: 模型与本地部署
 roots: []
