@@ -501,7 +501,14 @@ def main():
     DIR.mkdir(parents=True, exist_ok=True)
     (DIR / "inbox").mkdir(exist_ok=True)
     (DIR / "digests").mkdir(exist_ok=True)
-    globals()["cmd_" + a.cmd](a)
+    if a.cmd in ("status", "report"):
+        globals()["cmd_" + a.cmd](a)
+        return
+    # 会改文件的命令排队执行：两个会话同时读改写候选池，会把对方刚写的冲掉（2026-10-20 丢过 46 条）
+    import fcntl
+    with open(DIR / ".lock", "w") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        globals()["cmd_" + a.cmd](a)
 
 
 if __name__ == "__main__":
