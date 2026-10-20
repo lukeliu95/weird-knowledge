@@ -26,3 +26,4 @@
 | 10-20 | 判断引擎 | `claude -p` 加 `--system-prompt`、`--tools ""`、`--strict-mcp-config`、`--no-session-persistence`，一次调用的固定开销从约 4.4 万 token 降到约 6 千；要批量打分，不要一条一调 | 加 Opus 兜底时实测 |
 | 10-20 | 探索 | 两个会话同时对候选池"读、改、写"，后写的会把先写的冲掉（丢过两批共 83 条，靠 inbox 原始文件找回）。改文件的命令一律加文件锁排队；手动在主会话跑脚本时也要用主目录那份带锁的代码 | 探索 14:21、16:08 两轮 |
 | 10-20 | 探索 | 论文侦察兵一开始就用 OpenAlex（`opencli openalex search` 不能按日期筛，要 curl 直调 API 加 `from_publication_date`），3 个并行都没撞 429，交了 58 条。并行的侦察兵共用同一个临时目录，同名中间文件（如 abs.json）会互相覆盖；中间文件名要带轮次和侦察兵编号 | 探索 20261020-2328 轮 |
+| 10-21 | 探索 | `opencli arxiv search` 只按相关度排，拿不到最近一个月的新论文；要新论文就直调 arXiv 官方接口加 `sortBy=submittedDate&sortOrder=descending`，地址必须用 https（http 返回空内容）。日文“ダークファネル”“バイヤーイネーブルメント”几乎没有一手内容，日文侦察兵别用这两个词 | 探索 20261021-0008 轮 |
