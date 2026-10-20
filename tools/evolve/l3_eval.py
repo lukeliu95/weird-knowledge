@@ -10,11 +10,12 @@
   q1  加 Luke 档案和他确认过的原则
   q2  q1 再加 4 道他以前答过的相似题（只取这道题之前的，防止偷看未来）
 
-引擎：默认本地 Qwen；Qwen 连不上时自动改用 Opus 5.5（opus_judge.py，订阅用量，按 10 题一批）。
+引擎：默认 Opus 5.5（opus_judge.py，订阅用量，按 10 题一批）。Luke 2026-10-20 定的：决定预测用 Opus 当主力
+（同一批 109 题上 Opus 93%、本地 Qwen 84%）。要和 Qwen 对比时加 --engine qwen。
 两种引擎的成绩分开记，不混着比。
 
 用法：
-  python3 tools/evolve/l3_eval.py [--cond q0|q1|q2|all] [--engine auto|qwen|opus]
+  python3 tools/evolve/l3_eval.py [--cond q0|q1|q2|all] [--engine opus|qwen]
 """
 import argparse, collections, datetime as dt, json, math, re, sys
 from pathlib import Path
@@ -95,11 +96,10 @@ def opus_dists(prompts, letters_list):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--cond", default="all")
-    ap.add_argument("--engine", default="auto", choices=["auto", "qwen", "opus"])
+    ap.add_argument("--engine", default="opus", choices=["opus", "qwen"])
     a = ap.parse_args()
     E.load_env()
-    import opus_judge as OJ
-    engine = "qwen" if (a.engine == "qwen" or (a.engine == "auto" and OJ.qwen_ok())) else "opus"
+    engine = a.engine
     print("引擎：", engine, flush=True)
     rows = [json.loads(l) for l in (DIR / "decisions.jsonl").read_text().split("\n") if l.strip()]
     rows = [r for r in rows if r["choice"] in r["options"]]   # 选了"其他"的不考
