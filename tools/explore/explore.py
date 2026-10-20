@@ -14,6 +14,8 @@
   explore.py digest [--size 10]        出一份日报：6 条最可能想看 + 2 条最拿不准 + 2 条新方向，顺序打乱
   explore.py learn <digest> <letters>  记 Luke 的回答：letters 是想看的字母，如 ACF；都不想看写 -
   explore.py aihot [--all]             从 AIHOT 拉最近 24 小时的精选进候选池（免费，不派 subagent）
+  explore.py due                       这一轮要不要出日报、做每天和每周的活（每 20 分钟一轮，只在那个小时的第一轮做）
+  explore.py mark daily|weekly         做完每天或每周的活后记一笔
   explore.py report                    命中率：按槽位、方向、侦察兵；预测器在这些回答上的成绩
 """
 import argparse, collections, datetime as dt, json, random, re, sys, urllib.parse
@@ -127,9 +129,12 @@ def top_authors(n=15):
 
 def cmd_pick(a):
     arms, rng = load_arms(), random.Random()
+    # 每 20 分钟一轮时，X 每小时最多派 1 次（X 搜索接口容易 429）
+    recent = [r for r in read_jsonl(ROUNDS) if "plan" in r and now() - dt.datetime.fromisoformat(r["at"]) < dt.timedelta(minutes=50)]
+    x_recent = any(c.get("scout") == "x" for r in recent for c in r["plan"])
     rid = now().strftime("%Y%m%d-%H%M")
     groups = ["core"] * (a.n - 1) + ["adjacent"]
-    chosen, used_x = [], False
+    chosen, used_x = [], x_recent
     for g in groups:
         # 只能靠脚本拉的方向（AIHOT）不派侦察兵
         pool = [(draw(d, rng), k) for k, d in arms["directions"].items()
@@ -443,6 +448,26 @@ def cmd_learn(a):
                       "promote_to_core": promote}, ensure_ascii=False, indent=1))
 
 
+# ---------- 定时的活：这一轮该不该做 ----------
+def cmd_due(_):
+    """每 20 分钟一轮时，日报、每天、每周的活只在对应那个小时的第一轮做一次。"""
+    t = now()
+    marks = DIR / "marks"
+    marks.mkdir(exist_ok=True)
+    hour_tag = t.strftime("%Y%m%d-%H")
+    digest = t.hour in (8, 20) and not list((DIR / "digests").glob(f"{hour_tag}*.json"))
+    daily = t.hour >= 8 and not (marks / f"daily-{t:%Y%m%d}").exists()
+    weekly = t.weekday() == 6 and t.hour >= 20 and not (marks / f"weekly-{t:%Y%m%d}").exists()
+    print(json.dumps({"digest": digest, "daily": daily, "weekly": weekly}))
+
+
+def cmd_mark(a):
+    """做完每天或每周的活以后记一笔，同一天不再做第二次。"""
+    (DIR / "marks").mkdir(exist_ok=True)
+    (DIR / "marks" / f"{a.job}-{now():%Y%m%d}").write_text(now().isoformat(timespec="seconds"))
+    print(f"记下：{a.job} {now():%Y-%m-%d}")
+
+
 # ---------- 状态和报告 ----------
 def cmd_status(_):
     pool = read_jsonl(POOL)
@@ -496,12 +521,14 @@ def main():
     p = sub.add_parser("digest"); p.add_argument("--size", type=int, default=10)
     p = sub.add_parser("learn"); p.add_argument("digest"); p.add_argument("letters")
     sub.add_parser("report")
+    sub.add_parser("due")
+    p = sub.add_parser("mark"); p.add_argument("job", choices=["daily", "weekly"])
     p = sub.add_parser("aihot"); p.add_argument("--all", action="store_true")
     a = ap.parse_args()
     DIR.mkdir(parents=True, exist_ok=True)
     (DIR / "inbox").mkdir(exist_ok=True)
     (DIR / "digests").mkdir(exist_ok=True)
-    if a.cmd in ("status", "report"):
+    if a.cmd in ("status", "report", "due"):
         globals()["cmd_" + a.cmd](a)
         return
     # 会改文件的命令排队执行：两个会话同时读改写候选池，会把对方刚写的冲掉（2026-10-20 丢过 46 条）
