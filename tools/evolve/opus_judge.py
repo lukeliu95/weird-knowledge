@@ -29,7 +29,8 @@ def ask_json(system, prompt, timeout=600):
     if r.returncode != 0:
         raise RuntimeError(f"claude -p 失败：{(r.stderr or r.stdout)[-300:]}")
     text = json.loads(r.stdout).get("result", "")
-    m = re.search(r"\{.*\}", text, re.S)
-    if not m:
+    i = text.find("{")
+    if i < 0:
         raise RuntimeError(f"Opus 没给 JSON：{text[:200]}")
-    return json.loads(m.group(0))
+    obj, _ = json.JSONDecoder().raw_decode(text[i:])   # 只取第一个 JSON 对象，后面多出来的字不管
+    return obj

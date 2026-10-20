@@ -124,7 +124,8 @@ def judge(question, options, context="", client="", before=""):
     choice = max(probs, key=probs.get) if probs else ""
     top = probs.get(choice, 0)
     confidence = "高" if top >= 0.8 else "中" if top >= 0.6 else "低"
-    flags = rule_flags(question + "\n" + "\n".join(opts.values()) + "\n" + context[:3000])
+    # 规则只看问题和选项：背景里常有"部署、权限、token"这类词，全算进来几乎每题都要问（回测 104 题判了 100 题）
+    flags = rule_flags(question + "\n" + "\n".join(opts.values()))
     category = out.get("category") if out.get("category") in CATEGORIES else "其他"
     reasons = []
     if flags:
@@ -140,7 +141,8 @@ def judge(question, options, context="", client="", before=""):
     act = "follow" if (not must and level >= 1 and confidence == "高") else "ask_luke"
     return dict(choice=choice, options=opts, probs=probs, confidence=confidence,
                 evidence=(out.get("evidence") or [])[:3], category=category, rule_flags=flags,
-                must_ask_luke=must, must_ask_reason="；".join(dict.fromkeys(reasons)), level=level, act=act,
+                must_ask_luke=must, must_ask_reason="；".join(dict.fromkeys(reasons)), opus_must=bool(out.get("must_ask_luke")),
+                level=level, act=act,
                 note=out.get("note", ""), examples=[e["id"] for e in examples])
 
 
