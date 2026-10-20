@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.8 · 2026-10-19 · 更新记录见文末
+> v1.9 · 2026-10-20 · 更新记录见文末
 
 ## 你是谁
 
@@ -358,9 +358,9 @@ verified: true
 ### 每一轮
 
 1. **收回答**：用 ArtifactData 读日报网页的 `answers`。每份还没记过的（`private/explore/digests/<stamp>.json` 里 `answered` 不是 true），跑 `python3 tools/explore/explore.py learn <stamp> <字母>`（都不想看是 `-`）。Luke 在对话里直接回字母也一样记。他说想看的，按流程一存进 `clips/`：`why` 写"探索日报：Luke 想看"，`kind` 和 `topic` 照常填，X 推文、网页存原文，论文按「有版权的长文」。输出里有 `promote_to_core` 的方向，在兴趣地图里升为 core
-2. **看状态**：`explore.py status`。`busy` 为 true（上一轮还没收完）就只做第 6 步；`throttle` 为 true（没答的日报到 4 份，或候选池满 500 条）就跳过第 3、4 步
+2. **看状态**：`explore.py status`。`busy` 为 true（上一轮还没收完）就只做第 4 步的 `aihot` 和 `score`、第 6 步；`throttle` 为 true（没答的日报到 4 份，或候选池满 500 条）就跳过第 3、4 步
 3. **派侦察兵**：`explore.py pick --n 3`，按它给的 3 份任务段落各派一个 subagent，任务说明是 `tools/explore/SCOUT.md` 全文加那份段落，并把「其他约定 · 隐私」原样写进去。3 个并行，等它们都交完
-4. **收和打分**：`explore.py ingest <round>`，再 `explore.py score`
+4. **收和打分**：`explore.py ingest <round>`；再 `explore.py aihot`，从 AIHOT 拉最近 24 小时的精选（免费，不派侦察兵，`busy` 或 `throttle` 时也照拉）；最后 `explore.py score`
 5. **出日报**（只在 8 点和 20 点那两轮，或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`；把它打印的 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukee 日报到了（10 条）"加网页链接
 6. **顺手跑流程五**：`python3 tools/evolve/l1_daily.py`
 7. **长新方向**（每天 8 点那一轮）：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`
@@ -419,6 +419,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.9 | 2026-10-20 | 流程六每轮都从 AIHOT（aihot.news）拉最近 24 小时的精选进候选池，记成方向「AI 圈每日动态」，和侦察兵一样记命中率（起因：Luke 推荐 AIHOT，试下来免费、不花订阅用量，补的是他刷不到的官方和公司来源） |
 | v1.8 | 2026-10-19 | 加了第六件事「流程六：探索」：每小时一轮派 3 个侦察兵上网找，本地打分，每天 8 点和 20 点出 10 条日报，Luke 在网页上点想看；回答决定进库，也训练预测器；兴趣地图按命中率抽签，固定留新方向（起因：Luke 要 lukee 不停上网学他的兴趣，选了方案 B） |
 | v1.7 | 2026-10-19 | agent 起名 lukee，自称 lukee；项目名、仓库名、收尾句不变（起因：Luke 给 agent 起了名字） |
 | v1.6 | 2026-10-19 | 加了「流程五：自我优化」：收、考、问、改、报的循环；改动要在测试集上比冠军好的概率到 80% 才采用；给例子不写规则；关于 Luke 的规律先当假设、用提问验证；连续 3 个没赢就停；两个经验库；本地 Qwen 和 Jev 的分工；私人数据只放 `private/`（起因：Luke 让 agent 自己进化，这些做法在 6 轮里都有实测证据） |
