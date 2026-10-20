@@ -12,6 +12,7 @@
   explore.py score [--limit 300]       给没打分的候选打分：Jev 分类（只发公开内容）、本地 Qwen 打"想不想看"
   explore.py digest [--size 10]        出一份日报：6 条最可能想看 + 2 条最拿不准 + 2 条新方向，顺序打乱
   explore.py learn <digest> <letters>  记 Luke 的回答：letters 是想看的字母，如 ACF；都不想看写 -
+  explore.py aihot [--all]             从 AIHOT 拉最近 24 小时的精选进候选池（免费，不派 subagent）
   explore.py report                    命中率：按槽位、方向、侦察兵；预测器在这些回答上的成绩
 """
 import argparse, collections, datetime as dt, json, random, re, sys, urllib.parse
@@ -24,7 +25,7 @@ sys.path.insert(0, str(REPO / "tools" / "evolve"))
 import l1_eval as E  # noqa: E402
 
 ARMS, POOL, LEADS, ROUNDS, LABELS = (DIR / n for n in ("arms.json", "pool.jsonl", "leads.jsonl", "rounds.jsonl", "labels.jsonl"))
-SCOUTS = ("x", "paper", "community", "ja")
+SCOUTS = ("x", "paper", "community", "ja", "aihot")
 THROTTLE_UNANSWERED = 4   # 没答的日报到这个数（方案 B 每天 2 份，约 2 天），就停派侦察兵
 MAX_UNANSWERED = 3        # 没答的日报到这个数，就不再出新日报，免得越堆越多
 POOL_CAP = 500            # 没展示过的候选到这个数，就先停找
@@ -129,12 +130,14 @@ def cmd_pick(a):
     groups = ["core"] * (a.n - 1) + ["adjacent"]
     chosen, used_x = [], False
     for g in groups:
-        pool = [(draw(d, rng), k) for k, d in arms["directions"].items() if d["group"] == g and k not in {c["direction"] for c in chosen}]
+        # 只能靠脚本拉的方向（AIHOT）不派侦察兵
+        pool = [(draw(d, rng), k) for k, d in arms["directions"].items()
+                if d["group"] == g and k not in {c["direction"] for c in chosen} and set(d["scouts"]) - {"aihot"}]
         if not pool:
             continue
         _, did = max(pool)
         d = arms["directions"][did]
-        options = [s for s in d["scouts"] if not (s == "x" and used_x)] or [s for s in d["scouts"] if s != "x"] or ["community"]
+        options = [s for s in d["scouts"] if s != "aihot" and not (s == "x" and used_x)] or [s for s in d["scouts"] if s != "x"] or ["community"]
         scout = max(options, key=lambda s: draw(arms["scouts"][s], rng))
         used_x |= scout == "x"
         chosen.append(dict(slot=g, direction=did, scout=scout))
@@ -196,6 +199,33 @@ def cmd_ingest(a):
     rec = {"round": a.round, "ingested": added, "dup": dup, "bad": bad, "leads": nleads, "notes": notes}
     append_jsonl(ROUNDS, {"round": a.round, "at": now().isoformat(timespec="seconds"), "ingest": rec})
     print(json.dumps(rec, ensure_ascii=False))
+
+
+# ---------- AIHOT：不用派 subagent 的现成来源 ----------
+def cmd_aihot(a):
+    """从 AIHOT（aihot.news，匿名只读、免费）拉最近 24 小时的精选，进候选池，方向记为 ai-news。
+    不装它的 skill（安装脚本带去重统计 ID），直接调公开接口；User-Agent 用通用写法。"""
+    import urllib.request
+    url = "https://aihot.news/api/v1/items?window=24h&limit=100" + ("&mode=all" if a.all else "")
+    req = urllib.request.Request(url, headers={"User-Agent": "weird-knowledge-research-bot"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        items = json.load(r)["items"]
+    keys, pool = known_keys(), read_jsonl(POOL)
+    rid, added = now().strftime("%Y%m%d-%H%M") + "-aihot", 0
+    for it in items:
+        orig = it["links"].get("original") or it["links"]["aihot"]
+        k = key_of(orig)
+        if k in keys:
+            continue
+        keys.add(k)
+        pool.append(dict(key=k, url=orig, aihot=it["links"]["aihot"], title=it["title"], author=it["source"]["name"],
+                         published=(it.get("publishedAt") or "")[:10], source="AIHOT · " + it["source"]["name"],
+                         snippet=(it.get("summary") or "")[:1200], what=it.get("summary", "")[:120], why=it.get("reason", ""),
+                         direction="ai-news", scout="aihot", round=rid, found=now().isoformat(timespec="seconds"), status="new"))
+        added += 1
+    write_jsonl(POOL, pool)
+    append_jsonl(ROUNDS, {"round": rid, "at": now().isoformat(timespec="seconds"), "aihot": {"fetched": len(items), "ingested": added}})
+    print(json.dumps({"round": rid, "fetched": len(items), "ingested": added}, ensure_ascii=False))
 
 
 # ---------- 打分 ----------
@@ -421,6 +451,7 @@ def main():
     p = sub.add_parser("digest"); p.add_argument("--size", type=int, default=10)
     p = sub.add_parser("learn"); p.add_argument("digest"); p.add_argument("letters")
     sub.add_parser("report")
+    p = sub.add_parser("aihot"); p.add_argument("--all", action="store_true")
     a = ap.parse_args()
     DIR.mkdir(parents=True, exist_ok=True)
     (DIR / "inbox").mkdir(exist_ok=True)
