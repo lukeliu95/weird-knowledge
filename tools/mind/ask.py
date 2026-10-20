@@ -32,8 +32,10 @@ MUST_ASK = {
     "凭据和权限": r"密码|密钥|凭据|token|API ?key|权限|管理员|账号共享|パスワード|権限|credential|permission|admin",
     "对外发送": r"发给客户|回复客户|发邮件|群发|对外|公开发布|发帖|客户说|お客様|メール送信|送信|publish|post to|send to",
     "删除和难撤销": r"删除|删掉|清空|重置|覆盖|回滚|不可逆|削除|delete|drop table|force push|reset --hard",
+    # Luke 2026-10-20 试问时定的：替他通知同事、给同事发说明，也要先问他
+    "替 Luke 通知同事": r"告诉\S{0,8}|通知\S{0,8}|转告|知会|讲解|给\S{1,8}(讲|说明|发)|发给\S{1,8}|伝えて|連絡して|共有して|let \w+ know|tell \w+",
 }
-CATEGORIES = ["钱", "合同和法律", "交期和上线", "人事", "凭据和权限", "对外发送", "删除和难撤销", "方向取舍",
+CATEGORIES = ["钱", "合同和法律", "交期和上线", "人事", "凭据和权限", "对外发送", "替 Luke 通知同事", "删除和难撤销", "方向取舍",
               "产品和设计", "技术实现", "工作方法和工具", "内容和学习", "其他"]
 ALWAYS_LUKE = set(MUST_ASK) | {"方向取舍"}   # 这些类别永远停在 0 级
 
@@ -104,7 +106,7 @@ def build_prompt(question, options, context, examples):
                  '"probs": {"A": 概率}（加起来等于 1），\n'
                  '"evidence": ["一句话依据：引用哪条原则、哪次相似选择或档案里的哪一点"]（最多 3 条），\n'
                  f'"category": 从这些里选一个：{"、".join(CATEGORIES)}，\n'
-                 '"must_ask_luke": true 或 false（碰钱、合同、交期上线、人事、凭据权限、对外发送、删除和难撤销、方向取舍，一律 true），\n'
+                 '"must_ask_luke": true 或 false（碰钱、合同、交期上线、人事、凭据权限、对外发送、替 Luke 通知同事或给同事发说明、删除和难撤销、方向取舍，一律 true），\n'
                  '"must_ask_reason": "一句话"，\n'
                  '"note": "用 Luke 的口气写给他的一句话建议"')
     return "\n\n".join(parts)

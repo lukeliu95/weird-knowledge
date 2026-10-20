@@ -388,7 +388,7 @@ Codex 里的接待 Lukee、各项目里的 Claude Code 和 Codex，遇到要替 
 ### 怎么回答
 
 - 别的 agent 调 `python3 tools/mind/ask.py ask --from <谁> --question "…" --options "A:…|B:…" --context-file <背景> [--client <客户>]`，脚本自己读 Luke 的档案、12 条原则、确认过的规律和最相似的 4 道旧选择，交给 Opus 5.5 判断，回 JSON
-- 回答里的 `must_ask_luke` 只要有一条成立就是 true：碰到"必须交给 Luke"的清单（钱、合同和法律、交期和上线、人事、凭据和权限、对外发送、删除和难撤销、方向取舍），模型判断要问，或者 lukeeMind 自己拿不准
+- 回答里的 `must_ask_luke` 只要有一条成立就是 true：碰到"必须交给 Luke"的清单（钱、合同和法律、交期和上线、人事、凭据和权限、对外发送、替 Luke 通知同事或给同事发说明、删除和难撤销、方向取舍），模型判断要问，或者 lukeeMind 自己拿不准
 - `act` 只有两种：`ask_luke`（照旧问 Luke，附上建议）和 `follow`（按建议做，事后汇总）。只有某一类升到 1 级以上、这次又高确定、不在清单里时才会是 `follow`
 - Luke 回答后，提问的 agent 调 `ask.py record <id> --luke <字母> --note "原话"` 回填；本该问 Luke 却判成不用问的，加 `--should-ask yes`，记成漏报
 
