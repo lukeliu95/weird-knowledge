@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.16 · 2026-10-21 · 更新记录见文末
+> v1.17 · 2026-10-21 · 更新记录见文末
 
 ## 你是谁
 
@@ -362,15 +362,26 @@ verified: true
 
 ### 每一轮
 
-1. **收回答**：用 ArtifactData 读日报网页的 `answers`。每份还没记过的（`private/explore/digests/<stamp>.json` 里 `answered` 不是 true），跑 `python3 tools/explore/explore.py learn <stamp> <字母>`（都不想看是 `-`）。Luke 在对话里直接回字母也一样记。他说想看的，按流程一存进 `clips/`：`why` 写"探索日报：Luke 想看"，`kind` 和 `topic` 照常填，X 推文、网页存原文，论文按「有版权的长文」。输出里有 `promote_to_core` 的方向，在兴趣地图里升为 core
+1. **收回答**：用 ArtifactData 读日报网页的 `opens`（Luke 点开过原文的记录，用 `out_dir` 存下后跑 `explore.py opens --dir <存下的 opens 目录>`）和 `answers`。每份还没记过的（`private/explore/digests/<stamp>.json` 里 `answered` 不是 true），跑 `python3 tools/explore/explore.py learn <stamp> <字母>`（都不想看是 `-`）。Luke 在对话里直接回字母也一样记。他说想看的，按流程一存进 `clips/`：`why` 写"探索日报：Luke 想看"，`kind` 和 `topic` 照常填，X 推文、网页存原文，论文按「有版权的长文」。输出里有 `promote_to_core` 的方向，在兴趣地图里升为 core
 2. **看状态**：`explore.py status`。`busy` 为 true（上一轮还没收完）就只做第 4 步的 `aihot` 和 `score`、第 6 步；`throttle` 为 true（没答的日报到 4 份）就跳过第 3 步。候选只留 48 小时，超过 48 小时还没进日报的自动作废，所以候选再多也照派侦察兵
 3. **派侦察兵**：`explore.py pick --n 3`，按它给的 3 份任务段落各派一个 subagent，任务说明是 `tools/explore/SCOUT.md` 全文加那份段落，并把「其他约定 · 隐私」原样写进去。3 个并行，等它们都交完
 4. **收和打分**：`explore.py ingest <round>`；再 `explore.py aihot`，从 AIHOT 拉最近 24 小时的精选（免费，不派侦察兵，`busy` 或 `throttle` 时也照拉）；最后 `explore.py score`（本地 Qwen 连不上时自动改用 Opus 5.5 打分，不用停下来）
 5. **出日报**（`explore.py due` 里 `digest` 为 true，或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`；把它打印的 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukeeMind 日报到了（10 条）"加网页链接
 6. **顺手跑流程五**：`python3 tools/evolve/l1_daily.py`
+6b. **点赞对账**（`explore.py due` 里 `likes` 为 true，每 3 小时一次）：`explore.py likes`。候选池里被 Luke 点了赞的，自动记成"想看"；库里还没有的新点赞写进 `private/explore/likes/pending.jsonl`，按「流程三」读完、写标题、存进 `clips/`（成人向等不适合公开的先扣下，在下一份日报推送里一句话问 Luke）。做完跑 `explore.py mark likes`
 7. **每天的活**（`explore.py due` 里 `daily` 为 true 时做，做完跑 `explore.py mark daily`）：**长新方向**：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`。同一轮顺手跑 `python3 tools/evolve/l3_extract.py`，把这台 Mac 上新会话里 Luke 做过的选择抽进决定预测的测试集（只放 `private/l3/`）
 8. **记账**：`private/` 里提交一次（`git -C private add explore && git -C private commit -m "探索：<round>"`）。第 1 步存了新知识的，按「其他约定 · git」提交并推送公开仓库
 9. **周报**（`explore.py due` 里 `weekly` 为 true 时做，做完跑 `explore.py mark weekly`）：`explore.py report`；再跑 `python3 tools/evolve/l3_eval.py --cond q2`（决定预测的成绩，Opus），和"永远选第一个""永远选推荐"、他不按推荐走的题分开报。一段话加数字追加进方案的「进度」一节，提交推送
+
+### 从 Luke 的真实行为里自动取标签
+
+不让模型自己猜 Luke 喜不喜欢再拿来训练自己（会越学越偏，见[模型崩溃](roots/model-collapse.md)）。标签只从这三处来，都不用 Luke 多花时间：
+
+| 来源 | 记成什么 |
+|---|---|
+| 候选池里的推文后来被他点了赞 | 想看（`source: like`） |
+| 日报网页上点开过原文 | 在回答上加 `opened`，比只点"想看"更强 |
+| 和口味无关的客观题：是不是一手材料、有没有具体数据、是不是标题党 | 交给 Jev 打，存在候选上（`q_primary`、`q_concrete`、`q_clickbait`），周报里看这些和命中率的关系 |
 
 ### 规矩
 
@@ -442,6 +453,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.17 | 2026-10-21 | 流程六加了三种自动标签：点赞自动对账（每 3 小时）、日报网页记"点开原文"、客观题交给 Jev 打；不让模型自己猜口味再训练自己（起因：Luke 问能不能自己打标，选了 A） |
 | v1.16 | 2026-10-21 | 候选只留 48 小时，过期作废；去掉"候选池满 500 条就停派侦察兵"（起因：改成每 20 分钟一轮后，一天就攒满 500 条，侦察兵停了；Luke 选了 A） |
 | v1.15 | 2026-10-20 | 加了第七件事「流程七：当大脑」：别的 agent 用 `tools/mind/ask.py` 问"Luke 会怎么选"，回建议、概率、依据和要不要交给 Luke；回填算一致率；放权按"某一类满 30 次、一致率 90%、零漏报"一级级升，只有 Luke 能改级别（起因：Luke 要 lukeeMind 当日常工作的大脑，给 Codex 的 Lukee 调用） |
 | v1.14 | 2026-10-20 | agent 改名 lukeeMind，和 Codex 里负责接待、路由的 Lukee 分开：Lukee 是接待，lukeeMind 是大脑，Lukee 可以调用 lukeeMind（起因：两个都叫 lukee 分不清，Luke 定了新名字） |
