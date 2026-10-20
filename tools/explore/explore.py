@@ -281,6 +281,28 @@ def qwen_p(text):
     return round(a_ / (a_ + b_), 4)
 
 
+def jev_quality(author, text):
+    """客观题交给 Jev 打（只看公开内容，和 Luke 的口味无关）：是不是一手材料、有没有具体数据或实测、是不是标题党。"""
+    import urllib.request
+    q = {"primary": {"type": "choice", "instructions": "这条内容的来源性质",
+                     "criteria": {"first": "一手：作者本人的研究、实测、官方发布或原始数据",
+                                  "relay": "转述：转发、总结或评论别人的东西",
+                                  "promo": "推广：卖课、引流、广告"}},
+         "concrete": {"type": "score", "instructions": "有没有能核对的具体东西（数字、实验、代码、链接到原始资料）",
+                      "criteria": ["1：几乎没有", "2：有一些", "3：有清楚的数据或实测"]},
+         "clickbait": {"type": "choice", "instructions": "标题或开头是不是标题党、营销腔（夸张、制造焦虑、求你一定要看）",
+                       "criteria": {"yes": "是", "no": "不是"}}}
+    req = urllib.request.Request("https://api.typesafe.ai/v1/systemone",
+                                 json.dumps({"model": "jev-latest", "state": f"作者：{author}\n\n{text[:2500]}", "questions": q}).encode(),
+                                 {"Content-Type": "application/json", "Authorization": f"Bearer {E.os.environ['TYPESAFE_API_KEY']}"})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        d = json.load(r)
+    a = d["answers"]
+    return dict(q_primary={"first": "一手", "relay": "转述", "promo": "推广"}[a["primary"]["choice"]],
+                q_concrete=a["concrete"]["score"] + 1, q_clickbait=a["clickbait"]["choice"] == "yes",
+                tokens=d.get("usage", {}).get("input_tokens", 0))
+
+
 OPUS_SYS = ("你在模拟一个具体的人：Luke。给你他的档案、他喜欢过的内容，和一批新内容。"
             "对每条新内容估计他会想点开看、点赞或收藏的概率（0 到 1）。只输出 JSON 对象：{\"编号\": 概率}。")
 
@@ -310,7 +332,7 @@ def cmd_score(a):
     import opus_judge as OJ
     pool = read_jsonl(POOL)
     expire(pool)
-    todo = [r for r in pool if r["status"] == "new" and "p" not in r][: a.limit]
+    todo = [r for r in pool if r["status"] == "new" and ("p" not in r or (a.quality and "q_primary" not in r))][: a.limit]
     if not todo:
         print("没有要打分的候选")
         return
@@ -328,7 +350,14 @@ def cmd_score(a):
                 jev_tokens += j["tokens"]
             except Exception:
                 pass
-        if engine != "qwen":
+        if "q_primary" not in r:
+            try:
+                qq = jev_quality(r["author"], text)
+                jev_tokens += qq.pop("tokens")
+                r.update(qq)
+            except Exception:
+                pass
+        if engine != "qwen" or "p" in r:
             continue
         try:
             r["p"] = qwen_p(explore_prompt(r, profile, index.top(text, champ.get("k", 8))))
@@ -434,6 +463,7 @@ def cmd_learn(a):
         sys.exit(f"日报里没有这些字母：{''.join(sorted(want - letters))}")
     arms = load_arms()
     pool = {r["key"]: r for r in read_jsonl(POOL)}
+    opened = opened_set()
     at = now().isoformat(timespec="seconds")
     wanted = []
     for it in d["items"]:
@@ -445,7 +475,8 @@ def cmd_learn(a):
                 arms[grp][k]["hit"] += y
         r = pool.get(it["key"], {})
         r.update(status="answered", label=y)
-        append_jsonl(LABELS, dict(key=it["key"], url=it["url"], label=y, slot=it["slot"], direction=it["direction"],
+        append_jsonl(LABELS, dict(key=it["key"], url=it["url"], label=y, source="digest", opened=(a.digest, it["letter"]) in opened,
+                                  slot=it["slot"], direction=it["direction"],
                                   scout=it["scout"], p=it["p"], scorer=r.get("scorer", "qwen"), digest=a.digest, at=at, title=it["title"],
                                   text=r.get("snippet", "")[:600]))
         if it["key"].startswith("x:"):   # 推文的回答也是点赞预测（L1）最强的标签
@@ -473,14 +504,80 @@ def cmd_due(_):
     digest = t.hour in (8, 20) and not list((DIR / "digests").glob(f"{hour_tag}*.json"))
     daily = t.hour >= 8 and not (marks / f"daily-{t:%Y%m%d}").exists()
     weekly = t.weekday() == 6 and t.hour >= 20 and not (marks / f"weekly-{t:%Y%m%d}").exists()
-    print(json.dumps({"digest": digest, "daily": daily, "weekly": weekly}))
+    likes = not (marks / f"likes-{t:%Y%m%d}-{t.hour // 3}").exists()   # 点赞对账每 3 小时一次
+    print(json.dumps({"digest": digest, "daily": daily, "weekly": weekly, "likes": likes}))
 
 
 def cmd_mark(a):
     """做完每天或每周的活以后记一笔，同一天不再做第二次。"""
     (DIR / "marks").mkdir(exist_ok=True)
-    (DIR / "marks" / f"{a.job}-{now():%Y%m%d}").write_text(now().isoformat(timespec="seconds"))
+    tag = f"{now():%Y%m%d}-{now().hour // 3}" if a.job == "likes" else f"{now():%Y%m%d}"
+    (DIR / "marks" / f"{a.job}-{tag}").write_text(now().isoformat(timespec="seconds"))
     print(f"记下：{a.job} {now():%Y-%m-%d}")
+
+
+# ---------- 从 Luke 的真实行为里自动取标签（Luke 2026-10-21 选的 A） ----------
+def cmd_likes(a):
+    """点赞自动对账：拉 @LukeLiu95 最近的点赞。候选池里的推文被他点了赞，记成"想看"（source=like）；
+    库里还没有的新点赞写进 likes/pending.jsonl，交给主会话按流程三存。只读 X，不点赞。"""
+    import subprocess
+    r = subprocess.run(["opencli", "twitter", "likes", "LukeLiu95", "--limit", str(a.limit), "--window", "background", "-f", "json"],
+                       capture_output=True, text=True, timeout=600)
+    likes = json.loads(r.stdout).get("data", []) if r.returncode == 0 and r.stdout.strip() else []
+    if not likes:
+        print(json.dumps({"error": "没拉到点赞", "detail": (r.stderr or "")[-200:]}, ensure_ascii=False))
+        return
+    d = DIR / "likes"
+    d.mkdir(exist_ok=True)
+    write_jsonl(d / f"{now():%Y%m%d-%H%M}.jsonl", likes)
+    pool = read_jsonl(POOL)
+    bykey = {r["key"]: r for r in pool}
+    have = {(l["key"], l.get("source", "digest")) for l in read_jsonl(LABELS)}
+    matched = 0
+    for lk in likes:
+        r = bykey.get("x:" + str(lk["id"]))
+        if not r or (r["key"], "like") in have:
+            continue
+        r["liked"] = True
+        append_jsonl(LABELS, dict(key=r["key"], url=r["url"], label=1, source="like", slot="like", direction=r["direction"],
+                                  scout=r["scout"], p=r.get("p"), scorer=r.get("scorer", "qwen"), digest=r.get("digest", ""),
+                                  at=now().isoformat(timespec="seconds"), title=r["title"], text=r.get("snippet", "")[:600]))
+        matched += 1
+    write_jsonl(POOL, pool)
+    in_clips = known_keys()
+    pending = [lk for lk in likes if "x:" + str(lk["id"]) not in in_clips]
+    write_jsonl(d / "pending.jsonl", pending)
+    print(json.dumps({"likes": len(likes), "matched_pool": matched, "pending_import": len(pending),
+                      "pending_file": str(d / "pending.jsonl")}, ensure_ascii=False))
+
+
+def opened_set():
+    return {(o["stamp"], o["letter"]) for o in read_jsonl(DIR / "opens.jsonl")}
+
+
+def cmd_opens(a):
+    """日报网页记下的"点开原文"：读 ArtifactData list 存下的 opens 文档，写进 opens.jsonl，并补到已记的回答上。"""
+    seen = opened_set()
+    new = []
+    for f in Path(a.dir).glob("*.json"):
+        d = json.loads(f.read_text())
+        d = d.get("data", d)
+        if d.get("stamp") and d.get("letter") and (d["stamp"], d["letter"]) not in seen:
+            new.append({"stamp": d["stamp"], "letter": d["letter"], "at": d.get("at", "")})
+            seen.add((d["stamp"], d["letter"]))
+    for o in new:
+        append_jsonl(DIR / "opens.jsonl", o)
+    keys = {}
+    for dg in digests():
+        for it in dg["items"]:
+            keys[(dg["stamp"], it["letter"])] = it["key"]
+    opened_keys = {(keys.get(k), k[0]) for k in seen if k in keys}
+    rows = read_jsonl(LABELS)
+    for r in rows:
+        if r.get("source", "digest") == "digest":
+            r["opened"] = (r["key"], r["digest"]) in opened_keys
+    write_jsonl(LABELS, rows)
+    print(json.dumps({"new_opens": len(new), "total_opens": len(seen)}, ensure_ascii=False))
 
 
 # ---------- 状态和报告 ----------
@@ -510,7 +607,23 @@ def rate(rows):
 
 
 def cmd_report(_):
-    rows = read_jsonl(LABELS)
+    allrows = read_jsonl(LABELS)
+    likes = [r for r in allrows if r.get("source") == "like"]
+    rows = [r for r in allrows if r.get("source", "digest") == "digest"]
+    if likes:
+        print(f"点赞对账：候选池里有 {len(likes)} 条后来被 Luke 点了赞（自动记成想看）")
+    pool = {r["key"]: r for r in read_jsonl(POOL)}
+    for field, name in (("q_primary", "来源性质"), ("q_concrete", "具体程度"), ("q_clickbait", "标题党")):
+        g = collections.defaultdict(list)
+        for r in allrows:
+            v = pool.get(r["key"], {}).get(field)
+            if v is not None:
+                g[v].append(r)
+        if g:
+            print(f"按{name}（含点赞对账）：" + "，".join(f"{k} {rate(v)}" for k, v in sorted(g.items(), key=lambda kv: str(kv[0]))))
+    op = [r for r in rows if r.get("opened")]
+    if op:
+        print(f"日报里点开过原文的 {len(op)} 条，其中选了想看 {sum(r['label'] for r in op)} 条")
     print(f"回答 {len(rows)} 条，想看 {rate(rows)}")
     for field in ("slot", "direction", "scout"):
         g = collections.defaultdict(list)
@@ -535,11 +648,14 @@ def main():
     p = sub.add_parser("ingest"); p.add_argument("round")
     p = sub.add_parser("score"); p.add_argument("--limit", type=int, default=300)
     p.add_argument("--engine", default="auto", choices=["auto", "qwen", "opus"])
+    p.add_argument("--quality", action="store_true", help="给已经打过分、但还没有客观题标签的候选补打")
     p = sub.add_parser("digest"); p.add_argument("--size", type=int, default=10)
     p = sub.add_parser("learn"); p.add_argument("digest"); p.add_argument("letters")
     sub.add_parser("report")
     sub.add_parser("due")
-    p = sub.add_parser("mark"); p.add_argument("job", choices=["daily", "weekly"])
+    p = sub.add_parser("mark"); p.add_argument("job", choices=["daily", "weekly", "likes"])
+    p = sub.add_parser("likes"); p.add_argument("--limit", type=int, default=100)
+    p = sub.add_parser("opens"); p.add_argument("--dir", required=True)
     p = sub.add_parser("aihot"); p.add_argument("--all", action="store_true")
     a = ap.parse_args()
     DIR.mkdir(parents=True, exist_ok=True)

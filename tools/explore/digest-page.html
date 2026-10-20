@@ -101,6 +101,7 @@ h1 { font-size: 22px; font-weight: 700; margin: 0; letter-spacing: 0.01em; text-
 const $ = (id) => document.getElementById(id);
 const SLOT = { top: "", uncertain: "", new: "新方向" };
 let db = null, digests = [], answers = {}, current = null, picked = new Set(), sending = false;
+const opened = new Set();
 
 function fmtStamp(s) {
   const m = /^(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})$/.exec(s || "");
@@ -146,7 +147,15 @@ function render() {
     b.setAttribute("aria-pressed", String(on));
     b.disabled = !!ans;
     const link = el("a", { href: it.url, target: "_blank", rel: "noopener", textContent: "打开原文" });
-    link.onclick = (e) => e.stopPropagation();
+    link.onclick = (e) => {
+      e.stopPropagation();
+      // 记下"点开过原文"：比只点"想看"更强的信号。每份日报的每一条只记一次，写不进去也不影响打开
+      const id = current.stamp + "-" + it.letter;
+      if (db && !opened.has(id)) {
+        opened.add(id);
+        db.doc("opens/" + id).set({ stamp: current.stamp, letter: it.letter, at: new Date().toISOString() }).catch(() => {});
+      }
+    };
     const meta = el("div", { className: "meta" },
       el("span", { textContent: [it.source, it.author, it.published].filter(Boolean).join(" · ") }),
       SLOT[it.slot] ? el("span", { className: "tag", textContent: SLOT[it.slot] }) : null,
