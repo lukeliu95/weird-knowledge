@@ -31,7 +31,7 @@ ARMS, POOL, LEADS, ROUNDS, LABELS = (DIR / n for n in ("arms.json", "pool.jsonl"
 SCOUTS = ("x", "paper", "community", "ja", "aihot")
 THROTTLE_UNANSWERED = 4   # 没答的日报到这个数（方案 B 每天 2 份，约 2 天），就停派侦察兵
 MAX_UNANSWERED = 3        # 没答的日报到这个数，就不再出新日报，免得越堆越多
-POOL_CAP = 500            # 没展示过的候选到这个数，就先停找
+FRESH_HOURS = 48          # 候选只留 48 小时，没展示就作废（Luke 2026-10-21 定的；侦察兵照派，不因候选多而停）
 
 
 def now():
@@ -50,6 +50,17 @@ def write_jsonl(p, rows):
 def append_jsonl(p, row):
     with open(p, "a") as f:
         f.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def expire(pool):
+    """超过 48 小时还没展示的候选改成 expired，不再进日报。去重时仍算"见过"，不会被重新收进来。"""
+    cut = now() - dt.timedelta(hours=FRESH_HOURS)
+    n = 0
+    for r in pool:
+        if r["status"] == "new" and dt.datetime.fromisoformat(r["found"]) < cut:
+            r["status"] = "expired"
+            n += 1
+    return n
 
 
 # ---------- 去重用的键 ----------
@@ -173,6 +184,7 @@ def cmd_pick(a):
 def cmd_ingest(a):
     keys = known_keys()
     pool = read_jsonl(POOL)
+    expire(pool)
     added = dup = bad = nleads = 0
     notes = []
     for f in sorted((DIR / "inbox").glob(f"{a.round}-*.json")):
@@ -217,6 +229,7 @@ def cmd_aihot(a):
     with urllib.request.urlopen(req, timeout=30) as r:
         items = json.load(r)["items"]
     keys, pool = known_keys(), read_jsonl(POOL)
+    expire(pool)
     rid, added = now().strftime("%Y%m%d-%H%M") + "-aihot", 0
     for it in items:
         orig = it["links"].get("original") or it["links"]["aihot"]
@@ -296,6 +309,7 @@ def cmd_score(a):
     import jev_classify as JC
     import opus_judge as OJ
     pool = read_jsonl(POOL)
+    expire(pool)
     todo = [r for r in pool if r["status"] == "new" and "p" not in r][: a.limit]
     if not todo:
         print("没有要打分的候选")
@@ -358,6 +372,7 @@ def cmd_digest(a):
         return
     arms = load_arms()
     pool = read_jsonl(POOL)
+    expire(pool)
     cand = [r for r in pool if r["status"] == "new" and "p" in r]
     picked = []
 
@@ -475,7 +490,9 @@ def cmd_status(_):
     open_ = [x["stamp"] for x in ds if not x.get("answered")]
     last = max((x.get("answered_at", "") for x in ds), default="")
     new = [r for r in pool if r["status"] == "new"]
-    throttle = len(open_) >= THROTTLE_UNANSWERED or len(new) >= POOL_CAP
+    cut = now() - dt.timedelta(hours=FRESH_HOURS)
+    new = [r for r in new if dt.datetime.fromisoformat(r["found"]) >= cut]   # 只读不改：过期的不算
+    throttle = len(open_) >= THROTTLE_UNANSWERED
     rounds = read_jsonl(ROUNDS)
     picks = [r for r in rounds if "plan" in r]
     done = {r["round"] for r in rounds if "ingest" in r}
@@ -484,7 +501,7 @@ def cmd_status(_):
     print(json.dumps({"busy": busy, "pool_new": len(new), "pool_unscored": sum("p" not in r for r in new), "pool_total": len(pool),
                       "digests": len(ds), "unanswered": open_, "last_answer": last, "labels": len(read_jsonl(LABELS)),
                       "throttle": throttle,
-                      "why": ("没答的日报太多" if len(open_) >= THROTTLE_UNANSWERED else "候选池满了" if len(new) >= POOL_CAP else "")},
+                      "why": ("没答的日报太多" if throttle else "")},
                      ensure_ascii=False))
 
 

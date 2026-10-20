@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.15 · 2026-10-20 · 更新记录见文末
+> v1.16 · 2026-10-21 · 更新记录见文末
 
 ## 你是谁
 
@@ -363,7 +363,7 @@ verified: true
 ### 每一轮
 
 1. **收回答**：用 ArtifactData 读日报网页的 `answers`。每份还没记过的（`private/explore/digests/<stamp>.json` 里 `answered` 不是 true），跑 `python3 tools/explore/explore.py learn <stamp> <字母>`（都不想看是 `-`）。Luke 在对话里直接回字母也一样记。他说想看的，按流程一存进 `clips/`：`why` 写"探索日报：Luke 想看"，`kind` 和 `topic` 照常填，X 推文、网页存原文，论文按「有版权的长文」。输出里有 `promote_to_core` 的方向，在兴趣地图里升为 core
-2. **看状态**：`explore.py status`。`busy` 为 true（上一轮还没收完）就只做第 4 步的 `aihot` 和 `score`、第 6 步；`throttle` 为 true（没答的日报到 4 份，或候选池满 500 条）就跳过第 3、4 步
+2. **看状态**：`explore.py status`。`busy` 为 true（上一轮还没收完）就只做第 4 步的 `aihot` 和 `score`、第 6 步；`throttle` 为 true（没答的日报到 4 份）就跳过第 3 步。候选只留 48 小时，超过 48 小时还没进日报的自动作废，所以候选再多也照派侦察兵
 3. **派侦察兵**：`explore.py pick --n 3`，按它给的 3 份任务段落各派一个 subagent，任务说明是 `tools/explore/SCOUT.md` 全文加那份段落，并把「其他约定 · 隐私」原样写进去。3 个并行，等它们都交完
 4. **收和打分**：`explore.py ingest <round>`；再 `explore.py aihot`，从 AIHOT 拉最近 24 小时的精选（免费，不派侦察兵，`busy` 或 `throttle` 时也照拉）；最后 `explore.py score`（本地 Qwen 连不上时自动改用 Opus 5.5 打分，不用停下来）
 5. **出日报**（`explore.py due` 里 `digest` 为 true，或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`；把它打印的 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukeeMind 日报到了（10 条）"加网页链接
@@ -442,6 +442,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.16 | 2026-10-21 | 候选只留 48 小时，过期作废；去掉"候选池满 500 条就停派侦察兵"（起因：改成每 20 分钟一轮后，一天就攒满 500 条，侦察兵停了；Luke 选了 A） |
 | v1.15 | 2026-10-20 | 加了第七件事「流程七：当大脑」：别的 agent 用 `tools/mind/ask.py` 问"Luke 会怎么选"，回建议、概率、依据和要不要交给 Luke；回填算一致率；放权按"某一类满 30 次、一致率 90%、零漏报"一级级升，只有 Luke 能改级别（起因：Luke 要 lukeeMind 当日常工作的大脑，给 Codex 的 Lukee 调用） |
 | v1.14 | 2026-10-20 | agent 改名 lukeeMind，和 Codex 里负责接待、路由的 Lukee 分开：Lukee 是接待，lukeeMind 是大脑，Lukee 可以调用 lukeeMind（起因：两个都叫 lukee 分不清，Luke 定了新名字） |
 | v1.13 | 2026-10-20 | 流程六改成每 20 分钟一轮；日报、每天、每周的活用 `explore.py due` 判断，只在那个小时的第一轮做一次；X 侦察兵每小时最多 1 次（起因：一轮只要 10 分钟左右，Luke 嫌一小时一轮太慢） |
