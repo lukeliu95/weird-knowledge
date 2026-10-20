@@ -1,0 +1,228 @@
+<title>lukee 日报</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* 布局：手机优先的单栏阅读清单，底部一条固定的提交栏；黑灰为主，红色只给"想看" */
+:root {
+  --bg: #f5f5f4;
+  --surface: #ffffff;
+  --fg: #18181a;
+  --muted: #6e6e73;
+  --line: #e4e4e2;
+  --accent: #c81e2b;
+  --accent-soft: #fbeaeb;
+  --font-body: "Noto Sans SC", "PingFang SC", "Hiragino Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121213; --surface: #1c1c1e; --fg: #ececee; --muted: #9a9aa0; --line: #2c2c2f;
+    --accent: #ff5a5f; --accent-soft: #3a1c1e; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121213; --surface: #1c1c1e; --fg: #ececee; --muted: #9a9aa0; --line: #2c2c2f;
+  --accent: #ff5a5f; --accent-soft: #3a1c1e; color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 680px; margin: 0 auto; padding-block: 20px 120px; display: grid; gap: 18px; }
+header { display: grid; gap: 4px; }
+h1 { font-size: 22px; font-weight: 700; margin: 0; letter-spacing: 0.01em; text-wrap: balance; }
+.sub { color: var(--muted); font-size: 13px; margin: 0; }
+.stamp { font-family: var(--font-mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tab { font: 500 13px var(--font-body); padding: 6px 12px; border-radius: 999px; border: 0; background: transparent; color: var(--muted); cursor: pointer; }
+.tab[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.tab:focus-visible, .item:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.list { display: grid; gap: 10px; }
+.item {
+  display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 14px; border-radius: 12px;
+  background: var(--surface); cursor: pointer; text-align: left; border: 0; color: inherit; font: inherit; width: 100%;
+}
+.item[aria-pressed="true"] { background: var(--accent-soft); }
+.letter {
+  width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font: 500 14px var(--font-mono);
+  color: var(--muted); background: var(--bg);
+}
+.item[aria-pressed="true"] .letter { background: var(--accent); color: #fff; }
+.body { min-width: 0; display: grid; gap: 4px; }
+.title { font-weight: 700; font-size: 15px; line-height: 1.45; overflow-wrap: anywhere; }
+.what { margin: 0; font-size: 14px; }
+.meta { font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+.meta a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }
+.tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em; }
+.empty { padding: 32px 4px; color: var(--muted); display: grid; gap: 6px; }
+.empty strong { color: var(--fg); font-size: 16px; }
+.bar {
+  position: fixed; left: 0; right: 0; bottom: 0; background: var(--surface);
+  padding-top: 12px; padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  box-shadow: 0 -1px 0 var(--line);
+}
+.bar-in { max-width: 680px; margin: 0 auto; display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.count { font-size: 13px; color: var(--muted); }
+.count b { color: var(--fg); font-family: var(--font-mono); }
+.actions { display: flex; gap: 8px; }
+.btn { font: 500 14px var(--font-body); border: 0; border-radius: 10px; padding: 10px 16px; cursor: pointer; background: var(--bg); color: var(--fg); }
+.btn.primary { background: var(--fg); color: var(--bg); }
+.btn:disabled { opacity: 0.45; cursor: default; }
+.note { font-size: 13px; color: var(--muted); }
+.done { padding: 12px 14px; border-radius: 12px; background: var(--surface); font-size: 14px; }
+@media (prefers-reduced-motion: no-preference) { .item { transition: background-color .15s ease; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>lukee 日报</h1>
+    <p class="sub">点你想看的几条，再按"交给 lukee"。没点的算不想看。你的回答会教 lukee 更懂你。</p>
+  </header>
+  <nav class="tabs" id="tabs" aria-label="日报列表"></nav>
+  <div id="status" class="note" hidden></div>
+  <section id="main" class="list" aria-live="polite">
+    <div class="empty"><strong>正在取日报</strong><span>lukee 每天早上 8 点、晚上 8 点各送一份，每份 10 条。</span></div>
+  </section>
+</div>
+
+<div class="bar" id="bar" hidden>
+  <div class="bar-in">
+    <span class="count">选了 <b id="n">0</b> 条想看</span>
+    <div class="actions">
+      <button class="btn" id="none" type="button">都不想看</button>
+      <button class="btn primary" id="send" type="button">交给 lukee</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const SLOT = { top: "", uncertain: "", new: "新方向" };
+let db = null, digests = [], answers = {}, current = null, picked = new Set(), sending = false;
+
+function fmtStamp(s) {
+  const m = /^(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})$/.exec(s || "");
+  return m ? `${+m[2]} 月 ${+m[3]} 日 ${m[4]}:${m[5]}` : s;
+}
+
+function el(tag, props, ...kids) {
+  const e = document.createElement(tag);
+  Object.assign(e, props || {});
+  for (const k of kids) if (k != null) e.append(k);
+  return e;
+}
+
+function renderTabs() {
+  const tabs = $("tabs");
+  tabs.replaceChildren(...digests.slice(0, 6).map((d) => {
+    const done = !!answers[d.stamp];
+    const b = el("button", { className: "tab", type: "button", textContent: fmtStamp(d.stamp) + (done ? " · 已答" : "") });
+    b.setAttribute("aria-pressed", String(current && current.stamp === d.stamp));
+    b.onclick = () => { current = d; picked = new Set(); render(); };
+    return b;
+  }));
+}
+
+function render() {
+  renderTabs();
+  const main = $("main");
+  if (!current) {
+    main.replaceChildren(el("div", { className: "empty" },
+      el("strong", { textContent: "还没有日报" }),
+      el("span", { textContent: "lukee 每天早上 8 点、晚上 8 点各送一份，每份 10 条。" })));
+    $("bar").hidden = true;
+    return;
+  }
+  const ans = answers[current.stamp];
+  if (ans) {
+    const want = new Set((ans.wanted || "").split(""));
+    picked = want;
+  }
+  const items = (current.items || []).map((it) => {
+    const on = picked.has(it.letter);
+    const b = el("button", { className: "item", type: "button" });
+    b.setAttribute("aria-pressed", String(on));
+    b.disabled = !!ans;
+    const link = el("a", { href: it.url, target: "_blank", rel: "noopener", textContent: "打开原文" });
+    link.onclick = (e) => e.stopPropagation();
+    const meta = el("div", { className: "meta" },
+      el("span", { textContent: [it.source, it.author, it.published].filter(Boolean).join(" · ") }),
+      SLOT[it.slot] ? el("span", { className: "tag", textContent: SLOT[it.slot] }) : null,
+      link);
+    b.append(el("span", { className: "letter", textContent: it.letter }),
+      el("span", { className: "body" },
+        el("span", { className: "title", textContent: it.title || it.url }),
+        it.what ? el("p", { className: "what", textContent: it.what }) : null,
+        meta));
+    b.onclick = () => {
+      if (ans) return;
+      picked.has(it.letter) ? picked.delete(it.letter) : picked.add(it.letter);
+      b.setAttribute("aria-pressed", String(picked.has(it.letter)));
+      $("n").textContent = picked.size;
+    };
+    return b;
+  });
+  let head = null;
+  if (ans) {
+    const more = el("button", { className: "btn", type: "button", id: "more", textContent: "再来一批" });
+    more.onclick = async () => {
+      more.disabled = true;
+      try { await db.doc("requests/more").set({ at: new Date().toISOString(), after: current.stamp }); more.textContent = "好，下一轮送来"; }
+      catch (e) { more.disabled = false; showStatus("没发出去，稍后再按一次。"); }
+    };
+    head = el("div", { className: "done" },
+      el("p", { className: "what", textContent: `这份已经交了：想看 ${ans.wanted === "-" ? "无" : ans.wanted}。lukee 下一轮会学进去。` }), more);
+    head.style.display = "grid"; head.style.gap = "10px"; head.style.justifyItems = "start";
+  }
+  main.replaceChildren(...[head, ...items].filter(Boolean));
+  $("n").textContent = picked.size;
+  $("bar").hidden = !!ans || !db;
+}
+
+async function send(letters) {
+  if (!db || !current || sending) return;
+  sending = true;
+  $("send").disabled = $("none").disabled = true;
+  try {
+    await db.doc("answers/" + current.stamp).set({ stamp: current.stamp, wanted: letters, at: new Date().toISOString() });
+    showStatus("交好了。lukee 下一轮会学进去。");
+  } catch (e) {
+    showStatus(e && e.code === "invalid_argument" ? "这个页面只有你本人能交回答。" : "没交上，稍后再按一次。");
+  } finally {
+    sending = false;
+    $("send").disabled = $("none").disabled = false;
+  }
+}
+
+function showStatus(t) { const s = $("status"); s.textContent = t; s.hidden = false; }
+
+$("send").onclick = () => send([...picked].sort().join("") || "-");
+$("none").onclick = () => send("-");
+
+(async () => {
+  db = await (window.claude?.use ? window.claude.use("db") : null);
+  if (!db) {
+    $("main").replaceChildren(el("div", { className: "empty" },
+      el("strong", { textContent: "这里读不到日报" }),
+      el("span", { textContent: "请登录 claude.ai 后从你自己的账号打开这个页面。" })));
+    return;
+  }
+  db.collection("answers").onSnapshot((snap) => {
+    answers = {};
+    snap.docs.forEach((d) => { answers[d.id] = d.data(); });
+    if (current) render(); else renderTabs();
+  }, () => {});
+  db.collection("digests").orderBy("stamp", "desc").limit(20).onSnapshot((snap) => {
+    digests = snap.docs.map((d) => d.data());
+    if (!current || !digests.find((d) => d.stamp === current.stamp)) {
+      current = digests.find((d) => !answers[d.stamp]) || digests[0] || null;
+      picked = new Set();
+    } else {
+      current = digests.find((d) => d.stamp === current.stamp);
+    }
+    render();
+  }, () => showStatus("日报暂时读不到，过一会儿再打开。"));
+})();
+</script>
