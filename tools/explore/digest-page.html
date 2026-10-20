@@ -1,4 +1,4 @@
-<title>lukee 日报</title>
+<title>lukeeMind 日报</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -77,13 +77,13 @@ h1 { font-size: 22px; font-weight: 700; margin: 0; letter-spacing: 0.01em; text-
 
 <div class="wrap">
   <header>
-    <h1>lukee 日报</h1>
-    <p class="sub">点你想看的几条，再按"交给 lukee"。没点的算不想看。你的回答会教 lukee 更懂你。</p>
+    <h1>lukeeMind 日报</h1>
+    <p class="sub">点你想看的几条，再按"交给 lukeeMind"。没点的算不想看。你的回答会教 lukeeMind 更懂你。</p>
   </header>
   <nav class="tabs" id="tabs" aria-label="日报列表"></nav>
   <div id="status" class="note" hidden></div>
   <section id="main" class="list" aria-live="polite">
-    <div class="empty"><strong>正在取日报</strong><span>lukee 每天早上 8 点、晚上 8 点各送一份，每份 10 条。</span></div>
+    <div class="empty"><strong>正在取日报</strong><span>lukeeMind 每天早上 8 点、晚上 8 点各送一份，每份 10 条。</span></div>
   </section>
 </div>
 
@@ -92,7 +92,7 @@ h1 { font-size: 22px; font-weight: 700; margin: 0; letter-spacing: 0.01em; text-
     <span class="count">选了 <b id="n">0</b> 条想看</span>
     <div class="actions">
       <button class="btn" id="none" type="button">都不想看</button>
-      <button class="btn primary" id="send" type="button">交给 lukee</button>
+      <button class="btn primary" id="send" type="button">交给 lukeeMind</button>
     </div>
   </div>
 </div>
@@ -131,7 +131,7 @@ function render() {
   if (!current) {
     main.replaceChildren(el("div", { className: "empty" },
       el("strong", { textContent: "还没有日报" }),
-      el("span", { textContent: "lukee 每天早上 8 点、晚上 8 点各送一份，每份 10 条。" })));
+      el("span", { textContent: "lukeeMind 每天早上 8 点、晚上 8 点各送一份，每份 10 条。" })));
     $("bar").hidden = true;
     return;
   }
@@ -173,7 +173,7 @@ function render() {
       catch (e) { more.disabled = false; showStatus("没发出去，稍后再按一次。"); }
     };
     head = el("div", { className: "done" },
-      el("p", { className: "what", textContent: `这份已经交了：想看 ${ans.wanted === "-" ? "无" : ans.wanted}。lukee 下一轮会学进去。` }), more);
+      el("p", { className: "what", textContent: `这份已经交了：想看 ${ans.wanted === "-" ? "无" : ans.wanted}。lukeeMind 下一轮会学进去。` }), more);
     head.style.display = "grid"; head.style.gap = "10px"; head.style.justifyItems = "start";
   }
   main.replaceChildren(...[head, ...items].filter(Boolean));
@@ -187,7 +187,7 @@ async function send(letters) {
   $("send").disabled = $("none").disabled = true;
   try {
     await db.doc("answers/" + current.stamp).set({ stamp: current.stamp, wanted: letters, at: new Date().toISOString() });
-    showStatus("交好了。lukee 下一轮会学进去。");
+    showStatus("交好了。lukeeMind 下一轮会学进去。");
   } catch (e) {
     showStatus(e && e.code === "invalid_argument" ? "这个页面只有你本人能交回答。" : "没交上，稍后再按一次。");
   } finally {

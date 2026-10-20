@@ -395,7 +395,7 @@ def cmd_digest(a):
     d = {"stamp": stamp, "created": now().isoformat(timespec="seconds"), "answered": False, "items": items}
     (DIR / "digests" / f"{stamp}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1))
     write_jsonl(POOL, pool)
-    md = [f"# lukee 日报 {stamp}", "", "想看哪几条？回字母就行（例：ACF；都不想看回 -）。", ""]
+    md = [f"# lukeeMind 日报 {stamp}", "", "想看哪几条？回字母就行（例：ACF；都不想看回 -）。", ""]
     for it in items:
         md += [f"**{it['letter']}. {it['title']}**", f"{it['what']}", f"{it['source']} · {it['author']} · {it['published'] or '日期未知'} · {it['url']}", ""]
     (DIR / "digests" / f"{stamp}.md").write_text("\n".join(md))

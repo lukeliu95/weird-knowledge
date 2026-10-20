@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """L3 回答预测：给本地 Qwen 看一道 agent 问 Luke 的选择题（去掉"推荐"标记），看它能不能猜中 Luke 选了哪个。
 
-为什么去掉推荐：Luke 九成跟着推荐走，带着推荐考等于考"会不会认推荐"。要让 lukee 能替别的 agent 出主意，
+为什么去掉推荐：Luke 九成跟着推荐走，带着推荐考等于考"会不会认推荐"。要让 lukeeMind 能替别的 agent 出主意，
 它得在没人推荐时，自己给出 Luke 会选的那一个。
 数据只在本地：题目来自 private/l3/decisions.jsonl（l3_extract.py 抽的），只发给本地 Qwen。
 
