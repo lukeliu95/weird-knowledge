@@ -9,7 +9,8 @@
   explore.py status                    状态 JSON：候选池、没答的日报、要不要降速
   explore.py pick [--n 3]              抽签选这一轮的方向和侦察兵，给每个侦察兵写一份任务段落
   explore.py ingest <round>            收 inbox/<round>-*.json：去重、进候选池、记线索
-  explore.py score [--limit 300]       给没打分的候选打分：Jev 分类（只发公开内容）、本地 Qwen 打"想不想看"
+  explore.py score [--engine auto]     给没打分的候选打分：Jev 分类（只发公开内容）、本地 Qwen 打"想不想看"；
+                                       Qwen 连不上时自动改用 Opus 5.5（claude -p，订阅用量），每条记 scorer
   explore.py digest [--size 10]        出一份日报：6 条最可能想看 + 2 条最拿不准 + 2 条新方向，顺序打乱
   explore.py learn <digest> <letters>  记 Luke 的回答：letters 是想看的字母，如 ACF；都不想看写 -
   explore.py aihot [--all]             从 AIHOT 拉最近 24 小时的精选进候选池（免费，不派 subagent）
@@ -262,9 +263,33 @@ def qwen_p(text):
     return round(a_ / (a_ + b_), 4)
 
 
+OPUS_SYS = ("你在模拟一个具体的人：Luke。给你他的档案、他喜欢过的内容，和一批新内容。"
+            "对每条新内容估计他会想点开看、点赞或收藏的概率（0 到 1）。只输出 JSON 对象：{\"编号\": 概率}。")
+
+
+def opus_batch(rows, profile, index, k=12):
+    """Qwen 不可用时的兜底：一批交给 Opus，回每条的概率。"""
+    import opus_judge as OJ
+    seen, ex = set(), []
+    for r in rows:   # 例子取这批内容各自最像的几条，合起来去重
+        for e in index.top(f"{r['title']}\n{r['snippet']}", 3):
+            if e["id"] not in seen:
+                seen.add(e["id"])
+                ex.append(e)
+    parts = ["【Luke 的档案】\n" + profile,
+             "【他以前点赞过、说想看的相似内容】\n" + "\n\n".join(f"- {e['text'][:300]}" for e in ex[:k * 2]),
+             "【要判断的内容】\n" + "\n\n".join(
+                 f"[{i}] 来源：{r['source']}　作者：{r['author']}\n标题：{r['title']}\n{r['snippet'][:800]}\n（一句话说明：{r['what']}）"
+                 for i, r in enumerate(rows)),
+             f"按编号 0～{len(rows) - 1} 输出 JSON。"]
+    out = OJ.ask_json(OPUS_SYS, "\n\n".join(parts))
+    return {int(k): max(0.0, min(1.0, float(v))) for k, v in out.items() if str(k).isdigit()}
+
+
 def cmd_score(a):
     E.load_env()
     import jev_classify as JC
+    import opus_judge as OJ
     pool = read_jsonl(POOL)
     todo = [r for r in pool if r["status"] == "new" and "p" not in r][: a.limit]
     if not todo:
@@ -274,6 +299,7 @@ def cmd_score(a):
     profile = (E.PRIVATE / "luke" / champ["profile"]).read_text()
     index = E.Index(positives())
     jev_tokens = fails = 0
+    engine = "qwen" if (a.engine == "qwen" or (a.engine == "auto" and OJ.qwen_ok())) else "opus"
     for i, r in enumerate(todo, 1):
         text = f"{r['title']}\n{r['snippet']}"
         if "kind" not in r:
@@ -283,20 +309,36 @@ def cmd_score(a):
                 jev_tokens += j["tokens"]
             except Exception:
                 pass
+        if engine != "qwen":
+            continue
         try:
             r["p"] = qwen_p(explore_prompt(r, profile, index.top(text, champ.get("k", 8))))
-            r["scored"] = now().isoformat(timespec="seconds")
+            r["scorer"], r["scored"] = "qwen", now().isoformat(timespec="seconds")
         except Exception as e:
             fails += 1
             if fails >= 3:
-                print(f"本地 Qwen 连续出错，先停：{e}", file=sys.stderr)
-                break
+                print(f"本地 Qwen 连续出错，剩下的改用 Opus：{e}", file=sys.stderr)
+                engine = "opus"
         if i % 25 == 0:
             print(f"  {i}/{len(todo)}", file=sys.stderr, flush=True)
             write_jsonl(POOL, pool)
+    if engine == "opus":   # 兜底：没打上分的按 15 条一批交给 Opus
+        rest = [r for r in todo if "p" not in r]
+        for b in range(0, len(rest), 15):
+            batch = rest[b:b + 15]
+            try:
+                ps = opus_batch(batch, profile, index)
+            except Exception as e:
+                print(f"Opus 打分出错，先停：{e}", file=sys.stderr)
+                break
+            for j, r in enumerate(batch):
+                if j in ps:
+                    r["p"], r["scorer"], r["scored"] = round(ps[j], 4), "opus", now().isoformat(timespec="seconds")
+            write_jsonl(POOL, pool)
     write_jsonl(POOL, pool)
     n = sum("p" in r for r in todo)
-    print(f"打分 {n}/{len(todo)} 条；Jev 输入 {jev_tokens} token，约 {jev_tokens / 1e6 * 0.042:.4f} 美元")
+    by = collections.Counter(r.get("scorer") for r in todo if "p" in r)
+    print(f"打分 {n}/{len(todo)} 条（{dict(by)}）；Jev 输入 {jev_tokens} token，约 {jev_tokens / 1e6 * 0.042:.4f} 美元")
 
 
 # ---------- 日报 ----------
@@ -384,7 +426,7 @@ def cmd_learn(a):
         r = pool.get(it["key"], {})
         r.update(status="answered", label=y)
         append_jsonl(LABELS, dict(key=it["key"], url=it["url"], label=y, slot=it["slot"], direction=it["direction"],
-                                  scout=it["scout"], p=it["p"], digest=a.digest, at=at, title=it["title"],
+                                  scout=it["scout"], p=it["p"], scorer=r.get("scorer", "qwen"), digest=a.digest, at=at, title=it["title"],
                                   text=r.get("snippet", "")[:600]))
         if it["key"].startswith("x:"):   # 推文的回答也是点赞预测（L1）最强的标签
             append_jsonl(E.PRIVATE / "l1" / "labels.jsonl", {"id": it["key"][2:], "author": it["author"].lstrip("@"),
@@ -435,9 +477,11 @@ def cmd_report(_):
         print(f"\n按 {field}：")
         for k, v in sorted(g.items(), key=lambda kv: -len(kv[1])):
             print(f"  {k}: {rate(v)}")
-    if rows and 0 < sum(r["label"] for r in rows) < len(rows):
-        m = E.metrics([{"p": r["p"], "label": r["label"]} for r in rows])
-        print(f"\n预测器在这些回答上：AUC {m['auc']}，准确率 {m['acc']}，校准误差 {m['ece']}")
+    for sc in ("qwen", "opus"):   # 两个打分引擎的概率口径不同，分开算
+        sub = [r for r in rows if r.get("scorer", "qwen") == sc]
+        if sub and 0 < sum(r["label"] for r in sub) < len(sub):
+            m = E.metrics([{"p": r["p"], "label": r["label"]} for r in sub])
+            print(f"\n{sc} 在这些回答上（{len(sub)} 条）：AUC {m['auc']}，准确率 {m['acc']}，校准误差 {m['ece']}")
 
 
 def main():
@@ -448,6 +492,7 @@ def main():
     p = sub.add_parser("pick"); p.add_argument("--n", type=int, default=3)
     p = sub.add_parser("ingest"); p.add_argument("round")
     p = sub.add_parser("score"); p.add_argument("--limit", type=int, default=300)
+    p.add_argument("--engine", default="auto", choices=["auto", "qwen", "opus"])
     p = sub.add_parser("digest"); p.add_argument("--size", type=int, default=10)
     p = sub.add_parser("learn"); p.add_argument("digest"); p.add_argument("letters")
     sub.add_parser("report")

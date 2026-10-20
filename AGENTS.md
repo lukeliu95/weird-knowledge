@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.9 · 2026-10-20 · 更新记录见文末
+> v1.10 · 2026-10-20 · 更新记录见文末
 
 ## 你是谁
 
@@ -339,6 +339,7 @@ verified: true
 | 模型 | 用来做什么 | 能看什么 |
 |---|---|---|
 | 本地 Qwen（`.env` 里的 QWEN_*） | 点赞预测等"像 Luke"的判断 | 可以看私人数据，数据不出这台机器 |
+| Opus 5.5（Claude Code 订阅，`tools/evolve/opus_judge.py` 走 `claude -p`） | 兜底：本地 Qwen 连不上时，探索打分（`explore.py score`）和决定预测（`l3_eval.py`）自动改用它，按批打分 | Luke 2026-10-20 同意它看打分要用的私人资料（档案、例子）。它给的概率和 Qwen 口径不同，每条记 `scorer`，成绩分开算 |
 | TypeSafe Jev（`.env` 里的 TYPESAFE_API_KEY） | 分类、打分这类只需公开内容的判断，见流程二第零步 | 只能看公开内容，不发 Luke 的任何私人资料 |
 | 后训练 | 等负样本 1,000 条以上、测试集 500 道以上、Luke 的标签 100 条以上，先训小模型和冠军比，赢了再考虑给本地 Qwen 做 LoRA | 只在本地 |
 
@@ -360,7 +361,7 @@ verified: true
 1. **收回答**：用 ArtifactData 读日报网页的 `answers`。每份还没记过的（`private/explore/digests/<stamp>.json` 里 `answered` 不是 true），跑 `python3 tools/explore/explore.py learn <stamp> <字母>`（都不想看是 `-`）。Luke 在对话里直接回字母也一样记。他说想看的，按流程一存进 `clips/`：`why` 写"探索日报：Luke 想看"，`kind` 和 `topic` 照常填，X 推文、网页存原文，论文按「有版权的长文」。输出里有 `promote_to_core` 的方向，在兴趣地图里升为 core
 2. **看状态**：`explore.py status`。`busy` 为 true（上一轮还没收完）就只做第 4 步的 `aihot` 和 `score`、第 6 步；`throttle` 为 true（没答的日报到 4 份，或候选池满 500 条）就跳过第 3、4 步
 3. **派侦察兵**：`explore.py pick --n 3`，按它给的 3 份任务段落各派一个 subagent，任务说明是 `tools/explore/SCOUT.md` 全文加那份段落，并把「其他约定 · 隐私」原样写进去。3 个并行，等它们都交完
-4. **收和打分**：`explore.py ingest <round>`；再 `explore.py aihot`，从 AIHOT 拉最近 24 小时的精选（免费，不派侦察兵，`busy` 或 `throttle` 时也照拉）；最后 `explore.py score`
+4. **收和打分**：`explore.py ingest <round>`；再 `explore.py aihot`，从 AIHOT 拉最近 24 小时的精选（免费，不派侦察兵，`busy` 或 `throttle` 时也照拉）；最后 `explore.py score`（本地 Qwen 连不上时自动改用 Opus 5.5 打分，不用停下来）
 5. **出日报**（只在 8 点和 20 点那两轮，或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`；把它打印的 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukee 日报到了（10 条）"加网页链接
 6. **顺手跑流程五**：`python3 tools/evolve/l1_daily.py`
 7. **长新方向**（每天 8 点那一轮）：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`
@@ -419,6 +420,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.10 | 2026-10-20 | 加了判断引擎的兜底：本地 Qwen 连不上时，探索打分和决定预测自动改用 Claude Code 订阅里的 Opus 5.5（`claude -p`，按批打分），每条记是谁打的分（起因：本地 Qwen 服务停了，40 条候选没法打分，Luke 要求加兜底） |
 | v1.9 | 2026-10-20 | 流程六每轮都从 AIHOT（aihot.news）拉最近 24 小时的精选进候选池，记成方向「AI 圈每日动态」，和侦察兵一样记命中率（起因：Luke 推荐 AIHOT，试下来免费、不花订阅用量，补的是他刷不到的官方和公司来源） |
 | v1.8 | 2026-10-19 | 加了第六件事「流程六：探索」：每小时一轮派 3 个侦察兵上网找，本地打分，每天 8 点和 20 点出 10 条日报，Luke 在网页上点想看；回答决定进库，也训练预测器；兴趣地图按命中率抽签，固定留新方向（起因：Luke 要 lukee 不停上网学他的兴趣，选了方案 B） |
 | v1.7 | 2026-10-19 | agent 起名 lukee，自称 lukee；项目名、仓库名、收尾句不变（起因：Luke 给 agent 起了名字） |

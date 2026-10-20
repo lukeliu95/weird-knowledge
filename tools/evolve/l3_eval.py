@@ -10,8 +10,11 @@
   q1  加 Luke 档案和他确认过的原则
   q2  q1 再加 4 道他以前答过的相似题（只取这道题之前的，防止偷看未来）
 
+引擎：默认本地 Qwen；Qwen 连不上时自动改用 Opus 5.5（opus_judge.py，订阅用量，按 10 题一批）。
+两种引擎的成绩分开记，不混着比。
+
 用法：
-  python3 tools/evolve/l3_eval.py [--cond q0|q1|q2|all]
+  python3 tools/evolve/l3_eval.py [--cond q0|q1|q2|all] [--engine auto|qwen|opus]
 """
 import argparse, collections, datetime as dt, json, math, re, sys
 from pathlib import Path
@@ -72,11 +75,32 @@ def qwen_dist(text, letters):
     return {k: p[k] / z for k in letters}
 
 
+OPUS_SYS = ("你在模拟一个具体的人：Luke。AI 助手给他出了几道选择题，估计他选每个选项的概率。"
+            "只输出 JSON 对象：{\"题号\": {\"A\": 概率, \"B\": 概率}}，每题的概率加起来等于 1。")
+
+
+def opus_dists(prompts, letters_list):
+    import opus_judge as OJ
+    body = "\n\n".join(f"===== 题 {i} =====\n{p}" for i, p in enumerate(prompts))
+    out = OJ.ask_json(OPUS_SYS, body + f"\n\n按题号 0～{len(prompts) - 1} 输出 JSON。")
+    res = []
+    for i, letters in enumerate(letters_list):
+        d = out.get(str(i)) or out.get(i) or {}
+        p = {k: float(d.get(k, 0) or 0) for k in letters}
+        z = sum(p.values()) or 1
+        res.append({k: v / z for k, v in p.items()})
+    return res
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--cond", default="all")
+    ap.add_argument("--engine", default="auto", choices=["auto", "qwen", "opus"])
     a = ap.parse_args()
     E.load_env()
+    import opus_judge as OJ
+    engine = "qwen" if (a.engine == "qwen" or (a.engine == "auto" and OJ.qwen_ok())) else "opus"
+    print("引擎：", engine, flush=True)
     rows = [json.loads(l) for l in (DIR / "decisions.jsonl").read_text().split("\n") if l.strip()]
     rows = [r for r in rows if r["choice"] in r["options"]]   # 选了"其他"的不考
     profile = (E.PRIVATE / "luke" / json.loads((E.PRIVATE / "l1" / "champion.json").read_text())["profile"]).read_text()
@@ -85,20 +109,28 @@ def main():
     summary = {}
     for cond in conds:
         hits, nll, out = 0, 0.0, []
+        prompts = []
         for i, r in enumerate(rows):
             ex = []
             if cond == "q2" and i:
                 idx = E.Index([{"id": j, "text": render(x)} for j, x in enumerate(rows[:i])])
                 ex = [rows[d["id"]] for d in idx.top(render(r), 4)]
-            dist = qwen_dist(prompt(r, cond, profile, ex), "".join(r["options"].keys()))
+            prompts.append(prompt(r, cond, profile, ex))
+        if engine == "opus":
+            dists = []
+            for b in range(0, len(rows), 10):
+                dists += opus_dists(prompts[b:b + 10], ["".join(r["options"].keys()) for r in rows[b:b + 10]])
+        else:
+            dists = [qwen_dist(p, "".join(r["options"].keys())) for p, r in zip(prompts, rows)]
+        for r, dist in zip(rows, dists):
             pred = max(dist, key=dist.get)
             hits += pred == r["choice"]
             nll += -math.log(max(dist.get(r["choice"], 0), 1e-6))
             out.append({"id": r["id"], "choice": r["choice"], "rec": r["recommended"], "pred": pred, "dist": dist})
         n = len(rows)
-        summary[cond] = {"n": n, "acc": round(hits / n, 3), "nll": round(nll / n, 3)}
+        summary[cond] = {"n": n, "acc": round(hits / n, 3), "nll": round(nll / n, 3), "engine": engine}
         (DIR / "runs").mkdir(parents=True, exist_ok=True)
-        (DIR / "runs" / f"{stamp}-{cond}.jsonl").write_text("".join(json.dumps(o, ensure_ascii=False) + "\n" for o in out))
+        (DIR / "runs" / f"{stamp}-{engine}-{cond}.jsonl").write_text("".join(json.dumps(o, ensure_ascii=False) + "\n" for o in out))
         print(cond, summary[cond], flush=True)
     n = len(rows)
     first = sum(r["choice"] == "A" for r in rows) / n
