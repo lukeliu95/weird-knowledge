@@ -192,7 +192,15 @@ def main():
                 continue
             seen.add(k)
             rows.append(r)
+    # 和已有的合并：旧会话文件可能被清理，抽过的题不能丢
+    old_f = OUT / "decisions.jsonl"
+    old = [json.loads(l) for l in old_f.read_text().split("\n") if l.strip()] if old_f.exists() else []
+    have = {r["id"] for r in rows}
+    kept = [r for r in old if r["id"] not in have and (r["ts"][:16], r["reply"][:30]) not in seen]
+    new = len(have - {r["id"] for r in old})
+    rows += kept
     rows.sort(key=lambda r: r["ts"])
+    print(f"新增 {new} 条，保留旧文件里已抽过、这次没再读到的 {len(kept)} 条")
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "decisions.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
     c = collections.Counter((r["source"], r["kind"]) for r in rows)

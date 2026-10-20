@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.11 · 2026-10-20 · 更新记录见文末
+> v1.12 · 2026-10-20 · 更新记录见文末
 
 ## 你是谁
 
@@ -364,9 +364,9 @@ verified: true
 4. **收和打分**：`explore.py ingest <round>`；再 `explore.py aihot`，从 AIHOT 拉最近 24 小时的精选（免费，不派侦察兵，`busy` 或 `throttle` 时也照拉）；最后 `explore.py score`（本地 Qwen 连不上时自动改用 Opus 5.5 打分，不用停下来）
 5. **出日报**（只在 8 点和 20 点那两轮，或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`；把它打印的 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukee 日报到了（10 条）"加网页链接
 6. **顺手跑流程五**：`python3 tools/evolve/l1_daily.py`
-7. **长新方向**（每天 8 点那一轮）：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`
+7. **长新方向**（每天 8 点那一轮）：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`。同一轮顺手跑 `python3 tools/evolve/l3_extract.py`，把这台 Mac 上新会话里 Luke 做过的选择抽进决定预测的测试集（只放 `private/l3/`）
 8. **记账**：`private/` 里提交一次（`git -C private add explore && git -C private commit -m "探索：<round>"`）。第 1 步存了新知识的，按「其他约定 · git」提交并推送公开仓库
-9. **周报**（每周日 20 点那一轮）：`explore.py report`，一段话加数字追加进方案的「进度」一节，提交推送
+9. **周报**（每周日 20 点那一轮）：`explore.py report`；再跑 `python3 tools/evolve/l3_eval.py --cond q2`（决定预测的成绩，Opus），和"永远选第一个""永远选推荐"、他不按推荐走的题分开报。一段话加数字追加进方案的「进度」一节，提交推送
 
 ### 规矩
 
@@ -420,6 +420,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.12 | 2026-10-20 | 流程六每天 8 点那一轮顺手抽一次新的选择进决定预测测试集，每周日 20 点那一轮跑一次决定预测的成绩（起因：Luke 要让测试题越攒越多） |
 | v1.11 | 2026-10-20 | 决定预测改用 Opus 5.5 当主力，探索打分仍然本地 Qwen 优先（起因：109 道选择题上 Opus 93%、Qwen 84%，Luke 选了 A） |
 | v1.10 | 2026-10-20 | 加了判断引擎的兜底：本地 Qwen 连不上时，探索打分和决定预测自动改用 Claude Code 订阅里的 Opus 5.5（`claude -p`，按批打分），每条记是谁打的分（起因：本地 Qwen 服务停了，40 条候选没法打分，Luke 要求加兜底） |
 | v1.9 | 2026-10-20 | 流程六每轮都从 AIHOT（aihot.news）拉最近 24 小时的精选进候选池，记成方向「AI 圈每日动态」，和侦察兵一样记命中率（起因：Luke 推荐 AIHOT，试下来免费、不花订阅用量，补的是他刷不到的官方和公司来源） |
