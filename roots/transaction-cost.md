@@ -31,3 +31,4 @@ verified: true
 | [学超级个体 Jack Butcher](../clips/2026-10-18-starzq-jack-butcher-solo-brand.md) | 相近 | 弱（待 Luke 确认） |
 | [IPA DX白書2023：日本 IT 人才 73.6% 在 IT 企业，美国只有 35.1%](../clips/2026-10-18-ipa-dx-white-paper-2023-it-talent.md) | 相近 | 弱（待 Luke 确认） |
 | [日本公库 2025 数字化调查：中小企业推数字化时第一个找的是 IT 厂商（50.5%），其次税理士（32.8%）；49 人以下的企业近一半谁也不找](../clips/2026-10-19-jfc-sme-digitalization-advisors-2025.md) | 相近 | 弱（待 Luke 确认） |
+| [Personal Agent 像 2012 年的滴滴：是上游模型厂补贴下游的出口，要能自己后训练小模型降本](../clips/2026-10-20-willwangtf-personal-agent-didi-2012.md) | 相近 | 弱（待 Luke 确认） |

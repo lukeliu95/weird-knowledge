@@ -7,10 +7,10 @@ published: "2026-10（arXiv 预印本 2610.14224v1，2026-10-09 提交，未经�
 saved: 2026-10-19
 why: "给这个 agent 的自我进化找方法"
 related_principles: [原则 1, 原则 11]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [recursive-self-improvement, lee-2026-meta-harness, zelikman-2023-self-taught-optimizer, madaan-2023-self-refine, venkatraman-2025-rsa, zhao-2023-expel, organizational-learning]
 ---
 
 ## 原文
@@ -85,4 +85,14 @@ agent 的本事不只看模型，也看"运行框架"（harness）：提示词�
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：模型不动、也没有标准答案时，agent 仍能改进自己的运行框架：每个任务先照原样跑一遍当参照，提一个针对通用毛病、一个针对领域的两份改动，在同样条件下试跑对照，只合入有行为证据支持的改动；做完把“什么改动在什么情况下管用、证据是什么”写进经验库，下个任务从同一起点出发、只借经验不继承框架，于是连“怎么改”本身也越改越好。
+- 源知识：
+  - [递归自我改进](../roots/recursive-self-improvement.md) · 关系：直接源自 · 强弱：强。论文开宗明义把递归自我改进用到运行框架上，并引用 Duan 等 2026 的 RSI 定义（改动会反过来影响以后怎么提、怎么评、怎么留改动）。
+  - [Meta-Harness：端到端优化模型的运行框架](../roots/lee-2026-meta-harness.md) · 关系：直接源自 · 强弱：强。“模型表现不只看权重、也看运行框架，让 agent 读以往候选的代码和执行记录去自动改框架”来自 Meta-Harness；Harness² 把它列为最早的框架自我改进方法，也是主要对照组。区别是 Meta-Harness 靠固定训练题打分，Harness² 没有标准答案。
+  - [自学优化器（STOP）：递归自我改进的代码生成](../roots/zelikman-2023-self-taught-optimizer.md) · 关系：直接源自 · 强弱：强。STOP 让“改进器”去改进自己；Harness² 的第二层递归（改进“改框架的方法”而不只改框架）是同一思路搬到运行框架上，论文在定义里明引 STOP。
+  - [自我改进：用自我反馈迭代改写](../roots/madaan-2023-self-refine.md) · 关系：直接源自 · 强弱：强。论文第 2.2.2 节明说“串行递归就是把迭代自我改进（Self-Refine）用到运行框架上”：一轮接一轮带着上一轮的证据改。
+  - [递归自聚合（RSA）：让大模型深度思考](../roots/venkatraman-2025-rsa.md) · 关系：直接源自 · 强弱：强。论文第 2.2.2 节明说并行递归“遵循 RSA 的聚合原则”：同时提多个候选、把整池证据交给合成；只是聚合对象从推理链换成了可执行的框架和它的行为后果。
+  - [ExpeL：大模型智能体是经验学习者](../roots/zhao-2023-expel.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。跨任务把做过的事提炼成文字心得、新任务时按需取用，和 Harness² 的经验库（每条带 EXPERIENCE.md）几乎同构；但 Harness² 没引 ExpeL，引的是只在同一任务重试时用反思的 Reflexion，属模型推断。
+  - [组织学习](../roots/organizational-learning.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。任务层只改做法（单环学习），方法层改“怎么改做法”（双环学习，Argyris 与 Schön）；论文没提组织学习，是模型推断的类比。
+- 本质：这条新知识本质上是“生成候选—同条件对照检验—只留有证据的改动”这一演化与实验循环，加上“连改进方法本身也一起改”的双环学习，在模型冻结的 agent 运行框架上的应用。
+- 整理于：2026-10-21（第 4 轮）

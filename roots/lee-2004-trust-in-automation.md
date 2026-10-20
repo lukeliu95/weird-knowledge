@@ -27,3 +27,4 @@ verified: true
 |---|---|---|
 | [无方向盘的 Cybercab 乘坐体验](../clips/2026-10-18-davelee-cybercab-no-steering-wheel-ride.md) | 相近 | 弱（待 Luke 确认） |
 | [OpenAI Dots 放权指南：动作分进 6 个权限区，每周按证据升降](../clips/2026-10-18-choopyplug1-openai-dots-agent-permission-zones.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic 经济指数「节奏」：用法跟着作息走，越值钱的活越费算力，越放手交给 AI 的人越乐观](../clips/2026-10-20-anthropic-economic-index-cadences.md) | 相近 | 弱（待 Luke 确认） |

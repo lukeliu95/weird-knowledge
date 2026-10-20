@@ -33,3 +33,4 @@ verified: true
 | [两天用完 AI 额度，四天做营销的周节奏](../clips/2026-10-18-yihui-indie-ai-two-day-dev-week-rhythm.md) | 相近 | 弱（待 Luke 确认） |
 | [写好Spec后让Agent整周自动开发](../clips/2026-10-18-timyangnet-spec-driven-agent-development.md) | 相近 | 弱（待 Luke 确认） |
 | [Anthropic 设计负责人谈 AI 时代设计流程](../clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | 相近 | 弱（待 Luke 确认） |
+| [马斯克：未来的发现全是工程（“最稀缺的是验证”是转述者加的）](../clips/2026-10-20-financeyf5-musk-future-discovery-is-engineering.md) | 相近 | 弱（待 Luke 确认） |

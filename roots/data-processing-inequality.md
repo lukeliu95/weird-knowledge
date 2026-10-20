@@ -28,3 +28,4 @@ verified: true
 | [Pi 开发笔记：长时间运行智能体的难题](../clips/2026-10-18-maxforai-pi-notes-agent-harness-critique.md) | 相近 | 弱（待 Luke 确认） |
 | [用航空维修英语规范让 AI 讲清楚话](../clips/2026-10-18-hitw93-asd-ste100-clarity-waza.md) | 相近 | 弱（待 Luke 确认） |
 | [Jeff Dean 一小时讲 AI 系统](../clips/2026-10-18-huxlab-jeff-dean-ai-course-hour.md) | 相近 | 弱（待 Luke 确认） |
+| [agent 的记忆先存原始轨迹，等新任务来了再现场整理，比事先提炼成反思或 skill 更好用](../clips/2026-10-20-zhou-just-in-time-memory.md) | 相近 | 弱（待 Luke 确认） |

@@ -29,3 +29,4 @@ verified: true
 | [Anthropic：让模型验证自己的输出](../clips/2026-10-18-0xcodez-anthropic-agent-loop-self-verify.md) | 换了说法 | 强 |
 | [Claude Code之父的三条心得](../clips/2026-10-18-ayi-ainotes-boris-cherny-workflow-three-rules.md) | 直接源自 | 强 |
 | [Astra 电脑操作让验收成闭环](../clips/2026-10-18-dotey-astra-computer-use-acceptance-loop.md) | 相近 | 弱（待 Luke 确认） |
+| [Taylor 1968：提问协商——四层需求（Q1～Q4）和馆员问清需求的五个过滤器](../clips/2026-10-19-taylor-question-negotiation-information-seeking.md) | 相近 | 强 |

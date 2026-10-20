@@ -7,10 +7,10 @@ published: 2026-06（Anthropic 官网，2026-06-26 发布；PDF 正文 33 页，
 saved: 2026-10-20
 why: 探索日报：Luke 想看
 related_principles: [原则 8, 原则 4]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [handa-2025-anthropic-economic-index, chatterji-2025-how-people-use-chatgpt, golder-2011-diurnal-seasonal-mood, parasuraman-2000-levels-of-automation, lee-2004-trust-in-automation]
 ---
 
 ## 原文
@@ -104,4 +104,12 @@ roots: []
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：从 Claude 的真实使用数据看：用法跟着作息和日历起伏；工资越高的工作对话越费算力，约 44% 是因为产出物种类不同；Claude Code 里人更放手；越把活放手交给 AI 的人，对自己的工作越乐观（相关，不是因果）。
+- 源知识：
+  - [哪些经济任务在用 AI 做（Anthropic 经济指数第一篇）](../roots/handa-2025-anthropic-economic-index.md) · 关系：直接源自 · 强弱：强。同一个 Anthropic Economic Index 系列的第一篇；本报告沿用它的整套做法：用 Clio 做隐私保护分类、把对话映射到 O*NET 职业任务、把协作方式分成指令式、反馈循环、任务迭代、学习、校验五种，并把前两种算“自动化”
+  - [人们如何使用 ChatGPT（OpenAI 研究报告）](../roots/chatterji-2025-how-people-use-chatgpt.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。OpenAI 用同类的隐私保护自动分类分析 ChatGPT 的使用，也区分工作和个人用途；两份报告有共同作者 Zoe Hitzig
+  - [推特时间戳里的昼夜和季节情绪节律](../roots/golder-2011-diurnal-seasonal-mood.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Golder 和 Macy 用数百万条推文的时间戳看出人的一天、一周节奏（早上心情最好、周末高峰晚 2 小时）；报告第 1 章用对话时间戳看出早上问新闻、傍晚问菜谱、周末个人用途升到近一半，是同一种“用数字痕迹测生活节奏”的方法。报告没引这篇
+  - [自动化的类型与等级模型](../roots/parasuraman-2000-levels-of-automation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。报告给每段对话的自主程度打 1～5 分（从 AI 不做决定到几乎全由 AI 决定），和自动化等级模型“从全手动到全自动分级”的思路一致
+  - [对自动化的信任：为恰当依赖而设计](../roots/lee-2004-trust-in-automation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“越放手越乐观”可以用对自动化的信任来理解：信任越高越愿意依赖、越看好；作者自己也承认可能是热衷 AI 的人本来就更放手（选择效应）
+- 本质：这条新知识本质上是任务框架（把工作拆成 O*NET 任务）加大规模使用日志分析，在测量 AI 实际用在哪、放手多少、用户怎么看待这一场景下的应用。
+- 整理于：2026-10-21（第 4 轮）

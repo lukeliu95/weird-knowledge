@@ -7,10 +7,10 @@ published: 1968-03（College & Research Libraries 第 29 卷第 3 期，pp. 178�
 saved: 2026-10-19
 why: 存这篇就是为了客户画像问题协商流程引用
 related_principles: [原则 4, 原则 1]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: []
+roots: [question-negotiation, mackay-1961-questions-and-commands, feedback, tacit-knowledge]
 ---
 
 ## 原文
@@ -119,3 +119,11 @@ roots: []
 
 ## 溯源
 
+- 核心主张：提问者开口说的多是为迁就系统而妥协过的需求（Q4），馆员要靠对话和反馈，按主题、动机、背景、资料组织、可接受答案五个过滤器，陪他退回到说得清的需求（Q3，最多 Q2）。
+- 源知识：
+  - [问题协商](../roots/question-negotiation.md) · 关系：直接源自 · 强弱：强。这篇就是“问题协商”这条源知识的原始出处
+  - [提问与命令的信息分析](../roots/mackay-1961-questions-and-commands.md) · 关系：直接源自 · 强弱：强。Taylor 明引 MacKay：提问者“世界图景里有一块不完整”（p.180，注 10），以及命令和问题的区分（p.189 附近，注 17）
+  - [反馈](../roots/feedback.md) · 关系：相近 · 强弱：强。Taylor 明说书面问题“一点用都没有”是因为没有反馈，“问题”要靠反馈才能得到可接受的答案；但他没有引用控制论里的反馈理论
+  - [默会知识（隐性知识）](../roots/tacit-knowledge.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Q1 内在需求“大概说不成话”，和波兰尼“我们知道的多于能说出的”相近；Taylor 没有引用
+- 本质：这条新知识本质上是 MacKay“提问＝提问者世界图景里的缺口”的信息分析，加上对话反馈回路，在图书馆参考咨询场景下的应用。
+- 整理于：2026-10-21（第 4 轮）

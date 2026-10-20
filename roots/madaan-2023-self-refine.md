@@ -27,3 +27,4 @@ verified: true
 |---|---|---|
 | [Anthropic 六种工作流与智能体](../clips/2026-10-18-eze-is-1-anthropic-workflow-patterns.md) | 相近 | 弱（待 Luke 确认） |
 | [吴恩达：自我改进循环将取代提示](../clips/2026-10-18-0xmovez-andrew-ng-self-improving-loops.md) | 相近 | 弱（待 Luke 确认） |
+| [Harness²：agent 不改模型，靠对照试验改自己的运行框架，还学会怎么改得更好](../clips/2026-10-19-xu-harness2-recursive-agent-harnessing.md) | 直接源自 | 强 |

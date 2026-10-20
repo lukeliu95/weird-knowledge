@@ -7,10 +7,10 @@ published: 2026-10-14
 saved: 2026-10-20
 why: 探索日报：Luke 想看
 related_principles: ["原则 8"]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: []
+roots: [ju-2026-personality-pairing, big-five-personality-traits, barrick-1998-team-personality-composition, computers-are-social-actors, sharma-2023-sycophancy-language-models]
 ---
 
 ## 原文
@@ -82,4 +82,12 @@ Thoughts, comments and reactions are, as always, greatly appreciated. 🙏
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：给 AI 智能体设定不同的大五人格，它和人的人格搭配会因果性地改变人机合作做广告的质量（最大的几个效应是变差），广告质量又能预测真实投放的点击率和点击成本，所以按人调整 AI 的人格（AI 个性化）有经济价值。
+- 源知识：
+  - [人格搭配改善人机协作（PNAS 广告实验）](../roots/ju-2026-personality-pairing.md) · 关系：直接源自 · 强弱：强。推文就是这篇 PNAS 论文作者的宣传，样本数和效应数字都和论文一致
+  - [大五人格（五因素模型）](../roots/big-five-personality-traits.md) · 关系：直接源自 · 强弱：强。人的人格用 10 题大五量表测，AI 的人格按大五每个维度随机设成高或低
+  - [成员能力和人格与团队过程和成效](../roots/barrick-1998-team-personality-composition.md) · 关系：直接源自 · 强弱：强。论文引用这篇团队人格构成研究，作为“人格搭配原则”的来源；但 Barrick 发现尽责性高的团队绩效更好，本文却是 AI 的尽责性降低了文案质量
+  - [计算机是社会行动者（CASA 范式）](../roots/computers-are-social-actors.md) · 关系：直接源自 · 强弱：强。论文引用 Nass & Moon 2000：人偏好和自己人格匹配的电脑；本文把它从“喜不喜欢”推进到大模型智能体协作的产出质量
+  - [理解语言模型的谄媚（迎合用户）](../roots/sharma-2023-sycophancy-language-models.md) · 关系：相近 · 强弱：强。论文分析聊天记录解释最差的三种搭配：AI 更顺从、更少反驳，可能更“谄媚”，并引用了 Sharma 等的谄媚研究
+- 本质：这条新知识本质上是团队人格构成研究和“计算机是社会行动者”在大模型智能体人机协作场景下的应用。
+- 整理于：2026-10-21（第 4 轮）

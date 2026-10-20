@@ -31,3 +31,4 @@ verified: true
 | [中立提问法：开放地问，但只问情境、缺口、用途三件事](../clips/2026-10-19-dervin-dewdney-neutral-questioning.md) | 相近 | 强 |
 | [图书馆访问研究：真实用户去问，只有一半的咨询问清了需求](../clips/2026-10-19-nilsen-library-visit-study.md) | 直接源自 | 弱（待 Luke 确认） |
 | [RUSA 参考咨询行为指南 2023：开放和封闭问题配合用，给结果时说明为什么，结束前确认](../clips/2026-10-19-rusa-behavioral-guidelines-2023.md) | 相近 | 弱（待 Luke 确认） |
+| [问题协商：用户说不清想找哪类企业时，先给样本，再陪他把问题说清](../clips/2026-10-19-luke-question-negotiation-icp-search.md) | 直接源自 | 强 |

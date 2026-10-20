@@ -29,3 +29,4 @@ verified: true
 | [Karpathy 谈 GPT 现状](../clips/2026-10-18-dotey-karpathy-state-of-gpt.md) | 直接源自 | 强 |
 | [营销邮件个性化实地实验：主题写上收件人名字，看过价格后回信想买的人多 31%；正文写上对方公司名，这类回信约翻倍](../clips/2026-10-19-sahni-personalization-email-marketing.md) | 直接源自 | 强 |
 | [南非 5.3 万封贷款直邮实验：只举 1 个例子比举 4 个多出的申请，相当于利率降约 25%；在表格里单列利率没有显著差别](../clips/2026-10-19-bertrand-advertising-content-worth.md) | 直接源自 | 强 |
+| [agent 每步的选择题交给小决策模型（UIUC 等，推文误作普林斯顿和谷歌），模拟网店里 4B 模型完成率 91.5%](../clips/2026-10-20-rohanpaul-ai-agent-decision-model-small-beats-big.md) | 相近 | 强 |

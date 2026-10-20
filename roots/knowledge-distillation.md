@@ -30,3 +30,5 @@ verified: true
 | [DeepSeek R1 论文解读：自学成才之路](../clips/2026-10-18-oran-ge-deepseek-r1-paper-explained.md) | 直接源自 | 强 |
 | [MiMo-V2.6 的强化学习之路](../clips/2026-10-18-luofuli-mimo-v2-6-scaling-rl.md) | 直接源自 | 强 |
 | [论文从闭源模型里偷出隐藏思维链](../clips/2026-10-18-maxforai-stealing-hidden-chain-of-thought.md) | 直接源自 | 强 |
+| [agent 每步的选择题交给小决策模型（UIUC 等，推文误作普林斯顿和谷歌），模拟网店里 4B 模型完成率 91.5%](../clips/2026-10-20-rohanpaul-ai-agent-decision-model-small-beats-big.md) | 直接源自 | 强 |
+| [Personal Agent 像 2012 年的滴滴：是上游模型厂补贴下游的出口，要能自己后训练小模型降本](../clips/2026-10-20-willwangtf-personal-agent-didi-2012.md) | 相近 | 弱（待 Luke 确认） |

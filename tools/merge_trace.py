@@ -30,6 +30,10 @@ def load(input_dir):
         d = json.loads(f.read_text())
         clips += d["clips"]
         for r in d["roots"]:
+            # existing roots may come back with only slug and names; fill the rest so pooling below works
+            for k, v in dict(verified=True, sources=[], deeper=[], dispute="", proposer="", year="", type="理论", one_line="").items():
+                if r.get(k) is None:
+                    r[k] = v
             old = roots.get(r["slug"])
             if not old:
                 roots[r["slug"]] = r

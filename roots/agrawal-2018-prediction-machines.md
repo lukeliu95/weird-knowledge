@@ -30,3 +30,4 @@ AI 的本质是让“预测”变便宜；预测变便宜后，人的预测这�
 | [稀缺从怎么做转向做什么](../clips/2026-10-18-lijigang-scarcity-how-to-what.md) | 相近 | 弱（待 Luke 确认） |
 | [品味可以被模仿，决策才不可替代](../clips/2026-10-18-mengkepm-taste-copyable-decision-irreplaceable.md) | 相近 | 弱（待 Luke 确认） |
 | [从高中听 David Senra 会怎样](../clips/2026-10-18-reynolddai-david-senra-podcast-judgment.md) | 相近 | 弱（待 Luke 确认） |
+| [人和 AI 比设计游戏：AI 自己设计的卖得更贵，标明"人做的"也不加价](../clips/2026-10-20-conlon-human-ai-competition-experiment.md) | 挑战 | 强 |

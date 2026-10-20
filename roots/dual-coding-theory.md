@@ -25,3 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [智谱论文曝光内部统一多模态模型 GLM-Omni](../clips/2026-10-20-nft-chen-zhipu-glm-omni-unified-multimodal-paper.md) | 相近 | 弱（待 Luke 确认） |

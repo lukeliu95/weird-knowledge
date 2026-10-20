@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [出租屋卖亚马逊爆款配件月销二十万](../clips/2026-10-18-vincent-ainotes-amazon-accessories-side-hustle.md) | 相近 | 弱（待 Luke 确认） |
 | [Clay：给 ToB 销售补全客户数据](../clips/2026-10-18-wanghao8080-clay-sales-data-enrichment.md) | 相近 | 弱（待 Luke 确认） |
+| [日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](../clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md) | 相近 | 弱（待 Luke 确认） |

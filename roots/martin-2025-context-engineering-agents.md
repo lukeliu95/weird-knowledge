@@ -31,3 +31,4 @@ verified: true
 |---|---|---|
 | [上下文工程：智能体的核心实践指南](../clips/2026-10-18-shao-meng-context-engineering-guide.md) | 直接源自 | 强 |
 | [Claude Code 的 Task 工具原理](../clips/2026-10-18-dotey-claude-code-task-subagent.md) | 相近 | 弱（待 Luke 确认） |
+| [Meta 的瘦编排器模式：编排器只管路由和检查，不做领域推理，14 个专项子 agent 各管一块](../clips/2026-10-20-meta-thin-orchestrator-agent-architecture.md) | 相近 | 弱（待 Luke 确认） |

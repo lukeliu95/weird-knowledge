@@ -31,3 +31,4 @@ verified: true
 |---|---|---|
 | [Agent 基础设施的一线观察](../clips/2026-10-18-dotey-anthropic-agent-infrastructure-talk.md) | 相近 | 弱（待 Luke 确认） |
 | [前Meta工程师的AI优先团队落地报告](../clips/2026-10-18-ayi-ainotes-peter-pang-ai-first-report.md) | 相近 | 弱（待 Luke 确认） |
+| [PwC 调查（在用或打算用生成式 AI 的大企业部长级 487 人）：已导入者里只有 29% 说对收入有贡献，多数只感到生产率提升](../clips/2026-10-20-pwc-japan-b2b-sales-genai-survey-2025.md) | 相近 | 弱（待 Luke 确认） |

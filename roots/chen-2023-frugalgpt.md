@@ -26,3 +26,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](../clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md) | 相近 | 弱（待 Luke 确认） |
+| [agent 每步的选择题交给小决策模型（UIUC 等，推文误作普林斯顿和谷歌），模拟网店里 4B 模型完成率 91.5%](../clips/2026-10-20-rohanpaul-ai-agent-decision-model-small-beats-big.md) | 直接源自 | 强 |

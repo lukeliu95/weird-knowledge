@@ -1,5 +1,5 @@
 ---
-title: PwC 调查：日本大企业 B2B 销售 68% 已用生成式 AI，但觉得对收入有贡献的只有 29%
+title: "PwC 调查（在用或打算用生成式 AI 的大企业部长级 487 人）：已导入者里只有 29% 说对收入有贡献，多数只感到生产率提升"
 author: PwCコンサルティング（平野 恵理子、川上 晶子、武井 優子、井上 さゆ梨）
 url: https://www.pwc.com/jp/ja/knowledge/thoughtleadership/ai-in-b2b-sales-survey2025.html
 source: 网页
@@ -7,10 +7,10 @@ published: 2026-05-29
 saved: 2026-10-20
 why: 探索日报：Luke 想看
 related_principles: ["原则 6", "原则 8"]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: []
+roots: [business-process-re-engineering, productivity-paradox, bresnahan-2002-it-workplace-organization, parasuraman-2000-levels-of-automation]
 ---
 
 ## 原文
@@ -108,4 +108,11 @@ PwCコンサルティングでは、営業領域におけるAI活用について
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：日本大企业 B2B 销售里用了生成式 AI 的，多数只感到生产率提升、少数感到收入贡献；拉开差距的是人才、治理、数据这些配套，所以要以 AI 为前提重新设计整个销售流程，而不是把 AI 塞进旧流程。
+- 源知识：
+  - [业务流程再造](../roots/business-process-re-engineering.md) · 关系：换了说法 · 强弱：强。提言①“不要把 AI 局部塞进现有业务，要以 AI 为前提重新设计整个营业流程”几乎就是 Hammer 的“不要自动化，要推倒重来”
+  - [生产率悖论](../roots/productivity-paradox.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。导入的多、感到收入贡献的少（29%），和“到处看得见计算机，生产率统计里看不见”同构；PwC 自己也说这和当年 DX 遇到的问题重合
+  - [信息技术、工作组织与技能劳动需求](../roots/bresnahan-2002-it-workplace-organization.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“只导入工具不会带来变革，成败看组织、人才、数据、治理的总体投入”几乎就是“IT 和组织重组、高技能人才互补，一起做效果才大”的结论；PwC 没有引用
+  - [自动化的类型与等级模型](../roots/parasuraman-2000-levels-of-automation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。PwC 按“AI 辅助人→人和 AI 协作→AI 自主应对客户”给每个销售环节分级，是自动化等级的分级思路
+- 本质：这条新知识本质上是“信息技术要配合组织再造和人才投资才见效”（生产率悖论、业务流程再造）在生成式 AI 进入 B2B 销售场景下的又一次应用。
+- 整理于：2026-10-21（第 4 轮）

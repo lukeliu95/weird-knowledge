@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Anthropic：用技能代替独立智能体](../clips/2026-10-18-hongming731-anthropic-agent-skills-talk.md) | 直接源自 | 强 |
+| [模型不动，只让技能库从用户请求里长：设计 agent 的技能从 76 个长到 139 个](../clips/2026-10-20-du-designer-rsi-procedural-memory.md) | 相近 | 强 |

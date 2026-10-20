@@ -30,3 +30,4 @@ verified: true
 | [OpenAI 称九成潜在市场来自企业](../clips/2026-10-18-raycat2021-openai-enterprise-market-90.md) | 相近 | 弱（待 Luke 确认） |
 | [JUAS 企業IT動向調査 2026：大企业自己定需求、外包开发，生成 AI 最怕泄密](../clips/2026-10-18-juas-corporate-it-trends-survey-2026.md) | 相近 | 弱（待 Luke 确认） |
 | [经产省 DXレポート：日本 CIO 倾向选大厂、接受老供应商的提案](../clips/2026-10-18-meti-dx-report-2025-digital-cliff.md) | 相近 | 强 |
+| [模型每周都在换：别把自己的上下文锁在一家产品里](../clips/2026-10-20-brian-lovin-portable-context-switching.md) | 换了说法 | 弱（待 Luke 确认） |

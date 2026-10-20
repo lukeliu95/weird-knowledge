@@ -32,3 +32,4 @@ AI 系统反复设计出比自己更强的下一代，可能引发「智能爆�
 | [智谱让 GLM-5.3 自己优化推理系统](../clips/2026-10-18-dotey-glm-5-3-optimizes-own-inference.md) | 直接源自 | 强 |
 | [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](../clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | 直接源自 | 强 |
 | [Terminal-RSI：两轮自重写加强化学习，27B 终端 agent 从 51.7% 涨到 86.5%](../clips/2026-10-18-nft-chen-terminal-rsi-recursive-self-improvement.md) | 直接源自 | 强 |
+| [Harness²：agent 不改模型，靠对照试验改自己的运行框架，还学会怎么改得更好](../clips/2026-10-19-xu-harness2-recursive-agent-harnessing.md) | 直接源自 | 强 |

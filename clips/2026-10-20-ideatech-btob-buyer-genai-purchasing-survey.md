@@ -1,5 +1,5 @@
 ---
-title: 日本大额 B2B 采购：九成选型用生成式 AI，84.7% 不填表就在调查候选厂商
+title: "日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查"
 author: 株式会社IDEATECH
 url: https://prtimes.jp/main/html/rd/p/000000717.000045863.html
 source: 网页（PR TIMES，厂商调查）
@@ -7,10 +7,10 @@ published: 2026-09-29
 saved: 2026-10-20
 why: 探索日报：Luke 想看
 related_principles: ["原则 9：红利和信息差都会被挤平"]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: []
+roots: [ceb-2012-digital-evolution-b2b-marketing, 6sense-2024-b2b-buyer-experience, gartner-2019-b2b-buying-journey, stigler-1961-economics-of-information, oldroyd-2011-short-life-online-sales-leads]
 ---
 
 ## 原文
@@ -231,3 +231,12 @@ URL　　： https://ideatech.jp
 
 ## 溯源
 
+- 核心主张：日本 500 万日元以上的 B2B IT 采购里，九成选型用了生成式 AI，课题整理的入口从搜索引擎转向生成式 AI；买方常常不填表就收集候选厂商信息，填表时多数希望比较推进后再被联系，所以卖方应在买方报名之前提供一手信息、把联系时机交给买方。
+- 源知识：
+  - [CEB：B2B 营销的数字化演变（57% 研究）](../roots/ceb-2012-digital-evolution-b2b-marketing.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“买方报名前已经缩小候选”和 CEB“平均走完 57% 才认真接触销售”是同一条规律；北川的评论说这是“海外先行讨论的潮流”，但没有点名出处
+  - [6sense 2024 B2B 买方体验报告](../roots/6sense-2024-b2b-buyer-experience.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。6sense 说接触销售前已走完约 69%、81% 已有首选厂商；本调查 Q6 有 74.3% 在“深入比较”阶段为止定下首选，方向一致。但本调查 Q5 显示约三分之二在方案探索阶段为止已向最终厂商报过名，接触比 6sense 说的早
+  - [Gartner 新 B2B 购买旅程（购买任务与买方赋能）](../roots/gartner-2019-b2b-buying-journey.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“在买方自己研究的阶段，提供人和 AI 都信得过的一手信息”就是 Gartner 说的买方赋能（帮买方完成购买任务）
+  - [信息经济学（搜寻成本与价格离散）](../roots/stigler-1961-economics-of-information.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。不填表的理由里 44.5% 是“用生成式 AI 也能拿到同等信息”：AI 压低了搜寻成本，买方不必再用个人信息去换资料
+  - [线上销售线索的短命（线索响应速度研究）](../roots/oldroyd-2011-short-life-online-sales-leads.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。Oldroyd 等主张线上线索要在一小时内跟进；本调查填表时只有 15.3% 想马上被联系、43.0% 想比较推进后再联系，主张把联系时机交给买方。两者测的东西不同（卖方联系上的成功率 vs 买方的意愿），只是在做法上部分相反
+- 本质：这条新知识本质上是“买方先自助调研、后接触销售”（CEB 57%、6sense 69%）这条 B2B 购买旅程规律，在生成式 AI 压低信息搜寻成本之后的日本大额采购场景下的再确认。
+- 整理于：2026-10-21（第 4 轮）

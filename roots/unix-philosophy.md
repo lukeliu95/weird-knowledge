@@ -33,3 +33,4 @@ verified: true
 | [Manus 把工具分成三层的设计](../clips/2026-10-18-dotey-manus-three-layer-tools.md) | 相近 | 弱（待 Luke 确认） |
 | [Agent Skills 是上下文卸载](../clips/2026-10-18-yonah-x-skills-context-offloading.md) | 直接源自 | 强 |
 | [常驻 agent 的 6 层结构（推文作者据 OpenAI 资料自制的 PDF）](../clips/2026-10-18-choopyplug1-openai-always-on-agent-six-layers.md) | 相近 | 弱（待 Luke 确认） |
+| [Meta 的瘦编排器模式：编排器只管路由和检查，不做领域推理，14 个专项子 agent 各管一块](../clips/2026-10-20-meta-thin-orchestrator-agent-architecture.md) | 相近 | 弱（待 Luke 确认） |

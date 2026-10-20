@@ -37,3 +37,4 @@ verified: true
 | [MiMo-V2.6 的强化学习之路](../clips/2026-10-18-luofuli-mimo-v2-6-scaling-rl.md) | 相近 | 弱（待 Luke 确认） |
 | [Sora 团队伯克利课堂分享字幕翻译](../clips/2026-10-18-dotey-sora-team-berkeley-talk.md) | 换了说法 | 强 |
 | [Tripo Eden：先建地图再渲染](../clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | 挑战 | 弱（待 Luke 确认） |
+| [Sohl-Dickstein 在斯坦福：稳妥的路已经不稳妥](../clips/2026-10-20-financeyf5-sohl-dickstein-safe-path-not-safe.md) | 直接源自 | 强 |

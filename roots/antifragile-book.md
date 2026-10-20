@@ -26,3 +26,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Marc Lou 六月赚 8.3 万美元](../clips/2026-10-18-marclou-marclou-june-2026-revenue.md) | 相近 | 弱（待 Luke 确认） |
+| [Sohl-Dickstein 在斯坦福：稳妥的路已经不稳妥](../clips/2026-10-20-financeyf5-sohl-dickstein-safe-path-not-safe.md) | 相近 | 弱（待 Luke 确认） |

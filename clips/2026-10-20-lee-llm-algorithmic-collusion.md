@@ -7,10 +7,10 @@ published: 2026-10（arXiv 预印本 2610.11256 [econ.GN]，v1 2026-10-08；SSRN
 saved: 2026-10-20
 why: 探索日报：Luke 想看
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 其他
-roots: []
+roots: [calvano-2020-algorithmic-collusion, fish-2024-llm-algorithmic-collusion, price-leadership, tacit-collusion, folk-theorem]
 ---
 
 ## 原文
@@ -87,4 +87,12 @@ roots: []
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：由不同厂商大模型分别定价的市场，会不会默契抬价取决于混进了哪家模型：价格高低由“定锚”的模型决定，稳定性由最不稳的模型决定，利润落到跟随者手里，抬价的那家反而赚得最少，和经典价格领导模型的预测一致。
+- 源知识：
+  - [人工智能定价算法与合谋](../roots/calvano-2020-algorithmic-collusion.md) · 关系：直接源自 · 强弱：强。论文的市场环境（4 家、logit 需求、价格竞争）直接沿用 Calvano 等 2020，研究的问题也是它提出的“定价算法不商量就合谋”。
+  - [大模型定价代理的算法合谋](../roots/fish-2024-llm-algorithmic-collusion.md) · 关系：直接源自 · 强弱：强。提示词、记忆（计划和心得）设计照搬 Fish 等 2024；本文把它的同质大模型实验扩展到多家、跨厂商混合。
+  - [价格领导](../roots/price-leadership.md) · 关系：直接源自 · 强弱：强。作者明说“抬价的那家拿得最少”正是价格领导模型的预测，并引用 Markham 1951、d'Aspremont 等 1983、Rotemberg & Saloner 1990。
+  - [默契合谋](../roots/tacit-collusion.md) · 关系：直接源自 · 强弱：强。全文测的就是“不交流也能协调到高价”的默契合谋程度（合谋指数 Δ），并引用 Stigler 1964 等默契合谋理论。
+  - [无名氏定理（重复博弈）](../roots/folk-theorem.md) · 关系：直接源自 · 强弱：强。作者引用 Friedman 1971（超博弈中的非合作均衡）作为默契合谋能在重复定价中维持的理论依据。
+- 本质：这条新知识本质上是“价格领导 + 重复博弈中的默契合谋（无名氏定理）”在由不同厂商大模型当定价代理的寡头市场里的应用。
+- 整理于：2026-10-21（第 4 轮）

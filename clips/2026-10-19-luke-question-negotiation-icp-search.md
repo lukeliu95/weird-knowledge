@@ -7,10 +7,10 @@ published: 2026-10-19
 saved: 2026-10-19
 why: 未说明
 related_principles: [原则 4, 原则 5]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: []
+roots: [question-negotiation, dimitriadou-2014-aide-explore-by-example, example-critiquing, constructive-preferences, closed-world-assumption]
 ---
 
 ## 原文
@@ -54,4 +54,12 @@ roots: []
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：用户说不清想找哪类企业时，不要猜着改写查询，而是先搜一小批具体企业样本给他看，再围绕样本和他协商“到底在问什么”，逐轮把条件换成能查到的路，并把“未知”和“不符合”分开记。
+- 源知识：
+  - [问题协商](../roots/question-negotiation.md) · 关系：直接源自 · 强弱：强。方案明说名字和做法来自 Taylor 1968；“查不到就退回去问主题、为什么问、背景”正是 Taylor 前三个过滤器（定主题、目的动机、提问者背景）
+  - [AIDE：按例探索的交互式数据探索](../roots/dimitriadou-2014-aide-explore-by-example.md) · 关系：直接源自 · 强弱：强。方案明说“选样本照 AIDE 的思路混着挑”；AIDE 就是让用户给系统挑出的样本打相关/不相关，逐轮学出他要的查询
+  - [举例批评（示例评论式推荐）](../roots/example-critiquing.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“先给样本、用户说不是他要的、再换条件搜”和举例批评式推荐几乎同构，但方案没有引用
+  - [偏好建构（偏好是现场建构的）](../roots/constructive-preferences.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“没看到具体公司之前追问，问了也是空的”和“偏好是看到选项时现场建构出来的”是同一个判断
+  - [封闭世界假设（及开放世界假设）](../roots/closed-world-assumption.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“未知不是 0 分也不是不符合，没证据按未知处理”就是不用封闭世界假设（查不到即为假），按开放世界假设处理缺证据的格子
+- 本质：这条新知识本质上是 Taylor 的问题协商和“按例探索 / 举例批评”（AIDE）在 B2B 客户画像搜索场景下的组合应用。
+- 整理于：2026-10-21（第 4 轮）
