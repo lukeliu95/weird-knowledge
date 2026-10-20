@@ -34,3 +34,4 @@
 | 10-21 | 溯源 | 厂商调查要专门核对：这一轮 C 组 7 条里查出 12 处误传，多数是只报一边的数字、分母换了、样本只收有意向的人；结论又都和厂商卖的东西一致。任务说明里写“写明厂商卖什么、样本多大，找原件核对数字”很管用 | 第 4 轮 C 组 |
 | 10-21 | 探索·侦察兵 | 3 个侦察兵并行时共用同一个 scratchpad，同名临时脚本（如 `parse.py`）会互相覆盖。派任务时让每个侦察兵用自己的子目录（如 `scratchpad/<轮次>-<序号>/`），或文件名带序号前缀 | 20261021-0048 轮，论文侦察兵的脚本被覆盖，改名后正常 |
 | 10-21 | 探索·侦察兵 | `opencli reddit subreddit` 返回 HTML 解析失败，这一轮拿不到 Reddit；`opencli hackernews search` 不带日期，改用 HN Algolia 公开接口（`numericFilters` 要 URL 编码，否则返回空）；openai.com 对 WebFetch 和 curl 都 403 | 20261021-0048 轮社区侦察兵 |
+| 10-21 | 探索·侦察兵 | 社区侦察兵：`opencli zhihu`、`opencli jike` 搜索要登录，直接跳过；HN Algolia 加 `restrictSearchableAttributes=title` 只搜标题，比全文搜干净；WebFetch 引原文有长度限制，摘 snippet 改用 curl 抓 HTML 自己剥文字。X 侦察兵：中英文“冷知识 / history”泛词噪音大（政治、搞钱帖），改搜具体对象（Bell Labs、Edison）或日文“実は”；每个侦察兵用自己的 scratchpad 子目录后，3 个并行没再互相覆盖 | 20261021-0108 轮 |
