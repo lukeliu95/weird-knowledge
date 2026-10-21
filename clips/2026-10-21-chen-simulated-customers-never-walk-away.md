@@ -5,7 +5,7 @@ url: https://arxiv.org/abs/2606.20708
 source: 论文
 published: 2026-06（arXiv 预印本 2606.20708 [cs.AI]，v1 2026-06-16；DOI 10.48550/arXiv.2606.20708）
 saved: 2026-10-21
-why: 探索日报：Luke 想看
+why: 探索日报：Luke 想看；Luke："这个研究对你来说很借鉴作用"
 related_principles: [原则 4, 原则 10, 原则 1]
 status: 未整理
 kind: 观点
