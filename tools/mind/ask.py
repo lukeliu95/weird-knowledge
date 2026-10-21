@@ -7,6 +7,8 @@
 用法：
   ask.py ask --from <谁> --question "…" [--options "A:…|B:…"] [--context-file <背景>] [--client <客户名>]
   ask.py record <id> --luke <字母> [--note "Luke 原话"] [--should-ask yes|no]
+  ask.py taste --text "…" [--author 名字] [--from 谁]   Luke 会不会想看这条内容（概率 + 最像的三条他点过赞的）
+  ask.py profile                   打印 Luke 当前的口味 skill，给别的 agent 先读
   ask.py report                    按类别报一致率、漏报、能不能升级
   ask.py backtest [--n 109]        用 private/l3 的旧选择题回测（只用更早的题做例子）
 """
@@ -193,6 +195,40 @@ def cmd_report(_):
               + ("，够升级了，请 Luke 定" if ok else ""))
 
 
+def cmd_taste(a):
+    """问口味：用当前冠军（本地 Qwen + 口味 skill + 8 条相似点赞）判 Luke 会不会想看。Qwen 连不上时改用 Opus 读 skill 判。"""
+    E.load_env()
+    champ = json.loads((E.PRIVATE / "l1" / "champion.json").read_text())
+    skill = (E.PRIVATE / "luke" / champ["profile"]).read_text()
+    text = Path(a.file).read_text() if a.file else a.text
+    idx = E.Index(E.liked_docs(set()))
+    ex = idx.top(text, champ.get("k", 8))
+    row = {"author": a.author, "text": text}
+    try:
+        if not OJ.qwen_ok():
+            raise RuntimeError("Qwen 连不上")
+        p = E.qwen(E.prompt(row, champ["cond"], skill, ex))
+        engine = "qwen+skill"
+    except Exception:
+        out = OJ.ask_json("你在模拟一个具体的人 Luke，判断他会不会想看。只输出 JSON。",
+                          f"【Luke 的阅读口味】\n{skill}\n\n【要判断的内容】作者 {a.author}\n{text[:2000]}\n\n"
+                          '输出 {"p": 他想看的概率 0 到 1}')
+        p, engine = float(out.get("p", 0)), "opus+skill"
+    res = {"p": round(p, 3), "verdict": "多半想看" if p >= 0.6 else "多半不想看" if p <= 0.4 else "拿不准",
+           "engine": engine, "similar_likes": [e["text"][:120] for e in ex[:3]]}
+    DIR.mkdir(parents=True, exist_ok=True)
+    with open(DIR / "taste.jsonl", "a") as f:
+        f.write(json.dumps({"at": now().isoformat(timespec="seconds"), "from": a.from_, "author": a.author,
+                            "text": text[:500], **res}, ensure_ascii=False) + "\n")
+    print(json.dumps(res, ensure_ascii=False, indent=1))
+
+
+def cmd_profile(_):
+    champ = json.loads((E.PRIVATE / "l1" / "champion.json").read_text())
+    print((E.PRIVATE / "luke" / champ["profile"]).read_text())
+    print("\n---\n他确认过的做事原则：\n" + principles())
+
+
 def cmd_backtest(a):
     """用旧选择题回测：去掉推荐标记，只用更早的题做例子，看猜中几道、有没有把"该问 Luke"的事判成不用问。"""
     E.load_env()
@@ -238,10 +274,17 @@ def main():
     p.add_argument("--note", default="")
     p.add_argument("--should-ask", choices=["yes", "no"], default="")
     sub.add_parser("report")
+    p = sub.add_parser("taste")
+    p.add_argument("--text", default="")
+    p.add_argument("--file", default="")
+    p.add_argument("--author", default="")
+    p.add_argument("--from", dest="from_", default="unknown")
+    sub.add_parser("profile")
     p = sub.add_parser("backtest")
     p.add_argument("--n", type=int, default=109)
     a = ap.parse_args()
-    {"ask": cmd_ask, "record": cmd_record, "report": cmd_report, "backtest": cmd_backtest}[a.cmd](a)
+    {"ask": cmd_ask, "record": cmd_record, "report": cmd_report, "backtest": cmd_backtest,
+     "taste": cmd_taste, "profile": cmd_profile}[a.cmd](a)
 
 
 if __name__ == "__main__":
