@@ -5,7 +5,7 @@ url: https://github.com/xdash/FDE-the-Guidance-Book-of-Forward-Deployed-Engineer
 source: 书
 published: 2026-08（GitHub 免费公开，v1.0.24；仓库建于 2026-07-30，最后更新 2026-08-14；官网 fde4.ai）
 saved: 2026-10-21
-why: 未说明
+why: "Luke：FDE 模式可以借鉴在日本市场落地，所以先学习着"
 related_principles: [原则 4, 原则 3, 原则 5, 原则 1]
 status: 未整理
 kind: 观点
