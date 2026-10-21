@@ -12,6 +12,7 @@
 - 状态：已确认（2026-10-18）
 - 支撑的新知识：[吴恩达讲做产品的三个循环](clips/2026-10-18-andrewyng-andrew-ng-three-product-loops.md)、[AlphaCodium 与流程工程](clips/2026-10-18-dotey-alphacodium-flow-engineering.md)、[外层harness让智能体连跑数小时](clips/2026-10-18-baoweiheihei-harness-unattended-long-running.md)、[Monolith论文：实时推荐致瘾](clips/2026-10-18-interjc-tiktok-monolith-realtime-recsys.md)、[陶哲轩谈 AI 与数学的演讲要点](clips/2026-10-18-dotey-terence-tao-ai-math-talk.md)、[Samuel 的跳棋程序：机器靠自己对弈学习，下得比写它的人还好](clips/2026-10-18-samuel-machine-learning-checkers.md)、[DeepSeek R1 论文解读：自学成才之路](clips/2026-10-18-oran-ge-deepseek-r1-paper-explained.md)、[开源模型自我验证跑赢闭源模型](clips/2026-10-18-jackyk02-self-verification-open-model-beats-closed.md)
 - 第 2 轮新增：[Anthropic：让模型验证自己的输出](clips/2026-10-18-0xcodez-anthropic-agent-loop-self-verify.md)、[吴恩达：自我改进循环将取代提示](clips/2026-10-18-0xmovez-andrew-ng-self-improving-loops.md)、[智谱让 GLM-5.3 自己优化推理系统](clips/2026-10-18-dotey-glm-5-3-optimizes-own-inference.md)、[Astra 电脑操作让验收成闭环](clips/2026-10-18-dotey-astra-computer-use-acceptance-loop.md)、[Claude Code之父的三条心得](clips/2026-10-18-ayi-ainotes-boris-cherny-workflow-three-rules.md)、[自然语言 Agent 应像好员工的七点](clips/2026-10-18-remixdesigner-agent-as-good-employee.md)、[Anthropic专家谈提示词工程师](clips/2026-10-18-eze-is-1-anthropic-prompt-engineering-notes.md)、[开 100 家便利店经验写成选址指南](clips/2026-10-18-hitw93-convenience-store-site-selection.md)（共 16 条）
+- 第 5 轮新增：[模拟客户从不走开](clips/2026-10-21-chen-simulated-customers-never-walk-away.md)：只有拿真实结果（付款）对照，才看得出模拟客户在"不会买的人"那里系统性地偏；回路要闭在真实结果上，闭在模拟器上会越练越偏
 - 对应的源知识：[控制论](roots/cybernetics.md)、[反馈](roots/feedback.md)、[效果律](roots/law-of-effect.md)、[测试驱动开发](roots/test-driven-development.md)；第 2 轮新增 [验收测试](roots/acceptance-testing.md)、[PDCA 循环（计划-执行-检查-处置）](roots/pdca.md)、[复合工程](roots/compounding-engineering.md)、[奖励塑形（势函数塑形下的策略不变性）](roots/ng-1999-reward-shaping.md)
 - 第 3 轮新增：[Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md)、[yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md)（共 18 条）；新源知识 [ReST：强化自训练](roots/gulcehre-2023-rest.md)、[ReST-EM](roots/singh-2023-rest-em.md)、[行动后复盘](roots/after-action-review.md)
 - 第 3 轮的新线索：Terminal-RSI 说明“自己练自己”能跑起来，前提是每一轮都有外部的自动检查把关，只留验证通过的记录；没有这一层，就会滑向模型崩溃。yetone 那条是同一件事的工程版：先搭好三端真实复现环境，“修好了”要靠实际跑一遍来判，教训写下来留给下一轮。
@@ -57,6 +58,7 @@
 - 已加进全局规则：2026-10-18，`~/.claude/CLAUDE.md` 第 5 节「需求去现场取」
 - 支撑的新知识：[Anthropic 讲前线部署工程师](clips/2026-10-18-dotey-fde-101-forward-deployed-engineer.md)、[前线部署工程师为何是 AI 落地时代的关键职业](clips/2026-10-18-indigox-forward-deployed-engineer-ai-era.md)、[AIDE：让用户给样本打"相关/不相关"，用主动学习猜出他真正想查的数据](clips/2026-10-18-dimitriadou-aide-active-learning-data-exploration.md)、[帮家具厂建 AI 产品库月入一万八](clips/2026-10-18-miles-mazy-furniture-factory-ai-product-library.md)、[OpenAI 报告：用户最常用的是懒脑力活](clips/2026-10-18-frxiaobei-chatgpt-usage-lazy-moments.md)
 - 第 2 轮新增：[范冰免费开源新书《前置部署工程师》](clips/2026-10-18-iluciddreaming-fde-book-free-open-source.md)、[国内 ToB 智能体至少还要一年](clips/2026-10-18-frxiaobei-tob-agent-one-year-away.md)、[同城 IP 团队的真实 Agent 需求](clips/2026-10-18-wanghao8080-local-ip-agent-need.md)、[Anthropic：用技能代替独立智能体](clips/2026-10-18-hongming731-anthropic-agent-skills-talk.md)、[征求产品意见别只问程序员群体](clips/2026-10-18-gorden-sun-dont-ask-programmers-product-feedback.md)、[做到千万美元ARR的B2B代理路径](clips/2026-10-18-financeyf5-b2b-ai-agent-10m-arr.md)、[Clay：给 ToB 销售补全客户数据](clips/2026-10-18-wanghao8080-clay-sales-data-enrichment.md)（共 12 条）
+- 第 5 轮新增：[范冰《前线部署工程师》](clips/2026-10-21-fanbing-fde-guidance-book.md)：整本书讲"把工程师驻到客户现场"，影子工作法直接引用人类学参与式观察和丰田现地现物；第 7 章"砾石路与高速公路"正是"取回来要沉淀成可复用的东西"那一半。Luke 存它的原因是想借鉴在日本落地
 - 对应的源知识：[默会知识（隐性知识）](roots/tacit-knowledge.md)、[粘滞信息](roots/sticky-information.md)、[《知识在社会中的运用》](roots/the-use-of-knowledge-in-society.md)、[SECI 知识转化模型](roots/seci-model-of-knowledge-dimensions.md)、[待完成的任务](roots/jobs-to-be-done.md)；第 2 轮新增 [知识获取瓶颈](roots/knowledge-acquisition-bottleneck.md)、[知识原则：智能体的本事主要来自专门知识](roots/feigenbaum-1977-knowledge-engineering.md)、[过程性知识（知道怎么做）](roots/procedural-knowledge.md)、[苦差事盲区](roots/graham-2012-schlep-blindness.md)
 - 和你已有原则的关系：和你做 GTM 的主线最近：客户的真实需求在现场，不在问卷里。第 2 轮补上了“沉淀”那一半：Anthropic 说“别造新 agent，造 skill”，skill 就是把现场取回的做事经验写成文件；这和 1977 年专家系统时代的“知识工程”是同一件事，当年卡在“知识获取瓶颈”，现在 ToB agent 卡的还是它。
 - 矛盾：前线部署很贵，规模化时会撞上利润率；两条 FDE 都没给出“什么时候该收手”的标准。
@@ -144,6 +146,7 @@
 
 - 状态：已确认（2026-10-18，第 2 轮新增）
 - 支撑的新知识：[上下文工程：智能体的核心实践指南](clips/2026-10-18-shao-meng-context-engineering-guide.md)、[Agent Skills 是上下文卸载](clips/2026-10-18-yonah-x-skills-context-offloading.md)、[Manus 把工具分成三层的设计](clips/2026-10-18-dotey-manus-three-layer-tools.md)、[ADK 开发者该懂的五种 Agent Skill 设计模式](clips/2026-10-18-googlecloudtech-adk-agent-skill-design-patterns.md)、[Agent Skills设计哲学与迭代](clips/2026-10-18-dotey-agent-skills-design-philosophy.md)、[Claude Code 的 Task 工具原理](clips/2026-10-18-dotey-claude-code-task-subagent.md)、[用个人AI编排者带动一支永不睡觉的开发队](clips/2026-10-18-ayi-ainotes-personal-ai-orchestrator-openclaw.md)（共 7 条）
+- 第 5 轮新增：[Claude 5 代模型的上下文工程新规矩](clips/2026-10-21-shihipar-context-engineering-claude-5.md)：系统提示删掉八成，少写规则和例子，按需加载
 - 对应的源知识：[AI 智能体的上下文工程](roots/anthropic-2025-effective-context-engineering.md)、[上下文工程](roots/context-engineering.md)、[用 Agent Skills 让智能体胜任真实工作](roots/anthropic-2025-agent-skills.md)、[渐进式披露](roots/progressive-disclosure.md)、[Unix 哲学](roots/unix-philosophy.md)、[虚拟内存](roots/virtual-memory.md)
 - 第 3 轮新增：[常驻 agent 的 6 层结构（推文作者据 OpenAI 资料自制的 PDF）](clips/2026-10-18-choopyplug1-openai-always-on-agent-six-layers.md)（共 8 条）；新源知识 [纵深防御](roots/defense-in-depth.md)
 - 第 3 轮的新线索：OpenAI 系统卡实测，同一个环境里连着做的中间任务从 5 个加到 10 个，越界比例从 8.6% 升到 19.7%，多是把信息带进了不相关的任务。给“子任务各带干净的上下文”添了一条实测证据。
@@ -158,6 +161,7 @@
 - 状态：已确认（2026-10-18，第 3 轮新增）
 - 已加进全局规则：2026-10-18，`~/.claude/CLAUDE.md` 第 5 节「放权靠证据升级」
 - 支撑的新知识：[OpenAI Dots 放权指南：动作分进 6 个权限区，每周按证据升降](clips/2026-10-18-choopyplug1-openai-dots-agent-permission-zones.md)、[常驻 agent 的 6 层结构（推文作者据 OpenAI 资料自制的 PDF）](clips/2026-10-18-choopyplug1-openai-always-on-agent-six-layers.md)、[yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md)（共 3 条）
+- 第 5 轮新增：[Claude Code 团队审代码的做法](clips/2026-10-21-dotey-claude-code-review-swiss-cheese.md)：九成代码由 AI 写，多道机器检查像叠起来的瑞士奶酪片，人只做机器做不好的判断，剩下的靠快速回滚兜底
 - 对应的源知识：[最小权限原则](roots/principle-of-least-privilege.md)、[失效安全默认（默认拒绝）](roots/fail-safe-defaults.md)、[自动化的类型与等级模型](roots/parasuraman-2000-levels-of-automation.md)、[对自动化的信任：为恰当依赖而设计](roots/lee-2004-trust-in-automation.md)、[纵深防御](roots/defense-in-depth.md)、[瑞士奶酪模型](roots/swiss-cheese-model.md)、[例外管理（例外原则）](roots/management-by-exception.md)
 - 和你已有原则的关系：你全局规则第 3 节写的“只有这几类事才停下来问他：要花钱、要对外发送、要删除东西、要合并或上线……”，就是 Dots 那条说的“必须交回人”那一区。这一条补的是另一半：其余的事不是一次放开，而是按记录一级级放宽，出一次意外就退一级。
 - 矛盾：支撑只有 3 条，都是这两天的常驻 agent 话题，还要更多证据。另外，什么都要批准会让人开始闭着眼点同意（Dots 那条自己也提到），分级太细反而失效。
@@ -170,6 +174,7 @@
 - 状态：已确认（2026-10-21，第 4 轮新增）
 - 已加进全局规则：2026-10-21，`~/.claude/CLAUDE.md` 第 5 节「买方先自己查」
 - 支撑的新知识：[日本 B2B 采购者：八成嫌官网都是一般论，57.1% 按“诚实”决定找谁询问](clips/2026-10-20-ideatech-btob-buyer-information-contact-survey.md)、[日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md)、[日本 B2B 的 AI 搜索对策：77% 觉得丢了商机，一半多还没动手，卡在不会做和算不清回报](clips/2026-10-20-probel-btob-ai-search-llmo-survey.md)、[Gartner 新 B2B 购买旅程：买方只花 17% 的时间见供应商](clips/2026-10-18-gartner-new-b2b-buying-journey.md)（共 4 条）
+- 第 5 轮新增：[生成 AI 时代的 BtoB 买方旅程图](clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md)、[HubSpot Japan《日本 BtoB 购买意识与实态调查》](clips/2026-10-21-hubspot-japan-state-of-buyer-2026.md)：日本买方见销售之前先自己用 AI 查，和这条的前半句一致
 - 对应的源知识：[CEB：B2B 营销的数字化演变（57% 研究）](roots/ceb-2012-digital-evolution-b2b-marketing.md)、[6sense 2024 B2B 买方体验报告](roots/6sense-2024-b2b-buyer-experience.md)、[Gartner 新 B2B 购买旅程（购买任务与买方赋能）](roots/gartner-2019-b2b-buying-journey.md)、[双面说服（正反两面信息）](roots/two-sided-persuasion.md)、[自愿披露与“沉默即坏消息”（信息解开）](roots/voluntary-disclosure-unraveling.md)、[信息经济学（搜寻成本与价格离散）](roots/stigler-1961-economics-of-information.md)、[生成式引擎优化（GEO）](roots/aggarwal-2024-geo.md)
 - 和你已有原则的关系：是原则 3 落到获客上的样子：AI 把一般信息做便宜了，稀缺的是只有卖方自己知道、又肯说出来的那部分。也碰到原则 9：AI 搜索（GEO）是新渠道，PROBEL 说一半多的企业还没动手。
 - 矛盾：4 条证据都是厂商调查，结论都和各自卖的东西一致。IDEATECH 自己的数据也显示，66.5% 的买方在方案探索阶段为止就向最终厂商报了名，比“走完 57%（CEB）、69%（6sense）才接触”早；Oldroyd 的线索研究主张一小时内跟进，和“联系时机交给买方”对着干（弱）。另外按 Allen 1991 的元分析，只讲缺点、不回应，可能适得其反。
@@ -181,21 +186,23 @@
 
 | 排名 | 源知识 | 被几条新知识指向（直接 / 连同间接） | 更底层的源头 |
 |---|---|---|---|
-| 1 | [反馈](roots/feedback.md) | 4 / 80 | 已到基础层 |
-| 2 | [控制论](roots/cybernetics.md) | 4 / 70 | 已到基础层 |
-| 3 | [自然选择](roots/natural-selection.md) | 0 / 54 | 已到基础层 |
-| 4 | [有限理性](roots/bounded-rationality.md) | 1 / 51 | 已到基础层 |
-| 5 | [比较优势](roots/comparative-advantage.md) | 0 / 43 | 已到基础层 |
-| 6 | [分工](roots/division-of-labour.md) | 5 / 36 | [比较优势](roots/comparative-advantage.md) |
-| 7 | [控制理论](roots/control-theory.md) | 0 / 36 | [反馈](roots/feedback.md) |
-| 8 | [经验曲线效应](roots/experience-curve-effect.md) | 2 / 35 | [学习曲线](roots/learning-curve.md) |
-| 9 | [学习曲线](roots/learning-curve.md) | 0 / 35 | 已到基础层 |
-| 10 | [智能体](roots/intelligent-agent.md) | 4 / 32 | [反馈](roots/feedback.md) |
-| 11 | [摩尔定律](roots/moores-law.md) | 1 / 32 | [经验曲线效应](roots/experience-curve-effect.md) |
-| 12 | [苦涩的教训](roots/bitter-lesson.md) | 12 / 31 | [摩尔定律](roots/moores-law.md) |
-| 13 | [效果律](roots/law-of-effect.md) | 0 / 28 | [自然选择](roots/natural-selection.md) |
-| 14 | [构建高效的智能体](roots/anthropic-2024-building-effective-agents.md) | 16 / 27 | [智能体](roots/intelligent-agent.md)、[分工](roots/division-of-labour.md) |
+| 1 | [反馈](roots/feedback.md) | 4 / 84 | 已到基础层 |
+| 2 | [控制论](roots/cybernetics.md) | 4 / 73 | 已到基础层 |
+| 3 | [自然选择](roots/natural-selection.md) | 0 / 57 | 已到基础层 |
+| 4 | [有限理性](roots/bounded-rationality.md) | 1 / 55 | 已到基础层 |
+| 5 | [比较优势](roots/comparative-advantage.md) | 0 / 44 | 已到基础层 |
+| 6 | [控制理论](roots/control-theory.md) | 0 / 39 | [反馈](roots/feedback.md) |
+| 7 | [分工](roots/division-of-labour.md) | 5 / 37 | [比较优势](roots/comparative-advantage.md) |
+| 8 | [经验曲线效应](roots/experience-curve-effect.md) | 2 / 36 | [学习曲线](roots/learning-curve.md) |
+| 9 | [学习曲线](roots/learning-curve.md) | 0 / 36 | 已到基础层 |
+| 10 | [智能体](roots/intelligent-agent.md) | 4 / 33 | [反馈](roots/feedback.md) |
+| 11 | [摩尔定律](roots/moores-law.md) | 1 / 33 | [经验曲线效应](roots/experience-curve-effect.md) |
+| 12 | [苦涩的教训](roots/bitter-lesson.md) | 12 / 32 | [摩尔定律](roots/moores-law.md) |
+| 13 | [效果律](roots/law-of-effect.md) | 0 / 30 | [自然选择](roots/natural-selection.md) |
+| 14 | [构建高效的智能体](roots/anthropic-2024-building-effective-agents.md) | 16 / 28 | [智能体](roots/intelligent-agent.md)、[分工](roots/division-of-labour.md) |
 | 15 | [正反馈](roots/positive-feedback.md) | 0 / 26 | [控制论](roots/cybernetics.md) |
+
+和第 4 轮比：反馈从 80 条涨到 84 条，控制论 70→73，自然选择 54→57，有限理性 51→55。控制理论从第 7 名升到第 6 名。第 5 轮 8 条新知识里，追到这几个基础源头的主要是用户模拟（模拟客户从不走开、Sim2Real 差距）、开放式搜索（质量多样性、新颖性搜索）和企业 AI 落地（前线部署工程师、现地现物）这几条。
 
 和第 3 轮比（含 2026-10-19 认可补课第 1 题后的重排）：反馈从 68 条涨到 80 条，自然选择从 45 条涨到 54 条、升到第 3。涨的全来自这一轮：25 条里有 12 条顺着更底层的源头追到反馈，9 条追到自然选择，主要是 agent 自我改进（Harness²、Designer-RSI、JitMem）、用户模拟（MIMESIS 等）和算法合谋这几条。控制理论从第 12 名升到第 7 名；效果律回到前 15，完全竞争掉了出去。
 
@@ -207,7 +214,7 @@
 
 ### 和经典理论对着干的
 
-第 1 轮 9 处，第 2 轮新增 21 处，第 3 轮新增 3 处，2026-10-19 认可补课第 1 题后计入 2 处，第 4 轮新增 6 处，共 41 处。强的 14 处排在前面。
+第 1 轮 9 处，第 2 轮新增 21 处，第 3 轮新增 3 处，2026-10-19 认可补课第 1 题后计入 2 处，第 4 轮新增 6 处，第 5 轮新增 2 处，共 43 处。强的 14 处排在前面。
 
 | 新知识 | 对着干的经典 | 强弱 |
 |---|---|---|
@@ -252,6 +259,8 @@
 | [挑战者销售：明星销售靠教给客户他没看到的问题，而不是靠关系](clips/2026-10-18-dixon-adamson-challenger-sale.md) | [SPIN 销售法](roots/rackham-1988-spin-selling.md) | 弱（待 Luke 确认） |
 | [日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md) | [线上销售线索的短命（线索响应速度研究）](roots/oldroyd-2011-short-life-online-sales-leads.md) | 弱（待 Luke 确认） |
 | [Meta 的瘦编排器模式：编排器只管路由和检查，不做领域推理，14 个专项子 agent 各管一块](clips/2026-10-20-meta-thin-orchestrator-agent-architecture.md) | [别做多智能体](roots/yan-2025-dont-build-multi-agents.md) | 弱（待 Luke 确认） |
+| [Claude 5 代模型的上下文工程新规矩：系统提示删掉八成，少写规则和例子，按需加载](clips/2026-10-21-shihipar-context-engineering-claude-5.md) | [语言模型是少样本学习者（GPT-3 论文）](roots/brown-2020-few-shot-learners.md) | 弱（待 Luke 确认） |
+| [Claude Code 团队审代码的做法：九成代码由 AI 写，多道检查像叠起来的瑞士奶酪片，人只做机器做不好的判断](clips/2026-10-21-dotey-claude-code-review-swiss-cheese.md) | [Fagan 审查（正式代码审查）](roots/fagan-inspection.md) | 弱（待 Luke 确认） |
 
 几组值得对照着看：
 - **规模还是结构**：杨立昆、Tripo Eden 认为光靠规模不够，要有新的结构或显式保存的状态；唐杰、Sora 团队押规模继续有效，能力会自己冒出来。
@@ -334,24 +343,24 @@
 全部新知识按主题和发布年份分布，看关注点这几年怎么变。由 `tools/topic_map.py` 生成。
 
 <!-- topic-map:begin -->
-共 1824 条新知识（含已归档）。补课找来、还没认可的 36 条不计入。数字是每年存下的条数；按发布年份算，不是保存日期。
+共 1837 条新知识（含已归档）。补课找来、还没认可的 36 条不计入。数字是每年存下的条数；按发布年份算，不是保存日期。
 
 | 主题 | 更早 | 2023 | 2024 | 2025 | 2026 | 未知 | 合计 | 观点 / 工具 / 教程 |
 |---|---|---|---|---|---|---|---|---|
-| Agent 与 Skill |  | 8 | 38 | 116 | 116 |  | 278 | 49 / 176 / 53 |
+| Agent 与 Skill |  | 8 | 38 | 116 | 117 |  | 279 | 50 / 176 / 53 |
 | 其他 |  | 25 | 32 | 47 | 94 |  | 198 | 73 / 110 / 15 |
-| AI 产品与创业 |  | 18 | 32 | 43 | 89 |  | 182 | 131 / 41 / 10 |
+| AI 产品与创业 |  | 18 | 32 | 43 | 90 |  | 183 | 132 / 41 / 10 |
 | 视频生成 |  | 2 | 10 | 18 | 142 |  | 172 | 13 / 68 / 91 |
-| 模型与本地部署 |  | 9 | 14 | 27 | 101 |  | 151 | 20 / 103 / 28 |
-| 编程智能体 |  | 4 | 21 | 38 | 81 |  | 144 | 28 / 54 / 62 |
+| 模型与本地部署 |  | 9 | 14 | 27 | 102 |  | 152 | 20 / 103 / 29 |
+| 编程智能体 |  | 4 | 21 | 38 | 84 |  | 147 | 30 / 55 / 62 |
 | 设计与前端 |  | 8 | 17 | 39 | 58 |  | 122 | 8 / 78 / 36 |
 | 图像生成 |  | 11 | 29 | 45 | 21 |  | 106 | 1 / 62 / 43 |
 | 提示词与写作 |  | 5 | 17 | 61 | 16 |  | 99 | 7 / 16 / 76 |
-| 增长与获客 | 10 | 1 | 15 | 19 | 51 | 1 | 97 | 47 / 22 / 28 |
+| 增长与获客 | 10 | 1 | 15 | 19 | 52 | 1 | 98 | 48 / 22 / 28 |
 | 语音与数字人 |  | 9 | 41 | 19 | 24 |  | 93 | 0 / 82 / 11 |
-| 学习与研究 | 3 | 11 | 31 | 16 | 22 |  | 83 | 18 / 32 / 33 |
+| 学习与研究 | 3 | 11 | 31 | 16 | 26 |  | 87 | 22 / 32 / 33 |
 | 思维与成长 |  | 6 | 12 | 8 | 27 | 1 | 54 | 53 / 1 / 0 |
-| 日本 | 4 | 6 | 4 | 6 | 11 | 1 | 32 | 20 / 11 / 1 |
+| 日本 | 4 | 6 | 4 | 6 | 13 | 1 | 34 | 22 / 11 / 1 |
 | 历史与冷知识 |  | 3 | 1 | 3 | 6 |  | 13 | 11 / 1 / 1 |
 
 **每个主题的代表**（先选已溯源的，再选观点类，最后按发布时间取最新）

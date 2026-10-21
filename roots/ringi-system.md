@@ -37,3 +37,4 @@ verified: true
 | [促进者“三驾马车”：133 个创新项目里，有权的人、懂技术的人、负责沟通协调的人三者都在时，商业上最成功](../clips/2026-10-19-hauschildt-kirchmann-troika-of-promotors.md) | 相近 | 弱（待 Luke 确认） |
 | [产能大上市公司部长和课长调查：37.4% 的课长觉得“权限不够用”，部长只有 24.2%；98.5% 的课长同时还在干一线的活](../clips/2026-10-19-sanno-listed-company-managers-authority-2019.md) | 相近 | 弱（待 Luke 确认） |
 | [一桥大学“组织之重”研究：日本大企业做新事业时 43.7% 的时间花在公司内部协调上，只要一个人反对决策就会异常拖长](../clips/2026-10-19-numagami-2006-organizational-weight.md) | 相近 | 弱（待 Luke 确认） |
+| [HubSpot Japan《日本 BtoB 购买意识与实态调查 2026》：63.5% 的买方接触卖方时已列好多个候选，AI 汇总的信息可信度最低](../clips/2026-10-21-hubspot-japan-state-of-buyer-2026.md) | 相近 | 弱（待 Luke 确认） |

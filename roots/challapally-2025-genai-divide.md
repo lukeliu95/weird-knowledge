@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [范冰免费开源新书《前置部署工程师》](../clips/2026-10-18-iluciddreaming-fde-book-free-open-source.md) | 直接源自 | 强 |
+| [范冰《前线部署工程师》：模型不稀缺了，稀缺的是把模型塞进客户真实业务的人](../clips/2026-10-21-fanbing-fde-guidance-book.md) | 直接源自 | 强 |

@@ -35,3 +35,4 @@ verified: true
 | [Manus 把工具分成三层的设计](../clips/2026-10-18-dotey-manus-three-layer-tools.md) | 相近 | 弱（待 Luke 确认） |
 | [上下文工程：智能体的核心实践指南](../clips/2026-10-18-shao-meng-context-engineering-guide.md) | 相近 | 弱（待 Luke 确认） |
 | [yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](../clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md) | 挑战 | 弱（待 Luke 确认） |
+| [Claude 5 代模型的上下文工程新规矩：系统提示删掉八成，少写规则和例子，按需加载](../clips/2026-10-21-shihipar-context-engineering-claude-5.md) | 直接源自 | 强 |

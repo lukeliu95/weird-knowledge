@@ -27,3 +27,4 @@ verified: true
 |---|---|---|
 | [WorkBuddy 播客：编程不再稀缺](../clips/2026-10-18-ayi-ainotes-workbuddy-podcast-ai-era-skills.md) | 挑战 | 弱（待 Luke 确认） |
 | [AI 个性化的大规模随机实验：人和 AI 的人格搭配会影响广告质量和点击率（PNAS）](../clips/2026-10-20-sinan-aral-ai-personalization-pnas.md) | 相近 | 强 |
+| [模拟客户从不走开：拿 793 笔真实付款对照，大模型扮的"不会买的客户"抗拒少一半、犹豫多一倍](../clips/2026-10-21-chen-simulated-customers-never-walk-away.md) | 直接源自 | 强 |

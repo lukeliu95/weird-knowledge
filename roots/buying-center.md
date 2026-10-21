@@ -36,3 +36,5 @@ verified: true
 | [Gartner 2025 调查：74% 的买方小组内部有“不健康的冲突”，达成共识的小组报告高质量成交的可能性高 2.5 倍](../clips/2026-10-19-gartner-buying-group-consensus-2025.md) | 换了说法 | 强 |
 | [ネオマーケティング 2026 稟議调查：费用效果是第一批准要点（43.7%），但只有 19.3% 准备了 ROI 试算；卖方给的材料只有 59.8% 真的帮上了稟議](../clips/2026-10-19-neo-marketing-btob-ringi-approval-2026.md) | 相近 | 强 |
 | [产能大上市公司部长和课长调查：37.4% 的课长觉得“权限不够用”，部长只有 24.2%；98.5% 的课长同时还在干一线的活](../clips/2026-10-19-sanno-listed-company-managers-authority-2019.md) | 相近 | 弱（待 Luke 确认） |
+| [生成 AI 时代的 BtoB 买方旅程图：见销售之前，74.3% 的买方心里已定好首选，84.7% 不愿填表单](../clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md) | 相近 | 弱（待 Luke 确认） |
+| [HubSpot Japan《日本 BtoB 购买意识与实态调查 2026》：63.5% 的买方接触卖方时已列好多个候选，AI 汇总的信息可信度最低](../clips/2026-10-21-hubspot-japan-state-of-buyer-2026.md) | 相近 | 弱（待 Luke 确认） |

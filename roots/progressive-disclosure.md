@@ -32,3 +32,4 @@ verified: true
 | [ADK 开发者该懂的五种 Agent Skill 设计模式](../clips/2026-10-18-googlecloudtech-adk-agent-skill-design-patterns.md) | 直接源自 | 强 |
 | [Anthropic：用技能代替独立智能体](../clips/2026-10-18-hongming731-anthropic-agent-skills-talk.md) | 直接源自 | 强 |
 | [Agent Skills 是上下文卸载](../clips/2026-10-18-yonah-x-skills-context-offloading.md) | 换了说法 | 弱（待 Luke 确认） |
+| [Claude 5 代模型的上下文工程新规矩：系统提示删掉八成，少写规则和例子，按需加载](../clips/2026-10-21-shihipar-context-engineering-claude-5.md) | 直接源自 | 强 |

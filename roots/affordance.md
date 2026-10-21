@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [无方向盘的 Cybercab 乘坐体验](../clips/2026-10-18-davelee-cybercab-no-steering-wheel-ride.md) | 相近 | 弱（待 Luke 确认） |
+| [Claude 5 代模型的上下文工程新规矩：系统提示删掉八成，少写规则和例子，按需加载](../clips/2026-10-21-shihipar-context-engineering-claude-5.md) | 相近 | 弱（待 Luke 确认） |

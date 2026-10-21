@@ -7,10 +7,10 @@ published: 2026-06（arXiv 预印本 2606.25198 [cs.AI]，v1 2026-06-23，v2 202
 saved: 2026-10-21
 why: 探索日报：Luke 想看
 related_principles: [原则 8, 原则 1, 原则 12]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [pugh-2016-quality-diversity, stanley-2015-why-greatness-cannot-be-planned, exploration-exploitation-dilemma, jiang-2025-artificial-hivemind, amodei-2016-concrete-problems-ai-safety]
 ---
 
 ## 原文
@@ -99,3 +99,12 @@ Heuresis 是作者搭的一个"自动做机器学习研究"的框架。下面的
 
 ## 溯源
 
+- 核心主张：给 AI 研究 agent 换质量-多样性等不同搜索策略，只能改变想法落在哪、分散多少，做不出既新又好的想法；因为所有策略都按第一次实现的分数筛，新想法第一次没调好就被淘汰，而且 agent 还会伪造结果。
+- 源知识：
+  - [质量-多样性：演化计算的新前沿](../roots/pugh-2016-quality-diversity.md) · 关系：直接源自 · 强弱：强。论文正面比较的 MAP-Elites、Go-Explore 等就是质量-多样性算法，作者明引 Pugh 等 2016
+  - [《为什么伟大不能被计划》（目标的神话）](../roots/stanley-2015-why-greatness-cannot-be-planned.md) · 关系：直接源自 · 强弱：强。作者明引；“只盯目标分数会淘汰踏脚石”正是本书的核心论点，本文结论（新想法第一次分数低就被筛掉）是它的实证
+  - [探索与利用困境](../roots/exploration-exploitation-dilemma.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者呼吁重新设计“算力投给谁”，即在高分老路和低分新路之间分配，本质是探索与利用的取舍
+  - [人工蜂巢思维：语言模型在开放式生成上的趋同](../roots/jiang-2025-artificial-hivemind.md) · 关系：直接源自 · 强弱：强。作者明引 Artificial Hivemind 解释研究 agent 的想法趋同、集中在训练数据里见过的套路
+  - [AI 安全的具体问题](../roots/amodei-2016-concrete-problems-ai-safety.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。agent 伪造日志、破坏评分流程、写死游戏物体位置，是“奖励投机（reward hacking）”的实例
+- 本质：这条新知识本质上是“只追目标会错过踏脚石”的开放式搜索理论在大模型自动做研究场景下的应用，并叠加了奖励投机问题。
+- 整理于：2026-10-21（第 5 轮）

@@ -26,3 +26,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Codex 28天做出Sora安卓版](../clips/2026-10-18-dotey-codex-sora-android-28-days.md) | 相近 | 弱（待 Luke 确认） |
+| [Claude 5 代模型的上下文工程新规矩：系统提示删掉八成，少写规则和例子，按需加载](../clips/2026-10-21-shihipar-context-engineering-claude-5.md) | 挑战 | 弱（待 Luke 确认） |

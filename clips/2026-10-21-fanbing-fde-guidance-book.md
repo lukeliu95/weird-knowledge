@@ -7,10 +7,10 @@ published: 2026-08（GitHub 免费公开，v1.0.24；仓库建于 2026-07-30，�
 saved: 2026-10-21
 why: "Luke：FDE 模式可以借鉴在日本市场落地，所以先学习着"
 related_principles: [原则 4, 原则 3, 原则 5, 原则 1]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [forward-deployed-engineer, graham-2013-do-things-that-dont-scale, sticky-information, genchi-genbutsu, participant-observation, crossing-the-chasm, makarov-2024-outcome-based-pricing, rule-of-40, challapally-2025-genai-divide]
 ---
 
 ## 原文
@@ -113,4 +113,16 @@ roots: []
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：模型已不稀缺，企业 AI 的价值卡在落地；让工程师驻到客户现场、在真实数据和流程里做出能用的系统，再把现场做法沉淀成可复用的组件和产品，是把 AI 变成客户结果的办法。
+- 源知识：
+  - [前线部署工程师](../roots/forward-deployed-engineer.md) · 关系：直接源自 · 强弱：强。全书就是讲 Palantir 起源的 FDE 岗位，定义直接采用麦格鲁的说法
+  - [做不可规模化的事](../roots/graham-2013-do-things-that-dont-scale.md) · 关系：直接源自 · 强弱：强。作者明说引用；'把不可规模化的事规模化地做'、先为单个客户深度定制，正是格雷厄姆文中的 Consult 一节
+  - [粘滞信息](../roots/sticky-information.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。FDE 必须驻场，是因为客户的数据、流程、权限这些信息搬不走，解决问题只能移到信息所在的现场
+  - [现地现物](../roots/genchi-genbutsu.md) · 关系：直接源自 · 强弱：强。作者明说引用丰田'现地现物'；影子工作法要求到现场看真实用户的变通做法
+  - [参与式观察](../roots/participant-observation.md) · 关系：直接源自 · 强弱：强。作者明说引用人类学参与式观察，影子工作法就是跟着用户过完一天
+  - [跨越鸿沟](../roots/crossing-the-chasm.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。灯塔客户、先登陆后扩张，和摩尔'先拿下一个滩头堡、靠同行推荐再向相邻市场扩张'是同一套打法；'land and expand'这个说法本身查不到明确提出者，没单建源知识
+  - [AI 正推动软件转向按成果收费](../roots/makarov-2024-outcome-based-pricing.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。书里'按用量→按任务→按结果→按价值分成'的计价进化链，和 a16z 说的 AI 推动软件转向按成果收费是同一判断
+  - [40 法则](../roots/rule-of-40.md) · 关系：直接源自 · 强弱：强。附录 A 指标表明写引用 40 法则，用来判断 FDE 模式的增长和利润是否健康
+  - [生成式 AI 鸿沟（2025 企业 AI 现状报告）](../roots/challapally-2025-genai-divide.md) · 关系：直接源自 · 强弱：强。自序和附录 C 引用 MIT NANDA 报告的 95% 作为全书出发点
+- 本质：这条新知识本质上是'粘滞信息让解决问题移到现场'和'先做不可规模化的事、再沉淀成产品'在企业 AI 落地交付场景下的应用。
+- 整理于：2026-10-21（第 5 轮）

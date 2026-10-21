@@ -7,10 +7,10 @@ published: 2026-07-24
 saved: 2026-10-21
 why: 探索日报：Luke 想看
 related_principles: [原则 2, 原则 11, 原则 1]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [anthropic-2025-effective-context-engineering, progressive-disclosure, kaplow-1992-rules-versus-standards, affordance, brown-2020-few-shot-learners]
 ---
 
 ## 原文
@@ -151,3 +151,12 @@ Across your system prompt, skills, and CLAUDE.md files, you may need to simplify
 
 ## 溯源
 
+- 核心主张：模型变强以后，上下文要做减法：少写硬规则、少给例子、不把所有东西一次塞进去，改为让模型自己判断、把工具和参数设计得一看就会用、需要时再加载细节；Claude Code 因此删掉了八成系统提示，编程评测没有下降。
+- 源知识：
+  - [AI 智能体的上下文工程](../roots/anthropic-2025-effective-context-engineering.md) · 关系：直接源自 · 强弱：强。作者在文中直接链接这篇，把它当作“上下文工程”的定义；本文是它在 Claude 5 代模型上的更新版
+  - [渐进式披露](../roots/progressive-disclosure.md) · 关系：直接源自 · 强弱：强。作者明说用渐进式披露：审代码、验证拆成技能，工具延迟加载，CLAUDE.md 只留入口
+  - [规则与标准：经济分析](../roots/kaplow-1992-rules-versus-standards.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。从“给规则”换成“给判断”，就是法经济学里规则和标准的取舍：执行方判断能力变强、情况变多时，标准比事先写死的规则更划算（模型推断，待 Luke 确认）
+  - [可供性（示能）](../roots/affordance.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“与其给例子，不如设计界面”：状态枚举本身就提示了工具该怎么用，正是让对象自己显示用法的可供性思路（模型推断，待 Luke 确认）
+  - [语言模型是少样本学习者（GPT-3 论文）](../roots/brown-2020-few-shot-learners.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。少样本示例曾是提示的头号做法；作者发现对新模型给例子反而把它限制在例子圈出的范围里（模型推断，待 Luke 确认）
+- 本质：这条新知识本质上是“规则与标准之争”和渐进式披露在大模型上下文设计里的应用：执行者（模型）判断力变强后，用少量目标加好用的界面、按需加载，替代事先写死的规则和例子。
+- 整理于：2026-10-21（第 5 轮）

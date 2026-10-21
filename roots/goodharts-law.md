@@ -29,3 +29,4 @@ verified: true
 | [阿里国际站用590万AI页面冲SEO](../clips/2026-10-18-willlhhh-alibaba-5-9m-ai-pages-seo.md) | 相近 | 弱（待 Luke 确认） |
 | [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](../clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | 相近 | 弱（待 Luke 确认） |
 | [“55% 规则”的原意：暗访者问短的事实题时馆员的答对率，不是用户满意度](../clips/2026-10-19-hernon-mcclure-55-percent-rule.md) | 相近 | 弱（待 Luke 确认） |
+| [模拟客户从不走开：拿 793 笔真实付款对照，大模型扮的"不会买的客户"抗拒少一半、犹豫多一倍](../clips/2026-10-21-chen-simulated-customers-never-walk-away.md) | 相近 | 弱（待 Luke 确认） |

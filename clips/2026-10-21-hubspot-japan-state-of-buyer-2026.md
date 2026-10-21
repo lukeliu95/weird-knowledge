@@ -7,10 +7,10 @@ published: 2026-07-16
 saved: 2026-10-21
 why: 探索日报：Luke 想看
 related_principles: ["原则 3", "原则 13"]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 日本
-roots: []
+roots: [gartner-2019-b2b-buying-journey, 6sense-2024-b2b-buyer-experience, inbound-marketing, lee-2004-trust-in-automation, buying-center, ringi-system]
 ---
 
 ## 原文
@@ -174,3 +174,13 @@ pr-japan@hubspot.com
 
 ## 溯源
 
+- 核心主张：日本 B2B 买方用 AI 自己主导前期的候选整理和比较，六成多在接触卖方时已列好候选；但 AI 汇总的信息可信度最低、要核实后才进稟議，所以卖方要公开明确的价格和条件帮买方'自走'，并在接触后补买方自己确认不了的信息、讲清导入后的支持'伴走'。
+- 源知识：
+  - [Gartner 新 B2B 购买旅程（购买任务与买方赋能）](../roots/gartner-2019-b2b-buying-journey.md) · 关系：换了说法 · 强弱：弱（待 Luke 确认）。'卖方要提供帮买方做内部判断的材料'就是 Gartner 的买方赋能，HubSpot 没引用
+  - [6sense 2024 B2B 买方体验报告](../roots/6sense-2024-b2b-buyer-experience.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。同样是'买方推进到相当程度才接触销售'，口径不同（列好候选 63.5% vs 走完 69% 流程）
+  - [集客营销（Inbound marketing）](../roots/inbound-marketing.md) · 关系：直接源自 · 强弱：强。HubSpot 在文中明说践行'インバウンド'思想，'用丰富公开信息支持还没来接触的买方自走'正是集客营销
+  - [对自动化的信任：为恰当依赖而设计](../roots/lee-2004-trust-in-automation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。买方用 AI 但最不信 AI 信息、多数先核实再用，是对自动化的'校准信任'
+  - [采购中心（决策单元）](../roots/buying-center.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。46.9% 的购买有 5 人以上参与，购买是组织决定
+  - [稟議制](../roots/ringi-system.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。AI 信息要改成能过稟議的材料，最大难点是'社内说不清费用效果'，是日本稟議制下的特有约束
+- 本质：这条新知识本质上是集客营销和买方赋能在'买方用 AI 自助调研、但仍要过稟議'的日本 B2B 采购场景下的应用。
+- 整理于：2026-10-21（第 5 轮）

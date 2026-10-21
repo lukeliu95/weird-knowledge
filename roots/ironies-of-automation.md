@@ -31,3 +31,4 @@ verified: true
 | [AI 锯断专家阶梯，新手没了试错机会](../clips/2026-10-18-frxiaobei-ai-apprentice-expert-ladder.md) | 换了说法 | 强 |
 | [Agent 循环工程晚宴讨论要点](../clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | 挑战 | 弱（待 Luke 确认） |
 | [会写代码才玩得好 vibe coding](../clips/2026-10-18-aryanlabde-vibe-coding-needs-coding-skill.md) | 相近 | 弱（待 Luke 确认） |
+| [Claude Code 团队审代码的做法：九成代码由 AI 写，多道检查像叠起来的瑞士奶酪片，人只做机器做不好的判断](../clips/2026-10-21-dotey-claude-code-review-swiss-cheese.md) | 相近 | 弱（待 Luke 确认） |
