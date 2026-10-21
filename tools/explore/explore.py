@@ -633,10 +633,15 @@ def cmd_report(_):
         for k, v in sorted(g.items(), key=lambda kv: -len(kv[1])):
             print(f"  {k}: {rate(v)}")
     for sc in ("qwen", "opus"):   # 两个打分引擎的概率口径不同，分开算
-        sub = [r for r in rows if r.get("scorer", "qwen") == sc]
+        sub = [r for r in rows if r.get("scorer", "qwen") == sc and r.get("p") is not None]
         if sub and 0 < sum(r["label"] for r in sub) < len(sub):
             m = E.metrics([{"p": r["p"], "label": r["label"]} for r in sub])
             print(f"\n{sc} 在这些回答上（{len(sub)} 条）：AUC {m['auc']}，准确率 {m['acc']}，校准误差 {m['ece']}")
+            # 按结果分开看（借自 Chen 2026《模拟客户从不走开》）：只看平均会掩盖"把不想看的也打高分"
+            y1 = [r["p"] for r in sub if r["label"] == 1]
+            y0 = [r["p"] for r in sub if r["label"] == 0]
+            print(f"  想看的平均分 {sum(y1) / len(y1):.2f}，不想看的平均分 {sum(y0) / len(y0):.2f}，"
+                  f"差 {sum(y1) / len(y1) - sum(y0) / len(y0):+.2f}（越大越好；不想看的平均分越接近 0 越好）")
 
 
 def main():

@@ -128,7 +128,12 @@ def main():
             nll += -math.log(max(dist.get(r["choice"], 0), 1e-6))
             out.append({"id": r["id"], "choice": r["choice"], "rec": r["recommended"], "pred": pred, "dist": dist})
         n = len(rows)
-        summary[cond] = {"n": n, "acc": round(hits / n, 3), "nll": round(nll / n, 3), "engine": engine}
+        # 按结果分开看（借自 Chen 2026）：跟推荐走的题容易，不跟推荐走的题才见真本事，总分会把后者淹掉
+        fol = [o for o, r in zip(out, rows) if r["recommended"] and r["choice"] == r["recommended"]]
+        dev = [o for o, r in zip(out, rows) if r["recommended"] and r["choice"] != r["recommended"]]
+        summary[cond] = {"n": n, "acc": round(hits / n, 3), "nll": round(nll / n, 3), "engine": engine,
+                         "acc_follow_rec": f"{sum(o['pred'] == o['choice'] for o in fol)}/{len(fol)}",
+                         "acc_against_rec": f"{sum(o['pred'] == o['choice'] for o in dev)}/{len(dev)}"}
         (DIR / "runs").mkdir(parents=True, exist_ok=True)
         (DIR / "runs" / f"{stamp}-{engine}-{cond}.jsonl").write_text("".join(json.dumps(o, ensure_ascii=False) + "\n" for o in out))
         print(cond, summary[cond], flush=True)
