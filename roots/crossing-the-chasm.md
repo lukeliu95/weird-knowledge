@@ -27,4 +27,4 @@ verified: true
 |---|---|---|
 | [Thiel一小时讲透从零做垄断的底层逻辑](../clips/2026-10-18-kkawsb-peter-thiel-monopoly-lecture.md) | 相近 | 弱（待 Luke 确认） |
 | [做到千万美元ARR的B2B代理路径](../clips/2026-10-18-financeyf5-b2b-ai-agent-10m-arr.md) | 相近 | 弱（待 Luke 确认） |
-| [范冰《前线部署工程师》：模型不稀缺了，稀缺的是把模型塞进客户真实业务的人](../clips/2026-10-21-fanbing-fde-guidance-book.md) | 相近 | 弱（待 Luke 确认） |
+| [范冰《前线部署工程师》：模型不稀缺了，稀缺的是把模型塞进客户真实业务的人](../clips/2026-10-21-fanbing-fde-guidance-book.md) | 相近 | 弱（Luke 已确认） |

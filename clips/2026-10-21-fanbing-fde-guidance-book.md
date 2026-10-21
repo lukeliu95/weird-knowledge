@@ -120,7 +120,7 @@ roots: [forward-deployed-engineer, graham-2013-do-things-that-dont-scale, sticky
   - [粘滞信息](../roots/sticky-information.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。FDE 必须驻场，是因为客户的数据、流程、权限这些信息搬不走，解决问题只能移到信息所在的现场
   - [现地现物](../roots/genchi-genbutsu.md) · 关系：直接源自 · 强弱：强。作者明说引用丰田'现地现物'；影子工作法要求到现场看真实用户的变通做法
   - [参与式观察](../roots/participant-observation.md) · 关系：直接源自 · 强弱：强。作者明说引用人类学参与式观察，影子工作法就是跟着用户过完一天
-  - [跨越鸿沟](../roots/crossing-the-chasm.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。灯塔客户、先登陆后扩张，和摩尔'先拿下一个滩头堡、靠同行推荐再向相邻市场扩张'是同一套打法；'land and expand'这个说法本身查不到明确提出者，没单建源知识
+  - [跨越鸿沟](../roots/crossing-the-chasm.md) · 关系：相近 · 强弱：弱（Luke 已确认，2026-10-21）。灯塔客户、先登陆后扩张，和摩尔'先拿下一个滩头堡、靠同行推荐再向相邻市场扩张'是同一套打法；'land and expand'这个说法本身查不到明确提出者，没单建源知识
   - [AI 正推动软件转向按成果收费](../roots/makarov-2024-outcome-based-pricing.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。书里'按用量→按任务→按结果→按价值分成'的计价进化链，和 a16z 说的 AI 推动软件转向按成果收费是同一判断
   - [40 法则](../roots/rule-of-40.md) · 关系：直接源自 · 强弱：强。附录 A 指标表明写引用 40 法则，用来判断 FDE 模式的增长和利润是否健康
   - [生成式 AI 鸿沟（2025 企业 AI 现状报告）](../roots/challapally-2025-genai-divide.md) · 关系：直接源自 · 强弱：强。自序和附录 C 引用 MIT NANDA 报告的 95% 作为全书出发点
