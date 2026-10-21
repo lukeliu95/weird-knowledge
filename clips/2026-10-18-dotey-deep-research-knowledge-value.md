@@ -57,8 +57,8 @@ roots: [thompson-2025-deep-research-value, there-are-unknown-unknowns, what-you-
 - 源知识：
   - [深度研究与知识价值](../roots/thompson-2025-deep-research-value.md) · 关系：直接源自 · 强弱：强。宝玉明说是在推荐、转述 Ben Thompson 这篇文章，配图、私营供应链企业的例子和「未知的已知」都出自原文。
   - [已知的已知、已知的未知、未知的未知](../roots/there-are-unknown-unknowns.md) · 关系：直接源自 · 强弱：强。文中「未知的已知」直接借自 Thompson 用的 unknown known，这个词属于 Rumsfeld 那套知识四分法（Žižek 补的第四格），但意思被改成了「以为知道、其实漏了」。
-  - [所见即全部（WYSIATI）](../roots/what-you-see-is-all-there-is.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「报告缺了关键实体，却给人似乎已经知道一切的假象」和 Kahneman 说的「只凭手头信息编出完整故事、不问缺了什么，信息越少反而越自信」几乎是同一个机制；原文没引（待 Luke 确认）。
-  - [路灯效应（醉汉找钥匙）](../roots/streetlight-effect.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Deep Research 只能在公开互联网这盏「路灯」下找，而关键信息恰恰在不公开的暗处，和醉汉只在路灯下找钥匙是同一种偏差；原文没引（待 Luke 确认）。
-  - [《知识在社会中的运用》](../roots/the-use-of-knowledge-in-society.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。决定行业全貌的关键信息分散在私营企业手里、不上网，集中汇总的工具拿不到，和 Hayek「具体情境的知识分散在个人手里、无法集中」相近；Thompson 原文还谈到用价格和预测市场揭示隐藏信息（待 Luke 确认）。
+  - [所见即全部（WYSIATI）](../roots/what-you-see-is-all-there-is.md) · 关系：相近 · 强弱：弱（模型复核通过）。「报告缺了关键实体，却给人似乎已经知道一切的假象」和 Kahneman 说的「只凭手头信息编出完整故事、不问缺了什么，信息越少反而越自信」几乎是同一个机制；原文没引（待 Luke 确认）。
+  - [路灯效应（醉汉找钥匙）](../roots/streetlight-effect.md) · 关系：相近 · 强弱：弱（模型复核通过）。Deep Research 只能在公开互联网这盏「路灯」下找，而关键信息恰恰在不公开的暗处，和醉汉只在路灯下找钥匙是同一种偏差；原文没引（待 Luke 确认）。
+  - [《知识在社会中的运用》](../roots/the-use-of-knowledge-in-society.md) · 关系：相近 · 强弱：弱（模型复核通过）。决定行业全貌的关键信息分散在私营企业手里、不上网，集中汇总的工具拿不到，和 Hayek「具体情境的知识分散在个人手里、无法集中」相近；Thompson 原文还谈到用价格和预测市场揭示隐藏信息（待 Luke 确认）。
 - 本质：这条新知识本质上是「只在容易看的地方找」的可得信息偏差（路灯效应、所见即全部）加「关键知识分散且不公开」（Hayek）在 AI 深度研究工具上的应用：公开信息被做便宜之后，价值转向不公开的一手信息。
 - 整理于：2026-10-18（第 1 轮）

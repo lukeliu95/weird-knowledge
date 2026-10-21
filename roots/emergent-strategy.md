@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [为什么大多数公司不该有 AI 战略](../clips/2026-10-18-dotey-why-no-ai-strategy.md) | 相近 | 弱（待 Luke 确认） |
+| [为什么大多数公司不该有 AI 战略](../clips/2026-10-18-dotey-why-no-ai-strategy.md) | 相近 | 弱（模型复核通过） |

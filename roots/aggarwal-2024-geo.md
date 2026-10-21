@@ -28,5 +28,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [日本 B2B 的 AI 搜索对策：77% 觉得丢了商机，一半多还没动手，卡在不会做和算不清回报](../clips/2026-10-20-probel-btob-ai-search-llmo-survey.md) | 直接源自 | 弱（待 Luke 确认） |
-| [生成 AI 时代的 BtoB 买方旅程图：见销售之前，74.3% 的买方心里已定好首选，84.7% 不愿填表单](../clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md) | 相近 | 弱（待 Luke 确认） |
+| [生成 AI 时代的 BtoB 买方旅程图：见销售之前，74.3% 的买方心里已定好首选，84.7% 不愿填表单](../clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md) | 相近 | 弱（模型复核通过） |

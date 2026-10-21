@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: [market-segmentation, maslows-hierarchy-of-needs, lindy-effect, attention-economy]
+roots: [market-segmentation, attention-economy]
 ---
 
 ## 原文
@@ -22,8 +22,6 @@ roots: [market-segmentation, maslows-hierarchy-of-needs, lindy-effect, attention
 - 核心主张：个人成长是需求长期存在的大市场；“把一本书压缩成几分钟”这个细分切口，能靠大规模投广告拿到海量用户和高收入。
 - 源知识：
   - [市场细分](../roots/market-segmentation.md) · 关系：直接源自 · 强弱：强。原文直接把书籍总结称为个人成长领域里的“细分市场”。
-  - [马斯洛需求层次](../roots/maslows-hierarchy-of-needs.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。个人成长对应需求层次里的自我实现，是基本需求满足后会一直存在的需求。
-  - [林迪效应](../roots/lindy-effect.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“永远都不过时”：已经存在很久的需求，越可能继续存在下去。
-  - [注意力经济](../roots/attention-economy.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。把书压缩成几分钟，卖的是替用户省下的注意力和时间。
+  - [注意力经济](../roots/attention-economy.md) · 关系：相近 · 强弱：弱（模型复核通过）。把书压缩成几分钟，卖的是替用户省下的注意力和时间。
 - 本质：这条新知识本质上是「注意力稀缺」在个人成长这个长期需求市场里，通过细分切口变现的应用。
 - 整理于：2026-10-18（第 2 轮）

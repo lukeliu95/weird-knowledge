@@ -28,4 +28,3 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Claude Code播客：工具终将消失](../clips/2026-10-18-genie0309-claude-code-podcast-tools-disappear.md) | 直接源自 | 强 |
-| [Claude Code之父：配置越少越好](../clips/2026-10-18-xiaohu-claude-code-minimal-claude-md.md) | 相近 | 弱（待 Luke 确认） |

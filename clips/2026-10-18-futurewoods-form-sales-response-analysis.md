@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: [law-of-shitty-clickthroughs, sampling-bias]
+roots: [sampling-bias]
 adopted: true
 ---
 
@@ -48,7 +48,6 @@ adopted: true
 
 - 核心主张：日本表单营销的“点击率”在 4～7% 这个量级，回信和商谈只会更低；平时收到营业信息少的企业反应更好，个别化文案能提高反应。
 - 源知识：
-  - [烂点击率定律（营销渠道衰减）](../roots/law-of-shitty-clickthroughs.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。少被打扰的入口反应更好，和渠道越用越衰减相近；这份数据没有时间序列，是推断。
   - [抽样偏差](../roots/sampling-bias.md) · 关系：相近 · 强弱：强。只来自自家工具用户，新闻稿自己承认对象企业不同。
 - 本质：这条新知识本质上是渠道衰减规律的一个侧面：大家都在发的入口反应差，少有人发的入口反应好。
 - 整理于：2026-10-18（补课第 1 题）

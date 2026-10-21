@@ -26,4 +26,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Anthropic 经济指数「节奏」：用法跟着作息走，越值钱的活越费算力，越放手交给 AI 的人越乐观](../clips/2026-10-20-anthropic-economic-index-cadences.md) | 直接源自 | 强 |
-| [网易 LobsterAI《中国办公 Agent 用户行为报告》的反直觉结论](../clips/2026-10-20-vista8-lobsterai-china-office-agent-user-report.md) | 相近 | 弱（待 Luke 确认） |
+| [网易 LobsterAI《中国办公 Agent 用户行为报告》的反直觉结论](../clips/2026-10-20-vista8-lobsterai-china-office-agent-user-report.md) | 相近 | 弱（模型复核通过） |

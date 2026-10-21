@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [吴恩达：自我改进循环将取代提示](../clips/2026-10-18-0xmovez-andrew-ng-self-improving-loops.md) | 直接源自 | 弱（待 Luke 确认） |
+| [吴恩达：自我改进循环将取代提示](../clips/2026-10-18-0xmovez-andrew-ng-self-improving-loops.md) | 直接源自 | 弱（模型复核通过） |

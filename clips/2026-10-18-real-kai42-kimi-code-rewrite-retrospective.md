@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: [information-hiding, law-of-amplification, skill-biased-technological-change, dellacqua-2023-jagged-technological-frontier, linuss-law, allen-curve]
+roots: [information-hiding, law-of-amplification, skill-biased-technological-change, dellacqua-2023-jagged-technological-frontier, allen-curve]
 ---
 
 ## 原文
@@ -42,11 +42,10 @@ roots: [information-hiding, law-of-amplification, skill-biased-technological-cha
 
 - 核心主张：agent 写代码的时代架构更重要：好架构把改动圈在可控范围内，agent 才能放开写而不打破东西；代码质量仍正比于人的注意力密度，所以 agent 会把顶级程序员的产出放大 20 倍并淘汰其他人；封闭开发、随时当面吵架让架构迭代极快。
 - 源知识：
-  - [信息隐藏](../roots/information-hiding.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。信息隐藏把易变的设计决定藏进模块、对外只给稳定接口，让改动不波及别处；“好架构让 agent 在可控范围内肆意 coding 而不打破东西”是同一个道理。
-  - [技术放大定律](../roots/law-of-amplification.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。技术放大已有的人的能力：本条说 agent 只会让顶级程序员生产力翻 20 倍。
-  - [技能偏向型技术变革](../roots/skill-biased-technological-change.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。新技术和高技能者互补、拉大差距；“淘汰其他程序员”是这个说法在编程上的版本。
-  - [在参差不齐的技术边界上航行（BCG 顾问实验）](../roots/dellacqua-2023-jagged-technological-frontier.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。BCG 顾问实地实验发现原本水平低的人用 AI 提升最多（43%），GitHub Copilot 对照实验也发现经验少的人受益更多，和“只放大顶级程序员”相反。
-  - [林纳斯定律（眼睛够多，bug 无处藏）](../roots/linuss-law.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“代码质量正比于人类的注意力密度”和“眼睛够多、bug 无处藏”一样，把质量归于投入审查的人类注意力。
-  - [艾伦曲线（交流频率随距离衰减）](../roots/allen-curve.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Allen 发现工程师交流频率随距离急剧下降；本条说封闭开发、随时拉全员到白板前吵架让架构迭代极快，是同一现象的另一面。
+  - [信息隐藏](../roots/information-hiding.md) · 关系：相近 · 强弱：弱（模型复核通过）。信息隐藏把易变的设计决定藏进模块、对外只给稳定接口，让改动不波及别处；“好架构让 agent 在可控范围内肆意 coding 而不打破东西”是同一个道理。
+  - [技术放大定律](../roots/law-of-amplification.md) · 关系：相近 · 强弱：弱（模型复核通过）。技术放大已有的人的能力：本条说 agent 只会让顶级程序员生产力翻 20 倍。
+  - [技能偏向型技术变革](../roots/skill-biased-technological-change.md) · 关系：相近 · 强弱：弱（模型复核通过）。新技术和高技能者互补、拉大差距；“淘汰其他程序员”是这个说法在编程上的版本。
+  - [在参差不齐的技术边界上航行（BCG 顾问实验）](../roots/dellacqua-2023-jagged-technological-frontier.md) · 关系：挑战 · 强弱：弱（模型复核通过）。BCG 顾问实地实验发现原本水平低的人用 AI 提升最多（43%），GitHub Copilot 对照实验也发现经验少的人受益更多，和“只放大顶级程序员”相反。
+  - [艾伦曲线（交流频率随距离衰减）](../roots/allen-curve.md) · 关系：相近 · 强弱：弱（模型复核通过）。Allen 发现工程师交流频率随距离急剧下降；本条说封闭开发、随时拉全员到白板前吵架让架构迭代极快，是同一现象的另一面。
 - 本质：这条新知识本质上是信息隐藏（用架构把改动圈在局部）和技术放大定律在 agent 写代码场景下的应用：agent 放大的是人的架构判断和注意力。
 - 整理于：2026-10-18（第 2 轮）

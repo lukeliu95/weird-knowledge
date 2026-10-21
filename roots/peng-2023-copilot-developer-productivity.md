@@ -28,4 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [世界分成会用与不会用 ChatGPT](../clips/2026-10-18-dotey-chatgpt-two-kinds-of-people.md) | 直接源自 | 强 |
-| [会写代码才玩得好 vibe coding](../clips/2026-10-18-aryanlabde-vibe-coding-needs-coding-skill.md) | 挑战 | 弱（待 Luke 确认） |
+| [会写代码才玩得好 vibe coding](../clips/2026-10-18-aryanlabde-vibe-coding-needs-coding-skill.md) | 挑战 | 弱（模型复核通过） |

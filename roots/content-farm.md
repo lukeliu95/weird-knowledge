@@ -25,4 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [阿里国际站用590万AI页面冲SEO](../clips/2026-10-18-willlhhh-alibaba-5-9m-ai-pages-seo.md) | 换了说法 | 弱（待 Luke 确认） |
+| [阿里国际站用590万AI页面冲SEO](../clips/2026-10-18-willlhhh-alibaba-5-9m-ai-pages-seo.md) | 换了说法 | 弱（模型复核通过） |

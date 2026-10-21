@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [认知提升就是把知识串联起来](../clips/2026-10-18-interjc-cognition-connect-knowledge.md) | 相近 | 弱（待 Luke 确认） |
+| [认知提升就是把知识串联起来](../clips/2026-10-18-interjc-cognition-connect-knowledge.md) | 相近 | 弱（模型复核通过） |

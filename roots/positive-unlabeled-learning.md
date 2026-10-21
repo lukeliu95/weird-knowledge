@@ -27,4 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [只有正例和未标注数据时怎么学：没被标注的不等于反例](../clips/2026-10-19-elkan-positive-unlabeled-learning.md) | 直接源自 | 强 |
-| [线索评分系统综述：预测型评分有效，但漂亮数字多来自厂商](../clips/2026-10-19-wu-lead-scoring-models-review.md) | 相近 | 弱（待 Luke 确认） |
+| [线索评分系统综述：预测型评分有效，但漂亮数字多来自厂商](../clips/2026-10-19-wu-lead-scoring-models-review.md) | 相近 | 弱（模型复核通过） |

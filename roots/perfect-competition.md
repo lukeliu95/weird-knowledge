@@ -26,5 +26,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Thiel一小时讲透从零做垄断的底层逻辑](../clips/2026-10-18-kkawsb-peter-thiel-monopoly-lecture.md) | 直接源自 | 强 |
-| [买两台 DGX 出租视频算力的生意](../clips/2026-10-18-boxmrchen-dgx-video-compute-rental.md) | 挑战 | 弱（待 Luke 确认） |
-| [TikTok头部机构创始人讲跨境价差生意](../clips/2026-10-18-vincent-ainotes-tiktok-mcn-arbitrage-talk.md) | 相近 | 弱（待 Luke 确认） |
+| [买两台 DGX 出租视频算力的生意](../clips/2026-10-18-boxmrchen-dgx-video-compute-rental.md) | 挑战 | 弱（模型复核通过） |
+| [TikTok头部机构创始人讲跨境价差生意](../clips/2026-10-18-vincent-ainotes-tiktok-mcn-arbitrage-talk.md) | 相近 | 弱（模型复核通过） |

@@ -56,7 +56,7 @@ adopted: true
 - 源知识：
   - [Gartner 新 B2B 购买旅程（购买任务与买方赋能）](../roots/gartner-2019-b2b-buying-journey.md) · 关系：直接源自 · 强弱：强。就是这份研究本身。
   - [采购中心（决策单元）](../roots/buying-center.md) · 关系：换了说法 · 强弱：强。Gartner 的“采购小组”（buying group）就是采购中心。
-  - [待完成的任务](../roots/jobs-to-be-done.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。把购买拆成六项“购买任务”，借的是待完成任务的说法；Gartner 没有明说引用，是推断。
+  - [待完成的任务](../roots/jobs-to-be-done.md) · 关系：相近 · 强弱：弱（模型复核通过）。把购买拆成六项“购买任务”，借的是待完成任务的说法；Gartner 没有明说引用，是推断。
   - [购买类型三分法与 BuyGrid](../roots/robinson-1967-industrial-buying-creative-marketing.md) · 关系：挑战 · 强弱：强。明确说购买不是一条直线的阶段，和 BuyGrid 的 8 个顺序阶段对着干。
 - 本质：这条新知识本质上是采购中心理论在买方能自己上网调研的时代的更新：阶段变成可以来回反复的任务，卖方的作用从说服变成帮买方完成任务。
 - 整理于：2026-10-18（补课第 1 题）

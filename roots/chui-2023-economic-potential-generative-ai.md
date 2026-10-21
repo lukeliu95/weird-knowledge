@@ -25,4 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [火山引擎生成式 AI 落地白皮书](../clips/2026-10-18-jiaxi-cui-volcengine-genai-whitepaper.md) | 相近 | 弱（待 Luke 确认） |
+| [火山引擎生成式 AI 落地白皮书](../clips/2026-10-18-jiaxi-cui-volcengine-genai-whitepaper.md) | 相近 | 弱（模型复核通过） |

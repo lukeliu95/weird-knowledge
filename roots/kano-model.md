@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [工作流与智能体：用户为什么更兴奋](../clips/2026-10-18-dotey-workflow-vs-agent-excitement.md) | 相近 | 弱（待 Luke 确认） |
+| [工作流与智能体：用户为什么更兴奋](../clips/2026-10-18-dotey-workflow-vs-agent-excitement.md) | 相近 | 弱（模型复核通过） |

@@ -26,5 +26,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [OpenAI 报告：用户最常用的是懒脑力活](../clips/2026-10-18-frxiaobei-chatgpt-usage-lazy-moments.md) | 相近 | 弱（待 Luke 确认） |
-| [张咋啦一年涨粉到七万的X方法笔记](../clips/2026-10-18-cnyzgkc-x-growth-zara-zhang-notes.md) | 相近 | 弱（待 Luke 确认） |
+| [OpenAI 报告：用户最常用的是懒脑力活](../clips/2026-10-18-frxiaobei-chatgpt-usage-lazy-moments.md) | 相近 | 弱（模型复核通过） |
+| [张咋啦一年涨粉到七万的X方法笔记](../clips/2026-10-18-cnyzgkc-x-growth-zara-zhang-notes.md) | 相近 | 弱（模型复核通过） |

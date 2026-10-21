@@ -187,22 +187,22 @@
 | 排名 | 源知识 | 被几条新知识指向（直接 / 连同间接） | 更底层的源头 |
 |---|---|---|---|
 | 1 | [反馈](roots/feedback.md) | 4 / 84 | 已到基础层 |
-| 2 | [控制论](roots/cybernetics.md) | 4 / 73 | 已到基础层 |
-| 3 | [自然选择](roots/natural-selection.md) | 0 / 57 | 已到基础层 |
-| 4 | [有限理性](roots/bounded-rationality.md) | 1 / 55 | 已到基础层 |
-| 5 | [比较优势](roots/comparative-advantage.md) | 0 / 44 | 已到基础层 |
+| 2 | [控制论](roots/cybernetics.md) | 4 / 70 | 已到基础层 |
+| 3 | [自然选择](roots/natural-selection.md) | 0 / 56 | 已到基础层 |
+| 4 | [有限理性](roots/bounded-rationality.md) | 0 / 52 | 已到基础层 |
+| 5 | [比较优势](roots/comparative-advantage.md) | 0 / 43 | 已到基础层 |
 | 6 | [控制理论](roots/control-theory.md) | 0 / 39 | [反馈](roots/feedback.md) |
-| 7 | [分工](roots/division-of-labour.md) | 5 / 37 | [比较优势](roots/comparative-advantage.md) |
-| 8 | [经验曲线效应](roots/experience-curve-effect.md) | 2 / 36 | [学习曲线](roots/learning-curve.md) |
-| 9 | [学习曲线](roots/learning-curve.md) | 0 / 36 | 已到基础层 |
-| 10 | [智能体](roots/intelligent-agent.md) | 4 / 33 | [反馈](roots/feedback.md) |
-| 11 | [摩尔定律](roots/moores-law.md) | 1 / 33 | [经验曲线效应](roots/experience-curve-effect.md) |
-| 12 | [苦涩的教训](roots/bitter-lesson.md) | 12 / 32 | [摩尔定律](roots/moores-law.md) |
+| 7 | [分工](roots/division-of-labour.md) | 4 / 36 | [比较优势](roots/comparative-advantage.md) |
+| 8 | [经验曲线效应](roots/experience-curve-effect.md) | 2 / 34 | [学习曲线](roots/learning-curve.md) |
+| 9 | [学习曲线](roots/learning-curve.md) | 0 / 34 | 已到基础层 |
+| 10 | [智能体](roots/intelligent-agent.md) | 4 / 32 | [反馈](roots/feedback.md) |
+| 11 | [摩尔定律](roots/moores-law.md) | 1 / 31 | [经验曲线效应](roots/experience-curve-effect.md) |
+| 12 | [苦涩的教训](roots/bitter-lesson.md) | 11 / 30 | [摩尔定律](roots/moores-law.md) |
 | 13 | [效果律](roots/law-of-effect.md) | 0 / 30 | [自然选择](roots/natural-selection.md) |
-| 14 | [构建高效的智能体](roots/anthropic-2024-building-effective-agents.md) | 16 / 28 | [智能体](roots/intelligent-agent.md)、[分工](roots/division-of-labour.md) |
-| 15 | [正反馈](roots/positive-feedback.md) | 0 / 26 | [控制论](roots/cybernetics.md) |
+| 14 | [构建高效的智能体](roots/anthropic-2024-building-effective-agents.md) | 16 / 27 | [智能体](roots/intelligent-agent.md)、[分工](roots/division-of-labour.md) |
+| 15 | [默会知识（隐性知识）](roots/tacit-knowledge.md) | 5 / 24 | 已到基础层 |
 
-和第 4 轮比：反馈从 80 条涨到 84 条，控制论 70→73，自然选择 54→57，有限理性 51→55。控制理论从第 7 名升到第 6 名。第 5 轮 8 条新知识里，追到这几个基础源头的主要是用户模拟（模拟客户从不走开、Sim2Real 差距）、开放式搜索（质量多样性、新颖性搜索）和企业 AI 落地（前线部署工程师、现地现物）这几条。
+和第 4 轮比：反馈从 80 条涨到 84 条，自然选择 54→56，有限理性 51→52，控制论 70→70（2026-10-21 弱关系复核删掉了 92 处牵强的关系，所以涨得比第 5 轮刚合并时少）。控制理论从第 7 名升到第 6 名。第 5 轮 8 条新知识里，追到这几个基础源头的主要是用户模拟（模拟客户从不走开、Sim2Real 差距）、开放式搜索（质量多样性、新颖性搜索）和企业 AI 落地（前线部署工程师、现地现物）这几条。
 
 和第 3 轮比（含 2026-10-19 认可补课第 1 题后的重排）：反馈从 68 条涨到 80 条，自然选择从 45 条涨到 54 条、升到第 3。涨的全来自这一轮：25 条里有 12 条顺着更底层的源头追到反馈，9 条追到自然选择，主要是 agent 自我改进（Harness²、Designer-RSI、JitMem）、用户模拟（MIMESIS 等）和算法合谋这几条。控制理论从第 12 名升到第 7 名；效果律回到前 15，完全竞争掉了出去。
 
@@ -214,53 +214,51 @@
 
 ### 和经典理论对着干的
 
-第 1 轮 9 处，第 2 轮新增 21 处，第 3 轮新增 3 处，2026-10-19 认可补课第 1 题后计入 2 处，第 4 轮新增 6 处，第 5 轮新增 2 处，共 43 处。强的 14 处排在前面。
+第 1 轮 9 处，第 2 轮新增 21 处，第 3 轮新增 3 处，2026-10-19 认可补课第 1 题后计入 2 处，第 4 轮新增 6 处，第 5 轮新增 2 处；2026-10-21 弱关系复核删掉 5 处牵强的，现在共 41 处。强的 14 处排在前面。
 
 | 新知识 | 对着干的经典 | 强弱 |
 |---|---|---|
+| [人和 AI 比设计游戏：AI 自己设计的卖得更贵，标明"人做的"也不加价](clips/2026-10-20-conlon-human-ai-competition-experiment.md) | [《预测机器：人工智能的简单经济学》](roots/agrawal-2018-prediction-machines.md) | 强 |
 | [陶哲轩谈 AI 与数学的演讲要点](clips/2026-10-18-dotey-terence-tao-ai-math-talk.md) | [通用人工智能的火花：GPT-4 早期实验](roots/bubeck-2023-sparks-agi.md) | 强 |
 | [黄亚生预测中国模式走到尽头](clips/2026-10-18-bingliu34173809-huang-yasheng-china-model.md) | [中国模式（北京共识）](roots/china-model.md) | 强 |
+| [保险建议：孩子重疾险在香港买，成人买医疗险不买重疾](clips/2026-10-18-captainlufei999-insurance-advice-hk-critical-illness.md) | [保监会未成年人身故保险金限额通知（保监发〔2015〕90号）](roots/circ-2015-minor-death-benefit-cap.md) | 强 |
 | [Anthropic 设计负责人谈 AI 时代设计流程](clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | [双钻石设计流程](roots/double-diamond-design-process-model.md) | 强 |
+| [人和 AI 比设计游戏：AI 自己设计的卖得更贵，标明"人做的"也不加价](clips/2026-10-20-conlon-human-ai-competition-experiment.md) | [手工效应](roots/fuchs-2015-handmade-effect.md) | 强 |
 | [杨立昆谈智能不等于控制欲](clips/2026-10-18-dotey-lecun-intelligence-not-domination.md) | [工具性趋同](roots/instrumental-convergence.md) | 强 |
 | [唐杰谈缩放定律：不只是堆参数](clips/2026-10-18-jietang-scaling-law-beyond-parameters.md) | [神经语言模型的缩放定律](roots/kaplan-2020-scaling-laws.md) | 强 |
 | [LeCun：下个万亿AI公司不靠LLM](clips/2026-10-18-phosphenq-lecun-lecture-beyond-llms.md) | [神经网络规模定律](roots/neural-scaling-law.md) | 强 |
 | [Pi 作者：代码即真相，Bash 够用](clips/2026-10-18-dotey-pi-authors-code-bash-insights.md) | [检索增强生成（RAG）](roots/retrieval-augmented-generation.md) | 强 |
-| [与Claude Code讨论艺术与约束](clips/2026-10-18-turingou-constraint-in-live-music-product.md) | [Cloudflare Code Mode：让模型写代码放进沙箱执行](roots/varda-2025-code-mode.md) | 强 |
-| [保险建议：孩子重疾险在香港买，成人买医疗险不买重疾](clips/2026-10-18-captainlufei999-insurance-advice-hk-critical-illness.md) | [保监会未成年人身故保险金限额通知（保监发〔2015〕90号）](roots/circ-2015-minor-death-benefit-cap.md) | 强（其实是推文说错了：内地是有上限，不是不赔） |
 | [Gartner 新 B2B 购买旅程：买方只花 17% 的时间见供应商](clips/2026-10-18-gartner-new-b2b-buying-journey.md) | [购买类型三分法与 BuyGrid](roots/robinson-1967-industrial-buying-creative-marketing.md) | 强 |
-| [人和 AI 比设计游戏：AI 自己设计的卖得更贵，标明"人做的"也不加价](clips/2026-10-20-conlon-human-ai-competition-experiment.md) | [《预测机器：人工智能的简单经济学》](roots/agrawal-2018-prediction-machines.md) | 强 |
-| [人和 AI 比设计游戏：AI 自己设计的卖得更贵，标明"人做的"也不加价](clips/2026-10-20-conlon-human-ai-competition-experiment.md) | [手工效应](roots/fuchs-2015-handmade-effect.md) | 强 |
+| [与Claude Code讨论艺术与约束](clips/2026-10-18-turingou-constraint-in-live-music-product.md) | [Cloudflare Code Mode：让模型写代码放进沙箱执行](roots/varda-2025-code-mode.md) | 强 |
 | [Meta 的 MIMESIS：用真人行为训练的用户模拟器，比让助手模型扮用户更好练 agent](clips/2026-10-20-dair-ai-mimesis-user-simulator.md) | [τ-bench：工具、agent、用户三方交互的基准](roots/yao-2024-tau-bench.md) | 强 |
 | [agent 的记忆先存原始轨迹，等新任务来了再现场整理，比事先提炼成反思或 skill 更好用](clips/2026-10-20-zhou-just-in-time-memory.md) | [ExpeL：大模型智能体是经验学习者](roots/zhao-2023-expel.md) | 强 |
-| [Tripo Eden：先建地图再渲染](clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | [苦涩的教训](roots/bitter-lesson.md) | 弱（待 Luke 确认） |
-| [Tripo Eden：先建地图再渲染](clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | [视频生成模型是世界模拟器（Sora 技术报告）](roots/brooks-2024-video-world-simulators.md) | 弱（待 Luke 确认） |
-| [Kimi-code重构一个月的架构复盘](clips/2026-10-18-real-kai42-kimi-code-rewrite-retrospective.md) | [在参差不齐的技术边界上航行（BCG 顾问实验）](roots/dellacqua-2023-jagged-technological-frontier.md) | 弱（待 Luke 确认） |
-| [Karpathy 的 YC 演讲：软件 3.0](clips/2026-10-18-op7418-karpathy-software-3-talk.md) | [论“自然语言编程”之愚蠢](roots/dijkstra-1979-natural-language-programming.md) | 弱（待 Luke 确认） |
-| [用自然语言让 LLM 承担业务数据存储](clips/2026-10-18-jefferytatsuya-llm-natural-language-data-store.md) | [论“自然语言编程”之愚蠢](roots/dijkstra-1979-natural-language-programming.md) | 弱（待 Luke 确认） |
-| [缠论简纲思维导图](clips/2026-10-18-dtdt666-chanlun-mind-map.md) | [有效市场假说](roots/efficient-market-hypothesis.md) | 弱（待 Luke 确认） |
-| [Sora 加 Vision Pro 展望](clips/2026-10-18-indigox-sora-vision-pro-immersive.md) | [体验机](roots/experience-machine.md) | 弱（待 Luke 确认） |
-| [工具站出海月入 3000 刀的一年踩坑记](clips/2026-10-18-gefei55-tool-site-overseas-lessons.md) | [免费增值](roots/freemium.md) | 弱（待 Luke 确认） |
-| [Sam 谈我们创造的是工具还是生物](clips/2026-10-18-dotey-altman-tool-or-creature.md) | [工具性趋同](roots/instrumental-convergence.md) | 弱（待 Luke 确认） |
-| [Agent 循环工程晚宴讨论要点](clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | [自动化的反讽](roots/ironies-of-automation.md) | 弱（待 Luke 确认） |
-| [备忘录加 worktree 就够了](clips/2026-10-18-hilng77042-opc-agents-notes-worktrees.md) | [看板方法（软件开发）](roots/kanban-development.md) | 弱（待 Luke 确认） |
-| [Samuel 的跳棋程序：机器靠自己对弈学习，下得比写它的人还好](clips/2026-10-18-samuel-machine-learning-checkers.md) | [洛夫莱斯夫人的异议（机器不能原创）](roots/lady-lovelaces-objection.md) | 弱（待 Luke 确认） |
-| [日语学习的素读法与家庭使用整理](clips/2026-10-18-interjc-sodoku-japanese-learning.md) | [产出效应（出声读出来的词记得更牢）](roots/macleod-2010-production-effect.md) | 弱（待 Luke 确认） |
-| [ChatGPTMac版提示词触发共享屏幕](clips/2026-10-18-dotey-chatgpt-mac-screen-share-prompt.md) | [提示科学报告 3：威胁或给小费对大模型有没有用](roots/meincke-2025-threaten-or-tip.md) | 弱（待 Luke 确认） |
-| [买两台 DGX 出租视频算力的生意](clips/2026-10-18-boxmrchen-dgx-video-compute-rental.md) | [摩尔定律](roots/moores-law.md) | 弱（待 Luke 确认） |
-| [会写代码才玩得好 vibe coding](clips/2026-10-18-aryanlabde-vibe-coding-needs-coding-skill.md) | [AI 对开发者生产率的影响：GitHub Copilot 对照实验](roots/peng-2023-copilot-developer-productivity.md) | 弱（待 Luke 确认） |
-| [买两台 DGX 出租视频算力的生意](clips/2026-10-18-boxmrchen-dgx-video-compute-rental.md) | [完全竞争](roots/perfect-competition.md) | 弱（待 Luke 确认） |
-| [WorkBuddy 播客：编程不再稀缺](clips/2026-10-18-ayi-ainotes-workbuddy-podcast-ai-era-skills.md) | [理解语言模型的谄媚（迎合用户）](roots/sharma-2023-sycophancy-language-models.md) | 弱（待 Luke 确认） |
-| [世界分成会用与不会用 ChatGPT](clips/2026-10-18-dotey-chatgpt-two-kinds-of-people.md) | [技能偏向型技术变革](roots/skill-biased-technological-change.md) | 弱（待 Luke 确认） |
-| [张一鸣 66 条成长心得与延迟满足](clips/2026-10-18-sea-bitcoin-zhang-yiming-66-growth-tips.md) | [斯坦福棉花糖实验](roots/stanford-marshmallow-experiment.md) | 弱（待 Luke 确认） |
-| [Claude Code 的 Task 工具原理](clips/2026-10-18-dotey-claude-code-task-subagent.md) | [别做多智能体](roots/yan-2025-dont-build-multi-agents.md) | 弱（待 Luke 确认） |
-| [Karpathy：让AI模拟专家来答](clips/2026-10-18-dotey-karpathy-simulator-not-entity.md) | [系统提示里的角色不能提升表现](roots/zheng-2023-personas-system-prompts.md) | 弱（待 Luke 确认） |
-| [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | [模型崩溃](roots/model-collapse.md) | 弱（待 Luke 确认） |
-| [yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md) | [AI 智能体的上下文工程](roots/anthropic-2025-effective-context-engineering.md) | 弱（待 Luke 确认） |
-| [挑战者销售：明星销售靠教给客户他没看到的问题，而不是靠关系](clips/2026-10-18-dixon-adamson-challenger-sale.md) | [SPIN 销售法](roots/rackham-1988-spin-selling.md) | 弱（待 Luke 确认） |
-| [日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md) | [线上销售线索的短命（线索响应速度研究）](roots/oldroyd-2011-short-life-online-sales-leads.md) | 弱（待 Luke 确认） |
-| [Meta 的瘦编排器模式：编排器只管路由和检查，不做领域推理，14 个专项子 agent 各管一块](clips/2026-10-20-meta-thin-orchestrator-agent-architecture.md) | [别做多智能体](roots/yan-2025-dont-build-multi-agents.md) | 弱（待 Luke 确认） |
-| [Claude 5 代模型的上下文工程新规矩：系统提示删掉八成，少写规则和例子，按需加载](clips/2026-10-21-shihipar-context-engineering-claude-5.md) | [语言模型是少样本学习者（GPT-3 论文）](roots/brown-2020-few-shot-learners.md) | 弱（待 Luke 确认） |
-| [Claude Code 团队审代码的做法：九成代码由 AI 写，多道检查像叠起来的瑞士奶酪片，人只做机器做不好的判断](clips/2026-10-21-dotey-claude-code-review-swiss-cheese.md) | [Fagan 审查（正式代码审查）](roots/fagan-inspection.md) | 弱（待 Luke 确认） |
+| [马斯克：未来的发现全是工程（“最稀缺的是验证”是转述者加的）](clips/2026-10-20-financeyf5-musk-future-discovery-is-engineering.md) | [多者异也（多即不同）](roots/anderson-1972-more-is-different.md) | 弱（模型复核通过） |
+| [Tripo Eden：先建地图再渲染](clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | [苦涩的教训](roots/bitter-lesson.md) | 弱（模型复核通过） |
+| [Tripo Eden：先建地图再渲染](clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | [视频生成模型是世界模拟器（Sora 技术报告）](roots/brooks-2024-video-world-simulators.md) | 弱（模型复核通过） |
+| [Claude 5 代模型的上下文工程新规矩：系统提示删掉八成，少写规则和例子，按需加载](clips/2026-10-21-shihipar-context-engineering-claude-5.md) | [语言模型是少样本学习者（GPT-3 论文）](roots/brown-2020-few-shot-learners.md) | 弱（模型复核通过） |
+| [大阪府各区划与公立小学教育概况](clips/2026-10-18-qiancaobuzhiqiu-osaka-areas-public-schools.md) | [科尔曼报告（《教育机会均等》）](roots/coleman-report.md) | 弱（模型复核通过） |
+| [Kimi-code重构一个月的架构复盘](clips/2026-10-18-real-kai42-kimi-code-rewrite-retrospective.md) | [在参差不齐的技术边界上航行（BCG 顾问实验）](roots/dellacqua-2023-jagged-technological-frontier.md) | 弱（模型复核通过） |
+| [成语是哈希表而不是压缩](clips/2026-10-18-dotey-chengyu-hash-table-idea.md) | [字典编码（替换编码）](roots/dictionary-coder.md) | 弱（模型复核通过） |
+| [Karpathy 的 YC 演讲：软件 3.0](clips/2026-10-18-op7418-karpathy-software-3-talk.md) | [论“自然语言编程”之愚蠢](roots/dijkstra-1979-natural-language-programming.md) | 弱（模型复核通过） |
+| [用自然语言让 LLM 承担业务数据存储](clips/2026-10-18-jefferytatsuya-llm-natural-language-data-store.md) | [论“自然语言编程”之愚蠢](roots/dijkstra-1979-natural-language-programming.md) | 弱（模型复核通过） |
+| [Sora 加 Vision Pro 展望](clips/2026-10-18-indigox-sora-vision-pro-immersive.md) | [体验机](roots/experience-machine.md) | 弱（模型复核通过） |
+| [Claude Code 团队审代码的做法：九成代码由 AI 写，多道检查像叠起来的瑞士奶酪片，人只做机器做不好的判断](clips/2026-10-21-dotey-claude-code-review-swiss-cheese.md) | [Fagan 审查（正式代码审查）](roots/fagan-inspection.md) | 弱（模型复核通过） |
+| [Sam 谈我们创造的是工具还是生物](clips/2026-10-18-dotey-altman-tool-or-creature.md) | [工具性趋同](roots/instrumental-convergence.md) | 弱（模型复核通过） |
+| [Agent 循环工程晚宴讨论要点](clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | [自动化的反讽](roots/ironies-of-automation.md) | 弱（模型复核通过） |
+| [Samuel 的跳棋程序：机器靠自己对弈学习，下得比写它的人还好](clips/2026-10-18-samuel-machine-learning-checkers.md) | [洛夫莱斯夫人的异议（机器不能原创）](roots/lady-lovelaces-objection.md) | 弱（模型复核通过） |
+| [日语学习的素读法与家庭使用整理](clips/2026-10-18-interjc-sodoku-japanese-learning.md) | [产出效应（出声读出来的词记得更牢）](roots/macleod-2010-production-effect.md) | 弱（模型复核通过） |
+| [ChatGPTMac版提示词触发共享屏幕](clips/2026-10-18-dotey-chatgpt-mac-screen-share-prompt.md) | [提示科学报告 3：威胁或给小费对大模型有没有用](roots/meincke-2025-threaten-or-tip.md) | 弱（模型复核通过） |
+| [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | [模型崩溃](roots/model-collapse.md) | 弱（模型复核通过） |
+| [买两台 DGX 出租视频算力的生意](clips/2026-10-18-boxmrchen-dgx-video-compute-rental.md) | [摩尔定律](roots/moores-law.md) | 弱（模型复核通过） |
+| [日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md) | [线上销售线索的短命（线索响应速度研究）](roots/oldroyd-2011-short-life-online-sales-leads.md) | 弱（模型复核通过） |
+| [会写代码才玩得好 vibe coding](clips/2026-10-18-aryanlabde-vibe-coding-needs-coding-skill.md) | [AI 对开发者生产率的影响：GitHub Copilot 对照实验](roots/peng-2023-copilot-developer-productivity.md) | 弱（模型复核通过） |
+| [买两台 DGX 出租视频算力的生意](clips/2026-10-18-boxmrchen-dgx-video-compute-rental.md) | [完全竞争](roots/perfect-competition.md) | 弱（模型复核通过） |
+| [挑战者销售：明星销售靠教给客户他没看到的问题，而不是靠关系](clips/2026-10-18-dixon-adamson-challenger-sale.md) | [SPIN 销售法](roots/rackham-1988-spin-selling.md) | 弱（模型复核通过） |
+| [WorkBuddy 播客：编程不再稀缺](clips/2026-10-18-ayi-ainotes-workbuddy-podcast-ai-era-skills.md) | [理解语言模型的谄媚（迎合用户）](roots/sharma-2023-sycophancy-language-models.md) | 弱（模型复核通过） |
+| [世界分成会用与不会用 ChatGPT](clips/2026-10-18-dotey-chatgpt-two-kinds-of-people.md) | [技能偏向型技术变革](roots/skill-biased-technological-change.md) | 弱（模型复核通过） |
+| [Claude Code 的 Task 工具原理](clips/2026-10-18-dotey-claude-code-task-subagent.md) | [别做多智能体](roots/yan-2025-dont-build-multi-agents.md) | 弱（模型复核通过） |
+| [Meta 的瘦编排器模式：编排器只管路由和检查，不做领域推理，14 个专项子 agent 各管一块](clips/2026-10-20-meta-thin-orchestrator-agent-architecture.md) | [别做多智能体](roots/yan-2025-dont-build-multi-agents.md) | 弱（模型复核通过） |
+| [Karpathy：让AI模拟专家来答](clips/2026-10-18-dotey-karpathy-simulator-not-entity.md) | [系统提示里的角色不能提升表现](roots/zheng-2023-personas-system-prompts.md) | 弱（模型复核通过） |
 
 几组值得对照着看：
 - **规模还是结构**：杨立昆、Tripo Eden 认为光靠规模不够，要有新的结构或显式保存的状态；唐杰、Sora 团队押规模继续有效，能力会自己冒出来。
@@ -278,6 +276,11 @@
 
 - [李自然讲独立开发出海营销增长方法](clips/2026-10-18-yihui-indie-indie-marketing-growth-talk.md)：原文只推荐了一期播客，没写方法本身。要 Luke 贴内容
 - [人大附中讲座：培养怎样的孩子](clips/2026-10-18-lubtc888-ai-era-raising-children-lecture.md)：原文只有一句提问加一个视频链接，讲座文字材料搜不到。要 Luke 贴内容
+- [亿万富翁 42 分钟讲清全球经济运转](clips/2026-10-18-engmoelgaraihy-billionaire-global-economy-video.md)：原来挂的弱关系经 2026-10-21 模型复核都不成立，已删掉
+- [BtoB 商材购买行为调查 2025：日本买家八成只比较 3 家以内，展会在回升](clips/2026-10-18-itcommunications-btob-buying-behavior-survey-2025.md)：原来挂的弱关系经 2026-10-21 模型复核都不成立，已删掉
+- [特電法条文：违规要先被下整改命令，不服从才罚；表单营销没有官方结论](clips/2026-10-18-japan-specified-email-act.md)：原来挂的弱关系经 2026-10-21 模型复核都不成立，已删掉
+- [JUAS 企業IT動向調査 2026：大企业自己定需求、外包开发，生成 AI 最怕泄密](clips/2026-10-18-juas-corporate-it-trends-survey-2026.md)：原来挂的弱关系经 2026-10-21 模型复核都不成立，已删掉
+- [埃森哲式资料制作思考法总结](clips/2026-10-18-shin-yoshimura0-accenture-style-deck-thinking.md)：原来挂的弱关系经 2026-10-21 模型复核都不成立，已删掉
 
 ### 出处还没核实的
 

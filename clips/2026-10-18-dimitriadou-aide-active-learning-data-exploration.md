@@ -82,6 +82,6 @@ roots: [active-learning-machine-learning, relevance-feedback, query-by-example, 
   - [相关性反馈](../roots/relevance-feedback.md) · 关系：直接源自 · 强弱：强。用户逐轮标「相关/不相关」、系统据此修正结果，论文明说引了 Zhou & Huang 2003 的相关性反馈综述。
   - [按例查询](../roots/query-by-example.md) · 关系：直接源自 · 强弱：强。论文明说引 Zloof 1975 的按例查询，前作就叫 Explore-by-Example：用户给例子，而不是自己写查询。
   - [决策树学习](../roots/decision-tree-learning.md) · 关系：直接源自 · 强弱：强。论文明说用 CART 决策树做分类器，理由是决策树可以直接翻译成一条 SQL 范围查询。
-  - [默会知识（隐性知识）](../roots/tacit-knowledge.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。论文要解决的正是「用户认得出自己要什么，却说不出查询条件」，这和 Polanyi「知道的比说得出的多」很像；论文没有引用，是推断（待 Luke 确认）。
+  - [默会知识（隐性知识）](../roots/tacit-knowledge.md) · 关系：相近 · 强弱：弱（模型复核通过）。论文要解决的正是「用户认得出自己要什么，却说不出查询条件」，这和 Polanyi「知道的比说得出的多」很像；论文没有引用，是推断（待 Luke 确认）。
 - 本质：这条新知识本质上是主动学习（不确定性抽样）加相关性反馈在数据库探索场景下的应用：不让人描述需求，而是让人对具体样本做判断，机器替人把判断归纳成查询。
 - 整理于：2026-10-18（第 1 轮）

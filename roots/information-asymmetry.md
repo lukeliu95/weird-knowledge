@@ -28,7 +28,7 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [TikTok头部机构创始人讲跨境价差生意](../clips/2026-10-18-vincent-ainotes-tiktok-mcn-arbitrage-talk.md) | 换了说法 | 强 |
-| [靠谱工程师毫不费力，管理者要给认可](../clips/2026-10-18-ixiaowenz-reliable-engineers-credit.md) | 相近 | 弱（待 Luke 确认） |
-| [57% 的原始出处：客户平均走完购买过程的 57% 才认真接触销售](../clips/2026-10-18-ceb-digital-evolution-b2b-marketing.md) | 相近 | 弱（待 Luke 确认） |
-| [日本 B2B 采购者：八成嫌官网都是一般论，57.1% 按“诚实”决定找谁询问](../clips/2026-10-20-ideatech-btob-buyer-information-contact-survey.md) | 相近 | 弱（待 Luke 确认） |
+| [靠谱工程师毫不费力，管理者要给认可](../clips/2026-10-18-ixiaowenz-reliable-engineers-credit.md) | 相近 | 弱（模型复核通过） |
+| [57% 的原始出处：客户平均走完购买过程的 57% 才认真接触销售](../clips/2026-10-18-ceb-digital-evolution-b2b-marketing.md) | 相近 | 弱（模型复核通过） |
+| [日本 B2B 采购者：八成嫌官网都是一般论，57.1% 按“诚实”决定找谁询问](../clips/2026-10-20-ideatech-btob-buyer-information-contact-survey.md) | 相近 | 弱（模型复核通过） |
 | [生成 AI 时代的 BtoB 买方旅程图：见销售之前，74.3% 的买方心里已定好首选，84.7% 不愿填表单](../clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md) | 直接源自 | 强 |

@@ -32,7 +32,7 @@ B2B 购买是多人小组来回反复完成六项任务的过程，买方只花 
 | [日本 B2B 大额采购调查（330 人）：最有用的资料是 ROI 测算工具（55.4%）和同行同规模案例（46.5%），选供应商第一看价格（58.5%）](../clips/2026-10-19-ideatech-japan-btob-large-purchase-buyer-enablement.md) | 直接源自 | 强 |
 | [Gartner 2025 调查：74% 的买方小组内部有“不健康的冲突”，达成共识的小组报告高质量成交的可能性高 2.5 倍](../clips/2026-10-19-gartner-buying-group-consensus-2025.md) | 直接源自 | 强 |
 | [Gartner 2019：客户觉得销售在“帮自己理清信息”时，80% 的情况拿下了高质量、不后悔的单子](../clips/2026-10-19-gartner-customer-confidence-sense-making-2019.md) | 直接源自 | 强 |
-| [ネオマーケティング 2026 稟議调查：费用效果是第一批准要点（43.7%），但只有 19.3% 准备了 ROI 试算；卖方给的材料只有 59.8% 真的帮上了稟議](../clips/2026-10-19-neo-marketing-btob-ringi-approval-2026.md) | 相近 | 弱（待 Luke 确认） |
+| [ネオマーケティング 2026 稟議调查：费用效果是第一批准要点（43.7%），但只有 19.3% 准备了 ROI 试算；卖方给的材料只有 59.8% 真的帮上了稟議](../clips/2026-10-19-neo-marketing-btob-ringi-approval-2026.md) | 相近 | 弱（模型复核通过） |
 | [エヌケーエナジーシステム 2026 调查：窗口负责人 57.1% 自己重写材料给上司看，93% 说“要是有某些材料内部讨论会更顺”](../clips/2026-10-19-nk-energy-system-invisible-ringi-2026.md) | 相近 | 强 |
-| [日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](../clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md) | 相近 | 弱（待 Luke 确认） |
-| [HubSpot Japan《日本 BtoB 购买意识与实态调查 2026》：63.5% 的买方接触卖方时已列好多个候选，AI 汇总的信息可信度最低](../clips/2026-10-21-hubspot-japan-state-of-buyer-2026.md) | 换了说法 | 弱（待 Luke 确认） |
+| [日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](../clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md) | 相近 | 弱（模型复核通过） |
+| [HubSpot Japan《日本 BtoB 购买意识与实态调查 2026》：63.5% 的买方接触卖方时已列好多个候选，AI 汇总的信息可信度最低](../clips/2026-10-21-hubspot-japan-state-of-buyer-2026.md) | 相近 | 弱（模型复核通过） |

@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [哈萨比斯：懂 AI 的一个人胜过团队](../clips/2026-10-18-anatolikopadze-hassabis-ai-person-outperforms-team.md) | 相近 | 弱（待 Luke 确认） |
+| [哈萨比斯：懂 AI 的一个人胜过团队](../clips/2026-10-18-anatolikopadze-hassabis-ai-person-outperforms-team.md) | 相近 | 弱（模型复核通过） |

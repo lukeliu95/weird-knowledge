@@ -25,4 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [a16z提出AI时代SaaS按成果收费](../clips/2026-10-18-xjuntaro-a16z-outcome-based-saas-pricing.md) | 直接源自 | 弱（待 Luke 确认） |
+| [a16z提出AI时代SaaS按成果收费](../clips/2026-10-18-xjuntaro-a16z-outcome-based-saas-pricing.md) | 直接源自 | 弱（模型复核通过） |

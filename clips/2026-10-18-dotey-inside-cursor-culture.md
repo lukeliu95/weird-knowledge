@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: [good-to-great, no-rules-rules, self-determination-theory, mas-2009-peers-at-work, follett-1925-constructive-conflict, fuzzing, lead-user, low-floor-high-ceiling]
+roots: [no-rules-rules, self-determination-theory, mas-2009-peers-at-work, follett-1925-constructive-conflict, fuzzing, lead-user, low-floor-high-ceiling]
 ---
 
 ## 原文
@@ -147,13 +147,12 @@ Cursor 把这种“找茬”变成了制度，叫 "Fuzz"。
 
 - 核心主张：Cursor 以“人”而不是“岗位”为单位抢人，聚起极高的人才密度，再给足信任和自主、用高强度相互挑刺打磨产品、只服务最顶尖的专业开发者，并让使命本身成为大家拼命的动力。
 - 源知识：
-  - [《从优秀到卓越》（刺猬理念）](../roots/good-to-great.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“招聘的基本单元是人，不是职位”像 Collins 的“先人后事（First Who, Then What）”；“微观悲观、宏观乐观”像同书的“斯托克代尔悖论”（坚信终将成功，同时直面残酷现实）；原文没引用。
-  - [《不拘一格》（网飞的人才密度与自由责任）](../roots/no-rules-rules.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“人才密度高到吓人”加“高手不需要扶手、不管”，和 Netflix 的“先提高人才密度，再去掉管控、给自由与责任”几乎同一套逻辑；原文没提 Netflix。
-  - [自我决定论](../roots/self-determination-theory.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。没扶手（自主）、出题极难（胜任）、午餐只聊工作（归属），以及“奖品就是使命本身、退休了也想做同样的事”，正是内在动机的三个条件和表现。
-  - [工作中的同伴效应（超市收银员研究）](../roots/mas-2009-peers-at-work.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者说加班是因为“想让牛同事对我刮目相看”，996 是被身边人带起来的；这和“被高效同事看见时，人会更努力”的同伴效应研究一致。
-  - [建设性冲突](../roots/follett-1925-constructive-conflict.md) · 关系：换了说法 · 强弱：弱（待 Luke 确认）。“建设性摩擦”就是 Follett 1925 年说的“把冲突（差异）用起来，像工程师利用摩擦一样”，她原文就用了摩擦的比喻；Cursor 没引用她。
-  - [模糊测试](../roots/fuzzing.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。发布前全员花一小时“把它搞垮”的仪式叫 Fuzz，名字和做法都像模糊测试：用大量意料之外的输入把程序弄崩、找出问题。
-  - [领先用户](../roots/lead-user.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“只服务手艺巅峰的专业开发者、被他们拉着走”，和“向走在市场前面的领先用户学习”一致；原文没引用。
-  - [低地板、高天花板](../roots/low-floor-high-ceiling.md) · 关系：直接源自 · 强弱：弱（待 Luke 确认）。“降低地板 / 提高天花板”明显借用了 Papert 传下来的“低地板、高天花板”说法；Papert 两头都要，Cursor 只选抬天花板。
+  - [《不拘一格》（网飞的人才密度与自由责任）](../roots/no-rules-rules.md) · 关系：相近 · 强弱：弱（模型复核通过）。“人才密度高到吓人”加“高手不需要扶手、不管”，和 Netflix 的“先提高人才密度，再去掉管控、给自由与责任”几乎同一套逻辑；原文没提 Netflix。
+  - [自我决定论](../roots/self-determination-theory.md) · 关系：相近 · 强弱：弱（模型复核通过）。没扶手（自主）、出题极难（胜任）、午餐只聊工作（归属），以及“奖品就是使命本身、退休了也想做同样的事”，正是内在动机的三个条件和表现。
+  - [工作中的同伴效应（超市收银员研究）](../roots/mas-2009-peers-at-work.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者说加班是因为“想让牛同事对我刮目相看”，996 是被身边人带起来的；这和“被高效同事看见时，人会更努力”的同伴效应研究一致。
+  - [建设性冲突](../roots/follett-1925-constructive-conflict.md) · 关系：相近 · 强弱：弱（模型复核通过）。“建设性摩擦”就是 Follett 1925 年说的“把冲突（差异）用起来，像工程师利用摩擦一样”，她原文就用了摩擦的比喻；Cursor 没引用她。
+  - [模糊测试](../roots/fuzzing.md) · 关系：直接源自 · 强弱：弱（模型复核通过）。发布前全员花一小时“把它搞垮”的仪式叫 Fuzz，名字和做法都像模糊测试：用大量意料之外的输入把程序弄崩、找出问题。
+  - [领先用户](../roots/lead-user.md) · 关系：相近 · 强弱：弱（模型复核通过）。“只服务手艺巅峰的专业开发者、被他们拉着走”，和“向走在市场前面的领先用户学习”一致；原文没引用。
+  - [低地板、高天花板](../roots/low-floor-high-ceiling.md) · 关系：直接源自 · 强弱：弱（模型复核通过）。“降低地板 / 提高天花板”明显借用了 Papert 传下来的“低地板、高天花板”说法；Papert 两头都要，Cursor 只选抬天花板。
 - 本质：这条新知识本质上是“高人才密度 + 少管控 + 内在动机”（Y 理论、自我决定论）这套组织理论在 AI 创业公司文化上的应用。
 - 整理于：2026-10-18（第 2 轮）

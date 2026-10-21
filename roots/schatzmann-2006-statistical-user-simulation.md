@@ -30,5 +30,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Meta 的 MIMESIS：用真人行为训练的用户模拟器，比让助手模型扮用户更好练 agent](../clips/2026-10-20-dair-ai-mimesis-user-simulator.md) | 换了说法 | 弱（待 Luke 确认） |
-| [用户模拟器会是 agent 强化学习里被低估的一环：真考法是预测一个人的留出选择](../clips/2026-10-20-genai-is-real-user-simulation-agentic-rl.md) | 相近 | 弱（待 Luke 确认） |
+| [Meta 的 MIMESIS：用真人行为训练的用户模拟器，比让助手模型扮用户更好练 agent](../clips/2026-10-20-dair-ai-mimesis-user-simulator.md) | 相近 | 弱（模型复核通过） |
+| [用户模拟器会是 agent 强化学习里被低估的一环：真考法是预测一个人的留出选择](../clips/2026-10-20-genai-is-real-user-simulation-agentic-rl.md) | 相近 | 弱（模型复核通过） |

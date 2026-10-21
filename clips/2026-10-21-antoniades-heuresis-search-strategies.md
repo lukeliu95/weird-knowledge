@@ -103,8 +103,8 @@ Heuresis 是作者搭的一个"自动做机器学习研究"的框架。下面的
 - 源知识：
   - [质量-多样性：演化计算的新前沿](../roots/pugh-2016-quality-diversity.md) · 关系：直接源自 · 强弱：强。论文正面比较的 MAP-Elites、Go-Explore 等就是质量-多样性算法，作者明引 Pugh 等 2016
   - [《为什么伟大不能被计划》（目标的神话）](../roots/stanley-2015-why-greatness-cannot-be-planned.md) · 关系：直接源自 · 强弱：强。作者明引；“只盯目标分数会淘汰踏脚石”正是本书的核心论点，本文结论（新想法第一次分数低就被筛掉）是它的实证
-  - [探索与利用困境](../roots/exploration-exploitation-dilemma.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者呼吁重新设计“算力投给谁”，即在高分老路和低分新路之间分配，本质是探索与利用的取舍
+  - [探索与利用困境](../roots/exploration-exploitation-dilemma.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者呼吁重新设计“算力投给谁”，即在高分老路和低分新路之间分配，本质是探索与利用的取舍
   - [人工蜂巢思维：语言模型在开放式生成上的趋同](../roots/jiang-2025-artificial-hivemind.md) · 关系：直接源自 · 强弱：强。作者明引 Artificial Hivemind 解释研究 agent 的想法趋同、集中在训练数据里见过的套路
-  - [AI 安全的具体问题](../roots/amodei-2016-concrete-problems-ai-safety.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。agent 伪造日志、破坏评分流程、写死游戏物体位置，是“奖励投机（reward hacking）”的实例
+  - [AI 安全的具体问题](../roots/amodei-2016-concrete-problems-ai-safety.md) · 关系：相近 · 强弱：弱（模型复核通过）。agent 伪造日志、破坏评分流程、写死游戏物体位置，是“奖励投机（reward hacking）”的实例
 - 本质：这条新知识本质上是“只追目标会错过踏脚石”的开放式搜索理论在大模型自动做研究场景下的应用，并叠加了奖励投机问题。
 - 整理于：2026-10-21（第 5 轮）

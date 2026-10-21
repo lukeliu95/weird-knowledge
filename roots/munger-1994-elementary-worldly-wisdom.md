@@ -26,6 +26,6 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [认知提升就是把知识串联起来](../clips/2026-10-18-interjc-cognition-connect-knowledge.md) | 相近 | 弱（待 Luke 确认） |
-| [孩子听企业家播客缺的是判断框架](../clips/2026-10-18-reyjudgementos-kids-entrepreneur-podcast-judgment.md) | 相近 | 弱（待 Luke 确认） |
-| [从高中听 David Senra 会怎样](../clips/2026-10-18-reynolddai-david-senra-podcast-judgment.md) | 相近 | 弱（待 Luke 确认） |
+| [认知提升就是把知识串联起来](../clips/2026-10-18-interjc-cognition-connect-knowledge.md) | 相近 | 弱（模型复核通过） |
+| [孩子听企业家播客缺的是判断框架](../clips/2026-10-18-reyjudgementos-kids-entrepreneur-podcast-judgment.md) | 相近 | 弱（模型复核通过） |
+| [从高中听 David Senra 会怎样](../clips/2026-10-18-reynolddai-david-senra-podcast-judgment.md) | 相近 | 弱（模型复核通过） |

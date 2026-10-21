@@ -27,4 +27,4 @@ verified: true
 |---|---|---|
 | [外层harness让智能体连跑数小时](../clips/2026-10-18-baoweiheihei-harness-unattended-long-running.md) | 直接源自 | 强 |
 | [Anthropic：长任务智能体交接机制](../clips/2026-10-18-dotey-long-running-agent-harness.md) | 直接源自 | 强 |
-| [Agent 循环工程晚宴讨论要点](../clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | 相近 | 弱（待 Luke 确认） |
+| [Agent 循环工程晚宴讨论要点](../clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | 相近 | 弱（模型复核通过） |

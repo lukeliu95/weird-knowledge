@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 其他
-roots: [circ-2015-minor-death-benefit-cap, moral-hazard, jurisdictional-arbitrage, adverse-selection, pauly-1995-guaranteed-renewability, mossin-1968-rational-insurance-purchasing, risk-of-ruin, principal-agent-problem, anagol-2017-commissions-motivated-agents, hkia-2025-commission-spreading]
+roots: [circ-2015-minor-death-benefit-cap, moral-hazard, jurisdictional-arbitrage, adverse-selection, pauly-1995-guaranteed-renewability, risk-of-ruin, principal-agent-problem, anagol-2017-commissions-motivated-agents, hkia-2025-commission-spreading]
 ---
 
 ## 原文
@@ -29,14 +29,13 @@ roots: [circ-2015-minor-death-benefit-cap, moral-hazard, jurisdictional-arbitrag
 - 核心主张：买保险要先看清规则和卖方拿钱的方式：孩子的保险去没有身故限额的香港买，成年人优先买保证续保的医疗险，不买佣金前置的分红年金，也别信回佣和“保险能避税避债”的说法。
 - 源知识：
   - [保监会未成年人身故保险金限额通知（保监发〔2015〕90号）](../roots/circ-2015-minor-death-benefit-cap.md) · 关系：挑战 · 强弱：强。推文说内地未成年人“死了不赔、只退保”，通知原文规定的是有上限可赔（不满10岁20万元、10到17岁50万元，退还已交保费另计、不占额度），而且只管身故，不管重疾确诊给付。
-  - [道德风险](../roots/moral-hazard.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。推文第1点要绕开的内地限额，本身就是防“为孩子投保后谋财害命”的道德风险设计（通知第六条写明“防范道德风险”）；推文没有意识到这一层，是模型推断的关联。
-  - [法域套利](../roots/jurisdictional-arbitrage.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“孩子的保险一定在香港买”就是利用两地监管规则的差异，把交易放到对自己更有利的地方。
-  - [逆向选择](../roots/adverse-selection.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“越早买越好”背后是：健康时投保才不会被拒保或加费；保险公司核保、不保证续保，都是在防逆向选择。
+  - [道德风险](../roots/moral-hazard.md) · 关系：相近 · 强弱：弱（模型复核通过）。推文第1点要绕开的内地限额，本身就是防“为孩子投保后谋财害命”的道德风险设计（通知第六条写明“防范道德风险”）；推文没有意识到这一层，是模型推断的关联。
+  - [法域套利](../roots/jurisdictional-arbitrage.md) · 关系：相近 · 强弱：弱（模型复核通过）。“孩子的保险一定在香港买”就是利用两地监管规则的差异，把交易放到对自己更有利的地方。
+  - [逆向选择](../roots/adverse-selection.md) · 关系：相近 · 强弱：弱（模型复核通过）。“越早买越好”背后是：健康时投保才不会被拒保或加费；保险公司核保、不保证续保，都是在防逆向选择。
   - [保险里的保证续保](../roots/pauly-1995-guaranteed-renewability.md) · 关系：相近 · 强弱：强。推文的“观察续约是否保证”，就是这篇论文研究的“保证续保”本身：保证续保保护的是生病后被重新定价或拒绝续保的风险。
-  - [理性购买保险（附加费用为正时不该全额投保）](../roots/mossin-1968-rational-insurance-purchasing.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“保险只买医疗险、不买附加费用高的分红年金”，接近 Mossin 的结论：保费里附加费用越高，理性的人越应少买保险、自己扛小损失，只把扛不住的风险交出去。
-  - [破产风险](../roots/risk-of-ruin.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。强调高端医疗“很重要”，是为了防一次大病的医疗费把家底打光，这是控制破产风险的思路。
-  - [委托-代理问题](../roots/principal-agent-problem.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“第一年的保费全是保险经纪的”说的是卖方收入跟保费挂钩、不跟客户利益挂钩，正是委托-代理问题；推文没有点名这个理论。
-  - [拿佣金的寿险代理人给的建议（印度田野实验）](../roots/anagol-2017-commissions-motivated-agents.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。这篇实证发现拿佣金的寿险代理人普遍推荐高佣金、对客户不划算的产品，和推文“别听经纪推分红年金”的判断一致。
+  - [破产风险](../roots/risk-of-ruin.md) · 关系：相近 · 强弱：弱（模型复核通过）。强调高端医疗“很重要”，是为了防一次大病的医疗费把家底打光，这是控制破产风险的思路。
+  - [委托-代理问题](../roots/principal-agent-problem.md) · 关系：相近 · 强弱：弱（模型复核通过）。“第一年的保费全是保险经纪的”说的是卖方收入跟保费挂钩、不跟客户利益挂钩，正是委托-代理问题；推文没有点名这个理论。
+  - [拿佣金的寿险代理人给的建议（印度田野实验）](../roots/anagol-2017-commissions-motivated-agents.md) · 关系：相近 · 强弱：弱（模型复核通过）。这篇实证发现拿佣金的寿险代理人普遍推荐高佣金、对客户不划算的产品，和推文“别听经纪推分红年金”的判断一致。
   - [香港保监局分红保单佣金摊分指引](../roots/hkia-2025-commission-spreading.md) · 关系：相近 · 强弱：强。香港保监局在这份指引里明确说，佣金在销售时点给得太多会让中介激励错位、售后变差，和推文第3点是同一个判断，只是推文把比例说过头了。
 - 本质：这条新知识本质上是委托-代理（销售佣金激励错位）、道德风险和逆向选择这几条保险经济学基本原理，在中国家庭跨境（内地/香港）挑选保险时的应用；但其中关于内地限额、佣金比例和“避债”的几处事实说过头了。
 - 整理于：2026-10-18（第 3 轮）

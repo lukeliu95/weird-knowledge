@@ -31,4 +31,4 @@ verified: true
 | [AIDE：让用户给样本打"相关/不相关"，用主动学习猜出他真正想查的数据](../clips/2026-10-18-dimitriadou-aide-active-learning-data-exploration.md) | 直接源自 | 强 |
 | [ASK：信息需求本来就说不准，系统应先给结果并解释为什么选它，再问用户反馈](../clips/2026-10-19-belkin-ask-information-retrieval.md) | 相近 | 强 |
 | [对话式搜索的理论框架：帮用户说出需要、给有边界的选项、记住他否掉的条件](../clips/2026-10-19-radlinski-conversational-search-framework.md) | 直接源自 | 强 |
-| [问一个好的澄清问题效果能翻倍，但那是理想上限，真实模型只提高三四成，问错还会变差](../clips/2026-10-19-aliannejadi-asking-clarifying-questions-qulac.md) | 相近 | 弱（待 Luke 确认） |
+| [问一个好的澄清问题效果能翻倍，但那是理想上限，真实模型只提高三四成，问错还会变差](../clips/2026-10-19-aliannejadi-asking-clarifying-questions-qulac.md) | 相近 | 弱（模型复核通过） |

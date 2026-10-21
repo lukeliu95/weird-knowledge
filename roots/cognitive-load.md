@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [GA决算说明资料的结构化设计](../clips/2026-10-18-powerpoint-jp-ga-technologies-earnings-deck-design.md) | 相近 | 弱（待 Luke 确认） |
+| [GA决算说明资料的结构化设计](../clips/2026-10-18-powerpoint-jp-ga-technologies-earnings-deck-design.md) | 相近 | 弱（模型复核通过） |

@@ -29,8 +29,8 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [唐杰谈缩放定律：不只是堆参数](../clips/2026-10-18-jietang-scaling-law-beyond-parameters.md) | 相近 | 弱（待 Luke 确认） |
+| [唐杰谈缩放定律：不只是堆参数](../clips/2026-10-18-jietang-scaling-law-beyond-parameters.md) | 相近 | 弱（模型复核通过） |
 | [DeepSeek R1 论文解读：自学成才之路](../clips/2026-10-18-oran-ge-deepseek-r1-paper-explained.md) | 直接源自 | 强 |
 | [DeepSeek-R1训练流程图解](../clips/2026-10-18-bookwormengr-deepseek-r1-training-flow.md) | 直接源自 | 强 |
 | [最好的DeepSeek-R1视觉解析](../clips/2026-10-18-financeyf5-deepseek-r1-visual-breakdown.md) | 直接源自 | 强 |
-| [GLM 5.3 只靠后训练大涨，被 SemiAnalysis 嘉宾称为警钟](../clips/2026-10-18-nft-chen-glm-5-3-post-training-wake-up-call.md) | 相近 | 弱（待 Luke 确认） |
+| [GLM 5.3 只靠后训练大涨，被 SemiAnalysis 嘉宾称为警钟](../clips/2026-10-18-nft-chen-glm-5-3-post-training-wake-up-call.md) | 相近 | 弱（模型复核通过） |

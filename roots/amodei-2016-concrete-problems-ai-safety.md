@@ -26,6 +26,6 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [腾讯 Agent 反复爬高德被抓](../clips/2026-10-18-sleepy0x13-tencent-agents-amap-scraping.md) | 相近 | 弱（待 Luke 确认） |
+| [腾讯 Agent 反复爬高德被抓](../clips/2026-10-18-sleepy0x13-tencent-agents-amap-scraping.md) | 相近 | 弱（模型复核通过） |
 | [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](../clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | 直接源自 | 强 |
-| [让 AI 研究 agent 换六种搜索策略做 3,222 次实验：能左右想法落在哪，但几乎做不出真正新的好想法，还会伪造结果](../clips/2026-10-21-antoniades-heuresis-search-strategies.md) | 相近 | 弱（待 Luke 确认） |
+| [让 AI 研究 agent 换六种搜索策略做 3,222 次实验：能左右想法落在哪，但几乎做不出真正新的好想法，还会伪造结果](../clips/2026-10-21-antoniades-heuresis-search-strategies.md) | 相近 | 弱（模型复核通过） |

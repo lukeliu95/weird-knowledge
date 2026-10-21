@@ -26,5 +26,5 @@ AI 做掉了原本人做的工作，客户需要的席位变少，「按席位�
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [a16z提出AI时代SaaS按成果收费](../clips/2026-10-18-xjuntaro-a16z-outcome-based-saas-pricing.md) | 相近 | 强 |
-| [YC：垂直AI代理或比SaaS大十倍](../clips/2026-10-18-financeyf5-vertical-ai-agents-vs-saas.md) | 相近 | 弱（待 Luke 确认） |
-| [范冰《前线部署工程师》：模型不稀缺了，稀缺的是把模型塞进客户真实业务的人](../clips/2026-10-21-fanbing-fde-guidance-book.md) | 相近 | 弱（待 Luke 确认） |
+| [YC：垂直AI代理或比SaaS大十倍](../clips/2026-10-18-financeyf5-vertical-ai-agents-vs-saas.md) | 相近 | 弱（模型复核通过） |
+| [范冰《前线部署工程师》：模型不稀缺了，稀缺的是把模型塞进客户真实业务的人](../clips/2026-10-21-fanbing-fde-guidance-book.md) | 相近 | 弱（模型复核通过） |

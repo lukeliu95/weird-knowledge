@@ -25,7 +25,7 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [给公司业务接入智能体的五点思考](../clips/2026-10-18-dotey-enterprise-agent-integration-tips.md) | 相近 | 弱（待 Luke 确认） |
-| [Claude Code 的 Task 工具原理](../clips/2026-10-18-dotey-claude-code-task-subagent.md) | 挑战 | 弱（待 Luke 确认） |
-| [备忘录加 worktree 就够了](../clips/2026-10-18-hilng77042-opc-agents-notes-worktrees.md) | 相近 | 弱（待 Luke 确认） |
-| [Meta 的瘦编排器模式：编排器只管路由和检查，不做领域推理，14 个专项子 agent 各管一块](../clips/2026-10-20-meta-thin-orchestrator-agent-architecture.md) | 挑战 | 弱（待 Luke 确认） |
+| [给公司业务接入智能体的五点思考](../clips/2026-10-18-dotey-enterprise-agent-integration-tips.md) | 相近 | 弱（模型复核通过） |
+| [Claude Code 的 Task 工具原理](../clips/2026-10-18-dotey-claude-code-task-subagent.md) | 挑战 | 弱（模型复核通过） |
+| [备忘录加 worktree 就够了](../clips/2026-10-18-hilng77042-opc-agents-notes-worktrees.md) | 相近 | 弱（模型复核通过） |
+| [Meta 的瘦编排器模式：编排器只管路由和检查，不做领域推理，14 个专项子 agent 各管一块](../clips/2026-10-20-meta-thin-orchestrator-agent-architecture.md) | 挑战 | 弱（模型复核通过） |

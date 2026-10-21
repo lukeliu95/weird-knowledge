@@ -26,6 +26,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Gartner 调查：六成以上 B2B 买家更想不见销售，73% 回避不相关推销](../clips/2026-10-18-gartner-rep-free-buying-surveys.md) | 相近 | 弱（待 Luke 确认） |
-| [特定電子メール指南：给企业公开的邮箱发 B2B 营业邮件有明文例外](../clips/2026-10-18-soumu-caa-specified-email-guideline.md) | 相近 | 弱（待 Luke 确认） |
-| [特電法条文：违规要先被下整改命令，不服从才罚；表单营销没有官方结论](../clips/2026-10-18-japan-specified-email-act.md) | 相近 | 弱（待 Luke 确认） |
+| [Gartner 调查：六成以上 B2B 买家更想不见销售，73% 回避不相关推销](../clips/2026-10-18-gartner-rep-free-buying-surveys.md) | 相近 | 弱（模型复核通过） |
+| [特定電子メール指南：给企业公开的邮箱发 B2B 营业邮件有明文例外](../clips/2026-10-18-soumu-caa-specified-email-guideline.md) | 相近 | 弱（模型复核通过） |

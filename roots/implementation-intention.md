@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [想细节治拖延：把要做的事想到每个细节，兴奋起来就能动手](../clips/2026-10-18-feishenmexing-imagine-details-to-beat-procrastination.md) | 相近 | 弱（待 Luke 确认） |
+| [想细节治拖延：把要做的事想到每个细节，兴奋起来就能动手](../clips/2026-10-18-feishenmexing-imagine-details-to-beat-procrastination.md) | 相近 | 弱（模型复核通过） |

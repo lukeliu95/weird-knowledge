@@ -27,11 +27,11 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [AI 工具周刊年入七万美元](../clips/2026-10-18-indiehackercase-ai-tools-newsletter-revenue.md) | 相近 | 弱（待 Luke 确认） |
-| [Headway：书籍摘要月入300万美元](../clips/2026-10-18-wanghao8080-headway-book-summary-app.md) | 相近 | 弱（待 Luke 确认） |
-| [MrBeast的YouTube上瘾蓝图](../clips/2026-10-18-0xcheshire-youtube-addiction-blueprint.md) | 相近 | 弱（待 Luke 确认） |
+| [AI 工具周刊年入七万美元](../clips/2026-10-18-indiehackercase-ai-tools-newsletter-revenue.md) | 相近 | 弱（模型复核通过） |
+| [Headway：书籍摘要月入300万美元](../clips/2026-10-18-wanghao8080-headway-book-summary-app.md) | 相近 | 弱（模型复核通过） |
+| [MrBeast的YouTube上瘾蓝图](../clips/2026-10-18-0xcheshire-youtube-addiction-blueprint.md) | 相近 | 弱（模型复核通过） |
 | [30288篇新闻，95%不值得读](../clips/2026-10-18-howie-serious-news-95-percent-not-worth-reading.md) | 换了说法 | 强 |
-| [品味可以被模仿，决策才不可替代](../clips/2026-10-18-mengkepm-taste-copyable-decision-irreplaceable.md) | 相近 | 弱（待 Luke 确认） |
-| [ラクス 营业邮件调查：日本收件人最看重“和我的行业课题有关”和“有数字有案例”](../clips/2026-10-18-rakus-sales-email-to-meeting-survey-2026.md) | 相近 | 弱（待 Luke 确认） |
-| [营销邮件个性化实地实验：主题写上收件人名字，看过价格后回信想买的人多 31%；正文写上对方公司名，这类回信约翻倍](../clips/2026-10-19-sahni-personalization-email-marketing.md) | 相近 | 弱（待 Luke 确认） |
-| [写给 7,002 名美国学区委员的邮件实验：49 词的版本回应率 4.8%，127 词的版本 2.7%，短的多出近一倍](../clips/2026-10-19-rogers-lasky-fink-busy-readers-concise-email.md) | 相近 | 弱（待 Luke 确认） |
+| [品味可以被模仿，决策才不可替代](../clips/2026-10-18-mengkepm-taste-copyable-decision-irreplaceable.md) | 相近 | 弱（模型复核通过） |
+| [ラクス 营业邮件调查：日本收件人最看重“和我的行业课题有关”和“有数字有案例”](../clips/2026-10-18-rakus-sales-email-to-meeting-survey-2026.md) | 相近 | 弱（模型复核通过） |
+| [营销邮件个性化实地实验：主题写上收件人名字，看过价格后回信想买的人多 31%；正文写上对方公司名，这类回信约翻倍](../clips/2026-10-19-sahni-personalization-email-marketing.md) | 相近 | 弱（模型复核通过） |
+| [写给 7,002 名美国学区委员的邮件实验：49 词的版本回应率 4.8%，127 词的版本 2.7%，短的多出近一倍](../clips/2026-10-19-rogers-lasky-fink-busy-readers-concise-email.md) | 相近 | 弱（模型复核通过） |

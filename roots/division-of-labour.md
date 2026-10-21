@@ -27,8 +27,7 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Anthropic 多智能体研究系统详解](../clips/2026-10-18-oran-ge-anthropic-multi-agent-research.md) | 相近 | 弱（待 Luke 确认） |
-| [陶哲轩谈 AI 与数学的演讲要点](../clips/2026-10-18-dotey-terence-tao-ai-math-talk.md) | 相近 | 弱（待 Luke 确认） |
-| [天涯神贴：专注一件事死磕到擅长](../clips/2026-10-18-caijingtianxia-focus-one-thing-tianya-post.md) | 相近 | 弱（待 Luke 确认） |
-| [用个人AI编排者带动一支永不睡觉的开发队](../clips/2026-10-18-ayi-ainotes-personal-ai-orchestrator-openclaw.md) | 相近 | 弱（待 Luke 确认） |
-| [Matrix：Agent 公司架构](../clips/2026-10-18-bruceguai-matrix-agent-company-architecture.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic 多智能体研究系统详解](../clips/2026-10-18-oran-ge-anthropic-multi-agent-research.md) | 相近 | 弱（模型复核通过） |
+| [陶哲轩谈 AI 与数学的演讲要点](../clips/2026-10-18-dotey-terence-tao-ai-math-talk.md) | 相近 | 弱（模型复核通过） |
+| [用个人AI编排者带动一支永不睡觉的开发队](../clips/2026-10-18-ayi-ainotes-personal-ai-orchestrator-openclaw.md) | 相近 | 弱（模型复核通过） |
+| [Matrix：Agent 公司架构](../clips/2026-10-18-bruceguai-matrix-agent-company-architecture.md) | 相近 | 弱（模型复核通过） |

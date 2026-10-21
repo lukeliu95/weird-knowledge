@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: [kwon-2007-rusa-chat-satisfaction, rusa-behavioral-guidelines, neutral-questioning]
+roots: [kwon-2007-rusa-chat-satisfaction, rusa-behavioral-guidelines]
 adopted: false
 ---
 
@@ -49,6 +49,5 @@ adopted: false
 - 源知识：
   - [馆员行为对聊天咨询满意度的影响](../roots/kwon-2007-rusa-chat-satisfaction.md) · 关系：直接源自 · 强弱：强。就是这项研究本身。
   - [RUSA 参考咨询行为指南](../roots/rusa-behavioral-guidelines.md) · 关系：直接源自 · 强弱：强。检验的就是 RUSA 指南里的行为。
-  - [中立提问法](../roots/neutral-questioning.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。没有直接检验中立提问，但“追问不显著”和“多问情境、缺口、用途”的方向不一致，是推断。
 - 本质：这条新知识本质上是参考咨询行为指南的一次实证检验：先给实在的结果、最后确认，比多问更重要。
 - 整理于：2026-10-19（补课第 4 题）

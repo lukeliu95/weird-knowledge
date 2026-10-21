@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: [buying-center, sheth-1973-industrial-buyer-behavior, gartner-2019-b2b-buying-journey, cognitive-bias]
+roots: [buying-center, sheth-1973-industrial-buyer-behavior, gartner-2019-b2b-buying-journey]
 adopted: false
 ---
 
@@ -52,6 +52,5 @@ adopted: false
   - [采购中心（决策单元）](../roots/buying-center.md) · 关系：换了说法 · 强弱：强。Gartner 的 buying group 就是采购中心
   - [谢斯工业品购买者行为模型](../roots/sheth-1973-industrial-buyer-behavior.md) · 关系：相近 · 强弱：强。谢斯模型早就说多部门共同决策里冲突怎么解决决定结果，这条是给它加了数字
   - [Gartner 新 B2B 购买旅程（购买任务与买方赋能）](../roots/gartner-2019-b2b-buying-journey.md) · 关系：直接源自 · 强弱：强。同一研究线，"达成共识"是那份研究里六项购买任务之一
-  - [认知偏差（启发式与偏差）](../roots/cognitive-bias.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。发言人用确认偏误解释"个人化内容反而制造分歧"，没有实测
 - 本质：这条本质上是采购中心理论里"多人共同决策的冲突"在卖方内容策略上的应用。
 - 整理于：2026-10-19（补课第 9 题）

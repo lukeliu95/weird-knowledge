@@ -27,4 +27,4 @@ Google CEO 在第一封致股东信里宣布，计算设备会变成随时帮忙
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Google 公司级新 OKR 七大目标](../clips/2026-10-18-dotey-google-company-okrs.md) | 直接源自 | 弱（待 Luke 确认） |
+| [Google 公司级新 OKR 七大目标](../clips/2026-10-18-dotey-google-company-okrs.md) | 直接源自 | 弱（模型复核通过） |

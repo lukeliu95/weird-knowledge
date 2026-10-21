@@ -28,4 +28,3 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Paul Graham 谈超线性回报](../clips/2026-10-18-dotey-paul-graham-superlinear-returns.md) | 直接源自 | 强 |
-| [缠论简纲思维导图](../clips/2026-10-18-dtdt666-chanlun-mind-map.md) | 挑战 | 弱（待 Luke 确认） |

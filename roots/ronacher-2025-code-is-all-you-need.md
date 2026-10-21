@@ -25,5 +25,5 @@ MCP 不好组合、太占上下文；让模型写脚本更好，脚本可以审�
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Pi 作者：代码即真相，Bash 够用](../clips/2026-10-18-dotey-pi-authors-code-bash-insights.md) | 直接源自 | 弱（待 Luke 确认） |
-| [给公司业务接入智能体的五点思考](../clips/2026-10-18-dotey-enterprise-agent-integration-tips.md) | 相近 | 弱（待 Luke 确认） |
+| [Pi 作者：代码即真相，Bash 够用](../clips/2026-10-18-dotey-pi-authors-code-bash-insights.md) | 相近 | 弱（模型复核通过） |
+| [给公司业务接入智能体的五点思考](../clips/2026-10-18-dotey-enterprise-agent-integration-tips.md) | 相近 | 弱（模型复核通过） |

@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 日本
-roots: [hofstede-cultural-dimensions, high-context-and-low-context-cultures]
+roots: [hofstede-cultural-dimensions]
 adopted: true
 ---
 
@@ -63,6 +63,5 @@ adopted: true
 - 核心主张：霍夫斯泰德给日本的不确定性规避打 92 分，属于偏高的一组，但希腊、葡萄牙更高；这类国家分数只能当背景，不能预测单个公司，而“日本是典型集体主义”这一点被后来的复查推翻。
 - 源知识：
   - [霍夫斯泰德文化维度理论](../roots/hofstede-cultural-dimensions.md) · 关系：直接源自 · 强弱：强。就是这套理论和官方数据本身。
-  - [高语境文化与低语境文化](../roots/high-context-and-low-context-cultures.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。都是用少数维度给各国文化归类的跨文化框架；是推断。
 - 本质：这条新知识本质上是跨文化比较框架在日本商务场景下的常见用法，以及它被误用的边界。
 - 整理于：2026-10-18（补课第 1 题）

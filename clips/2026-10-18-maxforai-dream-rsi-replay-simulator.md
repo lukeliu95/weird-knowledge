@@ -63,7 +63,7 @@ ConvDiv 和 ConvMax 在相近预算下，性能分别提高了 2.09× 和 1.44×
   - [Dyna：学习、规划与反应的一体化架构](../roots/sutton-1990-dyna.md) · 关系：直接源自 · 强弱：强。论文引用 Sutton 1990，并以「学一个环境模型、用想象的轨迹改进策略」作为核心类比，这正是 Dyna 的思路。
   - [世界模型](../roots/ha-2018-world-models.md) · 关系：直接源自 · 强弱：强。论文引用 World Models；「在自己的梦里训练策略、再搬回真实环境」是 World Models 摘要里的原话思路。
   - [递归自我改进](../roots/recursive-self-improvement.md) · 关系：直接源自 · 强弱：强。论文标题就是 Recursive Self-Improvement。
-  - [自学优化器（STOP）：递归自我改进的代码生成](../roots/zelikman-2023-self-taught-optimizer.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「模型不变，改进的是外层脚手架」与 STOP 的做法相同；抓取到的论文引用列表里没看到 STOP。
-  - [探索与利用困境](../roots/exploration-exploitation-dilemma.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「总结出的经验变成偏见，让 Agent 过早集中在少数方向」是过度利用、探索不足的典型表现；论文只泛泛说会限制探索。
+  - [自学优化器（STOP）：递归自我改进的代码生成](../roots/zelikman-2023-self-taught-optimizer.md) · 关系：相近 · 强弱：弱（模型复核通过）。「模型不变，改进的是外层脚手架」与 STOP 的做法相同；抓取到的论文引用列表里没看到 STOP。
+  - [探索与利用困境](../roots/exploration-exploitation-dilemma.md) · 关系：相近 · 强弱：弱（模型复核通过）。「总结出的经验变成偏见，让 Agent 过早集中在少数方向」是过度利用、探索不足的典型表现；论文只泛泛说会限制探索。
 - 本质：这条新知识本质上是基于模型的强化学习（Dyna 和世界模型里的「做梦」）在 Agent 外层编排自我改进上的应用。
 - 整理于：2026-10-18（第 1 轮）

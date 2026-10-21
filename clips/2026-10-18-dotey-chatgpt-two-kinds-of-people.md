@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: [dellacqua-2023-jagged-technological-frontier, peng-2023-copilot-developer-productivity, skill-biased-technological-change, diffusion-of-innovations]
+roots: [dellacqua-2023-jagged-technological-frontier, peng-2023-copilot-developer-productivity, skill-biased-technological-change]
 ---
 
 ## 原文
@@ -90,7 +90,6 @@ https://t.co/ajTtbp0VlB
 - 源知识：
   - [在参差不齐的技术边界上航行（BCG 顾问实验）](../roots/dellacqua-2023-jagged-technological-frontier.md) · 关系：直接源自 · 强弱：强。原文引用的“哈佛商学院对 BCG 758 名员工的研究”以及 25%、12%、40% 三个数字就出自这篇论文；“只适用于适合 AI 的任务”就是论文说的“参差不齐的技术边界”。注意：论文原文是原本水平低于平均的人提升最大（43%），不是“中等水平”。
   - [AI 对开发者生产率的影响：GitHub Copilot 对照实验](../roots/peng-2023-copilot-developer-productivity.md) · 关系：直接源自 · 强弱：强。原文“使用 Copilot 的开发者快了 55%”出自 GitHub 2022 年的对照实验，2023 年写成这篇论文（55.8%）。
-  - [技能偏向型技术变革](../roots/skill-biased-technological-change.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。技能偏向型技术变革认为新技术主要抬高高技能者的生产率；文中“提升最大的是水平较低的员工”与之相反。Brynjolfsson 等 2023 年的客服研究明确写了这类结果与技能偏向型技术变革“精神上相反”。原文作者本人没有提。
-  - [创新扩散理论](../roots/diffusion-of-innovations.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“学生只是最早尝试的群体”“公司里其他人还没用时影响更显著”，是创新扩散里早期采用者先获益的逻辑。属于推断。
+  - [技能偏向型技术变革](../roots/skill-biased-technological-change.md) · 关系：挑战 · 强弱：弱（模型复核通过）。技能偏向型技术变革认为新技术主要抬高高技能者的生产率；文中“提升最大的是水平较低的员工”与之相反。Brynjolfsson 等 2023 年的客服研究明确写了这类结果与技能偏向型技术变革“精神上相反”。原文作者本人没有提。
 - 本质：这条新知识本质上是“人机协作提升生产率”的实验证据在白领职场早期采用者优势上的应用。
 - 整理于：2026-10-18（第 2 轮）

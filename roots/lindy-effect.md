@@ -26,4 +26,3 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Headway：书籍摘要月入300万美元](../clips/2026-10-18-wanghao8080-headway-book-summary-app.md) | 相近 | 弱（待 Luke 确认） |

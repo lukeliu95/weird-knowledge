@@ -29,6 +29,6 @@ roots: [struve-1993-voices-ming-qing-cataclysm, empress-dowager-wang-southern-mi
   - [南明王太后（孝正太后）受洗](../roots/empress-dowager-wang-southern-ming.md) · 关系：直接源自 · 强弱：强。维基载王太后 1648 年 4 月由耶稣会士 Koffler 施洗，教名 Helena，和原帖“海伦娜·王”一致。
   - [卜弥格出使罗马](../roots/michal-boym.md) · 关系：直接源自 · 强弱：强。维基 Michał Boym 条目列出受洗的皇室成员“Helena Wang”和“Prince Constantine (Dangding), Zhu Cuxuan”，和原帖“康斯坦丁·朱”几乎一字不差。
   - [徐光启（教名保禄）](../roots/xu-guangqi.md) · 关系：直接源自 · 强弱：强。徐光启 1603 年受洗，教名 Paul，就是原帖的“保罗·徐”。但他的实际官职是礼部尚书、文渊阁大学士（内阁次辅），“枢密院高级国务大臣”不是明朝的正式官名，应是调侃式的说法（待确认）。
-  - [亲和诈骗](../roots/affinity-fraud.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者设想的“混进教会、编身世、熟了再开店做生意”正是亲和诈骗的套路：借同一信仰群体内部的信任牟利（推断，原帖是讽刺，待 Luke 确认）。
+  - [亲和诈骗](../roots/affinity-fraud.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者设想的“混进教会、编身世、熟了再开店做生意”正是亲和诈骗的套路：借同一信仰群体内部的信任牟利（推断，原帖是讽刺，待 Luke 确认）。
 - 本质：这条新知识本质上是耶稣会在华传教史里的一段冷门史实（南明皇室受洗），被作者放进“亲和诈骗”式的讽刺场景里使用。
 - 整理于：2026-10-18（第 1 轮）

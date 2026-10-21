@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [日语学习的素读法与家庭使用整理](../clips/2026-10-18-interjc-sodoku-japanese-learning.md) | 挑战 | 弱（待 Luke 确认） |
+| [日语学习的素读法与家庭使用整理](../clips/2026-10-18-interjc-sodoku-japanese-learning.md) | 挑战 | 弱（模型复核通过） |

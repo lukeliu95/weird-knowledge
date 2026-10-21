@@ -26,4 +26,4 @@ AI 公司从卖软件工具转向直接卖结果（服务），瞄准的是约 4
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [YC：垂直AI代理或比SaaS大十倍](../clips/2026-10-18-financeyf5-vertical-ai-agents-vs-saas.md) | 相近 | 弱（待 Luke 确认） |
+| [YC：垂直AI代理或比SaaS大十倍](../clips/2026-10-18-financeyf5-vertical-ai-agents-vs-saas.md) | 相近 | 弱（模型复核通过） |

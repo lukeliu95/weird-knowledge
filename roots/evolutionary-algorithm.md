@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [外层harness让智能体连跑数小时](../clips/2026-10-18-baoweiheihei-harness-unattended-long-running.md) | 相近 | 弱（待 Luke 确认） |
+| [外层harness让智能体连跑数小时](../clips/2026-10-18-baoweiheihei-harness-unattended-long-running.md) | 相近 | 弱（模型复核通过） |

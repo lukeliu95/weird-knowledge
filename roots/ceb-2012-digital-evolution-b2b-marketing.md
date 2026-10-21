@@ -28,4 +28,4 @@ B2B 客户平均走完购买过程的 57% 才第一次认真接触销售。
 |---|---|---|
 | [57% 的原始出处：客户平均走完购买过程的 57% 才认真接触销售](../clips/2026-10-18-ceb-digital-evolution-b2b-marketing.md) | 直接源自 | 强 |
 | [挑战者销售：明星销售靠教给客户他没看到的问题，而不是靠关系](../clips/2026-10-18-dixon-adamson-challenger-sale.md) | 直接源自 | 强 |
-| [日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](../clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md) | 相近 | 弱（待 Luke 确认） |
+| [日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](../clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md) | 相近 | 弱（模型复核通过） |

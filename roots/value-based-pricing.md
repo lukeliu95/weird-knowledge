@@ -25,5 +25,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [a16z提出AI时代SaaS按成果收费](../clips/2026-10-18-xjuntaro-a16z-outcome-based-saas-pricing.md) | 相近 | 弱（待 Luke 确认） |
+| [a16z提出AI时代SaaS按成果收费](../clips/2026-10-18-xjuntaro-a16z-outcome-based-saas-pricing.md) | 相近 | 弱（模型复核通过） |
 | [NVIDIA DGX Spark 从买机器到变现指南](../clips/2026-10-18-ai-goge-dgx-spark-monetization-guide.md) | 换了说法 | 强 |

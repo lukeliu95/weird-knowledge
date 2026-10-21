@@ -26,7 +26,7 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Kimi 创始人谈 AGI 需要新组织](../clips/2026-10-18-vartekxx-kimi-founder-agi-organization.md) | 相近 | 弱（待 Luke 确认） |
+| [Kimi 创始人谈 AGI 需要新组织](../clips/2026-10-18-vartekxx-kimi-founder-agi-organization.md) | 相近 | 弱（模型复核通过） |
 | [人和电脑的关系可能从一开始就是反的](../clips/2026-10-18-zuozizhen-human-computer-relationship-inverted.md) | 直接源自 | 强 |
-| [Qwen技术负责人离职与大厂内部创业](../clips/2026-10-18-dexteryy-qwen-lead-departure-big-tech.md) | 相近 | 弱（待 Luke 确认） |
-| [王煜全访谈：这波 AI 机会在哪](../clips/2026-10-18-yilunaiyyds-wang-yuquan-ai-opportunity-interview.md) | 相近 | 弱（待 Luke 确认） |
+| [Qwen技术负责人离职与大厂内部创业](../clips/2026-10-18-dexteryy-qwen-lead-departure-big-tech.md) | 相近 | 弱（模型复核通过） |
+| [王煜全访谈：这波 AI 机会在哪](../clips/2026-10-18-yilunaiyyds-wang-yuquan-ai-opportunity-interview.md) | 相近 | 弱（模型复核通过） |

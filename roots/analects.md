@@ -28,4 +28,3 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [一年涨到四万关注的三条心得](../clips/2026-10-18-lifesinger-twitter-40k-followers-lessons.md) | 直接源自 | 强 |
-| [孙哥成功的原因：愿意向任何人学习](../clips/2026-10-18-mimijieweb3-sun-ge-learns-from-anyone.md) | 相近 | 弱（待 Luke 确认） |

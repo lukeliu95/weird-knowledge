@@ -118,7 +118,7 @@ roots: [procedural-knowledge, wang-2023-voyager, shinn-2023-reflexion, laroche-2
   - [Voyager：基于大模型的开放式具身智能体（不断增长的技能库）](../roots/wang-2023-voyager.md) · 关系：直接源自 · 强弱：强。论文第 1 节引 Voyager 说明 agent 把经验存成可复用的程序，附录 A.2、A.3 把它列为“不断增长的技能库、成功做法存起来以后检索组合”的开创者；Designer-RSI 把可执行代码换成了可调整的自然语言操作指南，并补上没有程序化判分时怎么把关。
   - [Reflexion：用语言反思做强化（不改模型权重）](../roots/shinn-2023-reflexion.md) · 关系：直接源自 · 强弱：强。论文第 1 节明说变宽、变深“从经验里提改动”参考 Reflexion 和 Self-Refine；“反思”角色把失败变成对 SKILL.md 的定向修改，就是不改权重、用语言反思做强化。
   - [带基线自举的安全策略改进（SPIBB）](../roots/laroche-2019-spibb.md) · 关系：直接源自 · 强弱：强。论文第 1 节和附录 A.4 明说重放门“受安全策略改进启发”（Laroche 等 2019、Thomas 等 2015）：新版本要和在用的版本比，证据不够就保留旧的，不看绝对分。
-  - [用 Agent Skills 让智能体胜任真实工作](../roots/anthropic-2025-agent-skills.md) · 关系：直接源自 · 强弱：弱（待 Luke 确认）。技能是一份 SKILL.md 加 YAML 头、description 当触发词、系统提示只放名字和一行说明、用到才 load_skill 读全文，和 Anthropic 的 Agent Skills 格式一模一样；但论文没引它，是否直接借用待确认。
-  - [帕累托效率（帕累托改进）](../roots/pareto-efficiency.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。重放门“一个用例都不能输、至少赢一个、全平不采用”正是帕累托改进的定义，只是把“社会里的每个人”换成“抽到的每个用例”；论文没用这个词，是模型推断。
+  - [用 Agent Skills 让智能体胜任真实工作](../roots/anthropic-2025-agent-skills.md) · 关系：直接源自 · 强弱：弱（模型复核通过）。技能是一份 SKILL.md 加 YAML 头、description 当触发词、系统提示只放名字和一行说明、用到才 load_skill 读全文，和 Anthropic 的 Agent Skills 格式一模一样；但论文没引它，是否直接借用待确认。
+  - [帕累托效率（帕累托改进）](../roots/pareto-efficiency.md) · 关系：相近 · 强弱：弱（模型复核通过）。重放门“一个用例都不能输、至少赢一个、全平不采用”正是帕累托改进的定义，只是把“社会里的每个人”换成“抽到的每个用例”；论文没用这个词，是模型推断。
 - 本质：这条新知识本质上是“变异—选择”（从经验里提改动，过了保守的帕累托式重放门才保留）在 agent 外挂程序性记忆（技能文件）上的应用。
 - 整理于：2026-10-21（第 4 轮）

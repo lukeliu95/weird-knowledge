@@ -29,4 +29,3 @@ verified: true
 |---|---|---|
 | [中立提问法：开放地问，但只问情境、缺口、用途三件事](../clips/2026-10-19-dervin-dewdney-neutral-questioning.md) | 直接源自 | 强 |
 | [训练馆员中立提问的实地实验：用户觉得答案更有帮助，但满意度本来就很高](../clips/2026-10-19-dewdney-training-reference-interview-experiment.md) | 直接源自 | 强 |
-| [聊天咨询里什么让用户满意：收尾问“回答完整了吗”最有用，追问本身没有显著作用](../clips/2026-10-19-kwon-gregory-chat-reference-satisfaction.md) | 挑战 | 弱（待 Luke 确认） |

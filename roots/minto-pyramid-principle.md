@@ -28,4 +28,3 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [埃森哲式资料制作思考法总结](../clips/2026-10-18-shin-yoshimura0-accenture-style-deck-thinking.md) | 相近 | 弱（待 Luke 确认） |

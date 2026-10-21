@@ -31,6 +31,6 @@ We found a strikingly similar divide inside Claude. https://t.co/aLUPBifxth
   - [全局工作空间理论](../roots/global-workspace-theory.md) · 关系：直接源自 · 强弱：强。研究标题就叫“语言模型里的全局工作空间”，正文明确建立在 Baars 的全局工作空间理论上。
   - [全局神经工作空间](../roots/dehaene-2001-global-neuronal-workspace.md) · 关系：直接源自 · 强弱：强。Anthropic 的文章引用了 Dehaene 和 Naccache 的工作空间模型，两人还为这项研究写了特邀评论。
   - [访问意识与现象意识之分](../roots/block-1995-access-consciousness.md) · 关系：直接源自 · 强弱：强。“能描述、能记在心里、能拿来推理”就是“访问意识”的定义；Anthropic 文章明确说结果只涉及访问意识、不涉及现象意识，但没点名 Block。
-  - [人工智能中的意识：来自意识科学的启示](../roots/butlin-2023-consciousness-in-ai.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Butlin 等 2023 年就提出用全局工作空间等理论的“指标属性”来检查 AI，思路相近，原推没提。
+  - [人工智能中的意识：来自意识科学的启示](../roots/butlin-2023-consciousness-in-ai.md) · 关系：相近 · 强弱：弱（模型复核通过）。Butlin 等 2023 年就提出用全局工作空间等理论的“指标属性”来检查 AI，思路相近，原推没提。
 - 本质：这条新知识本质上是全局工作空间理论（意识访问理论）在大语言模型可解释性场景下的应用。
 - 整理于：2026-10-18（第 1 轮）

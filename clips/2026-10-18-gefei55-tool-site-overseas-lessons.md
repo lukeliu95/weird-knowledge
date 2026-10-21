@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: [lean-startup, blue-ocean-strategy, long-tail, pagerank, freemium, diversification-finance]
+roots: [lean-startup, blue-ocean-strategy, long-tail, pagerank, diversification-finance]
 ---
 
 ## 原文
@@ -368,9 +368,8 @@ stripe收到大金额一次性付款后，这样的客户大概率是公司，�
 - 源知识：
   - [精益创业](../roots/lean-startup.md) · 关系：直接源自 · 强弱：强。原文明说“最小mvp模式”；第一个站是“随便瞎编的需求”，靠上线后的用户反馈才确认场景确实存在，正是先做最小可行产品再验证
   - [蓝海战略](../roots/blue-ocean-strategy.md) · 关系：直接源自 · 强弱：强。原文用“蓝海关键词”“红海”这对词，出自 Kim 与 Mauborgne；但他的意思更窄，只指竞争少的细分搜索词，不是《蓝海战略》说的价值创新
-  - [长尾](../roots/long-tail.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“我只做细分赛道词，不去做大词”，靠很多小需求词各拿一点流量，接近长尾的思路
-  - [PageRank（网页排名算法）](../roots/pagerank.md) · 关系：直接源自 · 强弱：弱（待 Luke 确认）。“多发外链”“第一波外链靠 HN、Product Hunt”这套做法，背后是搜索引擎按指向网页的链接数量和质量打分；作者没提 PageRank，是推断
-  - [免费增值](../roots/freemium.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。免费增值的经典说法是先免费拉来大量用户、再转化一部分付费；作者观察到免费试用只对 SEO（停留时长）有用，对付费率帮助不大，付费用户几乎都没试用就付了。这只是他几个网站的观察
-  - [分散投资](../roots/diversification-finance.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“多个网站用多个 Stripe 子账户，避免一个账户出问题导致所有网站收不了款”，就是别把鸡蛋放在一个篮子里
+  - [长尾](../roots/long-tail.md) · 关系：相近 · 强弱：弱（模型复核通过）。“我只做细分赛道词，不去做大词”，靠很多小需求词各拿一点流量，接近长尾的思路
+  - [PageRank（网页排名算法）](../roots/pagerank.md) · 关系：相近 · 强弱：弱（模型复核通过）。“多发外链”“第一波外链靠 HN、Product Hunt”这套做法，背后是搜索引擎按指向网页的链接数量和质量打分；作者没提 PageRank，是推断
+  - [分散投资](../roots/diversification-finance.md) · 关系：相近 · 强弱：弱（模型复核通过）。“多个网站用多个 Stripe 子账户，避免一个账户出问题导致所有网站收不了款”，就是别把鸡蛋放在一个篮子里
 - 本质：这条新知识本质上是精益创业的“先上最小版本、再按真实反馈迭代”，加上“避开红海、只做长尾细分需求”，在个人出海工具站场景下的应用。
 - 整理于：2026-10-18（第 2 轮）

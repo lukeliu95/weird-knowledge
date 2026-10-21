@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [吴恩达对话李飞飞谈以人为本的 AI](../clips/2026-10-18-dotey-andrew-ng-fei-fei-li-interview.md) | 直接源自 | 弱（待 Luke 确认） |
+| [吴恩达对话李飞飞谈以人为本的 AI](../clips/2026-10-18-dotey-andrew-ng-fei-fei-li-interview.md) | 直接源自 | 弱（模型复核通过） |

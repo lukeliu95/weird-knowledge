@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [日本公司邮件与外资邮件的对比段子](../clips/2026-10-18-hikaru-hackjpn-japan-vs-foreign-email-meme.md) | 相近 | 弱（待 Luke 确认） |
+| [日本公司邮件与外资邮件的对比段子](../clips/2026-10-18-hikaru-hackjpn-japan-vs-foreign-email-meme.md) | 相近 | 弱（模型复核通过） |

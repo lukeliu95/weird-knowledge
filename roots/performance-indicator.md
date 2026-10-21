@@ -25,4 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Reddit 营销怎么算投产：看投入型指标](../clips/2026-10-18-yangyi-reddit-marketing-input-metrics.md) | 换了说法 | 弱（待 Luke 确认） |
+| [Reddit 营销怎么算投产：看投入型指标](../clips/2026-10-18-yangyi-reddit-marketing-input-metrics.md) | 换了说法 | 弱（模型复核通过） |

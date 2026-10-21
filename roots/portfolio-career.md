@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [离职大厂做 OPC 第一年收入报告](../clips/2026-10-18-weiyipei-opc-first-year-income-report.md) | 换了说法 | 弱（待 Luke 确认） |
+| [离职大厂做 OPC 第一年收入报告](../clips/2026-10-18-weiyipei-opc-first-year-income-report.md) | 换了说法 | 弱（模型复核通过） |

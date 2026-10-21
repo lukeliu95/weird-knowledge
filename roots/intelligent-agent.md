@@ -26,7 +26,7 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [多数 Agent 其实只是工作流](../clips/2026-10-18-eze-is-1-agent-vs-workflow-definition.md) | 相近 | 弱（待 Luke 确认） |
-| [Operator靠CUA操作屏幕的原理](../clips/2026-10-18-dotey-openai-operator-cua-how.md) | 换了说法 | 弱（待 Luke 确认） |
-| [一张图看懂 AI Agent 怎么工作](../clips/2026-10-18-monkeyjiang-ai-agent-how-it-works.md) | 换了说法 | 弱（待 Luke 确认） |
-| [大白话讲清 Agent、工作流与 ReACT](../clips/2026-10-18-yangyi-agent-workflow-react-explained.md) | 相近 | 弱（待 Luke 确认） |
+| [多数 Agent 其实只是工作流](../clips/2026-10-18-eze-is-1-agent-vs-workflow-definition.md) | 相近 | 弱（模型复核通过） |
+| [Operator靠CUA操作屏幕的原理](../clips/2026-10-18-dotey-openai-operator-cua-how.md) | 直接源自 | 弱（模型复核通过） |
+| [一张图看懂 AI Agent 怎么工作](../clips/2026-10-18-monkeyjiang-ai-agent-how-it-works.md) | 换了说法 | 弱（模型复核通过） |
+| [大白话讲清 Agent、工作流与 ReACT](../clips/2026-10-18-yangyi-agent-workflow-react-explained.md) | 相近 | 弱（模型复核通过） |

@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: [influence-science-and-practice, reciprocity-social-psychology, buying-center]
+roots: [influence-science-and-practice, reciprocity-social-psychology]
 adopted: false
 ---
 
@@ -64,7 +64,6 @@ adopted: false
 - 核心主张：给企业决策者的第一封邮件，点名对方公司、亮明可信的身份、坦白说需要对方帮忙，回应更多；把数据安全写成单独一大段，反而让人更谨慎、更不回
 - 源知识：
   - [《影响力》说服六原则](../roots/influence-science-and-practice.md) · 关系：直接源自 · 强弱：强。作者讨论"权威"时直接引用 Cialdini（2001）
-  - [互惠规范](../roots/reciprocity-social-psychology.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者把个性化的作用解释为"对方对个人化的称呼想要回报"，引用的是 Dillman
-  - [采购中心（决策单元）](../roots/buying-center.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者认为企业里要找对的人、要内部授权，这是数据保护说明在大企业起反作用的原因
+  - [互惠规范](../roots/reciprocity-social-psychology.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者把个性化的作用解释为"对方对个人化的称呼想要回报"，引用的是 Dillman
 - 本质：这条本质上是说服原则（权威、互惠）在"第一次给陌生企业发邮件"场景下的应用；安全说明在第一封里的作用更像"提醒风险"，而不是"让人放心"（另："强调隐私保护反而降低回应"本身：没找到源头，待查）
 - 整理于：2026-10-19（补课第 9 题）

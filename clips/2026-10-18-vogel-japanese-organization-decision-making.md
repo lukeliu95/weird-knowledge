@@ -57,6 +57,6 @@ adopted: true
 - 源知识：
   - [稟議制](../roots/ringi-system.md) · 关系：直接源自 · 强弱：强。书里专门描述稟議制。
   - [根回し](../roots/nemawashi.md) · 关系：直接源自 · 强弱：强。书里专门描述根回し。
-  - [克服变革阻力（Harwood 工厂实验）](../roots/coch-1948-overcoming-resistance-change.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。让受影响的人事先参与决定，执行阻力就小，和 Coch & French 的参与式变革实验相近；书里没有引用，是推断。
+  - [克服变革阻力（Harwood 工厂实验）](../roots/coch-1948-overcoming-resistance-change.md) · 关系：相近 · 强弱：弱（模型复核通过）。让受影响的人事先参与决定，执行阻力就小，和 Coch & French 的参与式变革实验相近；书里没有引用，是推断。
 - 本质：这条新知识本质上是“事先让相关方参与以减少执行阻力”在日本组织里的制度化形态。
 - 整理于：2026-10-18（补课第 1 题）

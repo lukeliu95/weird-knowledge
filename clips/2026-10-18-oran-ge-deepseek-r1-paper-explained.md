@@ -106,7 +106,7 @@ Google 的新模型真的很棒。
   - [DeepSeek-R1：用强化学习激发推理能力](../roots/guo-2025-deepseek-r1.md) · 关系：直接源自 · 强弱：强。原文就是这篇论文的解读，三个亮点（R1-Zero 纯强化学习、冷启动加多阶段训练、蒸馏小模型）都出自论文
   - [强化学习](../roots/reinforcement-learning.md) · 关系：直接源自 · 强弱：强。原文明说 R1-Zero 跳过有监督数据，直接用强化学习（RL）训练基础模型
   - [知识蒸馏](../roots/knowledge-distillation.md) · 关系：直接源自 · 强弱：强。原文明说用「知识蒸馏」以 R1 为老师训练出 1.5B 到 70B 的小模型
-  - [AlphaGo Zero（不用人类知识下围棋）](../roots/alphago-zero.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。R1-Zero「不靠人类示范、靠强化学习自己长出能力」与 AlphaGo Zero 不用人类棋谱是同一思路；R1 论文在 MCTS 一节明确引用了 AlphaGo 和 AlphaZero，但 R1-Zero 的命名关系是推断
-  - [苦涩的教训](../roots/bitter-lesson.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「跳过刷题、让模型自己练」与 Sutton「能随算力扩展的通用学习方法终将胜过人工注入的知识」一致，原文没有提到
+  - [AlphaGo Zero（不用人类知识下围棋）](../roots/alphago-zero.md) · 关系：相近 · 强弱：弱（模型复核通过）。R1-Zero「不靠人类示范、靠强化学习自己长出能力」与 AlphaGo Zero 不用人类棋谱是同一思路；R1 论文在 MCTS 一节明确引用了 AlphaGo 和 AlphaZero，但 R1-Zero 的命名关系是推断
+  - [苦涩的教训](../roots/bitter-lesson.md) · 关系：相近 · 强弱：弱（模型复核通过）。「跳过刷题、让模型自己练」与 Sutton「能随算力扩展的通用学习方法终将胜过人工注入的知识」一致，原文没有提到
 - 本质：这条新知识本质上是强化学习（试错加奖励，可追到效果律）在大语言模型推理训练场景下的应用，再加上知识蒸馏把能力压进小模型。
 - 整理于：2026-10-18（第 1 轮）

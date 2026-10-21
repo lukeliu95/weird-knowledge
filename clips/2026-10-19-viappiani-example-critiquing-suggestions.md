@@ -57,6 +57,6 @@ adopted: false
   - [偏好建构（偏好是现场建构的）](../roots/constructive-preferences.md) · 关系：直接源自 · 强弱：强。§2 明文引用 Payne 等 1993。
   - [认知偏差（启发式与偏差）](../roots/cognitive-bias.md) · 关系：直接源自 · 强弱：强。§3 用锚定效应解释为什么只给最像的例子会卡住。
   - [推荐系统](../roots/recommender-system.md) · 关系：相近 · 强弱：强。属于交互式推荐。
-  - [探索与利用困境](../roots/exploration-exploitation-dilemma.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“候选加提示样本”像在利用和探索之间分名额，作者没这么说，是推断。
+  - [探索与利用困境](../roots/exploration-exploitation-dilemma.md) · 关系：相近 · 强弱：弱（模型复核通过）。“候选加提示样本”像在利用和探索之间分名额，作者没这么说，是推断。
 - 本质：这条新知识本质上是“偏好在看例子时才成形”在交互式搜索里的用法：用样本引出用户还没意识到的条件。
 - 整理于：2026-10-19（补课第 4 题）

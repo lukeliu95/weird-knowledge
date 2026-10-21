@@ -26,6 +26,6 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [做到千万美元ARR的B2B代理路径](../clips/2026-10-18-financeyf5-b2b-ai-agent-10m-arr.md) | 相近 | 弱（待 Luke 确认） |
+| [做到千万美元ARR的B2B代理路径](../clips/2026-10-18-financeyf5-b2b-ai-agent-10m-arr.md) | 相近 | 弱（模型复核通过） |
 | [拆解抖音商业大号清华陈晶的起号方法](../clips/2026-10-18-huangyun-122-douyin-chenjing-account-teardown.md) | 换了说法 | 强 |
 | [11 个月做到 350 万美元 ARR](../clips/2026-10-18-pierreeliottlal-gojiberry-ai-3-5m-arr.md) | 直接源自 | 强 |

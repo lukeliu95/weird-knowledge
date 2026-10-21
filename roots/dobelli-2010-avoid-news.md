@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [30288篇新闻，95%不值得读](../clips/2026-10-18-howie-serious-news-95-percent-not-worth-reading.md) | 相近 | 弱（待 Luke 确认） |
+| [30288篇新闻，95%不值得读](../clips/2026-10-18-howie-serious-news-95-percent-not-worth-reading.md) | 相近 | 弱（模型复核通过） |

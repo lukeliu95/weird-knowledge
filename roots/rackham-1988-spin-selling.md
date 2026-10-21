@@ -28,4 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [SPIN 销售法：大单靠按顺序提问让客户自己说出需求](../clips/2026-10-18-rackham-spin-selling.md) | 直接源自 | 强 |
-| [挑战者销售：明星销售靠教给客户他没看到的问题，而不是靠关系](../clips/2026-10-18-dixon-adamson-challenger-sale.md) | 挑战 | 弱（待 Luke 确认） |
+| [挑战者销售：明星销售靠教给客户他没看到的问题，而不是靠关系](../clips/2026-10-18-dixon-adamson-challenger-sale.md) | 挑战 | 弱（模型复核通过） |

@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: [bitter-lesson, you-arent-gonna-need-it, eating-your-own-dog-food, latent-demand]
+roots: [bitter-lesson, you-arent-gonna-need-it, eating-your-own-dog-food]
 ---
 
 ## 原文
@@ -71,8 +71,7 @@ Claude Code 团队聊"少即是多"分享随着模型能力增加该如何和模
 - 核心主张：模型每代都在变强，所以用好它的最优策略是做减法：配置和脚手架保持最少，只在模型跑偏时一点点加回来，定期推倒重来，并靠自己真实使用和用户反馈来迭代。
 - 源知识：
   - [苦涩的教训](../roots/bitter-lesson.md) · 关系：直接源自 · 强弱：强。“别跟模型较劲做加法，你今天搭的东西很快就白搭了”就是苦涩的教训在使用层面的说法；据 YC Light Cone 访谈笔记，Boris 团队墙上挂着 Sutton 这篇文章。
-  - [YAGNI（你不会需要它）](../roots/you-arent-gonna-need-it.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“用最少的东西把模型拉回正轨，跑偏了再一点点加回来”和 YAGNI 的“真需要时才加”是同一个纪律，原文没引用。
-  - [吃自己的狗粮（自用产品）](../roots/eating-your-own-dog-food.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“发布、自己用一个月、听用户骂、迭代”就是自用产品（吃自己的狗粮）的做法。
-  - [潜在需求](../roots/latent-demand.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“最爱听用户到底想怎么用”与 Boris 在别的访谈里说的“潜在需求是我最大的产品理念”一致，但这条原文没提这个词。
+  - [YAGNI（你不会需要它）](../roots/you-arent-gonna-need-it.md) · 关系：相近 · 强弱：弱（模型复核通过）。“用最少的东西把模型拉回正轨，跑偏了再一点点加回来”和 YAGNI 的“真需要时才加”是同一个纪律，原文没引用。
+  - [吃自己的狗粮（自用产品）](../roots/eating-your-own-dog-food.md) · 关系：相近 · 强弱：弱（模型复核通过）。“发布、自己用一个月、听用户骂、迭代”就是自用产品（吃自己的狗粮）的做法。
 - 本质：这条新知识本质上是“苦涩的教训”在个人使用 AI 编程工具（写 CLAUDE.md、选界面形态）上的应用，加上 YAGNI 式“需要时才加”的工程纪律。
 - 整理于：2026-10-18（第 1 轮）

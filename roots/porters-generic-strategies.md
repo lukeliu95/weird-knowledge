@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [对接 SD 做细分领域插画生成器](../clips/2026-10-18-yangyi-niche-illustration-generator.md) | 相近 | 弱（待 Luke 确认） |
+| [对接 SD 做细分领域插画生成器](../clips/2026-10-18-yangyi-niche-illustration-generator.md) | 相近 | 弱（模型复核通过） |

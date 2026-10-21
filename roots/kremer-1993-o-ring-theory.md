@@ -25,4 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [拿 240 个真实外包项目考 AI agent：最好的也只做成 2.5%](../clips/2026-10-20-mazeika-remote-labor-index.md) | 相近 | 弱（待 Luke 确认） |
+| [拿 240 个真实外包项目考 AI agent：最好的也只做成 2.5%](../clips/2026-10-20-mazeika-remote-labor-index.md) | 相近 | 弱（模型复核通过） |

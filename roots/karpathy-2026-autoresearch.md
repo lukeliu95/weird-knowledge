@@ -26,4 +26,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [外层harness让智能体连跑数小时](../clips/2026-10-18-baoweiheihei-harness-unattended-long-running.md) | 直接源自 | 强 |
-| [吴恩达：自我改进循环将取代提示](../clips/2026-10-18-0xmovez-andrew-ng-self-improving-loops.md) | 相近 | 弱（待 Luke 确认） |
+| [吴恩达：自我改进循环将取代提示](../clips/2026-10-18-0xmovez-andrew-ng-self-improving-loops.md) | 相近 | 弱（模型复核通过） |

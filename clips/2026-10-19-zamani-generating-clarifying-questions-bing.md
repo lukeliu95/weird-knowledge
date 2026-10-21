@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: [faceted-search, horvitz-1999-mixed-initiative-user-interfaces]
+roots: [horvitz-1999-mixed-initiative-user-interfaces]
 adopted: false
 ---
 
@@ -39,7 +39,6 @@ adopted: false
 
 - 核心主张：给用户几个可点的选项来澄清需求，在大规模真实用户里有效；用一句具体的问题把选项框起来，比只写“请选一个”招人点得多。
 - 源知识：
-  - [分面搜索](../roots/faceted-search.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。候选答案就是一组分面取值，是推断。
-  - [混合主导用户界面的原则](../roots/horvitz-1999-mixed-initiative-user-interfaces.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。系统在意图不确定时主动开口，是推断。
+  - [混合主导用户界面的原则](../roots/horvitz-1999-mixed-initiative-user-interfaces.md) · 关系：相近 · 强弱：弱（模型复核通过）。系统在意图不确定时主动开口，是推断。
 - 本质：这条新知识本质上是分面搜索加“系统主动开口”在网页搜索里的大规模验证。
 - 整理于：2026-10-19（补课第 4 题）

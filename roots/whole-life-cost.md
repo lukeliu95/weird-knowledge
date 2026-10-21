@@ -26,6 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Claude Code之父的三条心得](../clips/2026-10-18-ayi-ainotes-boris-cherny-workflow-three-rules.md) | 相近 | 弱（待 Luke 确认） |
-| [日本 B2B 大额采购调查（330 人）：最有用的资料是 ROI 测算工具（55.4%）和同行同规模案例（46.5%），选供应商第一看价格（58.5%）](../clips/2026-10-19-ideatech-japan-btob-large-purchase-buyer-enablement.md) | 相近 | 弱（待 Luke 确认） |
-| [中小機構 2026 AI 利用调查：88% 的中小企业没有专门部门，AI/IT 都靠经营者和现场自己推；最缺同行案例（83.3% 说不够）](../clips/2026-10-19-smrj-sme-ai-adoption-survey-2026.md) | 相近 | 弱（待 Luke 确认） |
+| [Claude Code之父的三条心得](../clips/2026-10-18-ayi-ainotes-boris-cherny-workflow-three-rules.md) | 相近 | 弱（模型复核通过） |

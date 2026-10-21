@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Anthropic 讲前线部署工程师](../clips/2026-10-18-dotey-fde-101-forward-deployed-engineer.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic 讲前线部署工程师](../clips/2026-10-18-dotey-fde-101-forward-deployed-engineer.md) | 相近 | 弱（模型复核通过） |

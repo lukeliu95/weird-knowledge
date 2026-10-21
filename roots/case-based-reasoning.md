@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [agent 的记忆先存原始轨迹，等新任务来了再现场整理，比事先提炼成反思或 skill 更好用](../clips/2026-10-20-zhou-just-in-time-memory.md) | 相近 | 弱（待 Luke 确认） |
+| [agent 的记忆先存原始轨迹，等新任务来了再现场整理，比事先提炼成反思或 skill 更好用](../clips/2026-10-20-zhou-just-in-time-memory.md) | 相近 | 弱（模型复核通过） |

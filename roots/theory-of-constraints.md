@@ -27,10 +27,10 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [前Meta工程师的AI优先团队落地报告](../clips/2026-10-18-ayi-ainotes-peter-pang-ai-first-report.md) | 换了说法 | 强 |
-| [Codex 28天做出Sora安卓版](../clips/2026-10-18-dotey-codex-sora-android-28-days.md) | 相近 | 弱（待 Luke 确认） |
-| [AI 时代最值钱的是懂 AI 的产品经理](../clips/2026-10-18-dotey-ai-product-manager-skills.md) | 相近 | 弱（待 Luke 确认） |
-| [同城 IP 团队的真实 Agent 需求](../clips/2026-10-18-wanghao8080-local-ip-agent-need.md) | 相近 | 弱（待 Luke 确认） |
-| [两天用完 AI 额度，四天做营销的周节奏](../clips/2026-10-18-yihui-indie-ai-two-day-dev-week-rhythm.md) | 相近 | 弱（待 Luke 确认） |
-| [写好Spec后让Agent整周自动开发](../clips/2026-10-18-timyangnet-spec-driven-agent-development.md) | 相近 | 弱（待 Luke 确认） |
-| [Anthropic 设计负责人谈 AI 时代设计流程](../clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | 相近 | 弱（待 Luke 确认） |
-| [马斯克：未来的发现全是工程（“最稀缺的是验证”是转述者加的）](../clips/2026-10-20-financeyf5-musk-future-discovery-is-engineering.md) | 相近 | 弱（待 Luke 确认） |
+| [Codex 28天做出Sora安卓版](../clips/2026-10-18-dotey-codex-sora-android-28-days.md) | 相近 | 弱（模型复核通过） |
+| [AI 时代最值钱的是懂 AI 的产品经理](../clips/2026-10-18-dotey-ai-product-manager-skills.md) | 相近 | 弱（模型复核通过） |
+| [同城 IP 团队的真实 Agent 需求](../clips/2026-10-18-wanghao8080-local-ip-agent-need.md) | 相近 | 弱（模型复核通过） |
+| [两天用完 AI 额度，四天做营销的周节奏](../clips/2026-10-18-yihui-indie-ai-two-day-dev-week-rhythm.md) | 相近 | 弱（模型复核通过） |
+| [写好Spec后让Agent整周自动开发](../clips/2026-10-18-timyangnet-spec-driven-agent-development.md) | 相近 | 弱（模型复核通过） |
+| [Anthropic 设计负责人谈 AI 时代设计流程](../clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | 相近 | 弱（模型复核通过） |
+| [马斯克：未来的发现全是工程（“最稀缺的是验证”是转述者加的）](../clips/2026-10-20-financeyf5-musk-future-discovery-is-engineering.md) | 相近 | 弱（模型复核通过） |

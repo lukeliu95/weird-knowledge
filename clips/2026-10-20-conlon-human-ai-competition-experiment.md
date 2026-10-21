@@ -10,7 +10,7 @@ related_principles: [原则 3, 原则 8]
 status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: [fuchs-2015-handmade-effect, agrawal-2018-prediction-machines, overconfidence-effect, creative-destruction]
+roots: [fuchs-2015-handmade-effect, agrawal-2018-prediction-machines, overconfidence-effect]
 ---
 
 ## 原文
@@ -93,7 +93,6 @@ AI 越来越能干，人在生产里还能留下什么位置？常见的两种�
 - 源知识：
   - [手工效应](../roots/fuchs-2015-handmade-effect.md) · 关系：挑战 · 强弱：强。手工效应说标明“手工做的”会让产品更吸引人（消费者觉得里面有爱）；本实验公开来源后 AI 溢价和盲测一样（p=0.79），告诉消费者钱会给人类生产者也不加价，作者引了这篇，结果和它相反
   - [《预测机器：人工智能的简单经济学》](../roots/agrawal-2018-prediction-machines.md) · 关系：挑战 · 强弱：强。《预测机器》说 AI 让预测变便宜后，人的判断（知道要什么）会升值；作者引了 Agrawal、Gans、Goldfarb 2019 年“预测与判断”的论文作为“人有品味和判断优势”的代表说法，而实验里只写一段话的 AI 在“定方向”上赢了业余和专业人士
-  - [过度自信效应](../roots/overconfidence-effect.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。生产者设计完预测 AI 会比自己低 9～17 美分，实际是 AI 更高，属于把自己排在对手前面的“高估排位”；论文没用这个词
-  - [创造性破坏](../roots/creative-destruction.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。论文标题借用了熊彼特的“创造性破坏”（新的生产方式淘汰旧的生产者），但正文没有引熊彼特
+  - [过度自信效应](../roots/overconfidence-effect.md) · 关系：相近 · 强弱：弱（模型复核通过）。生产者设计完预测 AI 会比自己低 9～17 美分，实际是 AI 更高，属于把自己排在对手前面的“高估排位”；论文没用这个词
 - 本质：这条新知识本质上是“新技术取代旧生产者”（创造性破坏）在创意小产品市场里的一次实验检验，结果挑战了手工效应和“人保留判断与品味”的常见推论。
 - 整理于：2026-10-21（第 4 轮）

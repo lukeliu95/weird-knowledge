@@ -30,11 +30,11 @@ Claude 的 Agent Skills 本质上是一种“上下文卸载”，把冗长的�
 - 源知识：
   - [用 Agent Skills 让智能体胜任真实工作](../roots/anthropic-2025-agent-skills.md) · 关系：直接源自 · 强弱：强。作者明说讲的是 Claude 的 Agent Skills；Anthropic 官方文章写明启动时只预载每个技能的名字和简介，判断用得上才读完整的 SKILL.md，正是「把冗长的技能信息移出上下文，按需加载」。
   - [Manus 的上下文工程（季逸超的博文与研讨会）](../roots/ji-2025-manus-context-engineering.md) · 关系：直接源自 · 强弱：强。作者明说参考了 Manus 的 Peak 最近分享的「上下文卸载」技巧；Lance Martin 对这次研讨会的总结写到，Manus 把大部分动作卸载到沙箱里的预装工具和标准 shell 命令上，而不是塞进函数调用层。
-  - [渐进式披露](../roots/progressive-disclosure.md) · 关系：换了说法 · 强弱：弱（待 Luke 确认）。「上下文卸载、按需加载」就是交互设计里的渐进式披露，只是读者从人换成了模型；Anthropic 自己称它为 Agent Skills 的核心设计原则，作者换了个名字。
+  - [渐进式披露](../roots/progressive-disclosure.md) · 关系：换了说法 · 强弱：弱（模型复核通过）。「上下文卸载、按需加载」就是交互设计里的渐进式披露，只是读者从人换成了模型；Anthropic 自己称它为 Agent Skills 的核心设计原则，作者换了个名字。
   - [Unix 哲学](../roots/unix-philosophy.md) · 关系：直接源自 · 强弱：强。作者原话「Manus 真的是把 Unix 哲学贯彻到底了」；小工具放在一个目录里、靠统一的命令行约定去发现和组合，是 Unix 的做法。
   - [KISS 原则（保持简单）](../roots/kiss-principle.md) · 关系：直接源自 · 强弱：强。作者原话点名 KISS（Keep It Simple, Stupid）。
-  - [虚拟内存](../roots/virtual-memory.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。小而贵的上下文只放常用部分，其余放在外面、需要时再调入，和虚拟内存用分页把快慢两层存储组合起来的思路一样；作者没有提。
-  - [MemGPT：让大模型像操作系统一样管理内存](../roots/packer-2023-memgpt-llm-os.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。MemGPT 明确把上下文窗口当主存、外部存储当慢存储，按需换入换出；「上下文卸载」是同一类做法。
-  - [Cloudflare Code Mode：让模型写代码放进沙箱执行](../roots/varda-2025-code-mode.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「这些 shell 操作模型都是学过的，所以泛化能力很强」，和 Code Mode 的理由一样：模型在训练里见过的代码和命令远多于专门的工具调用格式，借用熟悉的形式更可靠。
+  - [虚拟内存](../roots/virtual-memory.md) · 关系：相近 · 强弱：弱（模型复核通过）。小而贵的上下文只放常用部分，其余放在外面、需要时再调入，和虚拟内存用分页把快慢两层存储组合起来的思路一样；作者没有提。
+  - [MemGPT：让大模型像操作系统一样管理内存](../roots/packer-2023-memgpt-llm-os.md) · 关系：相近 · 强弱：弱（模型复核通过）。MemGPT 明确把上下文窗口当主存、外部存储当慢存储，按需换入换出；「上下文卸载」是同一类做法。
+  - [Cloudflare Code Mode：让模型写代码放进沙箱执行](../roots/varda-2025-code-mode.md) · 关系：相近 · 强弱：弱（模型复核通过）。「这些 shell 操作模型都是学过的，所以泛化能力很强」，和 Code Mode 的理由一样：模型在训练里见过的代码和命令远多于专门的工具调用格式，借用熟悉的形式更可靠。
 - 本质：这条新知识本质上是「渐进式披露 / 分页调入」（常驻区只放目录，细节用到时再取）在大模型智能体上下文管理场景下的应用，再加上借用模型已学过的 Unix 约定来换取泛化。
 - 整理于：2026-10-18（第 2 轮）

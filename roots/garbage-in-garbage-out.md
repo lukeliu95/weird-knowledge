@@ -28,4 +28,4 @@ verified: true
 |---|---|---|
 | [为什么大多数公司不该有 AI 战略](../clips/2026-10-18-dotey-why-no-ai-strategy.md) | 换了说法 | 强 |
 | [技术领导者要知道的生成式 AI 五个真相](../clips/2026-10-18-dotey-five-hard-truths-genai.md) | 换了说法 | 强 |
-| [AI 编程像人一样拆解任务的神仙项目](../clips/2026-10-18-yangyi-task-breakdown-agent-project.md) | 相近 | 弱（待 Luke 确认） |
+| [AI 编程像人一样拆解任务的神仙项目](../clips/2026-10-18-yangyi-task-breakdown-agent-project.md) | 相近 | 弱（模型复核通过） |

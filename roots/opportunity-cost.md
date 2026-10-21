@@ -29,5 +29,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [离职大厂做 OPC 第一年收入报告](../clips/2026-10-18-weiyipei-opc-first-year-income-report.md) | 直接源自 | 强 |
-| [品味可以被模仿，决策才不可替代](../clips/2026-10-18-mengkepm-taste-copyable-decision-irreplaceable.md) | 相近 | 弱（待 Luke 确认） |
-| [Sohl-Dickstein 在斯坦福：稳妥的路已经不稳妥](../clips/2026-10-20-financeyf5-sohl-dickstein-safe-path-not-safe.md) | 相近 | 弱（待 Luke 确认） |
+| [品味可以被模仿，决策才不可替代](../clips/2026-10-18-mengkepm-taste-copyable-decision-irreplaceable.md) | 相近 | 弱（模型复核通过） |
+| [Sohl-Dickstein 在斯坦福：稳妥的路已经不稳妥](../clips/2026-10-20-financeyf5-sohl-dickstein-safe-path-not-safe.md) | 相近 | 弱（模型复核通过） |

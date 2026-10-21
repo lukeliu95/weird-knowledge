@@ -29,6 +29,6 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [世界分成会用与不会用 ChatGPT](../clips/2026-10-18-dotey-chatgpt-two-kinds-of-people.md) | 直接源自 | 强 |
-| [Agent 循环工程晚宴讨论要点](../clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | 相近 | 弱（待 Luke 确认） |
-| [Kimi-code重构一个月的架构复盘](../clips/2026-10-18-real-kai42-kimi-code-rewrite-retrospective.md) | 挑战 | 弱（待 Luke 确认） |
-| [拿 240 个真实外包项目考 AI agent：最好的也只做成 2.5%](../clips/2026-10-20-mazeika-remote-labor-index.md) | 相近 | 弱（待 Luke 确认） |
+| [Agent 循环工程晚宴讨论要点](../clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | 相近 | 弱（模型复核通过） |
+| [Kimi-code重构一个月的架构复盘](../clips/2026-10-18-real-kai42-kimi-code-rewrite-retrospective.md) | 挑战 | 弱（模型复核通过） |
+| [拿 240 个真实外包项目考 AI agent：最好的也只做成 2.5%](../clips/2026-10-20-mazeika-remote-labor-index.md) | 相近 | 弱（模型复核通过） |

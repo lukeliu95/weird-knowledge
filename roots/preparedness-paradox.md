@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [靠谱工程师毫不费力，管理者要给认可](../clips/2026-10-18-ixiaowenz-reliable-engineers-credit.md) | 相近 | 弱（待 Luke 确认） |
+| [靠谱工程师毫不费力，管理者要给认可](../clips/2026-10-18-ixiaowenz-reliable-engineers-credit.md) | 相近 | 弱（模型复核通过） |

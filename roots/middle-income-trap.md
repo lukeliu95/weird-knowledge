@@ -28,4 +28,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [黄亚生预测中国模式走到尽头](../clips/2026-10-18-bingliu34173809-huang-yasheng-china-model.md) | 相近 | 弱（待 Luke 确认） |
+| [黄亚生预测中国模式走到尽头](../clips/2026-10-18-bingliu34173809-huang-yasheng-china-model.md) | 相近 | 弱（模型复核通过） |

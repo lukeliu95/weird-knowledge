@@ -27,5 +27,5 @@ verified: true
 |---|---|---|
 | [大模型是冰箱，赚钱的是卖冷饮的人](../clips/2026-10-18-mubeitech-llm-fridge-coca-cola-analogy.md) | 换了说法 | 强 |
 | [NVIDIA DGX Spark 从买机器到变现指南](../clips/2026-10-18-ai-goge-dgx-spark-monetization-guide.md) | 换了说法 | 强 |
-| [Gumloop四人团队冲击十亿公司](../clips/2026-10-18-wanghao8080-gumloop-small-team-unicorn.md) | 相近 | 弱（待 Luke 确认） |
-| [AIGC 作品的关键是加上人味](../clips/2026-10-18-jesselaunz-aigc-add-human-touch.md) | 相近 | 弱（待 Luke 确认） |
+| [Gumloop四人团队冲击十亿公司](../clips/2026-10-18-wanghao8080-gumloop-small-team-unicorn.md) | 相近 | 弱（模型复核通过） |
+| [AIGC 作品的关键是加上人味](../clips/2026-10-18-jesselaunz-aigc-add-human-touch.md) | 相近 | 弱（模型复核通过） |

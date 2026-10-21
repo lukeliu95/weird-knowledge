@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 日本
-roots: [diffusion-of-innovations, transaction-cost]
+roots: [diffusion-of-innovations]
 adopted: false
 ---
 
@@ -51,7 +51,6 @@ adopted: false
 
 - 核心主张：日本中小企业推数字化时，最常听的是 IT 厂商和税理士的意见，主要问"选什么工具"；企业越小，越常常谁也不问、自己定。
 - 源知识：
-  - [创新扩散理论](../roots/diffusion-of-innovations.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。IT 厂商和税理士在这里扮演罗杰斯说的"变革推动者"和"意见领袖"
-  - [交易成本](../roots/transaction-cost.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。找已经有关系的顾问（税理士、银行）商量，是在降低搜寻和判断的成本
+  - [创新扩散理论](../roots/diffusion-of-innovations.md) · 关系：相近 · 强弱：弱（模型复核通过）。IT 厂商和税理士在这里扮演罗杰斯说的"变革推动者"和"意见领袖"
 - 本质：这条本质上是"创新扩散中的变革推动者"在日本中小企业数字化场景下的应用：厂商和身边的专业顾问替社长把关。
 - 整理于：2026-10-19（补课第 9 题）

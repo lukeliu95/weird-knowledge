@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 日本
-roots: [minto-pyramid-principle, mece-principle]
+roots: []
 ---
 
 ## 原文
@@ -27,7 +27,6 @@ roots: [minto-pyramid-principle, mece-principle]
 
 - 核心主张：照着埃森哲式的资料制作思考法去想，即使做不到完美，提案的通过率也会明显提高（具体方法在 4 张图里，推文正文没写）。
 - 源知识：
-  - [金字塔原理（明托）](../roots/minto-pyramid-principle.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。外资咨询的资料方法普遍以“结论先行、下层分组支撑上层”的金字塔原理为底；图片内容没读到，属推断，待 Luke 确认
-  - [MECE 原则（不重不漏）](../roots/mece-principle.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。咨询式资料常用“不重不漏”的分组拆解论点；图片内容没读到，属推断
+  - 没找到已知的源头（待查）：原来挂的弱关系经 2026-10-21 模型复核都不成立，已删掉
 - 本质：这条新知识本质上是金字塔原理（结论先行、分组归纳）在 B2B 提案资料上的应用（具体内容在图里，待确认）。
 - 整理于：2026-10-18（第 2 轮）

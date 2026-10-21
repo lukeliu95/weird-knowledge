@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: [witte-1973-promotor-model, diffusion-of-innovations, coch-1948-overcoming-resistance-change, ringi-system]
+roots: [witte-1973-promotor-model, diffusion-of-innovations, coch-1948-overcoming-resistance-change]
 adopted: false
 ---
 
@@ -62,8 +62,7 @@ adopted: false
 - 核心主张：组织要接受新东西，光有拍板的人或懂行的人不够，还需要一个在部门之间跑、把技术翻成公司语言的人；三种人分工配合时最成功。
 - 源知识：
   - [促进者模型（权力促进者与专业促进者）](../roots/witte-1973-promotor-model.md) · 关系：直接源自 · 强弱：强。论文明说是 Witte 模型的扩展
-  - [创新扩散理论](../roots/diffusion-of-innovations.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。组织采用创新需要内部推动者，和创新扩散里组织采用的部分相近；论文引用了 Rogers 1982 讲信息流的部分
-  - [克服变革阻力（Harwood 工厂实验）](../roots/coch-1948-overcoming-resistance-change.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。都是讲怎么克服组织对变化的阻力；Witte 的出发点是冲突理论
-  - [稟議制](../roots/ringi-system.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。推断：起案人像流程促进者，决裁者像权力促进者，情报系统部门像技术促进者
+  - [创新扩散理论](../roots/diffusion-of-innovations.md) · 关系：相近 · 强弱：弱（模型复核通过）。组织采用创新需要内部推动者，和创新扩散里组织采用的部分相近；论文引用了 Rogers 1982 讲信息流的部分
+  - [克服变革阻力（Harwood 工厂实验）](../roots/coch-1948-overcoming-resistance-change.md) · 关系：相近 · 强弱：弱（模型复核通过）。都是讲怎么克服组织对变化的阻力；Witte 的出发点是冲突理论
 - 本质：这条本质上是"克服组织阻力要分工"在创新和新系统引进上的应用：卖方能补上的是技术促进者的知识，和帮流程促进者"翻译"的材料，补不了的是有权的人愿不愿意。
 - 整理于：2026-10-19（补课第 9 题）

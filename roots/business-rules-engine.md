@@ -25,4 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [用自然语言让 LLM 承担业务数据存储](../clips/2026-10-18-jefferytatsuya-llm-natural-language-data-store.md) | 相近 | 弱（待 Luke 确认） |
+| [用自然语言让 LLM 承担业务数据存储](../clips/2026-10-18-jefferytatsuya-llm-natural-language-data-store.md) | 相近 | 弱（模型复核通过） |

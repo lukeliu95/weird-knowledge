@@ -26,6 +26,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [为什么大多数公司不该有 AI 战略](../clips/2026-10-18-dotey-why-no-ai-strategy.md) | 相近 | 弱（待 Luke 确认） |
-| [JUAS 企業IT動向調査 2026：大企业自己定需求、外包开发，生成 AI 最怕泄密](../clips/2026-10-18-juas-corporate-it-trends-survey-2026.md) | 相近 | 弱（待 Luke 确认） |
-| [中小企業白書 2021：中小企业数字化，老板积极主导的约三成](../clips/2026-10-18-chusho-2021-sme-digitalization-owner.md) | 相近 | 弱（待 Luke 确认） |
+| [为什么大多数公司不该有 AI 战略](../clips/2026-10-18-dotey-why-no-ai-strategy.md) | 相近 | 弱（模型复核通过） |
+| [中小企業白書 2021：中小企业数字化，老板积极主导的约三成](../clips/2026-10-18-chusho-2021-sme-digitalization-owner.md) | 相近 | 弱（模型复核通过） |

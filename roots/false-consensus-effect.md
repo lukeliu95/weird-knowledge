@@ -28,4 +28,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [征求产品意见别只问程序员群体](../clips/2026-10-18-gorden-sun-dont-ask-programmers-product-feedback.md) | 相近 | 弱（待 Luke 确认） |
+| [征求产品意见别只问程序员群体](../clips/2026-10-18-gorden-sun-dont-ask-programmers-product-feedback.md) | 相近 | 弱（模型复核通过） |

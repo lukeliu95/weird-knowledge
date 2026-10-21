@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [用户模拟器会是 agent 强化学习里被低估的一环：真考法是预测一个人的留出选择](../clips/2026-10-20-genai-is-real-user-simulation-agentic-rl.md) | 相近 | 弱（待 Luke 确认） |
+| [用户模拟器会是 agent 强化学习里被低估的一环：真考法是预测一个人的留出选择](../clips/2026-10-20-genai-is-real-user-simulation-agentic-rl.md) | 相近 | 弱（模型复核通过） |

@@ -27,7 +27,7 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [天涯神贴：专注一件事死磕到擅长](../clips/2026-10-18-caijingtianxia-focus-one-thing-tianya-post.md) | 相近 | 弱（待 Luke 确认） |
-| [AI 锯断专家阶梯，新手没了试错机会](../clips/2026-10-18-frxiaobei-ai-apprentice-expert-ladder.md) | 相近 | 弱（待 Luke 确认） |
-| [孩子学英语用 Gemini 听故事](../clips/2026-10-18-haoshanhong-kids-english-gemini-stories.md) | 相近 | 弱（待 Luke 确认） |
-| [MIT温斯顿教授经典演讲如何说话](../clips/2026-10-18-kkawsb-winston-how-to-speak.md) | 相近 | 弱（待 Luke 确认） |
+| [天涯神贴：专注一件事死磕到擅长](../clips/2026-10-18-caijingtianxia-focus-one-thing-tianya-post.md) | 相近 | 弱（模型复核通过） |
+| [AI 锯断专家阶梯，新手没了试错机会](../clips/2026-10-18-frxiaobei-ai-apprentice-expert-ladder.md) | 相近 | 弱（模型复核通过） |
+| [孩子学英语用 Gemini 听故事](../clips/2026-10-18-haoshanhong-kids-english-gemini-stories.md) | 相近 | 弱（模型复核通过） |
+| [MIT温斯顿教授经典演讲如何说话](../clips/2026-10-18-kkawsb-winston-how-to-speak.md) | 相近 | 弱（模型复核通过） |

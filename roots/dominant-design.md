@@ -28,4 +28,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [人与智能体协作的产品形态之争](../clips/2026-10-18-hilng77042-human-agent-collaboration-paradigm.md) | 相近 | 弱（待 Luke 确认） |
+| [人与智能体协作的产品形态之争](../clips/2026-10-18-hilng77042-human-agent-collaboration-paradigm.md) | 相近 | 弱（模型复核通过） |

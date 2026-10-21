@@ -25,4 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Sakana AI 的 QD-Rec：用质量多样性进化搜索做“开放式推荐”辅助决策](../clips/2026-10-21-sakanaailabs-qd-rec-quality-diversity-recommendation.md) | 相近 | 弱（待 Luke 确认） |
+| [Sakana AI 的 QD-Rec：用质量多样性进化搜索做“开放式推荐”辅助决策](../clips/2026-10-21-sakanaailabs-qd-rec-quality-diversity-recommendation.md) | 相近 | 弱（模型复核通过） |

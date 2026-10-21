@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: [hernon-1986-55-percent-rule, goodharts-law]
+roots: [hernon-1986-55-percent-rule]
 adopted: false
 ---
 
@@ -43,6 +43,5 @@ adopted: false
 - 核心主张：流传的“55% 规则”是暗访者问短的事实型问题时馆员的答对率，作者那次实测是 62%，55% 是多项研究合起来的整数；它不是满意度，而且很大程度取决于题目怎么选。
 - 源知识：
   - [55% 规则（暗访测出的参考咨询答对率）](../roots/hernon-1986-55-percent-rule.md) · 关系：直接源自 · 强弱：强。就是这个说法的原始出处。
-  - [古德哈特定律](../roots/goodharts-law.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。讲的是“指标好坏取决于怎么设计测量”，不是古德哈特定律本义，是推断。
 - 本质：这条新知识本质上是一个被转述走样的数字：测量方式决定了结论，换个题目就换个答案。
 - 整理于：2026-10-19（补课第 4 题）

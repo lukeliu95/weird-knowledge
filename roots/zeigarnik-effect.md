@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [MrBeast的YouTube上瘾蓝图](../clips/2026-10-18-0xcheshire-youtube-addiction-blueprint.md) | 相近 | 弱（待 Luke 确认） |
+| [MrBeast的YouTube上瘾蓝图](../clips/2026-10-18-0xcheshire-youtube-addiction-blueprint.md) | 相近 | 弱（模型复核通过） |

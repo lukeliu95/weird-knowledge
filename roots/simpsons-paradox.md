@@ -28,4 +28,3 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [模拟客户从不走开：拿 793 笔真实付款对照，大模型扮的"不会买的客户"抗拒少一半、犹豫多一倍](../clips/2026-10-21-chen-simulated-customers-never-walk-away.md) | 相近 | 弱（待 Luke 确认） |

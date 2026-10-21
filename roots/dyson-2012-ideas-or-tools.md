@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [马斯克：未来的发现全是工程（“最稀缺的是验证”是转述者加的）](../clips/2026-10-20-financeyf5-musk-future-discovery-is-engineering.md) | 相近 | 弱（待 Luke 确认） |
+| [马斯克：未来的发现全是工程（“最稀缺的是验证”是转述者加的）](../clips/2026-10-20-financeyf5-musk-future-discovery-is-engineering.md) | 相近 | 弱（模型复核通过） |

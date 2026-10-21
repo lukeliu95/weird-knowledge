@@ -25,6 +25,5 @@ AI 前半场比的是发明新的训练方法和模型，基准只是拿来证�
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [GLM 5.3 只靠后训练大涨，被 SemiAnalysis 嘉宾称为警钟](../clips/2026-10-18-nft-chen-glm-5-3-post-training-wake-up-call.md) | 相近 | 弱（待 Luke 确认） |
-| [用户模拟器会是 agent 强化学习里被低估的一环：真考法是预测一个人的留出选择](../clips/2026-10-20-genai-is-real-user-simulation-agentic-rl.md) | 相近 | 弱（待 Luke 确认） |
-| [拿 240 个真实外包项目考 AI agent：最好的也只做成 2.5%](../clips/2026-10-20-mazeika-remote-labor-index.md) | 相近 | 弱（待 Luke 确认） |
+| [用户模拟器会是 agent 强化学习里被低估的一环：真考法是预测一个人的留出选择](../clips/2026-10-20-genai-is-real-user-simulation-agentic-rl.md) | 相近 | 弱（模型复核通过） |
+| [拿 240 个真实外包项目考 AI agent：最好的也只做成 2.5%](../clips/2026-10-20-mazeika-remote-labor-index.md) | 相近 | 弱（模型复核通过） |

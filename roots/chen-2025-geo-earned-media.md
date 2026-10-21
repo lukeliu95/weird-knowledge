@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [日本 B2B 的 AI 搜索对策：77% 觉得丢了商机，一半多还没动手，卡在不会做和算不清回报](../clips/2026-10-20-probel-btob-ai-search-llmo-survey.md) | 相近 | 弱（待 Luke 确认） |
+| [日本 B2B 的 AI 搜索对策：77% 觉得丢了商机，一半多还没动手，卡在不会做和算不清回报](../clips/2026-10-20-probel-btob-ai-search-llmo-survey.md) | 相近 | 弱（模型复核通过） |

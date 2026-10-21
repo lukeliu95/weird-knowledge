@@ -27,5 +27,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Boris：未来产品团队的五种角色](../clips/2026-10-18-bcherny-bcherny-five-team-archetypes.md) | 相近 | 弱（待 Luke 确认） |
+| [Boris：未来产品团队的五种角色](../clips/2026-10-18-bcherny-bcherny-five-team-archetypes.md) | 相近 | 弱（模型复核通过） |
 | [一桥大学“组织之重”研究：日本大企业做新事业时 43.7% 的时间花在公司内部协调上，只要一个人反对决策就会异常拖长](../clips/2026-10-19-numagami-2006-organizational-weight.md) | 直接源自 | 强 |

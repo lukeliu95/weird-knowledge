@@ -27,5 +27,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Coding 产品是训练数据入口](../clips/2026-10-18-dotey-coding-product-data-flywheel.md) | 相近 | 弱（待 Luke 确认） |
+| [Coding 产品是训练数据入口](../clips/2026-10-18-dotey-coding-product-data-flywheel.md) | 相近 | 弱（模型复核通过） |
 | [Thiel一小时讲透从零做垄断的底层逻辑](../clips/2026-10-18-kkawsb-peter-thiel-monopoly-lecture.md) | 直接源自 | 强 |

@@ -27,5 +27,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [讽刺阶级剥削的国风动画《登仙阁》](../clips/2026-10-18-whyyoutouzhele-dengxian-pavilion-animation.md) | 相近 | 弱（待 Luke 确认） |
-| [江学勤：穷人越自律越被收割](../clips/2026-10-18-cj3214567667-jiang-xueqin-diligence-trap.md) | 相近 | 弱（待 Luke 确认） |
+| [讽刺阶级剥削的国风动画《登仙阁》](../clips/2026-10-18-whyyoutouzhele-dengxian-pavilion-animation.md) | 相近 | 弱（模型复核通过） |
+| [江学勤：穷人越自律越被收割](../clips/2026-10-18-cj3214567667-jiang-xueqin-diligence-trap.md) | 相近 | 弱（模型复核通过） |

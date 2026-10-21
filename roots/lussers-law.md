@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [国内 ToB 智能体至少还要一年](../clips/2026-10-18-frxiaobei-tob-agent-one-year-away.md) | 相近 | 弱（待 Luke 确认） |
+| [国内 ToB 智能体至少还要一年](../clips/2026-10-18-frxiaobei-tob-agent-one-year-away.md) | 相近 | 弱（模型复核通过） |

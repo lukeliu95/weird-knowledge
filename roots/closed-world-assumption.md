@@ -27,6 +27,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [封闭世界假设：“查不到就当作不是”只在知道全部事实时成立，否则只能算未知](../clips/2026-10-19-reiter-closed-world-data-bases.md) | 直接源自 | 强 |
-| [“随机缺失”不是“缺得很随机”：数据为什么缺，决定了能不能当它不存在](../clips/2026-10-19-seaman-what-is-missing-at-random.md) | 相近 | 弱（待 Luke 确认） |
-| [只有正例和未标注数据时怎么学：没被标注的不等于反例](../clips/2026-10-19-elkan-positive-unlabeled-learning.md) | 挑战 | 弱（待 Luke 确认） |
-| [问题协商：用户说不清想找哪类企业时，先给样本，再陪他把问题说清](../clips/2026-10-19-luke-question-negotiation-icp-search.md) | 相近 | 弱（待 Luke 确认） |
+| [只有正例和未标注数据时怎么学：没被标注的不等于反例](../clips/2026-10-19-elkan-positive-unlabeled-learning.md) | 挑战 | 弱（模型复核通过） |
+| [问题协商：用户说不清想找哪类企业时，先给样本，再陪他把问题说清](../clips/2026-10-19-luke-question-negotiation-icp-search.md) | 相近 | 弱（模型复核通过） |

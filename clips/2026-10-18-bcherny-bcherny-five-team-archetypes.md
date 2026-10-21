@@ -37,9 +37,9 @@ Maybe product roles of the future will look more like this, and less like the do
 
 - 核心主张：团队角色应按“在产品生命周期里做哪一段活”来划分（原型者、建造者、清扫者、增长者、维护者），而不是按工程、设计、产品等职能；产品处在不同阶段，需要不同的角色组合。
 - 源知识：
-  - [先锋、定居者与城镇规划者](../roots/pioneers-settlers-town-planners.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Wardley 的先锋（探索新想法、多数失败）、定居者（把原型做成可靠、能赚钱的产品）、城镇规划者（把成熟系统工业化、规模化）和原型者、建造者、维护者几乎一一对应；Boris 没有引用。
-  - [产品生命周期](../roots/product-life-cycle-management-marketing.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“pre-PMF / 正在增长 / 强 PMF 各需要不同组合”，就是按产品所处的导入、成长、成熟阶段换打法。
-  - [贝尔宾团队角色](../roots/team-role-inventories.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。贝尔宾发现团队角色是行为倾向、和职位无关，团队成功靠角色搭配平衡；原文“角色不绑定职能”“健康的团队需要混合”与此相同。
-  - [权变理论](../roots/contingency-theory.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。原文说团队配比“depending on the product”：没有一种最好的团队配置，要看情境。
+  - [先锋、定居者与城镇规划者](../roots/pioneers-settlers-town-planners.md) · 关系：相近 · 强弱：弱（模型复核通过）。Wardley 的先锋（探索新想法、多数失败）、定居者（把原型做成可靠、能赚钱的产品）、城镇规划者（把成熟系统工业化、规模化）和原型者、建造者、维护者几乎一一对应；Boris 没有引用。
+  - [产品生命周期](../roots/product-life-cycle-management-marketing.md) · 关系：相近 · 强弱：弱（模型复核通过）。“pre-PMF / 正在增长 / 强 PMF 各需要不同组合”，就是按产品所处的导入、成长、成熟阶段换打法。
+  - [贝尔宾团队角色](../roots/team-role-inventories.md) · 关系：相近 · 强弱：弱（模型复核通过）。贝尔宾发现团队角色是行为倾向、和职位无关，团队成功靠角色搭配平衡；原文“角色不绑定职能”“健康的团队需要混合”与此相同。
+  - [权变理论](../roots/contingency-theory.md) · 关系：相近 · 强弱：弱（模型复核通过）。原文说团队配比“depending on the product”：没有一种最好的团队配置，要看情境。
 - 本质：这条新知识本质上是“不同生命周期阶段需要不同类型的人”（先锋-定居者-城镇规划者、产品生命周期）在 AI 让职能边界融化后的产品团队配置场景下的应用。
 - 整理于：2026-10-18（第 2 轮）

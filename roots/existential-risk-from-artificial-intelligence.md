@@ -28,4 +28,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Ilya TED 谈通往 AGI 之路](../clips/2026-10-18-dotey-ilya-ted-agi-journey.md) | 相近 | 弱（待 Luke 确认） |
+| [Ilya TED 谈通往 AGI 之路](../clips/2026-10-18-dotey-ilya-ted-agi-journey.md) | 相近 | 弱（模型复核通过） |

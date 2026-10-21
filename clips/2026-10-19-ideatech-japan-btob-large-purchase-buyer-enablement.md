@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 日本
-roots: [gartner-2019-b2b-buying-journey, buying-center, ringi-system, whole-life-cost]
+roots: [gartner-2019-b2b-buying-journey, buying-center, ringi-system]
 adopted: false
 ---
 
@@ -51,7 +51,6 @@ adopted: false
 - 源知识：
   - [Gartner 新 B2B 购买旅程（购买任务与买方赋能）](../roots/gartner-2019-b2b-buying-journey.md) · 关系：直接源自 · 强弱：强。标题用的"买方赋能（バイヤー・イネーブルメント）"就是 Gartner 提出的说法
   - [采购中心（决策单元）](../roots/buying-center.md) · 关系：相近 · 强弱：强。部长、课长、经营层，加上信息系统和财务部门一起决定
-  - [稟議制](../roots/ringi-system.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。"等经营层拍板"和"内部难判断"符合稟議的特点，但调查本身没提稟議
-  - [全生命周期成本（总拥有成本）](../roots/whole-life-cost.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。买方最难判断的是导入后的运营负担，也就是总拥有成本
+  - [稟議制](../roots/ringi-system.md) · 关系：相近 · 强弱：弱（模型复核通过）。"等经营层拍板"和"内部难判断"符合稟議的特点，但调查本身没提稟議
 - 本质：这条本质上是买方赋能在日本大额 IT 采购里的体现：卖方要替起案人准备能在内部用的材料
 - 整理于：2026-10-19（补课第 9 题）

@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [南明皇室受洗的冷知识：借调侃“历史老师去美国”说出来](../clips/2026-10-18-tombkeeper-southern-ming-baptism.md) | 相近 | 弱（待 Luke 确认） |
+| [南明皇室受洗的冷知识：借调侃“历史老师去美国”说出来](../clips/2026-10-18-tombkeeper-southern-ming-baptism.md) | 相近 | 弱（模型复核通过） |

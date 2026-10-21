@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [36氪专访：AI 原生公司转型实录](../clips/2026-10-18-oran-ge-ai-native-company-transformation-story.md) | 相近 | 弱（待 Luke 确认） |
+| [36氪专访：AI 原生公司转型实录](../clips/2026-10-18-oran-ge-ai-native-company-transformation-story.md) | 相近 | 弱（模型复核通过） |

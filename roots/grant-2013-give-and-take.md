@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [一年涨到四万关注的三条心得](../clips/2026-10-18-lifesinger-twitter-40k-followers-lessons.md) | 相近 | 弱（待 Luke 确认） |
+| [一年涨到四万关注的三条心得](../clips/2026-10-18-lifesinger-twitter-40k-followers-lessons.md) | 相近 | 弱（模型复核通过） |

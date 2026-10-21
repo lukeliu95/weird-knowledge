@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [DeepSeek 仓库开发数据拆解](../clips/2026-10-18-crazyaiagent-deepseek-harness-repo-stats.md) | 相近 | 弱（待 Luke 确认） |
+| [DeepSeek 仓库开发数据拆解](../clips/2026-10-18-crazyaiagent-deepseek-harness-repo-stats.md) | 相近 | 弱（模型复核通过） |

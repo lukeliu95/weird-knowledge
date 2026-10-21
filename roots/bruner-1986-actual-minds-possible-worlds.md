@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [写提示词的三条路与第四条路：故事](../clips/2026-10-18-lijigang-prompt-writing-fourth-path-story.md) | 相近 | 弱（待 Luke 确认） |
+| [写提示词的三条路与第四条路：故事](../clips/2026-10-18-lijigang-prompt-writing-fourth-path-story.md) | 相近 | 弱（模型复核通过） |

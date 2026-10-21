@@ -26,4 +26,3 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [无方向盘的 Cybercab 乘坐体验](../clips/2026-10-18-davelee-cybercab-no-steering-wheel-ride.md) | 相近 | 弱（待 Luke 确认） |

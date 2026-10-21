@@ -25,5 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Anthropic：长任务智能体交接机制](../clips/2026-10-18-dotey-long-running-agent-harness.md) | 相近 | 弱（待 Luke 确认） |
-| [模型每周都在换：别把自己的上下文锁在一家产品里](../clips/2026-10-20-brian-lovin-portable-context-switching.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic：长任务智能体交接机制](../clips/2026-10-18-dotey-long-running-agent-harness.md) | 相近 | 弱（模型复核通过） |

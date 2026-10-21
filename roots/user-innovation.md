@@ -26,8 +26,7 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [开放权重让 fal 把 H3 推到更远](../clips/2026-10-18-maxforai-open-weights-fal-h3-max.md) | 相近 | 弱（待 Luke 确认） |
-| [游戏公司为何要做通用 Agent](../clips/2026-10-18-dashhuang-game-company-general-agent.md) | 相近 | 弱（待 Luke 确认） |
-| [国内 ToB 智能体至少还要一年](../clips/2026-10-18-frxiaobei-tob-agent-one-year-away.md) | 相近 | 弱（待 Luke 确认） |
-| [OpenAI 企业用 AI 的七条经验](../clips/2026-10-18-shao-meng-openai-enterprise-ai-lessons.md) | 相近 | 弱（待 Luke 确认） |
-| [独立开发者每天只工作四小时](../clips/2026-10-18-marclou-marclou-meets-jesse-thanley.md) | 相近 | 弱（待 Luke 确认） |
+| [开放权重让 fal 把 H3 推到更远](../clips/2026-10-18-maxforai-open-weights-fal-h3-max.md) | 相近 | 弱（模型复核通过） |
+| [国内 ToB 智能体至少还要一年](../clips/2026-10-18-frxiaobei-tob-agent-one-year-away.md) | 相近 | 弱（模型复核通过） |
+| [OpenAI 企业用 AI 的七条经验](../clips/2026-10-18-shao-meng-openai-enterprise-ai-lessons.md) | 相近 | 弱（模型复核通过） |
+| [独立开发者每天只工作四小时](../clips/2026-10-18-marclou-marclou-meets-jesse-thanley.md) | 相近 | 弱（模型复核通过） |

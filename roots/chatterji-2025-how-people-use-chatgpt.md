@@ -26,4 +26,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [OpenAI 报告：用户最常用的是懒脑力活](../clips/2026-10-18-frxiaobei-chatgpt-usage-lazy-moments.md) | 直接源自 | 强 |
-| [Anthropic 经济指数「节奏」：用法跟着作息走，越值钱的活越费算力，越放手交给 AI 的人越乐观](../clips/2026-10-20-anthropic-economic-index-cadences.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic 经济指数「节奏」：用法跟着作息走，越值钱的活越费算力，越放手交给 AI 的人越乐观](../clips/2026-10-20-anthropic-economic-index-cadences.md) | 相近 | 弱（模型复核通过） |

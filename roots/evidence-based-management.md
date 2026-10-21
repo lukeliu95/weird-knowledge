@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [复旦分享：脑科学视角拆品牌营销](../clips/2026-10-18-yangyi-fudan-brand-marketing-neuroscience.md) | 相近 | 弱（待 Luke 确认） |
+| [复旦分享：脑科学视角拆品牌营销](../clips/2026-10-18-yangyi-fudan-brand-marketing-neuroscience.md) | 相近 | 弱（模型复核通过） |

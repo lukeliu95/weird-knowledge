@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: [craswell-2008-click-position-bias, overchoice, faceted-search]
+roots: [craswell-2008-click-position-bias]
 adopted: false
 ---
 
@@ -46,7 +46,5 @@ adopted: false
 - 核心主张：澄清时问题越具体越好（“给谁买”胜过“想了解什么”），选项 3～5 个差别不大；用户用整句话描述需求时最愿意配合；选项的排列位置会左右用户选什么。
 - 源知识：
   - [点击位置偏差模型](../roots/craswell-2008-click-position-bias.md) · 关系：直接源自 · 强弱：强。§4 明说照它的交换相邻位置法做实验。
-  - [选择过载](../roots/overchoice.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。只比了 2～5 个选项，谈不上支持或挑战选择过载，是推断。
-  - [分面搜索](../roots/faceted-search.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。选项就是分面取值，是推断。
 - 本质：这条新知识本质上是“怎么问、给几个选项、怎么排”这些澄清细节的大规模日志证据。
 - 整理于：2026-10-19（补课第 4 题）

@@ -40,8 +40,8 @@ adopted: false
 
 - 核心主张：有歧义不等于该问：有一个能猜到的主流意思就直接做，只有需求真的分散时才问；而且模型说自己“不确定”不是可靠的提问信号，看可能的回答有多分散更准。
 - 源知识：
-  - [偶然不确定性与认知不确定性](../roots/der-kiureghian-2009-aleatory-epistemic.md) · 关系：换了说法 · 强弱：弱（待 Luke 确认）。本文直接用了这对概念，但引的是 Cole 等 2023，是推断。
-  - [信息价值理论](../roots/howard-1966-information-value-theory.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“问不问，看问了之后期望效果能提高多少”，是推断。
-  - [混合主导用户界面的原则](../roots/horvitz-1999-mixed-initiative-user-interfaces.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。不确定时再开口、权衡打扰成本，本文没引 Horvitz，是推断。
+  - [偶然不确定性与认知不确定性](../roots/der-kiureghian-2009-aleatory-epistemic.md) · 关系：直接源自 · 强弱：弱（模型复核通过）。本文直接用了这对概念，但引的是 Cole 等 2023，是推断。
+  - [信息价值理论](../roots/howard-1966-information-value-theory.md) · 关系：相近 · 强弱：弱（模型复核通过）。“问不问，看问了之后期望效果能提高多少”，是推断。
+  - [混合主导用户界面的原则](../roots/horvitz-1999-mixed-initiative-user-interfaces.md) · 关系：相近 · 强弱：弱（模型复核通过）。不确定时再开口、权衡打扰成本，本文没引 Horvitz，是推断。
 - 本质：这条新知识本质上是信息价值理论在“大模型该不该反问用户”上的应用。
 - 整理于：2026-10-19（补课第 4 题）

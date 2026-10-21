@@ -27,5 +27,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Monolith论文：实时推荐致瘾](../clips/2026-10-18-interjc-tiktok-monolith-realtime-recsys.md) | 相近 | 弱（待 Luke 确认） |
-| [天涯神贴：专注一件事死磕到擅长](../clips/2026-10-18-caijingtianxia-focus-one-thing-tianya-post.md) | 相近 | 弱（待 Luke 确认） |
+| [Monolith论文：实时推荐致瘾](../clips/2026-10-18-interjc-tiktok-monolith-realtime-recsys.md) | 相近 | 弱（模型复核通过） |
+| [天涯神贴：专注一件事死磕到擅长](../clips/2026-10-18-caijingtianxia-focus-one-thing-tianya-post.md) | 相近 | 弱（模型复核通过） |

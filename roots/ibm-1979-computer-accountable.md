@@ -26,5 +26,5 @@ verified: false
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Anthropic 设计负责人谈 AI 时代设计流程](../clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | 相近 | 弱（待 Luke 确认） |
-| [Claude Code 团队审代码的做法：九成代码由 AI 写，多道检查像叠起来的瑞士奶酪片，人只做机器做不好的判断](../clips/2026-10-21-dotey-claude-code-review-swiss-cheese.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic 设计负责人谈 AI 时代设计流程](../clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | 相近 | 弱（模型复核通过） |
+| [Claude Code 团队审代码的做法：九成代码由 AI 写，多道检查像叠起来的瑞士奶酪片，人只做机器做不好的判断](../clips/2026-10-21-dotey-claude-code-review-swiss-cheese.md) | 相近 | 弱（模型复核通过） |

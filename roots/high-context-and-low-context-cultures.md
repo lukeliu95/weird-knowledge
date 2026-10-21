@@ -26,6 +26,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [成语是哈希表而不是压缩](../clips/2026-10-18-dotey-chengyu-hash-table-idea.md) | 相近 | 弱（待 Luke 确认） |
-| [日本公司邮件与外资邮件的对比段子](../clips/2026-10-18-hikaru-hackjpn-japan-vs-foreign-email-meme.md) | 相近 | 弱（待 Luke 确认） |
-| [霍夫斯泰德文化维度：日本不确定性规避 92 分，但不是世界最高](../clips/2026-10-18-hofstede-japan-uncertainty-avoidance.md) | 相近 | 弱（待 Luke 确认） |
+| [成语是哈希表而不是压缩](../clips/2026-10-18-dotey-chengyu-hash-table-idea.md) | 相近 | 弱（模型复核通过） |
+| [日本公司邮件与外资邮件的对比段子](../clips/2026-10-18-hikaru-hackjpn-japan-vs-foreign-email-meme.md) | 相近 | 弱（模型复核通过） |

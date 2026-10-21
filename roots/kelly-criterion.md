@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [巴菲特经典演讲：先保证不穷回去](../clips/2026-10-18-nextbullready-buffett-classic-speech.md) | 相近 | 弱（待 Luke 确认） |
+| [巴菲特经典演讲：先保证不穷回去](../clips/2026-10-18-nextbullready-buffett-classic-speech.md) | 相近 | 弱（模型复核通过） |

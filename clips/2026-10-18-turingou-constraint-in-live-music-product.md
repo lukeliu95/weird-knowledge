@@ -33,10 +33,10 @@ roots: [rule-of-least-power, acar-2019-creativity-constraints, overchoice, anthr
 
 - 核心主张：让大模型在受控的高级原语之间做组合（输出 JSON 配方），比让它在没有约束的环境里直接写代码更可靠；表达力来自“强原语 + 约束”，而不是无限自由。
 - 源知识：
-  - [最小能力原则](../roots/rule-of-least-power.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。放弃让模型写任意代码、改成输出 JSON 配方，正是“选够用的最弱语言”；作者没有提这条原则。
-  - [约束下的创造力与创新（倒 U 型关系）](../roots/acar-2019-creativity-constraints.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“艺术性表达的本质在于约束而不是发散”，和这篇综述“约束与创造力呈倒 U 型、适度约束最好”的结论相近。
-  - [选择过载](../roots/overchoice.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“产品应当引导用户，而不是让用户在无尽空间里自由探索”接近选择过载的说法。
-  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者把单次 API 调用错误率高归因于“缺少 agentic loop”，和 Anthropic 区分“工作流”与“靠环境反馈循环的智能体”一致。
+  - [最小能力原则](../roots/rule-of-least-power.md) · 关系：相近 · 强弱：弱（模型复核通过）。放弃让模型写任意代码、改成输出 JSON 配方，正是“选够用的最弱语言”；作者没有提这条原则。
+  - [约束下的创造力与创新（倒 U 型关系）](../roots/acar-2019-creativity-constraints.md) · 关系：相近 · 强弱：弱（模型复核通过）。“艺术性表达的本质在于约束而不是发散”，和这篇综述“约束与创造力呈倒 U 型、适度约束最好”的结论相近。
+  - [选择过载](../roots/overchoice.md) · 关系：相近 · 强弱：弱（模型复核通过）。“产品应当引导用户，而不是让用户在无尽空间里自由探索”接近选择过载的说法。
+  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者把单次 API 调用错误率高归因于“缺少 agentic loop”，和 Anthropic 区分“工作流”与“靠环境反馈循环的智能体”一致。
   - [Cloudflare Code Mode：让模型写代码放进沙箱执行](../roots/varda-2025-code-mode.md) · 关系：挑战 · 强弱：强。作者点名不押注 Cloudflare“由大模型写代码交给沙箱执行”的路线（Dynamic Workers），最后还删掉了沙箱执行代码这个选项，回到让模型输出 JSON，正好和 Code Mode“写代码胜过结构化调用”的主张相反。
 - 本质：这条新知识本质上是「最小能力原则」和「约束促进创造力」在大模型生成类产品架构选型上的应用。
 - 整理于：2026-10-18（第 2 轮）

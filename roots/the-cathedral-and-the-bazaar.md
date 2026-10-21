@@ -25,5 +25,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [开放权重让 fal 把 H3 推到更远](../clips/2026-10-18-maxforai-open-weights-fal-h3-max.md) | 相近 | 弱（待 Luke 确认） |
-| [Anthropic 设计负责人谈 AI 时代设计流程](../clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | 相近 | 弱（待 Luke 确认） |
+| [开放权重让 fal 把 H3 推到更远](../clips/2026-10-18-maxforai-open-weights-fal-h3-max.md) | 相近 | 弱（模型复核通过） |
+| [Anthropic 设计负责人谈 AI 时代设计流程](../clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | 相近 | 弱（模型复核通过） |

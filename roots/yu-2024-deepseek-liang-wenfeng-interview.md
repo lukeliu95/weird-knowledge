@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [梁文锋早期访谈的英译与摘录](../clips/2026-10-18-ruanyf-liang-wenfeng-interviews.md) | 直接源自 | 弱（待 Luke 确认） |
+| [梁文锋早期访谈的英译与摘录](../clips/2026-10-18-ruanyf-liang-wenfeng-interviews.md) | 直接源自 | 弱（模型复核通过） |

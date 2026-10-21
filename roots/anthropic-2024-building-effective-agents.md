@@ -27,19 +27,19 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Agent 基础设施的一线观察](../clips/2026-10-18-dotey-anthropic-agent-infrastructure-talk.md) | 相近 | 弱（待 Luke 确认） |
+| [Agent 基础设施的一线观察](../clips/2026-10-18-dotey-anthropic-agent-infrastructure-talk.md) | 相近 | 弱（模型复核通过） |
 | [多数 Agent 其实只是工作流](../clips/2026-10-18-eze-is-1-agent-vs-workflow-definition.md) | 直接源自 | 强 |
 | [Anthropic 六种工作流与智能体](../clips/2026-10-18-eze-is-1-anthropic-workflow-patterns.md) | 直接源自 | 强 |
-| [什么才是 AI Native：别写死步骤](../clips/2026-10-18-programerjohann-ai-native-agent-four-things.md) | 相近 | 弱（待 Luke 确认） |
-| [工作流与智能体：用户为什么更兴奋](../clips/2026-10-18-dotey-workflow-vs-agent-excitement.md) | 相近 | 弱（待 Luke 确认） |
-| [做到千万美元ARR的B2B代理路径](../clips/2026-10-18-financeyf5-b2b-ai-agent-10m-arr.md) | 相近 | 弱（待 Luke 确认） |
-| [Manus 本质是缝合怪但体验做得漂亮](../clips/2026-10-18-stlightleon-manus-polished-agent-take.md) | 相近 | 弱（待 Luke 确认） |
-| [与Claude Code讨论艺术与约束](../clips/2026-10-18-turingou-constraint-in-live-music-product.md) | 相近 | 弱（待 Luke 确认） |
-| [谈用 Claude 做智能体：少搭脚手架](../clips/2026-10-18-alexalbert-agent-scaffolding-context-talk.md) | 相近 | 弱（待 Luke 确认） |
+| [什么才是 AI Native：别写死步骤](../clips/2026-10-18-programerjohann-ai-native-agent-four-things.md) | 相近 | 弱（模型复核通过） |
+| [工作流与智能体：用户为什么更兴奋](../clips/2026-10-18-dotey-workflow-vs-agent-excitement.md) | 相近 | 弱（模型复核通过） |
+| [做到千万美元ARR的B2B代理路径](../clips/2026-10-18-financeyf5-b2b-ai-agent-10m-arr.md) | 相近 | 弱（模型复核通过） |
+| [Manus 本质是缝合怪但体验做得漂亮](../clips/2026-10-18-stlightleon-manus-polished-agent-take.md) | 相近 | 弱（模型复核通过） |
+| [与Claude Code讨论艺术与约束](../clips/2026-10-18-turingou-constraint-in-live-music-product.md) | 相近 | 弱（模型复核通过） |
+| [谈用 Claude 做智能体：少搭脚手架](../clips/2026-10-18-alexalbert-agent-scaffolding-context-talk.md) | 相近 | 弱（模型复核通过） |
 | [Agent Skills设计哲学与迭代](../clips/2026-10-18-dotey-agent-skills-design-philosophy.md) | 相近 | 强 |
 | [给公司业务接入智能体的五点思考](../clips/2026-10-18-dotey-enterprise-agent-integration-tips.md) | 换了说法 | 强 |
-| [ADK 开发者该懂的五种 Agent Skill 设计模式](../clips/2026-10-18-googlecloudtech-adk-agent-skill-design-patterns.md) | 相近 | 弱（待 Luke 确认） |
-| [大白话讲清 Agent、工作流与 ReACT](../clips/2026-10-18-yangyi-agent-workflow-react-explained.md) | 换了说法 | 弱（待 Luke 确认） |
-| [写好Spec后让Agent整周自动开发](../clips/2026-10-18-timyangnet-spec-driven-agent-development.md) | 相近 | 弱（待 Luke 确认） |
-| [常驻 agent 的 6 层结构（推文作者据 OpenAI 资料自制的 PDF）](../clips/2026-10-18-choopyplug1-openai-always-on-agent-six-layers.md) | 相近 | 弱（待 Luke 确认） |
-| [Meta 的瘦编排器模式：编排器只管路由和检查，不做领域推理，14 个专项子 agent 各管一块](../clips/2026-10-20-meta-thin-orchestrator-agent-architecture.md) | 相近 | 弱（待 Luke 确认） |
+| [ADK 开发者该懂的五种 Agent Skill 设计模式](../clips/2026-10-18-googlecloudtech-adk-agent-skill-design-patterns.md) | 相近 | 弱（模型复核通过） |
+| [大白话讲清 Agent、工作流与 ReACT](../clips/2026-10-18-yangyi-agent-workflow-react-explained.md) | 换了说法 | 弱（模型复核通过） |
+| [写好Spec后让Agent整周自动开发](../clips/2026-10-18-timyangnet-spec-driven-agent-development.md) | 相近 | 弱（模型复核通过） |
+| [常驻 agent 的 6 层结构（推文作者据 OpenAI 资料自制的 PDF）](../clips/2026-10-18-choopyplug1-openai-always-on-agent-six-layers.md) | 相近 | 弱（模型复核通过） |
+| [Meta 的瘦编排器模式：编排器只管路由和检查，不做领域推理，14 个专项子 agent 各管一块](../clips/2026-10-20-meta-thin-orchestrator-agent-architecture.md) | 相近 | 弱（模型复核通过） |

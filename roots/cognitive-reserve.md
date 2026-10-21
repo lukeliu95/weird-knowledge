@@ -28,4 +28,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [12 个锻炼大脑的方法](../clips/2026-10-18-didengshengwu-twelve-ways-train-brain.md) | 相近 | 弱（待 Luke 确认） |
+| [12 个锻炼大脑的方法](../clips/2026-10-18-didengshengwu-twelve-ways-train-brain.md) | 相近 | 弱（模型复核通过） |

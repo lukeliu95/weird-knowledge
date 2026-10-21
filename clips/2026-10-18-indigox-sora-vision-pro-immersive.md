@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: [disruptive-innovation, the-medium-is-the-massage, metaverse, brooks-2024-video-world-simulators, experience-machine]
+roots: [the-medium-is-the-massage, metaverse, experience-machine]
 ---
 
 ## 原文
@@ -24,10 +24,8 @@ roots: [disruptive-innovation, the-medium-is-the-massage, metaverse, brooks-2024
 
 - 核心主张：能颠覆 TikTok 的不会是另一个短视频平台，而是 AI 生成内容加头显带来的沉浸式娱乐新形态。
 - 源知识：
-  - [颠覆式创新](../roots/disruptive-innovation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“颠覆者不是同类产品的更好版本”接近颠覆式创新里新进入者从新市场、新形态切入的说法
-  - [媒介即按摩（后视镜效应）](../roots/the-medium-is-the-massage.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。麦克卢汉提醒人总透过后视镜用旧形态理解新技术；作者说下一代不是“另一个短视频平台”，就是在避开这种后视镜思维
-  - [元宇宙](../roots/metaverse.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“在 AI 生成的幻境中沉浸式娱乐”和元宇宙这种沉浸式虚拟世界的设想很像
-  - [视频生成模型是世界模拟器（Sora 技术报告）](../roots/brooks-2024-video-world-simulators.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者的判断建立在 Sora 上，OpenAI 的 Sora 技术报告正是主张视频生成模型可以成为世界模拟器
-  - [体验机](../roots/experience-machine.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。作者说“未来我们都会沉浸在幻境里”，而 Nozick 的体验机思想实验认为多数人不愿接上只给体验、不给真实的机器
+  - [媒介即按摩（后视镜效应）](../roots/the-medium-is-the-massage.md) · 关系：相近 · 强弱：弱（模型复核通过）。麦克卢汉提醒人总透过后视镜用旧形态理解新技术；作者说下一代不是“另一个短视频平台”，就是在避开这种后视镜思维
+  - [元宇宙](../roots/metaverse.md) · 关系：相近 · 强弱：弱（模型复核通过）。“在 AI 生成的幻境中沉浸式娱乐”和元宇宙这种沉浸式虚拟世界的设想很像
+  - [体验机](../roots/experience-machine.md) · 关系：挑战 · 强弱：弱（模型复核通过）。作者说“未来我们都会沉浸在幻境里”，而 Nozick 的体验机思想实验认为多数人不愿接上只给体验、不给真实的机器
 - 本质：这条新知识本质上是颠覆式创新和麦克卢汉“后视镜”提醒在生成式视频加头显场景下的应用：下一个娱乐形态不是旧媒介的更好版本，而是沉浸式的虚拟世界；但体验机思想实验对“人人都会沉浸”提出了挑战。
 - 整理于：2026-10-18（第 2 轮）

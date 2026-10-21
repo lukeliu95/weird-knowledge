@@ -27,5 +27,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Juchats谈AI搜索产品思路](../clips/2026-10-18-cydiar404-ai-search-product-design.md) | 相近 | 弱（待 Luke 确认） |
+| [Juchats谈AI搜索产品思路](../clips/2026-10-18-cydiar404-ai-search-product-design.md) | 相近 | 弱（模型复核通过） |
 | [MrBeast的YouTube上瘾蓝图](../clips/2026-10-18-0xcheshire-youtube-addiction-blueprint.md) | 换了说法 | 强 |

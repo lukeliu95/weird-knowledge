@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: [neural-scaling-law, moravecs-paradox, disruptive-innovation, parasuraman-2000-levels-of-automation, acemoglu-2019-automation-new-tasks]
+roots: [neural-scaling-law, moravecs-paradox, parasuraman-2000-levels-of-automation, acemoglu-2019-automation-new-tasks]
 ---
 
 ## 原文
@@ -60,8 +60,7 @@ AI容错率
 - 源知识：
   - [神经网络规模定律](../roots/neural-scaling-law.md) · 关系：直接源自 · 强弱：强。作者明说乐观的依据是 Scaling law：给更多高质量数据、把模型做大，基座能力就会稳步提高，从而跨过越来越多行业的及格线；还说只有 Scaling law 失效才需要讨论泡沫。
   - [莫拉维克悖论](../roots/moravecs-paradox.md) · 关系：相近 · 强弱：强。原文结尾“本以为 AI 会先替我们做体力劳动，结果先替代的是中等脑力劳动”，就是莫拉维克悖论描述的现象；作者给的解释换成了及格线和成本差。
-  - [颠覆式创新](../roots/disruptive-innovation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Christensen 的图里，技术性能沿一条轨迹上升，跨过某一层市场的需求线后就被这一层客户采用；“基座越来越强、跳过越来越多行业的及格线”是同一个结构。属于推断。
-  - [自动化的类型与等级模型](../roots/parasuraman-2000-levels-of-automation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。这篇自动化分级论文把“自动化的可靠性”和“出错后果的代价”列为决定自动化做到哪一级的标准，和“AI 容错率”决定 AI 能放手多少是同一思路；作者说的“用户越多、对错误率要求越高”也是出错代价随规模放大。属于推断。
-  - [自动化与新任务：技术如何替代又重新吸纳劳动力](../roots/acemoglu-2019-automation-new-tasks.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。任务模型里，企业把每个任务交给更便宜的要素（人或机器），自动化的收益和替换时省下的成本成正比；这就是“人力 AI 成本差越大，企业越有动力用 AI”。作者没有引用。
+  - [自动化的类型与等级模型](../roots/parasuraman-2000-levels-of-automation.md) · 关系：相近 · 强弱：弱（模型复核通过）。这篇自动化分级论文把“自动化的可靠性”和“出错后果的代价”列为决定自动化做到哪一级的标准，和“AI 容错率”决定 AI 能放手多少是同一思路；作者说的“用户越多、对错误率要求越高”也是出错代价随规模放大。属于推断。
+  - [自动化与新任务：技术如何替代又重新吸纳劳动力](../roots/acemoglu-2019-automation-new-tasks.md) · 关系：相近 · 强弱：弱（模型复核通过）。任务模型里，企业把每个任务交给更便宜的要素（人或机器），自动化的收益和替换时省下的成本成正比；这就是“人力 AI 成本差越大，企业越有动力用 AI”。作者没有引用。
 - 本质：这条新知识本质上是“技术性能跨过门槛 + 按成本把任务从人转给机器”（自动化的任务经济学）在大模型时代各行业 AI 普及先后上的应用。
 - 整理于：2026-10-18（第 2 轮）

@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [张一鸣 66 条成长心得与延迟满足](../clips/2026-10-18-sea-bitcoin-zhang-yiming-66-growth-tips.md) | 挑战 | 弱（待 Luke 确认） |
+| [张一鸣 66 条成长心得与延迟满足](../clips/2026-10-18-sea-bitcoin-zhang-yiming-66-growth-tips.md) | 相近 | 弱（模型复核通过） |

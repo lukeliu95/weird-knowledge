@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [孙哥成功的原因：愿意向任何人学习](../clips/2026-10-18-mimijieweb3-sun-ge-learns-from-anyone.md) | 相近 | 弱（待 Luke 确认） |
+| [孙哥成功的原因：愿意向任何人学习](../clips/2026-10-18-mimijieweb3-sun-ge-learns-from-anyone.md) | 相近 | 弱（模型复核通过） |

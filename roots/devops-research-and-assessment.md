@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [前Meta工程师的AI优先团队落地报告](../clips/2026-10-18-ayi-ainotes-peter-pang-ai-first-report.md) | 相近 | 弱（待 Luke 确认） |
+| [前Meta工程师的AI优先团队落地报告](../clips/2026-10-18-ayi-ainotes-peter-pang-ai-first-report.md) | 相近 | 弱（模型复核通过） |

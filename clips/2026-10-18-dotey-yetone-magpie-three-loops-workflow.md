@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: [ralph-wiggum-technique, cherny-2025-claude-code-best-practices, genchi-genbutsu, chen-2023-frugalgpt, compounding-engineering, after-action-review, management-by-exception, separation-of-concerns, anthropic-2025-effective-context-engineering]
+roots: [ralph-wiggum-technique, cherny-2025-claude-code-best-practices, genchi-genbutsu, chen-2023-frugalgpt, compounding-engineering, after-action-review, management-by-exception, separation-of-concerns]
 ---
 
 ## 原文
@@ -86,14 +86,13 @@ yetone 截图里的 3 段提示词都没写时间间隔，我自己去 Codex 跑
 
 - 核心主张：让编程 agent 无人值守地维护开源项目，靠的不是魔法，而是几个工程前提：每个循环只管一个入口；先给它真实的多端复现环境，修没修好靠实际运行；提示词主要写例外怎么处理；用便宜的分类模型挡在前面过滤，只把相关的交给贵模型；让它自己把教训写下来给下一轮；早期把设计讨论记进记忆和文档，让它按人的偏好拍板；人只留审美判断。
 - 源知识：
-  - [Ralph Wiggum 循环](../roots/ralph-wiggum-technique.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。用 /loop 让同一段提示词反复执行、靠文件和仓库记状态，和 Ralph 循环（反复把同一份提示喂给编程 agent）是同一种机制；不同的是这里的循环是盯入口的值班任务
-  - [Claude Code 最佳实践（给 Claude 一个验证自己工作的办法）](../roots/cherny-2025-claude-code-best-practices.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。"AI 说修好了没用，要在出问题的系统上真跑一遍"、PR 要拉下来实际跑，和"给 Claude 一个能验证自己工作的办法"是同一个核心
-  - [现地现物](../roots/genchi-genbutsu.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。备齐 Mac、Windows、Linux 三端，每次都在出问题的那台真实环境里复现再修，就是"到现场看实物"
-  - [FrugalGPT：用级联大模型省钱又提效](../roots/chen-2023-frugalgpt.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。先用几乎不要钱的模型判断推文相不相关，只把真反馈交给贵模型，为的是省 token，和 FrugalGPT 的大模型级联（便宜的先上，不行再交给贵的）同一个思路；区别是这里便宜模型只做过滤
-  - [复合工程](../roots/compounding-engineering.md) · 关系：换了说法 · 强弱：弱（待 Luke 确认）。第三个循环把"不该合的 PR、验证不严的地方"写下来给以后的 AI 读，作者自己说这是"自我迭代优化的循环"，就是复合工程说的把每轮教训写回系统
-  - [行动后复盘（AAR）](../roots/after-action-review.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。定期回看做错了什么、哪里验证不够，写成下次的做法，是行动后复盘在 agent 身上的版本
-  - [例外管理（例外原则）](../roots/management-by-exception.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。日常的修 bug、发版、回复交给循环，人每晚只处理 AI 做不好的例外（UI/UX 审美）；提示词也主要在写例外怎么办，和例外原则一致
-  - [关注点分离](../roots/separation-of-concerns.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。拆成 3 条流水线，各管一个入口（GitHub 和 Discord、推特、代码库本身），各自循环，是关注点分离
-  - [AI 智能体的上下文工程](../roots/anthropic-2025-effective-context-engineering.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。Anthropic 的上下文工程文章明说不建议在提示里塞一长串边界情况，宜改用少量典型示例；这条却说提示词大部分篇幅花在例外处理上。不过这里的例外是模型猜不到的几条业务规定（中转站广告怎么回、Discord 要真 @），不是想穷举所有规则，所以只算部分冲突
+  - [Ralph Wiggum 循环](../roots/ralph-wiggum-technique.md) · 关系：相近 · 强弱：弱（模型复核通过）。用 /loop 让同一段提示词反复执行、靠文件和仓库记状态，和 Ralph 循环（反复把同一份提示喂给编程 agent）是同一种机制；不同的是这里的循环是盯入口的值班任务
+  - [Claude Code 最佳实践（给 Claude 一个验证自己工作的办法）](../roots/cherny-2025-claude-code-best-practices.md) · 关系：相近 · 强弱：弱（模型复核通过）。"AI 说修好了没用，要在出问题的系统上真跑一遍"、PR 要拉下来实际跑，和"给 Claude 一个能验证自己工作的办法"是同一个核心
+  - [现地现物](../roots/genchi-genbutsu.md) · 关系：相近 · 强弱：弱（模型复核通过）。备齐 Mac、Windows、Linux 三端，每次都在出问题的那台真实环境里复现再修，就是"到现场看实物"
+  - [FrugalGPT：用级联大模型省钱又提效](../roots/chen-2023-frugalgpt.md) · 关系：相近 · 强弱：弱（模型复核通过）。先用几乎不要钱的模型判断推文相不相关，只把真反馈交给贵模型，为的是省 token，和 FrugalGPT 的大模型级联（便宜的先上，不行再交给贵的）同一个思路；区别是这里便宜模型只做过滤
+  - [复合工程](../roots/compounding-engineering.md) · 关系：相近 · 强弱：弱（模型复核通过）。第三个循环把"不该合的 PR、验证不严的地方"写下来给以后的 AI 读，作者自己说这是"自我迭代优化的循环"，就是复合工程说的把每轮教训写回系统
+  - [行动后复盘（AAR）](../roots/after-action-review.md) · 关系：相近 · 强弱：弱（模型复核通过）。定期回看做错了什么、哪里验证不够，写成下次的做法，是行动后复盘在 agent 身上的版本
+  - [例外管理（例外原则）](../roots/management-by-exception.md) · 关系：相近 · 强弱：弱（模型复核通过）。日常的修 bug、发版、回复交给循环，人每晚只处理 AI 做不好的例外（UI/UX 审美）；提示词也主要在写例外怎么办，和例外原则一致
+  - [关注点分离](../roots/separation-of-concerns.md) · 关系：相近 · 强弱：弱（模型复核通过）。拆成 3 条流水线，各管一个入口（GitHub 和 Discord、推特、代码库本身），各自循环，是关注点分离
 - 本质：这条新知识本质上是反馈闭环（在真实环境里验证）、例外管理、级联过滤和事后复盘，在用编程 agent 无人值守维护开源项目场景下的应用。
 - 整理于：2026-10-18（第 3 轮）

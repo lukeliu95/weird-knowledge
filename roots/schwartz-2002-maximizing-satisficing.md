@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [独立开发者每天只工作四小时](../clips/2026-10-18-marclou-marclou-meets-jesse-thanley.md) | 相近 | 弱（待 Luke 确认） |
+| [独立开发者每天只工作四小时](../clips/2026-10-18-marclou-marclou-meets-jesse-thanley.md) | 相近 | 弱（模型复核通过） |

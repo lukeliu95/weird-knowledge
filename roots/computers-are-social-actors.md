@@ -26,5 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [人与智能体协作的产品形态之争](../clips/2026-10-18-hilng77042-human-agent-collaboration-paradigm.md) | 相近 | 弱（待 Luke 确认） |
 | [AI 个性化的大规模随机实验：人和 AI 的人格搭配会影响广告质量和点击率（PNAS）](../clips/2026-10-20-sinan-aral-ai-personalization-pnas.md) | 直接源自 | 强 |

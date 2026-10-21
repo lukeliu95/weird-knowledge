@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: [product-market-fit, mckinley-2015-choose-boring-technology, worse-is-better]
+roots: [product-market-fit, mckinley-2015-choose-boring-technology]
 ---
 
 ## 原文
@@ -24,8 +24,7 @@ roots: [product-market-fit, mckinley-2015-choose-boring-technology, worse-is-bet
 
 - 核心主张：能不能赚钱取决于有没有满足市场需求，而不是技术栈新不新；用老旧、无聊的技术也能做出大生意。
 - 源知识：
-  - [产品与市场匹配](../roots/product-market-fit.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Andreessen 说市场是创业成败最重要的因素，产品和团队差一点也能被好市场拉起来，和“争论框架不如找到需求”同理
-  - [选择无聊的技术](../roots/mckinley-2015-choose-boring-technology.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。这篇文章主张优先用成熟、被充分理解的技术，还点名 PHP 属于“无聊的技术”，和推文里 PHP + jQuery 的例子对得上
-  - [更差就是更好](../roots/worse-is-better.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。简单、粗糙但先跑起来的方案往往胜过精心设计的方案，PHP 一类技术正是常被举的例子
+  - [产品与市场匹配](../roots/product-market-fit.md) · 关系：相近 · 强弱：弱（模型复核通过）。Andreessen 说市场是创业成败最重要的因素，产品和团队差一点也能被好市场拉起来，和“争论框架不如找到需求”同理
+  - [选择无聊的技术](../roots/mckinley-2015-choose-boring-technology.md) · 关系：相近 · 强弱：弱（模型复核通过）。这篇文章主张优先用成熟、被充分理解的技术，还点名 PHP 属于“无聊的技术”，和推文里 PHP + jQuery 的例子对得上
 - 本质：这条新知识本质上是“市场决定成败”（产品与市场匹配）和“成熟技术更省心”（选择无聊的技术）在程序员技术选型争论里的应用。
 - 整理于：2026-10-18（第 2 轮）

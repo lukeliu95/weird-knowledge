@@ -25,5 +25,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [巴菲特经典演讲：先保证不穷回去](../clips/2026-10-18-nextbullready-buffett-classic-speech.md) | 相近 | 弱（待 Luke 确认） |
-| [保险建议：孩子重疾险在香港买，成人买医疗险不买重疾](../clips/2026-10-18-captainlufei999-insurance-advice-hk-critical-illness.md) | 相近 | 弱（待 Luke 确认） |
+| [巴菲特经典演讲：先保证不穷回去](../clips/2026-10-18-nextbullready-buffett-classic-speech.md) | 相近 | 弱（模型复核通过） |
+| [保险建议：孩子重疾险在香港买，成人买医疗险不买重疾](../clips/2026-10-18-captainlufei999-insurance-advice-hk-critical-illness.md) | 相近 | 弱（模型复核通过） |

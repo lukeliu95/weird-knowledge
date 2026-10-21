@@ -29,8 +29,8 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [a16z提出AI时代SaaS按成果收费](../clips/2026-10-18-xjuntaro-a16z-outcome-based-saas-pricing.md) | 相近 | 弱（待 Luke 确认） |
-| [公司推广 AI 编程为何要靠内部](../clips/2026-10-18-dotey-promote-ai-coding-in-company.md) | 相近 | 弱（待 Luke 确认） |
-| [自然语言 Agent 应像好员工的七点](../clips/2026-10-18-remixdesigner-agent-as-good-employee.md) | 相近 | 弱（待 Luke 确认） |
-| [经产省 DXレポート：日本 CIO 倾向选大厂、接受老供应商的提案](../clips/2026-10-18-meti-dx-report-2025-digital-cliff.md) | 相近 | 弱（待 Luke 确认） |
-| [保险建议：孩子重疾险在香港买，成人买医疗险不买重疾](../clips/2026-10-18-captainlufei999-insurance-advice-hk-critical-illness.md) | 相近 | 弱（待 Luke 确认） |
+| [a16z提出AI时代SaaS按成果收费](../clips/2026-10-18-xjuntaro-a16z-outcome-based-saas-pricing.md) | 相近 | 弱（模型复核通过） |
+| [公司推广 AI 编程为何要靠内部](../clips/2026-10-18-dotey-promote-ai-coding-in-company.md) | 相近 | 弱（模型复核通过） |
+| [自然语言 Agent 应像好员工的七点](../clips/2026-10-18-remixdesigner-agent-as-good-employee.md) | 相近 | 弱（模型复核通过） |
+| [经产省 DXレポート：日本 CIO 倾向选大厂、接受老供应商的提案](../clips/2026-10-18-meti-dx-report-2025-digital-cliff.md) | 相近 | 弱（模型复核通过） |
+| [保险建议：孩子重疾险在香港买，成人买医疗险不买重疾](../clips/2026-10-18-captainlufei999-insurance-advice-hk-critical-illness.md) | 相近 | 弱（模型复核通过） |

@@ -28,4 +28,4 @@ Operator 背后的模型：结合 GPT-4o 的视觉和强化学习训练的推理
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Operator靠CUA操作屏幕的原理](../clips/2026-10-18-dotey-openai-operator-cua-how.md) | 直接源自 | 强 |
-| [Astra 电脑操作让验收成闭环](../clips/2026-10-18-dotey-astra-computer-use-acceptance-loop.md) | 相近 | 弱（待 Luke 确认） |
+| [Astra 电脑操作让验收成闭环](../clips/2026-10-18-dotey-astra-computer-use-acceptance-loop.md) | 相近 | 弱（模型复核通过） |

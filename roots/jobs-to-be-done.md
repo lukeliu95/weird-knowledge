@@ -27,10 +27,10 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [帮家具厂建 AI 产品库月入一万八](../clips/2026-10-18-miles-mazy-furniture-factory-ai-product-library.md) | 相近 | 弱（待 Luke 确认） |
-| [NVIDIA DGX Spark 从买机器到变现指南](../clips/2026-10-18-ai-goge-dgx-spark-monetization-guide.md) | 相近 | 弱（待 Luke 确认） |
-| [技术领导者要知道的生成式 AI 五个真相](../clips/2026-10-18-dotey-five-hard-truths-genai.md) | 相近 | 弱（待 Luke 确认） |
-| [征求产品意见别只问程序员群体](../clips/2026-10-18-gorden-sun-dont-ask-programmers-product-feedback.md) | 相近 | 弱（待 Luke 确认） |
-| [同城 IP 团队的真实 Agent 需求](../clips/2026-10-18-wanghao8080-local-ip-agent-need.md) | 相近 | 弱（待 Luke 确认） |
-| [Clay：给 ToB 销售补全客户数据](../clips/2026-10-18-wanghao8080-clay-sales-data-enrichment.md) | 相近 | 弱（待 Luke 确认） |
-| [Gartner 新 B2B 购买旅程：买方只花 17% 的时间见供应商](../clips/2026-10-18-gartner-new-b2b-buying-journey.md) | 相近 | 弱（待 Luke 确认） |
+| [帮家具厂建 AI 产品库月入一万八](../clips/2026-10-18-miles-mazy-furniture-factory-ai-product-library.md) | 相近 | 弱（模型复核通过） |
+| [NVIDIA DGX Spark 从买机器到变现指南](../clips/2026-10-18-ai-goge-dgx-spark-monetization-guide.md) | 相近 | 弱（模型复核通过） |
+| [技术领导者要知道的生成式 AI 五个真相](../clips/2026-10-18-dotey-five-hard-truths-genai.md) | 相近 | 弱（模型复核通过） |
+| [征求产品意见别只问程序员群体](../clips/2026-10-18-gorden-sun-dont-ask-programmers-product-feedback.md) | 相近 | 弱（模型复核通过） |
+| [同城 IP 团队的真实 Agent 需求](../clips/2026-10-18-wanghao8080-local-ip-agent-need.md) | 相近 | 弱（模型复核通过） |
+| [Clay：给 ToB 销售补全客户数据](../clips/2026-10-18-wanghao8080-clay-sales-data-enrichment.md) | 相近 | 弱（模型复核通过） |
+| [Gartner 新 B2B 购买旅程：买方只花 17% 的时间见供应商](../clips/2026-10-18-gartner-new-b2b-buying-journey.md) | 相近 | 弱（模型复核通过） |

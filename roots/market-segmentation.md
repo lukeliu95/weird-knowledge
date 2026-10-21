@@ -27,7 +27,7 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Dify CEO 谈创业和 RAG](../clips/2026-10-18-tumeng05-dify-ceo-startup-rag-views.md) | 相近 | 弱（待 Luke 确认） |
+| [Dify CEO 谈创业和 RAG](../clips/2026-10-18-tumeng05-dify-ceo-startup-rag-views.md) | 相近 | 弱（模型复核通过） |
 | [Headway：书籍摘要月入300万美元](../clips/2026-10-18-wanghao8080-headway-book-summary-app.md) | 直接源自 | 强 |
-| [拆解抖音商业大号清华陈晶的起号方法](../clips/2026-10-18-huangyun-122-douyin-chenjing-account-teardown.md) | 相近 | 弱（待 Luke 确认） |
-| [Clay：给 ToB 销售补全客户数据](../clips/2026-10-18-wanghao8080-clay-sales-data-enrichment.md) | 相近 | 弱（待 Luke 确认） |
+| [拆解抖音商业大号清华陈晶的起号方法](../clips/2026-10-18-huangyun-122-douyin-chenjing-account-teardown.md) | 相近 | 弱（模型复核通过） |
+| [Clay：给 ToB 销售补全客户数据](../clips/2026-10-18-wanghao8080-clay-sales-data-enrichment.md) | 相近 | 弱（模型复核通过） |

@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 日本
-roots: [diffusion-of-innovations, perceived-risk, whole-life-cost, thong-1995-ceo-it-adoption-small-business]
+roots: [diffusion-of-innovations, perceived-risk, thong-1995-ceo-it-adoption-small-business]
 adopted: false
 ---
 
@@ -56,9 +56,8 @@ adopted: false
 
 - 核心主张：日本中小企业引进 AI/IT 时基本没有专门部门把关，由经营者和现场自己推；最卡的是钱和不会用，最缺的是同行案例和选型信息，七成半担心泄密。
 - 源知识：
-  - [创新扩散理论](../roots/diffusion-of-innovations.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。对"案例信息""试用机会"的高需求，对应罗杰斯说的"可观察性""可试用性"影响采纳速度
-  - [感知风险](../roots/perceived-risk.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。75.2% 担心安全，买新工具时的风险感是主要阻力之一
-  - [全生命周期成本（总拥有成本）](../roots/whole-life-cost.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。初期成本和运行成本分别是导入前、导入后的第一障碍，客户算的是总拥有成本
-  - [小企业 IT 采纳中的 CEO 因素](../roots/thong-1995-ceo-it-adoption-small-business.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。没有 IT 部门时，采不采纳取决于经营者本人
+  - [创新扩散理论](../roots/diffusion-of-innovations.md) · 关系：相近 · 强弱：弱（模型复核通过）。对"案例信息""试用机会"的高需求，对应罗杰斯说的"可观察性""可试用性"影响采纳速度
+  - [感知风险](../roots/perceived-risk.md) · 关系：相近 · 强弱：弱（模型复核通过）。75.2% 担心安全，买新工具时的风险感是主要阻力之一
+  - [小企业 IT 采纳中的 CEO 因素](../roots/thong-1995-ceo-it-adoption-small-business.md) · 关系：相近 · 强弱：弱（模型复核通过）。没有 IT 部门时，采不采纳取决于经营者本人
 - 本质：这条本质上是"创新扩散理论"在日本小企业引进 AI 场景下的应用：同行看得见的结果和低成本试用，决定扩散快慢。
 - 整理于：2026-10-19（补课第 9 题）

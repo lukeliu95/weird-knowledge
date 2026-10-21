@@ -26,5 +26,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Anthropic：长任务智能体交接机制](../clips/2026-10-18-dotey-long-running-agent-harness.md) | 相近 | 弱（待 Luke 确认） |
-| [AI 编程像人一样拆解任务的神仙项目](../clips/2026-10-18-yangyi-task-breakdown-agent-project.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic：长任务智能体交接机制](../clips/2026-10-18-dotey-long-running-agent-harness.md) | 相近 | 弱（模型复核通过） |
+| [AI 编程像人一样拆解任务的神仙项目](../clips/2026-10-18-yangyi-task-breakdown-agent-project.md) | 相近 | 弱（模型复核通过） |

@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: [robinson-1967-industrial-buying-creative-marketing, bounded-rationality]
+roots: [robinson-1967-industrial-buying-creative-marketing]
 adopted: true
 ---
 
@@ -55,6 +55,5 @@ adopted: true
 - 核心主张：企业采购按“问题有多新、要多少信息、会不会换供应商”分成新购、修正重购、直接重购三种情境，三种情境的阶段和参与人都不同；但 25 年的检验显示，新购并不会多看供应商，阶段也不是固定的 8 个。
 - 源知识：
   - [购买类型三分法与 BuyGrid](../roots/robinson-1967-industrial-buying-creative-marketing.md) · 关系：直接源自 · 强弱：强。回顾的就是这个模型本身。
-  - [有限理性](../roots/bounded-rationality.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。新购时信息需求大、只看少数几家，和“满意即可”的有限理性相近；回顾文没有用这个词，是推断。
 - 本质：这条新知识本质上是有限理性在企业采购场景下的分类：问题越新，组织越需要信息、越依赖已经信任的少数供应商。
 - 整理于：2026-10-18（补课第 1 题）

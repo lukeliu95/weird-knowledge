@@ -25,4 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [AlphaCodium 与流程工程](../clips/2026-10-18-dotey-alphacodium-flow-engineering.md) | 相近 | 弱（待 Luke 确认） |
+| [AlphaCodium 与流程工程](../clips/2026-10-18-dotey-alphacodium-flow-engineering.md) | 相近 | 弱（模型复核通过） |

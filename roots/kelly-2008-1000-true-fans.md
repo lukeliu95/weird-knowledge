@@ -25,5 +25,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [AI 工具周刊年入七万美元](../clips/2026-10-18-indiehackercase-ai-tools-newsletter-revenue.md) | 相近 | 弱（待 Luke 确认） |
-| [拆解抖音商业大号清华陈晶的起号方法](../clips/2026-10-18-huangyun-122-douyin-chenjing-account-teardown.md) | 相近 | 弱（待 Luke 确认） |
+| [AI 工具周刊年入七万美元](../clips/2026-10-18-indiehackercase-ai-tools-newsletter-revenue.md) | 相近 | 弱（模型复核通过） |
+| [拆解抖音商业大号清华陈晶的起号方法](../clips/2026-10-18-huangyun-122-douyin-chenjing-account-teardown.md) | 相近 | 弱（模型复核通过） |

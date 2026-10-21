@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: [open-weights-and-american-ai-leadership, sovereign-ai, linuss-law, kerckhoffss-principle, ding-2024-technology-rise-great-powers, commoditize-your-complement]
+roots: [open-weights-and-american-ai-leadership, sovereign-ai, linuss-law, kerckhoffss-principle, ding-2024-technology-rise-great-powers]
 ---
 
 ## 原文
@@ -38,7 +38,6 @@ https://t.co/AUKzoQ5Ikb
   - [主权 AI](../roots/sovereign-ai.md) · 关系：直接源自 · 强弱：强。“enable sovereignty”“be built by every country”就是黄仁勋 2023 年起向各国政府推广的“主权 AI”说法（维基百科有记载）。
   - [林纳斯定律（眼睛够多，bug 无处藏）](../roots/linuss-law.md) · 关系：换了说法 · 强弱：强。信中说开放模型让广大研究者检查模型行为、找漏洞，让漏洞“在许多团队之间被发现和修补”，这就是“眼睛够多，bug 无处藏”。
   - [柯克霍夫原则](../roots/kerckhoffss-principle.md) · 关系：换了说法 · 强弱：强。信中原话说开源软件证明了“透明可以比隐蔽更安全”（transparency can be more secure than obscurity），正是反对“靠隐蔽求安全”的柯克霍夫原则。
-  - [《技术与大国崛起：扩散如何塑造经济竞争》（GPT 扩散理论）](../roots/ding-2024-technology-rise-great-powers.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。信中说“AI 领先不看某一个前沿模型，而看能不能建成一个扩散到每个行业的开放生态”，和 Jeffrey Ding 的“通用目的技术扩散决定大国领先”几乎同义，但信中没有引用。
-  - [把互补品商品化](../roots/commoditize-your-complement.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。英伟达卖 GPU，开放模型是 GPU 的互补品：模型越便宜越普及，算力需求越大；这是推断，有评论也指出英伟达的立场有商业动机。
+  - [《技术与大国崛起：扩散如何塑造经济竞争》（GPT 扩散理论）](../roots/ding-2024-technology-rise-great-powers.md) · 关系：相近 · 强弱：弱（模型复核通过）。信中说“AI 领先不看某一个前沿模型，而看能不能建成一个扩散到每个行业的开放生态”，和 Jeffrey Ding 的“通用目的技术扩散决定大国领先”几乎同义，但信中没有引用。
 - 本质：这条新知识本质上是开源软件的安全与扩散经验（林纳斯定律、柯克霍夫原则）加上主权 AI 诉求，在“要不要限制开放权重模型”这场政策辩论里的应用；背后也有英伟达“把互补品商品化”的商业逻辑。
 - 整理于：2026-10-18（第 2 轮）

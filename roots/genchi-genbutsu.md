@@ -26,6 +26,6 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Anthropic 设计负责人谈 AI 时代设计流程](../clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | 相近 | 弱（待 Luke 确认） |
-| [yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](../clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic 设计负责人谈 AI 时代设计流程](../clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | 相近 | 弱（模型复核通过） |
+| [yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](../clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md) | 相近 | 弱（模型复核通过） |
 | [范冰《前线部署工程师》：模型不稀缺了，稀缺的是把模型塞进客户真实业务的人](../clips/2026-10-21-fanbing-fde-guidance-book.md) | 直接源自 | 强 |

@@ -27,6 +27,6 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [工具站出海月入 3000 刀的一年踩坑记](../clips/2026-10-18-gefei55-tool-site-overseas-lessons.md) | 直接源自 | 弱（待 Luke 确认） |
-| [阿里国际站用590万AI页面冲SEO](../clips/2026-10-18-willlhhh-alibaba-5-9m-ai-pages-seo.md) | 相近 | 弱（待 Luke 确认） |
-| [日本 B2B 的 AI 搜索对策：77% 觉得丢了商机，一半多还没动手，卡在不会做和算不清回报](../clips/2026-10-20-probel-btob-ai-search-llmo-survey.md) | 相近 | 弱（待 Luke 确认） |
+| [工具站出海月入 3000 刀的一年踩坑记](../clips/2026-10-18-gefei55-tool-site-overseas-lessons.md) | 相近 | 弱（模型复核通过） |
+| [阿里国际站用590万AI页面冲SEO](../clips/2026-10-18-willlhhh-alibaba-5-9m-ai-pages-seo.md) | 相近 | 弱（模型复核通过） |
+| [日本 B2B 的 AI 搜索对策：77% 觉得丢了商机，一半多还没动手，卡在不会做和算不清回报](../clips/2026-10-20-probel-btob-ai-search-llmo-survey.md) | 相近 | 弱（模型复核通过） |

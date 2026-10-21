@@ -25,4 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [学 Vercel 设计系统的逻辑](../clips/2026-10-18-mengkepm-vercel-design-system-learn-logic.md) | 相近 | 弱（待 Luke 确认） |
+| [学 Vercel 设计系统的逻辑](../clips/2026-10-18-mengkepm-vercel-design-system-learn-logic.md) | 相近 | 弱（模型复核通过） |

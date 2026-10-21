@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: [faceted-search, der-kiureghian-2009-aleatory-epistemic]
+roots: [der-kiureghian-2009-aleatory-epistemic]
 adopted: false
 ---
 
@@ -45,7 +45,6 @@ adopted: false
 
 - 核心主张：大模型自己判断“这句话要不要追问”接近瞎猜，问出来的追问约一半没用、常常问错方面；所以不能放手让模型自由决定问什么。
 - 源知识：
-  - [分面搜索](../roots/faceted-search.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“缺要素”四类就是要补的分面，是推断。
-  - [偶然不确定性与认知不确定性](../roots/der-kiureghian-2009-aleatory-epistemic.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。它把“模型自己不懂”和“需求本身不确定”分开，沿用的是 Cole 等 2023，是推断。
+  - [偶然不确定性与认知不确定性](../roots/der-kiureghian-2009-aleatory-epistemic.md) · 关系：相近 · 强弱：弱（模型复核通过）。它把“模型自己不懂”和“需求本身不确定”分开，沿用的是 Cole 等 2023，是推断。
 - 本质：这条新知识本质上是“认出自己不知道什么”这件事对大模型仍然很难的实测。
 - 整理于：2026-10-19（补课第 4 题）

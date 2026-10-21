@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: [positive-unlabeled-learning, missing-data-mechanisms, closed-world-assumption, lead-scoring]
+roots: [positive-unlabeled-learning, missing-data-mechanisms, closed-world-assumption]
 adopted: false
 ---
 
@@ -41,7 +41,6 @@ adopted: false
 - 源知识：
   - [正例-未标注学习（PU 学习）](../roots/positive-unlabeled-learning.md) · 关系：直接源自 · 强弱：强。就是这篇给出的方法和定理。
   - [缺失数据机制（随机缺失与可忽略性）](../roots/missing-data-mechanisms.md) · 关系：相近 · 强弱：强。§2 明说“完全随机选中”类比“完全随机缺失”。
-  - [封闭世界假设（及开放世界假设）](../roots/closed-world-assumption.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。把未标注当反例就是在训练数据上用封闭世界假设，本文反对；原文没用这个词，是推断。
-  - [线索评分](../roots/lead-scoring.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。用现有客户找相似潜在客户是同一个问题，原文没提销售，是推断。
+  - [封闭世界假设（及开放世界假设）](../roots/closed-world-assumption.md) · 关系：挑战 · 强弱：弱（模型复核通过）。把未标注当反例就是在训练数据上用封闭世界假设，本文反对；原文没用这个词，是推断。
 - 本质：这条新知识本质上是“未知不等于否定”在机器学习训练数据上的版本。
 - 整理于：2026-10-19（补课第 4 题）

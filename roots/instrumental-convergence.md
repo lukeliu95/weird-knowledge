@@ -29,5 +29,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [杨立昆谈智能不等于控制欲](../clips/2026-10-18-dotey-lecun-intelligence-not-domination.md) | 挑战 | 强 |
-| [Sam 谈我们创造的是工具还是生物](../clips/2026-10-18-dotey-altman-tool-or-creature.md) | 挑战 | 弱（待 Luke 确认） |
-| [腾讯 Agent 反复爬高德被抓](../clips/2026-10-18-sleepy0x13-tencent-agents-amap-scraping.md) | 相近 | 弱（待 Luke 确认） |
+| [Sam 谈我们创造的是工具还是生物](../clips/2026-10-18-dotey-altman-tool-or-creature.md) | 挑战 | 弱（模型复核通过） |
+| [腾讯 Agent 反复爬高德被抓](../clips/2026-10-18-sleepy0x13-tencent-agents-amap-scraping.md) | 相近 | 弱（模型复核通过） |

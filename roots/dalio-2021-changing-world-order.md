@@ -28,4 +28,3 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [亿万富翁 42 分钟讲清全球经济运转](../clips/2026-10-18-engmoelgaraihy-billionaire-global-economy-video.md) | 相近 | 弱（待 Luke 确认） |

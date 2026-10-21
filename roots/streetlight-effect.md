@@ -26,5 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [DeepResearch小众话题更有价值](../clips/2026-10-18-dotey-deep-research-knowledge-value.md) | 相近 | 弱（待 Luke 确认） |
-| [用 CICI 指数找被低估的中国城市](../clips/2026-10-18-pretentiouswhat-china-underrated-cities-cici.md) | 相近 | 弱（待 Luke 确认） |
+| [DeepResearch小众话题更有价值](../clips/2026-10-18-dotey-deep-research-knowledge-value.md) | 相近 | 弱（模型复核通过） |

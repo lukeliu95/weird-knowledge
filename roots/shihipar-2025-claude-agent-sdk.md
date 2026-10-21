@@ -26,5 +26,5 @@ Claude Code SDK 改名为 Claude Agent SDK，核心思路是给 agent 一台电�
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Anthropic：让模型验证自己的输出](../clips/2026-10-18-0xcodez-anthropic-agent-loop-self-verify.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic：让模型验证自己的输出](../clips/2026-10-18-0xcodez-anthropic-agent-loop-self-verify.md) | 相近 | 弱（模型复核通过） |
 | [谈用 Claude 做智能体：少搭脚手架](../clips/2026-10-18-alexalbert-agent-scaffolding-context-talk.md) | 直接源自 | 强 |

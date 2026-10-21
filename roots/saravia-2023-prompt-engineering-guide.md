@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [提示词精髓：有什么、做什么、怎么做](../clips/2026-10-18-dotey-prompt-context-task-how.md) | 相近 | 弱（待 Luke 确认） |
+| [提示词精髓：有什么、做什么、怎么做](../clips/2026-10-18-dotey-prompt-context-task-how.md) | 相近 | 弱（模型复核通过） |

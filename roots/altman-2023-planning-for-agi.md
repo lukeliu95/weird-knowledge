@@ -26,4 +26,4 @@ OpenAI 主张一代代部署越来越强的系统、在真实世界里积累经�
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Sam 谈我们创造的是工具还是生物](../clips/2026-10-18-dotey-altman-tool-or-creature.md) | 直接源自 | 弱（待 Luke 确认） |
+| [Sam 谈我们创造的是工具还是生物](../clips/2026-10-18-dotey-altman-tool-or-creature.md) | 直接源自 | 弱（模型复核通过） |

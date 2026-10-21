@@ -21,9 +21,9 @@ roots: [schumpeter-1911-theory-of-economic-development, commoditization, law-of-
 
 - 核心主张：AI 工作流平台本质是“好界面 + 大模型 + 应用集成”的组合，这些组件谁都拿得到，最后的胜负手是分发能力。
 - 源知识：
-  - [经济发展理论（「新组合」）](../roots/schumpeter-1911-theory-of-economic-development.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“一套极致的界面，一捆大模型，一堆应用集成”把产品看成现有要素的新组合。
-  - [商品化（同质化）](../roots/commoditization.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。大模型和应用集成都是可互相替代的现成组件，单靠产品很难拉开差距。
-  - [诱人利润守恒定律](../roots/law-of-conservation-of-attractive-profits.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。组件同质化以后，利润会转到相邻环节，这里就是分发和用户关系。
-  - [从 0 到 1](../roots/zero-to-one.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。Thiel 在书里强调销售和分发做不好比产品做不好更常导致失败（据二手摘要），和“最终要拼分发能力”一致。
+  - [经济发展理论（「新组合」）](../roots/schumpeter-1911-theory-of-economic-development.md) · 关系：相近 · 强弱：弱（模型复核通过）。“一套极致的界面，一捆大模型，一堆应用集成”把产品看成现有要素的新组合。
+  - [商品化（同质化）](../roots/commoditization.md) · 关系：相近 · 强弱：弱（模型复核通过）。大模型和应用集成都是可互相替代的现成组件，单靠产品很难拉开差距。
+  - [诱人利润守恒定律](../roots/law-of-conservation-of-attractive-profits.md) · 关系：相近 · 强弱：弱（模型复核通过）。组件同质化以后，利润会转到相邻环节，这里就是分发和用户关系。
+  - [从 0 到 1](../roots/zero-to-one.md) · 关系：相近 · 强弱：弱（模型复核通过）。Thiel 在书里强调销售和分发做不好比产品做不好更常导致失败（据二手摘要），和“最终要拼分发能力”一致。
 - 本质：这条新知识本质上是「新组合式创新」和「组件同质化后利润转移」在 AI 工作流平台竞争上的应用。
 - 整理于：2026-10-18（第 2 轮）

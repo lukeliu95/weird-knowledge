@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: [sheth-1973-industrial-buyer-behavior, behavioral-theory-of-the-firm, perceived-risk, cognitive-dissonance]
+roots: [sheth-1973-industrial-buyer-behavior, behavioral-theory-of-the-firm, perceived-risk]
 adopted: true
 ---
 
@@ -70,6 +70,5 @@ adopted: true
   - [谢斯工业品购买者行为模型](../roots/sheth-1973-industrial-buyer-behavior.md) · 关系：直接源自 · 强弱：强。就是这篇论文本身。
   - [企业行为理论](../roots/behavioral-theory-of-the-firm.md) · 关系：直接源自 · 强弱：强。作者明说引用 March & Simon 对组织冲突的定义。
   - [感知风险](../roots/perceived-risk.md) · 关系：直接源自 · 强弱：强。作者明说引用 Bauer 的感知风险。
-  - [认知失调](../roots/cognitive-dissonance.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者用“认知一致性”解释选择性理解，和认知失调属于同一类理论；是推断。
 - 本质：这条新知识本质上是组织冲突理论和感知风险在多部门采购场景下的应用：风险越高越要多人定，人越多，冲突的解法决定了快慢。
 - 整理于：2026-10-18（补课第 1 题）

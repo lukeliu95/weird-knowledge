@@ -29,7 +29,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [大模型是冰箱，赚钱的是卖冷饮的人](../clips/2026-10-18-mubeitech-llm-fridge-coca-cola-analogy.md) | 相近 | 弱（待 Luke 确认） |
-| [游戏公司为何要做通用 Agent](../clips/2026-10-18-dashhuang-game-company-general-agent.md) | 相近 | 弱（待 Luke 确认） |
-| [火山引擎生成式 AI 落地白皮书](../clips/2026-10-18-jiaxi-cui-volcengine-genai-whitepaper.md) | 相近 | 弱（待 Luke 确认） |
-| [YC 列出 AI 突破带来的创业点子](../clips/2026-10-18-ycombinator-yc-startup-ideas-ai.md) | 相近 | 弱（待 Luke 确认） |
+| [大模型是冰箱，赚钱的是卖冷饮的人](../clips/2026-10-18-mubeitech-llm-fridge-coca-cola-analogy.md) | 相近 | 弱（模型复核通过） |
+| [YC 列出 AI 突破带来的创业点子](../clips/2026-10-18-ycombinator-yc-startup-ideas-ai.md) | 相近 | 弱（模型复核通过） |

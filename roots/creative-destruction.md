@@ -26,5 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Thiel一小时讲透从零做垄断的底层逻辑](../clips/2026-10-18-kkawsb-peter-thiel-monopoly-lecture.md) | 相近 | 弱（待 Luke 确认） |
-| [人和 AI 比设计游戏：AI 自己设计的卖得更贵，标明"人做的"也不加价](../clips/2026-10-20-conlon-human-ai-competition-experiment.md) | 相近 | 弱（待 Luke 确认） |
+| [Thiel一小时讲透从零做垄断的底层逻辑](../clips/2026-10-18-kkawsb-peter-thiel-monopoly-lecture.md) | 相近 | 弱（模型复核通过） |

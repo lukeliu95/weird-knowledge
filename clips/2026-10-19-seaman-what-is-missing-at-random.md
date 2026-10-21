@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: [missing-data-mechanisms, sampling-bias, closed-world-assumption]
+roots: [missing-data-mechanisms, sampling-bias]
 adopted: false
 ---
 
@@ -41,7 +41,6 @@ adopted: false
 - 核心主张：数据缺失的原因如果和缺掉的值本身有关，直接忽略缺失去分析就会得出偏的结论；“随机缺失”有严格的意思，不是“缺得很随机”。
 - 源知识：
   - [缺失数据机制（随机缺失与可忽略性）](../roots/missing-data-mechanisms.md) · 关系：直接源自 · 强弱：强。就是对缺失数据机制定义的澄清。
-  - [抽样偏差](../roots/sampling-bias.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。都是“看到的数据不是全体的随机样本”，原文没这样联系，是推断。
-  - [封闭世界假设（及开放世界假设）](../roots/closed-world-assumption.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。一个是逻辑上“未知不等于假”，一个是统计上“缺失不能随便忽略”，原文没联系，是推断。
+  - [抽样偏差](../roots/sampling-bias.md) · 关系：相近 · 强弱：弱（模型复核通过）。都是“看到的数据不是全体的随机样本”，原文没这样联系，是推断。
 - 本质：这条新知识本质上是“看到的数据被什么筛过”这一问题在缺失值上的统计版本。
 - 整理于：2026-10-19（补课第 4 题）

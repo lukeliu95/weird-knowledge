@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: [kano-model, disruptive-innovation, anthropic-2024-building-effective-agents]
+roots: [kano-model, anthropic-2024-building-effective-agents]
 ---
 
 ## 原文
@@ -23,8 +23,7 @@ roots: [kano-model, disruptive-innovation, anthropic-2024-building-effective-age
 
 - 核心主张：工作流只是在现有做法上锦上添花，用户满意但不兴奋；智能体虽然不成熟、满意度评分更低，却让用户觉得惊喜、想再试，更能打动客户。
 - 源知识：
-  - [狩野模型（魅力质量与当然质量）](../roots/kano-model.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“满意但不兴奋”对应狩野模型的一元质量（做得越好越满意），“惊喜、想尝试更多”对应魅力质量（有了就惊喜）；原文没引用。
-  - [颠覆式创新](../roots/disruptive-innovation.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。工作流是在现有基础上改进（延续性创新）；智能体在完成率、满意度这些老指标上更差，却带来新体验、吸引新客户，像颠覆式创新的早期。
-  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。把“工作流”（预设路径、更可靠）和“智能体”（模型自己决定过程）分开谈，用的是 Anthropic 这篇文章流行开的区分；这条承认工作流更可靠，但补上了“智能体更让人兴奋”这一面。
+  - [狩野模型（魅力质量与当然质量）](../roots/kano-model.md) · 关系：相近 · 强弱：弱（模型复核通过）。“满意但不兴奋”对应狩野模型的一元质量（做得越好越满意），“惊喜、想尝试更多”对应魅力质量（有了就惊喜）；原文没引用。
+  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：相近 · 强弱：弱（模型复核通过）。把“工作流”（预设路径、更可靠）和“智能体”（模型自己决定过程）分开谈，用的是 Anthropic 这篇文章流行开的区分；这条承认工作流更可靠，但补上了“智能体更让人兴奋”这一面。
 - 本质：这条新知识本质上是狩野模型“魅力质量 vs 一元质量”在 AI 产品形态（工作流 vs 智能体）选择上的应用。
 - 整理于：2026-10-18（第 2 轮）

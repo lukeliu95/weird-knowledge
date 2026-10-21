@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [蔡崇信访谈：与马云初见的故事](../clips/2026-10-18-dotey-joseph-tsai-interview-jack-ma.md) | 相近 | 弱（待 Luke 确认） |
+| [蔡崇信访谈：与马云初见的故事](../clips/2026-10-18-dotey-joseph-tsai-interview-jack-ma.md) | 相近 | 弱（模型复核通过） |

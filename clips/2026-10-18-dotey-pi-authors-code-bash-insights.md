@@ -29,9 +29,9 @@ Pi 两位作者的见解：
 - 核心主张：编程 agent 直接读代码就够，不需要另建记忆系统或 RAG；Bash 本身像编程语言一样可以任意组合，多数时候 skill 加脚本就能替代 MCP。
 - 源知识：
   - [Mario Zechner：也许你根本不需要 MCP](../roots/zechner-2025-dont-need-mcp.md) · 关系：直接源自 · 强弱：强。Pi 作者 Mario Zechner 的原文写「智能体会跑 Bash、会写代码，而 Bash 和代码可以组合」，所以多数场景不需要 MCP，与推文第 2 点几乎一致
-  - [Armin Ronacher：工具——代码就是你需要的一切](../roots/ronacher-2025-code-is-all-you-need.md) · 关系：直接源自 · 强弱：弱（待 Luke 确认）。Ronacher 主张让模型写代码和脚本、而不是靠 MCP；推文说的「两位作者」推断为 Zechner 和 Ronacher，没有核对视频
-  - [Unix 哲学](../roots/unix-philosophy.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「Bash 类似编程语言，可以任意组合」就是 Unix 用管道把只做一件事的小工具组合起来的思路
-  - [单一事实来源](../roots/single-source-of-truth.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「代码即真相，不需要记忆系统」相当于把代码当作唯一事实来源，不另建可能过期的副本
+  - [Armin Ronacher：工具——代码就是你需要的一切](../roots/ronacher-2025-code-is-all-you-need.md) · 关系：相近 · 强弱：弱（模型复核通过）。Ronacher 主张让模型写代码和脚本、而不是靠 MCP；推文说的「两位作者」推断为 Zechner 和 Ronacher，没有核对视频
+  - [Unix 哲学](../roots/unix-philosophy.md) · 关系：相近 · 强弱：弱（模型复核通过）。「Bash 类似编程语言，可以任意组合」就是 Unix 用管道把只做一件事的小工具组合起来的思路
+  - [单一事实来源](../roots/single-source-of-truth.md) · 关系：相近 · 强弱：弱（模型复核通过）。「代码即真相，不需要记忆系统」相当于把代码当作唯一事实来源，不另建可能过期的副本
   - [检索增强生成（RAG）](../roots/retrieval-augmented-generation.md) · 关系：挑战 · 强弱：强。推文明说代码不需要 RAG，直接反对「先给模型建检索库再回答」这一主流做法
 - 本质：这条新知识本质上是 Unix 哲学（小工具可自由组合）和单一事实来源在编程 agent 工具设计场景下的应用，同时挑战了「agent 必须配 RAG 和专用协议」的主流做法。
 - 整理于：2026-10-18（第 1 轮）

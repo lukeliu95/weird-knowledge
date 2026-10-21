@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [新书《微积分：把变化算清楚》](../clips/2026-10-18-jianshuo-calculus-book-making-change-computable.md) | 相近 | 弱（待 Luke 确认） |
+| [新书《微积分：把变化算清楚》](../clips/2026-10-18-jianshuo-calculus-book-making-change-computable.md) | 相近 | 弱（模型复核通过） |

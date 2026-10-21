@@ -27,5 +27,3 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [开源工具让普通人也能微调 27B 模型](../clips/2026-10-18-minlibuilds-open-source-27b-finetune-unsloth.md) | 换了说法 | 强 |
-| [GLM 5.3 只靠后训练大涨，被 SemiAnalysis 嘉宾称为警钟](../clips/2026-10-18-nft-chen-glm-5-3-post-training-wake-up-call.md) | 换了说法 | 弱（待 Luke 确认） |
-| [智谱论文曝光内部统一多模态模型 GLM-Omni](../clips/2026-10-20-nft-chen-zhipu-glm-omni-unified-multimodal-paper.md) | 相近 | 弱（待 Luke 确认） |

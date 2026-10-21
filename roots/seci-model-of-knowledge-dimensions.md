@@ -27,9 +27,8 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [前线部署工程师为何是 AI 落地时代的关键职业](../clips/2026-10-18-indigox-forward-deployed-engineer-ai-era.md) | 相近 | 弱（待 Luke 确认） |
+| [前线部署工程师为何是 AI 落地时代的关键职业](../clips/2026-10-18-indigox-forward-deployed-engineer-ai-era.md) | 相近 | 弱（模型复核通过） |
 | [Claude Code播客：工具终将消失](../clips/2026-10-18-genie0309-claude-code-podcast-tools-disappear.md) | 直接源自 | 强 |
 | [智谱让 GLM-5.3 自己优化推理系统](../clips/2026-10-18-dotey-glm-5-3-optimizes-own-inference.md) | 换了说法 | 强 |
-| [Anthropic：用技能代替独立智能体](../clips/2026-10-18-hongming731-anthropic-agent-skills-talk.md) | 相近 | 弱（待 Luke 确认） |
-| [自然语言 Agent 应像好员工的七点](../clips/2026-10-18-remixdesigner-agent-as-good-employee.md) | 相近 | 弱（待 Luke 确认） |
-| [大白话讲清 Agent、工作流与 ReACT](../clips/2026-10-18-yangyi-agent-workflow-react-explained.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic：用技能代替独立智能体](../clips/2026-10-18-hongming731-anthropic-agent-skills-talk.md) | 相近 | 弱（模型复核通过） |
+| [自然语言 Agent 应像好员工的七点](../clips/2026-10-18-remixdesigner-agent-as-good-employee.md) | 相近 | 弱（模型复核通过） |

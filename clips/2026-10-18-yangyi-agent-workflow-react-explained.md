@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: [anthropic-2024-building-effective-agents, yao-2022-react, zhao-2023-expel, retrieval-augmented-generation, intelligent-agent, exploration-exploitation-dilemma, ambidextrous-organization, seci-model-of-knowledge-dimensions]
+roots: [anthropic-2024-building-effective-agents, yao-2022-react, zhao-2023-expel, retrieval-augmented-generation, intelligent-agent, exploration-exploitation-dilemma, ambidextrous-organization]
 ---
 
 ## 原文
@@ -79,13 +79,12 @@ Rule-based workflow在某段时期内一般是静态的
 
 - 核心主张：Agent 是带提示词、工具和检索的大模型（内部可能是多个 agent）；工作流有两端：agentic（让模型自己识别、规划、试错）和 rule-based（按人定好的 SOP 执行），开放、没经验的问题用前者，明确、有成熟做法的问题用后者，实际系统里两者混用；agent 要变强，需要在真实交互中积累经验并沉淀进知识库；把这些组合好的工程化能力才是壁垒。
 - 源知识：
-  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：换了说法 · 强弱：弱（待 Luke 确认）。「Agentic 让 AI 自己识别意图、规划方案」对「Rule-based 按人既定路线处理」，和 Anthropic 2024 年把系统分成「智能体（模型自己决定流程）」和「工作流（代码预设路径）」几乎是同一个划分，只是作者把两者都叫 workflow；作者没有引用。
+  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：换了说法 · 强弱：弱（模型复核通过）。「Agentic 让 AI 自己识别意图、规划方案」对「Rule-based 按人既定路线处理」，和 Anthropic 2024 年把系统分成「智能体（模型自己决定流程）」和「工作流（代码预设路径）」几乎是同一个划分，只是作者把两者都叫 workflow；作者没有引用。
   - [ReAct：推理与行动协同](../roots/yao-2022-react.md) · 关系：直接源自 · 强弱：强。作者点名 ReACT 并做解释；但他说的「把每次交互的经验分析后沉淀进知识库、增强 RAG」不在 ReAct 原论文里，原论文讲的是一次任务中推理和行动交替进行、读环境反馈再推理，作者的解释和原意有出入。
-  - [ExpeL：大模型智能体是经验学习者](../roots/zhao-2023-expel.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者对 ReACT 的实际描述（与真实世界交互拿回经验，分析后把有效经验存进知识库，下次检索调用，不改模型）和 ExpeL「收集经验、用自然语言提炼心得、推理时调出心得和过往案例」几乎一样；作者没有引用。
+  - [ExpeL：大模型智能体是经验学习者](../roots/zhao-2023-expel.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者对 ReACT 的实际描述（与真实世界交互拿回经验，分析后把有效经验存进知识库，下次检索调用，不改模型）和 ExpeL「收集经验、用自然语言提炼心得、推理时调出心得和过往案例」几乎一样；作者没有引用。
   - [检索增强生成（RAG）](../roots/retrieval-augmented-generation.md) · 关系：直接源自 · 强弱：强。作者直接用 RAG 一词，把狭义的 agent 定义为「打通了 tools 与 RAG 的 LLM」，并用「增强 RAG」解释 agent 如何变强。
-  - [智能体](../roots/intelligent-agent.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「你给一个 input，Agent 识别意图，按照它自己的设定给你一个 output」，是教科书里「感知环境、自主行动去实现目标的实体」的口语版。
-  - [探索与利用困境](../roots/exploration-exploitation-dilemma.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「没有经验的探索性问题交给 AI 试错」对「已有固定方法的问题照着干」，前者幻觉多但能发现新办法，后者稳定但只能重复，就是探索与利用的取舍。
-  - [双元组织（组织双元性）](../roots/ambidextrous-organization.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「既需要创新型人才去探索未知，也需要螺丝钉按既定路线执行」「一个 MultiAgent 里既有负责 agentic 的，也有负责 rule-based 的」，和组织双元性「同一组织里探索单元和执行单元分开又整合」一致。
-  - [SECI 知识转化模型](../roots/seci-model-of-knowledge-dimensions.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「试错 > 获得经验 > 沉淀有效经验 > 慢慢形成固定方法」，是把做中得到的默会经验外化成可复制的显性规则，对应 SECI 的外化和组合。
+  - [智能体](../roots/intelligent-agent.md) · 关系：相近 · 强弱：弱（模型复核通过）。「你给一个 input，Agent 识别意图，按照它自己的设定给你一个 output」，是教科书里「感知环境、自主行动去实现目标的实体」的口语版。
+  - [探索与利用困境](../roots/exploration-exploitation-dilemma.md) · 关系：相近 · 强弱：弱（模型复核通过）。「没有经验的探索性问题交给 AI 试错」对「已有固定方法的问题照着干」，前者幻觉多但能发现新办法，后者稳定但只能重复，就是探索与利用的取舍。
+  - [双元组织（组织双元性）](../roots/ambidextrous-organization.md) · 关系：相近 · 强弱：弱（模型复核通过）。「既需要创新型人才去探索未知，也需要螺丝钉按既定路线执行」「一个 MultiAgent 里既有负责 agentic 的，也有负责 rule-based 的」，和组织双元性「同一组织里探索单元和执行单元分开又整合」一致。
 - 本质：这条新知识本质上是「探索与利用」的分工（没经验的问题靠试错探索，成熟问题按 SOP 执行）加上「从经验中学习」（经验沉淀成案例、再检索复用）在大模型 agent 系统设计场景下的应用。
 - 整理于：2026-10-18（第 2 轮）

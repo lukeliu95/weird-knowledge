@@ -31,5 +31,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Ilya TED 谈通往 AGI 之路](../clips/2026-10-18-dotey-ilya-ted-agi-journey.md) | 直接源自 | 弱（待 Luke 确认） |
+| [Ilya TED 谈通往 AGI 之路](../clips/2026-10-18-dotey-ilya-ted-agi-journey.md) | 直接源自 | 弱（模型复核通过） |
 | [伯克利 AGI House 谈安全](../clips/2026-10-18-indigox-agi-house-berkeley-safety.md) | 换了说法 | 强 |

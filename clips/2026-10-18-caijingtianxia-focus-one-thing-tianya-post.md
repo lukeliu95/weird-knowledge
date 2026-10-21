@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 思维与成长
-roots: [hedgehog-concept, deliberate-practice, operant-conditioning, division-of-labour, human-capital]
+roots: [hedgehog-concept, deliberate-practice, operant-conditioning, human-capital]
 ---
 
 ## 原文
@@ -40,10 +40,9 @@ roots: [hedgehog-concept, deliberate-practice, operant-conditioning, division-of
 
 - 核心主张：普通人最大的资产是时间：选一件自己热爱又能赚钱的事，放下杂事，用 3 个月到 3 年全力投入、收集信息、大量练习，并一边练一边想办法变现；没有物质回报很难坚持，坚持不住就形成不了积累和竞争力。（原文「物质的回馈，很难坚持下去」一句疑似漏了「没有」）
 - 源知识：
-  - [刺猬理念](../roots/hedgehog-concept.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「感兴趣、热爱 + 做到擅长 + 能赚钱」几乎就是 Collins 刺猬理念的三环交集，再加上「心无旁骛只做这一件」；原帖没引（待 Luke 确认）。
-  - [刻意练习](../roots/deliberate-practice.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「疯狂地练习，一点一点精进」「长期专注」对应刻意练习；但原帖说 3 个月到 3 年，Ericsson 和 Simon 说的专家水平要十年左右，原帖的目标是「擅长到能变现」而不是顶尖（待 Luke 确认）。
-  - [操作性条件反射](../roots/operant-conditioning.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。「没有物质回馈就很难坚持」是在说行为要靠回报来强化，所以要边练边变现，让回报尽早出现（待 Luke 确认）。
-  - [分工](../roots/division-of-labour.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。只做一件事、做到擅长才形成竞争力，对应 Smith 说的专做一道工序带来熟练度提升（待 Luke 确认）。
-  - [人力资本](../roots/human-capital.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。把每天 24 小时当作最大资产投进一件事，积累成技能再换成收入，是人力资本投资的通俗版（待 Luke 确认）。
+  - [刺猬理念](../roots/hedgehog-concept.md) · 关系：相近 · 强弱：弱（模型复核通过）。「感兴趣、热爱 + 做到擅长 + 能赚钱」几乎就是 Collins 刺猬理念的三环交集，再加上「心无旁骛只做这一件」；原帖没引（待 Luke 确认）。
+  - [刻意练习](../roots/deliberate-practice.md) · 关系：相近 · 强弱：弱（模型复核通过）。「疯狂地练习，一点一点精进」「长期专注」对应刻意练习；但原帖说 3 个月到 3 年，Ericsson 和 Simon 说的专家水平要十年左右，原帖的目标是「擅长到能变现」而不是顶尖（待 Luke 确认）。
+  - [操作性条件反射](../roots/operant-conditioning.md) · 关系：相近 · 强弱：弱（模型复核通过）。「没有物质回馈就很难坚持」是在说行为要靠回报来强化，所以要边练边变现，让回报尽早出现（待 Luke 确认）。
+  - [人力资本](../roots/human-capital.md) · 关系：相近 · 强弱：弱（模型复核通过）。把每天 24 小时当作最大资产投进一件事，积累成技能再换成收入，是人力资本投资的通俗版（待 Luke 确认）。
 - 本质：这条新知识本质上是刺猬理念（热爱、擅长、能赚钱的交集）加刻意练习和强化原理（回报维持行为）在普通人职业选择上的应用。
 - 整理于：2026-10-18（第 1 轮）

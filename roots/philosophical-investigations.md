@@ -26,4 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [谁是傀儡：刘慈欣谈外星智慧判断](../clips/2026-10-18-zho-zho-zho-who-is-the-puppet-liu-cixin.md) | 相近 | 弱（待 Luke 确认） |
+| [谁是傀儡：刘慈欣谈外星智慧判断](../clips/2026-10-18-zho-zho-zho-who-is-the-puppet-liu-cixin.md) | 相近 | 弱（模型复核通过） |

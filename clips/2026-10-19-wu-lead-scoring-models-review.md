@@ -43,6 +43,6 @@ adopted: false
 - 源知识：
   - [线索评分](../roots/lead-scoring.md) · 关系：直接源自 · 强弱：强。就是线索评分的系统综述。
   - [决策树学习](../roots/decision-tree-learning.md) · 关系：相近 · 强弱：强。综述里最常用的算法之一。
-  - [正例-未标注学习（PU 学习）](../roots/positive-unlabeled-learning.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“只有现有客户和潜在客户名单”正是 PU 情形，综述没用这个词，是推断。
+  - [正例-未标注学习（PU 学习）](../roots/positive-unlabeled-learning.md) · 关系：相近 · 强弱：弱（模型复核通过）。“只有现有客户和潜在客户名单”正是 PU 情形，综述没用这个词，是推断。
 - 本质：这条新知识本质上是“从已知好客户反推相似客户”在 B2B 获客里的实证现状。
 - 整理于：2026-10-19（补课第 4 题）

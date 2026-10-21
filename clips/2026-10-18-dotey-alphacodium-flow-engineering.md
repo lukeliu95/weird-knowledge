@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: [ridnik-2024-alphacodium-flow-engineering, test-driven-development, how-to-solve-it, discourse-on-the-method, general-problem-solver]
+roots: [ridnik-2024-alphacodium-flow-engineering, test-driven-development, how-to-solve-it, discourse-on-the-method]
 ---
 
 ## 原文
@@ -56,9 +56,8 @@ roots: [ridnik-2024-alphacodium-flow-engineering, test-driven-development, how-t
 - 核心主张：把一次性提示换成「先分析题目和测试、列多个方案再选、写代码后按测试反复修改」的多步流程，能显著提高大模型解编程题的准确率。
 - 源知识：
   - [AlphaCodium：从提示工程到流程工程](../roots/ridnik-2024-alphacodium-flow-engineering.md) · 关系：直接源自 · 强弱：强。作者明说是在转述这篇论文，GPT-4 从 19% 提到 44% 的数字与论文摘要一致。
-  - [测试驱动开发](../roots/test-driven-development.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。论文核心是「对着输入输出测试反复运行和修改代码」，和测试驱动开发的循环很像；论文本身没有提 TDD。
-  - [怎样解题](../roots/how-to-solve-it.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者描述的高手流程（先理解题目、拟定并比较方案、执行、回头验证）几乎就是波利亚四步解题法；作者和论文都没有引用。
-  - [谈谈方法](../roots/discourse-on-the-method.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。启示一「复杂任务拆成若干子任务」与笛卡尔方法第二条「把每个难题分成尽可能多的小部分」同义。
-  - [通用问题求解器](../roots/general-problem-solver.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。启示二「让 AI 照高手的解题步骤一步步做」，与 Newell 和 Simon 用程序模拟人类解题过程的思路一致。
+  - [测试驱动开发](../roots/test-driven-development.md) · 关系：相近 · 强弱：弱（模型复核通过）。论文核心是「对着输入输出测试反复运行和修改代码」，和测试驱动开发的循环很像；论文本身没有提 TDD。
+  - [怎样解题](../roots/how-to-solve-it.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者描述的高手流程（先理解题目、拟定并比较方案、执行、回头验证）几乎就是波利亚四步解题法；作者和论文都没有引用。
+  - [谈谈方法](../roots/discourse-on-the-method.md) · 关系：相近 · 强弱：弱（模型复核通过）。启示一「复杂任务拆成若干子任务」与笛卡尔方法第二条「把每个难题分成尽可能多的小部分」同义。
 - 本质：这条新知识本质上是「分解问题 + 测试反馈循环」这套人类解题方法论在大模型代码生成上的应用。
 - 整理于：2026-10-18（第 1 轮）

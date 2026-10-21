@@ -27,6 +27,6 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [吴恩达的智能体编程时代软件工程能力图](../clips/2026-10-18-andrewyng-andrew-ng-ai-engineering-skills-map.md) | 相近 | 弱（待 Luke 确认） |
+| [吴恩达的智能体编程时代软件工程能力图](../clips/2026-10-18-andrewyng-andrew-ng-ai-engineering-skills-map.md) | 相近 | 弱（模型复核通过） |
 | [写好Spec后让Agent整周自动开发](../clips/2026-10-18-timyangnet-spec-driven-agent-development.md) | 换了说法 | 强 |
 | [Anthropic 设计负责人谈 AI 时代设计流程](../clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | 相近 | 强 |

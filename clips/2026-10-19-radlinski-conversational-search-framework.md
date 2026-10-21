@@ -55,6 +55,6 @@ adopted: false
   - [用户揭示](../roots/nordlie-1999-user-revealment.md) · 关系：直接源自 · 强弱：强。“用户揭示”这个名字就出自它。
   - [相关性反馈](../roots/relevance-feedback.md) · 关系：直接源自 · 强弱：强。§2.1 明说条目批评可追到 Rocchio。
   - [分面搜索](../roots/faceted-search.md) · 关系：直接源自 · 强弱：强。§2.1 说多数“部分条目”交互是分面搜索的变体。
-  - [信息价值理论](../roots/howard-1966-information-value-theory.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。§5.3 按“期望降低多少不确定性”选动作，原文没引 Howard，是推断。
+  - [信息价值理论](../roots/howard-1966-information-value-theory.md) · 关系：相近 · 强弱：弱（模型复核通过）。§5.3 按“期望降低多少不确定性”选动作，原文没引 Howard，是推断。
 - 本质：这条新知识本质上是图书馆参考咨询里“帮读者说清问题”的做法，被写成了搜索系统的设计原则。
 - 整理于：2026-10-19（补课第 4 题）

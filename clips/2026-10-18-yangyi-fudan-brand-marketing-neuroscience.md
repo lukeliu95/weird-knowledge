@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: [lean-startup, evidence-based-management, neuromarketing]
+roots: [lean-startup, evidence-based-management]
 ---
 
 ## 原文
@@ -34,7 +34,6 @@ roots: [lean-startup, evidence-based-management, neuromarketing]
 - 核心主张：做营销应该用数据和建模辅助决策，而大多数从业者被错误的虚荣指标误导，做了很多无用功。
 - 源知识：
   - [精益创业](../roots/lean-startup.md) · 关系：直接源自 · 强弱：强。「虚荣指标」是 Eric Ries 在《精益创业》里提出的说法（与「可行动指标」相对），英文维基百科的 Vanity metric 词条直接重定向到精益创业
-  - [循证管理](../roots/evidence-based-management.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者主张「做任何事都应该利用建模来辅助决策，做营销更应该计算数据」，和循证管理「决策要基于最好的证据而不是惯例」很像，但没提这个理论
-  - [神经营销（消费者神经科学）](../roots/neuromarketing.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。推荐的分享是有脑科学和认知科学背景的人从这个角度拆品牌营销，属于神经营销/消费者神经科学的路子；原文没给出分享的具体内容
+  - [循证管理](../roots/evidence-based-management.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者主张「做任何事都应该利用建模来辅助决策，做营销更应该计算数据」，和循证管理「决策要基于最好的证据而不是惯例」很像，但没提这个理论
 - 本质：这条新知识本质上是精益创业的「可行动指标对虚荣指标」和循证决策在品牌营销场景下的应用。
 - 整理于：2026-10-18（第 2 轮）

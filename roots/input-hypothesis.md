@@ -27,5 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [孩子学英语用 Gemini 听故事](../clips/2026-10-18-haoshanhong-kids-english-gemini-stories.md) | 相近 | 弱（待 Luke 确认） |
-| [日语学习的素读法与家庭使用整理](../clips/2026-10-18-interjc-sodoku-japanese-learning.md) | 相近 | 弱（待 Luke 确认） |
+| [孩子学英语用 Gemini 听故事](../clips/2026-10-18-haoshanhong-kids-english-gemini-stories.md) | 相近 | 弱（模型复核通过） |

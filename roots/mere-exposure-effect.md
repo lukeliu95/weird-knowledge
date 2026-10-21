@@ -27,5 +27,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [张咋啦一年涨粉到七万的X方法笔记](../clips/2026-10-18-cnyzgkc-x-growth-zara-zhang-notes.md) | 相近 | 弱（待 Luke 确认） |
-| [把推特运营交给 AI 62 天的结果](../clips/2026-10-18-weiyipei-ai-agent-runs-twitter-62-days.md) | 相近 | 弱（待 Luke 确认） |
+| [张咋啦一年涨粉到七万的X方法笔记](../clips/2026-10-18-cnyzgkc-x-growth-zara-zhang-notes.md) | 相近 | 弱（模型复核通过） |
+| [把推特运营交给 AI 62 天的结果](../clips/2026-10-18-weiyipei-ai-agent-runs-twitter-62-days.md) | 相近 | 弱（模型复核通过） |

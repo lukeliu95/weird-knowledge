@@ -27,8 +27,7 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Manus 本质是缝合怪但体验做得漂亮](../clips/2026-10-18-stlightleon-manus-polished-agent-take.md) | 相近 | 弱（待 Luke 确认） |
-| [与Claude Code讨论艺术与约束](../clips/2026-10-18-turingou-constraint-in-live-music-product.md) | 相近 | 弱（待 Luke 确认） |
-| [必应 7,460 万次澄清面板日志：具体的问题比万能问题好点得多，选项 3～5 个差别不大](../clips/2026-10-19-zamani-user-interactions-search-clarification.md) | 相近 | 弱（待 Luke 确认） |
+| [Manus 本质是缝合怪但体验做得漂亮](../clips/2026-10-18-stlightleon-manus-polished-agent-take.md) | 相近 | 弱（模型复核通过） |
+| [与Claude Code讨论艺术与约束](../clips/2026-10-18-turingou-constraint-in-live-music-product.md) | 相近 | 弱（模型复核通过） |
 | [南非 5.3 万封贷款直邮实验：只举 1 个例子比举 4 个多出的申请，相当于利率降约 25%；在表格里单列利率没有显著差别](../clips/2026-10-19-bertrand-advertising-content-worth.md) | 直接源自 | 强 |
-| [Gartner 2019：客户觉得销售在“帮自己理清信息”时，80% 的情况拿下了高质量、不后悔的单子](../clips/2026-10-19-gartner-customer-confidence-sense-making-2019.md) | 相近 | 弱（待 Luke 确认） |
+| [Gartner 2019：客户觉得销售在“帮自己理清信息”时，80% 的情况拿下了高质量、不后悔的单子](../clips/2026-10-19-gartner-customer-confidence-sense-making-2019.md) | 相近 | 弱（模型复核通过） |

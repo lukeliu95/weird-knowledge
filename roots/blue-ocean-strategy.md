@@ -28,5 +28,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [巴西青年靠 AI 工地女孩赚订阅费](../clips/2026-10-18-bober-smart-ai-construction-girl-subscription.md) | 相近 | 弱（待 Luke 确认） |
+| [巴西青年靠 AI 工地女孩赚订阅费](../clips/2026-10-18-bober-smart-ai-construction-girl-subscription.md) | 相近 | 弱（模型复核通过） |
 | [工具站出海月入 3000 刀的一年踩坑记](../clips/2026-10-18-gefei55-tool-site-overseas-lessons.md) | 直接源自 | 强 |

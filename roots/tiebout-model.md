@@ -26,5 +26,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [三旗理论：合法减税、保护资产、自由生活](../clips/2026-10-18-eric-make-money-three-flags-theory.md) | 相近 | 弱（待 Luke 确认） |
-| [大阪府各区划与公立小学教育概况](../clips/2026-10-18-qiancaobuzhiqiu-osaka-areas-public-schools.md) | 相近 | 弱（待 Luke 确认） |
+| [三旗理论：合法减税、保护资产、自由生活](../clips/2026-10-18-eric-make-money-three-flags-theory.md) | 相近 | 弱（模型复核通过） |
+| [大阪府各区划与公立小学教育概况](../clips/2026-10-18-qiancaobuzhiqiu-osaka-areas-public-schools.md) | 相近 | 弱（模型复核通过） |

@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: [sampling-bias, law-of-shitty-clickthroughs]
+roots: [sampling-bias]
 adopted: true
 ---
 
@@ -47,6 +47,5 @@ adopted: true
 - 核心主张：海外冷邮件工具商自报的平均回信率约 3.4%，前 10% 才到 10% 左右；回信有四成来自后续跟进邮件。
 - 源知识：
   - [抽样偏差](../roots/sampling-bias.md) · 关系：相近 · 强弱：强。只来自自家用户。
-  - [烂点击率定律（营销渠道衰减）](../roots/law-of-shitty-clickthroughs.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。报告没有多年对比，无法直接验证衰减；是推断。
 - 本质：这条新知识本质上是一份厂商自报的量级参考：能说明冷邮件回信率在几个百分点，不能说明日本的情况。
 - 整理于：2026-10-18（补课第 1 题）

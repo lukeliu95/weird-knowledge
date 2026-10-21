@@ -30,5 +30,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [AI 工具周刊年入七万美元](../clips/2026-10-18-indiehackercase-ai-tools-newsletter-revenue.md) | 相近 | 弱（待 Luke 确认） |
+| [AI 工具周刊年入七万美元](../clips/2026-10-18-indiehackercase-ai-tools-newsletter-revenue.md) | 相近 | 弱（模型复核通过） |
 | [OpenAI 称九成潜在市场来自企业](../clips/2026-10-18-raycat2021-openai-enterprise-market-90.md) | 直接源自 | 强 |

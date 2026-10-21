@@ -25,4 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Kimi 创始人谈 AGI 需要新组织](../clips/2026-10-18-vartekxx-kimi-founder-agi-organization.md) | 相近 | 弱（待 Luke 确认） |
+| [Kimi 创始人谈 AGI 需要新组织](../clips/2026-10-18-vartekxx-kimi-founder-agi-organization.md) | 相近 | 弱（模型复核通过） |

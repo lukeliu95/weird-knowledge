@@ -64,6 +64,6 @@ adopted: true
   - [采购中心（决策单元）](../roots/buying-center.md) · 关系：直接源自 · 强弱：强。五种角色就是这篇给出的。
   - [企业行为理论](../roots/behavioral-theory-of-the-firm.md) · 关系：直接源自 · 强弱：强。作者明说引用 Cyert & March 1963（第 19 页脚注 19）。
   - [派生需求](../roots/derived-demand.md) · 关系：直接源自 · 强弱：强。第 16 页明说组织采购的需求是派生需求。
-  - [现状偏差](../roots/status-quo-bias.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。作者说维持现状是最常见的降风险办法，和现状偏差相近；作者没有引用 Samuelson & Zeckhauser，是推断。
+  - [现状偏差](../roots/status-quo-bias.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者说维持现状是最常见的降风险办法，和现状偏差相近；作者没有引用 Samuelson & Zeckhauser，是推断。
 - 本质：这条新知识本质上是企业行为理论（组织是一群目标不同的人组成的联盟）在采购决策场景下的应用。
 - 整理于：2026-10-18（补课第 1 题）

@@ -25,5 +25,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Paul Graham 谈超线性回报](../clips/2026-10-18-dotey-paul-graham-superlinear-returns.md) | 相近 | 弱（待 Luke 确认） |
-| [学超级个体 Jack Butcher](../clips/2026-10-18-starzq-jack-butcher-solo-brand.md) | 相近 | 弱（待 Luke 确认） |
+| [Paul Graham 谈超线性回报](../clips/2026-10-18-dotey-paul-graham-superlinear-returns.md) | 相近 | 弱（模型复核通过） |
+| [学超级个体 Jack Butcher](../clips/2026-10-18-starzq-jack-butcher-solo-brand.md) | 相近 | 弱（模型复核通过） |

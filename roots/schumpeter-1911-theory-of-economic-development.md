@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Gumloop四人团队冲击十亿公司](../clips/2026-10-18-wanghao8080-gumloop-small-team-unicorn.md) | 相近 | 弱（待 Luke 确认） |
+| [Gumloop四人团队冲击十亿公司](../clips/2026-10-18-wanghao8080-gumloop-small-team-unicorn.md) | 相近 | 弱（模型复核通过） |

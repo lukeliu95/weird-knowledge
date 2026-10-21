@@ -28,4 +28,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Mary Meeker 340 页 AI 趋势八点](../clips/2026-10-18-reportify-xu-mary-meeker-ai-trends-report.md) | 相近 | 弱（待 Luke 确认） |
+| [Mary Meeker 340 页 AI 趋势八点](../clips/2026-10-18-reportify-xu-mary-meeker-ai-trends-report.md) | 相近 | 弱（模型复核通过） |

@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Pocus：销售Agent一年百万ARR](../clips/2026-10-18-wanghao8080-pocus-sales-agent-arr.md) | 相近 | 弱（待 Luke 确认） |
+| [Pocus：销售Agent一年百万ARR](../clips/2026-10-18-wanghao8080-pocus-sales-agent-arr.md) | 相近 | 弱（模型复核通过） |

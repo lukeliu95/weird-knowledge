@@ -26,8 +26,8 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [前线部署工程师为何是 AI 落地时代的关键职业](../clips/2026-10-18-indigox-forward-deployed-engineer-ai-era.md) | 相近 | 弱（待 Luke 确认） |
-| [AIDE：让用户给样本打"相关/不相关"，用主动学习猜出他真正想查的数据](../clips/2026-10-18-dimitriadou-aide-active-learning-data-exploration.md) | 相近 | 弱（待 Luke 确认） |
+| [前线部署工程师为何是 AI 落地时代的关键职业](../clips/2026-10-18-indigox-forward-deployed-engineer-ai-era.md) | 相近 | 弱（模型复核通过） |
+| [AIDE：让用户给样本打"相关/不相关"，用主动学习猜出他真正想查的数据](../clips/2026-10-18-dimitriadou-aide-active-learning-data-exploration.md) | 相近 | 弱（模型复核通过） |
 | [国内 ToB 智能体至少还要一年](../clips/2026-10-18-frxiaobei-tob-agent-one-year-away.md) | 换了说法 | 强 |
 | [智谱让 GLM-5.3 自己优化推理系统](../clips/2026-10-18-dotey-glm-5-3-optimizes-own-inference.md) | 换了说法 | 强 |
-| [Taylor 1968：提问协商——四层需求（Q1～Q4）和馆员问清需求的五个过滤器](../clips/2026-10-19-taylor-question-negotiation-information-seeking.md) | 相近 | 弱（待 Luke 确认） |
+| [Taylor 1968：提问协商——四层需求（Q1～Q4）和馆员问清需求的五个过滤器](../clips/2026-10-19-taylor-question-negotiation-information-seeking.md) | 相近 | 弱（模型复核通过） |

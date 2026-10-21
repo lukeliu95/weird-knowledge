@@ -26,6 +26,5 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [黄仁勋首发：开放模型为何重要](../clips/2026-10-18-jensenhuang-jensen-open-models-letter.md) | 相近 | 弱（待 Luke 确认） |
-| [模型每周都在换：别把自己的上下文锁在一家产品里](../clips/2026-10-20-brian-lovin-portable-context-switching.md) | 相近 | 弱（待 Luke 确认） |
-| [Personal Agent 像 2012 年的滴滴：是上游模型厂补贴下游的出口，要能自己后训练小模型降本](../clips/2026-10-20-willwangtf-personal-agent-didi-2012.md) | 相近 | 弱（待 Luke 确认） |
+| [模型每周都在换：别把自己的上下文锁在一家产品里](../clips/2026-10-20-brian-lovin-portable-context-switching.md) | 相近 | 弱（模型复核通过） |
+| [Personal Agent 像 2012 年的滴滴：是上游模型厂补贴下游的出口，要能自己后训练小模型降本](../clips/2026-10-20-willwangtf-personal-agent-didi-2012.md) | 相近 | 弱（模型复核通过） |

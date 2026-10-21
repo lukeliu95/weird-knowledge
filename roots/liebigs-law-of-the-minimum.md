@@ -29,4 +29,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [唐杰谈缩放定律：不只是堆参数](../clips/2026-10-18-jietang-scaling-law-beyond-parameters.md) | 相近 | 弱（待 Luke 确认） |
+| [唐杰谈缩放定律：不只是堆参数](../clips/2026-10-18-jietang-scaling-law-beyond-parameters.md) | 相近 | 弱（模型复核通过） |

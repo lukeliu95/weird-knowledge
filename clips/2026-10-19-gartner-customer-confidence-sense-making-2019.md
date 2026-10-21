@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: 增长与获客
-roots: [gartner-2019-b2b-buying-journey, overchoice, sense-making-methodology, status-quo-bias]
+roots: [gartner-2019-b2b-buying-journey, overchoice, status-quo-bias]
 adopted: false
 ---
 
@@ -51,8 +51,7 @@ adopted: false
 - 核心主张：信息过剩让买方不敢做大决定；卖方帮买方理清信息、给他们"怎么买"的工具，比再多给信息更能促成好的成交。
 - 源知识：
   - [Gartner 新 B2B 购买旅程（购买任务与买方赋能）](../roots/gartner-2019-b2b-buying-journey.md) · 关系：直接源自 · 强弱：强。买方赋能就是那份研究提出的概念
-  - [选择过载](../roots/overchoice.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。信息多反而让人退缩、选更小的方案，和选择过载的现象很像；Gartner 没有引用
-  - [意义建构方法论](../roots/sense-making-methodology.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。名字相同但不是一回事：Dervin 讲的是人遇到信息缺口怎么搭桥，Gartner 讲的是卖方帮买方评估信息；Gartner 没有引用 Dervin
-  - [现状偏差](../roots/status-quo-bias.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。"退回更小、动静更小的方案"接近现状偏差
+  - [选择过载](../roots/overchoice.md) · 关系：相近 · 强弱：弱（模型复核通过）。信息多反而让人退缩、选更小的方案，和选择过载的现象很像；Gartner 没有引用
+  - [现状偏差](../roots/status-quo-bias.md) · 关系：相近 · 强弱：弱（模型复核通过）。"退回更小、动静更小的方案"接近现状偏差
 - 本质：这条本质上是"信息过载导致决策退缩"在 B2B 大额采购里的应用，卖方的角色从给信息变成帮买方做决定。
 - 整理于：2026-10-19（补课第 9 题）

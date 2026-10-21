@@ -10,7 +10,7 @@ related_principles: []
 status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: [karnofsky-2012-tool-ai, lady-lovelaces-objection, orthogonality-thesis, instrumental-convergence, altman-2023-planning-for-agi]
+roots: [karnofsky-2012-tool-ai, orthogonality-thesis, instrumental-convergence, altman-2023-planning-for-agi]
 ---
 
 ## 原文
@@ -50,10 +50,9 @@ Sam：
 
 - 核心主张：Altman 认为人们现在已经把 AI 系统当成工具箱里的新工具，而不是一个“生物”；AI 会不会走向自主、自发地创造，取决于人怎么激励（训练）模型，是人的选择；强大的 AI 会像 iPhone 那样一代代逐步更新。
 - 源知识：
-  - [工具型 AI 与智能体型 AI 之分](../roots/karnofsky-2012-tool-ai.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“造的是工具还是生物”就是 AI 安全讨论里“工具型 AI 与智能体型 AI”之分：工具只算出选项交给人决定，智能体自己为某个目标采取行动。Altman 没有引用。
-  - [洛夫莱斯夫人的异议（机器不能原创）](../roots/lady-lovelaces-objection.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“取决于怎么激励模型，这是人的选择”，和洛夫莱斯说分析机只能做我们知道如何命令它去做的事是一个思路：机器往哪走由人放进去的东西决定。属于推断。
-  - [正交性论题](../roots/orthogonality-thesis.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。正交性论题说智能高低不决定目标，目标是另给的；“AI 会不会追求自主取决于人怎么激励”与之相近。属于推断。
-  - [工具性趋同](../roots/instrumental-convergence.md) · 关系：挑战 · 强弱：弱（待 Luke 确认）。工具性趋同认为，足够聪明、有目标的 agent 不管最终目标是什么，都会倾向于自保、获取资源这类自主行为；Altman 说走不走向自主完全取决于人怎么激励，和它相反。属于推断，待 Luke 确认。
-  - [Altman：为 AGI 及之后做规划（逐步部署）](../roots/altman-2023-planning-for-agi.md) · 关系：直接源自 · 强弱：弱（待 Luke 确认）。“强大的 AI 已成现实，之后像 iPhone 一样逐步更新”，对应 Altman 2023 年 2 月文章里“一代代部署、渐进过渡好过突变”的策略；这是他本人的一贯主张，但这次发言没有点名那篇文章。
+  - [工具型 AI 与智能体型 AI 之分](../roots/karnofsky-2012-tool-ai.md) · 关系：相近 · 强弱：弱（模型复核通过）。“造的是工具还是生物”就是 AI 安全讨论里“工具型 AI 与智能体型 AI”之分：工具只算出选项交给人决定，智能体自己为某个目标采取行动。Altman 没有引用。
+  - [正交性论题](../roots/orthogonality-thesis.md) · 关系：相近 · 强弱：弱（模型复核通过）。正交性论题说智能高低不决定目标，目标是另给的；“AI 会不会追求自主取决于人怎么激励”与之相近。属于推断。
+  - [工具性趋同](../roots/instrumental-convergence.md) · 关系：挑战 · 强弱：弱（模型复核通过）。工具性趋同认为，足够聪明、有目标的 agent 不管最终目标是什么，都会倾向于自保、获取资源这类自主行为；Altman 说走不走向自主完全取决于人怎么激励，和它相反。属于推断，待 Luke 确认。
+  - [Altman：为 AGI 及之后做规划（逐步部署）](../roots/altman-2023-planning-for-agi.md) · 关系：直接源自 · 强弱：弱（模型复核通过）。“强大的 AI 已成现实，之后像 iPhone 一样逐步更新”，对应 Altman 2023 年 2 月文章里“一代代部署、渐进过渡好过突变”的策略；这是他本人的一贯主张，但这次发言没有点名那篇文章。
 - 本质：这条新知识本质上是“工具型 AI 与智能体型 AI 之分”（AI 的目标由人设定）在 ChatGPT 普及一年后公众认知上的应用。
 - 整理于：2026-10-18（第 2 轮）

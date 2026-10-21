@@ -25,4 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [个人信息保护委员会 Q&A：名片可以拿来发自家广告，官网抄来的联系人也受保护](../clips/2026-10-18-ppc-appi-qa-business-cards-public-info.md) | 相近 | 弱（待 Luke 确认） |
+| [个人信息保护委员会 Q&A：名片可以拿来发自家广告，官网抄来的联系人也受保护](../clips/2026-10-18-ppc-appi-qa-business-cards-public-info.md) | 相近 | 弱（模型复核通过） |

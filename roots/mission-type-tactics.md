@@ -26,6 +26,6 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [玉伯谈 AI 时代小团队生产力的真相](../clips/2026-10-18-saitowu-small-team-productivity-ai-era.md) | 相近 | 弱（待 Luke 确认） |
-| [什么才是 AI Native：别写死步骤](../clips/2026-10-18-programerjohann-ai-native-agent-four-things.md) | 相近 | 弱（待 Luke 确认） |
-| [提示词精髓：有什么、做什么、怎么做](../clips/2026-10-18-dotey-prompt-context-task-how.md) | 相近 | 弱（待 Luke 确认） |
+| [玉伯谈 AI 时代小团队生产力的真相](../clips/2026-10-18-saitowu-small-team-productivity-ai-era.md) | 相近 | 弱（模型复核通过） |
+| [什么才是 AI Native：别写死步骤](../clips/2026-10-18-programerjohann-ai-native-agent-four-things.md) | 相近 | 弱（模型复核通过） |
+| [提示词精髓：有什么、做什么、怎么做](../clips/2026-10-18-dotey-prompt-context-task-how.md) | 相近 | 弱（模型复核通过） |

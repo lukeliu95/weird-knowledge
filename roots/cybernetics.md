@@ -27,7 +27,7 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [吴恩达讲做产品的三个循环](../clips/2026-10-18-andrewyng-andrew-ng-three-product-loops.md) | 换了说法 | 弱（待 Luke 确认） |
-| [外层harness让智能体连跑数小时](../clips/2026-10-18-baoweiheihei-harness-unattended-long-running.md) | 相近 | 弱（待 Luke 确认） |
-| [陶哲轩谈 AI 与数学的演讲要点](../clips/2026-10-18-dotey-terence-tao-ai-math-talk.md) | 相近 | 弱（待 Luke 确认） |
-| [Samuel 的跳棋程序：机器靠自己对弈学习，下得比写它的人还好](../clips/2026-10-18-samuel-machine-learning-checkers.md) | 相近 | 弱（待 Luke 确认） |
+| [吴恩达讲做产品的三个循环](../clips/2026-10-18-andrewyng-andrew-ng-three-product-loops.md) | 相近 | 弱（模型复核通过） |
+| [外层harness让智能体连跑数小时](../clips/2026-10-18-baoweiheihei-harness-unattended-long-running.md) | 相近 | 弱（模型复核通过） |
+| [陶哲轩谈 AI 与数学的演讲要点](../clips/2026-10-18-dotey-terence-tao-ai-math-talk.md) | 相近 | 弱（模型复核通过） |
+| [Samuel 的跳棋程序：机器靠自己对弈学习，下得比写它的人还好](../clips/2026-10-18-samuel-machine-learning-checkers.md) | 相近 | 弱（模型复核通过） |

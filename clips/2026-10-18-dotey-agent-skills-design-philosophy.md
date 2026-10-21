@@ -41,8 +41,8 @@ baoyu-skills 已全部开源：https://t.co/pRDqxdiSrH
   - [用 Agent Skills 让智能体胜任真实工作](../roots/anthropic-2025-agent-skills.md) · 关系：直接源自 · 强弱：强。Agent Skills 是 Anthropic 2025 年提出的格式，文中用的 /skill-creator 出自 Anthropic 官方 skills 仓库；该文建议“让 Claude 把成功做法和常见错误沉淀进 Skill”，对应“给 Agent 高质量对比样例让它自己优化”。
   - [Unix 哲学](../roots/unix-philosophy.md) · 关系：换了说法 · 强弱：强。“Skill 要原子化，每个只做一件事，然后编排成工作流”，几乎就是 Unix 哲学“每个程序只做好一件事、再把它们组合起来”的原话。
   - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：相近 · 强弱：强。“站在 Agent 角度设计”和该文附录里的“Put yourself in the model's shoes”（站在模型的位置想）几乎一字不差，都是在讲为 agent 设计好用的接口（ACI）。
-  - [AI 智能体的上下文工程](../roots/anthropic-2025-effective-context-engineering.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“多存中间文件”“用子 Agent 并行”，对应上下文工程里的结构化笔记和子 agent 架构，目的都是让主上下文保持干净。
-  - [Mario Zechner：也许你根本不需要 MCP](../roots/zechner-2025-dont-need-mcp.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“脚本优先于 MCP”和 Zechner 说“多数场景让 agent 直接调命令行和脚本就够，MCP 既占上下文又不好组合”是同一个判断；作者没有引用。
-  - [吃自己的狗粮（自用产品）](../roots/eating-your-own-dog-food.md) · 关系：相近 · 强弱：弱（待 Luke 确认）。“自己常用、遇到问题当场改”，靠自己天天用来发现问题、持续改进，是自用产品（吃自己的狗粮）的做法。
+  - [AI 智能体的上下文工程](../roots/anthropic-2025-effective-context-engineering.md) · 关系：相近 · 强弱：弱（模型复核通过）。“多存中间文件”“用子 Agent 并行”，对应上下文工程里的结构化笔记和子 agent 架构，目的都是让主上下文保持干净。
+  - [Mario Zechner：也许你根本不需要 MCP](../roots/zechner-2025-dont-need-mcp.md) · 关系：相近 · 强弱：弱（模型复核通过）。“脚本优先于 MCP”和 Zechner 说“多数场景让 agent 直接调命令行和脚本就够，MCP 既占上下文又不好组合”是同一个判断；作者没有引用。
+  - [吃自己的狗粮（自用产品）](../roots/eating-your-own-dog-food.md) · 关系：相近 · 强弱：弱（模型复核通过）。“自己常用、遇到问题当场改”，靠自己天天用来发现问题、持续改进，是自用产品（吃自己的狗粮）的做法。
 - 本质：这条新知识本质上是 Unix 哲学（小而专、可组合）和“站在使用者角度设计接口”在 agent 技能包上的应用。
 - 整理于：2026-10-18（第 2 轮）

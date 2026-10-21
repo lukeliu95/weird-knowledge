@@ -27,8 +27,8 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [Anthropic 讲前线部署工程师](../clips/2026-10-18-dotey-fde-101-forward-deployed-engineer.md) | 相近 | 弱（待 Luke 确认） |
-| [NVIDIA DGX Spark 从买机器到变现指南](../clips/2026-10-18-ai-goge-dgx-spark-monetization-guide.md) | 相近 | 弱（待 Luke 确认） |
-| [范冰免费开源新书《前置部署工程师》](../clips/2026-10-18-iluciddreaming-fde-book-free-open-source.md) | 相近 | 弱（待 Luke 确认） |
-| [Manus 本质是缝合怪但体验做得漂亮](../clips/2026-10-18-stlightleon-manus-polished-agent-take.md) | 相近 | 弱（待 Luke 确认） |
-| [开源工具让普通人也能微调 27B 模型](../clips/2026-10-18-minlibuilds-open-source-27b-finetune-unsloth.md) | 相近 | 弱（待 Luke 确认） |
+| [Anthropic 讲前线部署工程师](../clips/2026-10-18-dotey-fde-101-forward-deployed-engineer.md) | 相近 | 弱（模型复核通过） |
+| [NVIDIA DGX Spark 从买机器到变现指南](../clips/2026-10-18-ai-goge-dgx-spark-monetization-guide.md) | 相近 | 弱（模型复核通过） |
+| [范冰免费开源新书《前置部署工程师》](../clips/2026-10-18-iluciddreaming-fde-book-free-open-source.md) | 相近 | 弱（模型复核通过） |
+| [Manus 本质是缝合怪但体验做得漂亮](../clips/2026-10-18-stlightleon-manus-polished-agent-take.md) | 相近 | 弱（模型复核通过） |
+| [开源工具让普通人也能微调 27B 模型](../clips/2026-10-18-minlibuilds-open-source-27b-finetune-unsloth.md) | 相近 | 弱（模型复核通过） |
