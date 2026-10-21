@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.18 · 2026-10-21 · 更新记录见文末
+> v1.19 · 2026-10-21 · 更新记录见文末
 
 ## 你是谁
 
@@ -354,7 +354,7 @@ verified: true
 | 本地 Qwen（`.env` 里的 QWEN_*） | 点赞预测等"像 Luke"的判断 | 可以看私人数据，数据不出这台机器 |
 | Opus 5.5（Claude Code 订阅，`tools/evolve/opus_judge.py` 走 `claude -p`） | 决定预测（`l3_eval.py`，"Luke 会选哪个"）的主力；探索打分（`explore.py score`）仍然 Qwen 优先，Qwen 连不上时才用它兜底。都按批打分 | Luke 2026-10-20 同意它看打分要用的私人资料（档案、例子）。它给的概率和 Qwen 口径不同，每条记 `scorer`，成绩分开算 |
 | TypeSafe Jev（`.env` 里的 TYPESAFE_API_KEY） | 分类、打分这类只需公开内容的判断，见流程二第零步 | 只能看公开内容，不发 Luke 的任何私人资料 |
-| 后训练 | 等负样本 1,000 条以上、测试集 500 道以上、Luke 的标签 100 条以上，先训小模型和冠军比，赢了再考虑给本地 Qwen 做 LoRA | 只在本地 |
+| 后训练 | 等负样本 1,000 条以上、测试集 500 道以上、Luke 的标签 100 条以上，先训小模型和冠军比，赢了再考虑给本地 Qwen 做 LoRA | 只在本地。流程已经搭好：`tools/evolve/l1_train.py ready` 看三个门槛各差多少，`run` 训一个本地小模型（字的二元组加作者的逻辑回归），在已经对过答案的首页快照上和冠军成对比较，记进 `private/l1/train/` |
 
 ### 自主边界
 
@@ -378,9 +378,9 @@ verified: true
 5. **出日报**（`explore.py due` 里 `digest` 为 true，或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`；把它打印的 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukeeMind 日报到了（10 条）"加网页链接
 6. **顺手跑流程五**：`python3 tools/evolve/l1_daily.py`
 6b. **点赞对账**（`explore.py due` 里 `likes` 为 true，每 3 小时一次）：`explore.py likes`。候选池里被 Luke 点了赞的，自动记成"想看"；库里还没有的新点赞写进 `private/explore/likes/pending.jsonl`，按「流程三」读完、写标题、存进 `clips/`（成人向等不适合公开的先扣下，在下一份日报推送里一句话问 Luke）。做完跑 `explore.py mark likes`
-7. **每天的活**（`explore.py due` 里 `daily` 为 true 时做，做完跑 `explore.py mark daily`）：**长新方向**：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`。同一轮顺手跑 `python3 tools/evolve/l3_extract.py`，把这台 Mac 上新会话里 Luke 做过的选择抽进决定预测的测试集（只放 `private/l3/`）
+7. **每天的活**（`explore.py due` 里 `daily` 为 true 时做，做完跑 `explore.py mark daily`）：**长新方向**：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`。同一轮顺手跑 `python3 tools/evolve/l3_extract.py`，把这台 Mac 上新会话里 Luke 做过的选择抽进决定预测的测试集（只放 `private/l3/`）；跑 `python3 tools/evolve/l1_collect.py authors --max 5`，多攒点赞预测的弱负样本（X 会限流，每天只抓 5 位作者）；再跑 `python3 tools/evolve/l1_train.py ready`，三个门槛都到了就跑 `run`，结果写进自我优化方案的「进度」，比冠军好的概率到 80% 才换冠军
 8. **记账**：`private/` 里提交一次（`git -C private add explore && git -C private commit -m "探索：<round>"`）。第 1 步存了新知识的，按「其他约定 · git」提交并推送公开仓库
-9. **周报**（`explore.py due` 里 `weekly` 为 true 时做，做完跑 `explore.py mark weekly`）：`explore.py report`；再跑 `python3 tools/evolve/l3_eval.py --cond q2`（决定预测的成绩，Opus），和"永远选第一个""永远选推荐"、他不按推荐走的题分开报。一段话加数字追加进方案的「进度」一节，提交推送
+9. **周报**（`explore.py due` 里 `weekly` 为 true 时做，做完跑 `explore.py mark weekly`）：先跑 `l1_collect.py bookmarks` 和 `l1_collect.py own` 更新书签和 Luke 自己发的帖；`explore.py report`；再跑 `python3 tools/evolve/l3_eval.py --cond q2`（决定预测的成绩，Opus），和"永远选第一个""永远选推荐"、他不按推荐走的题分开报。一段话加数字追加进方案的「进度」一节，提交推送
 
 ### 从 Luke 的真实行为里自动取标签
 
@@ -462,6 +462,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.19 | 2026-10-21 | 主动多攒训练数据：首页快照从每 20 小时改成每 6 小时；每天抓 5 位常看作者没被点赞的帖当弱负样本；每周更新书签和 Luke 自己发的帖；后训练流程（`l1_train.py`）搭好，三个门槛一到就自动开训（起因：Luke 说"需要更多数据就去找，不要等待"，选了先搭流程） |
 | v1.18 | 2026-10-21 | 弱关系不再让 Luke 一条条确认：由第二个模型（Opus）复核，通过的标"模型复核通过"，不通过的删掉；第一次全量复核抽 10 条给 Luke 验收，认 9 条以上才整批写回；Luke 只判断原则和推翻原则的证据（起因：库里攒了 882 处"待 Luke 确认"，Luke 说人不可能一下子确认这么多，选了 A） |
 | v1.17 | 2026-10-21 | 流程六加了三种自动标签：点赞自动对账（每 3 小时）、日报网页记"点开原文"、客观题交给 Jev 打；不让模型自己猜口味再训练自己（起因：Luke 问能不能自己打标，选了 A） |
 | v1.16 | 2026-10-21 | 候选只留 48 小时，过期作废；去掉"候选池满 500 条就停派侦察兵"（起因：改成每 20 分钟一轮后，一天就攒满 500 条，侦察兵停了；Luke 选了 A） |

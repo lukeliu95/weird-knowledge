@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """L1 每天的例行事：每小时的循环调用它，大部分时候什么也不做。
 
-1. 最近 20 小时没有快照，就抓一份首页时间线快照，并用当前冠军配置盲测
+1. 最近 6 小时没有快照，就抓一份首页时间线快照，并用当前冠军配置盲测
 2. 抓好已满 48 小时、还没对过答案的快照，对答案并记成绩
 冠军配置写在 private/l1/champion.json（档案、条件、例子数），改进被证实后才更新。
 
@@ -33,7 +33,8 @@ def main():
     champ = json.loads(CHAMP.read_text())
     now = dt.datetime.now()
     snaps = sorted(DIR.glob("snapshot-*.jsonl"))
-    if not snaps or now - stamp_of(snaps[-1]) > dt.timedelta(hours=20):
+    # 2026-10-21 起每 6 小时一份（原来 20 小时）：Luke 说"需要更多数据就去找，不要等"，快照是考题和"刷到没点"的主要来源
+    if not snaps or now - stamp_of(snaps[-1]) > dt.timedelta(hours=6):
         if run("snapshot"):
             snaps = sorted(DIR.glob("snapshot-*.jsonl"))
             run("predict", str(snaps[-1]), "--cond", champ["cond"], "--profile", str(E.PRIVATE / "luke" / champ["profile"]))
