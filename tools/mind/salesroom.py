@@ -171,17 +171,38 @@ def cmd_synthesize(_):
     if not rows:
         sys.exit("还没有抽取结果")
     cust = [{"client": r["client"], "date": r.get("date"), **(r.get("customer") or {})} for r in rows]
+    # 一次塞不下（首次全量约 67 万字），先分批归纳、再合成，免得只看到前四分之一（2026-10-24 踩过）
+    chunks, cur = [], []
+    for c in cust:
+        cur.append(c)
+        if len(json.dumps(cur, ensure_ascii=False)) > 140000:
+            chunks.append(cur[:-1]); cur = [c]
+    if cur:
+        chunks.append(cur)
+    partials = []
+    for i, ch in enumerate(chunks, 1):
+        part = OJ.ask_json(
+            "你是日本 B2B 市场的销售研究员。只输出 JSON。",
+            f"下面是第 {i}/{len(chunks)} 批会议里抽出的客户方信息（客户名已换成代号）。按主题归纳："
+            "痛点、顾虑和反对、决策和稟議、推进信号、冷淡信号、价格和预算、竞品和现有做法。每个主题列出规律，"
+            "每条写 pattern（一句话）、clients（出现在这批里的客户代号列表）、quotes（1～2 句日语原话）。只写看得出来的。\n\n"
+            + json.dumps(ch, ensure_ascii=False) + '\n\n只输出 JSON：{"themes": {"主题": [{"pattern": "", "clients": [], "quotes": []}]}}',
+            timeout=900)
+        partials.append(part.get("themes", {}))
+        print(f"  第 {i}/{len(chunks)} 批归纳完", file=sys.stderr, flush=True)
     voice = OJ.ask_json(
         "你是日本 B2B 市场的销售研究员。只输出 JSON。",
-        "下面是 Sparticle（做 GBase 系列 AI 产品）最近和日本客户开会时，从会议纪要里抽出来的客户方信息（客户名已换成代号）。"
-        "请写一份给 agent 用的「客户真实声音」：中文，2,000 字以内；按主题归纳（痛点、顾虑和反对、决策和稟議、推进信号、冷淡信号、价格和预算、竞品和现有做法），"
-        "每个主题写几条规律，每条注明出现在几家客户、附 1～2 句日语原话；最后写「对获客和写邮件的启发」3～5 条（标明是推断）。"
-        "只写数据里看得出来的，不编。\n\n" + json.dumps(cust, ensure_ascii=False)[:180000] + '\n\n只输出 JSON：{"md": "正文"}',
-        timeout=900)
+        f"下面是 {len(chunks)} 批会议各自归纳的规律（同一个客户代号在各批里指同一家客户）。请合成一份给 agent 用的「客户真实声音」："
+        "中文，2,500 字以内；按主题写（痛点、顾虑和反对、决策和稟議、推进信号、冷淡信号、价格和预算、竞品和现有做法），"
+        "相同的规律合并，每条注明一共出现在几家客户（按客户代号去重计数）、附 1～2 句日语原话；按出现客户数从多到少排；"
+        "最后写「对获客和写邮件的启发」3～5 条，标明是推断。只写数据里看得出来的，不编。\n\n"
+        + json.dumps(partials, ensure_ascii=False) + '\n\n只输出 JSON：{"md": "正文"}', timeout=1200)
     head = (f"# 客户真实声音（Salesroom 会议）\n\n> {dt.date.today()} 由 `tools/mind/salesroom.py synthesize` 生成：本地 Qwen 逐场抽取，"
             f"去掉客户名后交给 Opus 汇总。共 {len(rows)} 场会议、{len({r['client'] for r in rows})} 家客户。客户资料，只在本机。\n\n")
     VOICE.write_text(head + voice["md"].strip() + "\n")
-    lk = [{"client": r["client"], "date": r.get("date"), **(r.get("luke") or {})} for r in rows if (r.get("luke") or {}).get("judgments")]
+    # 纪要里根本没提到 Luke 却抽出"他的判断"的，多半是模型张冠李戴，不用（2026-10-24 首次全量：5 场）
+    lk = [{"client": r["client"], "date": r.get("date"), **(r.get("luke") or {})} for r in rows
+          if (r.get("luke") or {}).get("judgments") and r.get("luke_mentioned")]
     if lk:
         judge = OJ.ask_json(
             "你在归纳一个具体的人 Luke 在销售会议上的判断方式。只输出 JSON。",
