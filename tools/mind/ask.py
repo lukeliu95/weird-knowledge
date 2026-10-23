@@ -8,7 +8,7 @@
   ask.py ask --from <谁> --question "…" [--options "A:…|B:…"] [--context-file <背景>] [--client <客户名>]
   ask.py record <id> --luke <字母> [--note "Luke 原话"] [--should-ask yes|no]
   ask.py taste --text "…" [--author 名字] [--from 谁]   Luke 会不会想看这条内容（概率 + 最像的三条他点过赞的）
-  ask.py profile                   打印 Luke 当前的口味 skill，给别的 agent 先读
+  ask.py profile [--work]          打印 Luke 当前的口味 skill 和原则；--work 再附上 Salesroom 里的客户真实声音、他在会上的判断
   ask.py report                    按类别报一致率、漏报、能不能升级
   ask.py backtest [--n 109]        用 private/l3 的旧选择题回测（只用更早的题做例子）
 """
@@ -223,10 +223,16 @@ def cmd_taste(a):
     print(json.dumps(res, ensure_ascii=False, indent=1))
 
 
-def cmd_profile(_):
+def cmd_profile(a):
+    """打印 Luke 的画像：口味 skill、12 条原则；加 --work 再附上 Salesroom 会议里的客户真实声音和他在会上的判断（客户资料已去名，只在本机）。"""
     champ = json.loads((E.PRIVATE / "l1" / "champion.json").read_text())
     print((E.PRIVATE / "luke" / champ["profile"]).read_text())
     print("\n---\n他确认过的做事原则：\n" + principles())
+    if a.work:
+        for name in ("luke-in-meetings.md", "customer-voice.md"):
+            f = E.PRIVATE / "luke" / name
+            if f.exists():
+                print("\n---\n" + f.read_text())
 
 
 def cmd_backtest(a):
@@ -279,7 +285,7 @@ def main():
     p.add_argument("--file", default="")
     p.add_argument("--author", default="")
     p.add_argument("--from", dest="from_", default="unknown")
-    sub.add_parser("profile")
+    p = sub.add_parser("profile"); p.add_argument("--work", action="store_true", help="附上客户真实声音和 Luke 在会上的判断")
     p = sub.add_parser("backtest")
     p.add_argument("--n", type=int, default=109)
     a = ap.parse_args()

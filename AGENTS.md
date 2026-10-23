@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.21 · 2026-10-23 · 更新记录见文末
+> v1.22 · 2026-10-23 · 更新记录见文末
 
 ## 你是谁
 
@@ -36,6 +36,7 @@
 | `tools/explore/` | 探索循环：`explore.py`（选方向、收候选、打分、出日报、记回答）、`SCOUT.md`（侦察兵任务说明）、`digest-page.html`（日报网页） |
 | `docs/2026-10-19-explore-loop-spec.md` | 探索循环的方案和每周的记录 |
 | `tools/mind/ask.py` | 当大脑：问、回填、报数、回测 |
+| `tools/mind/salesroom.py` | 接 Salesroom 会议：同步、本地 Qwen 逐场抽取、去名后汇总（数据只在 `private/salesroom/` 和 `private/luke/`） |
 | `docs/2026-10-20-ask-lukeemind-spec.md` | 「问 lukeeMind」的方案、放权阶梯、给 Codex 的接入说明 |
 | `private/` | Luke 的私人数据：档案、访谈、他亲口给的标签、测试集、成绩、改进经验。被 `.gitignore` 排除，只在这台 Mac Studio 上，里面是一个没有远端的本地 git 仓库 |
 
@@ -378,9 +379,9 @@ verified: true
 5. **出日报**（`explore.py due` 里 `digest` 为 true，或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`；把它打印的 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukeeMind 日报到了（10 条）"加网页链接
 6. **顺手跑流程五**：`python3 tools/evolve/l1_daily.py`
 6b. **点赞对账**（`explore.py due` 里 `likes` 为 true，每 3 小时一次）：`explore.py likes`。候选池里被 Luke 点了赞的，自动记成"想看"；库里还没有的新点赞写进 `private/explore/likes/pending.jsonl`，按「流程三」读完、写标题、存进 `clips/`（成人向等不适合公开的先扣下，在下一份日报推送里一句话问 Luke）。做完跑 `explore.py mark likes`
-7. **每天的活**（`explore.py due` 里 `daily` 为 true 时做，做完跑 `explore.py mark daily`）：**长新方向**：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`。同一轮顺手跑 `python3 tools/evolve/l3_extract.py`，把这台 Mac 上新会话里 Luke 做过的选择抽进决定预测的测试集（只放 `private/l3/`）；跑 `python3 tools/evolve/l1_collect.py authors --max 5`，多攒点赞预测的弱负样本（X 会限流，每天只抓 5 位作者）
+7. **每天的活**（`explore.py due` 里 `daily` 为 true 时做，做完跑 `explore.py mark daily`）：**长新方向**：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`。同一轮顺手跑 `python3 tools/evolve/l3_extract.py`，把这台 Mac 上新会话里 Luke 做过的选择抽进决定预测的测试集（只放 `private/l3/`）；跑 `python3 tools/evolve/l1_collect.py authors --max 5`，多攒点赞预测的弱负样本（X 会限流，每天只抓 5 位作者）；跑 `python3 tools/mind/salesroom.py sync` 和 `salesroom.py extract --limit 40`，把 Salesroom 新的会议拉下来、用本地 Qwen 抽客户原话和 Luke 的判断（Qwen 连不上就跳过，不改用外部模型）
 8. **记账**：`private/` 里提交一次（`git -C private add explore && git -C private commit -m "探索：<round>"`）。第 1 步存了新知识的，按「其他约定 · git」提交并推送公开仓库
-9. **周报**（`explore.py due` 里 `weekly` 为 true 时做，做完跑 `explore.py mark weekly`）：先跑 `l1_collect.py bookmarks` 和 `l1_collect.py own` 更新书签和 Luke 自己发的帖，再跑 `python3 tools/evolve/l1_skill.py refresh` 重新提炼口味 skill（赢了才换，结果写进自我优化方案的「进度」）；`explore.py report`；再跑 `python3 tools/evolve/l3_eval.py --cond q2`（决定预测的成绩，Opus），和"永远选第一个""永远选推荐"、他不按推荐走的题分开报。一段话加数字追加进方案的「进度」一节，提交推送
+9. **周报**（`explore.py due` 里 `weekly` 为 true 时做，做完跑 `explore.py mark weekly`）：先跑 `l1_collect.py bookmarks` 和 `l1_collect.py own` 更新书签和 Luke 自己发的帖，再跑 `python3 tools/evolve/l1_skill.py refresh` 重新提炼口味 skill（赢了才换，结果写进自我优化方案的「进度」）；跑 `python3 tools/mind/salesroom.py synthesize`，去掉客户名后重写「客户真实声音」和「Luke 在会上怎么判断」；`explore.py report`；再跑 `python3 tools/evolve/l3_eval.py --cond q2`（决定预测的成绩，Opus），和"永远选第一个""永远选推荐"、他不按推荐走的题分开报。一段话加数字追加进方案的「进度」一节，提交推送
 
 ### 从 Luke 的真实行为里自动取标签
 
@@ -411,11 +412,13 @@ Codex 里的接待 Lukee、各项目里的 Claude Code 和 Codex，遇到要替 
 - 回答里的 `must_ask_luke` 只要有一条成立就是 true：碰到"必须交给 Luke"的清单（钱、合同和法律、交期和上线、人事、凭据和权限、对外发送、替 Luke 通知同事或给同事发说明、删除和难撤销、方向取舍），模型判断要问，或者 lukeeMind 自己拿不准
 - `act` 只有两种：`ask_luke`（照旧问 Luke，附上建议）和 `follow`（按建议做，事后汇总）。只有某一类升到 1 级以上、这次又高确定、不在清单里时才会是 `follow`
 - Luke 回答后，提问的 agent 调 `ask.py record <id> --luke <字母> --note "原话"` 回填；本该问 Luke 却判成不用问的，加 `--should-ask yes`，记成漏报
+- 别的 agent 要了解 Luke 的工作现场时，用 `ask.py profile --work`：在口味 skill 和原则之后，再附上「Luke 在会上怎么判断」（`private/luke/luke-in-meetings.md`）和「客户真实声音」（`private/luke/customer-voice.md`），都来自 Salesroom 会议，每周更新
 - 别的 agent 想知道 Luke 的口味时，有两个口子：`ask.py taste --text "…" --author <作者> --from <谁>` 回"他会不会想看"的概率和最像的三条他点过赞的（用当前冠军，Qwen 连不上改用 Opus）；`ask.py profile` 打印当前的口味 skill 和 12 条原则，给别的 agent 先读。口味 skill 每周更新，别的 agent 每次现读，不要自己存一份旧的
 
 ### 规矩
 
 - 提问、背景、回填只存 `private/mind/`，只交给 Opus，不交给 Jev 或任何外部接口；不同客户的旧选择不混用
+- **Salesroom 会议是客户资料**（Luke 2026-10-23 接入，选了"客户现场和他在会上的判断都做"）：密钥在 `.env` 的 `SALESROOM_API_KEY`；会议原文只存 `private/salesroom/meetings/`，连 `private/` 的本地仓库也不提交；逐场抽取只用本地 Qwen；交给 Opus 汇总之前，客户公司名换成"行业·规模·编号"，带敬称的人名换成"某人"；永远不交给 Jev，不进公开仓库，不写进 `clips/` 和 `roots/`
 - 你的建议不是 Luke 的决定，回答里不写"Luke 决定了"
 - 放权级别写在 `private/mind/levels.json`，**只有 Luke 能改**。每周日的周报里跑 `ask.py report`：哪一类够门槛了，就报给 Luke，请他定要不要升；出一次错或一次漏报，这一类马上降一级并告诉他
 - 清单里的类别永远停在 0 级
@@ -463,6 +466,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.22 | 2026-10-23 | 接入 Salesroom 会议数据：每天同步、本地 Qwen 逐场抽客户原话和 Luke 的判断，每周去名后汇成「客户真实声音」和「Luke 在会上怎么判断」，用 `ask.py profile --work` 给别的 agent；会议原文只在本机、不进任何 git、不交外部接口（起因：Luke 要接入 Salesroom，选了 C：客户现场和他在会上的判断都做） |
 | v1.21 | 2026-10-23 | 流程六从每 20 分钟一轮改回每 60 分钟一轮（起因：Luke 要求"更新任务为每60分钟运行一次"） |
 | v1.20 | 2026-10-21 | 不做后训练：Luke 的口味靠一份 skill 一版一版刻画，每周重提炼、赢了才换；lukeeMind 加了 `taste`（问口味）和 `profile`（读画像）两个口子给别的 agent 用（起因：skill 方案在未来考题上把 AUC 从 0.77 提到 0.81，Luke 定"不用训练了，就用 skill 方案"） |
 | v1.19 | 2026-10-21 | 主动多攒训练数据：首页快照从每 20 小时改成每 6 小时；每天抓 5 位常看作者没被点赞的帖当弱负样本；每周更新书签和 Luke 自己发的帖；后训练流程（`l1_train.py`）搭好，三个门槛一到就自动开训（起因：Luke 说"需要更多数据就去找，不要等待"，选了先搭流程） |
