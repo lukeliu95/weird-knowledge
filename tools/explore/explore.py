@@ -138,6 +138,12 @@ def top_authors(n=15):
     return [a for a, _ in c.most_common(n)]
 
 
+def variant_next():
+    # 只数试验开始以后（plan 里带 variant 的）；以前的几百次不算，不然会一直派省钱版
+    n = collections.Counter(c["variant"] for r in read_jsonl(ROUNDS) if "plan" in r for c in r["plan"] if "variant" in c)
+    return "lite" if n["lite"] < n["full"] else "full"
+
+
 def cmd_pick(a):
     arms, rng = load_arms(), random.Random()
     # 每 20 分钟一轮时，X 每小时最多派 1 次（X 搜索接口容易 429）
@@ -161,13 +167,16 @@ def cmd_pick(a):
     since = (now() - dt.timedelta(days=30)).strftime("%Y-%m-%d")
     for i, c in enumerate(chosen, 1):
         d = arms["directions"][c["direction"]]
+        # 对照试验（2026-10-24）：按累计次数轮流给标准版和省钱版，保证两边数量接近
+        c["variant"] = variant_next()
         c["out"] = str(DIR / "inbox" / f"{rid}-{i}.json")
         c["brief"] = str(DIR / "inbox" / f"{rid}-{i}.brief.md")
         lines = [f"# 这一轮的任务（{rid} 第 {i} 个侦察兵）", "",
                  f"- 轮次 round：{rid}", f"- 方向 direction：{c['direction']}（{d['name']}）", f"- 方向说明：{d['desc']}",
                  f"- 可以用的关键词（自己再扩展）：{'; '.join(d['keywords'])}",
                  f"- 侦察兵 scout：{c['scout']}", f"- 优先这个日期之后的内容：{since}",
-                 f"- 输出文件 out：{c['out']}"]
+                 f"- 输出文件 out：{c['out']}",
+                 f"- 版本：{c['variant']}（lite 就照 SCOUT.md 的「省钱版」做）"]
         reader = DIR / "reader.md"
         if reader.exists():
             lines.append(f"- 读者：{reader.read_text().strip()}")
@@ -187,7 +196,10 @@ def cmd_ingest(a):
     expire(pool)
     added = dup = bad = nleads = 0
     notes = []
+    plan = next((r["plan"] for r in read_jsonl(ROUNDS) if r.get("round") == a.round and "plan" in r), [])
     for f in sorted((DIR / "inbox").glob(f"{a.round}-*.json")):
+        idx = int(f.stem.rsplit("-", 1)[-1]) - 1 if f.stem.rsplit("-", 1)[-1].isdigit() else -1
+        variant = plan[idx].get("variant", "full") if 0 <= idx < len(plan) else "full"
         try:
             d = json.loads(f.read_text())
         except Exception as e:
@@ -206,7 +218,8 @@ def cmd_ingest(a):
             pool.append(dict(key=k, url=it["url"], title=it.get("title", ""), author=it.get("author", ""),
                              published=it.get("published", ""), source=it.get("source", ""), snippet=it.get("snippet", "")[:1200],
                              what=it.get("what", ""), why=it.get("why", ""), direction=d.get("direction", ""),
-                             scout=d.get("scout", ""), round=a.round, found=now().isoformat(timespec="seconds"), status="new"))
+                             scout=d.get("scout", ""), variant=variant, round=a.round,
+                             found=now().isoformat(timespec="seconds"), status="new"))
             added += 1
         for l in d.get("leads", []):
             append_jsonl(LEADS, {**l, "round": a.round, "direction": d.get("direction", "")})
@@ -580,6 +593,50 @@ def cmd_opens(a):
     print(json.dumps({"new_opens": len(new), "total_opens": len(seen)}, ensure_ascii=False))
 
 
+def cmd_cost(a):
+    """记下一个侦察兵这次花了多少 token（看 subagent 完成通知里的 subagent_tokens），对照试验要算花费。"""
+    append_jsonl(ROUNDS, {"round": a.round, "at": now().isoformat(timespec="seconds"),
+                          "cost": {"scout": a.i, "tokens": a.tokens, "tool_uses": a.tool_uses}})
+    print("记下了")
+
+
+def variant_report():
+    """标准版 vs 省钱版：每次花多少、交多少条、日报里命中多少。"""
+    rounds = read_jsonl(ROUNDS)
+    var = {(r["round"], i + 1): c["variant"] for r in rounds if "plan" in r for i, c in enumerate(r["plan"]) if "variant" in c}
+    cost = collections.defaultdict(list)
+    for r in rounds:
+        if "cost" in r:
+            v = var.get((r["round"], int(r["cost"]["scout"])))
+            if v:
+                cost[v].append(r["cost"]["tokens"])
+    pool = read_jsonl(POOL)
+    cand = collections.Counter(r.get("variant") for r in pool if r.get("variant"))
+    byk = {r["key"]: r.get("variant") for r in pool}
+    labs = collections.defaultdict(list)
+    for l in read_jsonl(LABELS):
+        if l.get("source", "digest") == "digest" and byk.get(l["key"]):
+            labs[byk[l["key"]]].append(l["label"])
+    scouts = collections.Counter(var.values())
+    out = {}
+    for v in ("full", "lite"):
+        t = cost.get(v, [])
+        out[v] = {"scouts": scouts.get(v, 0), "cost_recorded": len(t), "avg_tokens": round(sum(t) / len(t)) if t else None,
+                  "candidates": cand.get(v, 0), "answered": len(labs.get(v, [])), "hits": sum(labs.get(v, []))}
+        if t and scouts.get(v):
+            out[v]["tokens_per_candidate"] = round(sum(t) / len(t) / max(cand.get(v, 0) / scouts[v], 1))
+    f, l = labs.get("full", []), labs.get("lite", [])
+    if len(f) >= 30 and len(l) >= 30:
+        rng = random.Random(5)
+        worse = sum((sum(rng.choice(l) for _ in l) / len(l)) < (sum(rng.choice(f) for _ in f) / len(f)) - 0.05 for _ in range(2000)) / 2000
+        cheaper = (out["lite"].get("avg_tokens") or 1e9) <= 0.7 * (out["full"].get("avg_tokens") or 0)
+        out["verdict"] = {"p_lite_worse_by_5pt": round(worse, 3), "lite_30pct_cheaper": cheaper,
+                          "adopt_lite": worse < 0.2 and cheaper}
+    else:
+        out["verdict"] = "两边日报回答各满 30 条再判"
+    return out
+
+
 # ---------- 状态和报告 ----------
 def cmd_status(_):
     pool = read_jsonl(POOL)
@@ -607,6 +664,7 @@ def rate(rows):
 
 
 def cmd_report(_):
+    print("标准版 vs 省钱版侦察兵：", json.dumps(variant_report(), ensure_ascii=False))
     allrows = read_jsonl(LABELS)
     likes = [r for r in allrows if r.get("source") == "like"]
     rows = [r for r in allrows if r.get("source", "digest") == "digest"]
@@ -660,6 +718,8 @@ def main():
     sub.add_parser("due")
     p = sub.add_parser("mark"); p.add_argument("job", choices=["daily", "weekly", "likes"])
     p = sub.add_parser("likes"); p.add_argument("--limit", type=int, default=100)
+    p = sub.add_parser("cost"); p.add_argument("round"); p.add_argument("i", type=int); p.add_argument("tokens", type=int)
+    p.add_argument("--tool-uses", type=int, default=0)
     p = sub.add_parser("opens"); p.add_argument("--dir", required=True)
     p = sub.add_parser("aihot"); p.add_argument("--all", action="store_true")
     a = ap.parse_args()

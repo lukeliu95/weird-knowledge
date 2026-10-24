@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.22 · 2026-10-23 · 更新记录见文末
+> v1.23 · 2026-10-24 · 更新记录见文末
 
 ## 你是谁
 
@@ -374,7 +374,7 @@ verified: true
 
 1. **收回答**：用 ArtifactData 读日报网页的 `opens`（Luke 点开过原文的记录，用 `out_dir` 存下后跑 `explore.py opens --dir <存下的 opens 目录>`）和 `answers`。每份还没记过的（`private/explore/digests/<stamp>.json` 里 `answered` 不是 true），跑 `python3 tools/explore/explore.py learn <stamp> <字母>`（都不想看是 `-`）。Luke 在对话里直接回字母也一样记。他说想看的，按流程一存进 `clips/`：`why` 写"探索日报：Luke 想看"，`kind` 和 `topic` 照常填，X 推文、网页存原文，论文按「有版权的长文」。输出里有 `promote_to_core` 的方向，在兴趣地图里升为 core
 2. **看状态**：`explore.py status`。`busy` 为 true（上一轮还没收完）就只做第 4 步的 `aihot` 和 `score`、第 6 步；`throttle` 为 true（没答的日报到 4 份）就跳过第 3 步。候选只留 48 小时，超过 48 小时还没进日报的自动作废，所以候选再多也照派侦察兵
-3. **派侦察兵**：`explore.py pick --n 3`，按它给的 3 份任务段落各派一个 subagent，任务说明是 `tools/explore/SCOUT.md` 全文加那份段落，并把「其他约定 · 隐私」原样写进去。3 个并行，等它们都交完
+3. **派侦察兵**：`explore.py pick --n 3`，按它给的 3 份任务段落各派一个 subagent，任务说明是 `tools/explore/SCOUT.md` 全文加那份段落，并把「其他约定 · 隐私」原样写进去。3 个并行，等它们都交完。每个侦察兵完成时，把通知里的 `subagent_tokens` 记下来：`explore.py cost <round> <第几个> <tokens>`（标准版和省钱版的对照试验要算花费）
 4. **收和打分**：`explore.py ingest <round>`；再 `explore.py aihot`，从 AIHOT 拉最近 24 小时的精选（免费，不派侦察兵，`busy` 或 `throttle` 时也照拉）；最后 `explore.py score`（本地 Qwen 连不上时自动改用 Opus 5.5 打分，不用停下来）
 5. **出日报**（`explore.py due` 里 `digest` 为 true，或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`；把它打印的 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukeeMind 日报到了（10 条）"加网页链接
 6. **顺手跑流程五**：`python3 tools/evolve/l1_daily.py`
@@ -400,6 +400,7 @@ verified: true
 - 日报里固定 2 条新方向、2 条最拿不准的，不全按预测分排（防止越推越窄）
 - 每份日报 10 条，6 条最可能想看；他答完可以说"再来一批"，从候选池里马上再出一份
 - 改侦察兵任务说明、日报配比，按流程五的规矩：两个版本对照，比现状好的概率到 80% 才换
+- **省钱版侦察兵对照试验**（2026-10-24 起，借自 HarnessPro 的"分数和成本一起优化"）：`pick` 轮流派标准版（full）和省钱版（lite，见 SCOUT.md），每周周报里 `explore.py report` 报两边的花费和日报命中率。两边的日报回答各满 30 条后：省钱版命中率比标准版低 5 个百分点以上的概率小于 20%、花费至少省 30%，就把省钱版改成默认，写进经验库并告诉 Luke；否则保持标准版
 - 撞到订阅用量上限：存好状态，这一轮结束
 
 ## 流程七：当大脑（回答别的 agent 的提问）
@@ -466,6 +467,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.23 | 2026-10-24 | 加了省钱版侦察兵的对照试验：轮流派标准版和省钱版，记每次的 token 花费，命中率不掉、花费省 30% 以上就改成默认（起因：Luke 问 RSI 研究到哪，选了 A：借 HarnessPro 的思路让探索循环分数和成本一起优化） |
 | v1.22 | 2026-10-23 | 接入 Salesroom 会议数据：每天同步、本地 Qwen 逐场抽客户原话和 Luke 的判断，每周去名后汇成「客户真实声音」和「Luke 在会上怎么判断」，用 `ask.py profile --work` 给别的 agent；会议原文只在本机、不进任何 git、不交外部接口（起因：Luke 要接入 Salesroom，选了 C：客户现场和他在会上的判断都做） |
 | v1.21 | 2026-10-23 | 流程六从每 20 分钟一轮改回每 60 分钟一轮（起因：Luke 要求"更新任务为每60分钟运行一次"） |
 | v1.20 | 2026-10-21 | 不做后训练：Luke 的口味靠一份 skill 一版一版刻画，每周重提炼、赢了才换；lukeeMind 加了 `taste`（问口味）和 `profile`（读画像）两个口子给别的 agent 用（起因：skill 方案在未来考题上把 AUC 从 0.77 提到 0.81，Luke 定"不用训练了，就用 skill 方案"） |
