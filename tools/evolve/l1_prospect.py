@@ -54,11 +54,13 @@ def snapshot(a):
     else:
         for t in ("following", "for-you"):
             feeds.append((t, fetch(["timeline", "--type", t], a.limit)))
-    seen, rows, already = set(), [], liked_ids_in_repo()
+    # 2026-10-24 起不再去掉已经存进库的点赞：点赞对账每 3 小时把新点赞存进 clips/，他刷到就点的帖下一份快照就抓不到了，
+    # 考题里几乎没有"会点"的。模型看不到点赞状态，打分时相似点赞也会排除快照里的推文，所以留着不算泄题
+    seen, rows = set(), []
     for feed, data in feeds:
         for tw in data:
             tid = str(tw.get("id"))
-            if tw.get("is_retweet") or tid in seen or tid in already:
+            if tw.get("is_retweet") or tid in seen:
                 continue
             seen.add(tid)
             rows.append(dict(id=tid, author=tw.get("author", ""), published=tw.get("created_at", ""),
@@ -66,7 +68,7 @@ def snapshot(a):
     DIR.mkdir(parents=True, exist_ok=True)
     out = DIR / f"snapshot-{dt.datetime.now():%Y%m%d-%H%M}.jsonl"
     out.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows))
-    print(f"{out}: {len(rows)} 条（去掉了转推和已经点过赞的）")
+    print(f"{out}: {len(rows)} 条（去掉了转推）")
 
 
 def predict(a):
@@ -87,10 +89,16 @@ def score(a):
     liked = {str(t.get("id")) for t in fetch(["likes", "LukeLiu95"], a.likes_limit)} | liked_ids_in_repo()
     pos = sum(i in liked for i in rows)
     print(f"快照 {len(rows)} 条，其中后来被点赞 {pos} 条")
-    if pos == 0:
-        return
     stem = Path(a.snapshot).stem.replace("snapshot", "pred")
     for pf in sorted(Path(a.snapshot).parent.glob(stem + "-*.jsonl")):
+        if pos == 0:   # 没题也记一行，不然连续几天没成绩也没人发现（2026-10-24）
+            rec = dict(time=f"{dt.datetime.now():%Y%m%d-%H%M}", testset=Path(a.snapshot).name, engine="qwen",
+                       cond=pf.stem.split("-")[-2], profile=pf.stem.split("-")[-1], tag="prospective",
+                       n=len(rows), n_pos=0, note="没题：快照里没有后来被点赞的")
+            with open(E.PRIVATE / "l1" / "metrics.jsonl", "a") as f:
+                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            print(json.dumps(rec, ensure_ascii=False))
+            continue
         preds = [json.loads(l) for l in pf.read_text().split("\n") if l.strip()]
         told = {r["id"]: r["label"] for r in E.labels()}   # Luke's own answer overrides "liked or not"
         rs = [dict(p=x["p"], label=told.get(x["id"], int(x["id"] in liked))) for x in preds]

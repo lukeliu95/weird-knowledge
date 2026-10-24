@@ -3,6 +3,7 @@
 
 1. 最近 6 小时没有快照，就抓一份首页时间线快照，并用当前冠军配置盲测
 2. 抓好已满 48 小时、还没对过答案的快照，对答案并记成绩
+3. 未来考题：收冠军上任以后的新点赞和快照里没点的，盲打分（tools/evolve/l1_future.py update）
 冠军配置写在 private/l1/champion.json（档案、条件、例子数），改进被证实后才更新。
 
 用法：
@@ -39,7 +40,7 @@ def main():
             snaps = sorted(DIR.glob("snapshot-*.jsonl"))
             run("predict", str(snaps[-1]), "--cond", champ["cond"], "--profile", str(E.PRIVATE / "luke" / champ["profile"]))
     else:
-        print(f"最近一份快照 {snaps[-1].name}，不到 20 小时，不抓")
+        print(f"最近一份快照 {snaps[-1].name}，不到 6 小时，不抓")
     scored = E.PRIVATE / "l1" / "prospective" / "scored.txt"
     done = set(scored.read_text().split()) if scored.exists() else set()
     for s in snaps:
@@ -48,6 +49,9 @@ def main():
         if run("score", str(s)):
             with open(scored, "a") as f:
                 f.write(s.name + "\n")
+    # 首页快照里几乎没有他后来点赞的（2026-10-24 查明），主力考法改成新点赞配对考
+    r = subprocess.run([sys.executable, str(HERE / "l1_future.py"), "update"], capture_output=True, text=True)
+    print((r.stdout + r.stderr).strip()[-600:])
 
 
 if __name__ == "__main__":
