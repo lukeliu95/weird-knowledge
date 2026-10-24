@@ -203,11 +203,16 @@ def cmd_synthesize(_):
     # 纪要里根本没提到 Luke 却抽出"他的判断"的，多半是模型张冠李戴，不用（2026-10-24 首次全量：5 场）
     lk = [{"client": r["client"], "date": r.get("date"), **(r.get("luke") or {})} for r in rows
           if (r.get("luke") or {}).get("judgments") and r.get("luke_mentioned")]
+    confirmed = E.PRIVATE / "luke" / "luke-in-meetings.confirmed.md"
     if lk:
+        base = ("Luke 确认过下面这一版（\"大体准，就这样用\"）。以它为准：已有的几条保留原意，只在有新证据时补充例子或新增条目；"
+                "新证据和某一条对不上的，不要改那一条，在文末单列「和确认版对不上的新证据（请 Luke 判断）」。\n\n" + confirmed.read_text()
+                if confirmed.exists() else "")
         judge = OJ.ask_json(
             "你在归纳一个具体的人 Luke 在销售会议上的判断方式。只输出 JSON。",
             "下面是 Luke（Sparticle 增长负责人）在客户会议上明确说过或定过的事（客户名已换成代号）。请写「Luke 在会上怎么判断」：中文，1,200 字以内；"
             "归纳他反复用的判断方式（先问什么、怎么回应顾虑、怎么定价和让步、什么时候推进什么时候放手），每条附 1～2 个例子；只写看得出来的，不编。\n\n"
+            + (base + "\n\n新的会议记录：\n" if base else "")
             + json.dumps(lk, ensure_ascii=False)[:120000] + '\n\n只输出 JSON：{"md": "正文"}', timeout=900)
         JUDGE.write_text(f"# Luke 在会上怎么判断（Salesroom 会议）\n\n> {dt.date.today()} 生成，来自 {len(lk)} 场他明确发言的会议。客户资料，只在本机。\n\n"
                          + judge["md"].strip() + "\n")
