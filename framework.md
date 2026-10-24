@@ -176,15 +176,16 @@
 - 第 6 轮新增：[人在回路里只是摆设](clips/2026-10-22-mitchell-agents-push-humans-out-of-loop.md)：agent 用得越久，人越没本事审它（挑战“人在环中”，强）；[长任务 agent 的证据式监督](clips/2026-10-22-sun-evidence-grounded-agent-oversight.md)：用程序把 agent 自作主张的关键决定连同证据摆给人看，只把有后果的交给人；[Harrison Chase：是非题交给决策模型](clips/2026-10-22-hwchase17-yes-no-calls-jev.md)：拿得准的便宜模型先判，拿不准的再往上交。新线索：放权靠证据升级的前提，是人还看得懂证据
 - 没想清楚的问题：你同时开多个会话、用 /loop 跑任务，现在哪些动作已经可以从“先问”升到“自己做”？可以拿你最近一周批准过、而且一字没改的动作当证据（推断，待 Luke 确认）。
 
-### 原则 13：买方先自己查、后找销售。一般信息被 AI 做便宜后，能让买方开口的是 AI 给不了的一手信息（缺点、风险、真实价格、不适合谁），联系的时机交给买方
+### 原则 13：买方先自己查、后找销售。一般信息被 AI 做便宜后，能让买方开口的是 AI 给不了的一手信息（缺点、风险、真实价格、不适合谁）。联系要踩在买方要买的时间点上，次数要少，走对方愿意的渠道；买方要的硬信息（服务保证、安全、解约条件、真实价格、实绩）先公开出来
 
-- 状态：已确认（2026-10-21，第 4 轮新增）
-- 已加进全局规则：2026-10-21，`~/.claude/CLAUDE.md` 第 5 节「买方先自己查」
+- 状态：已确认（2026-10-21，第 4 轮新增）；2026-10-24 按补课第 10 题改了后半句，原来是“联系的时机交给买方”，Luke 选了 A
+- 已加进全局规则：2026-10-21，`~/.claude/CLAUDE.md` 第 5 节「买方先自己查」（2026-10-24 改的后半句还没同步过去）
+- 补课第 10 题（2026-10-24，[简报](docs/study/2026-10-24-topic-10-buyer-self-research.md)；材料还没认可，不计入排名）：前半句大体站得住，但“先用 AI 查”在日本要打折，[総務省 2026 白书](clips/2026-10-24-soumu-2026-procurement-genai-use.md)里日本企业采购业务用生成式 AI 的只有 38.0%（美国 80.9%）。后半句改写的依据：[联系太多会把客户推走](clips/2026-10-24-godfrey-enough-is-enough-multichannel-contact.md)、[在客户要买的时候上门](clips/2026-10-24-kumar-customer-focused-sales-campaign-timing.md)、[展会见过再跟进](clips/2026-10-24-smith-trade-show-follow-up-personal-selling.md)、[买方决定什么时候找销售](clips/2026-10-24-kalwey-holistic-selling-buyer-led-journey.md)；“硬信息先公开”的依据：[IPA 云服务安全利用指引](clips/2026-10-24-ipa-sme-cloud-service-checklist.md)
 - 支撑的新知识：[日本 B2B 采购者：八成嫌官网都是一般论，57.1% 按“诚实”决定找谁询问](clips/2026-10-20-ideatech-btob-buyer-information-contact-survey.md)、[日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md)、[日本 B2B 的 AI 搜索对策：77% 觉得丢了商机，一半多还没动手，卡在不会做和算不清回报](clips/2026-10-20-probel-btob-ai-search-llmo-survey.md)、[Gartner 新 B2B 购买旅程：买方只花 17% 的时间见供应商](clips/2026-10-18-gartner-new-b2b-buying-journey.md)（共 4 条）
 - 第 5 轮新增：[生成 AI 时代的 BtoB 买方旅程图](clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md)、[HubSpot Japan《日本 BtoB 购买意识与实态调查》](clips/2026-10-21-hubspot-japan-state-of-buyer-2026.md)：日本买方见销售之前先自己用 AI 查，和这条的前半句一致
 - 对应的源知识：[CEB：B2B 营销的数字化演变（57% 研究）](roots/ceb-2012-digital-evolution-b2b-marketing.md)、[6sense 2024 B2B 买方体验报告](roots/6sense-2024-b2b-buyer-experience.md)、[Gartner 新 B2B 购买旅程（购买任务与买方赋能）](roots/gartner-2019-b2b-buying-journey.md)、[双面说服（正反两面信息）](roots/two-sided-persuasion.md)、[自愿披露与“沉默即坏消息”（信息解开）](roots/voluntary-disclosure-unraveling.md)、[信息经济学（搜寻成本与价格离散）](roots/stigler-1961-economics-of-information.md)、[生成式引擎优化（GEO）](roots/aggarwal-2024-geo.md)
 - 和你已有原则的关系：是原则 3 落到获客上的样子：AI 把一般信息做便宜了，稀缺的是只有卖方自己知道、又肯说出来的那部分。也碰到原则 9：AI 搜索（GEO）是新渠道，PROBEL 说一半多的企业还没动手。
-- 矛盾：4 条证据都是厂商调查，结论都和各自卖的东西一致。IDEATECH 自己的数据也显示，66.5% 的买方在方案探索阶段为止就向最终厂商报了名，比“走完 57%（CEB）、69%（6sense）才接触”早；Oldroyd 的线索研究主张一小时内跟进，和“联系时机交给买方”对着干（弱）。另外按 Allen 1991 的元分析，只讲缺点、不回应，可能适得其反。
+- 矛盾：4 条证据都是厂商调查，结论都和各自卖的东西一致。IDEATECH 自己的数据也显示，66.5% 的买方在方案探索阶段为止就向最终厂商报了名，比“走完 57%（CEB）、69%（6sense）才接触”早；Oldroyd 的线索研究主张一小时内跟进，和“联系时机交给买方”对着干（弱）。2026-10-24 改写后的说法把两边接上了：要联系，但要踩在买方发出信号或要买的时候。另外按 Allen 1991 的元分析，只讲缺点、不回应，可能适得其反。
 - 第 6 轮新增：[厂商调查：B2B 采购者用生成式 AI 选供应商](clips/2026-10-22-probel-btob-buyers-ai-vendor-selection-survey.md)：66.4% 用生成式 AI 选供应商。厂商调查（这家卖“让 AI 推荐你”的服务，149 人网络调查），“98% 会考虑不知名公司”来自带条件的问法，要打折看
 - 没想清楚的问题：你的冷邮件和表单营销里，主动写出“不适合谁”“真实价格”，回信率会不会变？可以拿一封邮件做两版对照（推断，待验证）。
 
