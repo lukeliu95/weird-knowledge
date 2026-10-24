@@ -430,6 +430,7 @@ agent 主动去找一手材料，补框架里薄的地方，规则见 [AGENTS.md
 |---|---|---|---|---|
 | 1 日本企业怎么买 B2B 产品 | [2026-10-18](docs/study/2026-10-18-topic-1-japan-b2b-buying.md) | 25 份 | 14 个，如 [采购中心](roots/buying-center.md)、[稟議制](roots/ringi-system.md)、[根回し](roots/nemawashi.md)、[许可营销](roots/permission-marketing.md) | 等 Luke 回答 |
 | 4 问题协商 | [2026-10-19](docs/study/2026-10-19-topic-4-question-negotiation.md) | 21 份 | 18 个，如 [问题协商](roots/question-negotiation.md)、[知识异常状态](roots/anomalous-state-of-knowledge.md)、[偏好建构](roots/constructive-preferences.md)、[封闭世界假设](roots/closed-world-assumption.md) | 等 Luke 回答 |
+| 10 日本企业找销售前先自己查什么 | [2026-10-24](docs/study/2026-10-24-topic-10-buyer-self-research.md) | 9 份 | 9 个，如 [心理抗拒理论](roots/brehm-1966-psychological-reactance.md)、[助推与赋能](roots/hertwig-2017-nudging-boosting.md)、[信号理论](roots/spence-1973-job-market-signaling.md)、[面对面接触与城市经济](roots/storper-2004-buzz-face-to-face.md) | 等 Luke 回答 |
 
 第 1 题和已有原则的关系（草稿，待 Luke 确认）：
 - 原则 10（回到一手材料）：这一题又查出 10 处误传，包括"57% 的买家联系销售前已经做好决定"和"冷电话成功率 0.3%"

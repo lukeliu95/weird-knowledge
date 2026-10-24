@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [张咋啦一年涨粉到七万的X方法笔记](../clips/2026-10-18-cnyzgkc-x-growth-zara-zhang-notes.md) | 相近 | 弱（模型复核通过） |
 | [德国 17.6 万家企业邮件实验：写上对方公司名、坦白请求帮忙，回应变多；单独一大段强调数据保护，回应反而少 0.18 个百分点](../clips/2026-10-19-gaul-business-survey-invitation-bandit.md) | 相近 | 弱（模型复核通过） |
+| [联系太多会把客户推走：一家车行的维修客户，每季电话超过约 3 次、邮件超过约 4 次，回购就往下掉](../clips/2026-10-24-godfrey-enough-is-enough-multichannel-contact.md) | 直接源自 | 强 |

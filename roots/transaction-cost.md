@@ -31,3 +31,4 @@ verified: true
 | [学超级个体 Jack Butcher](../clips/2026-10-18-starzq-jack-butcher-solo-brand.md) | 相近 | 弱（模型复核通过） |
 | [IPA DX白書2023：日本 IT 人才 73.6% 在 IT 企业，美国只有 35.1%](../clips/2026-10-18-ipa-dx-white-paper-2023-it-talent.md) | 相近 | 弱（模型复核通过） |
 | [Personal Agent 像 2012 年的滴滴：是上游模型厂补贴下游的出口，要能自己后训练小模型降本](../clips/2026-10-20-willwangtf-personal-agent-didi-2012.md) | 相近 | 弱（模型复核通过） |
+| [九州新干线开通后，两头都通了车站的地区之间，企业交易关系多了约 40%：在日本，见面的成本仍决定企业能找到多少新供应商](../clips/2026-10-24-bernard-shinkansen-face-to-face-supplier-links.md) | 相近 | 弱（模型复核通过） |

@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [BuyGrid 二十五年回顾：企业采购分新购、修正重购、直接重购](../clips/2026-10-18-wind-thomas-buygrid-25-years-later.md) | 直接源自 | 强 |
 | [Gartner 新 B2B 购买旅程：买方只花 17% 的时间见供应商](../clips/2026-10-18-gartner-new-b2b-buying-journey.md) | 挑战 | 强 |
+| [Journal of Marketing 2025（42 场高管访谈加 10 位买方）：新任务采购里，什么时候找销售由买方定；主动推销在前期效果最弱](../clips/2026-10-24-kalwey-holistic-selling-buyer-led-journey.md) | 直接源自 | 弱（模型复核通过） |

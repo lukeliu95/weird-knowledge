@@ -30,3 +30,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [挑战者销售：明星销售靠教给客户他没看到的问题，而不是靠关系](../clips/2026-10-18-dixon-adamson-challenger-sale.md) | 直接源自 | 强 |
+| [Journal of Marketing 2025（42 场高管访谈加 10 位买方）：新任务采购里，什么时候找销售由买方定；主动推销在前期效果最弱](../clips/2026-10-24-kalwey-holistic-selling-buyer-led-journey.md) | 相近 | 弱（模型复核通过） |

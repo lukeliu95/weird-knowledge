@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [Gartner 调查：六成以上 B2B 买家更想不见销售，73% 回避不相关推销](../clips/2026-10-18-gartner-rep-free-buying-surveys.md) | 相近 | 弱（模型复核通过） |
 | [特定電子メール指南：给企业公开的邮箱发 B2B 营业邮件有明文例外](../clips/2026-10-18-soumu-caa-specified-email-guideline.md) | 相近 | 弱（模型复核通过） |
+| [联系太多会把客户推走：一家车行的维修客户，每季电话超过约 3 次、邮件超过约 4 次，回购就往下掉](../clips/2026-10-24-godfrey-enough-is-enough-multichannel-contact.md) | 相近 | 弱（模型复核通过） |

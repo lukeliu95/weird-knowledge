@@ -33,3 +33,6 @@ verified: true
 | [日本 B2B 采购者：八成嫌官网都是一般论，57.1% 按“诚实”决定找谁询问](../clips/2026-10-20-ideatech-btob-buyer-information-contact-survey.md) | 相近 | 弱（模型复核通过） |
 | [生成 AI 时代的 BtoB 买方旅程图：见销售之前，74.3% 的买方心里已定好首选，84.7% 不愿填表单](../clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md) | 直接源自 | 强 |
 | [厂商调查：B2B 采购者 66.4% 用生成式 AI 选供应商，98% 说不知名的公司只要 AI 推荐理由扎实也会列入候选](../clips/2026-10-22-probel-btob-buyers-ai-vendor-selection-survey.md) | 相近 | 弱（模型复核通过） |
+| [消费者厅隐性广告规制（2023 年 10 月施行）：厂商参与了内容的“第三方评价”必须标明是广告；立法前调查里 41% 的网红被广告主要求过隐瞒广告](../clips/2026-10-24-caa-stealth-marketing-notice.md) | 相近 | 弱（模型复核通过） |
+| [IPA《中小企业云服务安全利用指引》：选云服务前查 15 项，其中 7 项要靠厂商给的信息（SLA、安全措施、解约时数据怎么处理、数据放在哪国）](../clips/2026-10-24-ipa-sme-cloud-service-checklist.md) | 相近 | 弱（模型复核通过） |
+| [标明“有奖评论”也挡不住虚高：标明之后照样抬高评分和销量（论文摘要；“高近 0.5 星”只见于大学新闻稿）](../clips/2026-10-24-park-incentivized-review-disclosure.md) | 相近 | 弱（模型复核通过） |

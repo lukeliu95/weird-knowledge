@@ -36,3 +36,4 @@ B2B 购买是多人小组来回反复完成六项任务的过程，买方只花 
 | [エヌケーエナジーシステム 2026 调查：窗口负责人 57.1% 自己重写材料给上司看，93% 说“要是有某些材料内部讨论会更顺”](../clips/2026-10-19-nk-energy-system-invisible-ringi-2026.md) | 相近 | 强 |
 | [日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](../clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md) | 相近 | 弱（模型复核通过） |
 | [HubSpot Japan《日本 BtoB 购买意识与实态调查 2026》：63.5% 的买方接触卖方时已列好多个候选，AI 汇总的信息可信度最低](../clips/2026-10-21-hubspot-japan-state-of-buyer-2026.md) | 相近 | 弱（模型复核通过） |
+| [Journal of Marketing 2025（42 场高管访谈加 10 位买方）：新任务采购里，什么时候找销售由买方定；主动推销在前期效果最弱](../clips/2026-10-24-kalwey-holistic-selling-buyer-led-journey.md) | 相近 | 弱（模型复核通过） |

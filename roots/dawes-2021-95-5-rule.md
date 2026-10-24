@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [生成 AI 时代的 BtoB 买方旅程图：见销售之前，74.3% 的买方心里已定好首选，84.7% 不愿填表单](../clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md) | 直接源自 | 强 |
+| [两家 B2B 公司的现场实验：销售只在客户预计要买的时候上门，增量利润超过 100 万美元，关系质量也变好（只读了摘要）](../clips/2026-10-24-kumar-customer-focused-sales-campaign-timing.md) | 相近 | 弱（模型复核通过） |

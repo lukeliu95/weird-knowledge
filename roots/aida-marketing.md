@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [拆解抖音商业大号清华陈晶的起号方法](../clips/2026-10-18-huangyun-122-douyin-chenjing-account-teardown.md) | 相近 | 弱（模型复核通过） |
+| [先在展会见过产品，销售再跟进才更出单：工业分销商的现场研究（只读了摘要）](../clips/2026-10-24-smith-trade-show-follow-up-personal-selling.md) | 相近 | 弱（模型复核通过） |

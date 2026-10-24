@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [11 个月做到 350 万美元 ARR](../clips/2026-10-18-pierreeliottlal-gojiberry-ai-3-5m-arr.md) | 相近 | 弱（模型复核通过） |
 | [日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](../clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md) | 挑战 | 弱（模型复核通过） |
+| [两家 B2B 公司的现场实验：销售只在客户预计要买的时候上门，增量利润超过 100 万美元，关系质量也变好（只读了摘要）](../clips/2026-10-24-kumar-customer-focused-sales-campaign-timing.md) | 相近 | 弱（模型复核通过） |

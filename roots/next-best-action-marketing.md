@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Pocus：销售Agent一年百万ARR](../clips/2026-10-18-wanghao8080-pocus-sales-agent-arr.md) | 相近 | 弱（模型复核通过） |
+| [两家 B2B 公司的现场实验：销售只在客户预计要买的时候上门，增量利润超过 100 万美元，关系质量也变好（只读了摘要）](../clips/2026-10-24-kumar-customer-focused-sales-campaign-timing.md) | 相近 | 弱（模型复核通过） |
