@@ -59,3 +59,4 @@ roots: [koo-balance-sheet-recession, buffett-1986-fearful-when-others-greedy, di
   - [幸存者偏差](../roots/survivorship-bias.md) · 关系：挑战 · 强弱：弱（模型复核通过）。只列事后的赢家，没算同样做低价、抄底、出海却倒下的公司，“规律很清楚”是从幸存者身上读出来的，要打折看
 - 本质：这条新知识本质上是资产负债表衰退（需求长期不足、资产被贱卖）这一宏观环境里的逆向投资和低价策略；所列规律来自事后挑出的赢家，属于幸存者样本。
 - 整理于：2026-10-24（第 6 轮）
+- 补充核对（2026-10-24，第 6 轮补充）：原文两处史实不准。一是买下长银、改名新生银行的是 Ripplewood 牵头的外资财团（2000 年 3 月收购，6 月改名，2004 年上市），Lone Star 买的是东京相和银行，2001 年改组为东京之星银行（https://en.wikipedia.org/wiki/SBI_Shinsei_Bank ，https://en.wikipedia.org/wiki/Tokyo_Star_Bank ）。二是抓绒热潮是优衣库自己掀起的，不是“抓住”的：1998 年原宿店主推 1900 日元的抓绒，当年卖出约 200 万件，2000 年约 2600 万件（https://president.jp/articles/-/113659 ）

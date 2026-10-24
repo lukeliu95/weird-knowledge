@@ -25,4 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [超短波照射 10 分钟触发大脑类淋巴清洗（小鼠研究，转述）](../clips/2026-10-24-430yang-ultrashortwave-glymphatic-clearance-mice.md) | 相近 | 弱（模型复核通过） |
+| [超短波照射 10 分钟加快小鼠大脑类淋巴清除；阿尔茨海默模型小鼠连照 7 天才减少 Aβ（小鼠研究，推文有夸大）](../clips/2026-10-24-430yang-ultrashortwave-glymphatic-clearance-mice.md) | 相近 | 弱（模型复核通过） |

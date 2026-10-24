@@ -246,14 +246,14 @@
 | [Meta 的 MIMESIS：用真人行为训练的用户模拟器，比让助手模型扮用户更好练 agent](clips/2026-10-20-dair-ai-mimesis-user-simulator.md) | [τ-bench：工具、agent、用户三方交互的基准](roots/yao-2024-tau-bench.md) | 强 |
 | [agent 的记忆先存原始轨迹，等新任务来了再现场整理，比事先提炼成反思或 skill 更好用](clips/2026-10-20-zhou-just-in-time-memory.md) | [ExpeL：大模型智能体是经验学习者](roots/zhao-2023-expel.md) | 强 |
 | [智谱唐杰团队开源 HarnessPro：agent 无标签自己改 harness，按"省钱、均衡、性能"三档进化，成本最多降 53%](clips/2026-10-24-qbitai-harnesspro-pareto-rsi.md) | [用大模型当裁判](roots/zheng-2023-llm-as-a-judge.md) | 强 |
-| [马斯克：AI 之后人类的工作会变成园艺](clips/2026-10-24-ayi-ainotes-musk-future-work-becomes-gardening.md) | [自动化与新任务：技术如何替代又重新吸纳劳动力](roots/acemoglu-2019-automation-new-tasks.md) | 弱（模型复核通过） |
+| [马斯克：AI 之后工作会变成可选的，像自家种菜（后半段推演是转述者加的）](clips/2026-10-24-ayi-ainotes-musk-future-work-becomes-gardening.md) | [自动化与新任务：技术如何替代又重新吸纳劳动力](roots/acemoglu-2019-automation-new-tasks.md) | 弱（模型复核通过） |
 | [马斯克：未来的发现全是工程（“最稀缺的是验证”是转述者加的）](clips/2026-10-20-financeyf5-musk-future-discovery-is-engineering.md) | [多者异也（多即不同）](roots/anderson-1972-more-is-different.md) | 弱（模型复核通过） |
 | [Tripo Eden：先建地图再渲染](clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | [苦涩的教训](roots/bitter-lesson.md) | 弱（模型复核通过） |
 | [Tripo Eden：先建地图再渲染](clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | [视频生成模型是世界模拟器（Sora 技术报告）](roots/brooks-2024-video-world-simulators.md) | 弱（模型复核通过） |
 | [微软 Agensh：不设管家，最多 1024 个 agent 靠共享工作区和团队 Wiki 自协作，规模变大后自发长出评审和整合者](clips/2026-10-22-aigclink-agensh-decentralized-1024-agents.md) | [布鲁克斯定律](roots/brookss-law.md) | 弱（模型复核通过） |
 | [Claude 5 代模型的上下文工程新规矩：系统提示删掉八成，少写规则和例子，按需加载](clips/2026-10-21-shihipar-context-engineering-claude-5.md) | [语言模型是少样本学习者（GPT-3 论文）](roots/brown-2020-few-shot-learners.md) | 弱（模型复核通过） |
 | [大阪府各区划与公立小学教育概况](clips/2026-10-18-qiancaobuzhiqiu-osaka-areas-public-schools.md) | [科尔曼报告（《教育机会均等》）](roots/coleman-report.md) | 弱（模型复核通过） |
-| [马斯克：AI 之后人类的工作会变成园艺](clips/2026-10-24-ayi-ainotes-musk-future-work-becomes-gardening.md) | [比较优势](roots/comparative-advantage.md) | 弱（模型复核通过） |
+| [马斯克：AI 之后工作会变成可选的，像自家种菜（后半段推演是转述者加的）](clips/2026-10-24-ayi-ainotes-musk-future-work-becomes-gardening.md) | [比较优势](roots/comparative-advantage.md) | 弱（模型复核通过） |
 | [Kimi-code重构一个月的架构复盘](clips/2026-10-18-real-kai42-kimi-code-rewrite-retrospective.md) | [在参差不齐的技术边界上航行（BCG 顾问实验）](roots/dellacqua-2023-jagged-technological-frontier.md) | 弱（模型复核通过） |
 | [成语是哈希表而不是压缩](clips/2026-10-18-dotey-chengyu-hash-table-idea.md) | [字典编码（替换编码）](roots/dictionary-coder.md) | 弱（模型复核通过） |
 | [Karpathy 的 YC 演讲：软件 3.0](clips/2026-10-18-op7418-karpathy-software-3-talk.md) | [论“自然语言编程”之愚蠢](roots/dijkstra-1979-natural-language-programming.md) | 弱（模型复核通过） |
@@ -369,6 +369,14 @@
 第 6 轮：
 - 量子位报道 HarnessPro 的“成本降 53%”，是均衡档在 SWE-Bench Pro 一个基准上对比 RHO 的单项数字；论文摘要里的平均数是高性能档降 26.1%（见 [HarnessPro](clips/2026-10-24-qbitai-harnesspro-pareto-rsi.md)）
 - 厂商调查里“98% 说不知名公司也会列入候选”，问法带了前提“如果 AI 给的推荐理由扎实”，不等于 98% 的采购者愿意考虑不知名公司（见 [厂商调查：B2B 采购者用生成式 AI 选供应商](clips/2026-10-22-probel-btob-buyers-ai-vendor-selection-survey.md)）
+
+第 6 轮补充核对（2026-10-24）：
+- 日本失落年代那条说长银“被美国 Lone Star 等基金买下，改名新生银行”，买家写错了：买长银的是 Ripplewood 牵头的财团，Lone Star 买的是东京相和银行；“优衣库 1998 年抓住抓绒热潮”顺序也反了，热潮是优衣库自己掀起的（见 [日本失落年代的大赢家规律](clips/2026-10-24-towi27266777031-towi-japan-lost-decades-winners.md)）
+- 马斯克“工作会变成园艺”那条，马斯克只说过“工作会变成可选的，像自家种菜”；“被迫退休”“劳动的定义被击碎”是转述者的推演（见 [马斯克：AI 之后工作会变成可选的](clips/2026-10-24-ayi-ainotes-musk-future-work-becomes-gardening.md)）
+- 超短波那条说“10 分钟就把阿尔茨海默斑块冲刷干净、认知实质性逆转”：10 分钟见效是在健康小鼠上测的，阿尔茨海默模型小鼠要连照 7 天，Aβ 只是降低、记忆只是改善，没有人体数据（见 [超短波照射加快小鼠类淋巴清除](clips/2026-10-24-430yang-ultrashortwave-glymphatic-clearance-mice.md)）
+- KnowSim 那条和真人学到的负相关的，是真人给对话打的“整体交互质量”分，不是满意度；新手组单看不显著（见 [给模拟用户装上会变的知识状态](clips/2026-10-22-lee-knowsim-user-simulators-that-learn.md)）
+- Jev-Mem 的“建记忆快 6.6 倍”是和最快的对照系统比，“0.93 秒”是检索加回答的总延迟，最强的对照是同一团队去掉 Jev 的旧版（见 [Jev-Mem](clips/2026-10-22-gorden-sun-jev-mem-fast-slow-memory.md)）
+- Mitchell 等论文把“系统越能干，人的技能和情境意识退化越多”安在 Bainbridge 1983 头上；原文的结论是“控制系统越先进，人的贡献可能越关键”，全文没有“情境意识”这个词（见 [人在回路里只是摆设](clips/2026-10-22-mitchell-agents-push-humans-out-of-loop.md)）
 
 ## 四、主题地图
 

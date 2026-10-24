@@ -1,5 +1,5 @@
 ---
-title: "Jev-Mem：记忆系统里快模型打标签分类、大模型只做最后推理，建记忆快 6.6 倍"
+title: "Jev-Mem：记忆系统里快模型做分类打分、大模型只做最后推理，LoCoMo 上建记忆比最快的对照系统快 6.6 倍"
 author: "Gorden Sun (@Gorden_Sun)"
 url: https://x.com/Gorden_Sun/status/2107085863385731451
 source: X
@@ -39,3 +39,5 @@ Github：https://t.co/ApNliWkFtS
 
 ## 溯源
 
+- 已归档（工具类），不溯源。
+- 补充核对（2026-10-24，第 6 轮补充）：一是“快 6.6 倍”是和最快的对照系统 Nemori 比（1044 秒对 158 秒），和 A-MEM 比约 23 倍，只在 LoCoMo 一个测试集、回答模型 gpt-4o-mini 上测过。二是“平均响应 0.93 秒”是每次提问的总延迟（检索加生成回答），不是单算检索。三是最强的对照 MAGMA 是同一团队的前作，仓库里就是同一套代码去掉 Jev，所以这组比较实际是一次消融（https://arxiv.org/abs/2609.23986 ，https://github.com/libingzheren/Jev-Mem ）

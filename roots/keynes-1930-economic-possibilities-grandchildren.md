@@ -27,4 +27,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
-| [马斯克：AI 之后人类的工作会变成园艺](../clips/2026-10-24-ayi-ainotes-musk-future-work-becomes-gardening.md) | 相近 | 弱（模型复核通过） |
+| [马斯克：AI 之后工作会变成可选的，像自家种菜（后半段推演是转述者加的）](../clips/2026-10-24-ayi-ainotes-musk-future-work-becomes-gardening.md) | 相近 | 强 |
