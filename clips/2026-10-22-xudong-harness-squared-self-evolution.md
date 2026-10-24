@@ -7,10 +7,10 @@ published: 2026-10-15 03:32 UTC
 saved: 2026-10-22
 why: "探索日报：Luke 想看"
 related_principles: [原则 1, 原则 5]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [xu-2026-harness2, a-b-testing, organizational-learning, zhao-2023-expel, lee-2026-meta-harness]
 ---
 
 ## 原文
@@ -48,3 +48,12 @@ Harness² 往前走的一步，就是让改进机制本身也开始有记忆。
 
 ## 溯源
 
+- 核心主张：没有标准答案时，agent 改自己的 harness 可以让新旧版本在相同条件下各跑一遍、按行为差异决定留哪些改动；再把每次“遇到什么问题、改了什么、为什么有效”沉淀成经验去指导新任务，让改进机制本身也积累经验，这才更接近长期自进化。
+- 源知识：
+  - [Harness²：面向开放世界的递归 agent 运行框架改进](../roots/xu-2026-harness2.md) · 关系：直接源自 · 强弱：强。推文就是在解读这篇论文：两层递归、不依赖标准答案的对照试跑、WorkBuddy-Bench / JobBench / LAB 上最多 11.5、4.5、11.8 个点的提升都出自论文摘要。
+  - [A/B 测试（在线对照实验）](../roots/a-b-testing.md) · 关系：相近 · 强弱：弱（模型复核通过）。“新旧版本同条件对跑、按结果差异定去留”就是对照实验（A/B 测试）的思路搬到 harness 修改上；推文和论文都没用这个词，是模型推断。
+  - [组织学习](../roots/organizational-learning.md) · 关系：相近 · 强弱：弱（模型复核通过）。第一层只改做法（单环学习），第二层沉淀“怎么改做法”的经验（双环学习，Argyris 与 Schön）；推文没提组织学习，是模型推断的类比。
+  - [ExpeL：大模型智能体是经验学习者](../roots/zhao-2023-expel.md) · 关系：相近 · 强弱：弱（模型复核通过）。把做过的事提炼成文字经验、新任务时取用，和第二层递归的经验库同构；推文没提 ExpeL，是模型推断。
+  - [Meta-Harness：端到端优化模型的运行框架](../roots/lee-2026-meta-harness.md) · 关系：直接源自 · 强弱：弱（模型复核通过）。“让 agent 读以往改动和执行结果去自动改 harness”这条路由 Meta-Harness 开启，Harness² 论文把它当主要对照组；区别是 Meta-Harness 靠固定训练题打分。推文本身没提。
+- 本质：这条新知识本质上是“同条件对照试验定去留”加上“连改进方法也一起学”的双环学习，在没有标准答案的 agent 运行框架自进化上的应用。
+- 整理于：2026-10-24（第 6 轮）

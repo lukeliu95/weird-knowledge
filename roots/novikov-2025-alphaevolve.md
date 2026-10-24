@@ -25,3 +25,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [让大模型当"变异器"做进化：一套几乎通吃的代码和提示词优化办法，开源 Darwinian Evolver](../clips/2026-10-22-imbue-llm-evolution-universal-optimizer.md) | 相近 | 强 |

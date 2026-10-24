@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [用航空维修英语规范让 AI 讲清楚话](../clips/2026-10-18-hitw93-asd-ste100-clarity-waza.md) | 相近 | 弱（模型复核通过） |
 | [日本公司邮件与外资邮件的对比段子](../clips/2026-10-18-hikaru-hackjpn-japan-vs-foreign-email-meme.md) | 相近 | 弱（模型复核通过） |
+| [模拟用户给 agent 开了"简单模式"：451 名真人跑完整 τ-bench，对照 31 个大模型模拟器，模拟用户太配合、打分太宽，最好的也只有 76 分（真人 93 分）](../clips/2026-10-22-zhou-sim2real-gap-user-simulation.md) | 直接源自 | 强 |

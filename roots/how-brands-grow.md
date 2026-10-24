@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [把推特运营交给 AI 62 天的结果](../clips/2026-10-18-weiyipei-ai-agent-runs-twitter-62-days.md) | 相近 | 弱（模型复核通过） |
+| [厂商调查：B2B 采购者 66.4% 用生成式 AI 选供应商，98% 说不知名的公司只要 AI 推荐理由扎实也会列入候选](../clips/2026-10-22-probel-btob-buyers-ai-vendor-selection-survey.md) | 挑战 | 弱（模型复核通过） |

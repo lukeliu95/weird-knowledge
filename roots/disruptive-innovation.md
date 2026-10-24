@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [OpenAI 称九成潜在市场来自企业](../clips/2026-10-18-raycat2021-openai-enterprise-market-90.md) | 相近 | 弱（模型复核通过） |
+| [日本失落年代的大赢家规律：通缩、省钱、不良资产、海外](../clips/2026-10-24-towi27266777031-towi-japan-lost-decades-winners.md) | 相近 | 弱（模型复核通过） |

@@ -32,3 +32,5 @@ verified: true
 |---|---|---|
 | [Meta 的 MIMESIS：用真人行为训练的用户模拟器，比让助手模型扮用户更好练 agent](../clips/2026-10-20-dair-ai-mimesis-user-simulator.md) | 相近 | 弱（模型复核通过） |
 | [用户模拟器会是 agent 强化学习里被低估的一环：真考法是预测一个人的留出选择](../clips/2026-10-20-genai-is-real-user-simulation-agentic-rl.md) | 相近 | 弱（模型复核通过） |
+| [拿真实用户的说话方式喂模拟器：像不像真人从 24% 升到 45%，agent 成功率随之掉 3 个点](../clips/2026-10-22-zhu-realusersim-grounded-user-simulation.md) | 直接源自 | 强 |
+| [模拟用户给 agent 开了"简单模式"：451 名真人跑完整 τ-bench，对照 31 个大模型模拟器，模拟用户太配合、打分太宽，最好的也只有 76 分（真人 93 分）](../clips/2026-10-22-zhou-sim2real-gap-user-simulation.md) | 直接源自 | 强 |

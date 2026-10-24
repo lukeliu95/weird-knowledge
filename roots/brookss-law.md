@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [玉伯谈 AI 时代小团队生产力的真相](../clips/2026-10-18-saitowu-small-team-productivity-ai-era.md) | 相近 | 弱（模型复核通过） |
 | [Codex 28天做出Sora安卓版](../clips/2026-10-18-dotey-codex-sora-android-28-days.md) | 直接源自 | 强 |
+| [微软 Agensh：不设管家，最多 1024 个 agent 靠共享工作区和团队 Wiki 自协作，规模变大后自发长出评审和整合者](../clips/2026-10-22-aigclink-agensh-decentralized-1024-agents.md) | 挑战 | 弱（模型复核通过） |

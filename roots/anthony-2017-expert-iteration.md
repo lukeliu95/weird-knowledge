@@ -26,3 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [Evo² 解读：把改权重和改 harness 两条自进化路线接起来，让“改进者”本身也被训练](../clips/2026-10-22-xudong-evo2-weight-harness-co-evolution.md) | 相近 | 弱（模型复核通过） |

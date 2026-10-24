@@ -7,10 +7,10 @@ published: 2026-10（arXiv 预印本 2610.27377 [cs.AI]，v1 2026-10-19；NeurIP
 saved: 2026-10-22
 why: 探索日报：Luke 想看
 related_principles: [原则 11, 原则 2, 原则 1]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [shi-2023-irrelevant-context-distraction, liu-2024-lost-in-the-middle, zhao-2023-expel, kalyuga-2003-expertise-reversal-effect, anthropic-2025-effective-context-engineering]
 ---
 
 ## 原文
@@ -112,4 +112,12 @@ roots: []
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：编程 agent 复用经验，瓶颈不在检索得准不准，而在存成什么样、什么时候给、什么时候撤：把每段经历压成按“定位、理解、修法、验证”排好的短文档一开始就给，代价高的原始改动记录等第一次验证失败才给一次、下一轮就撤；这样检索准确率明显领先、成本降 17%，修复率只小幅提高且不显著，对最强的模型反而有害。
+- 源知识：
+  - [大模型很容易被无关上下文带偏](../roots/shi-2023-irrelevant-context-distraction.md) · 关系：直接源自 · 强弱：强。论文第 1 节引 Shi 等 2023 说明无关上下文会拖后腿，作为“记忆不是越多越好、扣着再给、给完就撤”的依据。
+  - [迷失在中间：语言模型如何使用长上下文](../roots/liu-2024-lost-in-the-middle.md) · 关系：直接源自 · 强弱：强。论文第 1 节引 Liu 等 2024 说明长上下文按位置用得不均，塞进去的内容 agent 只用得上一部分。
+  - [ExpeL：大模型智能体是经验学习者](../roots/zhao-2023-expel.md) · 关系：相近 · 强弱：强。论文把 ExpeL、Reflexion、Voyager 列为经验复用的前人工作；ExpeL 把做过的事提炼成心得再复用，REM 同样存提炼后的文档，但把重点从“找哪一条”换成“什么时候给、给多久”。
+  - [专长逆转效应](../roots/kalyuga-2003-expertise-reversal-effect.md) · 关系：相近 · 强弱：弱（模型复核通过）。同样的经验文档帮了中等模型、却拖累最强的模型（Opus 4.8 从 47.5% 掉到 39.4%），和教学心理学里“对新手有用的指导对专家反而有害”的专长逆转效应同构；论文没引，是模型推断。
+  - [AI 智能体的上下文工程](../roots/anthropic-2025-effective-context-engineering.md) · 关系：相近 · 强弱：弱（模型复核通过）。“上下文是有限的注意力预算、只给最少的高信号内容、用的时候再取”正是 REM 把记忆当控制问题（压成短文档、卡住才给、给完就撤）背后的原则；论文没引这篇，是模型推断。
+- 本质：这条新知识本质上是“上下文是有限的注意力资源”（无关信息会干扰、位置会稀释）在编程 agent 经验记忆上的应用：把记忆从检索问题改成“给什么、何时给、何时撤”的控制问题。
+- 整理于：2026-10-24（第 6 轮）

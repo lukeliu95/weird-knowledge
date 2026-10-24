@@ -26,3 +26,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Vibe Coding：原型加重设计两步法](../clips/2026-10-18-dotey-vibe-coding-prototype-method.md) | 换了说法 | 强 |
+| [RLCR：用集体奖励把模型训练成会分工的智能体组织](../clips/2026-10-24-genreasoning-genreasoning-rlcr-collective-rewards-agent-orgs.md) | 相近 | 强 |

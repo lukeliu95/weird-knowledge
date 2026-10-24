@@ -7,10 +7,10 @@ published: 2026-09（arXiv 预印本 2609.00982 [cs.CL]，v1 2026-09-01，v2 202
 saved: 2026-10-22
 why: 探索日报：Luke 想看
 related_principles: [原则 1, 原则 13]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: []
+roots: [social-penetration-theory, safran-2000-alliance-rupture-repair, zhou-2026-sim2real-gap, schatzmann-2009-hidden-agenda-user-simulation, goodharts-law]
 ---
 
 ## 原文
@@ -115,3 +115,12 @@ roots: []
 
 ## 溯源
 
+- 核心主张：用模拟用户评测陪伴 agent 时，用户肯说多深要由 agent 每一轮的表现来“开门”：门有先后、不能跳级、退得快建得慢；不加这道门的模拟器不问也说，评测就只奖励“问得多”，而且只看排名的验收发现不了分数虚高。
+- 源知识：
+  - [社会渗透理论](../roots/social-penetration-theory.md) · 关系：直接源自 · 强弱：强。作者明引 Altman 和 Taylor 1973：关系由浅入深、受损就退，五道门和三层披露深度就是把这条理论写成了状态机
+  - [治疗联盟的破裂与修复](../roots/safran-2000-alliance-rupture-repair.md) · 关系：直接源自 · 强弱：强。作者明引 Safran 和 Muran 2000：评判、说教让门后退、要重新赢回来，对应治疗联盟的“破裂与修复”
+  - [用户模拟的仿真到现实差距（Sim2Real Gap）](../roots/zhou-2026-sim2real-gap.md) · 关系：直接源自 · 强弱：强。作者明引 Zhou 等 2026 作为出发点：模拟用户太配合、一开口就把信息给全；本文在陪伴场景里给出一个具体的修法
+  - [隐藏议程用户模拟](../roots/schatzmann-2009-hidden-agenda-user-simulation.md) · 关系：相近 · 强弱：强。作者明引的状态式模拟器先例：用户带着没说出口的目标和议程，按系统的动作决定下一句说什么；本文把“议程”换成“按信任开门的披露清单”
+  - [古德哈特定律](../roots/goodharts-law.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者说现有基准奖励“问全了”而不是“让对方愿意说”，被测 agent 多问就能拿高分，是指标被针对优化后脱离真实目标
+- 本质：这条新知识本质上是“社会渗透理论（关系由浅入深、受损即退）”在给陪伴 agent 评测造模拟用户场景下的应用：把“心里话要靠信任挣来”写成规则，防止评测奖励“多问”这个代理指标。
+- 整理于：2026-10-24（第 6 轮）

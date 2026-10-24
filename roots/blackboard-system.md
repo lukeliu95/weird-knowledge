@@ -28,3 +28,5 @@ verified: true
 |---|---|---|
 | [Matrix：Agent 公司架构](../clips/2026-10-18-bruceguai-matrix-agent-company-architecture.md) | 相近 | 弱（模型复核通过） |
 | [备忘录加 worktree 就够了](../clips/2026-10-18-hilng77042-opc-agents-notes-worktrees.md) | 相近 | 弱（模型复核通过） |
+| [RLCR：用集体奖励把模型训练成会分工的智能体组织](../clips/2026-10-24-genreasoning-genreasoning-rlcr-collective-rewards-agent-orgs.md) | 相近 | 弱（模型复核通过） |
+| [微软 Agensh：不设管家，最多 1024 个 agent 靠共享工作区和团队 Wiki 自协作，规模变大后自发长出评审和整合者](../clips/2026-10-22-aigclink-agensh-decentralized-1024-agents.md) | 相近 | 弱（模型复核通过） |

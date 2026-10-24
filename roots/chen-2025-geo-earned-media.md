@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [日本 B2B 的 AI 搜索对策：77% 觉得丢了商机，一半多还没动手，卡在不会做和算不清回报](../clips/2026-10-20-probel-btob-ai-search-llmo-survey.md) | 相近 | 弱（模型复核通过） |
+| [厂商调查：B2B 采购者 66.4% 用生成式 AI 选供应商，98% 说不知名的公司只要 AI 推荐理由扎实也会列入候选](../clips/2026-10-22-probel-btob-buyers-ai-vendor-selection-survey.md) | 相近 | 弱（模型复核通过） |

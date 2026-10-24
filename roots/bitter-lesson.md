@@ -37,3 +37,4 @@ verified: true
 | [Sora 团队伯克利课堂分享字幕翻译](../clips/2026-10-18-dotey-sora-team-berkeley-talk.md) | 换了说法 | 强 |
 | [Tripo Eden：先建地图再渲染](../clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | 挑战 | 弱（模型复核通过） |
 | [Sohl-Dickstein 在斯坦福：稳妥的路已经不稳妥](../clips/2026-10-20-financeyf5-sohl-dickstein-safe-path-not-safe.md) | 直接源自 | 强 |
+| [OpenAI FDE 实战：Codex 变强后删掉九成定制代码](../clips/2026-10-24-xudong07452910-xudong-openai-fde-codex-deleted-custom-code.md) | 相近 | 弱（模型复核通过） |

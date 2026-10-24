@@ -31,3 +31,4 @@ Anthropic 用“一个主 Agent 规划、多个子 Agent 各带独立上下文�
 | [用个人AI编排者带动一支永不睡觉的开发队](../clips/2026-10-18-ayi-ainotes-personal-ai-orchestrator-openclaw.md) | 相近 | 弱（模型复核通过） |
 | [Matrix：Agent 公司架构](../clips/2026-10-18-bruceguai-matrix-agent-company-architecture.md) | 相近 | 弱（模型复核通过） |
 | [Claude Code 的 Task 工具原理](../clips/2026-10-18-dotey-claude-code-task-subagent.md) | 相近 | 弱（模型复核通过） |
+| [微软 Agensh：不设管家，最多 1024 个 agent 靠共享工作区和团队 Wiki 自协作，规模变大后自发长出评审和整合者](../clips/2026-10-22-aigclink-agensh-decentralized-1024-agents.md) | 挑战 | 强 |

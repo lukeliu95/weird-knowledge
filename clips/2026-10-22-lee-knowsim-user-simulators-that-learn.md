@@ -7,10 +7,10 @@ published: 2026-08（arXiv 预印本 2608.17150 [cs.AI]，交叉 cs.CL、cs.HC�
 saved: 2026-10-22
 why: 探索日报：Luke 想看
 related_principles: [原则 1, 原则 11, 原则 4]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: []
+roots: [cognitive-load, meaningful-learning, corbett-1994-knowledge-tracing, kalyuga-2003-expertise-reversal-effect, deslauriers-2019-feeling-of-learning]
 ---
 
 ## 原文
@@ -105,4 +105,12 @@ roots: []
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：给模拟用户一个按学习理论更新的知识状态（概念图、前置关系、认知负荷上限），就能分用户水平评测助手讲得合不合适：同一个回答新手吸收不了、行家嫌重复，没有一个模型对所有水平都最好；而真人的满意分和实际学到的负相关，只看满意度的评测会选错助手。
+- 源知识：
+  - [认知负荷理论](../roots/cognitive-load.md) · 关系：直接源自 · 强弱：强。作者明引 Sweller 1994、2011：一轮信息负荷超过容量就打折吸收，认知超载指标直接由它来
+  - [有意义学习](../roots/meaningful-learning.md) · 关系：直接源自 · 强弱：强。作者明引 Ausubel 2000：前置概念没懂，后面的概念升不上去，是状态更新的硬约束
+  - [知识追踪](../roots/corbett-1994-knowledge-tracing.md) · 关系：相近 · 强弱：强。作者在学生建模部分明引 Corbett 和 Anderson 1994：都是逐个知识点跟踪“懂了多少”并随互动更新；本文用的是写死的规则和四档状态，不是知识追踪的概率模型
+  - [专长逆转效应](../roots/kalyuga-2003-expertise-reversal-effect.md) · 关系：换了说法 · 强弱：弱（模型复核通过）。“同一个回答新手吸收不了、行家嫌重复，最好的讲法随水平变”就是专长反转效应；作者引了 Sweller、Ayres、Kalyuga 2011 的书，但没点这个效应的名
+  - [真学到与感觉学到（主动学习的错觉实验）](../roots/deslauriers-2019-feeling-of-learning.md) · 关系：相近 · 强弱：弱（模型复核通过）。本文真人满意分和前后测学到的负相关（ρ=−0.27），和 Deslauriers 等“感觉学到了和真的学到了负相关”是同一现象；作者没有引用它
+- 本质：这条新知识本质上是“认知负荷理论 + 知识追踪”在给大模型助手造模拟用户、分用户水平评测讲解场景下的应用：评测要量对方真正学到了什么，而不是对方觉得好不好。
+- 整理于：2026-10-24（第 6 轮）

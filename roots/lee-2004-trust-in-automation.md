@@ -28,3 +28,4 @@ verified: true
 | [无方向盘的 Cybercab 乘坐体验](../clips/2026-10-18-davelee-cybercab-no-steering-wheel-ride.md) | 相近 | 弱（模型复核通过） |
 | [OpenAI Dots 放权指南：动作分进 6 个权限区，每周按证据升降](../clips/2026-10-18-choopyplug1-openai-dots-agent-permission-zones.md) | 相近 | 弱（模型复核通过） |
 | [HubSpot Japan《日本 BtoB 购买意识与实态调查 2026》：63.5% 的买方接触卖方时已列好多个候选，AI 汇总的信息可信度最低](../clips/2026-10-21-hubspot-japan-state-of-buyer-2026.md) | 相近 | 弱（模型复核通过） |
+| [长任务 agent 到底做了什么：把它自作主张的关键决定连同证据摆给人看；监控模型找得到证据，却常看不懂后果，最好的也只对上一半左右](../clips/2026-10-22-sun-evidence-grounded-agent-oversight.md) | 直接源自 | 强 |

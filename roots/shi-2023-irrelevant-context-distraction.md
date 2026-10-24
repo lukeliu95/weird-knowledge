@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [上下文工程：智能体的核心实践指南](../clips/2026-10-18-shao-meng-context-engineering-guide.md) | 相近 | 弱（模型复核通过） |
+| [编程 agent 的经验记忆，难点不在找得准，而在存成什么样、什么时候给、给完就撤：修复率 24.9% 到 27.6%，成本降 17%，但对最强的模型反而有害](../clips/2026-10-22-chen-rem-experience-memory-coding-agents.md) | 直接源自 | 强 |

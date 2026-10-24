@@ -33,3 +33,5 @@ AI 系统反复设计出比自己更强的下一代，可能引发「智能爆�
 | [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](../clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | 直接源自 | 强 |
 | [Terminal-RSI：两轮自重写加强化学习，27B 终端 agent 从 51.7% 涨到 86.5%](../clips/2026-10-18-nft-chen-terminal-rsi-recursive-self-improvement.md) | 直接源自 | 强 |
 | [Harness²：agent 不改模型，靠对照试验改自己的运行框架，还学会怎么改得更好](../clips/2026-10-19-xu-harness2-recursive-agent-harnessing.md) | 直接源自 | 强 |
+| [Evo² 解读：把改权重和改 harness 两条自进化路线接起来，让“改进者”本身也被训练](../clips/2026-10-22-xudong-evo2-weight-harness-co-evolution.md) | 相近 | 弱（模型复核通过） |
+| [智谱唐杰团队开源 HarnessPro：agent 无标签自己改 harness，按"省钱、均衡、性能"三档进化，成本最多降 53%](../clips/2026-10-24-qbitai-harnesspro-pareto-rsi.md) | 直接源自 | 强 |

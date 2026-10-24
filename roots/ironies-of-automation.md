@@ -32,3 +32,4 @@ verified: true
 | [Agent 循环工程晚宴讨论要点](../clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | 挑战 | 弱（模型复核通过） |
 | [会写代码才玩得好 vibe coding](../clips/2026-10-18-aryanlabde-vibe-coding-needs-coding-skill.md) | 相近 | 弱（模型复核通过） |
 | [Claude Code 团队审代码的做法：九成代码由 AI 写，多道检查像叠起来的瑞士奶酪片，人只做机器做不好的判断](../clips/2026-10-21-dotey-claude-code-review-swiss-cheese.md) | 相近 | 弱（模型复核通过） |
+| [人在回路里只是摆设：agent 用得越久，人越没本事审它，要在产品和组织两头给人加"认知脚手架](../clips/2026-10-22-mitchell-agents-push-humans-out-of-loop.md) | 直接源自 | 强 |

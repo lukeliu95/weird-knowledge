@@ -30,3 +30,4 @@ verified: true
 | [日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](../clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md) | 相近 | 弱（模型复核通过） |
 | [生成 AI 时代的 BtoB 买方旅程图：见销售之前，74.3% 的买方心里已定好首选，84.7% 不愿填表单](../clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md) | 相近 | 弱（模型复核通过） |
 | [HubSpot Japan《日本 BtoB 购买意识与实态调查 2026》：63.5% 的买方接触卖方时已列好多个候选，AI 汇总的信息可信度最低](../clips/2026-10-21-hubspot-japan-state-of-buyer-2026.md) | 相近 | 弱（模型复核通过） |
+| [厂商调查：B2B 采购者 66.4% 用生成式 AI 选供应商，98% 说不知名的公司只要 AI 推荐理由扎实也会列入候选](../clips/2026-10-22-probel-btob-buyers-ai-vendor-selection-survey.md) | 直接源自 | 强 |

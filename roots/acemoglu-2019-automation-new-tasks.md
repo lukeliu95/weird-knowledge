@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [AI 应用及格线与文艺行业首当其冲](../clips/2026-10-18-dotey-ai-passing-line-creative-industry.md) | 相近 | 弱（模型复核通过） |
+| [马斯克：AI 之后人类的工作会变成园艺](../clips/2026-10-24-ayi-ainotes-musk-future-work-becomes-gardening.md) | 挑战 | 弱（模型复核通过） |

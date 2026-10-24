@@ -7,10 +7,10 @@ published: 2026-02-27
 saved: 2026-10-22
 why: 探索日报：Luke 想看
 related_principles: [原则 1, 原则 5]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [zhang-2025-darwin-godel-machine, evolutionary-algorithm, novikov-2025-alphaevolve, lehman-2022-evolution-through-large-models, exploration-exploitation-dilemma]
 ---
 
 ## 原文
@@ -153,6 +153,14 @@ Follow along with our builds! [Subscribe to Imbue’s email newsletter](https://
 - [图 3](https://cdn.sanity.io/images/dg1xe82e/production/1e58b50966be91ad2ff0d63b1a6f7e9434aed7f4-772x469.png?w=1560)
 - [图 4](https://cdn.sanity.io/images/dg1xe82e/production/fbf2b99b223761c38a89991174d9d84433fa97dd-1843x1473.png?w=1560)
 
-
 ## 溯源
 
+- 核心主张：只要候选方案能被大模型读懂、修改，又能大致打分，就能用“种群 + 按适应度和新颖度抽父代 + 让大模型针对失败案例做定向修改 + 打分放回种群”的演化循环去优化，不要求可微，代码、提示词、整个 agent 都适用；把训练集和打分集分开、记下每次改动效果的学习日志、多父代交叉、改完先在失败案例上小测再全量打分，能让循环更快更省。
+- 源知识：
+  - [达尔文哥德尔机：自我改进 agent 的开放式演化](../roots/zhang-2025-darwin-godel-machine.md) · 关系：直接源自 · 强弱：强。作者明说受达尔文哥德尔机（DGM）启发：父代抽样权重（sigmoid 缩放的适应度 × 随子代数衰减的新颖度奖励）和“给变异器看一个失败案例”都沿用 DGM，Imbue 再加了动态百分位中点、批量失败案例、学习日志等改进。
+  - [演化算法](../roots/evolutionary-algorithm.md) · 关系：直接源自 · 强弱：强。种群、适应度打分、抽父代、变异、交叉、选择，整套就是演化算法；作者自称 Darwinian Evolver，强调不要求可微、靠随机性跳出局部最优。
+  - [AlphaEvolve：用于科学与算法发现的编程智能体](../roots/novikov-2025-alphaevolve.md) · 关系：相近 · 强弱：强。文末延伸阅读列了 AlphaEvolve：同样是大模型改代码、评估器打分、演化迭代；Imbue 把它从算法发现推广到 agent 和提示词的端到端优化。
+  - [借大模型演化（ELM）：用代码大模型当遗传编程的变异算子](../roots/lehman-2022-evolution-through-large-models.md) · 关系：相近 · 强弱：弱（模型复核通过）。“不用随机变异，让大模型提出像人一样的定向改动”正是 ELM 最早提出的想法（代码大模型当遗传编程的变异算子）；文章没引 ELM，是模型推断。
+  - [探索与利用困境](../roots/exploration-exploitation-dilemma.md) · 关系：相近 · 强弱：强。作者明说锐度参数是在“效率（利用）”和“多样性（探索）”之间取舍；新颖度奖励、低分个体也偶尔被抽到，都是为了在探索和利用之间平衡、跳出局部最优。
+- 本质：这条新知识本质上是演化算法（变异—打分—选择）在大模型系统优化上的应用：把随机变异换成大模型的定向修改，把梯度换成只需近似打分的适应度。
+- 整理于：2026-10-24（第 6 轮）

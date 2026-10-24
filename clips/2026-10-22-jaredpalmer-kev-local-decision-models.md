@@ -7,7 +7,7 @@ published: 2026-09-17（仓库创建日期）
 saved: 2026-10-22
 why: "探索日报：Luke 想看"
 related_principles: [原则 1, 原则 7]
-status: 未整理
+status: 已归档
 kind: 工具
 topic: 模型与本地部署
 roots: []

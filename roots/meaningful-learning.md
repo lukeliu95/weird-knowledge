@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [认知提升就是把知识串联起来](../clips/2026-10-18-interjc-cognition-connect-knowledge.md) | 相近 | 弱（模型复核通过） |
+| [给模拟用户装上"会变的知识状态"：同一个回答，新手吸收不了、行家嫌重复；最好的模型要看用户懂多少，真人的满意分和实际学到的反而负相关](../clips/2026-10-22-lee-knowsim-user-simulators-that-learn.md) | 直接源自 | 强 |

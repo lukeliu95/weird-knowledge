@@ -7,10 +7,10 @@ published: 2026-10-22 23:40 UTC
 saved: 2026-10-24
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [forward-deployed-engineer, bitter-lesson, modularity-theory, anthropic-2025-agent-skills, openai-2025-ai-in-the-enterprise]
 ---
 
 ## 原文
@@ -43,3 +43,12 @@ roots: []
 
 ## 溯源
 
+- 核心主张：基础模型变强后，为补模型短板写的定制代码和界面大多可以删掉；企业 AI 项目里真正留得下来的是评测集、真实失败案例和沉淀成 skill 的业务知识，FDE 把它们装进通用 harness，复制到新团队就从两个月缩到一天，模型不够时再把失败反馈给研究团队。
+- 源知识：
+  - [前线部署工程师](../roots/forward-deployed-engineer.md) · 关系：直接源自 · 强弱：强。讲的就是 OpenAI 前线部署工程师团队怎么驻进客户团队、和芯片专家一起设计 eval、搭 harness。原文（openai.com/index/forward-deployed-engineering-means）2026-10-24 对抓取返回 403，没读到原文，只依据推文转述。
+  - [苦涩的教训](../roots/bitter-lesson.md) · 关系：相近 · 强弱：弱（模型复核通过）。模型一升级、手写的胶水代码就该删，和“苦涩的教训”一致：长期看随算力变强的通用方法胜过把人的领域技巧写死进系统。推文没引它。
+  - [相互依赖与模块化理论](../roots/modularity-theory.md) · 关系：相近 · 强弱：弱（模型复核通过）。模型“不够好”时只能一个场景一个场景写一体化定制应用；够用以后，换连接器、MCP、skill 这种标准接口的模块化做法胜出，复制成本骤降（两个月到一天）。
+  - [用 Agent Skills 让智能体胜任真实工作](../roots/anthropic-2025-agent-skills.md) · 关系：直接源自 · 强弱：弱（模型复核通过）。把业务知识和做法打包成 skill 挂在通用 agent 上、用代表性任务找能力缺口再补进 skill，就是 Agent Skills 的思路；推文说的是 Codex 上的 Skills 和插件。
+  - [OpenAI《企业中的 AI：七家前沿公司的经验》](../roots/openai-2025-ai-in-the-enterprise.md) · 关系：相近 · 强弱：弱（模型复核通过）。同一家公司 2025 年企业落地指南的第一条经验就是“先做评估”；这里把 eval 和失败案例当成最值钱、最留得住的资产，是同一主张的实战版。
+- 本质：这条新知识本质上是“苦涩的教训”和“模块化理论”在企业 AI 落地上的应用：模型够强以后，定制胶水代码贬值，评测、失败案例和沉淀成 skill 的业务知识才是留得住的资产。
+- 整理于：2026-10-24（第 6 轮）

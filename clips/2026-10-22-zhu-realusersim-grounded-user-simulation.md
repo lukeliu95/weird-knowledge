@@ -7,10 +7,10 @@ published: 2026-04（arXiv 预印本 2605.20204 [cs.HC]，v1 2026-04-07；DOI 10
 saved: 2026-10-22
 why: 探索日报：Luke 想看
 related_principles: [原则 4, 原则 1, 原则 10]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: []
+roots: [zhou-2026-sim2real-gap, schatzmann-2006-statistical-user-simulation, cheng-2023-compost-caricature, park-2024-generative-agent-simulations]
 ---
 
 ## 原文
@@ -107,4 +107,11 @@ roots: []
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：用真实用户留下的对话提炼“怎么说话”的画像（指令加原话例子）来约束模拟用户，比虚构人设更像真人（保真度 24%→45%），agent 成功率随之略降；人写的“你很生气”这类行为指令会被模型过度演绎，制造出不真实的难度。
+- 源知识：
+  - [用户模拟的仿真到现实差距（Sim2Real Gap）](../roots/zhou-2026-sim2real-gap.md) · 关系：直接源自 · 强弱：强。作者明引 Zhou 等 2026 已诊断出模拟用户不像真人，本文定位为给出办法
+  - [统计用户模拟（用模拟用户强化学习对话策略）](../roots/schatzmann-2006-statistical-user-simulation.md) · 关系：直接源自 · 强弱：强。作者明引的老路子：从真实对话语料学用户模型；本文是大模型时代的同一思路，只是学的是文风
+  - [大模型模拟里的“漫画化”（CoMPosT）](../roots/cheng-2023-compost-caricature.md) · 关系：相近 · 强弱：弱（模型复核通过）。“指令放大”（让模型扮生气的客户，它写出“抽泣”这类舞台动作）就是大模型模拟里的“漫画化”：把人设特征夸大；作者没有引用 CoMPosT
+  - [生成式 agent 模拟 1,000 个真人（个人模拟）](../roots/park-2024-generative-agent-simulations.md) · 关系：相近 · 强弱：弱（模型复核通过）。都是拿某个真人自己留下的材料去约束模拟，比只给人口描述更像这个人；Park 用访谈模拟态度和行为，本文用对话日志模拟文风（作者引的是 Park 2023，不是这篇）
+- 本质：这条新知识本质上是“从真实语料学用户模型”（数据驱动的用户模拟）在大模型扮用户评测 agent 场景下的应用：用真人原话当例子约束文风，替代会被过度演绎的人写指令。
+- 整理于：2026-10-24（第 6 轮）

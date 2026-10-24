@@ -29,3 +29,4 @@ verified: true
 |---|---|---|
 | [OpenAI Dots 放权指南：动作分进 6 个权限区，每周按证据升降](../clips/2026-10-18-choopyplug1-openai-dots-agent-permission-zones.md) | 相近 | 弱（模型复核通过） |
 | [yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](../clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md) | 相近 | 弱（模型复核通过） |
+| [长任务 agent 到底做了什么：把它自作主张的关键决定连同证据摆给人看；监控模型找得到证据，却常看不懂后果，最好的也只对上一半左右](../clips/2026-10-22-sun-evidence-grounded-agent-oversight.md) | 相近 | 弱（模型复核通过） |

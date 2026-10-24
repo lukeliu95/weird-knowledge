@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [吴恩达讲做产品的三个循环](../clips/2026-10-18-andrewyng-andrew-ng-three-product-loops.md) | 直接源自 | 强 |
 | [Operator靠CUA操作屏幕的原理](../clips/2026-10-18-dotey-openai-operator-cua-how.md) | 相近 | 弱（模型复核通过） |
+| [人在回路里只是摆设：agent 用得越久，人越没本事审它，要在产品和组织两头给人加"认知脚手架](../clips/2026-10-22-mitchell-agents-push-humans-out-of-loop.md) | 挑战 | 强 |

@@ -31,3 +31,5 @@ verified: true
 | [陶哲轩谈 AI 与数学的演讲要点](../clips/2026-10-18-dotey-terence-tao-ai-math-talk.md) | 相近 | 弱（模型复核通过） |
 | [用个人AI编排者带动一支永不睡觉的开发队](../clips/2026-10-18-ayi-ainotes-personal-ai-orchestrator-openclaw.md) | 相近 | 弱（模型复核通过） |
 | [Matrix：Agent 公司架构](../clips/2026-10-18-bruceguai-matrix-agent-company-architecture.md) | 相近 | 弱（模型复核通过） |
+| [RLCR：用集体奖励把模型训练成会分工的智能体组织](../clips/2026-10-24-genreasoning-genreasoning-rlcr-collective-rewards-agent-orgs.md) | 直接源自 | 强 |
+| [微软 Agensh：不设管家，最多 1024 个 agent 靠共享工作区和团队 Wiki 自协作，规模变大后自发长出评审和整合者](../clips/2026-10-22-aigclink-agensh-decentralized-1024-agents.md) | 相近 | 弱（模型复核通过） |

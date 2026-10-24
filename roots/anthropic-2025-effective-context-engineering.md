@@ -35,3 +35,4 @@ verified: true
 | [Manus 把工具分成三层的设计](../clips/2026-10-18-dotey-manus-three-layer-tools.md) | 相近 | 弱（模型复核通过） |
 | [上下文工程：智能体的核心实践指南](../clips/2026-10-18-shao-meng-context-engineering-guide.md) | 相近 | 弱（模型复核通过） |
 | [Claude 5 代模型的上下文工程新规矩：系统提示删掉八成，少写规则和例子，按需加载](../clips/2026-10-21-shihipar-context-engineering-claude-5.md) | 直接源自 | 强 |
+| [编程 agent 的经验记忆，难点不在找得准，而在存成什么样、什么时候给、给完就撤：修复率 24.9% 到 27.6%，成本降 17%，但对最强的模型反而有害](../clips/2026-10-22-chen-rem-experience-memory-coding-agents.md) | 相近 | 弱（模型复核通过） |

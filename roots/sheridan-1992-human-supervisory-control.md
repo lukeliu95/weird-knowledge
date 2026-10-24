@@ -33,3 +33,4 @@ verified: true
 | [Agent 循环工程晚宴讨论要点](../clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | 相近 | 弱（模型复核通过） |
 | [把推特运营交给 AI 62 天的结果](../clips/2026-10-18-weiyipei-ai-agent-runs-twitter-62-days.md) | 相近 | 弱（模型复核通过） |
 | [DeepSeek 工程师：手艺在过时](../clips/2026-10-18-maxforai-deepseek-kernel-engineer-essay.md) | 相近 | 弱（模型复核通过） |
+| [长任务 agent 到底做了什么：把它自作主张的关键决定连同证据摆给人看；监控模型找得到证据，却常看不懂后果，最好的也只对上一半左右](../clips/2026-10-22-sun-evidence-grounded-agent-oversight.md) | 相近 | 弱（模型复核通过） |

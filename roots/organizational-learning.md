@@ -31,3 +31,4 @@ verified: true
 | [Matrix：Agent 公司架构](../clips/2026-10-18-bruceguai-matrix-agent-company-architecture.md) | 相近 | 弱（模型复核通过） |
 | [Claude Code之父的三条心得](../clips/2026-10-18-ayi-ainotes-boris-cherny-workflow-three-rules.md) | 相近 | 弱（模型复核通过） |
 | [Harness²：agent 不改模型，靠对照试验改自己的运行框架，还学会怎么改得更好](../clips/2026-10-19-xu-harness2-recursive-agent-harnessing.md) | 相近 | 弱（模型复核通过） |
+| [Harness² 解读：没有标准答案时让新旧 harness 同条件对跑定去留，并把\"怎么改好自己\"沉淀成经验](../clips/2026-10-22-xudong-harness-squared-self-evolution.md) | 相近 | 弱（模型复核通过） |

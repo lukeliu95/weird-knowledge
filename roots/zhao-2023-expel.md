@@ -29,3 +29,5 @@ verified: true
 | [大白话讲清 Agent、工作流与 ReACT](../clips/2026-10-18-yangyi-agent-workflow-react-explained.md) | 相近 | 弱（模型复核通过） |
 | [Harness²：agent 不改模型，靠对照试验改自己的运行框架，还学会怎么改得更好](../clips/2026-10-19-xu-harness2-recursive-agent-harnessing.md) | 相近 | 弱（模型复核通过） |
 | [agent 的记忆先存原始轨迹，等新任务来了再现场整理，比事先提炼成反思或 skill 更好用](../clips/2026-10-20-zhou-just-in-time-memory.md) | 挑战 | 强 |
+| [Harness² 解读：没有标准答案时让新旧 harness 同条件对跑定去留，并把\"怎么改好自己\"沉淀成经验](../clips/2026-10-22-xudong-harness-squared-self-evolution.md) | 相近 | 弱（模型复核通过） |
+| [编程 agent 的经验记忆，难点不在找得准，而在存成什么样、什么时候给、给完就撤：修复率 24.9% 到 27.6%，成本降 17%，但对最强的模型反而有害](../clips/2026-10-22-chen-rem-experience-memory-coding-agents.md) | 相近 | 强 |

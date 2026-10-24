@@ -31,3 +31,4 @@ verified: true
 | [前线部署工程师为何是 AI 落地时代的关键职业](../clips/2026-10-18-indigox-forward-deployed-engineer-ai-era.md) | 直接源自 | 强 |
 | [范冰免费开源新书《前置部署工程师》](../clips/2026-10-18-iluciddreaming-fde-book-free-open-source.md) | 直接源自 | 强 |
 | [范冰《前线部署工程师》：模型不稀缺了，稀缺的是把模型塞进客户真实业务的人](../clips/2026-10-21-fanbing-fde-guidance-book.md) | 直接源自 | 强 |
+| [OpenAI FDE 实战：Codex 变强后删掉九成定制代码](../clips/2026-10-24-xudong07452910-xudong-openai-fde-codex-deleted-custom-code.md) | 直接源自 | 强 |

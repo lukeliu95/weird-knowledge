@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [外层harness让智能体连跑数小时](../clips/2026-10-18-baoweiheihei-harness-unattended-long-running.md) | 相近 | 弱（模型复核通过） |
+| [让大模型当"变异器"做进化：一套几乎通吃的代码和提示词优化办法，开源 Darwinian Evolver](../clips/2026-10-22-imbue-llm-evolution-universal-optimizer.md) | 直接源自 | 强 |

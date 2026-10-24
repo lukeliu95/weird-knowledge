@@ -32,3 +32,4 @@ verified: true
 | [57% 的原始出处：客户平均走完购买过程的 57% 才认真接触销售](../clips/2026-10-18-ceb-digital-evolution-b2b-marketing.md) | 相近 | 弱（模型复核通过） |
 | [日本 B2B 采购者：八成嫌官网都是一般论，57.1% 按“诚实”决定找谁询问](../clips/2026-10-20-ideatech-btob-buyer-information-contact-survey.md) | 相近 | 弱（模型复核通过） |
 | [生成 AI 时代的 BtoB 买方旅程图：见销售之前，74.3% 的买方心里已定好首选，84.7% 不愿填表单](../clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md) | 直接源自 | 强 |
+| [厂商调查：B2B 采购者 66.4% 用生成式 AI 选供应商，98% 说不知名的公司只要 AI 推荐理由扎实也会列入候选](../clips/2026-10-22-probel-btob-buyers-ai-vendor-selection-survey.md) | 相近 | 弱（模型复核通过） |

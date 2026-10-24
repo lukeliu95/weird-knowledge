@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Anthropic 多智能体研究系统详解](../clips/2026-10-18-oran-ge-anthropic-multi-agent-research.md) | 直接源自 | 强 |
+| [RLCR：用集体奖励把模型训练成会分工的智能体组织](../clips/2026-10-24-genreasoning-genreasoning-rlcr-collective-rewards-agent-orgs.md) | 直接源自 | 强 |

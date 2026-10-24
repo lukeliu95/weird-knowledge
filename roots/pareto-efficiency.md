@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [模型不动，只让技能库从用户请求里长：设计 agent 的技能从 76 个长到 139 个](../clips/2026-10-20-du-designer-rsi-procedural-memory.md) | 相近 | 弱（模型复核通过） |
+| [智谱唐杰团队开源 HarnessPro：agent 无标签自己改 harness，按"省钱、均衡、性能"三档进化，成本最多降 53%](../clips/2026-10-24-qbitai-harnesspro-pareto-rsi.md) | 直接源自 | 强 |

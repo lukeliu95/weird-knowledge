@@ -7,10 +7,10 @@ published: 2026-10-23 21:38 UTC
 saved: 2026-10-24
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 学习与研究
-roots: []
+roots: [liu-2026-ultrashort-wave-glymphatic, iliff-2012-glymphatic-pathway, xie-2013-sleep-metabolite-clearance, fultz-2019-sleep-csf-oscillations, murdock-2024-gamma-glymphatic]
 ---
 
 ## 原文
@@ -38,3 +38,12 @@ roots: []
 
 ## 溯源
 
+- 核心主张：（转述，有夸大）小鼠实验：40.68 MHz 超短波非侵入照射 10 分钟就能增强大脑类淋巴清除，靠诱发类似深睡的 Delta 同步放电和 AQP4 水通道；在创伤性脑损伤和阿尔茨海默病模型小鼠上减轻脑水肿、改善认知。
+- 源知识：
+  - [超短波神经调控增强类淋巴清除（小鼠）](../roots/liu-2026-ultrashort-wave-glymphatic.md) · 关系：直接源自 · 强弱：强。原始论文（Science Advances 2026，只读了摘要）：摘要说“改善认知缺陷”，没说“逆转”；10 分钟见效是在健康小鼠上测的类淋巴流动，全部结果都在小鼠上，转述里的“核弹”“一键清洗”“斑块被冲刷干净”是夸大
+  - [类淋巴系统（血管旁通路清除脑内废物）](../roots/iliff-2012-glymphatic-pathway.md) · 关系：直接源自 · 强弱：强。“大脑有专属的废物清理网络”就是这篇奠基论文提出的类淋巴通路，靠 AQP4 水通道清除淀粉样蛋白
+  - [睡眠驱动大脑代谢废物清除](../roots/xie-2013-sleep-metabolite-clearance.md) · 关系：直接源自 · 强弱：强。“清洗只在深睡时启动”来自这篇；但 2024 年 Miao 等在小鼠上测出睡眠时清除反而下降，这个前提有争议
+  - [人类睡眠中神经慢波、血流和脑脊液的耦合振荡](../roots/fultz-2019-sleep-csf-oscillations.md) · 关系：相近 · 强弱：弱（模型复核通过）。人在非快速眼动睡眠中，神经慢波之后跟着脑脊液流动波，和“Delta 同步驱动清洗”是同一思路
+  - [40 Hz 多感官伽马刺激促进类淋巴清除淀粉样蛋白](../roots/murdock-2024-gamma-glymphatic.md) · 关系：相近 · 强弱：弱（模型复核通过）。40 Hz 声光刺激通过类淋巴系统清除小鼠淀粉样蛋白，是“用非侵入物理刺激打开清洗”的前作，只是频率和方式不同
+- 本质：这条新知识本质上是“睡眠时神经慢波驱动类淋巴清除”这一假说在非侵入物理刺激场景下的应用；目前只是小鼠结果，离人用还远，“睡眠促进清除”本身也有反对证据。
+- 整理于：2026-10-24（第 6 轮）

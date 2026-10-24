@@ -43,3 +43,4 @@ verified: true
 | [写好Spec后让Agent整周自动开发](../clips/2026-10-18-timyangnet-spec-driven-agent-development.md) | 相近 | 弱（模型复核通过） |
 | [常驻 agent 的 6 层结构（推文作者据 OpenAI 资料自制的 PDF）](../clips/2026-10-18-choopyplug1-openai-always-on-agent-six-layers.md) | 相近 | 弱（模型复核通过） |
 | [Meta 的瘦编排器模式：编排器只管路由和检查，不做领域推理，14 个专项子 agent 各管一块](../clips/2026-10-20-meta-thin-orchestrator-agent-architecture.md) | 相近 | 弱（模型复核通过） |
+| [Harrison Chase：agent 里很多步骤是是非题不是生成，交给决策模型给带校准的概率，大模型只做难的](../clips/2026-10-22-hwchase17-yes-no-calls-jev.md) | 相近 | 弱（模型复核通过） |

@@ -7,10 +7,10 @@ published: 2026-10-23 01:39 UTC
 saved: 2026-10-24
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: AI 产品与创业
-roots: []
+roots: [senra-2026-doug-leone-interview, botha-2021-sequoia-capital-fund, shefrin-1985-disposition-effect, bessembinder-2018-stocks-vs-treasury-bills, zero-to-one]
 ---
 
 ## 原文
@@ -55,3 +55,12 @@ roots: []
 
 ## 溯源
 
+- 核心主张：风投最大的错不是投错公司，而是太早卖掉真正的赢家：伟大公司上市后还会复利增长几十年，面对无限市场的赢家应一直拿着；10 年期封闭基金的结构逼人过早套现。
+- 源知识：
+  - [David Senra 访谈红杉 Doug Leone（太早卖掉赢家）](../roots/senra-2026-doug-leone-interview.md) · 关系：直接源自 · 强弱：强。转述的原访谈：Leone 亲口说“太早卖掉赢家”是风投人人犯过的错，并举了英伟达、谷歌、思科、苹果；具体持股比例是口述、自动转写，未另行核实
+  - [红杉资本永续基金（告别 10 年基金周期）](../roots/botha-2021-sequoia-capital-fund.md) · 关系：直接源自 · 强弱：强。文中提到的红杉永续基金；Botha 原文说 10 年基金周期已经过时，新结构让红杉能在上市后长期持有
+  - [处置效应（太早卖赢家、太久拿输家）](../roots/shefrin-1985-disposition-effect.md) · 关系：相近 · 强弱：弱（模型复核通过）。投资者普遍“太早卖赢家、太久拿输家”（处置效应）；这里出现在机构层面，成因多了基金期限和回报率考核
+  - [股票跑赢国库券吗（4% 的公司创造全部净财富）](../roots/bessembinder-2018-stocks-vs-treasury-bills.md) · 关系：相近 · 强弱：弱（模型复核通过）。美股自 1926 年以来的全部净财富增长来自约 4% 的公司，长期复利集中在少数赢家，支持“拿住赢家就是全部策略”
+  - [从 0 到 1](../roots/zero-to-one.md) · 关系：相近 · 强弱：弱（模型复核通过）。书中“跟着钱走”一章讲风投回报服从幂律，一两家公司决定整只基金，和 Leone 只追百倍级赢家同一逻辑
+- 本质：这条新知识本质上是“回报服从幂律、复利集中在少数赢家”在风投退出时机上的应用：处置效应加上 10 年期基金结构，让机构过早卖掉了能长期复利的赢家。
+- 整理于：2026-10-24（第 6 轮）

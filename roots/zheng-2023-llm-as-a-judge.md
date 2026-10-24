@@ -26,3 +26,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [开源模型自我验证跑赢闭源模型](../clips/2026-10-18-jackyk02-self-verification-open-model-beats-closed.md) | 直接源自 | 强 |
+| [智谱唐杰团队开源 HarnessPro：agent 无标签自己改 harness，按"省钱、均衡、性能"三档进化，成本最多降 53%](../clips/2026-10-24-qbitai-harnesspro-pareto-rsi.md) | 挑战 | 强 |
+| [模拟用户给 agent 开了"简单模式"：451 名真人跑完整 τ-bench，对照 31 个大模型模拟器，模拟用户太配合、打分太宽，最好的也只有 76 分（真人 93 分）](../clips/2026-10-22-zhou-sim2real-gap-user-simulation.md) | 挑战 | 弱（模型复核通过） |

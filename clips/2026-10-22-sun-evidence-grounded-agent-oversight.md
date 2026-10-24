@@ -7,10 +7,10 @@ published: 2026-10（arXiv 预印本 2610.06406 [cs.AI]，v1 2026-10-05；DOI 10
 saved: 2026-10-22
 why: 探索日报：Luke 想看
 related_principles: [原则 12, 原则 6, 原则 10]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [endsley-1995-situation-awareness, endsley-1995-out-of-the-loop, lee-2004-trust-in-automation, sheridan-1992-human-supervisory-control, management-by-exception]
 ---
 
 ## 原文
@@ -101,3 +101,12 @@ agent 能做长任务（改整个代码库、复现研究、分析数据）之�
 
 ## 溯源
 
+- 核心主张：监督长任务 agent，关键是把它自作主张、会改变结果的决定连同证据挑出来给人核实；用确定的程序把散落的证据整理成行为图，能帮监控模型找到证据，但模型常常看到了证据却判断不对后果，最好的也只对上一半左右，误报也高。
+- 源知识：
+  - [情境意识理论（感知、理解、预判三层）](../roots/endsley-1995-situation-awareness.md) · 关系：直接源自 · 强弱：强。论文第 1 节明引 Endsley 1995，把监督定义为对 agent 行为的情境意识（注意到发生了什么、理解它的意义、预判后果）；“找到证据却看不懂后果”恰好是第一层（感知）做到了、第二三层（理解、预判）没做到。
+  - [脱离回路的绩效问题与控制等级](../roots/endsley-1995-out-of-the-loop.md) · 关系：直接源自 · 强弱：强。明引 Endsley 和 Kiris 1995；人从每一步自己决定变成看 agent 执行，正是“脱离回路”问题的起点，本文要补的就是这时丢掉的情境意识。
+  - [对自动化的信任：为恰当依赖而设计](../roots/lee-2004-trust-in-automation.md) · 关系：直接源自 · 强弱：强。明引 Lee 和 See 2004；只把真正该核实的决定交给人、少报误报，是在为“恰当依赖”设计；论文里部分模型误报率仍高（FeedbackTrace 上 84%），正是会让人不再细看的那种情况。
+  - [人类监督控制](../roots/sheridan-1992-human-supervisory-control.md) · 关系：相近 · 强弱：弱（模型复核通过）。“人的角色从每一步自己决定变成监督 agent 执行”几乎就是 Sheridan 的人类监督控制：人做计划、监控、必要时介入。论文没引 Sheridan。
+  - [例外管理（例外原则）](../roots/management-by-exception.md) · 关系：相近 · 强弱：弱（模型复核通过）。不让人看全部记录，只把偏离需求、有后果的决定筛出来交给人核实，是“例外管理”在 agent 监督上的做法。
+- 本质：这条新知识本质上是“情境意识”和“例外管理”在长任务 agent 监督上的应用：用确定的程序整理证据、只把有后果的决定交给人，难点卡在从“看到”到“看懂后果”这一层。
+- 整理于：2026-10-24（第 6 轮）

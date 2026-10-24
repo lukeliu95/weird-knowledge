@@ -7,10 +7,10 @@ published: 2026-10-10 04:31 UTC
 saved: 2026-10-22
 why: "探索日报：Luke 想看"
 related_principles: [原则 11, 原则 3, 原则 12]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [dual-process-theory, chen-2023-frugalgpt, anthropic-2024-building-effective-agents, guo-2017-calibration, comparative-advantage]
 ---
 
 ## 原文
@@ -89,3 +89,12 @@ I broke down how to wire Jev into your agent + the exact router setup in the art
 
 ## 溯源
 
+- 核心主张：agent 里大量步骤其实是是非题、选择题，不需要生成；把这些交给一个便宜的小决策模型直接给出带校准的概率，贵的大模型只做真正难的思考，真正的动作交给代码执行。
+- 源知识：
+  - [双过程理论（系统一 / 系统二）](../roots/dual-process-theory.md) · 关系：直接源自 · 强弱：强。推文链到的 LangChain 文章标题就把 Jev 叫作“系统一模型”：快速直接给判断的是系统一，逐字生成、费力推理的大模型是系统二。
+  - [FrugalGPT：用级联大模型省钱又提效](../roots/chen-2023-frugalgpt.md) · 关系：相近 · 强弱：弱（模型复核通过）。“便宜的模型挡在前面，判断哪些值得交给贵的模型”就是 FrugalGPT 的级联和路由，只是从问答搬到了 agent 每一步的分岔口。推文没引它。
+  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：相近 · 强弱：弱（模型复核通过）。该文的“路由”工作流就是先给输入分类、简单的交给小模型、难的交给大模型；Harrison 说的“这些判断在 harness 里放在哪”讲的就是这种位置。
+  - [现代神经网络的校准（温度缩放）](../roots/guo-2017-calibration.md) · 关系：相近 · 强弱：弱（模型复核通过）。卖点是“带校准的概率”：模型说八成把握时真的约八成对，才能拿概率定门槛、决定要不要升级给大模型；Guo 等 2017 是指出现代神经网络失准、并用温度缩放修正的经典论文。推文只用了“校准”这个词，没引它。
+  - [比较优势](../roots/comparative-advantage.md) · 关系：相近 · 强弱：弱（模型复核通过）。被引推文说“不是 Jev 比 Claude 聪明，而是没人要它当 Claude”：大模型做是非题也许更准，但机会成本高，让它专做相对最擅长的难事、把小判断交出去整体更划算，这就是比较优势。
+- 本质：这条新知识本质上是“级联加路由”（便宜的先判、值得的才交给贵的）在 agent 每一步分岔口上的应用，用“系统一 / 系统二”做比喻，靠概率校准来定交接的门槛。
+- 整理于：2026-10-24（第 6 轮）

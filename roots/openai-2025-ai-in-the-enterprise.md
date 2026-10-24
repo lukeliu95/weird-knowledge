@@ -27,3 +27,4 @@ AI 在企业里有三类价值（提升员工表现、自动化例行操作、�
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [OpenAI 企业用 AI 的七条经验](../clips/2026-10-18-shao-meng-openai-enterprise-ai-lessons.md) | 直接源自 | 强 |
+| [OpenAI FDE 实战：Codex 变强后删掉九成定制代码](../clips/2026-10-24-xudong07452910-xudong-openai-fde-codex-deleted-custom-code.md) | 相近 | 弱（模型复核通过） |
