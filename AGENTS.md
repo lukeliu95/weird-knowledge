@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.23 · 2026-10-24 · 更新记录见文末
+> v1.24 · 2026-10-24 · 更新记录见文末
 
 ## 你是谁
 
@@ -326,12 +326,12 @@ verified: true
 
 - 每个任务都要有测试集，不靠感觉。现在有的：点赞预测（L1）的回顾式测试集和每天的前瞻测试、Luke 亲口给的标签、出处核查（D1）
 - 测试集分开发集和测试集（按编号固定分，改动只看开发集的错题，是否采用看测试集）
-- 前瞻测试：每天抓一份 Luke 首页时间线快照，先盲测，满 48 小时再对答案。考题来自未来，模型背不过
+- 前瞻测试：考题来自未来，模型背不过。主力是**新点赞配对考**（`tools/evolve/l1_future.py`）：冠军上任以后 Luke 新点的赞当"会点"，同一时段首页快照里没点的当"不会点"，用冠军盲打分，按负样本来自"为你推荐"还是关注流分开报（两边来源不同，成绩偏乐观）；再加**日报回答**（冠军上任以后的日报，先打分、后由 Luke 答）。首页快照每 6 小时一份照抓，满 48 小时对答案，没题也记一行（2026-10-24 查明：他点赞的多是推荐流热帖，快照里几乎没有）
 - Luke 亲口给的标签（`private/l1/labels.jsonl`）最值钱，以他的回答为准
 
 ### 每一轮：收、考、问、改、报
 
-1. **收**：跑 `python3 tools/evolve/l1_daily.py`（抓快照、对答案），收进 Luke 新的回答
+1. **收**：跑 `python3 tools/evolve/l1_daily.py`（抓快照、对答案、收新点赞配对考的题并打分），收进 Luke 新的回答
 2. **考**：用当前冠军配置（`private/l1/champion.json`）打分，记一致率和校准度
 3. **问**：挑题请 Luke 判断"会不会点赞"，每批 10 条，回字母就行。两种挑法交替：模型最拿不准的（概率最接近一半）；或者为了验证某个关于 Luke 的假设，每个假设配 2 条
 4. **改**：按下面的规矩改
@@ -381,7 +381,7 @@ verified: true
 6b. **点赞对账**（`explore.py due` 里 `likes` 为 true，每 3 小时一次）：`explore.py likes`。候选池里被 Luke 点了赞的，自动记成"想看"；库里还没有的新点赞写进 `private/explore/likes/pending.jsonl`，按「流程三」读完、写标题、存进 `clips/`（成人向等不适合公开的先扣下，在下一份日报推送里一句话问 Luke）。做完跑 `explore.py mark likes`
 7. **每天的活**（`explore.py due` 里 `daily` 为 true 时做，做完跑 `explore.py mark daily`）：**长新方向**：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`。同一轮顺手跑 `python3 tools/evolve/l3_extract.py`，把这台 Mac 上新会话里 Luke 做过的选择抽进决定预测的测试集（只放 `private/l3/`）；跑 `python3 tools/evolve/l1_collect.py authors --max 5`，多攒点赞预测的弱负样本（X 会限流，每天只抓 5 位作者）；跑 `python3 tools/mind/salesroom.py sync` 和 `salesroom.py extract --limit 40`，把 Salesroom 新的会议拉下来、用本地 Qwen 抽客户原话和 Luke 的判断（Qwen 连不上就跳过，不改用外部模型）
 8. **记账**：`private/` 里提交一次（`git -C private add explore && git -C private commit -m "探索：<round>"`）。第 1 步存了新知识的，按「其他约定 · git」提交并推送公开仓库
-9. **周报**（`explore.py due` 里 `weekly` 为 true 时做，做完跑 `explore.py mark weekly`）：先跑 `l1_collect.py bookmarks` 和 `l1_collect.py own` 更新书签和 Luke 自己发的帖，再跑 `python3 tools/evolve/l1_skill.py refresh` 重新提炼口味 skill（赢了才换，结果写进自我优化方案的「进度」）；跑 `python3 tools/mind/salesroom.py synthesize`，去掉客户名后重写「客户真实声音」和「Luke 在会上怎么判断」；`explore.py report`；再跑 `python3 tools/evolve/l3_eval.py --cond q2`（决定预测的成绩，Opus），和"永远选第一个""永远选推荐"、他不按推荐走的题分开报。一段话加数字追加进方案的「进度」一节，提交推送
+9. **周报**（`explore.py due` 里 `weekly` 为 true 时做，做完跑 `explore.py mark weekly`）：先跑 `l1_collect.py bookmarks` 和 `l1_collect.py own` 更新书签和 Luke 自己发的帖，再跑 `python3 tools/evolve/l1_skill.py refresh` 重新提炼口味 skill（赢了才换，结果写进自我优化方案的「进度」）；跑 `python3 tools/mind/salesroom.py synthesize`，去掉客户名后重写「客户真实声音」和「Luke 在会上怎么判断」；`explore.py report`；`python3 tools/evolve/l1_future.py report --write`（点赞预测的未来考题成绩：新点赞配对考和日报回答，只算当前冠军上任以后的）；再跑 `python3 tools/evolve/l3_eval.py --cond q2`（决定预测的成绩，Opus），和"永远选第一个""永远选推荐"、他不按推荐走的题分开报。一段话加数字追加进方案的「进度」一节，提交推送
 
 ### 从 Luke 的真实行为里自动取标签
 
@@ -467,6 +467,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.24 | 2026-10-24 | 点赞预测的前瞻测试改成以"新点赞配对考"为主、加日报回答：冠军上任以后的新点赞当"会点"，同期快照里没点的当"不会点"，盲打分，周报里报；快照不再去掉已存进库的点赞，没题也记一行（起因：口味 skill 上任后 3 天没有一个前瞻成绩，查明 Luke 点赞的多是推荐流热帖、快照抓不到；Luke 选了 A 加 C） |
 | v1.23 | 2026-10-24 | 加了省钱版侦察兵的对照试验：轮流派标准版和省钱版，记每次的 token 花费，命中率不掉、花费省 30% 以上就改成默认（起因：Luke 问 RSI 研究到哪，选了 A：借 HarnessPro 的思路让探索循环分数和成本一起优化） |
 | v1.22 | 2026-10-23 | 接入 Salesroom 会议数据：每天同步、本地 Qwen 逐场抽客户原话和 Luke 的判断，每周去名后汇成「客户真实声音」和「Luke 在会上怎么判断」，用 `ask.py profile --work` 给别的 agent；会议原文只在本机、不进任何 git、不交外部接口（起因：Luke 要接入 Salesroom，选了 C：客户现场和他在会上的判断都做） |
 | v1.21 | 2026-10-23 | 流程六从每 20 分钟一轮改回每 60 分钟一轮（起因：Luke 要求"更新任务为每60分钟运行一次"） |
