@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 日本
 roots: [information-asymmetry, spence-1973-job-market-signaling, voluntary-disclosure-unraveling, perceived-risk]
-adopted: false
+adopted: true
 ---
 
 ## 原文

@@ -182,7 +182,8 @@
 
 - 状态：已确认（2026-10-21，第 4 轮新增）；2026-10-24 按补课第 10 题改了后半句，原来是“联系的时机交给买方”，Luke 选了 A
 - 已加进全局规则：2026-10-21，`~/.claude/CLAUDE.md` 第 5 节「买方先自己查」（2026-10-25 已同步成新说法，Luke 选了 A）
-- 补课第 10 题（2026-10-24，[简报](docs/study/2026-10-24-topic-10-buyer-self-research.md)；材料还没认可，不计入排名）：前半句大体站得住，但“先用 AI 查”在日本要打折，[総務省 2026 白书](clips/2026-10-24-soumu-2026-procurement-genai-use.md)里日本企业采购业务用生成式 AI 的只有 38.0%（美国 80.9%）。后半句改写的依据：[联系太多会把客户推走](clips/2026-10-24-godfrey-enough-is-enough-multichannel-contact.md)、[在客户要买的时候上门](clips/2026-10-24-kumar-customer-focused-sales-campaign-timing.md)、[展会见过再跟进](clips/2026-10-24-smith-trade-show-follow-up-personal-selling.md)、[买方决定什么时候找销售](clips/2026-10-24-kalwey-holistic-selling-buyer-led-journey.md)；“硬信息先公开”的依据：[IPA 云服务安全利用指引](clips/2026-10-24-ipa-sme-cloud-service-checklist.md)
+- 补课第 10 题（2026-10-24，[简报](docs/study/2026-10-24-topic-10-buyer-self-research.md)；2026-10-25 Luke 认可全部 9 份，计入排名）：前半句大体站得住，但“先用 AI 查”在日本要打折，[総務省 2026 白书](clips/2026-10-24-soumu-2026-procurement-genai-use.md)里日本企业采购业务用生成式 AI 的只有 38.0%（美国 80.9%）。后半句改写的依据：[联系太多会把客户推走](clips/2026-10-24-godfrey-enough-is-enough-multichannel-contact.md)、[在客户要买的时候上门](clips/2026-10-24-kumar-customer-focused-sales-campaign-timing.md)、[展会见过再跟进](clips/2026-10-24-smith-trade-show-follow-up-personal-selling.md)、[买方决定什么时候找销售](clips/2026-10-24-kalwey-holistic-selling-buyer-led-journey.md)；“硬信息先公开”的依据：[IPA 云服务安全利用指引](clips/2026-10-24-ipa-sme-cloud-service-checklist.md)
+- 补课第 10 题新增的源知识（2026-10-25 认可）：[信息不对称](roots/information-asymmetry.md)（买方知道卖方比自己懂，所以会自己去查、要硬信息）、[心理抗拒理论](roots/brehm-1966-psychological-reactance.md)（被逼得太紧就反着来，联系太多招人烦）、[互惠规范](roots/reciprocity-social-psychology.md)（少量有用的联系换来回报）、[助推与赋能](roots/hertwig-2017-nudging-boosting.md)（销售的价值是帮买方自己做决定，不是说服）、[信号理论](roots/spence-1973-job-market-signaling.md)（第三方认证这类花成本的信号让买方能分辨好坏）。这一题之后，原则 13 的证据里有了政府资料和同行评审论文，不再只是厂商调查
 - 支撑的新知识：[日本 B2B 采购者：八成嫌官网都是一般论，57.1% 按“诚实”决定找谁询问](clips/2026-10-20-ideatech-btob-buyer-information-contact-survey.md)、[日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md)、[日本 B2B 的 AI 搜索对策：77% 觉得丢了商机，一半多还没动手，卡在不会做和算不清回报](clips/2026-10-20-probel-btob-ai-search-llmo-survey.md)、[Gartner 新 B2B 购买旅程：买方只花 17% 的时间见供应商](clips/2026-10-18-gartner-new-b2b-buying-journey.md)（共 4 条）
 - 第 5 轮新增：[生成 AI 时代的 BtoB 买方旅程图](clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md)、[HubSpot Japan《日本 BtoB 购买意识与实态调查》](clips/2026-10-21-hubspot-japan-state-of-buyer-2026.md)：日本买方见销售之前先自己用 AI 查，和这条的前半句一致
 - 对应的源知识：[CEB：B2B 营销的数字化演变（57% 研究）](roots/ceb-2012-digital-evolution-b2b-marketing.md)、[6sense 2024 B2B 买方体验报告](roots/6sense-2024-b2b-buyer-experience.md)、[Gartner 新 B2B 购买旅程（购买任务与买方赋能）](roots/gartner-2019-b2b-buying-journey.md)、[双面说服（正反两面信息）](roots/two-sided-persuasion.md)、[自愿披露与“沉默即坏消息”（信息解开）](roots/voluntary-disclosure-unraveling.md)、[信息经济学（搜寻成本与价格离散）](roots/stigler-1961-economics-of-information.md)、[生成式引擎优化（GEO）](roots/aggarwal-2024-geo.md)
@@ -198,9 +199,9 @@
 | 排名 | 源知识 | 被几条新知识指向（直接 / 连同间接） | 更底层的源头 |
 |---|---|---|---|
 | 1 | [反馈](roots/feedback.md) | 4 / 97 | 已到基础层 |
-| 2 | [控制论](roots/cybernetics.md) | 4 / 75 | 已到基础层 |
-| 3 | [自然选择](roots/natural-selection.md) | 0 / 65 | 已到基础层 |
-| 4 | [有限理性](roots/bounded-rationality.md) | 0 / 59 | 已到基础层 |
+| 2 | [控制论](roots/cybernetics.md) | 4 / 76 | 已到基础层 |
+| 3 | [自然选择](roots/natural-selection.md) | 0 / 66 | 已到基础层 |
+| 4 | [有限理性](roots/bounded-rationality.md) | 0 / 61 | 已到基础层 |
 | 5 | [比较优势](roots/comparative-advantage.md) | 2 / 50 | 已到基础层 |
 | 6 | [控制理论](roots/control-theory.md) | 0 / 45 | [反馈](roots/feedback.md) |
 | 7 | [分工](roots/division-of-labour.md) | 6 / 42 | [比较优势](roots/comparative-advantage.md) |
@@ -211,7 +212,9 @@
 | 12 | [效果律](roots/law-of-effect.md) | 0 / 34 | [自然选择](roots/natural-selection.md) |
 | 13 | [苦涩的教训](roots/bitter-lesson.md) | 12 / 33 | [摩尔定律](roots/moores-law.md) |
 | 14 | [构建高效的智能体](roots/anthropic-2024-building-effective-agents.md) | 17 / 31 | [智能体](roots/intelligent-agent.md)、[分工](roots/division-of-labour.md) |
-| 15 | [强化学习](roots/reinforcement-learning.md) | 2 / 28 | [效果律](roots/law-of-effect.md)、[控制理论](roots/control-theory.md) |
+| 15 | [信息不对称](roots/information-asymmetry.md) | 9 / 30 | 已到基础层 |
+
+2026-10-25 认可补课第 10 题的 9 份材料后：[信息不对称](roots/information-asymmetry.md)进了前 15（直接 9 条、连同间接 30 条），强化学习掉出去；控制论 75→76，自然选择 65→66，有限理性 59→61。
 
 和第 5 轮比：反馈从 84 条涨到 97 条，控制论 70→75，自然选择 56→64，有限理性 52→59，比较优势 43→50，分工 36→42。强化学习新进前 15，默会知识掉了出去。第 6 轮 22 条新知识里，追到这几个基础源头的主要是三组：agent 自己改自己的运行框架（HarnessPro、Harness² 解读、Evo² 解读、Imbue），用户模拟（Sim2Real 差距、RealUserSim、披露闸门、KnowSim），人怎么监督 agent（Mitchell、证据式监督）。
 
@@ -227,7 +230,7 @@
 
 ### 和经典理论对着干的
 
-第 1 轮 9 处，第 2 轮新增 21 处，第 3 轮新增 3 处，2026-10-19 认可补课第 1 题后计入 2 处，第 4 轮新增 6 处，第 5 轮新增 2 处；2026-10-21 弱关系复核删掉 5 处牵强的；第 6 轮新增 10 处，现在共 51 处。强的 18 处排在前面。
+第 1 轮 9 处，第 2 轮新增 21 处，第 3 轮新增 3 处，2026-10-19 认可补课第 1 题后计入 2 处，第 4 轮新增 6 处，第 5 轮新增 2 处；2026-10-21 弱关系复核删掉 5 处牵强的；第 6 轮新增 10 处；2026-10-25 认可补课第 10 题后计入 2 处，现在共 53 处。强的 19 处排在前面。
 
 | 新知识 | 对着干的经典 | 强弱 |
 |---|---|---|
@@ -237,6 +240,7 @@
 | [黄亚生预测中国模式走到尽头](clips/2026-10-18-bingliu34173809-huang-yasheng-china-model.md) | [中国模式（北京共识）](roots/china-model.md) | 强 |
 | [保险建议：孩子重疾险在香港买，成人买医疗险不买重疾](clips/2026-10-18-captainlufei999-insurance-advice-hk-critical-illness.md) | [保监会未成年人身故保险金限额通知（保监发〔2015〕90号）](roots/circ-2015-minor-death-benefit-cap.md) | 强 |
 | [Anthropic 设计负责人谈 AI 时代设计流程](clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | [双钻石设计流程](roots/double-diamond-design-process-model.md) | 强 |
+| [标明“有奖评论”也挡不住虚高：标明之后照样抬高评分和销量（论文摘要；“高近 0.5 星”只见于大学新闻稿）](clips/2026-10-24-park-incentivized-review-disclosure.md) | [FTC《广告中推荐和证言使用指南》](roots/ftc-endorsement-guides.md) | 强 |
 | [人和 AI 比设计游戏：AI 自己设计的卖得更贵，标明"人做的"也不加价](clips/2026-10-20-conlon-human-ai-competition-experiment.md) | [手工效应](roots/fuchs-2015-handmade-effect.md) | 强 |
 | [人在回路里只是摆设：agent 用得越久，人越没本事审它，要在产品和组织两头给人加"认知脚手架](clips/2026-10-22-mitchell-agents-push-humans-out-of-loop.md) | [人在环中](roots/human-in-the-loop.md) | 强 |
 | [杨立昆谈智能不等于控制欲](clips/2026-10-18-dotey-lecun-intelligence-not-domination.md) | [工具性趋同](roots/instrumental-convergence.md) | 强 |
@@ -274,6 +278,7 @@
 | [日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md) | [线上销售线索的短命（线索响应速度研究）](roots/oldroyd-2011-short-life-online-sales-leads.md) | 弱（模型复核通过） |
 | [会写代码才玩得好 vibe coding](clips/2026-10-18-aryanlabde-vibe-coding-needs-coding-skill.md) | [AI 对开发者生产率的影响：GitHub Copilot 对照实验](roots/peng-2023-copilot-developer-productivity.md) | 弱（模型复核通过） |
 | [买两台 DGX 出租视频算力的生意](clips/2026-10-18-boxmrchen-dgx-video-compute-rental.md) | [完全竞争](roots/perfect-competition.md) | 弱（模型复核通过） |
+| [标明“有奖评论”也挡不住虚高：标明之后照样抬高评分和销量（论文摘要；“高近 0.5 星”只见于大学新闻稿）](clips/2026-10-24-park-incentivized-review-disclosure.md) | [说服知识模型](roots/persuasion-knowledge-model.md) | 弱（模型复核通过） |
 | [挑战者销售：明星销售靠教给客户他没看到的问题，而不是靠关系](clips/2026-10-18-dixon-adamson-challenger-sale.md) | [SPIN 销售法](roots/rackham-1988-spin-selling.md) | 弱（模型复核通过） |
 | [WorkBuddy 播客：编程不再稀缺](clips/2026-10-18-ayi-ainotes-workbuddy-podcast-ai-era-skills.md) | [理解语言模型的谄媚（迎合用户）](roots/sharma-2023-sycophancy-language-models.md) | 弱（模型复核通过） |
 | [世界分成会用与不会用 ChatGPT](clips/2026-10-18-dotey-chatgpt-two-kinds-of-people.md) | [技能偏向型技术变革](roots/skill-biased-technological-change.md) | 弱（模型复核通过） |
@@ -299,6 +304,7 @@
 - **人在回路里还管不管用**（第 6 轮）：Mitchell 认为 agent 用得越久，人越没本事审它，人在回路里会变成摆设（挑战“人在环中”，强）。这是原则 12 的风险：放权靠证据升级，前提是人还看得懂证据。
 - **反向传播是不是唯一的路**（第 6 轮）：Q Labs 只靠前向计算预训练 Transformer，小规模上验证损失超过反向传播加 Adam（挑战反向传播，强）；实验只到 2.4 亿参数，作者自己说算力效率还差几个数量级。
 - **AI 之后人还有没有工作**（第 6 轮）：马斯克说有用的工作都会消失，人去“做园艺”；比较优势和 Acemoglu 的“自动化创造新任务”都说相反（都是弱，马斯克那条是推测）。
+- **标明是广告就够了吗**（补课第 10 题）：Park 等 2023 发现，有奖评论即使标明了和卖家的利害关系，照样抬高评分和销量（挑战 FTC 的"标明就行"，强）。日本 2023 年的隐性广告规制也是"标明"的思路。评价可不可信，看评论人是不是独立挑的，标签作用有限。
 
 ### 没找到源头的
 
@@ -386,24 +392,24 @@
 全部新知识按主题和发布年份分布，看关注点这几年怎么变。由 `tools/topic_map.py` 生成。
 
 <!-- topic-map:begin -->
-共 1875 条新知识（含已归档）。补课找来、还没认可的 45 条不计入。数字是每年存下的条数；按发布年份算，不是保存日期。
+共 1917 条新知识（含已归档）。补课找来、还没认可的 36 条不计入。数字是每年存下的条数；按发布年份算，不是保存日期。
 
 | 主题 | 更早 | 2023 | 2024 | 2025 | 2026 | 未知 | 合计 | 观点 / 工具 / 教程 |
 |---|---|---|---|---|---|---|---|---|
-| Agent 与 Skill |  | 8 | 38 | 116 | 131 |  | 293 | 58 / 181 / 54 |
-| 其他 |  | 25 | 32 | 47 | 95 |  | 199 | 74 / 110 / 15 |
+| Agent 与 Skill |  | 8 | 38 | 116 | 140 | 1 | 303 | 65 / 184 / 54 |
+| 其他 |  | 25 | 32 | 47 | 96 |  | 200 | 75 / 110 / 15 |
 | AI 产品与创业 |  | 18 | 32 | 43 | 92 |  | 185 | 134 / 41 / 10 |
-| 视频生成 |  | 2 | 10 | 18 | 143 |  | 173 | 13 / 69 / 91 |
-| 模型与本地部署 |  | 9 | 14 | 27 | 107 |  | 157 | 20 / 107 / 30 |
-| 编程智能体 |  | 4 | 21 | 38 | 87 |  | 150 | 32 / 55 / 63 |
-| 设计与前端 |  | 8 | 17 | 39 | 58 |  | 122 | 8 / 78 / 36 |
+| 视频生成 |  | 2 | 10 | 18 | 147 |  | 177 | 14 / 70 / 93 |
+| 模型与本地部署 |  | 9 | 14 | 27 | 112 |  | 162 | 22 / 109 / 31 |
+| 编程智能体 |  | 4 | 21 | 38 | 96 |  | 159 | 39 / 56 / 64 |
+| 设计与前端 |  | 8 | 17 | 39 | 59 |  | 123 | 8 / 79 / 36 |
 | 图像生成 |  | 11 | 29 | 45 | 21 |  | 106 | 1 / 62 / 43 |
+| 增长与获客 | 13 | 2 | 15 | 20 | 54 | 1 | 105 | 55 / 22 / 28 |
 | 提示词与写作 |  | 5 | 17 | 61 | 16 |  | 99 | 7 / 16 / 76 |
-| 增长与获客 | 10 | 1 | 15 | 19 | 53 | 1 | 99 | 49 / 22 / 28 |
+| 学习与研究 | 3 | 11 | 31 | 16 | 34 |  | 95 | 29 / 33 / 33 |
 | 语音与数字人 |  | 9 | 41 | 19 | 25 |  | 94 | 0 / 83 / 11 |
-| 学习与研究 | 3 | 11 | 31 | 16 | 32 |  | 93 | 28 / 32 / 33 |
 | 思维与成长 |  | 6 | 12 | 8 | 30 | 1 | 57 | 56 / 1 / 0 |
-| 日本 | 4 | 6 | 4 | 6 | 14 | 1 | 35 | 23 / 11 / 1 |
+| 日本 | 5 | 7 | 4 | 6 | 16 | 1 | 39 | 27 / 11 / 1 |
 | 历史与冷知识 |  | 3 | 1 | 3 | 6 |  | 13 | 11 / 1 / 1 |
 
 **每个主题的代表**（先选已溯源的，再选观点类，最后按发布时间取最新）
@@ -411,15 +417,15 @@
 - **Agent 与 Skill**：[AlphaCodium 与流程工程](clips/2026-10-18-dotey-alphacodium-flow-engineering.md)、[Agent 智能体是模型能力的放大器](clips/2026-10-18-waytoagi-agent-model-capability-amplifier.md)、[ChatGPTMac版提示词触发共享屏幕](clips/2026-10-18-dotey-chatgpt-mac-screen-share-prompt.md)
 - **其他**：[黄亚生预测中国模式走到尽头](clips/2026-10-18-bingliu34173809-huang-yasheng-china-model.md)、[缠论简纲思维导图](clips/2026-10-18-dtdt666-chanlun-mind-map.md)、[三旗理论：合法减税、保护资产、自由生活](clips/2026-10-18-eric-make-money-three-flags-theory.md)
 - **AI 产品与创业**：[学超级个体 Jack Butcher](clips/2026-10-18-starzq-jack-butcher-solo-brand.md)、[用 PHP 套现 5400 万美元](clips/2026-10-18-imwsl90-php-jquery-54m-dollars.md)、[开 100 家便利店经验写成选址指南](clips/2026-10-18-hitw93-convenience-store-site-selection.md)
-- **视频生成**：[Sora 团队伯克利课堂分享字幕翻译](clips/2026-10-18-dotey-sora-team-berkeley-talk.md)、[Tripo Eden：先建地图再渲染](clips/2026-10-18-svpino-tripo-eden-world-model-map.md)、[别再说 AI 电影，这就是电影](clips/2026-10-18-ehuanglu-ai-film-is-just-film.md)
+- **视频生成**：[Sora 团队伯克利课堂分享字幕翻译](clips/2026-10-18-dotey-sora-team-berkeley-talk.md)、[Tripo Eden：先建地图再渲染](clips/2026-10-18-svpino-tripo-eden-world-model-map.md)、[视频世界模型的长期记忆改用"平面块"来存：一个场景约 10 万块、约 5MB，比逐像素点云小三个数量级，生成几百帧后画面和几何仍连贯](clips/2026-10-25-he-ppmem-persistent-planar-memory-video-world-models.md)
 - **模型与本地部署**：[Karpathy 谈 GPT 现状](clips/2026-10-18-dotey-karpathy-state-of-gpt.md)、[合成数据与苦涩的教训讨论](clips/2026-10-18-dotey-synthetic-data-bitter-lesson.md)、[DeepSeek R1 论文解读：自学成才之路](clips/2026-10-18-oran-ge-deepseek-r1-paper-explained.md)
 - **编程智能体**：[AI 辅助编程带来的需求开发范式变化](clips/2026-10-18-dotey-ai-coding-requirements-shift.md)、[公司推广 AI 编程为何要靠内部](clips/2026-10-18-dotey-promote-ai-coding-in-company.md)、[AI 编程像人一样拆解任务的神仙项目](clips/2026-10-18-yangyi-task-breakdown-agent-project.md)
 - **设计与前端**：[设计师口袋心理学 53 个知识卡片](clips/2026-10-18-hitw93-designer-pocket-psychology.md)、[Anthropic 设计负责人谈 AI 时代设计流程](clips/2026-10-18-dotey-anthropic-design-process-ai-era.md)、[学 Vercel 设计系统的逻辑](clips/2026-10-18-mengkepm-vercel-design-system-learn-logic.md)
 - **图像生成**：[Qwen 生图 Turbo 开放权重](clips/2026-10-18-qwendevs-qwen-image-turbo-open-weights.md)、[Qwen 换脸换头 LoRA 更新](clips/2026-10-18-lonely-mh-qwen-image-face-swap-lora.md)、[Qwen-Image 2.1 即将开源](clips/2026-10-18-qwendevs-qwen-image-2-1-early-access.md)
-- **提示词与写作**：[Anthropic专家谈提示词工程师](clips/2026-10-18-eze-is-1-anthropic-prompt-engineering-notes.md)、[提示词精髓：有什么、做什么、怎么做](clips/2026-10-18-dotey-prompt-context-task-how.md)、[写提示词的三条路与第四条路：故事](clips/2026-10-18-lijigang-prompt-writing-fourth-path-story.md)
 - **增长与获客**：[采购中心和五种角色：企业买东西是一群人在组织里一起决定](clips/2026-10-18-webster-wind-organizational-buying-behavior.md)、[谢斯工业品购买者模型：几个部门一起买，冲突怎么解决决定了快慢](clips/2026-10-18-sheth-industrial-buyer-behavior.md)、[SPIN 销售法：大单靠按顺序提问让客户自己说出需求](clips/2026-10-18-rackham-spin-selling.md)
-- **语音与数字人**：[Jack Dorsey 发布全双工语音模型 Dessa](clips/2026-10-24-jack-dessa-full-duplex-speech-model.md)、[Fish 开源 Drama3 语音模型](clips/2026-10-18-kay2289123-fish-audio-drama3-open-source.md)、[Griffin 全双工视频模型解读](clips/2026-10-18-maxforai-griffin-full-duplex-video-model.md)
+- **提示词与写作**：[Anthropic专家谈提示词工程师](clips/2026-10-18-eze-is-1-anthropic-prompt-engineering-notes.md)、[提示词精髓：有什么、做什么、怎么做](clips/2026-10-18-dotey-prompt-context-task-how.md)、[写提示词的三条路与第四条路：故事](clips/2026-10-18-lijigang-prompt-writing-fourth-path-story.md)
 - **学习与研究**：[Samuel 的跳棋程序：机器靠自己对弈学习，下得比写它的人还好](clips/2026-10-18-samuel-machine-learning-checkers.md)、[Taylor 1968：提问协商——四层需求（Q1～Q4）和馆员问清需求的五个过滤器](clips/2026-10-19-taylor-question-negotiation-information-seeking.md)、[AIDE：让用户给样本打"相关/不相关"，用主动学习猜出他真正想查的数据](clips/2026-10-18-dimitriadou-aide-active-learning-data-exploration.md)
+- **语音与数字人**：[Jack Dorsey 发布全双工语音模型 Dessa](clips/2026-10-24-jack-dessa-full-duplex-speech-model.md)、[Fish 开源 Drama3 语音模型](clips/2026-10-18-kay2289123-fish-audio-drama3-open-source.md)、[Griffin 全双工视频模型解读](clips/2026-10-18-maxforai-griffin-full-duplex-video-model.md)
 - **思维与成长**：[张一鸣 66 条成长心得与延迟满足](clips/2026-10-18-sea-bitcoin-zhang-yiming-66-growth-tips.md)、[Paul Graham 谈超线性回报](clips/2026-10-18-dotey-paul-graham-superlinear-returns.md)、[一句话总结 AI 算法的含义](clips/2026-10-18-dotey-ai-algorithm-one-liner.md)
 - **日本**：[稟議和根回し：日本大企业里真正拍板的是起案人和事前协商](clips/2026-10-18-vogel-japanese-organization-decision-making.md)、[今天的上市公司还在用稟議管花钱：有预算也要再走一次稟議](clips/2026-10-18-kamiyama-budgeting-and-ringi-system.md)、[经产省 DXレポート：日本 CIO 倾向选大厂、接受老供应商的提案](clips/2026-10-18-meti-dx-report-2025-digital-cliff.md)
 - **历史与冷知识**：[日本稻田能否收二茬的回复](clips/2026-10-18-wangtianlaw-japan-rice-ratoon-crop.md)、[南明皇室受洗的冷知识：借调侃“历史老师去美国”说出来](clips/2026-10-18-tombkeeper-southern-ming-baptism.md)、[美国人一天生活的数据可视化](clips/2026-10-18-alexxubyte-day-in-life-americans-dataviz.md)
@@ -433,7 +439,7 @@ agent 主动去找一手材料，补框架里薄的地方，规则见 [AGENTS.md
 |---|---|---|---|---|
 | 1 日本企业怎么买 B2B 产品 | [2026-10-18](docs/study/2026-10-18-topic-1-japan-b2b-buying.md) | 25 份 | 14 个，如 [采购中心](roots/buying-center.md)、[稟議制](roots/ringi-system.md)、[根回し](roots/nemawashi.md)、[许可营销](roots/permission-marketing.md) | 等 Luke 回答 |
 | 4 问题协商 | [2026-10-19](docs/study/2026-10-19-topic-4-question-negotiation.md) | 21 份 | 18 个，如 [问题协商](roots/question-negotiation.md)、[知识异常状态](roots/anomalous-state-of-knowledge.md)、[偏好建构](roots/constructive-preferences.md)、[封闭世界假设](roots/closed-world-assumption.md) | 等 Luke 回答 |
-| 10 日本企业找销售前先自己查什么 | [2026-10-24](docs/study/2026-10-24-topic-10-buyer-self-research.md) | 9 份 | 9 个，如 [心理抗拒理论](roots/brehm-1966-psychological-reactance.md)、[助推与赋能](roots/hertwig-2017-nudging-boosting.md)、[信号理论](roots/spence-1973-job-market-signaling.md)、[面对面接触与城市经济](roots/storper-2004-buzz-face-to-face.md) | 等 Luke 回答 |
+| 10 日本企业找销售前先自己查什么 | [2026-10-24](docs/study/2026-10-24-topic-10-buyer-self-research.md) | 9 份 | 9 个，如 [心理抗拒理论](roots/brehm-1966-psychological-reactance.md)、[助推与赋能](roots/hertwig-2017-nudging-boosting.md)、[信号理论](roots/spence-1973-job-market-signaling.md)、[面对面接触与城市经济](roots/storper-2004-buzz-face-to-face.md) | Luke 已认 9 份（2026-10-25） |
 
 第 1 题和已有原则的关系（草稿，待 Luke 确认）：
 - 原则 10（回到一手材料）：这一题又查出 10 处误传，包括"57% 的买家联系销售前已经做好决定"和"冷电话成功率 0.3%"

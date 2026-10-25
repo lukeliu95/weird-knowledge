@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 增长与获客
 roots: [ftc-endorsement-guides, persuasion-knowledge-model, information-asymmetry]
-adopted: false
+adopted: true
 ---
 
 ## 原文

@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 日本
 roots: [stigler-1961-economics-of-information, storper-2004-buzz-face-to-face, transaction-cost]
-adopted: false
+adopted: true
 ---
 
 ## 原文

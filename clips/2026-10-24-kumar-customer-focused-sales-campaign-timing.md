@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 增长与获客
 roots: [venkatesan-2004-clv-resource-allocation, next-best-action-marketing, dawes-2021-95-5-rule, oldroyd-2011-short-life-online-sales-leads]
-adopted: false
+adopted: true
 ---
 
 ## 原文

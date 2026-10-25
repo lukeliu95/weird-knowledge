@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 增长与获客
 roots: [grewal-2015-b2b-buying-challenges, hertwig-2017-nudging-boosting, gartner-2019-b2b-buying-journey, dixon-2011-challenger-sale, robinson-1967-industrial-buying-creative-marketing, moriarty-spekman-1984-information-sources]
-adopted: false
+adopted: true
 ---
 
 ## 原文

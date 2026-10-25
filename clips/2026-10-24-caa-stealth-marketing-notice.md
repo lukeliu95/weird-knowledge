@@ -11,7 +11,7 @@ status: 已整理
 kind: 观点
 topic: 日本
 roots: [persuasion-knowledge-model, ftc-endorsement-guides, information-asymmetry]
-adopted: false
+adopted: true
 ---
 
 ## 原文
