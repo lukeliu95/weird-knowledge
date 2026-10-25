@@ -30,3 +30,4 @@ verified: true
 | [三旗理论：合法减税、保护资产、自由生活](../clips/2026-10-18-eric-make-money-three-flags-theory.md) | 相近 | 弱（模型复核通过） |
 | [工具站出海月入 3000 刀的一年踩坑记](../clips/2026-10-18-gefei55-tool-site-overseas-lessons.md) | 相近 | 弱（模型复核通过） |
 | [Marc Lou 六月赚 8.3 万美元](../clips/2026-10-18-marclou-marclou-june-2026-revenue.md) | 相近 | 弱（模型复核通过） |
+| [天涯大佬：2027 年以后要活成的样子（英语、AI、个人 IP、轻资产）](../clips/2026-10-24-caomei-nz-tianya-how-to-live-after-2027.md) | 换了说法 | 强 |

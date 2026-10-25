@@ -27,3 +27,4 @@ verified: true
 |---|---|---|
 | [巴菲特经典演讲：先保证不穷回去](../clips/2026-10-18-nextbullready-buffett-classic-speech.md) | 相近 | 弱（模型复核通过） |
 | [保险建议：孩子重疾险在香港买，成人买医疗险不买重疾](../clips/2026-10-18-captainlufei999-insurance-advice-hk-critical-illness.md) | 相近 | 弱（模型复核通过） |
+| [天涯大佬：2027 年以后要活成的样子（英语、AI、个人 IP、轻资产）](../clips/2026-10-24-caomei-nz-tianya-how-to-live-after-2027.md) | 相近 | 弱（模型复核通过） |

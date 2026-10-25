@@ -7,9 +7,9 @@ published: 2026-10-24 15:20 UTC
 saved: 2026-10-25
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
+status: 已归档
+kind: 教程
+topic: Agent 与 Skill
 roots: []
 ---
 

@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [离职大厂做 OPC 第一年收入报告](../clips/2026-10-18-weiyipei-opc-first-year-income-report.md) | 换了说法 | 弱（模型复核通过） |
+| [天涯大佬：2027 年以后要活成的样子（英语、AI、个人 IP、轻资产）](../clips/2026-10-24-caomei-nz-tianya-how-to-live-after-2027.md) | 相近 | 弱（模型复核通过） |

@@ -27,3 +27,4 @@ verified: true
 |---|---|---|
 | [Marc Lou 六月赚 8.3 万美元](../clips/2026-10-18-marclou-marclou-june-2026-revenue.md) | 相近 | 弱（模型复核通过） |
 | [Sohl-Dickstein 在斯坦福：稳妥的路已经不稳妥](../clips/2026-10-20-financeyf5-sohl-dickstein-safe-path-not-safe.md) | 相近 | 弱（模型复核通过） |
+| [天涯大佬：2027 年以后要活成的样子（英语、AI、个人 IP、轻资产）](../clips/2026-10-24-caomei-nz-tianya-how-to-live-after-2027.md) | 相近 | 弱（模型复核通过） |
