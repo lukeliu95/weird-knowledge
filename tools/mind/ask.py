@@ -74,7 +74,7 @@ def principles():
 
 # 回答里带"背后的道理"：Luke 2026-10-25 选了 A，回测准确率不掉才把默认改成开。
 # 2026-10-25 回测：同样 124 题，带 103、不带 102，高确定 34/35 对 33/34，所以默认开
-SOURCES_DEFAULT = True
+SOURCES_DEFAULT = True   # 10-25 晚改成先挑硬证据后重测：124 题带 104、不带 102
 TYPE_LABEL = {"论文": "研究论文", "方法论": "方法"}
 
 
@@ -91,14 +91,17 @@ def root_info(slug):
                 strong=sum(r == "强" for r in rows), n=len(rows))
 
 
+SOFT_LABELS = {"研究报告": 1, "厂商调查": 2}   # 咨询公司报告、厂商调查排在理论、论文、政府资料后面
+
+
 def principle_sources(k=2):
-    """每条原则在 framework.md 里链到的源知识，按"强关系多、被指向多"挑前 k 个。"""
+    """每条原则在 framework.md 里链到的源知识，先挑硬证据，再按"强关系多、被指向多"挑前 k 个。"""
     t = (E.REPO / "framework.md").read_text().split("\n## 二、")[0]
     parts = re.split(r"\n### (原则 \d+：[^\n]*)", t)
     out = {}
     for head, body in zip(parts[1::2], parts[2::2]):
         info = [r for r in map(root_info, dict.fromkeys(re.findall(r"\(roots/([^)]+)\.md\)", body))) if r]
-        out[head] = sorted(info, key=lambda r: (-r["strong"], -r["n"]))[:k]
+        out[head] = sorted(info, key=lambda r: (SOFT_LABELS.get(r["label"], 0), -r["strong"], -r["n"]))[:k]
     return out
 
 
