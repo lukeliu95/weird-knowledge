@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.26 · 2026-10-25 · 更新记录见文末
+> v1.27 · 2026-10-25 · 更新记录见文末
 
 ## 你是谁
 
@@ -327,6 +327,7 @@ verified: true
 - 每个任务都要有测试集，不靠感觉。现在有的：点赞预测（L1）的回顾式测试集和每天的前瞻测试、Luke 亲口给的标签、出处核查（D1）
 - 测试集分开发集和测试集（按编号固定分，改动只看开发集的错题，是否采用看测试集）
 - 前瞻测试：考题来自未来，模型背不过。主力是**新点赞配对考**（`tools/evolve/l1_future.py`）：冠军上任以后 Luke 新点的赞当"会点"，同一时段首页快照里没点的当"不会点"，用冠军盲打分，按负样本来自"为你推荐"还是关注流分开报（两边来源不同，成绩偏乐观）；再加**日报回答**（冠军上任以后的日报，先打分、后由 Luke 答）。首页快照每 6 小时一份照抓，满 48 小时对答案，没题也记一行（2026-10-24 查明：他点赞的多是推荐流热帖，快照里几乎没有）
+- **先补数据，暂不后训练**（Luke 2026-10-25 选了 C）：决定预测里，Luke 照着推荐选的题学不到他的判断。"他自己拿主意"的题（没按推荐走、没有推荐、纠正 agent）单独计数，攒到 150 道再考虑训练本地决策模型；来源是每天抽的纠正、每周的补数据题，和 Salesroom 会上的判断（本地 Qwen 开着时改写成选择题）
 - Luke 亲口给的标签（`private/l1/labels.jsonl`）最值钱，以他的回答为准
 
 ### 每一轮：收、考、问、改、报
@@ -379,9 +380,9 @@ verified: true
 5. **出日报**（`explore.py due` 里 `digest` 为 true，或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`，没答的日报再多也照出；然后派一个简介 subagent，任务说明是 `tools/explore/BRIEF.md` 全文加这份日报的路径，并把「其他约定 · 隐私」原样写进去，它读完 10 条原文，交回 `private/explore/digests/<stamp>.briefs.json`（每条的中文标题、3～5 条要点、和 Luke 的关系、篇幅）；跑 `explore.py enrich <stamp> <briefs.json>` 并进日报；把 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukeeMind 日报到了（10 条）"加网页链接。简介 subagent 20 分钟还没交回，就先 set 只有一句话的版本并推送，交回后再 enrich、重新 set
 6. **顺手跑流程五**：`python3 tools/evolve/l1_daily.py`
 6b. **点赞对账**（`explore.py due` 里 `likes` 为 true，每 3 小时一次）：`explore.py likes`。候选池里被 Luke 点了赞的，自动记成"想看"；库里还没有的新点赞写进 `private/explore/likes/pending.jsonl`，按「流程三」读完、写标题、存进 `clips/`（成人向等不适合公开的先扣下，在下一份日报推送里一句话问 Luke）。做完跑 `explore.py mark likes`
-7. **每天的活**（`explore.py due` 里 `daily` 为 true 时做，做完跑 `explore.py mark daily`）：**长新方向**：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`。同一轮顺手跑 `python3 tools/evolve/l3_extract.py`，把这台 Mac 上新会话里 Luke 做过的选择抽进决定预测的测试集（只放 `private/l3/`）；跑 `python3 tools/evolve/l1_collect.py authors --max 5`，多攒点赞预测的弱负样本（X 会限流，每天只抓 5 位作者）；跑 `python3 tools/mind/salesroom.py sync` 和 `salesroom.py extract --limit 40`，把 Salesroom 新的会议拉下来、用本地 Qwen 抽客户原话和 Luke 的判断（Qwen 连不上就跳过，不改用外部模型）
+7. **每天的活**（`explore.py due` 里 `daily` 为 true 时做，做完跑 `explore.py mark daily`）：**长新方向**：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`。同一轮顺手跑 `python3 tools/evolve/l3_extract.py`，把这台 Mac 上新会话里 Luke 做过的选择抽进决定预测的测试集（只放 `private/l3/`）；再跑 `python3 tools/evolve/l3_corrections.py`，把 Luke 纠正 agent 的地方（"不对""改成……"）改写成两选一的题，也只放 `private/l3/`；跑 `python3 tools/evolve/l1_collect.py authors --max 5`，多攒点赞预测的弱负样本（X 会限流，每天只抓 5 位作者）；跑 `python3 tools/mind/salesroom.py sync` 和 `salesroom.py extract --limit 40`，把 Salesroom 新的会议拉下来、用本地 Qwen 抽客户原话和 Luke 的判断（Qwen 连不上就跳过，不改用外部模型）
 8. **记账**：`private/` 里提交一次（`git -C private add explore && git -C private commit -m "探索：<round>"`）。第 1 步存了新知识的，按「其他约定 · git」提交并推送公开仓库
-9. **周报**（`explore.py due` 里 `weekly` 为 true 时做，做完跑 `explore.py mark weekly`）：先跑 `l1_collect.py bookmarks` 和 `l1_collect.py own` 更新书签和 Luke 自己发的帖，再跑 `python3 tools/evolve/l1_skill.py refresh` 重新提炼口味 skill（赢了才换，结果写进自我优化方案的「进度」）；跑 `python3 tools/mind/salesroom.py synthesize`，去掉客户名后重写「客户真实声音」和「Luke 在会上怎么判断」；`explore.py report`；`python3 tools/evolve/l1_future.py report --write`（点赞预测的未来考题成绩：新点赞配对考和日报回答，只算当前冠军上任以后的）；再跑 `python3 tools/evolve/l3_eval.py --cond q2`（决定预测的成绩，Opus），和"永远选第一个""永远选推荐"、他不按推荐走的题分开报。一段话加数字追加进方案的「进度」一节，提交推送
+9. **周报**（`explore.py due` 里 `weekly` 为 true 时做，做完跑 `explore.py mark weekly`）：先跑 `l1_collect.py bookmarks` 和 `l1_collect.py own` 更新书签和 Luke 自己发的帖，再跑 `python3 tools/evolve/l1_skill.py refresh` 重新提炼口味 skill（赢了才换，结果写进自我优化方案的「进度」）；跑 `python3 tools/mind/salesroom.py synthesize`，去掉客户名后重写「客户真实声音」和「Luke 在会上怎么判断」；`explore.py report`；`python3 tools/evolve/l1_future.py report --write`（点赞预测的未来考题成绩：新点赞配对考和日报回答，只算当前冠军上任以后的）；再跑 `python3 tools/evolve/l3_eval.py --cond q2`（决定预测的成绩，Opus），和"永远选第一个""永远选推荐"、他不按推荐走的题分开报。再跑 `python3 tools/mind/ask.py quiz`，把别的 agent 问过、还没回填 Luke 选了什么的题（最多 10 道，不附 lukeeMind 的猜测）发给 Luke，他回"1A 2C"后跑 `ask.py quiz-answer`。一段话加数字追加进方案的「进度」一节，提交推送
 
 ### 从 Luke 的真实行为里自动取标签
 
@@ -468,6 +469,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.27 | 2026-10-25 | 先补数据、暂不后训练：每天从会话里抽 Luke 纠正 agent 的地方改写成选择题，每周把别的 agent 问过、还没回填的题发给 Luke 回字母；"他自己拿主意"的题攒到 150 道再考虑训练（起因：Luke 问后训练方案，查明 128 道真实选择里只有 34 道显出他自己的判断，Luke 选了 C） |
 | v1.26 | 2026-10-25 | 输出带上背后的道理：给 Luke 汇报判断或建议时，每条带 1 个最硬的源知识和证据类型；lukeeMind 回答别的 agent 时，每条依据接上原则背后的源知识，`profile` 也带上。回测准确率没掉才默认开（起因：Luke 说只给原则人不好懂，输出时要带上源知识，选了 A） |
 | v1.25 | 2026-10-25 | 日报到点照出，不再因为有 3 份没答就停（起因：停出日报后侦察兵照跑，两天收了 578 条候选一条没送到 Luke，Luke 选了 B）；日报每条加简介：派一个 subagent 按 `tools/explore/BRIEF.md` 读原文，写中文标题、3～5 条要点、和 Luke 的关系、篇幅（起因：Luke 说每条只有一句话，看不出值不值得点开，要"相当于简介，内容再多一点"） |
 | v1.24 | 2026-10-24 | 点赞预测的前瞻测试改成以"新点赞配对考"为主、加日报回答：冠军上任以后的新点赞当"会点"，同期快照里没点的当"不会点"，盲打分，周报里报；快照不再去掉已存进库的点赞，没题也记一行（起因：口味 skill 上任后 3 天没有一个前瞻成绩，查明 Luke 点赞的多是推荐流热帖、快照抓不到；Luke 选了 A 加 C） |
