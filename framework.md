@@ -179,7 +179,7 @@
 ### 原则 13：买方先自己查、后找销售。一般信息被 AI 做便宜后，能让买方开口的是 AI 给不了的一手信息（缺点、风险、真实价格、不适合谁）。联系要踩在买方要买的时间点上，次数要少，走对方愿意的渠道；买方要的硬信息（服务保证、安全、解约条件、真实价格、实绩）先公开出来
 
 - 状态：已确认（2026-10-21，第 4 轮新增）；2026-10-24 按补课第 10 题改了后半句，原来是“联系的时机交给买方”，Luke 选了 A
-- 已加进全局规则：2026-10-21，`~/.claude/CLAUDE.md` 第 5 节「买方先自己查」（2026-10-24 改的后半句还没同步过去）
+- 已加进全局规则：2026-10-21，`~/.claude/CLAUDE.md` 第 5 节「买方先自己查」（2026-10-25 已同步成新说法，Luke 选了 A）
 - 补课第 10 题（2026-10-24，[简报](docs/study/2026-10-24-topic-10-buyer-self-research.md)；材料还没认可，不计入排名）：前半句大体站得住，但“先用 AI 查”在日本要打折，[総務省 2026 白书](clips/2026-10-24-soumu-2026-procurement-genai-use.md)里日本企业采购业务用生成式 AI 的只有 38.0%（美国 80.9%）。后半句改写的依据：[联系太多会把客户推走](clips/2026-10-24-godfrey-enough-is-enough-multichannel-contact.md)、[在客户要买的时候上门](clips/2026-10-24-kumar-customer-focused-sales-campaign-timing.md)、[展会见过再跟进](clips/2026-10-24-smith-trade-show-follow-up-personal-selling.md)、[买方决定什么时候找销售](clips/2026-10-24-kalwey-holistic-selling-buyer-led-journey.md)；“硬信息先公开”的依据：[IPA 云服务安全利用指引](clips/2026-10-24-ipa-sme-cloud-service-checklist.md)
 - 支撑的新知识：[日本 B2B 采购者：八成嫌官网都是一般论，57.1% 按“诚实”决定找谁询问](clips/2026-10-20-ideatech-btob-buyer-information-contact-survey.md)、[日本大额 B2B 采购：九成选型用生成式 AI，84.7% 至少对一家候选厂商没填表就做了调查](clips/2026-10-20-ideatech-btob-buyer-genai-purchasing-survey.md)、[日本 B2B 的 AI 搜索对策：77% 觉得丢了商机，一半多还没动手，卡在不会做和算不清回报](clips/2026-10-20-probel-btob-ai-search-llmo-survey.md)、[Gartner 新 B2B 购买旅程：买方只花 17% 的时间见供应商](clips/2026-10-18-gartner-new-b2b-buying-journey.md)（共 4 条）
 - 第 5 轮新增：[生成 AI 时代的 BtoB 买方旅程图](clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md)、[HubSpot Japan《日本 BtoB 购买意识与实态调查》](clips/2026-10-21-hubspot-japan-state-of-buyer-2026.md)：日本买方见销售之前先自己用 AI 查，和这条的前半句一致
