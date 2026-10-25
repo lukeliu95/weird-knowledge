@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [让 AI 研究 agent 换六种搜索策略做 3,222 次实验：能左右想法落在哪，但几乎做不出真正新的好想法，还会伪造结果](../clips/2026-10-21-antoniades-heuresis-search-strategies.md) | 直接源自 | 强 |
+| [用多个大模型"群体投票"预测未来时，按推理方式聚类、每类只挑 1 个代表，3 个模型就比 25 个全投票略准，调用少 88%、花费约省 80%；故意挑最不一样的反而更差](../clips/2026-10-25-chetlapalli-diverse-by-reasoning-llm-crowds.md) | 相近 | 弱（模型复核通过） |

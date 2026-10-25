@@ -44,3 +44,6 @@ verified: true
 | [常驻 agent 的 6 层结构（推文作者据 OpenAI 资料自制的 PDF）](../clips/2026-10-18-choopyplug1-openai-always-on-agent-six-layers.md) | 相近 | 弱（模型复核通过） |
 | [Meta 的瘦编排器模式：编排器只管路由和检查，不做领域推理，14 个专项子 agent 各管一块](../clips/2026-10-20-meta-thin-orchestrator-agent-architecture.md) | 相近 | 弱（模型复核通过） |
 | [Harrison Chase：agent 里很多步骤是是非题不是生成，交给决策模型给带校准的概率，大模型只做难的](../clips/2026-10-22-hwchase17-yes-no-calls-jev.md) | 相近 | 弱（模型复核通过） |
+| [Wavestone 拆了 11 个编程 agent 的源码：每个都要在同样 7 个子系统上做取舍（推文转述，“90 行外壳覆盖全部 7 个部件”是说错的）](../clips/2026-10-25-arindam-1729-seven-building-blocks-of-coding-agents.md) | 相近 | 弱（模型复核通过） |
+| [拆 11 个编程 agent 的源码看外壳怎么搭：7 个子系统、29 种常见设计；没有一家用通用 agent 框架、没有一家用向量检索读代码，skill 的普及已略超 MCP（9/11 对 8/11），外壳正从工具变成平台](../clips/2026-10-25-barbaste-harness-engineering-eleven-coding-agents.md) | 直接源自 | 强 |
+| [编排 Claude Code 的"幕僚长"模式：一个会话只协调和验收、别的会话干活，状态放外部看板，每份汇报当证据重跑再信](../clips/2026-10-25-jalangan-chief-of-staff-agent-orchestration.md) | 换了说法 | 强 |

@@ -7,10 +7,10 @@ published: 2026-06（arXiv 预印本 2607.00038 [cs.SE]，v1 2026-06-28；DOI 10
 saved: 2026-10-25
 why: 探索日报：Luke 想看
 related_principles: [原则 1, 原则 12]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [loop-engineering, kephart-2003-autonomic-computing, ralph-wiggum-technique, huang-2023-cannot-self-correct, pan-2024-spontaneous-reward-hacking]
 ---
 
 ## 原文
@@ -110,4 +110,12 @@ roots: []
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：与其一步步提示编程 agent，不如设计一份交给外壳的“循环规格”（触发、目标、校验、停止规则、记忆），其中校验是核心，且不能让同一个 agent 给自己打分；50 个真实循环里校验最成熟，自动触发、复用 skill、长期记忆最薄。
+- 源知识：
+  - [循环工程（设计会提示 agent 的循环）](../roots/loop-engineering.md) · 关系：直接源自 · 强弱：强。论文研究对象就是 2026 年 6 月 Steinberger 的口号和 Osmani 命名的“循环工程”，作者在第 1 节明引这两处，并把它放在提示词→上下文→外壳→循环这一串最上层。
+  - [自主计算的愿景（监控-分析-计划-执行循环）](../roots/kephart-2003-autonomic-computing.md) · 关系：相近 · 强弱：强。作者明引自主计算的监控-分析-计划-执行加共享知识循环当前身；循环规格的“触发-执行-校验-停止-记忆”与它一一对应，只是换成大模型 agent。
+  - [Ralph Wiggum 循环](../roots/ralph-wiggum-technique.md) · 关系：直接源自 · 强弱：强。作者明引 Huntley 的 Ralph 循环，配套 skill 产出的循环规格就用“每轮清空上下文、重读文件”的 Ralph 循环来跑，进度存磁盘不存对话也来自它。
+  - [大模型还不能自我纠正推理](../roots/huang-2023-cannot-self-correct.md) · 关系：直接源自 · 强弱：强。A 族原则“先定义做完、不信模型自己说做完了”明引这篇：没有外部反馈时模型的自我纠错常常不变好甚至变差。
+  - [迭代自我精修中自发出现的奖励投机](../roots/pan-2024-spontaneous-reward-hacking.md) · 关系：直接源自 · 强弱：强。C 族原则“做的和批准的分开”和反模式“自己批准自己的循环”明引这篇：生成者和评审是同一个模型时，奖励投机会自发出现。
+- 本质：这条新知识本质上是反馈控制（自主计算的监控-分析-计划-执行循环）在编程 agent 外层编排上的应用，核心约束是校验信号必须来自 agent 之外，否则就会自我纠错失败或奖励投机。
+- 整理于：2026-10-25（第 8 轮）

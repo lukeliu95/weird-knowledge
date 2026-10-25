@@ -33,3 +33,4 @@ verified: true
 |---|---|---|
 | [让大模型当"变异器"做进化：一套几乎通吃的代码和提示词优化办法，开源 Darwinian Evolver](../clips/2026-10-22-imbue-llm-evolution-universal-optimizer.md) | 直接源自 | 强 |
 | [Evo² 解读：把改权重和改 harness 两条自进化路线接起来，让“改进者”本身也被训练](../clips/2026-10-22-xudong-evo2-weight-harness-co-evolution.md) | 相近 | 强 |
+| [agent 的外壳代码按"类继承"分家：按任务的共同毛病长出一族专用外壳，先跑一遍通用版看出毛病再挑；比只练一个全局外壳分数高、搜索快](../clips/2026-10-25-li-object-oriented-harness.md) | 直接源自 | 弱（模型复核通过） |

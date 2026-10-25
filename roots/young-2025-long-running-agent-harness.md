@@ -28,3 +28,4 @@ verified: true
 | [外层harness让智能体连跑数小时](../clips/2026-10-18-baoweiheihei-harness-unattended-long-running.md) | 直接源自 | 强 |
 | [Anthropic：长任务智能体交接机制](../clips/2026-10-18-dotey-long-running-agent-harness.md) | 直接源自 | 强 |
 | [Agent 循环工程晚宴讨论要点](../clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | 相近 | 弱（模型复核通过） |
+| [编排 Claude Code 的"幕僚长"模式：一个会话只协调和验收、别的会话干活，状态放外部看板，每份汇报当证据重跑再信](../clips/2026-10-25-jalangan-chief-of-staff-agent-orchestration.md) | 相近 | 弱（模型复核通过） |

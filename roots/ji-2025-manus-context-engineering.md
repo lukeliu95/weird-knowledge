@@ -30,3 +30,4 @@ Manus 管理上下文的经验：围绕 KV 缓存设计、工具用遮蔽而不�
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Agent Skills 是上下文卸载](../clips/2026-10-18-yonah-x-skills-context-offloading.md) | 直接源自 | 强 |
+| [KV cache 的暴政：今天的 agent 只能"只追加对话"，由此带来路由失效、工具挤占上下文、压缩丢信息、子 agent 少等六个毛病（《Jev 工程学：为 coding agent 而作》中译介绍）](../clips/2026-10-25-yibie-jev-engineering-kv-cache-tyranny.md) | 相近 | 强 |

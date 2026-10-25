@@ -35,3 +35,4 @@ verified: true
 | [Agent Skills 是上下文卸载](../clips/2026-10-18-yonah-x-skills-context-offloading.md) | 直接源自 | 强 |
 | [模型不动，只让技能库从用户请求里长：设计 agent 的技能从 76 个长到 139 个](../clips/2026-10-20-du-designer-rsi-procedural-memory.md) | 直接源自 | 弱（模型复核通过） |
 | [OpenAI FDE 实战：Codex 变强后删掉九成定制代码](../clips/2026-10-24-xudong07452910-xudong-openai-fde-codex-deleted-custom-code.md) | 直接源自 | 弱（模型复核通过） |
+| [CLAUDE.md 做成索引、规矩留在正文：四种放法实测，规矩挪进笔记后 AI 没读规矩就全局搜索，搜出了（虚构的）密钥](../clips/2026-10-25-yamato-snow-claude-md-index-design.md) | 直接源自 | 强 |

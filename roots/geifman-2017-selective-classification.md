@@ -29,3 +29,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [agent 每步的选择题交给小决策模型（UIUC 等，推文误作普林斯顿和谷歌），模拟网店里 4B 模型完成率 91.5%](../clips/2026-10-20-rohanpaul-ai-agent-decision-model-small-beats-big.md) | 直接源自 | 强 |
+| [agent 每一步的选择题交给小决策模型：按 agent 自己的运行记录给每类选择拟合把握门槛，够把握才交出去，否则还是大模型定；不设门槛成功率掉 19 个点，设了门槛再用 agent 自己走到的状态训一个 4B 模型，便宜 81%～89%、成功率掉不到 3 个点](../clips/2026-10-25-zhu-jevagentharness-decision-models-share-control.md) | 直接源自 | 强 |
+| [Anthus 实测 GPT-6 Luna（通用版，不是 OpenAI Decisions API 本身）：说 99% 确定时只对 68%，推理到第五步接近瞎猜；决策模型要紧的是置信度可信（厂商测评：Anthus 卖决策模型的校准服务）](../clips/2026-10-25-porter-decisions-api-luna-calibration.md) | 相近 | 弱（模型复核通过） |

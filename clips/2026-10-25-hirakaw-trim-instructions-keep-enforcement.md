@@ -7,10 +7,10 @@ published: 2026-10-18
 saved: 2026-10-25
 why: 探索日报：Luke 想看
 related_principles: [原则 2, 原则 11]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [gloaguen-2026-evaluating-agents-md, qu-2025-removed-80-percent-agent-tools, poka-yoke, shi-2023-irrelevant-context-distraction, bitter-lesson]
 ---
 
 ## 原文
@@ -97,4 +97,12 @@ https://zenn.dev/z_maruhira/articles/doctor-prompt-audit-rule-drift
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：给 AI 的 harness 堆多了会让它迷路，但要分清两种：靠 AI 自觉遵守的“指示”越多越会稀释重点、互相矛盾、过时，该删；不靠 AI 判断、必定拦下或检查的“强制”（hook、权限、测试、lint）要留；能从代码读出的不写，只写代码之外的领域知识和运行方式。
+- 源知识：
+  - [评测 AGENTS.md：仓库级上下文文件对编程 agent 有没有用](../roots/gloaguen-2026-evaluating-agents-md.md) · 关系：直接源自 · 强弱：强。作者引用这篇：给 AGENTS.md 这类上下文文件，任务成功率总体不升、推理成本平均多 20% 以上，人写的和模型生成的都一样
+  - [Vercel：我们删掉了 agent 八成的工具](../roots/qu-2025-removed-80-percent-agent-tools.md) · 关系：直接源自 · 强弱：强。作者引用 Vercel 把数据分析 agent 的工具大幅削减后成功率、速度、token 都变好，并借它“我们在给本来就读得懂的东西写摘要工具”一句说明代码里能读出的不必再写
+  - [防错（ポカヨケ）](../roots/poka-yoke.md) · 关系：相近 · 强弱：弱（模型复核通过）。“强制”指不靠操作者记得、出错时直接拦下的机制，正是防错（控制型 poka-yoke）的思路：与其提醒人别出错，不如让错误做不出来；作者没有提这个词
+  - [大模型很容易被无关上下文带偏](../roots/shi-2023-irrelevant-context-distraction.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者说和当前任务无关的规则会稀释真正重要规则的分量；无关上下文会明显拉低模型表现，是这一点的实验证据
+  - [苦涩的教训](../roots/bitter-lesson.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者说为旧模型写的细碎步骤对新模型成了多余的束缚，手把手的指示会随模型变强而失效
+- 本质：这条新知识本质上是防错（把“靠人记住”换成“做不出错”）和上下文精简在 AI 编程规则文件上的应用：删靠自觉的指示，留机制性的强制。
+- 整理于：2026-10-25（第 8 轮）

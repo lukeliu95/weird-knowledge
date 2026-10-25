@@ -38,3 +38,5 @@ verified: true
 | [Tripo Eden：先建地图再渲染](../clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | 挑战 | 弱（模型复核通过） |
 | [Sohl-Dickstein 在斯坦福：稳妥的路已经不稳妥](../clips/2026-10-20-financeyf5-sohl-dickstein-safe-path-not-safe.md) | 直接源自 | 强 |
 | [OpenAI FDE 实战：Codex 变强后删掉九成定制代码](../clips/2026-10-24-xudong07452910-xudong-openai-fde-codex-deleted-custom-code.md) | 相近 | 弱（模型复核通过） |
+| [Anthropic 应用 AI 团队：子 agent 什么时候该并回主循环（一个 agent 加 skill，常比一堆子 agent 答得更好、更省钱，有客户实测快约一倍）](../clips/2026-10-25-sarkis-anthropic-fold-subagents-into-main-loop.md) | 相近 | 弱（模型复核通过） |
+| [为什么 harness 加太多 AI 会迷路：删的是指示，强制机制要留](../clips/2026-10-25-hirakaw-trim-instructions-keep-enforcement.md) | 相近 | 弱（模型复核通过） |

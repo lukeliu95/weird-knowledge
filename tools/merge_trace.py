@@ -47,6 +47,15 @@ def load(input_dir):
             if other.get("dispute") and other["dispute"] not in keep.get("dispute", ""):
                 keep["dispute"] = "；".join(x for x in (keep.get("dispute"), other["dispute"]) if x)
             roots[r["slug"]] = keep
+    # subagent 用到了库里已有的源知识却没列进 roots 时（挂在新知识上，或只当更底层的源头），从 roots/ 里补上名字，
+    # 不然前者会报 KeyError，后者的"更底层的源头"链接会被悄悄丢掉（2026-10-25 补课第 10 题、第 8 轮各撞上一次）
+    used = {x["slug"] for c in clips for x in c["roots"]} | {x["slug"] for r in list(roots.values()) for x in r["deeper"]}
+    for slug in used - set(roots):
+        f = ROOTS / f"{slug}.md"
+        if f.exists():
+            name = re.search(r'^name_zh:\s*"?(.*?)"?\s*$', f.read_text(), re.M)
+            roots[slug] = dict(slug=slug, name_zh=name.group(1) if name else slug, name_en="", verified=True,
+                               sources=[], deeper=[], dispute="", proposer="", year="", type="理论", one_line="")
     return clips, roots
 
 

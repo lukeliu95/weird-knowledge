@@ -29,3 +29,4 @@ verified: true
 | [问一个好的澄清问题效果能翻倍，但那是理想上限，真实模型只提高三四成，问错还会变差](../clips/2026-10-19-aliannejadi-asking-clarifying-questions-qulac.md) | 相近 | 弱（模型复核通过） |
 | [澄清问题是帮用户还是打扰用户：只在有把握时问，比总是问和从不问都好](../clips/2026-10-19-zou-clarifying-questions-benefit-or-disturb.md) | 相近 | 弱（模型复核通过） |
 | [必要时才澄清：有一个能猜到的主流意思就直接做，“模型说自己不确定”不是可靠的提问信号](../clips/2026-10-19-zhang-clarify-when-necessary.md) | 相近 | 弱（模型复核通过） |
+| [agent 拿不准时先分清该问用户还是该自己查：约九成缺的信息系统里就查得到，只有一成要问人；按来源分流后成功率更高、步数更少](../clips/2026-10-25-li-clarify-user-or-verify-world.md) | 相近 | 弱（模型复核通过） |

@@ -30,3 +30,4 @@ verified: true
 |---|---|---|
 | [生成 AI 时代的 BtoB 买方旅程图：见销售之前，74.3% 的买方心里已定好首选，84.7% 不愿填表单](../clips/2026-10-21-kitagawa-genai-btob-buyer-journey-map.md) | 相近 | 弱（模型复核通过） |
 | [厂商调查：B2B 采购者 66.4% 用生成式 AI 选供应商，98% 说不知名的公司只要 AI 推荐理由扎实也会列入候选](../clips/2026-10-22-probel-btob-buyers-ai-vendor-selection-survey.md) | 换了说法 | 强 |
+| [ナイル调查（厂商调查，329 人）：选 B2B 服务和外包商时，用 AI 搜索和对话收集信息的人（64.1%）比用搜索引擎的（55.0%）多，最大的不满是"总推荐那几家"（69.2%，分母没写）](../clips/2026-10-25-nile-btob-vendor-selection-ai-search-survey.md) | 换了说法 | 强 |

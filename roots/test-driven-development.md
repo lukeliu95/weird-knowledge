@@ -32,3 +32,4 @@ verified: true
 | [OpenAI 企业用 AI 的七条经验](../clips/2026-10-18-shao-meng-openai-enterprise-ai-lessons.md) | 相近 | 弱（模型复核通过） |
 | [Anthropic：长任务智能体交接机制](../clips/2026-10-18-dotey-long-running-agent-harness.md) | 相近 | 弱（模型复核通过） |
 | [自然语言 Agent 应像好员工的七点](../clips/2026-10-18-remixdesigner-agent-as-good-employee.md) | 直接源自 | 强 |
+| [编排 Claude Code 的"幕僚长"模式：一个会话只协调和验收、别的会话干活，状态放外部看板，每份汇报当证据重跑再信](../clips/2026-10-25-jalangan-chief-of-staff-agent-orchestration.md) | 换了说法 | 强 |

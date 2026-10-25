@@ -32,3 +32,4 @@ Anthropic 用“一个主 Agent 规划、多个子 Agent 各带独立上下文�
 | [Matrix：Agent 公司架构](../clips/2026-10-18-bruceguai-matrix-agent-company-architecture.md) | 相近 | 弱（模型复核通过） |
 | [Claude Code 的 Task 工具原理](../clips/2026-10-18-dotey-claude-code-task-subagent.md) | 相近 | 弱（模型复核通过） |
 | [微软 Agensh：不设管家，最多 1024 个 agent 靠共享工作区和团队 Wiki 自协作，规模变大后自发长出评审和整合者](../clips/2026-10-22-aigclink-agensh-decentralized-1024-agents.md) | 挑战 | 强 |
+| [把 Claude Code 分成"司令官"和"部下"自主跑开发：主会话 Opus 只管计划、分工、验证、记录，实现、审查、调研交给 Sonnet / Haiku 的 subagent，用定义文件的工具栏和模型栏硬性限权](../clips/2026-10-25-xin-tech-commander-subordinate-agent-roles.md) | 直接源自 | 强 |

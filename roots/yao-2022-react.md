@@ -30,3 +30,5 @@ verified: true
 | [Operator靠CUA操作屏幕的原理](../clips/2026-10-18-dotey-openai-operator-cua-how.md) | 相近 | 弱（模型复核通过） |
 | [大白话讲清 Agent、工作流与 ReACT](../clips/2026-10-18-yangyi-agent-workflow-react-explained.md) | 直接源自 | 强 |
 | [Claude Code 的 Task 工具原理](../clips/2026-10-18-dotey-claude-code-task-subagent.md) | 相近 | 弱（模型复核通过） |
+| [Wavestone 拆了 11 个编程 agent 的源码：每个都要在同样 7 个子系统上做取舍（推文转述，“90 行外壳覆盖全部 7 个部件”是说错的）](../clips/2026-10-25-arindam-1729-seven-building-blocks-of-coding-agents.md) | 直接源自 | 弱（模型复核通过） |
+| [拆 11 个编程 agent 的源码看外壳怎么搭：7 个子系统、29 种常见设计；没有一家用通用 agent 框架、没有一家用向量检索读代码，skill 的普及已略超 MCP（9/11 对 8/11），外壳正从工具变成平台](../clips/2026-10-25-barbaste-harness-engineering-eleven-coding-agents.md) | 直接源自 | 强 |

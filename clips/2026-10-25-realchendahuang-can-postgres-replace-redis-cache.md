@@ -7,10 +7,10 @@ published: 2026-10-24 05:49 UTC
 saved: 2026-10-25
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 其他
-roots: []
+roots: [database-transaction, memory-hierarchy, stonebraker-2005-one-size-fits-all, mckinley-2015-choose-boring-technology]
 ---
 
 ## 原文
@@ -133,3 +133,11 @@ Redis 并不只是个简单的键值抽屉，它里面专门用 C 语言实现�
 
 ## 溯源
 
+- 核心主张：对没有几十万并发、也不需要专门数据结构的大多数系统，用 Postgres 的不记日志表、本地事务、SKIP LOCKED 和 LISTEN/NOTIFY 就能替掉 Redis 做缓存、队列和通知，还能顺带消除双写不一致和多次网络往返；只有极端吞吐、自动淘汰和专门数据结构这三处仍要 Redis。
+- 源知识：
+  - [数据库事务](../roots/database-transaction.md) · 关系：直接源自 · 强弱：强。文章明说把改业务数据和清缓存放进同一个本地事务、靠原子性“要么一起成功、要么一起回滚”，从而消除双写不一致。
+  - [存储层次（缓存）](../roots/memory-hierarchy.md) · 关系：直接源自 · 强弱：强。“离 CPU 越近的存储越快、越贵、越容易丢数据”几乎一字不差是存储层次的定义，缓存就是把热点数据放到更快的一层。
+  - [“一种数据库通吃”的时代已经过去](../roots/stonebraker-2005-one-size-fits-all.md) · 关系：挑战 · 强弱：弱（模型复核通过）。Stonebraker（Postgres 的创造者）2005 年断言“一种数据库通吃”的时代已过、专用引擎会胜出；文章说的是 Postgres 加插件反过来吃掉各类专用数据库，同时承认极端吞吐等三处专用系统仍赢。
+  - [选择无聊的技术](../roots/mckinley-2015-choose-boring-technology.md) · 关系：相近 · 强弱：弱（模型复核通过）。结论“少开一个实例、少维护一套集群、少一个半夜报警”就是“先问不加新技术能不能解决”，每多一种技术都有长期运维成本。
+- 本质：这条新知识本质上是数据库事务（原子性）和存储层次的取舍，在“该不该为缓存再加一套 Redis”这个架构选择上的应用：多数场景下少一个系统省下的一致性和网络成本，大于内存速度上那点差距。
+- 整理于：2026-10-25（第 8 轮）

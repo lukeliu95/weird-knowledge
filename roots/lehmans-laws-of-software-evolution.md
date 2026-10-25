@@ -28,3 +28,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [DeepSeek 仓库开发数据拆解](../clips/2026-10-18-crazyaiagent-deepseek-harness-repo-stats.md) | 相近 | 弱（模型复核通过） |
+| [Opus 4.5 的跃升可能来自 Claude Code 收集的数据；它能压住自身的发散，有合适的 harness 就能自己跑](../clips/2026-10-25-mizchi-opus-45-harness-data.md) | 相近 | 弱（模型复核通过） |
+| [RRSI：agent 自己改 harness 会"背题"，Google Cloud AI Research 等把机器学习的正则化搬进来：每轮少改、记住试错、先筛泄题、涨分要超过噪声、多花的 token 要用涨分换、没用的就删；换考卷后也能涨分，比不加正则化的自我改进省约 30% token（比原始 harness 还是更贵）](../clips/2026-10-25-xia-rrsi-regularized-harness-self-improvement.md) | 相近 | 弱（模型复核通过） |

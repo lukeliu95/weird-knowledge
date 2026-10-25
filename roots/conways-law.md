@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [Qwen技术负责人离职与大厂内部创业](../clips/2026-10-18-dexteryy-qwen-lead-departure-big-tech.md) | 相近 | 弱（模型复核通过） |
 | [MiMo-V2.6 的强化学习之路](../clips/2026-10-18-luofuli-mimo-v2-6-scaling-rl.md) | 相近 | 弱（模型复核通过） |
+| [Anthropic 应用 AI 团队：子 agent 什么时候该并回主循环（一个 agent 加 skill，常比一堆子 agent 答得更好、更省钱，有客户实测快约一倍）](../clips/2026-10-25-sarkis-anthropic-fold-subagents-into-main-loop.md) | 直接源自 | 强 |

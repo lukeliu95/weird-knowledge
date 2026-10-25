@@ -31,3 +31,4 @@ verified: true
 | [南非 5.3 万封贷款直邮实验：只举 1 个例子比举 4 个多出的申请，相当于利率降约 25%；在表格里单列利率没有显著差别](../clips/2026-10-19-bertrand-advertising-content-worth.md) | 直接源自 | 强 |
 | [agent 每步的选择题交给小决策模型（UIUC 等，推文误作普林斯顿和谷歌），模拟网店里 4B 模型完成率 91.5%](../clips/2026-10-20-rohanpaul-ai-agent-decision-model-small-beats-big.md) | 相近 | 强 |
 | [Harrison Chase：agent 里很多步骤是是非题不是生成，交给决策模型给带校准的概率，大模型只做难的](../clips/2026-10-22-hwchase17-yes-no-calls-jev.md) | 直接源自 | 强 |
+| [宝玉的 Jev 科普视频：只做选择题、按把握深浅涂答题卡的模型，为什么快、为什么便宜、"幻觉率为零"怎么来的、会在哪儿涂错](../clips/2026-10-25-dotey-jev-answer-sheet-explainer.md) | 相近 | 弱（模型复核通过） |

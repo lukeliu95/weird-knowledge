@@ -1,16 +1,16 @@
 ---
-title: Jev 的厂商实测 GPT-6 Luna（OpenAI Decisions API 背后的模型）：说 99% 确定时只对 68%，推理五步后像抛硬币；决策模型要紧的是置信度可信
-author: Ryan Alyn Porter (@RyanAlynPorter)，anth.us（Jev 的开发方）
+title: Anthus 实测 GPT-6 Luna（通用版，不是 OpenAI Decisions API 本身）：说 99% 确定时只对 68%，推理到第五步接近瞎猜；决策模型要紧的是置信度可信（厂商测评：Anthus 卖决策模型的校准服务）
+author: Anthus（anth.us，AI 工程咨询公司；页面没署名，Ryan Alyn Porter 是否作者待确认。Jev 是 TypeSafe 的，不是 Anthus 的）
 url: https://anth.us/blog/openai-decisions-api-preview/
 source: 网页
 published: 2026-10-01
 saved: 2026-10-25
 why: 探索日报：Luke 想看
 related_principles: [原则 1, 原则 12]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 模型与本地部署
-roots: []
+roots: [guo-2017-calibration, murphy-1973-brier-decomposition, geifman-2017-selective-classification, openai-2023-gpt4-technical-report, tafjord-2021-proofwriter]
 ---
 
 ## 原文
@@ -171,4 +171,12 @@ If you're choosing between the Decisions API, Jev and an open model, run the sam
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：（厂商调查：anth.us 即 Anthus，一家 AI 工程咨询公司，卖“把决策模型对齐到客户自己的数据、校准置信度、评审员在环”的项目服务，以及 Cyclotron、Primus 等产品，自己维护 Hard-Decisions 决策模型榜；据它自己的文章，Jev 由 TypeSafe 提供，不是 Anthus 做的；测的是通用版 GPT-6 Luna，不是 Decisions API 本身；样本是 3,600 道 ProofWriter 合成逻辑题）按决策模型的置信度设门槛自动放行，只有置信度既校准、又能把对的和错的分开时才靠得住：Luna 说 99% 以上时只对 68%，推理步数一多置信度就不带信息（第 5 步 AUROC 0.51），这种情况再怎么重新标定也救不回来；所以用之前要拿自己带标注的难题，分难度检查准确率、校准和区分度，并且问两遍看答案稳不稳。
+- 源知识：
+  - [现代神经网络的校准（温度缩放）](../roots/guo-2017-calibration.md) · 关系：相近 · 强弱：弱（模型复核通过）。文章用可靠性图和期望校准误差（ECE）检查“说 99% 是不是真对 99%”，并说单纯的过度自信可以重新标定，这正是 Guo 等 2017 指出现代神经网络过度自信、再用温度缩放修正的那套方法。文章没引 Guo，是模型推断。
+  - [Brier 分数的三分解（可靠性、分辨力、不确定性）](../roots/murphy-1973-brier-decomposition.md) · 关系：换了说法 · 强弱：弱（模型复核通过）。文章最关键的一句“校准修不好一个不随对错变化的概率”，就是 Murphy 1973 把概率预报误差拆成可靠性（校准）和分辨力的结论：重新标定只能改善可靠性，分辨力为零的概率（第 5 步 AUROC 0.51）怎么标定也没有信息。文章用 AUROC 量分辨力，没引 Murphy，是模型推断。
+  - [深度神经网络的选择性分类（带拒答选项）](../roots/geifman-2017-selective-classification.md) · 关系：相近 · 强弱：弱（模型复核通过）。“只在 99% 以上才让它自己做，其余交给人”就是选择性分类：它要求置信度能把对的排在错的前面，Luna 在难题上做不到，门槛就等于随机分流。文章没引，是模型推断。
+  - [GPT-4 技术报告](../roots/openai-2023-gpt4-technical-report.md) · 关系：直接源自 · 强弱：强。文章明引 GPT-4 技术报告图 8：预训练模型的概率校准得很好，后训练让它明显变差，用来解释为什么 OpenAI 的模型一贯过度自信。
+  - [ProofWriter：在自然语言规则上推理并写出证明](../roots/tafjord-2021-proofwriter.md) · 关系：直接源自 · 强弱：强。测试题全部来自艾伦人工智能研究所的 ProofWriter（文章明说）；“推理五步后像抛硬币”里的“步数”就是它给每道题标的证明深度，开放世界、封闭世界两种设定也来自它。
+- 本质：这条新知识本质上是概率预报检验（校准和分辨力要分开看）在“按决策模型置信度设门槛、自动放行或交给人”这个场景上的应用：门槛规则只和置信度一样可靠。
+- 整理于：2026-10-25（第 8 轮）

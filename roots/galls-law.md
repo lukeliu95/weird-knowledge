@@ -28,3 +28,4 @@ verified: true
 | [Agent 基础设施的一线观察](../clips/2026-10-18-dotey-anthropic-agent-infrastructure-talk.md) | 相近 | 弱（模型复核通过） |
 | [多数 Agent 其实只是工作流](../clips/2026-10-18-eze-is-1-agent-vs-workflow-definition.md) | 相近 | 弱（模型复核通过） |
 | [宝玉写提示词的原则：做成可玩的模板](../clips/2026-10-18-dotey-dotey-prompt-writing-principles.md) | 相近 | 弱（模型复核通过） |
+| [拆 11 个编程 agent 的源码看外壳怎么搭：7 个子系统、29 种常见设计；没有一家用通用 agent 框架、没有一家用向量检索读代码，skill 的普及已略超 MCP（9/11 对 8/11），外壳正从工具变成平台](../clips/2026-10-25-barbaste-harness-engineering-eleven-coding-agents.md) | 相近 | 弱（模型复核通过） |

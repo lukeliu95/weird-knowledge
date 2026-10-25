@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Sora 团队伯克利课堂分享字幕翻译](../clips/2026-10-18-dotey-sora-team-berkeley-talk.md) | 直接源自 | 强 |
+| [视频世界模型的长期记忆改用"平面块"来存：一个场景约 10 万块、约 5MB，比逐像素点云小三个数量级，生成几百帧后画面和几何仍连贯](../clips/2026-10-25-he-ppmem-persistent-planar-memory-video-world-models.md) | 相近 | 弱（模型复核通过） |

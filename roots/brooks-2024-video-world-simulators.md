@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [Sora 团队伯克利课堂分享字幕翻译](../clips/2026-10-18-dotey-sora-team-berkeley-talk.md) | 直接源自 | 强 |
 | [Tripo Eden：先建地图再渲染](../clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | 挑战 | 弱（模型复核通过） |
+| [视频世界模型的长期记忆改用"平面块"来存：一个场景约 10 万块、约 5MB，比逐像素点云小三个数量级，生成几百帧后画面和几何仍连贯](../clips/2026-10-25-he-ppmem-persistent-planar-memory-video-world-models.md) | 挑战 | 弱（模型复核通过） |

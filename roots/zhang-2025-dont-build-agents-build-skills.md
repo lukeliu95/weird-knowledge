@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Anthropic：用技能代替独立智能体](../clips/2026-10-18-hongming731-anthropic-agent-skills-talk.md) | 直接源自 | 强 |
+| [Anthropic 应用 AI 团队：子 agent 什么时候该并回主循环（一个 agent 加 skill，常比一堆子 agent 答得更好、更省钱，有客户实测快约一倍）](../clips/2026-10-25-sarkis-anthropic-fold-subagents-into-main-loop.md) | 相近 | 强 |

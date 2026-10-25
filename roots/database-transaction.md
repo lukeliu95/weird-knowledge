@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Pi 开发笔记：长时间运行智能体的难题](../clips/2026-10-18-maxforai-pi-notes-agent-harness-critique.md) | 直接源自 | 强 |
+| [Postgres 吞掉各类专用数据库之后，能不能连 Redis 缓存也替掉](../clips/2026-10-25-realchendahuang-can-postgres-replace-redis-cache.md) | 直接源自 | 强 |

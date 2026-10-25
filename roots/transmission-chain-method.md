@@ -27,3 +27,4 @@ verified: true
 |---|---|---|
 | [玉伯谈 AI 时代小团队生产力的真相](../clips/2026-10-18-saitowu-small-team-productivity-ai-era.md) | 相近 | 弱（模型复核通过） |
 | [Jeff Dean 一小时讲 AI 系统](../clips/2026-10-18-huxlab-jeff-dean-ai-course-hour.md) | 相近 | 弱（模型复核通过） |
+| [Anthropic 应用 AI 团队：子 agent 什么时候该并回主循环（一个 agent 加 skill，常比一堆子 agent 答得更好、更省钱，有客户实测快约一倍）](../clips/2026-10-25-sarkis-anthropic-fold-subagents-into-main-loop.md) | 换了说法 | 强 |

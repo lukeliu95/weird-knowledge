@@ -7,10 +7,10 @@ published: 2026-10-22
 saved: 2026-10-25
 why: 探索日报：Luke 想看
 related_principles: [原则 11, 原则 2]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [progressive-disclosure, anthropic-2025-agent-skills, single-source-of-truth, anthropic-2025-effective-context-engineering, poka-yoke]
 ---
 
 ## 原文
@@ -409,4 +409,12 @@ CLAUDE.md も同じ形にすると、決まりは毎回伝わります。今回�
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：CLAUDE.md 只留 AI 还没读任何文件时就必须遵守的禁令和规矩，其余知识做成一件一文件、带 frontmatter（含“决定/废止”状态）的笔记，用只写“里面有什么”、不写答案的索引按需去查；规矩挪进笔记会在被读到之前就被违反；笔记总量小时全放 CLAUDE.md 反而更省。
+- 源知识：
+  - [渐进式披露](../roots/progressive-disclosure.md) · 关系：换了说法 · 强弱：强。起动时只读索引的短说明、需要时才打开正文，就是渐进式披露；作者明说 auto memory 和 skill 本来就是“索引＋正文”
+  - [用 Agent Skills 让智能体胜任真实工作](../roots/anthropic-2025-agent-skills.md) · 关系：直接源自 · 强弱：强。作者照着 Claude Code skill 的加载方式（起动只读 description，用到才读正文）给 CLAUDE.md 自己搭同样的结构
+  - [单一事实来源](../roots/single-source-of-truth.md) · 关系：换了说法 · 强弱：强。索引行不写答案，因为同一件事写在索引和笔记两处，只改一处就会对不上；这正是单一事实来源
+  - [AI 智能体的上下文工程](../roots/anthropic-2025-effective-context-engineering.md) · 关系：相近 · 强弱：弱（模型复核通过）。“知识按需检索、不全量预加载”就是这篇说的用即时检索代替预先加载；作者实测还给出了边界：笔记少时预加载反而更省
+  - [防错（ポカヨケ）](../roots/poka-yoke.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者说写进 CLAUDE.md 也不保证被遵守，真正要拦的（读 .dev.vars、跑生产迁移）要用 hook 和 deny 拦下，把“告诉 AI”的层和“AI 不守也拦住”的层分开，是防错思路
+- 本质：这条新知识本质上是渐进式披露在项目规则文件上的应用，外加一条时序约束：动手前就必须知道的规矩不能延后披露，否则会在被读到之前就被违反。
+- 整理于：2026-10-25（第 8 轮）

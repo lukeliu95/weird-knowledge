@@ -28,3 +28,6 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Harrison Chase：agent 里很多步骤是是非题不是生成，交给决策模型给带校准的概率，大模型只做难的](../clips/2026-10-22-hwchase17-yes-no-calls-jev.md) | 相近 | 弱（模型复核通过） |
+| [agent 每一步的选择题交给小决策模型：按 agent 自己的运行记录给每类选择拟合把握门槛，够把握才交出去，否则还是大模型定；不设门槛成功率掉 19 个点，设了门槛再用 agent 自己走到的状态训一个 4B 模型，便宜 81%～89%、成功率掉不到 3 个点](../clips/2026-10-25-zhu-jevagentharness-decision-models-share-control.md) | 直接源自 | 强 |
+| [Anthus 实测 GPT-6 Luna（通用版，不是 OpenAI Decisions API 本身）：说 99% 确定时只对 68%，推理到第五步接近瞎猜；决策模型要紧的是置信度可信（厂商测评：Anthus 卖决策模型的校准服务）](../clips/2026-10-25-porter-decisions-api-luna-calibration.md) | 相近 | 弱（模型复核通过） |
+| [宝玉的 Jev 科普视频：只做选择题、按把握深浅涂答题卡的模型，为什么快、为什么便宜、"幻觉率为零"怎么来的、会在哪儿涂错](../clips/2026-10-25-dotey-jev-answer-sheet-explainer.md) | 相近 | 弱（模型复核通过） |

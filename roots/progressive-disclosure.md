@@ -33,3 +33,5 @@ verified: true
 | [Anthropic：用技能代替独立智能体](../clips/2026-10-18-hongming731-anthropic-agent-skills-talk.md) | 直接源自 | 强 |
 | [Agent Skills 是上下文卸载](../clips/2026-10-18-yonah-x-skills-context-offloading.md) | 换了说法 | 弱（模型复核通过） |
 | [Claude 5 代模型的上下文工程新规矩：系统提示删掉八成，少写规则和例子，按需加载](../clips/2026-10-21-shihipar-context-engineering-claude-5.md) | 直接源自 | 强 |
+| [Anthropic 应用 AI 团队：子 agent 什么时候该并回主循环（一个 agent 加 skill，常比一堆子 agent 答得更好、更省钱，有客户实测快约一倍）](../clips/2026-10-25-sarkis-anthropic-fold-subagents-into-main-loop.md) | 直接源自 | 强 |
+| [CLAUDE.md 做成索引、规矩留在正文：四种放法实测，规矩挪进笔记后 AI 没读规矩就全局搜索，搜出了（虚构的）密钥](../clips/2026-10-25-yamato-snow-claude-md-index-design.md) | 换了说法 | 强 |

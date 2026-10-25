@@ -28,3 +28,4 @@ verified: true
 | [Pi 作者：代码即真相，Bash 够用](../clips/2026-10-18-dotey-pi-authors-code-bash-insights.md) | 相近 | 弱（模型复核通过） |
 | [Tripo Eden：先建地图再渲染](../clips/2026-10-18-svpino-tripo-eden-world-model-map.md) | 相近 | 弱（模型复核通过） |
 | [模型每周都在换：别把自己的上下文锁在一家产品里](../clips/2026-10-20-brian-lovin-portable-context-switching.md) | 相近 | 弱（模型复核通过） |
+| [CLAUDE.md 做成索引、规矩留在正文：四种放法实测，规矩挪进笔记后 AI 没读规矩就全局搜索，搜出了（虚构的）密钥](../clips/2026-10-25-yamato-snow-claude-md-index-design.md) | 换了说法 | 强 |

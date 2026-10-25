@@ -7,10 +7,10 @@ published: 2026-10-22
 saved: 2026-10-25
 why: 未说明
 related_principles: [原则 2, 原则 6, 原则 11]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [conways-law, transmission-chain-method, progressive-disclosure, zhang-2025-dont-build-agents-build-skills, bitter-lesson]
 ---
 
 ## 原文
@@ -174,4 +174,12 @@ This is one of those cases. As models get more capable and agents get longer run
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：很多企业 agent 不该按团队、按问题类型拆成一堆子 agent，而该用一个主循环加按需加载的 skill 和工具（渐进式披露），共享上下文、少交接，质量常更好且更快更省；子 agent 只在上下文膨胀、需要并行的独立任务、或工具选择和指令冲突时才用，拆也要按上下文拆，并靠端到端评测一个一个并回主循环。
+- 源知识：
+  - [康威定律](../roots/conways-law.md) · 关系：直接源自 · 强弱：强。原文明说按团队、按问题类型给子 agent，会让 agent 架构变成组织架构图的复制品（“Conway's law at work”）
+  - [传递链方法（传话实验）](../roots/transmission-chain-method.md) · 关系：换了说法 · 强弱：强。原文说按问题类型拆开的 agent 来回传话就是“传话游戏”，每次交接都损失保真度；传递链方法是传话游戏的科学版
+  - [渐进式披露](../roots/progressive-disclosure.md) · 关系：直接源自 · 强弱：强。原文的替代方案就叫用 skill 渐进披露上下文、用工具搜索渐进披露工具：先只看简短描述，用到时才完整加载
+  - [别再造智能体，去造技能（AI Engineer 演讲）](../roots/zhang-2025-dont-build-agents-build-skills.md) · 关系：相近 · 强弱：强。同是 Anthropic 的主张：别给每个领域造一个 agent，做一个通用 agent、再用 skill 提供专长；和“把子 agent 折成 skill 和工具”几乎是同一句话（原文没有引用这场演讲）
+  - [苦涩的教训](../roots/bitter-lesson.md) · 关系：相近 · 强弱：弱（模型复核通过）。原文说很多结构是在替模型做它已经不需要别人代劳的事，每代新模型都能把更多决定从 harness 挪给模型，僵硬的多 agent 结构反而挡住新模型；和“通用方法终将胜过人写进去的结构”同一方向
+- 本质：这条新知识本质上是康威定律和传话失真（信息每过一手就丢一点）在企业 agent 架构上的应用：别让 agent 结构复制组织结构，改用渐进式披露让一个上下文装下全部任务。
+- 整理于：2026-10-25（第 8 轮）

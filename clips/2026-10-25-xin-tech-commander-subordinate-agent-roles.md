@@ -7,10 +7,10 @@ published: 2026-10-22
 saved: 2026-10-25
 why: 探索日报：Luke 想看
 related_principles: [原则 11, 原则 12, 原则 6]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [principle-of-least-privilege, separation-of-duties, anthropic-2025-multi-agent-research-system, cherny-2025-claude-code-best-practices, division-of-labour]
 ---
 
 ## 原文
@@ -182,4 +182,12 @@ PROGRESS.md の「ゴールの決定と第1段階の開始」には、調査の�
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：让主会话只做计划、分派、验证、记录，把实现、审查、调研交给不同模型的子 agent，并用定义文件里的工具栏和模型栏硬性限定每个角色能做什么；“做完了没有”由实现者以外的审查者判定，每轮流程用编号文字固定下来。
+- 源知识：
+  - [最小权限原则](../roots/principle-of-least-privilege.md) · 关系：换了说法 · 强弱：强。每个角色只拿完成本职所需的工具（worker 没有网页工具，researcher 不能写文件、不能执行命令，reviewer 没有编辑工具），就是最小权限原则落到 agent 定义文件上
+  - [职责分离（四眼原则、制单与复核分开）](../roots/separation-of-duties.md) · 关系：换了说法 · 强弱：强。作者定下“决定完成的不是 worker”，只有 reviewer 判合格才把 passes 改成 true；这和职责分离要求的“执行者和认证者不能是同一方”几乎一字不差
+  - [Anthropic 多智能体研究系统](../roots/anthropic-2025-multi-agent-research-system.md) · 关系：直接源自 · 强弱：强。作者引用这篇说明多 agent 会让 token 大幅增加（结论是“快但贵”）；主会话规划、子 agent 各带独立上下文干活的结构也同属编排-工人模式
+  - [Claude Code 最佳实践（给 Claude 一个验证自己工作的办法）](../roots/cherny-2025-claude-code-best-practices.md) · 关系：直接源自 · 强弱：强。作者引用 Claude Code 官方最佳实践：用另开新上下文的审查者去检查写代码者的成果，并提醒审查者只报和正确性、需求有关的问题
+  - [分工](../roots/division-of-labour.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者把它类比人类团队“按能力分角色、各自专注一件事”，难的判断给 Opus、简单活给 Sonnet 和 Haiku，是分工思想在不同成本的模型之间的用法
+- 本质：这条新知识本质上是最小权限原则和职责分离在 Claude Code 多 agent 开发分工上的应用：用配置硬性限权，并让“做的人”和“判完成的人”分开。
+- 整理于：2026-10-25（第 8 轮）

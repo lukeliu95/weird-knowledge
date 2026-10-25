@@ -7,10 +7,10 @@ published: 2026-09-19
 saved: 2026-10-25
 why: 探索日报：Luke 想看
 related_principles: [原则 1, 原则 6, 原则 11, 原则 12]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: 编程智能体
-roots: []
+roots: [anthropic-2024-building-effective-agents, separation-of-duties, test-driven-development, mutation-testing, young-2025-long-running-agent-harness]
 ---
 
 ## 原文
@@ -305,4 +305,12 @@ The methodology is model-agnostic. It assumes only that sessions can run tools, 
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：长时间 AI 编码的瓶颈不是写代码而是没人核实：让一个会话只协调和验收、不写实现，状态放在会话之外的持久看板，执行者的汇报只当证据、重跑命令以退出码为准，并先确认检查会失败、先证明检查能测出问题，再相信“没问题”。
+- 源知识：
+  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：换了说法 · 强弱：强。作者自己说这个形状早就叫 orchestrator-worker（编排者-工人），“幕僚长”只是他们起的名字；编排者-工人正是这篇列出的工作流模式之一
+  - [职责分离（四眼原则、制单与复核分开）](../roots/separation-of-duties.md) · 关系：直接源自 · 强弱：强。作者明说同一形状也叫 maker-checker（金融和运营里的制单与复核分开）；协调者“一开始写代码就不再核实”正是职责分离要防的事
+  - [测试驱动开发](../roots/test-driven-development.md) · 关系：换了说法 · 强弱：强。“红灯门”要求开工前先跑验证、必须失败，和测试驱动开发“先写一个会失败的测试”几乎一样，理由也相同：否则分不清是做对了还是检查根本没在测
+  - [变异测试（检验测试本身能不能抓到错）](../roots/mutation-testing.md) · 关系：相近 · 强弱：弱（模型复核通过）。作者最担心“检查报告成功、其实没测到”（删掉被测功能测试仍然是绿的），要求先证明检查在问题存在时能抓到；变异测试正是故意植入错误、看测试能不能失败，来检验测试本身
+  - [长时间运行 agent 的有效 harness](../roots/young-2025-long-running-agent-harness.md) · 关系：相近 · 强弱：弱（模型复核通过）。一次只做一项、每项单独提交、会话结束前写交接文件和经验、验证通过才标完成，和 Anthropic 长时间运行 agent 的 harness 做法高度相近（作者没有引用它）
+- 本质：这条新知识本质上是职责分离（制单与复核分开）和测试驱动开发在多会话 AI 编码编排上的应用：执行者的自报不算数，状态和证据都放在会话之外。
+- 整理于：2026-10-25（第 8 轮）

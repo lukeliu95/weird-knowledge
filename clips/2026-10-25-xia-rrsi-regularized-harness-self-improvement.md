@@ -1,5 +1,5 @@
 ---
-title: RRSI：agent 自己改 harness 会"背题"，Google 把机器学习的正则化搬进来：每轮少改、记住试错、先筛泄题、涨分要超过噪声、多花的 token 要用涨分换、没用的就删；换考卷后也能涨分，还省 30% token
+title: RRSI：agent 自己改 harness 会"背题"，Google Cloud AI Research 等把机器学习的正则化搬进来：每轮少改、记住试错、先筛泄题、涨分要超过噪声、多花的 token 要用涨分换、没用的就删；换考卷后也能涨分，比不加正则化的自我改进省约 30% token（比原始 harness 还是更贵）
 author: Peng Xia 等 14 人（Google Cloud AI Research、北卡教堂山分校、斯坦福、圣路易斯华盛顿大学）
 url: https://arxiv.org/abs/2609.24972
 source: 论文
@@ -7,10 +7,10 @@ published: 2026-09（arXiv 预印本 2609.24972 [cs.LG]，v1 2026-09-21，v3 202
 saved: 2026-10-25
 why: 探索日报：Luke 想看
 related_principles: [原则 1, 原则 2]
-status: 未整理
+status: 已整理
 kind: 观点
 topic: Agent 与 Skill
-roots: []
+roots: [recursive-self-improvement, regularization, dwork-2015-reusable-holdout, goodharts-law, lehmans-laws-of-software-evolution]
 ---
 
 ## 原文
@@ -122,4 +122,12 @@ agent 的本事很大程度上由 harness（模型外面那一圈：提示词、
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：让 agent 在同一套题上反复改自己的运行框架（harness）会“背题”：写进只对这套题有用的东西、把运气好的一次高分当进步、越堆越复杂；把机器学习的正则化翻译成搜索规矩（改动预算逐轮收紧、记住全部试错、打分前筛掉泄题改动、涨分须超过实测噪声带、多花的 token 要用涨分换、没用的部件删掉）后，进化集上涨得最少，换成没见过的题反而涨得最多，且比不加正则化的进化少用约 30% 执行 token（但仍比原始框架贵）。
+- 源知识：
+  - [递归自我改进](../roots/recursive-self-improvement.md) · 关系：直接源自 · 强弱：强。摘要明说自动提改动、选改动的 harness 进化“实际上就是 agent 系统层面的递归自我改进（RSI）”，RRSI 是给这种 RSI 加约束，防止它在进化集上过拟合。
+  - [正则化（防过拟合的约束与惩罚）](../roots/regularization.md) · 关系：直接源自 · 强弱：强。论文把机器学习防过拟合的正则化原则搬进 harness 搜索：限制一个候选打包几处改动对应 L0，删掉一直没用的部件对应 L1，压 token 花费对应 L2，并引 Goodfellow 等 2016、Hastie 等 2009；作者反复声明这只是功能上的类比，不是真在优化范数。
+  - [可复用的留出集（自适应数据分析中的泛化与留出集复用）](../roots/dwork-2015-reusable-holdout.md) · 关系：直接源自 · 强弱：强。“记住全部试错”一条明引 Dwork 等 2015（NeurIPS 版《自适应数据分析的泛化与留出集复用》）：同一份题被一轮轮拿来挑候选，题本身就会被过拟合。RRSI 的“涨分要超过实测噪声带才算”和 Dwork 等的 Thresholdout（训练与留出结果差距超过加噪门槛才报留出集的值）是同一思路，这半句是模型推断。
+  - [古德哈特定律](../roots/goodharts-law.md) · 关系：相近 · 强弱：弱（模型复核通过）。进化集分数一旦成了要优化的目标，就不再代表 agent 的真本事：对照方法在进化集上分最高、换题后不涨甚至倒退，留下的是复述这套题评分方式的“迎合打分”规则。论文没提古德哈特定律，是模型推断。
+  - [雷曼软件演化定律](../roots/lehmans-laws-of-software-evolution.md) · 关系：相近 · 强弱：弱（模型复核通过）。论文说的第三种背题“复杂度累积”（越堆越复杂却没改进做事机制，如对照方法留下约 8,500 字的协议），和雷曼第二定律“演化中的系统复杂度会上升，除非专门投入去降”一致；RRSI 的“没用就删”就是那份专门投入。论文没引雷曼，是模型推断。
+- 本质：这条新知识本质上是机器学习防过拟合的正则化思想（少改、惩罚复杂度、涨分要超过噪声、留出集不被反复榨干）在 agent 运行框架递归自我改进上的应用。
+- 整理于：2026-10-25（第 8 轮）

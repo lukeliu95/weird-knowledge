@@ -30,3 +30,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Coding 产品是训练数据入口](../clips/2026-10-18-dotey-coding-product-data-flywheel.md) | 直接源自 | 强 |
+| [Opus 4.5 的跃升可能来自 Claude Code 收集的数据；它能压住自身的发散，有合适的 harness 就能自己跑](../clips/2026-10-25-mizchi-opus-45-harness-data.md) | 相近 | 弱（模型复核通过） |

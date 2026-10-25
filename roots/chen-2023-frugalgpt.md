@@ -29,3 +29,5 @@ verified: true
 | [agent 每步的选择题交给小决策模型（UIUC 等，推文误作普林斯顿和谷歌），模拟网店里 4B 模型完成率 91.5%](../clips/2026-10-20-rohanpaul-ai-agent-decision-model-small-beats-big.md) | 直接源自 | 强 |
 | [智谱唐杰团队开源 HarnessPro：agent 无标签自己改 harness，按"省钱、均衡、性能"三档进化，成本最多降 53%](../clips/2026-10-24-qbitai-harnesspro-pareto-rsi.md) | 相近 | 弱（模型复核通过） |
 | [Harrison Chase：agent 里很多步骤是是非题不是生成，交给决策模型给带校准的概率，大模型只做难的](../clips/2026-10-22-hwchase17-yes-no-calls-jev.md) | 相近 | 弱（模型复核通过） |
+| [KV cache 的暴政：今天的 agent 只能"只追加对话"，由此带来路由失效、工具挤占上下文、压缩丢信息、子 agent 少等六个毛病（《Jev 工程学：为 coding agent 而作》中译介绍）](../clips/2026-10-25-yibie-jev-engineering-kv-cache-tyranny.md) | 挑战 | 弱（模型复核通过） |
+| [agent 每一步的选择题交给小决策模型：按 agent 自己的运行记录给每类选择拟合把握门槛，够把握才交出去，否则还是大模型定；不设门槛成功率掉 19 个点，设了门槛再用 agent 自己走到的状态训一个 4B 模型，便宜 81%～89%、成功率掉不到 3 个点](../clips/2026-10-25-zhu-jevagentharness-decision-models-share-control.md) | 直接源自 | 强 |

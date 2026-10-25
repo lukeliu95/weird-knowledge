@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Journal of Marketing 2025（42 场高管访谈加 10 位买方）：新任务采购里，什么时候找销售由买方定；主动推销在前期效果最弱](../clips/2026-10-24-kalwey-holistic-selling-buyer-led-journey.md) | 相近 | 弱（模型复核通过） |
+| [ナイル调查（厂商调查，329 人）：选 B2B 服务和外包商时，用 AI 搜索和对话收集信息的人（64.1%）比用搜索引擎的（55.0%）多，最大的不满是"总推荐那几家"（69.2%，分母没写）](../clips/2026-10-25-nile-btob-vendor-selection-ai-search-survey.md) | 相近 | 弱（模型复核通过） |

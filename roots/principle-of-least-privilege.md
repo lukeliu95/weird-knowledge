@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [OpenAI Dots 放权指南：动作分进 6 个权限区，每周按证据升降](../clips/2026-10-18-choopyplug1-openai-dots-agent-permission-zones.md) | 换了说法 | 强 |
 | [常驻 agent 的 6 层结构（推文作者据 OpenAI 资料自制的 PDF）](../clips/2026-10-18-choopyplug1-openai-always-on-agent-six-layers.md) | 相近 | 弱（模型复核通过） |
+| [把 Claude Code 分成"司令官"和"部下"自主跑开发：主会话 Opus 只管计划、分工、验证、记录，实现、审查、调研交给 Sonnet / Haiku 的 subagent，用定义文件的工具栏和模型栏硬性限权](../clips/2026-10-25-xin-tech-commander-subordinate-agent-roles.md) | 换了说法 | 强 |
