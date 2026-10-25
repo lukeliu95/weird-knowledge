@@ -7,7 +7,7 @@ published: 2026-04-27（仓库创建日期；GitHub 上没有 release）
 saved: 2026-10-25
 why: 探索日报：Luke 想看
 related_principles: [原则 1, 原则 11]
-status: 未整理
+status: 已归档
 kind: 工具
 topic: 设计与前端
 roots: []

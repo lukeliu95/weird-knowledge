@@ -7,7 +7,7 @@ published: 未知（产品页没写发布日期；侦察兵记的是 2026-10-02�
 saved: 2026-10-25
 why: 探索日报：Luke 想看
 related_principles: []
-status: 未整理
+status: 已归档
 kind: 工具
 topic: Agent 与 Skill
 roots: []

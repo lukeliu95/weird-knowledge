@@ -7,7 +7,7 @@ published: 2026-09-28（仓库创建日期，也是 v1.0 发布日；README 已�
 saved: 2026-10-25
 why: 探索日报：Luke 想看
 related_principles: []
-status: 未整理
+status: 已归档
 kind: 工具
 topic: 模型与本地部署
 roots: []

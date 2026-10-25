@@ -7,7 +7,7 @@ published: 2026-08-21
 saved: 2026-10-25
 why: 探索日报：Luke 想看
 related_principles: [原则 11, 原则 1]
-status: 未整理
+status: 已归档
 kind: 教程
 topic: 编程智能体
 roots: []
