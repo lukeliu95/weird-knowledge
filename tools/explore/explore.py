@@ -11,7 +11,8 @@
   explore.py ingest <round>            收 inbox/<round>-*.json：去重、进候选池、记线索
   explore.py score [--engine auto]     给没打分的候选打分：Jev 分类（只发公开内容）、本地 Qwen 打"想不想看"；
                                        Qwen 连不上时自动改用 Opus 5.5（claude -p，订阅用量），每条记 scorer
-  explore.py digest [--size 10]        出一份日报：6 条最可能想看 + 2 条最拿不准 + 2 条新方向，顺序打乱
+  explore.py digest [--size 10]        出一份日报：6 条最可能想看 + 2 条最拿不准 + 2 条新方向，顺序打乱；没答的日报再多也照出
+  explore.py enrich <digest> <briefs>  把简介 subagent（tools/explore/BRIEF.md）交回的 JSON 并进日报，重写网页数据
   explore.py learn <digest> <letters>  记 Luke 的回答：letters 是想看的字母，如 ACF；都不想看写 -
   explore.py aihot [--all]             从 AIHOT 拉最近 24 小时的精选进候选池（免费，不派 subagent）
   explore.py due                       这一轮要不要出日报、做每天和每周的活（每 20 分钟一轮，只在那个小时的第一轮做）
@@ -30,7 +31,6 @@ import l1_eval as E  # noqa: E402
 ARMS, POOL, LEADS, ROUNDS, LABELS = (DIR / n for n in ("arms.json", "pool.jsonl", "leads.jsonl", "rounds.jsonl", "labels.jsonl"))
 SCOUTS = ("x", "paper", "community", "ja", "aihot")
 THROTTLE_UNANSWERED = 4   # 没答的日报到这个数（方案 B 每天 2 份，约 2 天），就停派侦察兵
-MAX_UNANSWERED = 3        # 没答的日报到这个数，就不再出新日报，免得越堆越多
 FRESH_HOURS = 48          # 候选只留 48 小时，没展示就作废（Luke 2026-10-21 定的；侦察兵照派，不因候选多而停）
 
 
@@ -404,14 +404,12 @@ def cmd_score(a):
 
 # ---------- 日报 ----------
 def digests():
-    return [json.loads(f.read_text()) for f in sorted((DIR / "digests").glob("*.json")) if not f.name.endswith(".page.json")]
+    # 只认 <stamp>.json；同目录还有 .page.json（网页数据）和 .briefs.json（简介）
+    return [json.loads(f.read_text()) for f in sorted((DIR / "digests").glob("*.json")) if re.fullmatch(r"\d{8}-\d{4}\.json", f.name)]
 
 
 def cmd_digest(a):
-    open_ = [d for d in digests() if not d.get("answered")]
-    if len(open_) >= MAX_UNANSWERED:
-        print(json.dumps({"skipped": True, "reason": f"还有 {len(open_)} 份日报没答", "open": [d["stamp"] for d in open_]}, ensure_ascii=False))
-        return
+    # 到点就出，不因为有没答的日报而停（Luke 2026-10-25 选了 B：原来没答满 3 份就停出，侦察兵却照跑，两天白跑）
     arms = load_arms()
     pool = read_jsonl(POOL)
     expire(pool)
@@ -449,19 +447,51 @@ def cmd_digest(a):
                           scout=r["scout"], p=r["p"], url=r["url"], title=r["title"], author=r["author"],
                           source=r["source"], published=r["published"], what=r["what"], why=r["why"],
                           kind=r.get("kind", ""), topic=r.get("topic", "")))
-    d = {"stamp": stamp, "created": now().isoformat(timespec="seconds"), "answered": False, "items": items}
-    (DIR / "digests" / f"{stamp}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1))
+    d = {"stamp": stamp, "created": now().isoformat(timespec="seconds"), "answered": False, "format": 2, "items": items}
     write_jsonl(POOL, pool)
+    write_digest(d)
+    print(f"\n下一步：按 tools/explore/BRIEF.md 派简介 subagent，交回后跑 explore.py enrich {stamp} <briefs.json>")
+
+
+PAGE_KEYS = ("letter", "slot", "url", "title", "author", "source", "published", "what", "title_zh", "intro", "for_you", "length", "read")
+
+
+def write_digest(d):
+    """写日报的三份文件：完整记录 .json、给对话看的 .md、给网页数据库的 .page.json。"""
+    stamp, items = d["stamp"], d["items"]
+    (DIR / "digests" / f"{stamp}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1))
     md = [f"# lukeeMind 日报 {stamp}", "", "想看哪几条？回字母就行（例：ACF；都不想看回 -）。", ""]
     for it in items:
-        md += [f"**{it['letter']}. {it['title']}**", f"{it['what']}", f"{it['source']} · {it['author']} · {it['published'] or '日期未知'} · {it['url']}", ""]
+        md.append(f"**{it['letter']}. {it.get('title_zh') or it['title']}**")
+        md += [f"- {x}" for x in it["intro"]] if it.get("intro") else [it["what"]]   # 有要点就不放侦察兵那句话
+        if it.get("for_you"):
+            md.append(f"和你的关系：{it['for_you']}")
+        md += [" · ".join(x for x in (it["source"], it["author"], it["published"] or "日期未知", it.get("length"), it["url"]) if x), ""]
     (DIR / "digests" / f"{stamp}.md").write_text("\n".join(md))
     # 给日报网页的数据库文档：不放预测分和方向，免得影响 Luke 的判断
-    page = {"stamp": stamp, "created": d["created"],
-            "items": [{k: it[k] for k in ("letter", "slot", "url", "title", "author", "source", "published", "what")} for it in items]}
+    page = {"stamp": stamp, "created": d["created"], "items": [{k: it[k] for k in PAGE_KEYS if it.get(k) not in (None, "", [])} for it in items]}
     (DIR / "digests" / f"{stamp}.page.json").write_text(json.dumps(page, ensure_ascii=False))
     print("\n".join(md))
     print(f"\n网页数据：{DIR / 'digests' / f'{stamp}.page.json'}（ArtifactData set，collection digests，doc_id {stamp}）")
+
+
+def cmd_enrich(a):
+    """简介 subagent 读完原文交回 {字母: {title_zh, intro, for_you, length, read}}，并进日报。缺的字母照旧只有一句话。"""
+    f = DIR / "digests" / f"{a.digest}.json"
+    d = json.loads(f.read_text())
+    briefs = json.loads(Path(a.briefs).read_text())
+    got = []
+    for it in d["items"]:
+        b = briefs.get(it["letter"]) or {}
+        intro = [str(x).strip() for x in (b.get("intro") or []) if str(x).strip()][:5]
+        if not intro:
+            continue
+        it.update(intro=intro, title_zh=str(b.get("title_zh") or "").strip(), for_you=str(b.get("for_you") or "").strip(),
+                  length=str(b.get("length") or "").strip(), read=bool(b.get("read", True)))
+        got.append(it["letter"])
+    d["format"] = 2
+    write_digest(d)
+    print(json.dumps({"enriched": "".join(got), "missing": "".join(it["letter"] for it in d["items"] if it["letter"] not in got)}))
 
 
 # ---------- 记回答 ----------
@@ -714,6 +744,7 @@ def main():
     p.add_argument("--quality", action="store_true", help="给已经打过分、但还没有客观题标签的候选补打")
     p = sub.add_parser("digest"); p.add_argument("--size", type=int, default=10)
     p = sub.add_parser("learn"); p.add_argument("digest"); p.add_argument("letters")
+    p = sub.add_parser("enrich"); p.add_argument("digest"); p.add_argument("briefs")
     sub.add_parser("report")
     sub.add_parser("due")
     p = sub.add_parser("mark"); p.add_argument("job", choices=["daily", "weekly", "likes"])
