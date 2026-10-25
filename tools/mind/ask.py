@@ -10,6 +10,8 @@
   ask.py taste --text "…" [--author 名字] [--from 谁]   Luke 会不会想看这条内容（概率 + 最像的三条他点过赞的）
   ask.py profile [--work]          打印 Luke 当前的口味 skill 和原则；--work 再附上 Salesroom 里的客户真实声音、他在会上的判断
   ask.py report                    按类别报一致率、漏报、能不能升级
+  ask.py quiz [--n 10]             补数据：列出别的 agent 问过、还没回填 Luke 选了什么的题（最早的先出），不给 lukeeMind 的猜测
+  ask.py quiz-answer "1A 2C 3-"    按上一次 quiz 的题号回填（- 表示跳过）
   ask.py backtest [--n 109] [--workers 4] [--sources on|off]   用 private/l3 的旧选择题回测（只用更早的题做例子）
 """
 import argparse, collections, datetime as dt, hashlib, json, re, sys
@@ -91,6 +93,7 @@ def root_info(slug):
                 strong=sum(r == "强" for r in rows), n=len(rows))
 
 
+VARIANT_DEFAULT = "full"   # 2026-10-25 Luke 选了 A：精简版和现在的版本各跑两遍旧题，确实更准才换
 SOFT_LABELS = {"研究报告": 1, "厂商调查": 2}   # 咨询公司报告、厂商调查排在理论、论文、政府资料后面
 
 
@@ -147,11 +150,20 @@ SYS = ("你是 lukeeMind，在替一个具体的人 Luke 预判他会怎么选�
        "根据他的档案、原则、确认过的规律和他以前的相似选择，判断他多半选哪个。只输出一个 JSON 对象。")
 
 
-def build_prompt(question, options, context, examples, with_sources=False):
-    profile = (E.PRIVATE / "luke" / "profile.md").read_text()
-    confirmed = (E.PRIVATE / "luke" / "confirmed.md").read_text()
+def taste_skill():
+    champ = json.loads((E.PRIVATE / "l1" / "champion.json").read_text())
+    return (E.PRIVATE / "luke" / champ["profile"]).read_text()
+
+
+def build_prompt(question, options, context, examples, with_sources=False, variant="full"):
     rules = principles_with_sources() if with_sources else principles()
-    parts = ["【Luke 的档案】\n" + profile, "【他确认过的做事原则】\n" + rules, "【他确认过的规律】\n" + confirmed]
+    if variant == "slim":
+        # 精简版：只给原则和口味 skill，不给档案和确认过的规律（Jev 测试时发现这样 Opus 反而多对 4 题，待回测确认）
+        parts = ["【他确认过的做事原则】\n" + rules, "【Luke 的口味说明】\n" + taste_skill()]
+    else:
+        profile = (E.PRIVATE / "luke" / "profile.md").read_text()
+        confirmed = (E.PRIVATE / "luke" / "confirmed.md").read_text()
+        parts = ["【Luke 的档案】\n" + profile, "【他确认过的做事原则】\n" + rules, "【他确认过的规律】\n" + confirmed]
     if examples:
         parts.append("【他以前的相似选择】（只看他怎么判断，不要把里面的客户和项目事实搬到这次）\n" +
                      "\n\n".join(f"题：{e['text'][-700:]}\n他选了：{e['choice']}" for e in examples))
@@ -175,14 +187,15 @@ def build_prompt(question, options, context, examples, with_sources=False):
     return "\n\n".join(parts)
 
 
-def judge(question, options, context="", client="", before="", with_sources=None):
+def judge(question, options, context="", client="", before="", with_sources=None, variant=None):
     with_sources = SOURCES_DEFAULT if with_sources is None else with_sources
+    variant = VARIANT_DEFAULT if variant is None else variant
     pool = past_decisions(before, client)
     examples = []
     if pool:
         idx = E.Index(pool)
         examples = idx.top(question + "\n" + "\n".join(options.values()) + "\n" + context[:500], 4)
-    out = OJ.ask_json(SYS, build_prompt(question, options, context, examples, with_sources))
+    out = OJ.ask_json(SYS, build_prompt(question, options, context, examples, with_sources, variant))
     evidence, sources = attach_sources(out.get("evidence") or [])
     opts = options or {k: str(v) for k, v in (out.get("options") or {}).items()}
     probs = {k: float((out.get("probs") or {}).get(k, 0) or 0) for k in opts}
@@ -299,6 +312,36 @@ def cmd_profile(a):
                 print("\n---\n" + f.read_text())
 
 
+def cmd_quiz(a):
+    """每周的补数据题：先出别的 agent 真实问过、还没回填的题。不显示 lukeeMind 猜的答案，免得带偏 Luke。"""
+    todo = [r for r in read_jsonl(ASKS) if not r.get("luke") and r.get("options") and r.get("from") != "smoke-test"][:a.n]
+    (DIR / "quiz-last.json").write_text(json.dumps([r["id"] for r in todo]))
+    for i, r in enumerate(todo, 1):
+        print(f"{i}. {r['question'].strip()[:220]}（{r['at'][:10]}，{r['from']} 问的）")
+        for k, v in r["options"].items():
+            print(f"   {k}. {v[:120]}")
+    print(f"\n共 {len(todo)} 题。回法：1A 2C 3-（- 表示跳过）")
+
+
+def cmd_quiz_answer(a):
+    ids = json.loads((DIR / "quiz-last.json").read_text())
+    rows = read_jsonl(ASKS)
+    by = {r["id"]: r for r in rows}
+    n = 0
+    for num, letter in re.findall(r"(\d+)\s*([A-Za-z-])", a.answers):
+        i = int(num) - 1
+        if letter == "-" or not (0 <= i < len(ids)) or ids[i] not in by:
+            continue
+        r = by[ids[i]]
+        if letter.upper() not in r["options"]:
+            continue
+        r.update(luke=letter.upper(), luke_note="每周补数据题", recorded=now().isoformat(timespec="seconds"),
+                 agree=letter.upper() == r["choice"])
+        n += 1
+    write_jsonl(ASKS, rows)
+    print(f"回填 {n} 题")
+
+
 def cmd_backtest(a):
     """用旧选择题回测：去掉推荐标记，只用更早的题做例子，看猜中几道、有没有把"该问 Luke"的事判成不用问。"""
     E.load_env()
@@ -306,13 +349,14 @@ def cmd_backtest(a):
     import concurrent.futures as cf
     rows = [r for r in read_jsonl(E.PRIVATE / "l3" / "decisions.jsonl") if r["choice"] in r["options"]][-a.n:]
     with_sources = SOURCES_DEFAULT if a.sources == "default" else a.sources == "on"
+    variant = VARIANT_DEFAULT if a.variant == "default" else a.variant
 
     def one(r):
         q = L.strip_rec(r["question"] if r["kind"] == "ask_tool" else r["question"][-2500:])
         opts = {k: L.strip_rec(v) or f"选项 {k}" for k, v in r["options"].items()}
         try:
             return {"id": r["id"], "luke": r["choice"], "rec": r["recommended"],
-                    **judge(q, opts, before=r["ts"], with_sources=with_sources)}
+                    **judge(q, opts, before=r["ts"], with_sources=with_sources, variant=variant)}
         except Exception as e:
             print(f"  {r['id']} 出错：{e}", file=sys.stderr)
 
@@ -325,7 +369,7 @@ def cmd_backtest(a):
                 print(f"  {i}/{len(rows)}", file=sys.stderr, flush=True)
     stamp = now().strftime("%Y%m%d-%H%M")
     DIR.mkdir(parents=True, exist_ok=True)
-    write_jsonl(DIR / f"backtest-{stamp}-sources-{'on' if with_sources else 'off'}.jsonl", out)
+    write_jsonl(DIR / f"backtest-{stamp}-sources-{'on' if with_sources else 'off'}-{variant}.jsonl", out)
     n = len(out)
     agree = sum(o["choice"] == o["luke"] for o in out)
     dev = [o for o in out if o["rec"] and o["luke"] != o["rec"]]
@@ -357,13 +401,16 @@ def main():
     p.add_argument("--author", default="")
     p.add_argument("--from", dest="from_", default="unknown")
     p = sub.add_parser("profile"); p.add_argument("--work", action="store_true", help="附上客户真实声音和 Luke 在会上的判断")
+    p = sub.add_parser("quiz"); p.add_argument("--n", type=int, default=10)
+    p = sub.add_parser("quiz-answer"); p.add_argument("answers")
     p = sub.add_parser("backtest")
     p.add_argument("--n", type=int, default=109)
     p.add_argument("--workers", type=int, default=1)
     p.add_argument("--sources", choices=["on", "off", "default"], default="default", help="依据里带不带背后的道理（源知识）")
+    p.add_argument("--variant", choices=["full", "slim", "default"], default="default", help="full：档案加确认过的规律；slim：只给原则和口味 skill")
     a = ap.parse_args()
     {"ask": cmd_ask, "record": cmd_record, "report": cmd_report, "backtest": cmd_backtest,
-     "taste": cmd_taste, "profile": cmd_profile}[a.cmd](a)
+     "taste": cmd_taste, "profile": cmd_profile, "quiz": cmd_quiz, "quiz-answer": cmd_quiz_answer}[a.cmd](a)
 
 
 if __name__ == "__main__":
