@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.24 · 2026-10-24 · 更新记录见文末
+> v1.25 · 2026-10-25 · 更新记录见文末
 
 ## 你是谁
 
@@ -33,7 +33,7 @@
 | `docs/2026-10-18-self-evolution-spec.md` | 自我优化的方案和每一轮的记录 |
 | `docs/harness-experience.md` | 做事方法的经验库：补课、整理、存这些流程里什么做法管用、踩过什么坑 |
 | `tools/evolve/` | 自我优化用的脚本（测试集、打分、前瞻测试、试跑候选、Jev 分类、出处核查） |
-| `tools/explore/` | 探索循环：`explore.py`（选方向、收候选、打分、出日报、记回答）、`SCOUT.md`（侦察兵任务说明）、`digest-page.html`（日报网页） |
+| `tools/explore/` | 探索循环：`explore.py`（选方向、收候选、打分、出日报、记回答）、`SCOUT.md`（侦察兵任务说明）、`BRIEF.md`（日报简介的任务说明）、`digest-page.html`（日报网页） |
 | `docs/2026-10-19-explore-loop-spec.md` | 探索循环的方案和每周的记录 |
 | `tools/mind/ask.py` | 当大脑：问、回填、报数、回测 |
 | `tools/mind/salesroom.py` | 接 Salesroom 会议：同步、本地 Qwen 逐场抽取、去名后汇总（数据只在 `private/salesroom/` 和 `private/luke/`） |
@@ -376,7 +376,7 @@ verified: true
 2. **看状态**：`explore.py status`。`busy` 为 true（上一轮还没收完）就只做第 4 步的 `aihot` 和 `score`、第 6 步；`throttle` 为 true（没答的日报到 4 份）就跳过第 3 步。候选只留 48 小时，超过 48 小时还没进日报的自动作废，所以候选再多也照派侦察兵
 3. **派侦察兵**：`explore.py pick --n 3`，按它给的 3 份任务段落各派一个 subagent，任务说明是 `tools/explore/SCOUT.md` 全文加那份段落，并把「其他约定 · 隐私」原样写进去。3 个并行，等它们都交完。每个侦察兵完成时，把通知里的 `subagent_tokens` 记下来：`explore.py cost <round> <第几个> <tokens>`（标准版和省钱版的对照试验要算花费）
 4. **收和打分**：`explore.py ingest <round>`；再 `explore.py aihot`，从 AIHOT 拉最近 24 小时的精选（免费，不派侦察兵，`busy` 或 `throttle` 时也照拉）；最后 `explore.py score`（本地 Qwen 连不上时自动改用 Opus 5.5 打分，不用停下来）
-5. **出日报**（`explore.py due` 里 `digest` 为 true，或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`；把它打印的 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukeeMind 日报到了（10 条）"加网页链接
+5. **出日报**（`explore.py due` 里 `digest` 为 true，或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`，没答的日报再多也照出；然后派一个简介 subagent，任务说明是 `tools/explore/BRIEF.md` 全文加这份日报的路径，并把「其他约定 · 隐私」原样写进去，它读完 10 条原文，交回 `private/explore/digests/<stamp>.briefs.json`（每条的中文标题、3～5 条要点、和 Luke 的关系、篇幅）；跑 `explore.py enrich <stamp> <briefs.json>` 并进日报；把 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukeeMind 日报到了（10 条）"加网页链接。简介 subagent 20 分钟还没交回，就先 set 只有一句话的版本并推送，交回后再 enrich、重新 set
 6. **顺手跑流程五**：`python3 tools/evolve/l1_daily.py`
 6b. **点赞对账**（`explore.py due` 里 `likes` 为 true，每 3 小时一次）：`explore.py likes`。候选池里被 Luke 点了赞的，自动记成"想看"；库里还没有的新点赞写进 `private/explore/likes/pending.jsonl`，按「流程三」读完、写标题、存进 `clips/`（成人向等不适合公开的先扣下，在下一份日报推送里一句话问 Luke）。做完跑 `explore.py mark likes`
 7. **每天的活**（`explore.py due` 里 `daily` 为 true 时做，做完跑 `explore.py mark daily`）：**长新方向**：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`。同一轮顺手跑 `python3 tools/evolve/l3_extract.py`，把这台 Mac 上新会话里 Luke 做过的选择抽进决定预测的测试集（只放 `private/l3/`）；跑 `python3 tools/evolve/l1_collect.py authors --max 5`，多攒点赞预测的弱负样本（X 会限流，每天只抓 5 位作者）；跑 `python3 tools/mind/salesroom.py sync` 和 `salesroom.py extract --limit 40`，把 Salesroom 新的会议拉下来、用本地 Qwen 抽客户原话和 Luke 的判断（Qwen 连不上就跳过，不改用外部模型）
@@ -467,6 +467,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.25 | 2026-10-25 | 日报到点照出，不再因为有 3 份没答就停（起因：停出日报后侦察兵照跑，两天收了 578 条候选一条没送到 Luke，Luke 选了 B）；日报每条加简介：派一个 subagent 按 `tools/explore/BRIEF.md` 读原文，写中文标题、3～5 条要点、和 Luke 的关系、篇幅（起因：Luke 说每条只有一句话，看不出值不值得点开，要"相当于简介，内容再多一点"） |
 | v1.24 | 2026-10-24 | 点赞预测的前瞻测试改成以"新点赞配对考"为主、加日报回答：冠军上任以后的新点赞当"会点"，同期快照里没点的当"不会点"，盲打分，周报里报；快照不再去掉已存进库的点赞，没题也记一行（起因：口味 skill 上任后 3 天没有一个前瞻成绩，查明 Luke 点赞的多是推荐流热帖、快照抓不到；Luke 选了 A 加 C） |
 | v1.23 | 2026-10-24 | 加了省钱版侦察兵的对照试验：轮流派标准版和省钱版，记每次的 token 花费，命中率不掉、花费省 30% 以上就改成默认（起因：Luke 问 RSI 研究到哪，选了 A：借 HarnessPro 的思路让探索循环分数和成本一起优化） |
 | v1.22 | 2026-10-23 | 接入 Salesroom 会议数据：每天同步、本地 Qwen 逐场抽客户原话和 Luke 的判断，每周去名后汇成「客户真实声音」和「Luke 在会上怎么判断」，用 `ask.py profile --work` 给别的 agent；会议原文只在本机、不进任何 git、不交外部接口（起因：Luke 要接入 Salesroom，选了 C：客户现场和他在会上的判断都做） |
