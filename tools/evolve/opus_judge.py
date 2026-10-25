@@ -23,14 +23,20 @@ def qwen_ok(timeout=4):
 
 def ask_json(system, prompt, timeout=600):
     """调一次 Opus，返回它输出里的 JSON 对象。"""
+    return ask_json_meta(system, prompt, timeout)[0]
+
+
+def ask_json_meta(system, prompt, timeout=600):
+    """同 ask_json，另外返回这次调用的花费和用时（claude -p 报的 total_cost_usd 是按 API 价折算的，订阅不另收钱）。"""
     r = subprocess.run(["claude", "-p", "--model", MODEL, "--system-prompt", system, "--tools", "",
                         "--strict-mcp-config", "--no-session-persistence", "--effort", "low", "--output-format", "json"],
                        input=prompt, capture_output=True, text=True, timeout=timeout, cwd="/tmp")
     if r.returncode != 0:
         raise RuntimeError(f"claude -p 失败：{(r.stderr or r.stdout)[-300:]}")
-    text = json.loads(r.stdout).get("result", "")
+    d = json.loads(r.stdout)
+    text = d.get("result", "")
     i = text.find("{")
     if i < 0:
         raise RuntimeError(f"Opus 没给 JSON：{text[:200]}")
     obj, _ = json.JSONDecoder().raw_decode(text[i:])   # 只取第一个 JSON 对象，后面多出来的字不管
-    return obj
+    return obj, {"cost_usd": d.get("total_cost_usd"), "usage": d.get("usage"), "duration_ms": d.get("duration_ms")}
