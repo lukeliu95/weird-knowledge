@@ -10,7 +10,7 @@
   ask.py taste --text "…" [--author 名字] [--from 谁]   Luke 会不会想看这条内容（概率 + 最像的三条他点过赞的）
   ask.py profile [--work]          打印 Luke 当前的口味 skill 和原则；--work 再附上 Salesroom 里的客户真实声音、他在会上的判断
   ask.py report                    按类别报一致率、漏报、能不能升级
-  ask.py backtest [--n 109]        用 private/l3 的旧选择题回测（只用更早的题做例子）
+  ask.py backtest [--n 109] [--workers 4] [--sources on|off]   用 private/l3 的旧选择题回测（只用更早的题做例子）
 """
 import argparse, collections, datetime as dt, hashlib, json, re, sys
 from pathlib import Path
@@ -72,6 +72,60 @@ def principles():
     return "\n".join(re.findall(r"^### (原则 \d+：.*)$", t, re.M))
 
 
+# 回答里带"背后的道理"：Luke 2026-10-25 选了 A，回测准确率不掉才把默认改成开。
+# 2026-10-25 回测：同样 124 题，带 103、不带 102，高确定 34/35 对 33/34，所以默认开
+SOURCES_DEFAULT = True
+TYPE_LABEL = {"论文": "研究论文", "方法论": "方法"}
+
+
+def root_info(slug):
+    p = E.REPO / "roots" / f"{slug}.md"
+    if not p.exists():
+        return None
+    x = p.read_text()
+    g = lambda k: (re.search(rf'^{k}:\s*"?(.*?)"?\s*$', x, re.M) or [None, ""])[1]
+    rows = re.findall(r"^\| \[.*?\]\(\.\./clips/.*\| (强|弱[^|]*) \|$", x, re.M)
+    one = x.split("## 一句话", 1)[1].split("\n## ", 1)[0].strip().split("\n")[0] if "## 一句话" in x else ""
+    label = "厂商调查" if "厂商调查" in one else TYPE_LABEL.get(g("type"), g("type") or "来源")
+    return dict(slug=slug, name=g("name_zh"), label=label, line=one,
+                strong=sum(r == "强" for r in rows), n=len(rows))
+
+
+def principle_sources(k=2):
+    """每条原则在 framework.md 里链到的源知识，按"强关系多、被指向多"挑前 k 个。"""
+    t = (E.REPO / "framework.md").read_text().split("\n## 二、")[0]
+    parts = re.split(r"\n### (原则 \d+：[^\n]*)", t)
+    out = {}
+    for head, body in zip(parts[1::2], parts[2::2]):
+        info = [r for r in map(root_info, dict.fromkeys(re.findall(r"\(roots/([^)]+)\.md\)", body))) if r]
+        out[head] = sorted(info, key=lambda r: (-r["strong"], -r["n"]))[:k]
+    return out
+
+
+def principles_with_sources():
+    lines = []
+    for head, roots in principle_sources().items():
+        lines.append(head)
+        lines += [f"  背后的道理 [{r['slug']}] {r['name']}（{r['label']}）：{r['line']}" for r in roots]
+    return "\n".join(lines)
+
+
+def attach_sources(evidence):
+    """模型只交 slug，道理的名字、类型和一句话由这里从 roots/ 里取，不让模型自己写，免得编。"""
+    known = {r["slug"]: r for rs in principle_sources().values() for r in rs}
+    texts, used = [], []
+    for e in evidence[:3]:
+        if isinstance(e, str):
+            texts.append(e)
+            continue
+        point, r = str(e.get("point", "")).strip(), known.get(str(e.get("source", "")).strip())
+        if r:
+            point += f"。背后的道理：{r['name']}（{r['label']}）：{r['line']}"
+            used.append({k: r[k] for k in ("slug", "name", "label")})
+        texts.append(point)
+    return texts, used
+
+
 def past_decisions(before="", client=""):
     """能当例子的旧选择：L3 抽出来的选择题，加上回填过的提问（只取同一客户或不涉及客户的）。"""
     out = []
@@ -90,10 +144,11 @@ SYS = ("你是 lukeeMind，在替一个具体的人 Luke 预判他会怎么选�
        "根据他的档案、原则、确认过的规律和他以前的相似选择，判断他多半选哪个。只输出一个 JSON 对象。")
 
 
-def build_prompt(question, options, context, examples):
+def build_prompt(question, options, context, examples, with_sources=False):
     profile = (E.PRIVATE / "luke" / "profile.md").read_text()
     confirmed = (E.PRIVATE / "luke" / "confirmed.md").read_text()
-    parts = ["【Luke 的档案】\n" + profile, "【他确认过的做事原则】\n" + principles(), "【他确认过的规律】\n" + confirmed]
+    rules = principles_with_sources() if with_sources else principles()
+    parts = ["【Luke 的档案】\n" + profile, "【他确认过的做事原则】\n" + rules, "【他确认过的规律】\n" + confirmed]
     if examples:
         parts.append("【他以前的相似选择】（只看他怎么判断，不要把里面的客户和项目事实搬到这次）\n" +
                      "\n\n".join(f"题：{e['text'][-700:]}\n他选了：{e['choice']}" for e in examples))
@@ -103,10 +158,13 @@ def build_prompt(question, options, context, examples):
         parts.append("【这次的问题】\n" + question + "\n" + "\n".join(f"{k}. {v}" for k, v in options.items()))
     else:
         parts.append("【这次的问题】\n" + question + "\n（没有给选项：先列出 2～4 个现实的做法，标 A、B、C…，再判断。）")
+    evidence = ('"evidence": [{"point": "一句话依据：引用哪条原则、哪次相似选择或档案里的哪一点", '
+                '"source": "引用了原则时，从那条原则下面列的「背后的道理」里挑最贴切的一个，填方括号里的英文编号；没有贴切的就填空字符串"}]（最多 3 条），\n'
+                if with_sources else
+                '"evidence": ["一句话依据：引用哪条原则、哪次相似选择或档案里的哪一点"]（最多 3 条），\n')
     parts.append("输出 JSON，字段：\n"
                  '"options": {"A": "选项原文或你列的做法"}，\n'
-                 '"probs": {"A": 概率}（加起来等于 1），\n'
-                 '"evidence": ["一句话依据：引用哪条原则、哪次相似选择或档案里的哪一点"]（最多 3 条），\n'
+                 '"probs": {"A": 概率}（加起来等于 1），\n' + evidence +
                  f'"category": 从这些里选一个：{"、".join(CATEGORIES)}，\n'
                  '"must_ask_luke": true 或 false（碰钱、合同、交期上线、人事、凭据权限、对外发送、替 Luke 通知同事或给同事发说明、删除和难撤销、方向取舍，一律 true），\n'
                  '"must_ask_reason": "一句话"，\n'
@@ -114,13 +172,15 @@ def build_prompt(question, options, context, examples):
     return "\n\n".join(parts)
 
 
-def judge(question, options, context="", client="", before=""):
+def judge(question, options, context="", client="", before="", with_sources=None):
+    with_sources = SOURCES_DEFAULT if with_sources is None else with_sources
     pool = past_decisions(before, client)
     examples = []
     if pool:
         idx = E.Index(pool)
         examples = idx.top(question + "\n" + "\n".join(options.values()) + "\n" + context[:500], 4)
-    out = OJ.ask_json(SYS, build_prompt(question, options, context, examples))
+    out = OJ.ask_json(SYS, build_prompt(question, options, context, examples, with_sources))
+    evidence, sources = attach_sources(out.get("evidence") or [])
     opts = options or {k: str(v) for k, v in (out.get("options") or {}).items()}
     probs = {k: float((out.get("probs") or {}).get(k, 0) or 0) for k in opts}
     z = sum(probs.values()) or 1
@@ -144,7 +204,7 @@ def judge(question, options, context="", client="", before=""):
     must = bool(reasons)
     act = "follow" if (not must and level >= 1 and confidence == "高") else "ask_luke"
     return dict(choice=choice, options=opts, probs=probs, confidence=confidence,
-                evidence=(out.get("evidence") or [])[:3], category=category, rule_flags=flags,
+                evidence=evidence, sources=sources, category=category, rule_flags=flags,
                 must_ask_luke=must, must_ask_reason="；".join(dict.fromkeys(reasons)), opus_must=bool(out.get("must_ask_luke")),
                 level=level, act=act,
                 note=out.get("note", ""), examples=[e["id"] for e in examples])
@@ -227,7 +287,8 @@ def cmd_profile(a):
     """打印 Luke 的画像：口味 skill、12 条原则；加 --work 再附上 Salesroom 会议里的客户真实声音和他在会上的判断（客户资料已去名，只在本机）。"""
     champ = json.loads((E.PRIVATE / "l1" / "champion.json").read_text())
     print((E.PRIVATE / "luke" / champ["profile"]).read_text())
-    print("\n---\n他确认过的做事原则：\n" + principles())
+    # 给别的 agent 读的画像不做预测，直接带上每条原则背后的道理，方便它们向人解释
+    print("\n---\n他确认过的做事原则（每条后面是背后的道理，括号里是证据类型）：\n" + principles_with_sources())
     if a.work:
         for name in ("luke-in-meetings.md", "customer-voice.md"):
             f = E.PRIVATE / "luke" / name
@@ -239,22 +300,29 @@ def cmd_backtest(a):
     """用旧选择题回测：去掉推荐标记，只用更早的题做例子，看猜中几道、有没有把"该问 Luke"的事判成不用问。"""
     E.load_env()
     import l3_eval as L
+    import concurrent.futures as cf
     rows = [r for r in read_jsonl(E.PRIVATE / "l3" / "decisions.jsonl") if r["choice"] in r["options"]][-a.n:]
-    out = []
-    for i, r in enumerate(rows, 1):
+    with_sources = SOURCES_DEFAULT if a.sources == "default" else a.sources == "on"
+
+    def one(r):
         q = L.strip_rec(r["question"] if r["kind"] == "ask_tool" else r["question"][-2500:])
         opts = {k: L.strip_rec(v) or f"选项 {k}" for k, v in r["options"].items()}
         try:
-            res = judge(q, opts, before=r["ts"])
+            return {"id": r["id"], "luke": r["choice"], "rec": r["recommended"],
+                    **judge(q, opts, before=r["ts"], with_sources=with_sources)}
         except Exception as e:
-            print(f"  第 {i} 题出错：{e}", file=sys.stderr)
-            continue
-        out.append({"id": r["id"], "luke": r["choice"], "rec": r["recommended"], **res})
-        if i % 10 == 0:
-            print(f"  {i}/{len(rows)}", file=sys.stderr, flush=True)
+            print(f"  {r['id']} 出错：{e}", file=sys.stderr)
+
+    out = []
+    with cf.ThreadPoolExecutor(a.workers) as ex:
+        for i, res in enumerate(ex.map(one, rows), 1):
+            if res:
+                out.append(res)
+            if i % 10 == 0:
+                print(f"  {i}/{len(rows)}", file=sys.stderr, flush=True)
     stamp = now().strftime("%Y%m%d-%H%M")
     DIR.mkdir(parents=True, exist_ok=True)
-    write_jsonl(DIR / f"backtest-{stamp}.jsonl", out)
+    write_jsonl(DIR / f"backtest-{stamp}-sources-{'on' if with_sources else 'off'}.jsonl", out)
     n = len(out)
     agree = sum(o["choice"] == o["luke"] for o in out)
     dev = [o for o in out if o["rec"] and o["luke"] != o["rec"]]
@@ -288,6 +356,8 @@ def main():
     p = sub.add_parser("profile"); p.add_argument("--work", action="store_true", help="附上客户真实声音和 Luke 在会上的判断")
     p = sub.add_parser("backtest")
     p.add_argument("--n", type=int, default=109)
+    p.add_argument("--workers", type=int, default=1)
+    p.add_argument("--sources", choices=["on", "off", "default"], default="default", help="依据里带不带背后的道理（源知识）")
     a = ap.parse_args()
     {"ask": cmd_ask, "record": cmd_record, "report": cmd_report, "backtest": cmd_backtest,
      "taste": cmd_taste, "profile": cmd_profile}[a.cmd](a)
