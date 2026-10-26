@@ -12,7 +12,8 @@
   ask.py report                    按类别报一致率、漏报、能不能升级
   ask.py quiz [--n 10]             补数据：列出别的 agent 问过、还没回填 Luke 选了什么的题（最早的先出），不给 lukeeMind 的猜测
   ask.py quiz-answer "1A 2C 3-"    按上一次 quiz 的题号回填（- 表示跳过）
-  ask.py backtest [--n 109] [--workers 4] [--sources on|off]   用 private/l3 的旧选择题回测（只用更早的题做例子）
+  ask.py backtest [--n 109] [--workers 4] [--sources on|off] [--notes on|off] [--rules off|sim]
+                                   用 private/l3 的旧选择题回测（只用更早的题做例子、更早的卡提炼的规律）
 """
 import argparse, collections, datetime as dt, hashlib, json, re, sys
 from pathlib import Path
@@ -132,18 +133,48 @@ def attach_sources(evidence):
     return texts, used
 
 
+def luke_words(text):
+    """Luke 回答里字母之外补的话。只回了一个字母、补数据题的固定说明、提问方替他写的转述，都算没补。"""
+    t = re.sub(r"^\s*[A-Z]\s*[:：.、，,]?\s*", "", text or "").strip()
+    return "" if len(t) < 8 or t == "每周补数据题" or t.startswith("Luke 只回了") else t
+
+
 def past_decisions(before="", client=""):
-    """能当例子的旧选择：L3 抽出来的选择题，加上回填过的提问（只取同一客户或不涉及客户的）。"""
+    """能当例子的旧选择：L3 抽出来的选择题，加上回填过的提问（只取同一客户或不涉及客户的）。note 是他补的原话。"""
     out = []
     for r in read_jsonl(E.PRIVATE / "l3" / "decisions.jsonl"):
         if r["choice"] in r["options"] and (not before or r["ts"] < before):
             q = r["question"] + ("\n" + "\n".join(f"{k}. {v}" for k, v in r["options"].items()) if r["kind"] == "ask_tool" else "")
-            out.append({"id": r["id"], "text": q[-1500:], "choice": r["choice"]})
+            out.append({"id": r["id"], "text": q[-1500:], "choice": r["choice"], "note": luke_words(r.get("reply"))})
     for r in read_jsonl(ASKS):
         if r.get("luke") and (not r.get("client") or r.get("client") == client) and (not before or r["at"] < before):
             q = r["question"] + "\n" + "\n".join(f"{k}. {v}" for k, v in r["options"].items())
-            out.append({"id": r["id"], "text": q[-1500:], "choice": r["luke"]})
+            out.append({"id": r["id"], "text": q[-1500:], "choice": r["luke"], "note": luke_words(r.get("luke_note"))})
     return out
+
+
+# Luke 2026-10-26 选了 B：例子带上他补的原话，再加上每周从回答和纠正里提炼、他认过的规律（tools/mind/distill.py）。
+# 回测准确率不掉才把默认改成开，回测见 docs/2026-10-26-mind-distill-spec.md
+# 2026-10-26 回测：同样 128 题各跑两遍，现状 107、105，带原话加按周模拟的规律 108、107，所以默认开
+NOTES_DEFAULT = True
+RULES_DEFAULT = True
+
+
+def mind_rules():
+    """Luke 认过的拿主意规律。"""
+    return [r for r in read_jsonl(DIR / "rules.jsonl") if r.get("status") == "已确认"]
+
+
+def clean_ids(s):
+    """提炼时模型会把案例卡编号写进句子里，交给模型和给人看之前去掉。"""
+    s = re.sub(r"\d{8}-\d{6}-[0-9a-f]{6}|\b[0-9a-f]{12}\b", "", s or "")
+    return re.sub(r"[（(][\s、，,]*[）)]", "", s).strip()
+
+
+def render_rules(rules):
+    return ("【他拿主意时的规律】（从他以前的回答和纠正里提炼，他确认过；情境对得上才用）\n" +
+            "\n".join(f"- {clean_ids(r['rule'])}" + (f"（不适用：{clean_ids(r['when_not'])}）" if r.get("when_not") else "")
+                      for r in rules))
 
 
 SYS = ("你是 lukeeMind，在替一个具体的人 Luke 预判他会怎么选。别的 agent 遇到要替 Luke 拿主意的事来问你。"
@@ -155,7 +186,7 @@ def taste_skill():
     return (E.PRIVATE / "luke" / champ["profile"]).read_text()
 
 
-def build_prompt(question, options, context, examples, with_sources=False, variant="full"):
+def build_prompt(question, options, context, examples, with_sources=False, variant="full", notes=False, mrules=()):
     rules = principles_with_sources() if with_sources else principles()
     if variant == "slim":
         # 精简版：只给原则和口味 skill，不给档案和确认过的规律（Jev 测试时发现这样 Opus 反而多对 4 题，待回测确认）
@@ -164,9 +195,12 @@ def build_prompt(question, options, context, examples, with_sources=False, varia
         profile = (E.PRIVATE / "luke" / "profile.md").read_text()
         confirmed = (E.PRIVATE / "luke" / "confirmed.md").read_text()
         parts = ["【Luke 的档案】\n" + profile, "【他确认过的做事原则】\n" + rules, "【他确认过的规律】\n" + confirmed]
+    if mrules:
+        parts.append(render_rules(mrules))
     if examples:
         parts.append("【他以前的相似选择】（只看他怎么判断，不要把里面的客户和项目事实搬到这次）\n" +
-                     "\n\n".join(f"题：{e['text'][-700:]}\n他选了：{e['choice']}" for e in examples))
+                     "\n\n".join(f"题：{e['text'][-700:]}\n他选了：{e['choice']}" +
+                                 (f"\n他补的话：{e['note'][:200]}" if notes and e.get("note") else "") for e in examples))
     if context:
         parts.append("【这次的背景】\n" + context[:6000])
     if options:
@@ -187,15 +221,17 @@ def build_prompt(question, options, context, examples, with_sources=False, varia
     return "\n\n".join(parts)
 
 
-def judge(question, options, context="", client="", before="", with_sources=None, variant=None):
+def judge(question, options, context="", client="", before="", with_sources=None, variant=None, notes=None, mrules=None):
     with_sources = SOURCES_DEFAULT if with_sources is None else with_sources
     variant = VARIANT_DEFAULT if variant is None else variant
+    notes = NOTES_DEFAULT if notes is None else notes
+    mrules = (mind_rules() if RULES_DEFAULT else []) if mrules is None else mrules
     pool = past_decisions(before, client)
     examples = []
     if pool:
         idx = E.Index(pool)
         examples = idx.top(question + "\n" + "\n".join(options.values()) + "\n" + context[:500], 4)
-    out = OJ.ask_json(SYS, build_prompt(question, options, context, examples, with_sources, variant))
+    out = OJ.ask_json(SYS, build_prompt(question, options, context, examples, with_sources, variant, notes, mrules))
     evidence, sources = attach_sources(out.get("evidence") or [])
     opts = options or {k: str(v) for k, v in (out.get("options") or {}).items()}
     probs = {k: float((out.get("probs") or {}).get(k, 0) or 0) for k in opts}
@@ -350,13 +386,26 @@ def cmd_backtest(a):
     rows = [r for r in read_jsonl(E.PRIVATE / "l3" / "decisions.jsonl") if r["choice"] in r["options"]][-a.n:]
     with_sources = SOURCES_DEFAULT if a.sources == "default" else a.sources == "on"
     variant = VARIANT_DEFAULT if a.variant == "default" else a.variant
+    notes = NOTES_DEFAULT if a.notes == "default" else a.notes == "on"
+    # sim：按周模拟提炼，每题只用它之前最近一次提炼出的规律（distill.py sim 产出，只用更早的案例卡写的）
+    snaps = sorted((json.loads(f.read_text()) for f in (DIR / "distill").glob("sim-*.json")), key=lambda s: s["cutoff"]) \
+        if a.rules == "sim" else []
+
+    def rules_for(r):
+        if a.rules == "off":
+            return []
+        if a.rules == "default":
+            return mind_rules() if RULES_DEFAULT else []
+        got = [s["rules"] for s in snaps if s["cutoff"] <= r["ts"][:10]]
+        return got[-1] if got else []
 
     def one(r):
         q = L.strip_rec(r["question"] if r["kind"] == "ask_tool" else r["question"][-2500:])
         opts = {k: L.strip_rec(v) or f"选项 {k}" for k, v in r["options"].items()}
+        mr = rules_for(r)
         try:
-            return {"id": r["id"], "luke": r["choice"], "rec": r["recommended"],
-                    **judge(q, opts, before=r["ts"], with_sources=with_sources, variant=variant)}
+            return {"id": r["id"], "luke": r["choice"], "rec": r["recommended"], "n_rules": len(mr),
+                    **judge(q, opts, before=r["ts"], with_sources=with_sources, variant=variant, notes=notes, mrules=mr)}
         except Exception as e:
             print(f"  {r['id']} 出错：{e}", file=sys.stderr)
 
@@ -369,13 +418,18 @@ def cmd_backtest(a):
                 print(f"  {i}/{len(rows)}", file=sys.stderr, flush=True)
     stamp = now().strftime("%Y%m%d-%H%M")
     DIR.mkdir(parents=True, exist_ok=True)
-    write_jsonl(DIR / f"backtest-{stamp}-sources-{'on' if with_sources else 'off'}-{variant}.jsonl", out)
+    tag = f"sources-{'on' if with_sources else 'off'}-{variant}-notes-{'on' if notes else 'off'}-rules-{a.rules}"
+    write_jsonl(DIR / f"backtest-{stamp}-{a.label or tag}.jsonl", out)
     n = len(out)
     agree = sum(o["choice"] == o["luke"] for o in out)
     dev = [o for o in out if o["rec"] and o["luke"] != o["rec"]]
     must = [o for o in out if o["must_ask_luke"]]
-    print(json.dumps({"n": n, "agree": f"{agree}/{n}（{agree / max(n, 1):.0%}）",
+    ruled = [o for o in out if o.get("n_rules")]
+    high = [o for o in out if o["confidence"] == "高"]
+    print(json.dumps({"tag": tag, "n": n, "agree": f"{agree}/{n}（{agree / max(n, 1):.0%}）",
                       "luke_against_rec": f"{sum(o['choice'] == o['luke'] for o in dev)}/{len(dev)}",
+                      "with_rules": f"{sum(o['choice'] == o['luke'] for o in ruled)}/{len(ruled)}",
+                      "high_conf": f"{sum(o['choice'] == o['luke'] for o in high)}/{len(high)}",
                       "must_ask_luke": len(must), "by_category": dict(collections.Counter(o["category"] for o in out)),
                       "confidence": dict(collections.Counter(o["confidence"] for o in out))}, ensure_ascii=False, indent=1))
 
@@ -408,6 +462,10 @@ def main():
     p.add_argument("--workers", type=int, default=1)
     p.add_argument("--sources", choices=["on", "off", "default"], default="default", help="依据里带不带背后的道理（源知识）")
     p.add_argument("--variant", choices=["full", "slim", "default"], default="default", help="full：档案加确认过的规律；slim：只给原则和口味 skill")
+    p.add_argument("--notes", choices=["on", "off", "default"], default="default", help="例子里带不带 Luke 补的原话")
+    p.add_argument("--rules", choices=["off", "sim", "default"], default="default",
+                   help="拿主意的规律：off 不带；sim 用 distill.py sim 按周模拟提炼的；default 用 Luke 认过的（RULES_DEFAULT 开着时）")
+    p.add_argument("--label", default="", help="结果文件名里的标记，默认按开关自动起")
     a = ap.parse_args()
     {"ask": cmd_ask, "record": cmd_record, "report": cmd_report, "backtest": cmd_backtest,
      "taste": cmd_taste, "profile": cmd_profile, "quiz": cmd_quiz, "quiz-answer": cmd_quiz_answer}[a.cmd](a)
