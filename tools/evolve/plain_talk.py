@@ -12,6 +12,8 @@ Luke 2026-10-27 选了 B：用 20 段真实汇报测，他盲选 10 对，8 对�
   plain_talk.py run                          去名、重写、数句式、核事实（只做还没做的）
   plain_talk.py pairs [--n 10]               挑 10 对、打乱左右，写出给盲选页面用的 pairs.json
   plain_talk.py score <答案 JSON>            对答案：新版被选中几对，句式少了多少
+  plain_talk.py claims [--runs 2]            第二个测试：现规则 vs 加一句"不替原文下结论"，各重写 2 遍，核对谁加的结论多
+  plain_talk.py claims-report                只重算第二个测试的数和判定
 """
 import argparse, collections, concurrent.futures as cf, datetime as dt, json, random, re, sys
 from pathlib import Path
@@ -238,6 +240,81 @@ def cmd_score(a):
     print(json.dumps(res, ensure_ascii=False))
 
 
+# ---- 第二个测试：加一句"原文和证据没说的结论，不替它下"，看加结论的毛病少不少（Luke 2026-10-27 选了单独测）----
+CLAIMS = DIR / "claims.jsonl"
+NUM_RULE = '给数字时接着说"这意味着什么"。'
+NO_CLAIM = "原文和证据没说的结论，不替它下。"
+KINDS = ("加结论", "改错意思", "丢了内容", "加了别的内容")
+
+
+def check_typed(src, a, b):
+    out = OJ.ask_json("你在核对改写有没有走样，只输出一个 JSON 对象。",
+                      "下面是原文和两个改写版本。分别列出每个版本相对原文的每一处走样，并标类型：\n"
+                      "- 加结论：替原文下了它没下的判断、推论或推荐，或者把话说重、说满（如把\"测试通过\"说成\"能正常用\"，把转述说成已确认的事实）\n"
+                      "- 改错意思：事实、数字、对象、范围被改错\n"
+                      "- 丢了内容：原文的事实、数字、结论、要读者做的决定被删掉\n"
+                      "- 加了别的内容：加了原文没有的解释、理由、选项等，但不是结论\n"
+                      "措辞、格式、顺序的变化不算。不影响事实和决定的小出入标 minor: true。ok 表示这个版本整体没走样。\n"
+                      '只输出 JSON：{"X_ok": true, "X_issues": [{"type": "加结论", "minor": false, "what": "…"}], "Y_ok": true, "Y_issues": []}\n\n'
+                      f"【原文】\n{src}\n\n【版本 X】\n{a}\n\n【版本 Y】\n{b}")
+    return out
+
+
+def claims_one(r, run, now_rules, fix_rules, x_is_now):
+    now, fix = rewrite(r["source"], now_rules), rewrite(r["source"], fix_rules)
+    x, y = (now, fix) if x_is_now else (fix, now)
+    ck = check_typed(r["source"], x, y)
+    side = {"now": "X" if x_is_now else "Y", "fix": "Y" if x_is_now else "X"}
+    row = {"id": r["id"], "run": run, "x_is": "now" if x_is_now else "fix"}
+    for arm, text in (("now", now), ("fix", fix)):
+        row[arm] = {"text": text, "ok": bool(ck.get(f"{side[arm]}_ok")), "issues": ck.get(f"{side[arm]}_issues") or []}
+    return row
+
+
+def cmd_claims(a):
+    E.load_env()
+    now_rules = rules_now()
+    assert NUM_RULE in now_rules, "全局规则里找不到要改的那一句"
+    fix_rules = now_rules.replace(NUM_RULE, NUM_RULE + NO_CLAIM, 1)
+    done = {(r["id"], r["run"]) for r in read(CLAIMS)}
+    rnd = random.Random(2610271)
+    todo = [(r, run, rnd.random() < 0.5) for run in range(1, a.runs + 1) for r in read(RESULTS)]
+    todo = [t for t in todo if (t[0]["id"], t[1]) not in done]
+    with cf.ThreadPoolExecutor(4) as ex:
+        futs = {ex.submit(claims_one, r, run, now_rules, fix_rules, xn): (r["id"], run) for r, run, xn in todo}
+        for fu in cf.as_completed(futs):
+            try:
+                row = fu.result()
+            except Exception as e:
+                print(f"  {futs[fu]} 出错：{e}", file=sys.stderr)
+                continue
+            with open(CLAIMS, "a") as f:
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
+    cmd_claims_report(a)
+
+
+def _has(issues, kind):
+    return any(isinstance(i, dict) and i.get("type") == kind and not i.get("minor") for i in issues)
+
+
+def cmd_claims_report(_):
+    rows = read(CLAIMS)
+    st = {}
+    for arm in ("now", "fix"):
+        xs = [r[arm] for r in rows]
+        st[arm] = {"n": len(xs), "drift": sum(not x["ok"] for x in xs),
+                   **{k: sum(_has(x["issues"], k) for x in xs) for k in KINDS},
+                   "chars": round(sum(len(x["text"]) for x in xs) / max(len(xs), 1))}
+    n, c_now, c_fix = st["now"]["n"], st["now"]["加结论"], st["fix"]["加结论"]
+    rnd = random.Random(0)   # 两边加结论的比例各取 Beta(1+k, 1+n-k)，看加一句以后更少的概率
+    p_better = sum(rnd.betavariate(1 + c_fix, 1 + n - c_fix) < rnd.betavariate(1 + c_now, 1 + n - c_now) for _ in range(20000)) / 20000
+    gate = {"1_reproduced": c_now >= 4, "2_half": c_fix * 2 <= c_now, "3_p80": p_better >= 0.8,
+            "4_no_new_harm": st["fix"]["drift"] <= st["now"]["drift"] and st["fix"]["chars"] >= 0.9 * st["now"]["chars"]}
+    res = {"stats": st, "p_fix_fewer_claims": round(p_better, 3), "gate": gate, "pass": all(gate.values())}
+    (DIR / "claims-score.json").write_text(json.dumps(res, ensure_ascii=False, indent=1))
+    print(json.dumps(res, ensure_ascii=False, indent=1))
+
+
 def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -245,8 +322,11 @@ def main():
     sub.add_parser("run")
     p = sub.add_parser("pairs"); p.add_argument("--n", type=int, default=10)
     p = sub.add_parser("score"); p.add_argument("answers")
+    p = sub.add_parser("claims"); p.add_argument("--runs", type=int, default=2)
+    sub.add_parser("claims-report")
     a = ap.parse_args()
-    {"pick": cmd_pick, "run": cmd_run, "pairs": cmd_pairs, "score": cmd_score}[a.cmd](a)
+    {"pick": cmd_pick, "run": cmd_run, "pairs": cmd_pairs, "score": cmd_score,
+     "claims": cmd_claims, "claims-report": cmd_claims_report}[a.cmd](a)
 
 
 if __name__ == "__main__":
