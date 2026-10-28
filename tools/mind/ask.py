@@ -12,7 +12,7 @@
   ask.py report                    按类别报一致率、漏报、能不能升级
   ask.py quiz [--n 10]             补数据：列出别的 agent 问过、还没回填 Luke 选了什么的题（最早的先出），不给 lukeeMind 的猜测
   ask.py quiz-answer "1A 2C 3-"    按上一次 quiz 的题号回填（- 表示跳过）
-  ask.py backtest [--n 109] [--workers 4] [--sources on|off] [--notes on|off] [--rules off|sim]
+  ask.py backtest [--n 109] [--workers 4] [--sources on|off] [--notes on|off] [--rules off|sim] [--basis old|roots]
                                    用 private/l3 的旧选择题回测（只用更早的题做例子、更早的卡提炼的规律）
 """
 import argparse, collections, datetime as dt, hashlib, json, re, sys
@@ -177,6 +177,15 @@ def render_rules(rules):
                       for r in rules))
 
 
+# Luke 2026-10-28 选了 A：lukeeMind 是按第一性原理和递弱代偿原理下判断的思考者，依据先落在原则和源知识上，旧选择只当参考。
+# 回测准确率不掉才把默认改成 roots（见 docs/2026-10-20-ask-lukeemind-spec.md）
+BASIS_DEFAULT = "old"
+BASIS = ("【先怎么想】\n"
+         "1. 第一性原理：先把这件事拆到最基本的事实（到底要达到什么、后果谁来承担、哪些是改不了的约束），从这里往上推，不照搬类比和惯例\n"
+         "2. 递弱代偿：做法越复杂、依赖越多，越脆。能达到同样目的时，偏向简单、依赖少、好撤回的\n"
+         "3. 依据先落在他确认过的原则和背后的道理上；档案和以前的相似选择只用来看他平时怎么想，不照抄")
+
+
 SYS = ("你是 lukeeMind，在替一个具体的人 Luke 预判他会怎么选。别的 agent 遇到要替 Luke 拿主意的事来问你。"
        "根据他的档案、原则、确认过的规律和他以前的相似选择，判断他多半选哪个。只输出一个 JSON 对象。")
 
@@ -186,7 +195,7 @@ def taste_skill():
     return (E.PRIVATE / "luke" / champ["profile"]).read_text()
 
 
-def build_prompt(question, options, context, examples, with_sources=False, variant="full", notes=False, mrules=()):
+def build_prompt(question, options, context, examples, with_sources=False, variant="full", notes=False, mrules=(), basis="old"):
     rules = principles_with_sources() if with_sources else principles()
     if variant == "slim":
         # 精简版：只给原则和口味 skill，不给档案和确认过的规律（Jev 测试时发现这样 Opus 反而多对 4 题，待回测确认）
@@ -201,6 +210,8 @@ def build_prompt(question, options, context, examples, with_sources=False, varia
         parts.append("【他以前的相似选择】（只看他怎么判断，不要把里面的客户和项目事实搬到这次）\n" +
                      "\n\n".join(f"题：{e['text'][-700:]}\n他选了：{e['choice']}" +
                                  (f"\n他补的话：{e['note'][:200]}" if notes and e.get("note") else "") for e in examples))
+    if basis == "roots":
+        parts.append(BASIS)
     if context:
         parts.append("【这次的背景】\n" + context[:6000])
     if options:
@@ -221,17 +232,18 @@ def build_prompt(question, options, context, examples, with_sources=False, varia
     return "\n\n".join(parts)
 
 
-def judge(question, options, context="", client="", before="", with_sources=None, variant=None, notes=None, mrules=None):
+def judge(question, options, context="", client="", before="", with_sources=None, variant=None, notes=None, mrules=None, basis=None):
     with_sources = SOURCES_DEFAULT if with_sources is None else with_sources
     variant = VARIANT_DEFAULT if variant is None else variant
     notes = NOTES_DEFAULT if notes is None else notes
+    basis = BASIS_DEFAULT if basis is None else basis
     mrules = (mind_rules() if RULES_DEFAULT else []) if mrules is None else mrules
     pool = past_decisions(before, client)
     examples = []
     if pool:
         idx = E.Index(pool)
         examples = idx.top(question + "\n" + "\n".join(options.values()) + "\n" + context[:500], 4)
-    out = OJ.ask_json(SYS, build_prompt(question, options, context, examples, with_sources, variant, notes, mrules))
+    out = OJ.ask_json(SYS, build_prompt(question, options, context, examples, with_sources, variant, notes, mrules, basis))
     evidence, sources = attach_sources(out.get("evidence") or [])
     opts = options or {k: str(v) for k, v in (out.get("options") or {}).items()}
     probs = {k: float((out.get("probs") or {}).get(k, 0) or 0) for k in opts}
@@ -382,6 +394,7 @@ def cmd_backtest(a):
     with_sources = SOURCES_DEFAULT if a.sources == "default" else a.sources == "on"
     variant = VARIANT_DEFAULT if a.variant == "default" else a.variant
     notes = NOTES_DEFAULT if a.notes == "default" else a.notes == "on"
+    basis = BASIS_DEFAULT if a.basis == "default" else a.basis
     # sim：按周模拟提炼，每题只用它之前最近一次提炼出的规律（distill.py sim 产出，只用更早的案例卡写的）
     snaps = sorted((json.loads(f.read_text()) for f in (DIR / "distill").glob("sim-*.json")), key=lambda s: s["cutoff"]) \
         if a.rules == "sim" else []
@@ -400,7 +413,7 @@ def cmd_backtest(a):
         mr = rules_for(r)
         try:
             return {"id": r["id"], "luke": r["choice"], "rec": r["recommended"], "n_rules": len(mr),
-                    **judge(q, opts, before=r["ts"], with_sources=with_sources, variant=variant, notes=notes, mrules=mr)}
+                    **judge(q, opts, before=r["ts"], with_sources=with_sources, variant=variant, notes=notes, mrules=mr, basis=basis)}
         except Exception as e:
             print(f"  {r['id']} 出错：{e}", file=sys.stderr)
 
@@ -413,7 +426,7 @@ def cmd_backtest(a):
                 print(f"  {i}/{len(rows)}", file=sys.stderr, flush=True)
     stamp = now().strftime("%Y%m%d-%H%M")
     DIR.mkdir(parents=True, exist_ok=True)
-    tag = f"sources-{'on' if with_sources else 'off'}-{variant}-notes-{'on' if notes else 'off'}-rules-{a.rules}"
+    tag = f"sources-{'on' if with_sources else 'off'}-{variant}-notes-{'on' if notes else 'off'}-rules-{a.rules}-basis-{basis}"
     write_jsonl(DIR / f"backtest-{stamp}-{a.label or tag}.jsonl", out)
     n = len(out)
     agree = sum(o["choice"] == o["luke"] for o in out)
@@ -460,6 +473,8 @@ def main():
     p.add_argument("--notes", choices=["on", "off", "default"], default="default", help="例子里带不带 Luke 补的原话")
     p.add_argument("--rules", choices=["off", "sim", "default"], default="default",
                    help="拿主意的规律：off 不带；sim 用 distill.py sim 按周模拟提炼的；default 用 Luke 认过的（RULES_DEFAULT 开着时）")
+    p.add_argument("--basis", choices=["old", "roots", "default"], default="default",
+                   help="old：现在的写法；roots：先按第一性原理、递弱代偿和原则下判断，旧选择只当参考")
     p.add_argument("--label", default="", help="结果文件名里的标记，默认按开关自动起")
     a = ap.parse_args()
     {"ask": cmd_ask, "record": cmd_record, "report": cmd_report, "backtest": cmd_backtest,
