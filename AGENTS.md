@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.30 · 2026-10-28 · 更新记录见文末
+> v1.31 · 2026-10-28 · 更新记录见文末
 
 ## 你是谁
 
@@ -28,7 +28,7 @@ lukeeMind 是一个**学基础知识、按道理下判断的思考者**：从互
 | 递弱代偿原理 | 越后来、越复杂的东西，生存根基越弱，只能靠更多的属性和依赖来补；复杂度上去了，稳定性往下走 | [递弱代偿原理](roots/diminishing-compensation-principle.md) |
 
 - 给 Luke 建议、讲道理时，依据先落在他确认过的原则和背后的源知识上。回答别的 agent "Luke 会怎么选"（流程七）暂时照原写法：2026-10-28 回测，让它先按两把尺子判断，140 道旧题两遍猜对 115、112，原写法 117、119，变差了，没换（`ask.py --basis roots` 留着可再试）
-- **个人的东西交给前面用 lukeeMind 的 agent 记**：Luke 的口味、习惯、做过的选择、客户和会议，由调用 lukeeMind 的 agent（Codex 里的 Lukee 等）自己记。现有的个人画像（档案、口味 skill、确认过的规律、旧选择、兴趣地图）先留着照常用，但不再扩充；怎么交出去见 `docs/2026-10-28-personal-profile-handoff.md`，Luke 认了再搬
+- **个人的东西交给前面用 lukeeMind 的 agent 记**：Luke 的口味、习惯、做过的选择、客户和会议，由调用 lukeeMind 的 agent（Codex 里的 Lukee 等）自己记。Luke 2026-10-28 选了 A：档案、确认过的规律、旧选择、放权级别交给 Codex 的 Lukee 记（交接包在 `private/handoff/lukee-20261028/`，方案见 `docs/2026-10-28-personal-profile-handoff.md`），lukeeMind 回答时只读提问方交进来的那份；口味 skill、点赞预测、兴趣地图留在 lukeeMind，因为它们决定上网去学什么。`private/luke/` 里的原件留着不删，lukeeMind 不再读、不再扩充
 - 不读客户会议、销售记录这类业务数据。Salesroom 已在 2026-10-28 撤下，以后接类似数据先问 Luke
 
 不属于这七件事的请求照常回答，但不往这里存东西。
@@ -49,6 +49,7 @@ lukeeMind 是一个**学基础知识、按道理下判断的思考者**：从互
 | `tools/explore/` | 探索循环：`explore.py`（选方向、收候选、打分、出日报、记回答）、`SCOUT.md`（侦察兵任务说明）、`BRIEF.md`（日报简介的任务说明）、`digest-page.html`（日报网页） |
 | `docs/2026-10-19-explore-loop-spec.md` | 探索循环的方案和每周的记录 |
 | `tools/mind/ask.py` | 当大脑：问、回填、报数、回测 |
+| `tools/mind/handoff.py` | 把 Luke 的个人画像导出成交接包，交给 Codex 的 Lukee（`private/handoff/`） |
 | `tools/mind/scrub.py` | 交给外部模型前去掉客户名和人名（名单在 `private/mind/scrub-names.json`），调本地 Qwen 出 JSON |
 | `tools/mind/distill.py` | 每周提炼（2026-10-28 起暂停）：Luke 回答时补的话和纠正做成案例卡，攒够 3 张写成规律草稿，复核后请他认（数据只在 `private/mind/`） |
 | `docs/2026-10-26-mind-distill-spec.md` | 「每周提炼」的方案和回测 |
@@ -427,19 +428,19 @@ Codex 里的接待 Lukee、各项目里的 Claude Code 和 Codex，遇到要替 
 
 ### 怎么回答
 
-- 别的 agent 调 `python3 tools/mind/ask.py ask --from <谁> --question "…" --options "A:…|B:…" --context-file <背景> [--client <客户>]`，脚本自己读 Luke 的档案、12 条原则、确认过的规律和最相似的 4 道旧选择，交给 Opus 5.5 判断，回 JSON
+- 别的 agent 调 `python3 tools/mind/ask.py ask --from <谁> --question "…" --options "A:…|B:…" --context-file <背景> [--client <客户>] [--profile-file <画像>] [--choices-file <旧选择>] [--level <几级>]`，脚本读 12 条原则（带背后的道理），加上提问方交进来的 Luke 画像和从它的旧选择里挑出的最像的 4 道，交给 Opus 5.5 判断，回 JSON。Luke 的画像、旧选择、放权级别由提问方（Codex 的 Lukee）记，lukeeMind 不读自己存的旧版（Luke 2026-10-28 选了 A）；没交画像时只按原则和口味 skill 判断，回答里 `profile_given` 是 false
 - 回答里的 `must_ask_luke` 只要有一条成立就是 true：碰到"必须交给 Luke"的清单（钱、合同和法律、交期和上线、人事、凭据和权限、对外发送、替 Luke 通知同事或给同事发说明、删除和难撤销、方向取舍），模型判断要问，或者 lukeeMind 自己拿不准
 - 每条依据引用原则时，后面接上"背后的道理"：脚本给每条原则挑 2 个最硬的源知识交给模型，模型只交编号，名字、证据类型和一句话由脚本从 `roots/` 里取，免得编。回答里另有 `sources` 字段列出用到的源知识。2026-10-25 用旧选择题回测，同样 124 题带的猜对 103、不带的 102，准确率没掉，默认开
 - `act` 只有两种：`ask_luke`（照旧问 Luke，附上建议）和 `follow`（按建议做，事后汇总）。只有某一类升到 1 级以上、这次又高确定、不在清单里时才会是 `follow`
 - Luke 回答后，提问的 agent 调 `ask.py record <id> --luke <字母> --note "原话"` 回填；本该问 Luke 却判成不用问的，加 `--should-ask yes`，记成漏报。`--note` 要写 Luke 自己的话，不写提问方的转述：他补的话会被当作例子用，也会被提炼
-- **每周提炼**（2026-10-28 起暂停，已认的规律照常用；Luke 2026-10-26 选了 B，参照"AI 草稿 → 人修改 → 定时提炼 → 人审过才用上"的知识循环）：找相似旧选择当例子时，带上 Luke 补的原话；`distill.py weekly` 把他补了话的、没按推荐选的、说过"不对"的事做成案例卡（人名、公司名换掉），同一方向攒够 3 张才写一条规律草稿，另一个模型复核（本地 Qwen 开着用它，连不上用一次独立的 Opus），每周最多 3 条交 Luke 认，没答完的不出新的。他认了，lukeeMind 下次回答就用上。这些规律是对他拿主意方式的推断，不算原则，不进 `framework.md`。2026-10-26 回测：同样 128 题各跑两遍，现状 107、105，带原话加规律 108、107，没变差才默认开
+- **每周提炼**（2026-10-28 起暂停，已认的规律已放进交给 Lukee 的 `profile.md`；Luke 2026-10-26 选了 B，参照"AI 草稿 → 人修改 → 定时提炼 → 人审过才用上"的知识循环）：找相似旧选择当例子时，带上 Luke 补的原话；`distill.py weekly` 把他补了话的、没按推荐选的、说过"不对"的事做成案例卡（人名、公司名换掉），同一方向攒够 3 张才写一条规律草稿，另一个模型复核（本地 Qwen 开着用它，连不上用一次独立的 Opus），每周最多 3 条交 Luke 认，没答完的不出新的。他认了，lukeeMind 下次回答就用上。这些规律是对他拿主意方式的推断，不算原则，不进 `framework.md`。2026-10-26 回测：同样 128 题各跑两遍，现状 107、105，带原话加规律 108、107，没变差才默认开
 - 别的 agent 想知道 Luke 的口味时，有两个口子：`ask.py taste --text "…" --author <作者> --from <谁>` 回"他会不会想看"的概率和最像的三条他点过赞的（用当前冠军，Qwen 连不上改用 Opus）；`ask.py profile` 打印当前的口味 skill 和 12 条原则，给别的 agent 先读。口味 skill 每周更新，别的 agent 每次现读，不要自己存一份旧的
 
 ### 规矩
 
 - 提问、背景、回填只存 `private/mind/`，只交给 Opus，不交给 Jev 或任何外部接口；不同客户的旧选择不混用
 - 你的建议不是 Luke 的决定，回答里不写"Luke 决定了"
-- 放权级别写在 `private/mind/levels.json`，**只有 Luke 能改**。每周日的周报里跑 `ask.py report`：哪一类够门槛了，就报给 Luke，请他定要不要升；出一次错或一次漏报，这一类马上降一级并告诉他
+- 放权级别由 Codex 的 Lukee 记，提问时用 `--level` 交进来，**只有 Luke 能改**。每周日的周报里跑 `ask.py report`：哪一类够门槛了，就报给 Luke，请他定要不要升；出一次错或一次漏报，这一类马上降一级并告诉他和 Lukee
 - 清单里的类别永远停在 0 级
 
 ## 自我更新
@@ -485,6 +486,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.31 | 2026-10-28 | 个人画像交给 Codex 的 Lukee：导出交接包（`tools/mind/handoff.py`），`ask.py ask` 不再读自己存的档案、确认过的规律、旧选择和放权级别，改读提问方交进来的 `--profile-file`、`--choices-file`、`--level`；口味 skill、点赞预测、兴趣地图留在 lukeeMind。回测：140 道旧题，交进来的画像两遍猜对 118、116，交接前 117、119，持平；什么都不交只对 113，所以 Lukee 每次都要交（起因：Luke 选了交接方案 A："个人记录交给 Lukee，口味留在 lukeeMind"） |
 | v1.30 | 2026-10-28 | 定位改了：lukeeMind 是学基础知识、按第一性原理和递弱代偿原理下判断的思考者；撤下 Salesroom（脚本、会议数据、密钥、会上判断都已挪进废纸篓）；个人画像先留着不扩充，抽选择和纠正、每周提炼、补数据题暂停，交接方案另写（起因：Luke 说"删除 lukeeMind 关于 Salesroom 相关读取业务……相关个性的内容交给前置的使用 lukeeMind 的 agent 去记录"，选了 A） |
 | v1.29 | 2026-10-26 | 流程七加了「每周提炼」：例子里带上 Luke 补的原话；每周把他补的话、没按推荐选的题、纠正做成案例卡，攒够 3 张写规律草稿，另一个模型复核后每周最多 3 条请他认，认了下次回答就用上。回测没变差才默认开（起因：Luke 给了一张客服知识循环图，对照后发现 lukeeMind 缺"定时提炼"和"审过才用上"两步，选了 B） |
 | v1.28 | 2026-10-26 | 工具对照加了一行：查日本的官方数据时，先看日本开放数据总清单找入口，再按目标检索，不预先全量下载（起因：Luke 存了 awesome-japan-opendata，说先留清单，要深度查询时再带着目标去检索） |
