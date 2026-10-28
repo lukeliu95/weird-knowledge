@@ -4,7 +4,7 @@
 Luke 2026-10-25 选了 A："先用 Jev 测一次，只测不接入。这次允许把 128 道旧选择题和我的原则、口味 skill 发给 TypeSafe，
 客户名和 Salesroom 资料不发"。所以发给 Jev 的只有：原则标题、口味 skill、更早的相似旧选择、这道题。
 不发 Luke 的档案（profile.md）、确认过的规律（confirmed.md）、别的 agent 问过的题、Salesroom 的任何东西。
-发之前去掉客户和人名（先用 Salesroom 的客户名单，再让 Opus 逐题挑出公司名、人名）、密钥、邮箱、电话。
+发之前去掉客户和人名（先用客户名单 private/mind/scrub-names.json，再让 Opus 逐题挑出公司名、人名）、密钥、邮箱、电话。
 
 对照组：同样这份去名后的资料交给 Opus，看差距是模型的还是资料的。
 
@@ -40,12 +40,12 @@ def questions():
 
 
 def customer_names():
-    import salesroom as S
+    import scrub as S
     return set(S.all_customer_names())
 
 
 def scrub_text(t, names):
-    import salesroom as S
+    import scrub as S
     for n in sorted(names, key=len, reverse=True):
         t = t.replace(n, "某名字")
     return S.HONORIFIC.sub("某人", SECRET.sub("某号码", t))

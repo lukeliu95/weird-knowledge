@@ -8,7 +8,7 @@
   ask.py ask --from <谁> --question "…" [--options "A:…|B:…"] [--context-file <背景>] [--client <客户名>]
   ask.py record <id> --luke <字母> [--note "Luke 原话"] [--should-ask yes|no]
   ask.py taste --text "…" [--author 名字] [--from 谁]   Luke 会不会想看这条内容（概率 + 最像的三条他点过赞的）
-  ask.py profile [--work]          打印 Luke 当前的口味 skill 和原则；--work 再附上 Salesroom 里的客户真实声音、他在会上的判断
+  ask.py profile                   打印 Luke 当前的口味 skill 和原则（每条带背后的道理）
   ask.py report                    按类别报一致率、漏报、能不能升级
   ask.py quiz [--n 10]             补数据：列出别的 agent 问过、还没回填 Luke 选了什么的题（最早的先出），不给 lukeeMind 的猜测
   ask.py quiz-answer "1A 2C 3-"    按上一次 quiz 的题号回填（- 表示跳过）
@@ -336,16 +336,11 @@ def cmd_taste(a):
 
 
 def cmd_profile(a):
-    """打印 Luke 的画像：口味 skill、12 条原则；加 --work 再附上 Salesroom 会议里的客户真实声音和他在会上的判断（客户资料已去名，只在本机）。"""
+    """打印 Luke 的画像：口味 skill、原则。Luke 2026-10-28 让 lukeeMind 不再读 Salesroom，原来的 --work 去掉了。"""
     champ = json.loads((E.PRIVATE / "l1" / "champion.json").read_text())
     print((E.PRIVATE / "luke" / champ["profile"]).read_text())
     # 给别的 agent 读的画像不做预测，直接带上每条原则背后的道理，方便它们向人解释
     print("\n---\n他确认过的做事原则（每条后面是背后的道理，括号里是证据类型）：\n" + principles_with_sources())
-    if a.work:
-        for name in ("luke-in-meetings.md", "customer-voice.md"):
-            f = E.PRIVATE / "luke" / name
-            if f.exists():
-                print("\n---\n" + f.read_text())
 
 
 def cmd_quiz(a):
@@ -454,7 +449,7 @@ def main():
     p.add_argument("--file", default="")
     p.add_argument("--author", default="")
     p.add_argument("--from", dest="from_", default="unknown")
-    p = sub.add_parser("profile"); p.add_argument("--work", action="store_true", help="附上客户真实声音和 Luke 在会上的判断")
+    sub.add_parser("profile")
     p = sub.add_parser("quiz"); p.add_argument("--n", type=int, default=10)
     p = sub.add_parser("quiz-answer"); p.add_argument("answers")
     p = sub.add_parser("backtest")

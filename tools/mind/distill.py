@@ -20,7 +20,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import ask as A  # noqa: E402
-import salesroom as S  # noqa: E402
+import scrub as S  # noqa: E402
 
 E, OJ = A.E, A.OJ
 DIR = A.DIR
