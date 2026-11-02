@@ -32,3 +32,5 @@ verified: true
 |---|---|---|
 | [把 Claude Code 分成"司令官"和"部下"自主跑开发：主会话 Opus 只管计划、分工、验证、记录，实现、审查、调研交给 Sonnet / Haiku 的 subagent，用定义文件的工具栏和模型栏硬性限权](../clips/2026-10-25-xin-tech-commander-subordinate-agent-roles.md) | 换了说法 | 强 |
 | [编排 Claude Code 的"幕僚长"模式：一个会话只协调和验收、别的会话干活，状态放外部看板，每份汇报当证据重跑再信](../clips/2026-10-25-jalangan-chief-of-staff-agent-orchestration.md) | 直接源自 | 强 |
+| [把 AI Coding 经验沉淀成给 Agent 复用的最佳实践](../clips/2026-10-29-hitw93-ai-coding-best-practice-rules.md) | 相近 | 弱（模型复核通过） |
+| [Tw93 把 AI 编程习惯写成 20 条规则（英文版）](../clips/2026-10-30-hitw93-twenty-ai-coding-rules-english.md) | 相近 | 弱（模型复核通过） |

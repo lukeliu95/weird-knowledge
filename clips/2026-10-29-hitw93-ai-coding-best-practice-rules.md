@@ -7,10 +7,10 @@ published: 2026-10-28 08:52 UTC
 saved: 2026-10-29
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 编程智能体
+roots: [cherny-2025-claude-code-best-practices, separation-of-duties]
 ---
 
 ## 原文
@@ -57,3 +57,9 @@ roots: []
 
 ## 溯源
 
+- 核心主张：给编程 agent 交代背景和目标，用小步实现、可执行检查、独立审查和风险动作的人审约束交付；失败后用日志核实原因，并把线上问题变成回归测试。中文帖含重复的第 18 条，按保存版本理解，不改写原文。
+- 源知识：
+  - [Claude Code 最佳实践（给 Claude 一个验证自己工作的办法）](../roots/cherny-2025-claude-code-best-practices.md) · 关系：相近 · 强弱：弱（模型复核通过）。让 agent 自己运行测试和验证结果，与 Claude Code 官方实践相近；原帖没有引用 Boris Cherny。
+  - [职责分离（四眼原则、制单与复核分开）](../roots/separation-of-duties.md) · 关系：相近 · 强弱：弱（模型复核通过）。实现与审查分开、危险动作由人确认，与制单和复核分离相近；这是方法类比，不代表两个模型错误彼此独立。
+- 本质：这条新知识本质上是把可执行验证和职责分离用于编程 agent 的日常工作。
+- 整理于：2026-11-03（第 9 轮）

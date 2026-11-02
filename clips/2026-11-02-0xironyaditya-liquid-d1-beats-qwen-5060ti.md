@@ -1,5 +1,5 @@
 ---
-title: "Liquid d1 小模型在 5060 Ti 上比赢 Qwen 和 InternVL"
+title: "作者单卡实测：Liquid d1 与同规模 Qwen、InternVL 的三项视觉任务对比"
 author: "irony.aditya (@0xironyAditya)"
 url: https://x.com/0xironyAditya/status/2116809688700551647
 source: X
@@ -7,9 +7,9 @@ published: 2026-11-01 08:28 UTC
 saved: 2026-11-02
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
+status: 已归档
+kind: 教程
+topic: 模型与本地部署
 roots: []
 ---
 
@@ -38,3 +38,6 @@ credit to Liquid: 2B, 4 GB of GPU memory, and a d1 model came first in every rou
 
 ## 溯源
 
+### 本轮核查备注
+
+- 原帖明确说不是完全同类模型比较；未给完整样本组成、数量或复现代码，不能推出普遍优于通用模型。

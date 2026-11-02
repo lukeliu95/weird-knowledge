@@ -1,5 +1,5 @@
 ---
-title: "OpenAI 宣布 ETH 被证伪引发的震惊"
+title: "立党对“ETH 被证伪”消息的反应"
 author: "lidang 立党 （劝人卖房/学CS/买SP500/纳100/OpenAI/Anthrop第一人） (@lidangzzz)"
 url: https://x.com/lidangzzz/status/2114850527972393239
 source: X
@@ -7,9 +7,9 @@ published: 2026-10-26 22:43 UTC
 saved: 2026-10-29
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
+status: 已归档
+kind: 观点
+topic: 学习与研究
 roots: []
 ---
 
@@ -28,3 +28,6 @@ OpenAI这群闲人没白养，这个贡献妥妥他妈的值半个图灵奖（�
 
 ## 溯源
 
+### 本轮核查备注
+
+- 正文主体是情绪反应，不代表该帖本身完成了证明核验。

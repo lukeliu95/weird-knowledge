@@ -31,3 +31,4 @@ verified: true
 |---|---|---|
 | [OpenAI Dots 放权指南：动作分进 6 个权限区，每周按证据升降](../clips/2026-10-18-choopyplug1-openai-dots-agent-permission-zones.md) | 换了说法 | 强 |
 | [Claude Code 团队审代码的做法：九成代码由 AI 写，多道检查像叠起来的瑞士奶酪片，人只做机器做不好的判断](../clips/2026-10-21-dotey-claude-code-review-swiss-cheese.md) | 直接源自 | 强 |
+| [Claude Code 团队怎么做代码审查](../clips/2026-10-29-addyosmani-how-claude-code-team-does-code-review.md) | 相近 | 弱（模型复核通过） |

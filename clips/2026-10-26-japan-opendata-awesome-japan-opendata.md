@@ -7,7 +7,7 @@ published: "2023-02-19 建库，最近更新 2026-08-13"
 saved: 2026-10-26
 why: "Luke：用于完全全量获取数据并整理，用于理解一个全面的日本"
 related_principles: [原则 4, 原则 10]
-status: 未整理
+status: 已归档
 kind: 工具
 topic: 日本
 roots: []

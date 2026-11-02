@@ -1,5 +1,5 @@
 ---
-title: "DeepSeek V4.1 Flash 去审查魔改版：拒绝率降到 4.30%，能力几乎不掉"
+title: "作者称：DeepSeek V4.1 Flash 魔改版拒绝率降低，能力变化很小"
 author: "SuSu_酥酥👅 (@NFT_Chen)"
 url: https://x.com/NFT_Chen/status/2116745591061680406
 source: X
@@ -7,9 +7,9 @@ published: 2026-11-01 04:14 UTC
 saved: 2026-11-01
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
+status: 已归档
+kind: 工具
+topic: 模型与本地部署
 roots: []
 ---
 
@@ -50,3 +50,6 @@ roots: []
 
 ## 溯源
 
+### 本轮核查备注
+
+- 数字是原帖自报，归档不表示核实。81.62%减4.30%为77.32个百分点；50次拒绝2次为4%，原帖口径未说明。

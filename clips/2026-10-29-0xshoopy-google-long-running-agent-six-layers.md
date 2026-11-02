@@ -1,5 +1,5 @@
 ---
-title: "Google 9 页文档：能连跑几天的长程 Agent 的六层结构"
+title: "推文归纳的长程 agent 六层结构（Google 9 页 PDF 出处待核实）"
 author: "Shoopy (@0xShoopy)"
 url: https://x.com/0xShoopy/status/2114790479028216132
 source: X
@@ -7,9 +7,9 @@ published: 2026-10-26 18:45 UTC
 saved: 2026-10-29
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
+status: 已归档
+kind: 教程
+topic: Agent 与 Skill
 roots: []
 ---
 
@@ -42,3 +42,6 @@ the workflow in layer 4 is a graph. how to design the whole agent system that wa
 
 ## 溯源
 
+### 本轮核查备注
+
+- 查到同主题 Google Codelabs，但原帖所称9页PDF和六层公式的官方原件未确认；恢复机制也不自动保证外部付款副作用只执行一次。

@@ -29,3 +29,4 @@ Claude 写约九成代码后，团队把审查改成七层：Claude 自验并由
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Claude Code 团队审代码的做法：九成代码由 AI 写，多道检查像叠起来的瑞士奶酪片，人只做机器做不好的判断](../clips/2026-10-21-dotey-claude-code-review-swiss-cheese.md) | 直接源自 | 强 |
+| [Claude Code 团队怎么做代码审查](../clips/2026-10-29-addyosmani-how-claude-code-team-does-code-review.md) | 直接源自 | 强 |

@@ -1,5 +1,5 @@
 ---
-title: "论文：AI 生成的文字为什么越来越难读"
+title: "论文转述：AI 文字难懂的可能原因，以及四条写作建议"
 author: "李继刚 (@lijigang)"
 url: https://x.com/lijigang/status/2114553896437981204
 source: X
@@ -7,10 +7,10 @@ published: 2026-10-26 03:05 UTC
 saved: 2026-10-29
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 提示词与写作
+roots: [clark-2026-ai-language-understandability, uniform-information-density]
 ---
 
 ## 原文
@@ -39,3 +39,9 @@ AI 生成的文本为什么越来越难读？
 
 ## 溯源
 
+- 核心主张：帖子转述英语研究提出的信息密度压力解释，并据此建议四条写作约束；这些中文约束是转述者的尝试，不是论文验证过的处方。
+- 源知识：
+  - [AI 文字为什么难懂：沟通目标与信息密度的错位](../roots/clark-2026-ai-language-understandability.md) · 关系：直接源自 · 强弱：强。帖子明写同一论文题名；后半段四条写作要求是作者从论文引出的建议。
+  - [均匀信息密度假说](../roots/uniform-information-density.md) · 关系：直接源自 · 强弱：强。帖子直接点名 uniform information density，但它与依存距离最小化并非同一个假说，不能把所有减负机制都并进这个术语。
+- 本质：这条新知识本质上是均匀信息密度和读者处理负担的研究，在写作提示词中的尝试性应用；是否有效还需单独测试。
+- 整理于：2026-11-03（第 9 轮）

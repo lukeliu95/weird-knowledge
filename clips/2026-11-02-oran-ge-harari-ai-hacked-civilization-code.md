@@ -1,5 +1,5 @@
 ---
-title: "转述赫拉利演讲：语言是信任系统，AI 破解了文明底层代码"
+title: "转述赫拉利：语言维系合作，AI可能影响这些信任关系"
 author: "Orange AI (@oran_ge)"
 url: https://x.com/oran_ge/status/2116873991432667494
 source: X
@@ -7,10 +7,10 @@ published: 2026-11-01 12:44 UTC
 saved: 2026-11-02
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 思维与成长
+roots: [harari-2023-ai-language-civilisation, searle-2010-institutional-facts]
 ---
 
 ## 原文
@@ -43,3 +43,9 @@ AI 已经破解了人类文明的底层密码。
 
 ## 溯源
 
+- 核心主张：帖子转述赫拉利的观点：语言支撑法律、货币等共同规则和大规模合作，能生成语言的AI可能影响这些关系；“破解底层代码”是风险比喻，不是文明已被技术攻破的实证结论。
+- 源知识：
+  - [赫拉利：AI与文明的语言系统](../roots/harari-2023-ai-language-civilisation.md) · 关系：直接源自 · 强弱：强。帖子明确署名赫拉利；其署名文章谈语言、货币、法律和AI影响，同一论点至少在2023年已公开。未据此断言帖子所看的具体演讲就是该年视频；“A社实验”没有给名称，不能替它补成特定研究。
+  - [制度事实与地位功能](../roots/searle-2010-institutional-facts.md) · 关系：相近 · 强弱：弱（模型复核通过）。两者都讨论语言和共同承认对货币、法律等制度的作用；这是语义相近，不表示赫拉利直接引用Searle，也不把所有信任都归为语言。
+- 本质：这条新知识本质上是语言与制度事实的社会哲学解释在生成式AI风险上的延伸。
+- 整理于：2026-11-03（第 9 轮）

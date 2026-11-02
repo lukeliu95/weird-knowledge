@@ -27,3 +27,5 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [陶哲轩谈 AI 与数学的演讲要点](../clips/2026-10-18-dotey-terence-tao-ai-math-talk.md) | 直接源自 | 强 |
+| [OpenAI 宣布三项模型辅助科学研究，并组织学者核验](../clips/2026-10-29-gdb-openai-three-scientific-discoveries.md) | 直接源自 | 强 |
+| [通俗解释 OpenAI 的 ETH 反驳声称：次指数不等于实用可解，外部核验仍在进行](../clips/2026-10-29-rishabhkio-why-3sat-result-matters.md) | 直接源自 | 强 |

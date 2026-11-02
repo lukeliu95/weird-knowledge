@@ -1,5 +1,5 @@
 ---
-title: "用 Manus 改造 Manus：AI 原生组织改造的一手实践"
+title: "宝玉转述 Manus 组织改造：给全景上下文和验收工具，人保留产品及发布判断"
 author: "宝玉 (@dotey)"
 url: https://x.com/dotey/status/2114929079975563269
 source: X
@@ -7,10 +7,10 @@ published: 2026-10-27 03:56 UTC
 saved: 2026-10-29
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: AI 产品与创业
+roots: [zhang-2026-rebuilding-manus-with-manus, theory-of-constraints]
 ---
 
 ## 原文
@@ -88,3 +88,9 @@ Manus 的运维同事嫌总被找去帮忙发版，就把发版流程写进 Agen
 
 ## 溯源
 
+- 核心主张：这是宝玉 10-27 对 Manus 中文原作的转述：给 agent 全景上下文、可操作工具和验收手段，把工作接成闭环。后续 10-30 官网英文版可校对其中做法，并明确人保留产品取舍、合并和发布批准，且并发变多会带来注意力瓶颈；英文版不是此前原推的直接来源。
+- 源知识：
+  - [用 Manus 改造 Manus（组织工作流、验收与人的判断）](../roots/zhang-2026-rebuilding-manus-with-manus.md) · 关系：相近 · 强弱：弱（模型复核通过）。原推短链指向较早的微信中文原作，但原页遇验证码、首发日未核实；已读 10-30 官网英文版，仅作同一实践的后续校对，不能说 10-27 原推直接源自 10-30 英文版。
+  - [约束理论](../roots/theory-of-constraints.md) · 关系：相近 · 强弱：弱（模型复核通过）。软件实现提速后，需求定义和人审成为新的限制；与约束转移相近，不是作者明说援引该理论。
+- 本质：这条新知识本质上是围绕可验证闭环重排组织协作，并持续识别新瓶颈的实践。
+- 整理于：2026-11-03（第 9 轮）

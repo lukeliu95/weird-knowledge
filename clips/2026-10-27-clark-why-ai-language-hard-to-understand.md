@@ -7,10 +7,10 @@ published: 2026-10（arXiv 预印本 2610.29162 [cs.CL]，v1 2026-10-21；DOI 10
 saved: 2026-10-27
 why: 未说明
 related_principles: [原则 1]
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 提示词与写作
+roots: [clark-2026-ai-language-understandability, uniform-information-density, futrell-2015-dependency-length-minimization]
 ---
 
 ## 原文
@@ -100,4 +100,14 @@ roots: []
 
 ## 溯源
 
-（整理时填写，存的时候留空）
+- 核心主张：前沿模型较常使用与理解困难相关的英语句式，长度惩罚能让小模型偏向短表达；后训练中的压缩压力是解释之一，尚不能当成前沿模型的已证实病因。
+- 源知识：
+  - [AI 文字为什么难懂：沟通目标与信息密度的错位](../roots/clark-2026-ai-language-understandability.md) · 关系：直接源自 · 强弱：强。本条概括的就是该论文；第4节是小模型概念验证，第7节说明因果识别局限。
+  - [均匀信息密度假说](../roots/uniform-information-density.md) · 关系：直接源自 · 强弱：强。论文第2节、第4节明说引用 Levy 与 Jaeger 的假说，用它区分为听者摊平负担与只追求信息密集。
+  - [37 种语言的依存距离最小化证据](../roots/futrell-2015-dependency-length-minimization.md) · 关系：直接源自 · 强弱：强。论文第1节、第3.1节明确引用这份37语言研究，解释相关词距离与人的处理困难。
+- 本质：这条新知识本质上是信息密度与人类理解负担之间的取舍，在大模型表达和后训练场景下的研究。
+- 整理于：2026-11-03（第 9 轮）
+
+### 本轮核查备注
+
+- 实验一的 object relative clauses 宜称宾语关系从句；普通宾语从句 complement clauses 是实验二另一种结构。原模型概括混用了术语，源知识的边界说明已区分，原文不改。

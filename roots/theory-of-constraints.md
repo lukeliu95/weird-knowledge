@@ -34,3 +34,6 @@ verified: true
 | [写好Spec后让Agent整周自动开发](../clips/2026-10-18-timyangnet-spec-driven-agent-development.md) | 相近 | 弱（模型复核通过） |
 | [Anthropic 设计负责人谈 AI 时代设计流程](../clips/2026-10-18-dotey-anthropic-design-process-ai-era.md) | 相近 | 弱（模型复核通过） |
 | [马斯克：未来的发现全是工程（“最稀缺的是验证”是转述者加的）](../clips/2026-10-20-financeyf5-musk-future-discovery-is-engineering.md) | 相近 | 弱（模型复核通过） |
+| [宝玉转述 Manus 组织改造：给全景上下文和验收工具，人保留产品及发布判断](../clips/2026-10-29-dotey-manus-ai-native-org-transformation.md) | 相近 | 弱（模型复核通过） |
+| [客户端开发的选型：原生、多端与借力](../clips/2026-10-29-hitw93-client-dev-native-vs-cross-platform.md) | 相近 | 弱（模型复核通过） |
+| [工具目录、工具搜索、PTC 要逐个瓶颈地改、每步都测](../clips/2026-10-29-ronny-minimax-tool-search-bottleneck-by-bottleneck.md) | 相近 | 弱（模型复核通过） |

@@ -7,10 +7,10 @@ published: 2026-10-26 06:27 UTC
 saved: 2026-10-29
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 编程智能体
+roots: [osmani-2026-claude-code-code-review, swiss-cheese-model]
 ---
 
 ## 原文
@@ -301,3 +301,9 @@ A rewrite of our original article and checked with Pangram.
 
 ## 溯源
 
+- 核心主张：代码审查应按风险组合自动检查、独立复审、人工批准与回滚，用真实事故测试审查器，并限制复审轮数，把人的注意力放在机器难以把关的地方。
+- 源知识：
+  - [Claude Code 团队怎么审代码（七层检查、少量人工）](../roots/osmani-2026-claude-code-code-review.md) · 关系：直接源自 · 强弱：强。同名长文是官方10月15日文章的重写版本，核心流程可逐项对应；业绩数字仍是团队内部自报。
+  - [瑞士奶酪模型](../roots/swiss-cheese-model.md) · 关系：相近 · 强弱：弱（模型复核通过）。原文说明每层都会漏错，多层共同拦截并由回滚兜底，与系统多道防线的思想相近；官方正文没有声称直接引用 Reason。
+- 本质：这条新知识本质上是多道防线与按风险分配人工注意力，在智能体写代码后的审查流程中的应用。
+- 整理于：2026-11-03（第 9 轮）

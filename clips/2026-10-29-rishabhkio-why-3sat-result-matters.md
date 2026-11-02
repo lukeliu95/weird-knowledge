@@ -1,5 +1,5 @@
 ---
-title: "通俗解释 3-SAT 新进展为什么重要"
+title: "通俗解释 OpenAI 的 ETH 反驳声称：次指数不等于实用可解，外部核验仍在进行"
 author: "Rishabh Karnawat (@rishabhkio)"
 url: https://x.com/rishabhkio/status/2114892366586823133
 source: X
@@ -7,10 +7,10 @@ published: 2026-10-27 01:30 UTC
 saved: 2026-10-29
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 学习与研究
+roots: [openai-2026-eth-is-false, exponential-time-hypothesis, lean-proof-assistant]
 ---
 
 ## 原文
@@ -37,3 +37,10 @@ But it means our map of what is possible was wrong in a place we were very confi
 
 ## 溯源
 
+- 核心主张：若公开稿声称的固定k-SAT次指数算法经独立核验成立，ETH将被反驳，相关条件困难性解释需重估；这不等于P与NP解决或所有问题实用可解。
+- 源知识：
+  - [《指数时间假说是假的》公开稿及 Lean 范围说明](../roots/openai-2026-eth-is-false.md) · 关系：直接源自 · 强弱：强。解释对象与公开稿及Lean范围说明一致；需分清厂商宣布与外部核验，本库只核对出处，未独立证明。
+  - [指数时间假说（ETH）](../roots/exponential-time-hypothesis.md) · 关系：挑战 · 强弱：强。固定k的次指数SAT算法若确认，直接与ETH冲突。已有条件定理的逻辑形式仍成立，失去的是把假设当真时的困难性依据。
+  - [Lean 证明助手](../roots/lean-proof-assistant.md) · 关系：直接源自 · 强弱：强。公开材料明确列出Lean范围。自然语言稿更尖锐的时间界，与范围说明中形式化的时间界不同。
+- 本质：这条内容本质上是对计算复杂性中条件假设进行公开可检查的反证尝试；次指数、形式化与实用可解不能混为一谈。
+- 整理于：2026-11-03（第 9 轮）

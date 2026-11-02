@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "round": 9,
+  "date": "2026-11-03",
+  "scope_entries": 66,
+  "processed": {
+    "已归档": 48,
+    "已整理": 18
+  },
+  "original_sections_unchanged": 66,
+  "new_roots": 18,
+  "bidirectional_relationships_checked": 36,
+  "internal_links_checked": 766,
+  "confirmed_principles_unchanged": true,
+  "errors": []
+}

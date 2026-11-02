@@ -1,11 +1,11 @@
 # 我的思考框架
 
-> 最近一次整理：2026-10-24（第 6 轮）· 新知识 1873 条（已溯源 302、待溯源 0、已归档 1571），另有补课找来、还没认可的 36 条 · 源知识 947 个
-> 规则见 [AGENTS.md](AGENTS.md)。标"草稿"的是模型提炼的，Luke 确认后才改成"已确认"。本轮记录：[docs/reviews/2026-10-24-round-6.md](docs/reviews/2026-10-24-round-6.md)
+> 最近一次整理：2026-11-03（第 9 轮）· 新知识 1984 条（已溯源 351、待溯源 0、已归档 1633），另有补课找来、还没认可的 36 条 · 源知识 1013 个
+> 规则见 [AGENTS.md](AGENTS.md)。标"草稿"的是模型提炼的，Luke 确认后才改成"已确认"。本轮记录：[docs/reviews/2026-11-03-round-9.md](docs/reviews/2026-11-03-round-9.md)
 
 ## 一、我的原则
 
-第 1 轮从 65 条里提炼出 7 条。第 2 轮又溯源了 151 条：7 条都补上了新证据，另外新增 4 条（原则 8～11）。2026-10-18 Luke 全部确认，其中原则 2、6、8 按建议改了说法。第 3 轮溯源了 7 条：原则 1、2、5、7、8、10、11 补了新证据，另外新增 1 条（原则 12），Luke 当天确认。第 4 轮溯源了 25 条：原则 1、2、3、4、6、7、8、10、11、12 补了新证据，另外新增 1 条（原则 13），Luke 当天确认。第 6 轮溯源了 21 条：原则 1、2、4、6、10、11、12、13 补了新证据，没有新增原则。第 7 轮溯源了 1 条：原则 7、10 补了新证据。第 8 轮溯源了 21 条：原则 1、2、6、10、11、12、13 补了新证据，没有新增原则。
+第 1 轮从 65 条里提炼出 7 条。第 2 轮又溯源了 151 条：7 条都补上了新证据，另外新增 4 条（原则 8～11）。2026-10-18 Luke 全部确认，其中原则 2、6、8 按建议改了说法。第 3 轮溯源了 7 条：原则 1、2、5、7、8、10、11 补了新证据，另外新增 1 条（原则 12），Luke 当天确认。第 4 轮溯源了 25 条：原则 1、2、3、4、6、7、8、10、11、12 补了新证据，另外新增 1 条（原则 13），Luke 当天确认。第 6 轮溯源了 21 条：原则 1、2、4、6、10、11、12、13 补了新证据，没有新增原则。第 7 轮溯源了 1 条：原则 7、10 补了新证据。第 8 轮溯源了 21 条：原则 1、2、6、10、11、12、13 补了新证据，没有新增原则。第 9 轮溯源 18 条、归档 48 条；补充已有原则的证据和适用边界，没有新增或改写已确认原则。
 
 ### 原则 1：质量靠闭环：回路越短、越能自动判对错，进步越快
 
@@ -24,6 +24,7 @@
 - 第 6 轮新增：[HarnessPro](clips/2026-10-24-qbitai-harnesspro-pareto-rsi.md)：没有标准答案时，大模型当裁判只抓到 41.7% 的失败案例，换成按任务写的可执行测试升到 83.3%，再按分数和成本两个目标留候选；[Harness² 解读](clips/2026-10-22-xudong-harness-squared-self-evolution.md)、[Evo² 解读](clips/2026-10-22-xudong-evo2-weight-harness-co-evolution.md)、[Imbue 的 Darwinian Evolver](clips/2026-10-22-imbue-llm-evolution-universal-optimizer.md)都是“改一点、同条件对照、赢了才留”。新线索：把关的检查最好是能执行的测试，不是另一个模型的印象
 - 第 8 轮新增：[RRSI](clips/2026-10-25-xia-rrsi-regularized-harness-self-improvement.md)、[SkillOpt](clips/2026-10-25-yang-skillopt-self-evolving-agent-skills.md)：agent 反复改自己的外壳和 skill 会背题，要加正则化：每步只许改几处、留出题上变好才收下、涨分要超过噪声；[循环工程](clips/2026-10-25-macedo-loop-engineering-stop-hand-holding.md)：别一步步提示 coding agent，去设计提示它的循环（触发、目标、校验、停止规则、记忆），50 个真实循环里校验做得最成熟。新线索：闭环本身也会过拟合，检验题要留一份不给它看
 - 没想清楚的问题：获客这种反馈慢、难归因的事怎么缩短回路？按智谱的思路，可以把“签单”拆成“打开、回信、约到会”这几层过程信号分别优化（推断，待 Luke 确认）。复旦那条“看能说明因果的指标，不看虚荣指标”（[复旦分享：脑科学视角拆品牌营销](clips/2026-10-18-yangyi-fudan-brand-marketing-neuroscience.md)）提醒：拆出来的过程信号要真的能预测结果。
+- 第 9 轮证据：[Stripe 支付接入工厂](clips/2026-10-31-undefinedki-stripe-agent-factory-prompt-per-step.md)把执行记录、提示改进、测试和人工审查接在一起。20→4 天只是一项任务的公司自述，不是通用提效倍数。
 
 ### 原则 2：能力还在快速变强时，给目标、工具和边界，不写死步骤；脚手架按需加、定期删；要长期保持一致、出错代价大的部分照样写死
 
@@ -42,6 +43,7 @@
 - 第 6 轮新增：[OpenAI FDE 实战](clips/2026-10-24-xudong07452910-xudong-openai-fde-codex-deleted-custom-code.md)：Codex 变强后，前线部署团队删掉了九成给客户写的定制代码，留下来的是评测、失败案例和写成 skill 的业务知识。这是“脚手架定期删”在企业落地上的例子
 - 第 8 轮新增：[为什么 harness 加太多 AI 会迷路](clips/2026-10-25-hirakaw-trim-instructions-keep-enforcement.md)：删的是写给模型的指示，硬性的强制机制要留，正好对上这条原则的后半句；[Anthropic：子 agent 什么时候该并回主循环](clips/2026-10-25-sarkis-anthropic-fold-subagents-into-main-loop.md)：很多拆分和流程是在替模型做它已经会做的事，模型越强越该删
 - 没想清楚的问题：底层能力什么时候算“不再快速变强”？那时该反过来多写结构。Tripo 那条给了一个判断口：需要长期保持一致、出错代价大的部分，先写死。
+- 第 9 轮证据：[Ball 工作法的转述](clips/2026-10-29-yulin807-thorsten-ball-how-i-work-with-agents.md)强调目标和证据；[Stripe 案例](clips/2026-10-31-undefinedki-stripe-agent-factory-prompt-per-step.md)把可预测编排交给代码。两者分别适合开放判断和稳定重复任务。
 
 ### 原则 3：一种能力变得人人可得，价值就转到和它互补、仍然稀缺的东西上
 
@@ -55,6 +57,7 @@
 - 第 4 轮新增：[日本 B2B 采购者：八成嫌官网都是一般论，57.1% 按“诚实”决定找谁询问](clips/2026-10-20-ideatech-btob-buyer-information-contact-survey.md)、[模型每周都在换：别把自己的上下文锁在一家产品里](clips/2026-10-20-brian-lovin-portable-context-switching.md)、[Personal Agent 像 2012 年的滴滴：是上游模型厂补贴下游的出口，要能自己后训练小模型降本](clips/2026-10-20-willwangtf-personal-agent-didi-2012.md)（共 18 条）；新源知识 [双面说服（正反两面信息）](roots/two-sided-persuasion.md)、[自愿披露与“沉默即坏消息”（信息解开）](roots/voluntary-disclosure-unraveling.md)、[滴滴与快的打车补贴大战](roots/didi-kuaidi-subsidy-war-2014.md)
 - 第 4 轮的新线索：IDEATECH 的 105 人调查说，买方把一般信息交给生成式 AI，让他们决定找谁询问的，是肯公开缺点、风险、真实价格的诚实（厂商调查，卖的正是调查型内容营销）。这一块单独写成了原则 13。Brian Lovin 和 willwangtf 是同一件事的两面：模型被做成大路货（上游补贴 token 抢用户，像 2014 年腾讯、阿里补贴打车），握在自己手里的个人上下文、自己训的小模型才是资产。
 - 没想清楚的问题：AI 让什么变便宜了，对 GBase 的客户来说，现在稀缺的是什么？
+- 第 9 轮证据：[Tw93 客户端选型](clips/2026-10-29-hitw93-client-dev-native-vs-cross-platform.md)认为多写一套原生代码变便宜后，真实体验和验证仍需投入。这是个人工程经验，不证明原生在所有场景都更优。
 
 ### 原则 4：说不清的知识只能去现场取，取回来要沉淀成可复用的东西
 
@@ -97,6 +100,7 @@
 - 第 6 轮新增（可能的反例）：[微软 Agensh](clips/2026-10-22-aigclink-agensh-decentralized-1024-agents.md)不设管家，最多 1024 个 agent 靠共享工作区和团队 Wiki 协作，规模变大后自己长出评审和整合者；[RLCR](clips/2026-10-24-genreasoning-genreasoning-rlcr-collective-rewards-agent-orgs.md)只奖励整体时，多个 agent 也自发长出分工和层级。协调成本没有消失，是被自己长出来的组织结构吸收了（推断）
 - 第 8 轮新增：[Anthropic：子 agent 什么时候该并回主循环](clips/2026-10-25-sarkis-anthropic-fold-subagents-into-main-loop.md)：按部门拆 agent，架构就成了组织架构图的翻版（康威定律）；子 agent 之间来回交接像传话游戏；有客户换成一个主循环后快约一倍。[幕僚长模式](clips/2026-10-25-jalangan-chief-of-staff-agent-orchestration.md)：一个会话只协调和验收，别的会话干活，每份汇报当证据重跑再信，验收成了瓶颈
 - 没想清楚的问题：你同时开多个会话、多个 worktree，瓶颈是不是已经从“写”变成了“你的审查”？kimi-code 那条的结论是：质量最终取决于人投入了多少注意力。
+- 第 9 轮证据：[Manus 组织改造转述](clips/2026-10-29-dotey-manus-ai-native-org-transformation.md)、[Ronny 逐瓶颈改工具链](clips/2026-10-29-ronny-minimax-tool-search-bottleneck-by-bottleneck.md)和[客户端选型](clips/2026-10-29-hitw93-client-dev-native-vs-cross-platform.md)都指向瓶颈迁移；这三处与约束理论的相近关系已通过第二模型复核。
 
 ### 原则 7：先保证不出局：不拿输不起的去换用不上的，把关键依赖分散开
 
@@ -152,6 +156,7 @@
 - 第 7 轮新增：[天涯大佬：2027 年以后要活成的样子](clips/2026-10-24-caomei-nz-tianya-how-to-live-after-2027.md)：第一、五条说只看中文互联网和算法推荐，看到的都是“别人筛选过、翻译过、加工过”的二手信息，会被困在信息茧房里，所以要能直接读英文的一手材料
 - 第 8 轮新增：[Wavestone 拆 11 个编程 agent（推文转述）](clips/2026-10-25-arindam-1729-seven-building-blocks-of-coding-agents.md)：推文说“90 行外壳覆盖全部 7 个部件”，论文原文是故意不做其中几块、只实现了 18 条建议里的 10 条；[ナイル调查](clips/2026-10-25-nile-btob-vendor-selection-ai-search-survey.md)：多选题里“用的人最多”，在转述里成了“第一信息来源”
 - 没想清楚的问题：给客户的提案和邮件里引用的数字（比如“一小时内联系线索，谈上决策人的可能性高 7 倍”），有多少是二手转述？这一轮查到这组数字就常被混着引用（见误传）。
+- 第 9 轮证据：[AI 文字论文及转述](clips/2026-10-29-lijigang-why-ai-generated-language-hard-to-read.md)要区分研究解释与转述者处方；[生医清单](clips/2026-10-29-m-goes-distance-biotech-breakthroughs-last-six-months.md)要区分时间、人群、试验阶段和统计口径；[ETH 解读](clips/2026-10-29-rishabhkio-why-3sat-result-matters.md)要区分公布材料与外部核验。
 
 ### 原则 11：上下文是稀缺资源：常驻只放索引，细节按需加载，子任务各带干净的上下文
 
@@ -168,6 +173,7 @@
 - 第 6 轮新增：[REM：编程 agent 的经验记忆](clips/2026-10-22-chen-rem-experience-memory-coding-agents.md)：难点不在找得准，而在存成什么样、什么时候给、给完就撤；无关的经验放进上下文会拖累表现，对最强的模型甚至有害
 - 第 8 轮新增：[CLAUDE.md 做成索引、规矩留在正文](clips/2026-10-25-yamato-snow-claude-md-index-design.md)：四种放法实测，规矩挪进按需打开的笔记后，AI 没读到规矩就去全局搜索，搜出了（虚构的）密钥。新线索：按需加载的是细节，必须守的规矩要常驻；[KV cache 的暴政](clips/2026-10-25-yibie-jev-engineering-kv-cache-tyranny.md)：今天的 agent 只能只追加对话，带来工具挤占上下文、压缩丢信息这些毛病
 - 没想清楚的问题：这一条和原则 4 的“沉淀”是一回事吗？skill 既是给 agent 省上下文的办法，也是把现场经验存下来的办法。
+- 第 9 轮证据：[Raw-RAG](clips/2026-10-29-akshay-pachaar-raw-rag-beats-agent-memory.md)在四个离线对话记忆基准里展示原始记录检索的强对照；不因此取消按需检索，也不能推出所有记忆任务都应只存原文。
 
 ### 原则 12：放权按后果分级、靠证据升级：碰钱、对外、删除、难撤销的留给人；其余先只起草，记录好了再一级级放宽，一次意外就收回
 
@@ -183,6 +189,7 @@
 - 第 6 轮新增：[人在回路里只是摆设](clips/2026-10-22-mitchell-agents-push-humans-out-of-loop.md)：agent 用得越久，人越没本事审它（挑战“人在环中”，强）；[长任务 agent 的证据式监督](clips/2026-10-22-sun-evidence-grounded-agent-oversight.md)：用程序把 agent 自作主张的关键决定连同证据摆给人看，只把有后果的交给人；[Harrison Chase：是非题交给决策模型](clips/2026-10-22-hwchase17-yes-no-calls-jev.md)：拿得准的便宜模型先判，拿不准的再往上交。新线索：放权靠证据升级的前提，是人还看得懂证据
 - 第 8 轮新增：[司令官和部下](clips/2026-10-25-xin-tech-commander-subordinate-agent-roles.md)：主会话只管计划、分工、验证，干活的子 agent 用定义文件硬性限权（最小权限原则、职责分离）；[决策小模型分担控制](clips/2026-10-25-zhu-jevagentharness-decision-models-share-control.md)：agent 每一步的选择题，够把握的才交给小模型，不设门槛成功率掉 19 个点，设了门槛便宜 81%～89%、成功率掉不到 3 个点。放权按证据分级，在模型之间也成立
 - 没想清楚的问题：你同时开多个会话、用 /loop 跑任务，现在哪些动作已经可以从“先问”升到“自己做”？可以拿你最近一周批准过、而且一字没改的动作当证据（推断，待 Luke 确认）。
+- 第 9 轮证据：[Lesse 的工程问题](clips/2026-10-29-turingbook-agent-era-engineering-problems-lesse.md)强调身份授权、安全隔离和停机；[代码审查重写稿](clips/2026-10-29-addyosmani-how-claude-code-team-does-code-review.md)强调按风险分配人工审查；[Manus](clips/2026-10-29-dotey-manus-ai-native-org-transformation.md)仍保留人的合并和发布批准。
 
 ### 原则 13：买方先自己查、后找销售。一般信息被 AI 做便宜后，能让买方开口的是 AI 给不了的一手信息（缺点、风险、真实价格、不适合谁）。联系要踩在买方要买的时间点上，次数要少，走对方愿意的渠道；买方要的硬信息（服务保证、安全、解约条件、真实价格、实绩）先公开出来
 
@@ -205,21 +212,23 @@
 
 | 排名 | 源知识 | 被几条新知识指向（直接 / 连同间接） | 更底层的源头 |
 |---|---|---|---|
-| 1 | [反馈](roots/feedback.md) | 4 / 112 | 已到基础层 |
-| 2 | [控制论](roots/cybernetics.md) | 4 / 83 | 已到基础层 |
-| 3 | [自然选择](roots/natural-selection.md) | 0 / 72 | 已到基础层 |
-| 4 | [有限理性](roots/bounded-rationality.md) | 0 / 71 | 已到基础层 |
-| 5 | [比较优势](roots/comparative-advantage.md) | 2 / 57 | 已到基础层 |
+| 1 | [反馈](roots/feedback.md) | 4 / 117 | 已到基础层 |
+| 2 | [控制论](roots/cybernetics.md) | 4 / 89 | 已到基础层 |
+| 3 | [有限理性](roots/bounded-rationality.md) | 0 / 73 | 已到基础层 |
+| 4 | [自然选择](roots/natural-selection.md) | 0 / 72 | 已到基础层 |
+| 5 | [比较优势](roots/comparative-advantage.md) | 2 / 58 | 已到基础层 |
 | 6 | [控制理论](roots/control-theory.md) | 0 / 51 | [反馈](roots/feedback.md) |
-| 7 | [分工](roots/division-of-labour.md) | 7 / 49 | [比较优势](roots/comparative-advantage.md) |
-| 8 | [智能体](roots/intelligent-agent.md) | 4 / 42 | [反馈](roots/feedback.md) |
+| 7 | [分工](roots/division-of-labour.md) | 7 / 50 | [比较优势](roots/comparative-advantage.md) |
+| 8 | [智能体](roots/intelligent-agent.md) | 4 / 43 | [反馈](roots/feedback.md) |
 | 9 | [经验曲线效应](roots/experience-curve-effect.md) | 2 / 41 | [学习曲线](roots/learning-curve.md) |
 | 10 | [学习曲线](roots/learning-curve.md) | 0 / 41 | 已到基础层 |
-| 11 | [摩尔定律](roots/moores-law.md) | 1 / 38 | [经验曲线效应](roots/experience-curve-effect.md) |
-| 12 | [构建高效的智能体](roots/anthropic-2024-building-effective-agents.md) | 20 / 37 | [智能体](roots/intelligent-agent.md)、[分工](roots/division-of-labour.md) |
+| 11 | [构建高效的智能体](roots/anthropic-2024-building-effective-agents.md) | 21 / 38 | [智能体](roots/intelligent-agent.md)、[分工](roots/division-of-labour.md) |
+| 12 | [摩尔定律](roots/moores-law.md) | 1 / 38 | [经验曲线效应](roots/experience-curve-effect.md) |
 | 13 | [苦涩的教训](roots/bitter-lesson.md) | 14 / 37 | [摩尔定律](roots/moores-law.md) |
-| 14 | [效果律](roots/law-of-effect.md) | 0 / 37 | [自然选择](roots/natural-selection.md) |
-| 15 | [信息不对称](roots/information-asymmetry.md) | 9 / 33 | 已到基础层 |
+| 14 | [信息不对称](roots/information-asymmetry.md) | 9 / 37 | 已到基础层 |
+| 15 | [效果律](roots/law-of-effect.md) | 0 / 37 | [自然选择](roots/natural-selection.md) |
+
+第 9 轮（2026-11-03）：反馈 112→117，控制论 83→89，有限理性 71→73，比较优势 57→58；自然选择仍为 72。这里只是库内内容的关联数，不代表理论准确率。约束理论直接关联 8→11，主要来自组织改造、客户端验证和逐瓶颈工具优化。
 
 和第 7 轮比（2026-10-25 第 8 轮）：反馈从 97 条涨到 112 条，控制论 76→83，有限理性 61→71，自然选择 66→72，比较优势 50→57。智能体升到第 8 名。第 8 轮 21 条里，追到这几个基础源头的主要是 agent 外壳工程（11 个编程 agent 的拆解、循环工程、面向对象外壳）、agent 自我改进（RRSI、SkillOpt）和决策小模型分担控制这几组。
 
@@ -231,7 +240,7 @@
 
 和第 3 轮比（含 2026-10-19 认可补课第 1 题后的重排）：反馈从 68 条涨到 80 条，自然选择从 45 条涨到 54 条、升到第 3。涨的全来自这一轮：25 条里有 12 条顺着更底层的源头追到反馈，9 条追到自然选择，主要是 agent 自我改进（Harness²、Designer-RSI、JitMem）、用户模拟（MIMESIS 等）和算法合谋这几条。控制理论从第 12 名升到第 7 名；效果律回到前 15，完全竞争掉了出去。
 
-直接被指向最多的：构建高效的智能体（20）、苦涩的教训（14）、AI 智能体的上下文工程（10）、信息不对称（9）、递归自我改进（9）、约束理论（8）、分工（7）、待完成的任务（7）。
+直接被指向最多的：构建高效的智能体（21）、苦涩的教训（14）、约束理论（11）、AI 智能体的上下文工程（10）、信息不对称（9）、递归自我改进（9）、Claude Code 最佳实践（给 Claude 一个验证自己工作的办法）（7）、分工（7）。
 
 ## 三、待查
 
@@ -239,10 +248,11 @@
 
 ### 和经典理论对着干的
 
-第 1 轮 9 处，第 2 轮新增 21 处，第 3 轮新增 3 处，2026-10-19 认可补课第 1 题后计入 2 处，第 4 轮新增 6 处，第 5 轮新增 2 处；2026-10-21 弱关系复核删掉 5 处牵强的；第 6 轮新增 10 处；2026-10-25 认可补课第 10 题后计入 2 处；第 8 轮新增 5 处，现在共 58 处。强的 20 处排在前面。
+第 1 轮 9 处，第 2 轮新增 21 处，第 3 轮新增 3 处，2026-10-19 认可补课第 1 题后计入 2 处，第 4 轮新增 6 处，第 5 轮新增 2 处；2026-10-21 弱关系复核删掉 5 处牵强的；第 6 轮新增 10 处；2026-10-25 认可补课第 10 题后计入 2 处；第 8 轮新增 5 处，第 9 轮新增 1 处针对 ETH 的有条件挑战，现在共 59 处。强的 21 处排在前面；新增的 ETH 项表示公开稿明确挑战该假说，不表示本库已经独立证明。
 
 | 新知识 | 对着干的经典 | 强弱 |
 |---|---|---|
+| [通俗解释 OpenAI 的 ETH 反驳声称：次指数不等于实用可解，外部核验仍在进行](clips/2026-10-29-rishabhkio-why-3sat-result-matters.md) | [指数时间假说](roots/exponential-time-hypothesis.md) | 强（公开反驳声称，外部核验进行中） |
 | [人和 AI 比设计游戏：AI 自己设计的卖得更贵，标明"人做的"也不加价](clips/2026-10-20-conlon-human-ai-competition-experiment.md) | [《预测机器：人工智能的简单经济学》](roots/agrawal-2018-prediction-machines.md) | 强 |
 | [微软 Agensh：不设管家，最多 1024 个 agent 靠共享工作区和团队 Wiki 自协作，规模变大后自发长出评审和整合者](clips/2026-10-22-aigclink-agensh-decentralized-1024-agents.md) | [Anthropic 多智能体研究系统](roots/anthropic-2025-multi-agent-research-system.md) | 强 |
 | [陶哲轩谈 AI 与数学的演讲要点](clips/2026-10-18-dotey-terence-tao-ai-math-talk.md) | [通用人工智能的火花：GPT-4 早期实验](roots/bubeck-2023-sparks-agi.md) | 强 |
@@ -339,6 +349,8 @@
 - [“计算机不能被问责，所以不能做管理决策”（IBM 1979 培训资料）](roots/ibm-1979-computer-accountable.md)：原件据说毁于水灾，IBM 档案馆也没找到
 - [感知风险](roots/perceived-risk.md)、[意义建构方法论](roots/sense-making-methodology.md)：补课时新建，原始出处还没核实到
 
+- **第 9 轮的证据边界**：[ETH 的外部核验](clips/2026-10-29-rishabhkio-why-3sat-result-matters.md)仍进行中；[Google 9 页 PDF](clips/2026-10-29-0xshoopy-google-long-running-agent-six-layers.md)出处未确认；[Manus 中文原作](clips/2026-10-29-dotey-manus-ai-native-org-transformation.md)正文受验证码限制，后续英文版只作校对；[内存预测](clips/2026-11-02-jun-song-ram-shortage-physical-ai.md)的 1%、机器人占比、全行业 2029 售罄与统一 5 年下限尚未核实。这些都不改已确认原则。
+
 ### 顺手查出来的误传
 
 第 1 轮：
@@ -403,29 +415,36 @@
 - Jev-Mem 的“建记忆快 6.6 倍”是和最快的对照系统比，“0.93 秒”是检索加回答的总延迟，最强的对照是同一团队去掉 Jev 的旧版（见 [Jev-Mem](clips/2026-10-22-gorden-sun-jev-mem-fast-slow-memory.md)）
 - Mitchell 等论文把“系统越能干，人的技能和情境意识退化越多”安在 Bainbridge 1983 头上；原文的结论是“控制系统越先进，人的贡献可能越关键”，全文没有“情境意识”这个词（见 [人在回路里只是摆设](clips/2026-10-22-mitchell-agents-push-humans-out-of-loop.md)）
 
+第 9 轮（2026-11-03）：
+- AI 文字论文的小模型长度惩罚实验不能证明前沿模型的真实训练病因；四条中文写作建议来自转述者，未由该论文验证。
+- Stripe 的 20→4 天和整体半年→2–6 周是不同任务口径；不能合成通用倍数。
+- 生医清单里的猪肾 271 天发生于 2025 年；生发两项是二/三期加三期；retatrutide 的 28.3% 有特定剂量、时间和估计口径。完整十项见[本轮核查证据](docs/reviews/2026-11-03-round-9-evidence.md)。
+- 英文 Tw93 原文有缺字，保留；后续博客 21 条不替换原推的 20 条。
+- DeepSeek 魔改帖自报数值中，81.62%−4.30%=77.32 个百分点，50 次拒绝 2 次为 4%；原帖未说明不同统计口径，不改原文。
+
 ## 四、主题地图
 
 全部新知识按主题和发布年份分布，看关注点这几年怎么变。由 `tools/topic_map.py` 生成。
 
 <!-- topic-map:begin -->
-共 1918 条新知识（含已归档）。补课找来、还没认可的 36 条不计入。数字是每年存下的条数；按发布年份算，不是保存日期。
+共 1984 条新知识（含已归档）。补课找来、还没认可的 36 条不计入。数字是每年存下的条数；按发布年份算，不是保存日期。
 
 | 主题 | 更早 | 2023 | 2024 | 2025 | 2026 | 未知 | 合计 | 观点 / 工具 / 教程 |
 |---|---|---|---|---|---|---|---|---|
-| Agent 与 Skill |  | 8 | 38 | 116 | 141 | 1 | 304 | 66 / 184 / 54 |
-| 其他 |  | 25 | 32 | 47 | 96 |  | 200 | 75 / 110 / 15 |
-| AI 产品与创业 |  | 18 | 32 | 43 | 92 |  | 185 | 134 / 41 / 10 |
-| 视频生成 |  | 2 | 10 | 18 | 147 |  | 177 | 14 / 70 / 93 |
-| 模型与本地部署 |  | 9 | 14 | 27 | 112 |  | 162 | 22 / 109 / 31 |
-| 编程智能体 |  | 4 | 21 | 38 | 96 |  | 159 | 39 / 56 / 64 |
-| 设计与前端 |  | 8 | 17 | 39 | 59 |  | 123 | 8 / 79 / 36 |
+| Agent 与 Skill |  | 8 | 38 | 116 | 158 | 1 | 321 | 71 / 193 / 57 |
+| 其他 |  | 25 | 32 | 47 | 98 |  | 202 | 77 / 110 / 15 |
+| AI 产品与创业 |  | 18 | 32 | 43 | 93 |  | 186 | 135 / 41 / 10 |
+| 视频生成 |  | 2 | 10 | 18 | 153 |  | 183 | 15 / 74 / 94 |
+| 模型与本地部署 |  | 9 | 14 | 27 | 126 |  | 176 | 23 / 121 / 32 |
+| 编程智能体 |  | 4 | 21 | 38 | 105 |  | 168 | 44 / 58 / 66 |
+| 设计与前端 |  | 8 | 17 | 39 | 63 |  | 127 | 9 / 81 / 37 |
 | 图像生成 |  | 11 | 29 | 45 | 21 |  | 106 | 1 / 62 / 43 |
-| 增长与获客 | 13 | 2 | 15 | 20 | 54 | 1 | 105 | 55 / 22 / 28 |
-| 提示词与写作 |  | 5 | 17 | 61 | 16 |  | 99 | 7 / 16 / 76 |
-| 学习与研究 | 3 | 11 | 31 | 16 | 34 |  | 95 | 29 / 33 / 33 |
-| 语音与数字人 |  | 9 | 41 | 19 | 25 |  | 94 | 0 / 83 / 11 |
-| 思维与成长 |  | 6 | 12 | 8 | 30 | 1 | 57 | 56 / 1 / 0 |
-| 日本 | 5 | 7 | 4 | 6 | 16 | 1 | 39 | 27 / 11 / 1 |
+| 增长与获客 | 13 | 2 | 15 | 20 | 55 | 1 | 106 | 55 / 22 / 29 |
+| 提示词与写作 |  | 5 | 17 | 61 | 19 |  | 102 | 9 / 17 / 76 |
+| 学习与研究 | 3 | 11 | 31 | 16 | 39 |  | 100 | 33 / 34 / 33 |
+| 语音与数字人 |  | 9 | 41 | 19 | 27 |  | 96 | 0 / 85 / 11 |
+| 思维与成长 |  | 6 | 12 | 8 | 31 | 1 | 58 | 57 / 1 / 0 |
+| 日本 | 5 | 8 | 4 | 6 | 16 | 1 | 40 | 27 / 12 / 1 |
 | 历史与冷知识 |  | 3 | 1 | 3 | 6 |  | 13 | 11 / 1 / 1 |
 
 **每个主题的代表**（先选已溯源的，再选观点类，最后按发布时间取最新）
@@ -441,7 +460,7 @@
 - **增长与获客**：[采购中心和五种角色：企业买东西是一群人在组织里一起决定](clips/2026-10-18-webster-wind-organizational-buying-behavior.md)、[谢斯工业品购买者模型：几个部门一起买，冲突怎么解决决定了快慢](clips/2026-10-18-sheth-industrial-buyer-behavior.md)、[SPIN 销售法：大单靠按顺序提问让客户自己说出需求](clips/2026-10-18-rackham-spin-selling.md)
 - **提示词与写作**：[Anthropic专家谈提示词工程师](clips/2026-10-18-eze-is-1-anthropic-prompt-engineering-notes.md)、[提示词精髓：有什么、做什么、怎么做](clips/2026-10-18-dotey-prompt-context-task-how.md)、[写提示词的三条路与第四条路：故事](clips/2026-10-18-lijigang-prompt-writing-fourth-path-story.md)
 - **学习与研究**：[Samuel 的跳棋程序：机器靠自己对弈学习，下得比写它的人还好](clips/2026-10-18-samuel-machine-learning-checkers.md)、[Taylor 1968：提问协商——四层需求（Q1～Q4）和馆员问清需求的五个过滤器](clips/2026-10-19-taylor-question-negotiation-information-seeking.md)、[AIDE：让用户给样本打"相关/不相关"，用主动学习猜出他真正想查的数据](clips/2026-10-18-dimitriadou-aide-active-learning-data-exploration.md)
-- **语音与数字人**：[Jack Dorsey 发布全双工语音模型 Dessa](clips/2026-10-24-jack-dessa-full-duplex-speech-model.md)、[Fish 开源 Drama3 语音模型](clips/2026-10-18-kay2289123-fish-audio-drama3-open-source.md)、[Griffin 全双工视频模型解读](clips/2026-10-18-maxforai-griffin-full-duplex-video-model.md)
+- **语音与数字人**：[YuE2 Studio：本地桌面 AI 音乐工作室，先作曲再演唱，可接 Agent](clips/2026-11-01-superfang119-yue2-studio-local-ai-music-workstation.md)、[ai-phone：Mac 本地大模型接管真实电话](clips/2026-10-30-realfxw-ai-phone-local-llm-real-calls.md)、[Jack Dorsey 发布全双工语音模型 Dessa](clips/2026-10-24-jack-dessa-full-duplex-speech-model.md)
 - **思维与成长**：[张一鸣 66 条成长心得与延迟满足](clips/2026-10-18-sea-bitcoin-zhang-yiming-66-growth-tips.md)、[Paul Graham 谈超线性回报](clips/2026-10-18-dotey-paul-graham-superlinear-returns.md)、[一句话总结 AI 算法的含义](clips/2026-10-18-dotey-ai-algorithm-one-liner.md)
 - **日本**：[稟議和根回し：日本大企业里真正拍板的是起案人和事前协商](clips/2026-10-18-vogel-japanese-organization-decision-making.md)、[今天的上市公司还在用稟議管花钱：有预算也要再走一次稟議](clips/2026-10-18-kamiyama-budgeting-and-ringi-system.md)、[经产省 DXレポート：日本 CIO 倾向选大厂、接受老供应商的提案](clips/2026-10-18-meti-dx-report-2025-digital-cliff.md)
 - **历史与冷知识**：[日本稻田能否收二茬的回复](clips/2026-10-18-wangtianlaw-japan-rice-ratoon-crop.md)、[南明皇室受洗的冷知识：借调侃“历史老师去美国”说出来](clips/2026-10-18-tombkeeper-southern-ming-baptism.md)、[美国人一天生活的数据可视化](clips/2026-10-18-alexxubyte-day-in-life-americans-dataviz.md)
@@ -453,8 +472,9 @@ agent 主动去找一手材料，补框架里薄的地方，规则见 [AGENTS.md
 
 | 题 | 简报 | 材料 | 新增源知识 | 状态 |
 |---|---|---|---|---|
-| 1 日本企业怎么买 B2B 产品 | [2026-10-18](docs/study/2026-10-18-topic-1-japan-b2b-buying.md) | 25 份 | 14 个，如 [采购中心](roots/buying-center.md)、[稟議制](roots/ringi-system.md)、[根回し](roots/nemawashi.md)、[许可营销](roots/permission-marketing.md) | 等 Luke 回答 |
+| 1 日本企业怎么买 B2B 产品 | [2026-10-18](docs/study/2026-10-18-topic-1-japan-b2b-buying.md) | 25 份 | 14 个，如 [采购中心](roots/buying-center.md)、[稟議制](roots/ringi-system.md)、[根回し](roots/nemawashi.md)、[许可营销](roots/permission-marketing.md) | Luke 已认 25 份（2026-10-19） |
 | 4 问题协商 | [2026-10-19](docs/study/2026-10-19-topic-4-question-negotiation.md) | 21 份 | 18 个，如 [问题协商](roots/question-negotiation.md)、[知识异常状态](roots/anomalous-state-of-knowledge.md)、[偏好建构](roots/constructive-preferences.md)、[封闭世界假设](roots/closed-world-assumption.md) | 等 Luke 回答 |
+| 9 第一封冷邮件写什么 | [2026-10-19](docs/study/2026-10-19-topic-9-first-cold-email.md) | 15 份 | 见该简报及关联源知识 | 等 Luke 回答 |
 | 10 日本企业找销售前先自己查什么 | [2026-10-24](docs/study/2026-10-24-topic-10-buyer-self-research.md) | 9 份 | 9 个，如 [心理抗拒理论](roots/brehm-1966-psychological-reactance.md)、[助推与赋能](roots/hertwig-2017-nudging-boosting.md)、[信号理论](roots/spence-1973-job-market-signaling.md)、[面对面接触与城市经济](roots/storper-2004-buzz-face-to-face.md) | Luke 已认 9 份（2026-10-25） |
 
 第 1 题和已有原则的关系（草稿，待 Luke 确认）：

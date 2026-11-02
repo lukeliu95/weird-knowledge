@@ -7,10 +7,10 @@ published: 2026-10-26 09:01 UTC
 saved: 2026-10-29
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 编程智能体
+roots: [ball-2026-how-i-work-with-agents]
 ---
 
 ## 原文
@@ -28,3 +28,8 @@ Thorsten Ball 是编程 Agent AMP 的成员，他写的东西基本和 Anthropic
 
 ## 溯源
 
+- 核心主张：QingYue 转述 Thorsten Ball 的工作法，尤其认同讲目标而少规定实现，以及让 agent 建比较和检验方案的工具。Ball 原文同时强调工具可达、结果证据和高风险代码的人审，不能把它缩成完全不设边界。
+- 源知识：
+  - [Thorsten Ball 的 agent 工作法（目标、工具与证据）](../roots/ball-2026-how-i-work-with-agents.md) · 关系：直接源自 · 强弱：强。原帖明确点名 Ball；通过 opencli twitter article 抓到作者原文，目标优先和让 agent 自建迭代工具对应第 3、8 条。
+- 本质：这条新知识本质上是以目标与可检查证据组织 agent 工作，而不是逐步替它决定实现。
+- 整理于：2026-11-03（第 9 轮）

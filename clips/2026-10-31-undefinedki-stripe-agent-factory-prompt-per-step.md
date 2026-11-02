@@ -7,10 +7,10 @@ published: 2026-10-29 19:41 UTC
 saved: 2026-10-31
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: Agent 与 Skill
+roots: [stripe-2026-payment-method-factory, anthropic-2024-building-effective-agents]
 ---
 
 ## 原文
@@ -40,3 +40,9 @@ To copy it: save every prompt that worked, have a second agent review the transc
 
 ## 溯源
 
+- 核心主张：Stripe 把重复支付接入拆成可复用提示，用观察 agent 找执行损耗，工程师修提示，再按日志和评审持续维护；可预测编排改由代码承担。单个前端 API 接入任务由两名工程师分别做约 20 天和 4 天，整体接入周期从最长半年降至 2–6 周是另一口径；这是公司案例，不能当随机对照或通用提效倍数。
+- 源知识：
+  - [Stripe 支付接入工厂（可复用提示、观察员与代码编排）](../roots/stripe-2026-payment-method-factory.md) · 关系：直接源自 · 强弱：强。官方原件写明两种时间口径、观察员和代码编排；提示改动是 agent 提议后经工程判断，非所有改动自动无审更新。
+  - [构建高效的智能体](../roots/anthropic-2024-building-effective-agents.md) · 关系：相近 · 强弱：弱（模型复核通过）。确定路径由代码编排、开放判断交给模型，与 Anthropic 区分工作流和 agent 的方法相近；Stripe 未明说引用该文。
+- 本质：这条新知识本质上是把重复经验做成可维护工作流，用执行反馈改进提示，并把确定协调交给代码。
+- 整理于：2026-11-03（第 9 轮）

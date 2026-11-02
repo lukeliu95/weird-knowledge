@@ -7,10 +7,10 @@ published: 2026-10-26 12:53 UTC
 saved: 2026-10-29
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 设计与前端
+roots: [separation-of-concerns, theory-of-constraints]
 ---
 
 ## 原文
@@ -141,3 +141,9 @@ Windows 上的原生界面框架其实挺多的，包括很多年前了解过的
 
 ## 溯源
 
+- 核心主张：技术选型先看用户任务和系统能力；AI 降低编写两套原生代码的成本后，各平台真实表现的验证更重要。作者把业务逻辑、系统接口和界面分层，各语言按长处分工，用设计、文案和规则保持功能一致；这不是所有跨端方案都劣于原生的证明。
+- 源知识：
+  - [关注点分离](../roots/separation-of-concerns.md) · 关系：相近 · 强弱：弱（模型复核通过）。Core、Platform、ViewModel、界面分别承担不同职责，和 Dijkstra 的关注点分离相近；作者未明说引用该理论。
+  - [约束理论](../roots/theory-of-constraints.md) · 关系：相近 · 强弱：弱（模型复核通过）。代码生成变便宜后，调试和真实体验验证成为新成本，符合瓶颈转移的思路；只是对该案例的解释。
+- 本质：这条新知识本质上是关注点分离与瓶颈识别在多平台客户端开发中的应用。
+- 整理于：2026-11-03（第 9 轮）
