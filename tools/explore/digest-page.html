@@ -89,7 +89,7 @@ h1 { font-size: 22px; font-weight: 700; margin: 0; letter-spacing: 0.01em; text-
   <nav class="tabs" id="tabs" aria-label="日报列表"></nav>
   <div id="status" class="note" hidden></div>
   <section id="main" class="list" aria-live="polite">
-    <div class="empty"><strong>正在取日报</strong><span>lukeeMind 每天早上 8 点、晚上 8 点各送一份，每份 10 条。</span></div>
+    <div class="empty"><strong>正在取日报</strong><span>lukeeMind 每周六早上 8 点起送一份，每份 10 条。</span></div>
   </section>
 </div>
 
@@ -107,7 +107,14 @@ h1 { font-size: 22px; font-weight: 700; margin: 0; letter-spacing: 0.01em; text-
 const $ = (id) => document.getElementById(id);
 const SLOT = { top: "", uncertain: "", new: "新方向" };
 let db = null, digests = [], answers = {}, current = null, picked = new Set(), sending = false;
+let gotAnswers = false, gotDigests = false;
 const opened = new Set();
+
+// 默认打开最新一份没答的；都答过了就显示"这周的还没到"，以前的在上面的标签里
+function pickDefault() {
+  current = digests.find((d) => !answers[d.stamp]) || null;
+  picked = new Set();
+}
 
 function fmtStamp(s) {
   const m = /^(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})$/.exec(s || "");
@@ -137,8 +144,8 @@ function render() {
   const main = $("main");
   if (!current) {
     main.replaceChildren(el("div", { className: "empty" },
-      el("strong", { textContent: "还没有日报" }),
-      el("span", { textContent: "lukeeMind 每天早上 8 点、晚上 8 点各送一份，每份 10 条。" })));
+      el("strong", { textContent: digests.length ? "这周的日报还没到" : "还没有日报" }),
+      el("span", { textContent: "lukeeMind 每周六早上 8 点起送一份，每份 10 条。" })));
     $("bar").hidden = true;
     return;
   }
@@ -236,19 +243,24 @@ $("none").onclick = () => send("-");
       el("span", { textContent: "请登录 claude.ai 后从你自己的账号打开这个页面。" })));
     return;
   }
-  db.collection("answers").onSnapshot((snap) => {
+  // 回答和日报都到了才决定先打开哪一份，免得先打开一份其实已经答过的
+  const onAnswers = (docs) => {
     answers = {};
-    snap.docs.forEach((d) => { answers[d.id] = d.data(); });
-    if (current) render(); else renderTabs();
-  }, () => {});
-  db.collection("digests").orderBy("stamp", "desc").limit(20).onSnapshot((snap) => {
-    digests = snap.docs.map((d) => d.data());
-    if (!current || !digests.find((d) => d.stamp === current.stamp)) {
-      current = digests.find((d) => !answers[d.stamp]) || digests[0] || null;
-      picked = new Set();
-    } else {
-      current = digests.find((d) => d.stamp === current.stamp);
-    }
+    docs.forEach((d) => { answers[d.id] = d.data(); });
+    const first = !gotAnswers;
+    gotAnswers = true;
+    if (!gotDigests) return;
+    if (first) pickDefault();
+    render();
+  };
+  db.collection("answers").onSnapshot((snap) => onAnswers(snap.docs), () => { if (!gotAnswers) onAnswers([]); });
+  // 2026-11-08 改成每周一份，之前没答的旧日报标了 closed，不再显示
+  db.collection("digests").orderBy("stamp", "desc").limit(80).onSnapshot((snap) => {
+    digests = snap.docs.map((d) => d.data()).filter((d) => !d.closed).slice(0, 20);
+    gotDigests = true;
+    if (!gotAnswers) return;
+    if (!current || !digests.find((d) => d.stamp === current.stamp)) pickDefault();
+    else current = digests.find((d) => d.stamp === current.stamp);
     render();
   }, () => showStatus("日报暂时读不到，过一会儿再打开。"));
 })();

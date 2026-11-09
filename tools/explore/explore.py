@@ -6,7 +6,7 @@
 
 用法：
   explore.py init                      读 interests.md，建或更新 arms.json（保留已有计数）
-  explore.py status                    状态 JSON：候选池、没答的日报、要不要降速
+  explore.py status                    状态 JSON：候选池、好候选几条、没答的日报、下一份日报、这一轮派不派侦察兵（throttle）
   explore.py pick [--n 3]              抽签选这一轮的方向和侦察兵，给每个侦察兵写一份任务段落
   explore.py ingest <round>            收 inbox/<round>-*.json：去重、进候选池、记线索
   explore.py score [--engine auto]     给没打分的候选打分：Jev 分类（只发公开内容）、本地 Qwen 打"想不想看"；
@@ -15,8 +15,9 @@
   explore.py enrich <digest> <briefs>  把简介 subagent（tools/explore/BRIEF.md）交回的 JSON 并进日报，重写网页数据
   explore.py learn <digest> <letters>  记 Luke 的回答：letters 是想看的字母，如 ACF；都不想看写 -
   explore.py aihot [--all]             从 AIHOT 拉最近 24 小时的精选进候选池（免费，不派 subagent）
-  explore.py due                       这一轮要不要出日报、做每天和每周的活（每 20 分钟一轮，只在那个小时的第一轮做）
-  explore.py mark daily|weekly         做完每天或每周的活后记一笔
+  explore.py due                       这一轮要不要出日报、做每天和每周的活。日报每周一份：周六 8 点起，好内容（p≥0.6）攒够 10 条才出
+  explore.py mark daily|weekly|likes   做完每天、每周的活或点赞对账后记一笔
+  explore.py close [--before STAMP]    把没答的旧日报收起来：不再算没答，网页上不再显示
   explore.py report                    命中率：按槽位、方向、侦察兵；预测器在这些回答上的成绩
 """
 import argparse, collections, datetime as dt, json, random, re, sys, urllib.parse
@@ -30,8 +31,14 @@ import l1_eval as E  # noqa: E402
 
 ARMS, POOL, LEADS, ROUNDS, LABELS = (DIR / n for n in ("arms.json", "pool.jsonl", "leads.jsonl", "rounds.jsonl", "labels.jsonl"))
 SCOUTS = ("x", "paper", "community", "ja", "aihot")
-THROTTLE_UNANSWERED = 4   # 没答的日报到这个数（方案 B 每天 2 份，约 2 天），就停派侦察兵
-FRESH_HOURS = 48          # 候选只留 48 小时，没展示就作废（Luke 2026-10-21 定的；侦察兵照派，不因候选多而停）
+FRESH_HOURS = 48          # 候选只留 48 小时，没展示就作废（Luke 2026-10-21 定的）
+# 日报每周一份（Luke 2026-11-08 选了 A：每天两份答不过来，三周没答，侦察兵停了，日报只剩 AIHOT）
+DIGEST_WEEKDAY = 5        # 周六出（周一是 0）
+DIGEST_HOUR = 8           # 早上 8 点起
+DIGEST_LAST_HOUR = 21     # 晚上 10 点以后不出，不在夜里推送；没出成就等第二天 8 点
+GOOD_P = 0.6              # "好内容"：预测想看的概率到 0.6
+GOOD_MIN = 10             # 攒够 10 条好内容才出
+SCOUT_LEAD_HOURS = 24     # 出日报前 24 小时开始派侦察兵，到这周日报出来为止；其余时间只拉 AIHOT（一天能收 60 条左右好候选，够用）
 
 
 def now():
@@ -61,6 +68,34 @@ def expire(pool):
             r["status"] = "expired"
             n += 1
     return n
+
+
+def fresh_good(pool):
+    """还没过期、打过分、预测想看到 GOOD_P 的新候选。只读不改。"""
+    cut = now() - dt.timedelta(hours=FRESH_HOURS)
+    return [r for r in pool if r["status"] == "new" and r.get("p", 0) >= GOOD_P and dt.datetime.fromisoformat(r["found"]) >= cut]
+
+
+# ---------- 每周的日报时刻 ----------
+def digest_slot(t):
+    """这一周的出日报时刻：最近一个周六的 8 点（t 在周六 8 点以前时，就是今天 8 点）。"""
+    d = t.date() - dt.timedelta(days=(t.weekday() - DIGEST_WEEKDAY) % 7)
+    return dt.datetime.combine(d, dt.time(DIGEST_HOUR))
+
+
+def week_done(t, ds=None):
+    """这一周（从周六 0 点算）已经出过日报了吗。"再来一批"出的也算。"""
+    start = digest_slot(t).replace(hour=0)
+    return any(dt.datetime.fromisoformat(x["created"]) >= start for x in (digests() if ds is None else ds))
+
+
+def scouting(t, ds=None):
+    """该不该派侦察兵：日报前 SCOUT_LEAD_HOURS 小时起，到这周日报出来为止。"""
+    slot = digest_slot(t)
+    if t >= slot and not week_done(t, ds):   # 到点了还没出（好内容没攒够）：接着找
+        return True
+    upcoming = slot if t < slot else slot + dt.timedelta(days=7)
+    return upcoming - t <= dt.timedelta(hours=SCOUT_LEAD_HOURS)
 
 
 # ---------- 去重用的键 ----------
@@ -537,18 +572,41 @@ def cmd_learn(a):
                       "promote_to_core": promote}, ensure_ascii=False, indent=1))
 
 
+def cmd_close(a):
+    """把没答的旧日报收起来：不再算"没答"，网页上也不再显示。Luke 之后真答了照样能用 learn 记。
+    2026-11-08 改成每周一份时，把之前没答的 28 份一次收掉，免得网页上堆一长串。"""
+    closed = []
+    at = now().isoformat(timespec="seconds")
+    for d in digests():
+        if d.get("answered") or d.get("closed") or (a.before and d["stamp"] > a.before):
+            continue
+        d.update(closed=True, closed_at=at, closed_why=a.why)
+        (DIR / "digests" / f"{d['stamp']}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1))
+        pf = DIR / "digests" / f"{d['stamp']}.page.json"
+        if pf.exists():   # 网页数据也带上记号，以后重写这份网页数据时不会又冒出来
+            page = json.loads(pf.read_text())
+            page["closed"] = True
+            pf.write_text(json.dumps(page, ensure_ascii=False))
+        closed.append(d["stamp"])
+    print(json.dumps({"closed": closed, "n": len(closed),
+                      "next": "用 ArtifactData batch 把这些 digests/<stamp> 都 update 成 {closed: true}"}, ensure_ascii=False))
+
+
 # ---------- 定时的活：这一轮该不该做 ----------
 def cmd_due(_):
-    """每 20 分钟一轮时，日报、每天、每周的活只在对应那个小时的第一轮做一次。"""
+    """这一轮要做哪些定时的活。日报每周一份：周六 8 点起，这周还没出、好内容攒够 GOOD_MIN 条才出；
+    没攒够就每小时再看一次（只在 8～21 点出）。每天、每周、点赞对账各有自己的记号，不重复做。"""
     t = now()
     marks = DIR / "marks"
     marks.mkdir(exist_ok=True)
-    hour_tag = t.strftime("%Y%m%d-%H")
-    digest = t.hour in (8, 20) and not list((DIR / "digests").glob(f"{hour_tag}*.json"))
+    good = len(fresh_good(read_jsonl(POOL)))
+    window = t >= digest_slot(t) and DIGEST_HOUR <= t.hour <= DIGEST_LAST_HOUR and not week_done(t)
+    digest = window and good >= GOOD_MIN
     daily = t.hour >= 8 and not (marks / f"daily-{t:%Y%m%d}").exists()
     weekly = t.weekday() == 6 and t.hour >= 20 and not (marks / f"weekly-{t:%Y%m%d}").exists()
     likes = not (marks / f"likes-{t:%Y%m%d}-{t.hour // 3}").exists()   # 点赞对账每 3 小时一次
-    print(json.dumps({"digest": digest, "daily": daily, "weekly": weekly, "likes": likes}))
+    print(json.dumps({"digest": digest, "daily": daily, "weekly": weekly, "likes": likes,
+                      "good": f"{good}/{GOOD_MIN}", "digest_wait": window and not digest}))
 
 
 def cmd_mark(a):
@@ -671,12 +729,14 @@ def variant_report():
 def cmd_status(_):
     pool = read_jsonl(POOL)
     ds = digests()
-    open_ = [x["stamp"] for x in ds if not x.get("answered")]
+    open_ = [x["stamp"] for x in ds if not x.get("answered") and not x.get("closed")]
     last = max((x.get("answered_at", "") for x in ds), default="")
     new = [r for r in pool if r["status"] == "new"]
     cut = now() - dt.timedelta(hours=FRESH_HOURS)
     new = [r for r in new if dt.datetime.fromisoformat(r["found"]) >= cut]   # 只读不改：过期的不算
-    throttle = len(open_) >= THROTTLE_UNANSWERED
+    throttle = not scouting(now(), ds)   # 不在侦察时段就不派侦察兵，只拉 AIHOT
+    slot = digest_slot(now())
+    nxt = slot if now() < slot or not week_done(now(), ds) else slot + dt.timedelta(days=7)
     rounds = read_jsonl(ROUNDS)
     picks = [r for r in rounds if "plan" in r]
     done = {r["round"] for r in rounds if "ingest" in r}
@@ -684,8 +744,9 @@ def cmd_status(_):
         now() - dt.datetime.fromisoformat(picks[-1]["at"]) < dt.timedelta(minutes=50)
     print(json.dumps({"busy": busy, "pool_new": len(new), "pool_unscored": sum("p" not in r for r in new), "pool_total": len(pool),
                       "digests": len(ds), "unanswered": open_, "last_answer": last, "labels": len(read_jsonl(LABELS)),
+                      "good": len(fresh_good(pool)), "next_digest": nxt.isoformat(timespec="minutes"),
                       "throttle": throttle,
-                      "why": ("没答的日报太多" if throttle else "")},
+                      "why": (f"不在侦察时段（出日报前 {SCOUT_LEAD_HOURS} 小时起，到这周日报出来为止）" if throttle else "")},
                      ensure_ascii=False))
 
 
@@ -748,6 +809,8 @@ def main():
     sub.add_parser("report")
     sub.add_parser("due")
     p = sub.add_parser("mark"); p.add_argument("job", choices=["daily", "weekly", "likes"])
+    p = sub.add_parser("close"); p.add_argument("--before", help="只收这个编号及以前的，如 20261108-2008；不写就收全部没答的")
+    p.add_argument("--why", default="改成每周一份以前没答的日报")
     p = sub.add_parser("likes"); p.add_argument("--limit", type=int, default=100)
     p = sub.add_parser("cost"); p.add_argument("round"); p.add_argument("i", type=int); p.add_argument("tokens", type=int)
     p.add_argument("--tool-uses", type=int, default=0)
