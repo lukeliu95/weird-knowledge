@@ -1,5 +1,5 @@
 ---
-title: "谷歌 ScientistTwo：多智能体跑完整科研流程"
+title: "ScientistTwo 自动科研框架：项目自报在 86/107 个研究问题上改进基线"
 author: "Mo Elgaraihy (@EngMoElgaraihy)"
 url: https://x.com/EngMoElgaraihy/status/2117092467258339703
 source: X
@@ -7,9 +7,9 @@ published: 2026-11-02 03:12 UTC
 saved: 2026-11-03
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
+status: 已归档
+kind: 工具
+topic: 学习与研究
 roots: []
 ---
 
@@ -45,3 +45,6 @@ roots: []
 
 ## 溯源
 
+### 本轮核查备注
+
+- 作者页面的成绩是选定研究问题与自动评审的结果，不是正式顶会录用或100%自动完成博士。完整性审计检查49篇及1814个引用，不是所有内容永久零幻觉。

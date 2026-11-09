@@ -28,3 +28,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [要在 1970 年代猜中今天的 AI，得连跳六步](../clips/2026-11-06-karpathy-predicting-ai-from-1970s-six-leaps.md) | 直接源自 | 强 |

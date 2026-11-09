@@ -7,10 +7,10 @@ published: 2026-11-04 18:30 UTC
 saved: 2026-11-06
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 学习与研究
+roots: [information-theory, moores-law, neural-scaling-law]
 ---
 
 ## 原文
@@ -31,3 +31,10 @@ Something like that. Basically, it's a lot of leaps. You have to start with comp
 
 ## 溯源
 
+- 核心主张：Karpathy 用数字化、互联网、数据、统计学习、算力增长和缩放规律回顾性解释：从1970年代想象今天的AI，需要串起多次推断；这不是经过事前检验的预测成绩，也不是这些环节必然导向今天大模型的定理。
+- 源知识：
+  - [信息论](../roots/information-theory.md) · 关系：直接源自 · 强弱：强。帖子明确点名Shannon1948年的英语n-gram近似；原著第3节确实展示从字符频率到字词转移的统计生成，不把它写成Shannon已预测现代LLM。
+  - [摩尔定律](../roots/moores-law.md) · 关系：直接源自 · 强弱：强。帖子明确引用Moore1965作为算力增长背景；已核对原论文重印，1965讨论的是约每年倍增，后来的两年口径不能倒写回1965。
+  - [神经网络规模定律](../roots/neural-scaling-law.md) · 关系：直接源自 · 强弱：强。帖子直接列出Scaling laws这一环节；Kaplan2020等是本库核对该概念的代表研究，不表示Karpathy在原帖点名引用了该篇论文，也不把测试损失的经验规律等同通用智能必然出现。
+- 本质：这条内容本质上是把语言统计建模、硬件增长与神经模型经验缩放规律连成一条回顾性技术解释；各节点有史料，整条因果链仍是作者的推论。
+- 整理于：2026-11-09（第 10 轮）

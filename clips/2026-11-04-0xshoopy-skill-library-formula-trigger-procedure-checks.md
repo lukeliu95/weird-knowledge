@@ -1,5 +1,5 @@
 ---
-title: "自建 skill 库的公式：触发 + 步骤 + 资源 + 检查"
+title: "推文归纳的 skill 库八层教程（Anthropic PDF 出处待核实）"
 author: "Shoopy (@0xShoopy)"
 url: https://x.com/0xShoopy/status/2117282738143166592
 source: X
@@ -7,9 +7,9 @@ published: 2026-11-02 15:48 UTC
 saved: 2026-11-04
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
+status: 已归档
+kind: 教程
+topic: Agent 与 Skill
 roots: []
 ---
 
@@ -50,3 +50,6 @@ bookmark it. the next prompt you paste for the 3rd time should be a skill ↓
 
 ## 溯源
 
+### 本轮核查备注
+
+- 八层步骤按教程保留；10页PDF归属、25个流程的36K到3.9K token估算和永不需要相同反馈等承诺未核实。

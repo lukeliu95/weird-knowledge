@@ -1,5 +1,5 @@
 ---
-title: "Sutskever 不喜欢的未来：人有 AI 代办一切却不再参与"
+title: "转述Ilya 2025年访谈：AI完全代办后，人可能失去实际参与"
 author: "bottega.md (@bottegamd)"
 url: https://x.com/bottegamd/status/2117990283581284786
 source: X
@@ -7,10 +7,10 @@ published: 2026-11-04 14:40 UTC
 saved: 2026-11-06
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 思维与成长
+roots: [sutskever-2025-human-participation-ai]
 ---
 
 ## 原文
@@ -40,3 +40,8 @@ Then read how to build agents you actually stay in charge of in the harness engi
 
 ## 溯源
 
+- 核心主张：转述 Ilya Sutskever 的设想：若AI长期替人挣钱和表达政治诉求，而人只收报告，人的实际参与可能变得脆弱；他讨论Neuralink++时也明确说自己不喜欢。这是2025年访谈中的未来判断，末尾“自己运行agent就能保持参与”是转述者建议。
+- 源知识：
+  - [Ilya：完全代办与人的实际参与](../roots/sutskever-2025-human-participation-ai.md) · 关系：直接源自 · 强弱：强。已核对采访者2025-11-25逐字稿01:07:58—01:10:47。代办、收报告、不再参与与Neuralink++均在该段，但没有验证脑机融合可行，也没有给出营销帖末的操作处方。
+- 本质：这条内容本质上是在完全代办的未来设想中讨论人的能动性与参与条件，心理学提供相近视角，不能替未来结局或技术方案背书。
+- 整理于：2026-11-09（第 10 轮）

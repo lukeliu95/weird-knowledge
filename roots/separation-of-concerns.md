@@ -32,3 +32,4 @@ verified: true
 | [yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](../clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md) | 相近 | 弱（模型复核通过） |
 | [Meta 的瘦编排器模式：编排器只管路由和检查，不做领域推理，14 个专项子 agent 各管一块](../clips/2026-10-20-meta-thin-orchestrator-agent-architecture.md) | 相近 | 弱（模型复核通过） |
 | [客户端开发的选型：原生、多端与借力](../clips/2026-10-29-hitw93-client-dev-native-vs-cross-platform.md) | 相近 | 弱（模型复核通过） |
+| [TypeSafe：别把 Jev 叫决定模型——模型做判断，代码做决定](../clips/2026-11-07-allietheicon-dont-call-jev-a-decision-model.md) | 相近 | 弱（模型复核通过） |

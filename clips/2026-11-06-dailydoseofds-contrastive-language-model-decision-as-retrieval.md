@@ -1,5 +1,5 @@
 ---
-title: "英伟达和斯坦福的对比式语言模型 CLM：把决策当检索，比 Jev 快 9 倍"
+title: "CLM 把候选动作选择做成检索，作者报告特定测试最高快 9 倍"
 author: "Daily Dose of Data Science (@DailyDoseOfDS_)"
 url: https://x.com/DailyDoseOfDS_/status/2118010458653573179
 source: X
@@ -7,10 +7,10 @@ published: 2026-11-04 16:00 UTC
 saved: 2026-11-06
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 模型与本地部署
+roots: [kwok-2026-contrastive-language-models, oord-2018-contrastive-predictive-coding]
 ---
 
 ## 原文
@@ -82,3 +82,9 @@ The article is quoted below.
 
 ## 溯源
 
+- 核心主张：CLM 把当前状态和给定候选动作编码到同一空间，用对比学习训练评分头，再检索最合适的动作；官方所报最高 9 倍延迟改善依赖测试任务、候选数量及缓存条件，不能理解成任意任务都快 9 倍。
+- 源知识：
+  - [对比语言模型（候选动作检索）](../roots/kwok-2026-contrastive-language-models.md) · 关系：直接源自 · 强弱：强。官方仓库和模型卡明确说明冻结 Qwen3-8B 编码器、训练两个投影头并给候选动作评分。零样本动作选择与另行微调的代码验证结果是不同设置，不能合并解读。候选概率也不等于对真实世界的绝对置信度。
+  - [对比预测编码与 InfoNCE](../roots/oord-2018-contrastive-predictive-coding.md) · 关系：直接源自 · 强弱：强。原帖和官方实现明确使用双向 InfoNCE：匹配状态与正确动作，并与批内错误配对区分；InfoNCE 的原始定义见对比预测编码论文第 2.3 节。
+- 本质：这条新知识本质上是把对比学习与检索用于有限候选动作的选择，以预先训练、缓存和向量评分换取较低的在线计算；它本身不生成未给定的新动作。
+- 整理于：2026-11-09（第 10 轮）

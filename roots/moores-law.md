@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [买两台 DGX 出租视频算力的生意](../clips/2026-10-18-boxmrchen-dgx-video-compute-rental.md) | 挑战 | 弱（模型复核通过） |
+| [要在 1970 年代猜中今天的 AI，得连跳六步](../clips/2026-11-06-karpathy-predicting-ai-from-1970s-six-leaps.md) | 直接源自 | 强 |

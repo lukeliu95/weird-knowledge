@@ -33,3 +33,4 @@ verified: true
 | [Kimi 创始人谈 AGI 需要新组织](../clips/2026-10-18-vartekxx-kimi-founder-agi-organization.md) | 相近 | 弱（模型复核通过） |
 | [Anthropic 多智能体研究系统详解](../clips/2026-10-18-oran-ge-anthropic-multi-agent-research.md) | 相近 | 弱（模型复核通过） |
 | [AI 应用及格线与文艺行业首当其冲](../clips/2026-10-18-dotey-ai-passing-line-creative-industry.md) | 直接源自 | 强 |
+| [要在 1970 年代猜中今天的 AI，得连跳六步](../clips/2026-11-06-karpathy-predicting-ai-from-1970s-six-leaps.md) | 直接源自 | 强 |

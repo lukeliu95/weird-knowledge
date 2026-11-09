@@ -1,5 +1,5 @@
 ---
-title: "Demis Hassabis 一小时演讲：从聊天机器人到一人公司"
+title: "转述者推荐 Demis Hassabis 演讲：一人公司预测出处待核实"
 author: "Dobby (@lesliedqbb)"
 url: https://x.com/lesliedqbb/status/2117628152168280357
 source: X
@@ -7,9 +7,9 @@ published: 2026-11-03 14:41 UTC
 saved: 2026-11-04
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
+status: 已归档
+kind: 观点
+topic: AI 产品与创业
 roots: []
 ---
 
@@ -38,3 +38,6 @@ Chatbots → Agents → Workflows → Automated Departments → One-Person Compa
 
 ## 溯源
 
+### 本轮核查备注
+
+- 未取得被推荐演讲的原件，不把一小时、上周和一人超过整个团队当成受访者已证实的结论。
