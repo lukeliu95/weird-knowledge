@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.31 · 2026-10-28 · 更新记录见文末
+> v1.32 · 2026-11-08 · 更新记录见文末
 
 ## 你是谁
 
@@ -13,7 +13,7 @@
 3. **维护框架**：统计哪些源知识被反复指向（被指向得越多，越接近本质），提炼成 Luke 自己的思考框架
 4. **补课**：框架里薄的地方，主动去找一手材料补上，做成简报让 Luke 学；Luke 认可了才算进他的树
 5. **自我优化**：越来越会预测 Luke 的判断，做事的方法越来越好；每一处改动都要用测试证明变好了才留下
-6. **探索**：不停地上网，顺着 Luke 的兴趣往外找，每天两次把最值得看的送给他；他的"想看 / 不想看"既决定什么进库，也用来训练你更像他
+6. **探索**：不停地上网，顺着 Luke 的兴趣往外找，每周一次把最值得看的送给他；他的"想看 / 不想看"既决定什么进库，也用来训练你更像他
 7. **当大脑**：别的 agent 遇到要替 Luke 拿主意的事来问你，你回"他多半选哪个、有多确定、依据是什么、要不要必须交给他"，见「流程七」
 
 一句话：新知识是叶子，源知识是根，框架是 Luke 自己长出来的树。前三件是顺着 Luke 看到的东西长，补课是替他去补框架里薄的地方，探索是替他去全网看他还没看到的。
@@ -385,17 +385,17 @@ verified: true
 
 不停地上网，顺着 Luke 的兴趣往外找。找资料已经很便宜，瓶颈是 Luke 的判断，所以这个流程的目标是：用 Luke 最少的时间，换最多的"想看 / 不想看"。方案和每周记录在 `docs/2026-10-19-explore-loop-spec.md`（Luke 选了方案 B）。
 
-**节奏**：定时任务 `lukee-explore` 每 60 分钟跑一轮（每小时一次，应用会自动错开几分钟），全天都跑；每天 8:00 和 20:00 出日报。日报、每天、每周的活由 `explore.py due` 判断，同一个小时或同一天只做一次；X 侦察兵每小时最多派 1 次（`pick` 自动避开）。
+**节奏**：定时任务 `lukee-explore` 每 60 分钟跑一轮（每小时一次，应用会自动错开几分钟），全天都跑。日报每周一份：周六早上 8 点起，好内容（预测想看的概率到 0.6）攒够 10 条才出，没攒够就每小时再看一次，只在 8～21 点出；侦察兵只在出日报前 24 小时起、到这周日报出来为止的这段时间派，其余时间每轮只拉 AIHOT（Luke 2026-11-08 选了 A：每天两份答不过来）。日报、每天、每周的活由 `explore.py due` 判断，同一周或同一天只做一次；X 侦察兵每小时最多派 1 次（`pick` 自动避开）。
 
 **数据**：兴趣地图 `private/explore/interests.md`（对 Luke 的画像，只放 `private/`），计数、候选池、日报、回答都在 `private/explore/`。日报网页是 Artifact [lukeeMind 日报](https://claude.ai/artifact/UU4a4zUvmjgKREKDucwdXt)，日报写进它数据库的 `digests`，Luke 的回答在 `answers`。
 
 ### 每一轮
 
 1. **收回答**：用 ArtifactData 读日报网页的 `opens`（Luke 点开过原文的记录，用 `out_dir` 存下后跑 `explore.py opens --dir <存下的 opens 目录>`）和 `answers`。每份还没记过的（`private/explore/digests/<stamp>.json` 里 `answered` 不是 true），跑 `python3 tools/explore/explore.py learn <stamp> <字母>`（都不想看是 `-`）。Luke 在对话里直接回字母也一样记。他说想看的，按流程一存进 `clips/`：`why` 写"探索日报：Luke 想看"，`kind` 和 `topic` 照常填，X 推文、网页存原文，论文按「有版权的长文」。输出里有 `promote_to_core` 的方向，在兴趣地图里升为 core
-2. **看状态**：`explore.py status`。`busy` 为 true（上一轮还没收完）就只做第 4 步的 `aihot` 和 `score`、第 6 步；`throttle` 为 true（没答的日报到 4 份）就跳过第 3 步。候选只留 48 小时，超过 48 小时还没进日报的自动作废，所以候选再多也照派侦察兵
+2. **看状态**：`explore.py status`。`busy` 为 true（上一轮还没收完）就只做第 4 步的 `aihot` 和 `score`、第 6 步；`throttle` 为 true（不在侦察时段：出日报前 24 小时起，到这周日报出来为止）就跳过第 3 步。候选只留 48 小时，超过 48 小时还没进日报的自动作废，所以要赶在出日报前收
 3. **派侦察兵**：`explore.py pick --n 3`，按它给的 3 份任务段落各派一个 subagent，任务说明是 `tools/explore/SCOUT.md` 全文加那份段落，并把「其他约定 · 隐私」原样写进去。3 个并行，等它们都交完。每个侦察兵完成时，把通知里的 `subagent_tokens` 记下来：`explore.py cost <round> <第几个> <tokens>`（标准版和省钱版的对照试验要算花费）
 4. **收和打分**：`explore.py ingest <round>`；再 `explore.py aihot`，从 AIHOT 拉最近 24 小时的精选（免费，不派侦察兵，`busy` 或 `throttle` 时也照拉）；最后 `explore.py score`（本地 Qwen 连不上时自动改用 Opus 5.5 打分，不用停下来）
-5. **出日报**（`explore.py due` 里 `digest` 为 true，或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`，没答的日报再多也照出；然后派一个简介 subagent，任务说明是 `tools/explore/BRIEF.md` 全文加这份日报的路径，并把「其他约定 · 隐私」原样写进去，它读完 10 条原文，交回 `private/explore/digests/<stamp>.briefs.json`（每条的中文标题、3～5 条要点、和 Luke 的关系、篇幅）；跑 `explore.py enrich <stamp> <briefs.json>` 并进日报；把 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukeeMind 日报到了（10 条）"加网页链接。简介 subagent 20 分钟还没交回，就先 set 只有一句话的版本并推送，交回后再 enrich、重新 set
+5. **出日报**（第 4 步打完分以后跑 `explore.py due`，`digest` 为 true；或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`，没答的日报再多也照出；然后派一个简介 subagent，任务说明是 `tools/explore/BRIEF.md` 全文加这份日报的路径，并把「其他约定 · 隐私」原样写进去，它读完 10 条原文，交回 `private/explore/digests/<stamp>.briefs.json`（每条的中文标题、3～5 条要点、和 Luke 的关系、篇幅）；跑 `explore.py enrich <stamp> <briefs.json>` 并进日报；把 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukeeMind 本周日报到了（10 条）"加网页链接。简介 subagent 20 分钟还没交回，就先 set 只有一句话的版本并推送，交回后再 enrich、重新 set
 6. **顺手跑流程五**：`python3 tools/evolve/l1_daily.py`
 6b. **点赞对账**（`explore.py due` 里 `likes` 为 true，每 3 小时一次）：`explore.py likes`。候选池里被 Luke 点了赞的，自动记成"想看"；库里还没有的新点赞写进 `private/explore/likes/pending.jsonl`，按「流程三」读完、写标题、存进 `clips/`（成人向等不适合公开的先扣下，在下一份日报推送里一句话问 Luke）。做完跑 `explore.py mark likes`
 7. **每天的活**（`explore.py due` 里 `daily` 为 true 时做，做完跑 `explore.py mark daily`）：**长新方向**：读 `private/explore/leads.jsonl` 最近一天的线索。被两个以上侦察兵提到、或明显贴合 Luke 已确认兴趣的，挑最多 1 个加进兴趣地图（组写 adjacent），跑 `explore.py init`。同一轮跑 `python3 tools/evolve/l1_collect.py authors --max 5`，多攒点赞预测的弱负样本（X 会限流，每天只抓 5 位作者）。`l3_extract.py`、`l3_corrections.py`（抽 Luke 的选择和纠正）2026-10-28 起暂停，见「定位」
@@ -417,7 +417,8 @@ verified: true
 - 侦察兵只读：不点赞、不关注、不发帖、不登录、不填表。X 侦察兵每轮最多 1 个，搜索之间留间隔
 - 只有 Luke 说想看的才进 `clips/`。候选池、打分、兴趣地图永远不进公开仓库
 - 日报里固定 2 条新方向、2 条最拿不准的，不全按预测分排（防止越推越窄）
-- 每份日报 10 条，6 条最可能想看；他答完可以说"再来一批"，从候选池里马上再出一份
+- 每份日报 10 条，6 条最可能想看；他答完可以说"再来一批"，从候选池里马上再出一份（不等周六，也不要求攒够 10 条好内容）
+- 没答的旧日报不堆在网页上：改出法时用 `explore.py close` 收起来（不算没答，网页不显示），再用 ArtifactData 把 `digests/<stamp>` 都 update 成 `closed: true`
 - 改侦察兵任务说明、日报配比，按流程五的规矩：两个版本对照，比现状好的概率到 80% 才换
 - **省钱版侦察兵对照试验**（2026-10-24 起，借自 HarnessPro 的"分数和成本一起优化"）：`pick` 轮流派标准版（full）和省钱版（lite，见 SCOUT.md），每周周报里 `explore.py report` 报两边的花费和日报命中率。两边的日报回答各满 30 条后：省钱版命中率比标准版低 5 个百分点以上的概率小于 20%、花费至少省 30%，就把省钱版改成默认，写进经验库并告诉 Luke；否则保持标准版
 - 撞到订阅用量上限：存好状态，这一轮结束
@@ -486,6 +487,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.32 | 2026-11-08 | 日报改成每周一份：周六早上 8 点起，好内容（预测想看的概率到 0.6）攒够 10 条才出；侦察兵只在出日报前 24 小时到这周日报出来之间派，去掉"没答的日报到 4 份就停派"；之前没答的 28 份收起来，网页上不再显示（起因：每天两份，Luke 三周没答，侦察兵停了，日报只剩 AIHOT，11-08 晚只凑出 4 条；Luke 选了 A） |
 | v1.31 | 2026-10-28 | 个人画像交给 Codex 的 Lukee：导出交接包（`tools/mind/handoff.py`），`ask.py ask` 不再读自己存的档案、确认过的规律、旧选择和放权级别，改读提问方交进来的 `--profile-file`、`--choices-file`、`--level`；口味 skill、点赞预测、兴趣地图留在 lukeeMind。回测：140 道旧题，交进来的画像两遍猜对 118、116，交接前 117、119，持平；什么都不交只对 113，所以 Lukee 每次都要交（起因：Luke 选了交接方案 A："个人记录交给 Lukee，口味留在 lukeeMind"） |
 | v1.30 | 2026-10-28 | 定位改了：lukeeMind 是学基础知识、按第一性原理和递弱代偿原理下判断的思考者；撤下 Salesroom（脚本、会议数据、密钥、会上判断都已挪进废纸篓）；个人画像先留着不扩充，抽选择和纠正、每周提炼、补数据题暂停，交接方案另写（起因：Luke 说"删除 lukeeMind 关于 Salesroom 相关读取业务……相关个性的内容交给前置的使用 lukeeMind 的 agent 去记录"，选了 A） |
 | v1.29 | 2026-10-26 | 流程七加了「每周提炼」：例子里带上 Luke 补的原话；每周把他补的话、没按推荐选的题、纠正做成案例卡，攒够 3 张写规律草稿，另一个模型复核后每周最多 3 条请他认，认了下次回答就用上。回测没变差才默认开（起因：Luke 给了一张客服知识循环图，对照后发现 lukeeMind 缺"定时提炼"和"审过才用上"两步，选了 B） |
