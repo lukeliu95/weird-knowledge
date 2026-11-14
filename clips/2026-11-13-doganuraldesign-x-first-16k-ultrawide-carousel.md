@@ -1,5 +1,5 @@
 ---
-title: "X 上第一张 16K 超宽图：轮播图支持 20 张"
+title: "作者展示超宽图，称X轮播支持20张"
 author: "Dogan Ural (@doganuraldesign)"
 url: https://x.com/doganuraldesign/status/2120971278165414385
 source: X
@@ -7,9 +7,9 @@ published: 2026-11-12 20:05 UTC
 saved: 2026-11-13
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
+status: 已归档
+kind: 工具
+topic: 设计与前端
 roots: []
 ---
 
@@ -33,3 +33,11 @@ So here's an uuuultra-wide piece from me: https://t.co/gu4JagEcsP
 
 ## 溯源
 
+- 处理：已归档。平台轮播图功能消息和个人超宽图展示，主要是发布与展示信息。第一张16K是作者说法，不应写成已认证的全球首例。
+- 整理于：2026-11-14（第 11 轮）
+
+### 第11轮核查边界
+
+- 第一张16K与支持20张为作者说法，本轮未核平台帮助页或测量原始图像。保留媒体链接，不据此认证首创。
+
+出处和阅读范围见[本轮证据记录](../docs/reviews/2026-11-14-round-11-evidence.md)。

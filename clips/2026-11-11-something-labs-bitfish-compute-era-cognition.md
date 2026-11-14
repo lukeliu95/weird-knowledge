@@ -1,5 +1,5 @@
 ---
-title: "神鱼谈算力时代的认知：用 Token 买时间、向内觉察、窃天之智"
+title: "转述神鱼的算力认知：八条纲要，原视频未核"
 author: "新东西|Something (@something_labs)"
 url: https://x.com/something_labs/status/2120010759594008854
 source: X
@@ -7,9 +7,9 @@ published: 2026-11-10 04:28 UTC
 saved: 2026-11-11
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
+status: 已归档
+kind: 观点
+topic: 思维与成长
 roots: []
 ---
 
@@ -42,3 +42,11 @@ roots: []
 
 ## 溯源
 
+- 处理：已归档。只有标题式纲要，缺少核心定义和完整视频论证；不凭控制论一词挂源知识，按低溯源价值归档。
+- 整理于：2026-11-14（第 11 轮）
+
+### 第11轮核查边界
+
+- 观点价值1归档：正文只有纲要，第4和第5项重复，未核原视频，未替作者定义两个旋钮、双轨阅读或传统组织失效的机制。
+
+出处和阅读范围见[本轮证据记录](../docs/reviews/2026-11-14-round-11-evidence.md)。

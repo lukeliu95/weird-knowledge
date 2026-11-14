@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "round": 11,
+  "date": "2026-11-14",
+  "scope_entries": 19,
+  "processed": {
+    "已整理": 7,
+    "已归档": 12
+  },
+  "original_sections_unchanged": 19,
+  "new_roots": 5,
+  "bidirectional_relationships_checked": 9,
+  "internal_links_checked": 743,
+  "confirmed_principles_unchanged": true,
+  "traced_entries_with_roots": 6,
+  "processed_but_source_pending": 1,
+  "out_of_scope_entries_unchanged": 2054,
+  "errors": []
+}

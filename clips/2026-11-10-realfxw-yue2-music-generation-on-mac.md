@@ -1,5 +1,5 @@
 ---
-title: "开源音乐生成 YuE2 在 Mac 本地跑通，旋律可导出 MIDI"
+title: "作者实测：Mac本地YuE2音乐生成与MIDI工作流"
 author: "TechVerser (@realfxw)"
 url: https://x.com/realfxw/status/2119717210671190194
 source: X
@@ -7,9 +7,9 @@ published: 2026-11-09 09:02 UTC
 saved: 2026-11-10
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
+status: 已归档
+kind: 教程
+topic: 语音与数字人
 roots: []
 ---
 
@@ -38,3 +38,11 @@ Mac 用户实测避坑要点：
 
 ## 溯源
 
+- 处理：已归档。重点是Mac实测、版本避坑、GPU加速以及导出MIDI接SynthV的操作工作流，按教程归档；目标为音乐制作而非一般本地模型部署。
+- 整理于：2026-11-14（第 11 轮）
+
+### 第11轮核查边界
+
+- 作为本地音乐工作流教程归档；速度、版本和GPU差异为作者配置下实测或转述，没有本机复现。原文明说企业商用另签协议，不能将免费推广到所有用途。
+
+出处和阅读范围见[本轮证据记录](../docs/reviews/2026-11-14-round-11-evidence.md)。

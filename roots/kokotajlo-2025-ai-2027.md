@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [传闻：头部实验室已实现自我改进](../clips/2026-10-18-maxforai-frontier-labs-rsi-claim.md) | 相近 | 弱（模型复核通过） |
+| [转述 AI2027 曲线：若轨迹持续，2027年可能发生智能爆炸](../clips/2026-11-11-dr-singularity-intelligence-explosion-2027-trajectory.md) | 直接源自 | 强 |

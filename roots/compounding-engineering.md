@@ -31,3 +31,4 @@ verified: true
 | [Matrix：Agent 公司架构](../clips/2026-10-18-bruceguai-matrix-agent-company-architecture.md) | 相近 | 弱（模型复核通过） |
 | [Claude Code之父的三条心得](../clips/2026-10-18-ayi-ainotes-boris-cherny-workflow-three-rules.md) | 直接源自 | 强 |
 | [yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](../clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md) | 相近 | 弱（模型复核通过） |
+| [Magpie 三循环开发：把用户反馈、验收与复盘接在一起（转述）](../clips/2026-11-10-xulijian1994-magpie-three-loops-auto-dev-workflow.md) | 相近 | 弱（模型复核通过） |

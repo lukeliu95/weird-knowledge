@@ -32,3 +32,4 @@ verified: true
 | [论文从闭源模型里偷出隐藏思维链](../clips/2026-10-18-maxforai-stealing-hidden-chain-of-thought.md) | 直接源自 | 强 |
 | [agent 每步的选择题交给小决策模型（UIUC 等，推文误作普林斯顿和谷歌），模拟网店里 4B 模型完成率 91.5%](../clips/2026-10-20-rohanpaul-ai-agent-decision-model-small-beats-big.md) | 直接源自 | 强 |
 | [Personal Agent 像 2012 年的滴滴：是上游模型厂补贴下游的出口，要能自己后训练小模型降本](../clips/2026-10-20-willwangtf-personal-agent-didi-2012.md) | 相近 | 弱（模型复核通过） |
+| [作者称：用筛选客服案例加 LoRA，让本地 Qwen 接近 Opus（未给对照评测）](../clips/2026-11-11-simonhoiberg-qwen-lora-distill-support-cases-local.md) | 直接源自 | 弱（模型复核通过） |

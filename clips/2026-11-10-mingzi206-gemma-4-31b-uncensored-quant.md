@@ -1,5 +1,5 @@
 ---
-title: "Gemma 4 31B 去拒答版：量化到 11.9GB 本地可跑"
+title: "作者推荐Gemma 4 31B去拒答量化版（许可与评测待核）"
 author: "明子206 (@mingzi206)"
 url: https://x.com/mingzi206/status/2119676422101028915
 source: X
@@ -7,9 +7,9 @@ published: 2026-11-09 06:20 UTC
 saved: 2026-11-10
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
+status: 已归档
+kind: 工具
+topic: 模型与本地部署
 roots: []
 ---
 
@@ -36,3 +36,11 @@ Google 官方 Gemma 4 31B 旗舰的破甲完全体，体积压缩到了 11.9GB�
 
 ## 溯源
 
+- 处理：已归档。主要推荐去拒答模型及量化版本。99到28、11.9GB、协议和零能力损耗均为转述者声称，不能写成独立验证的结论。
+- 整理于：2026-11-14（第 11 轮）
+
+### 第11轮核查边界
+
+- 作为模型推荐归档；Apache 2.0、99到28的拒答结果、11.9GB与设备要求及零损耗均未独立核对。归档不代表许可和性能承诺成立。
+
+出处和阅读范围见[本轮证据记录](../docs/reviews/2026-11-14-round-11-evidence.md)。

@@ -1,5 +1,5 @@
 ---
-title: "Magpie 的全自动开发流：三个 /loop 把用户反馈变成发版"
+title: "Magpie 三循环开发：把用户反馈、验收与复盘接在一起（转述）"
 author: "Kxians (@xulijian1994)"
 url: https://x.com/xulijian1994/status/2119956996279669088
 source: X
@@ -7,10 +7,10 @@ published: 2026-11-10 00:55 UTC
 saved: 2026-11-10
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 编程智能体
+roots: [compounding-engineering, cherny-2025-claude-code-best-practices]
 ---
 
 ## 原文
@@ -53,3 +53,15 @@ https://t.co/SgZJC5kf9a
 
 ## 溯源
 
+- 核心主张：文章描述把用户反馈接入循环式开发：监控需求、修改、真实环境验收，再把错误复盘写回文档。Magpie 自有仓库确有 agent 开发和 LESSONS.md 复盘记录；但记录也包含返修和跨平台漏测，不能据此证明全程无需人，或稳定性优于插件生态。
+- 源知识：
+  - [复合工程](../roots/compounding-engineering.md) · 关系：相近 · 强弱：弱（模型复核通过）。把每次开发、合并和验证失误写入 LESSONS.md，供以后修改前阅读，与将开发教训写回工具默认行为的复合工程相近。没有证据说 yetone 引用了 Every 的命名。
+  - [Claude Code 最佳实践（给 Claude 一个验证自己工作的办法）](../roots/cherny-2025-claude-code-best-practices.md) · 关系：相近 · 强弱：弱（模型复核通过）。提供真实运行环境，要求改完实际复现与检查，与给 Claude 一个可运行验收办法相近；本轮读到的是持续更新的当前官方文档，不把其全部内容倒写为2025年旧文或该帖的直接来源。
+- 本质：这条新知识本质上是可运行验收与经验回写在循环维护软件中的应用；用户提供问题，agent 执行，工程记录仍须区分要求做什么与实际验证过什么。
+- 整理于：2026-11-14（第 11 轮）
+
+### 第11轮核查边界
+
+- 只核对当前Magpie文档及若干复盘，没有重建发帖当日版本或独立运行全套测试。仓库也记录返修、漏测；不把流程存在当成全程无人或更稳定的证明。
+
+出处和阅读范围见[本轮证据记录](../docs/reviews/2026-11-14-round-11-evidence.md)。

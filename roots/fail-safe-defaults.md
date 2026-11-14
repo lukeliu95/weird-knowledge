@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [OpenAI Dots 放权指南：动作分进 6 个权限区，每周按证据升降](../clips/2026-10-18-choopyplug1-openai-dots-agent-permission-zones.md) | 换了说法 | 强 |
+| [家长就学校设备中的 Gemini 使用提起诉讼；谷歌宣布调整学生账户默认权限](../clips/2026-11-09-ithome-google-gemini-teen-suicide-lawsuit.md) | 相近 | 弱（模型复核通过） |

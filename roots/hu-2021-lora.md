@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [开源工具让普通人也能微调 27B 模型](../clips/2026-10-18-minlibuilds-open-source-27b-finetune-unsloth.md) | 直接源自 | 强 |
+| [作者称：用筛选客服案例加 LoRA，让本地 Qwen 接近 Opus（未给对照评测）](../clips/2026-11-11-simonhoiberg-qwen-lora-distill-support-cases-local.md) | 直接源自 | 强 |
