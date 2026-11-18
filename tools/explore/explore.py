@@ -418,7 +418,7 @@ def cmd_score(a):
         if i % 25 == 0:
             print(f"  {i}/{len(todo)}", file=sys.stderr, flush=True)
             write_jsonl(POOL, pool)
-    if engine == "opus":   # 兜底：没打上分的按 15 条一批交给 Opus
+    if engine == "opus" or fails:   # 兜底：没打上分的按 15 条一批交给 Opus（候选少于 3 条时 Qwen 出错也要兜底）
         rest = [r for r in todo if "p" not in r]
         for b in range(0, len(rest), 15):
             batch = rest[b:b + 15]
