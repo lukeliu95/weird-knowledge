@@ -10,13 +10,19 @@ import json, os, re, subprocess, urllib.request
 MODEL = "claude-opus-5-5"
 
 
+# 打分用的本地模型。端口上换成别的模型时（2026-11-22 晚换成过 mtplx-inkling-2-mini），
+# 它回不出 A/B，旧代码会把每道题都记成 0.5，所以要核对挂的是不是这个模型
+QWEN_MODEL = "qwen3.8-27b-coder390-mlx-mixed4-mtp"
+
+
 def qwen_ok(timeout=4):
-    """本地 Qwen 服务能不能用：看 /models 能不能带 key 打开。"""
+    """本地 Qwen 能不能用：/models 能带 key 打开，而且挂的是 QWEN_MODEL。"""
     try:
         req = urllib.request.Request(os.environ["QWEN_BASE_URL"].rstrip("/") + "/models",
                                      headers={"Authorization": f"Bearer {os.environ.get('QWEN_API_KEY', '')}"})
         with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.status == 200
+            ids = [m.get("id") for m in json.load(r).get("data", [])]
+            return r.status == 200 and QWEN_MODEL in ids
     except Exception:
         return False
 

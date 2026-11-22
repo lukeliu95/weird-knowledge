@@ -117,20 +117,31 @@ def prompt(row, cond, profile, examples, negatives=()):
     return "\n\n".join(parts)
 
 
-def qwen(text):
+def qwen_ab(system, text):
+    """问本地 Qwen 一道 A/B 题，返回选 A 的概率。模型不对、或者前 10 个候选字里没有 A 也没有 B，就报错，
+    不再记成 0.5（2026-11-22 端口换了模型，每道题都被记成 0.5）。调用方出错时按各自的规矩兜底或停下。"""
+    from opus_judge import QWEN_MODEL
     d = post(os.environ["QWEN_BASE_URL"] + "/chat/completions", {
-        "model": "qwen3.8-27b-coder390-mlx-mixed4-mtp",
-        "messages": [{"role": "system", "content": SYS}, {"role": "user", "content": text}],
+        "model": QWEN_MODEL,
+        "messages": [{"role": "system", "content": system}, {"role": "user", "content": text}],
         "max_tokens": 1, "temperature": 0, "logprobs": True, "top_logprobs": 10,
         "chat_template_kwargs": {"enable_thinking": False}}, os.environ["QWEN_API_KEY"])
+    if d.get("model") and d["model"] != QWEN_MODEL:
+        raise RuntimeError(f"本地端口挂的是 {d['model']}，不是 {QWEN_MODEL}")
     top = d["choices"][0]["logprobs"]["content"][0]["top_logprobs"]
     p = collections.defaultdict(float)
     for t in top:
         k = t["token"].strip().upper()
         if k in ("A", "B"):
             p[k] += math.exp(t["logprob"])
+    if not p:
+        raise RuntimeError(f"Qwen 没回 A 或 B（第一个字是 {top[0]['token']!r}）")
     a, b = p["A"] or 1e-6, p["B"] or 1e-6
     return a / (a + b)
+
+
+def qwen(text):
+    return qwen_ab(SYS, text)
 
 
 def jev(row):

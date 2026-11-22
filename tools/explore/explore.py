@@ -315,18 +315,7 @@ def explore_prompt(r, profile, examples):
 
 
 def qwen_p(text):
-    d = E.post(E.os.environ["QWEN_BASE_URL"] + "/chat/completions", {
-        "model": "qwen3.8-27b-coder390-mlx-mixed4-mtp",
-        "messages": [{"role": "system", "content": SYS}, {"role": "user", "content": text}],
-        "max_tokens": 1, "temperature": 0, "logprobs": True, "top_logprobs": 10,
-        "chat_template_kwargs": {"enable_thinking": False}}, E.os.environ["QWEN_API_KEY"])
-    p = collections.defaultdict(float)
-    for t in d["choices"][0]["logprobs"]["content"][0]["top_logprobs"]:
-        k = t["token"].strip().upper()
-        if k in ("A", "B"):
-            p[k] += E.math.exp(t["logprob"])
-    a_, b_ = p["A"] or 1e-6, p["B"] or 1e-6
-    return round(a_ / (a_ + b_), 4)
+    return round(E.qwen_ab(SYS, text), 4)   # 模型不对或回不出 A/B 时报错，score 会改用 Opus 兜底
 
 
 def jev_quality(author, text):
