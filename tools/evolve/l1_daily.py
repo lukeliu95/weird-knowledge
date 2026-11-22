@@ -15,6 +15,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import l1_eval as E  # noqa: E402
+import opus_judge as OJ  # noqa: E402
 
 DIR = E.PRIVATE / "l1" / "prospective"
 CHAMP = E.PRIVATE / "l1" / "champion.json"
@@ -30,6 +31,11 @@ def stamp_of(p):
     return dt.datetime.strptime(p.stem.split("snapshot-")[1], "%Y%m%d-%H%M")
 
 
+def pred_path(snap, champ):
+    """和 l1_prospect.py predict 写出的文件名一致。"""
+    return snap.with_name(snap.stem.replace("snapshot", "pred") + f"-{champ['cond']}-{Path(champ['profile']).stem}.jsonl")
+
+
 def main():
     champ = json.loads(CHAMP.read_text())
     now = dt.datetime.now()
@@ -38,9 +44,17 @@ def main():
     if not snaps or now - stamp_of(snaps[-1]) > dt.timedelta(hours=6):
         if run("snapshot"):
             snaps = sorted(DIR.glob("snapshot-*.jsonl"))
-            run("predict", str(snaps[-1]), "--cond", champ["cond"], "--profile", str(E.PRIVATE / "luke" / champ["profile"]))
     else:
         print(f"最近一份快照 {snaps[-1].name}，不到 6 小时，不抓")
+    # 盲测：还没对答案（不满 48 小时）、又没有冠军预测的快照都补上。本地 Qwen 不能用时（关了或端口换了模型）
+    # 快照照抓、预测留空，等它回来再补，不换引擎（口径不同）。2026-11-23 加：之前抓完只预测一次，失败了就再也不补
+    E.load_env()
+    todo = [s for s in snaps if now - stamp_of(s) < dt.timedelta(hours=48) and not pred_path(s, champ).exists()]
+    if todo and not OJ.qwen_ok():
+        print(f"本地 Qwen 不能用，{len(todo)} 份快照的盲测先不打，等它回来补")
+    elif todo:
+        for s in todo:
+            run("predict", str(s), "--cond", champ["cond"], "--profile", str(E.PRIVATE / "luke" / champ["profile"]))
     scored = E.PRIVATE / "l1" / "prospective" / "scored.txt"
     done = set(scored.read_text().split()) if scored.exists() else set()
     for s in snaps:
