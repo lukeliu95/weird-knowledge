@@ -2,7 +2,7 @@
 
 > 这是"奇怪的知识又多起来了" agent 唯一的规则文件。Claude Code 通过 `CLAUDE.md` 自动引入它，Codex 直接读它。
 > 方案原文见 `docs/2026-10-18-plan.md`。
-> v1.32 · 2026-11-08 · 更新记录见文末
+> v1.33 · 2026-11-23 · 更新记录见文末
 
 ## 你是谁
 
@@ -50,7 +50,7 @@ lukeeMind 是一个**学基础知识、按道理下判断的思考者**：从互
 | `docs/2026-10-19-explore-loop-spec.md` | 探索循环的方案和每周的记录 |
 | `tools/mind/ask.py` | 当大脑：问、回填、报数、回测 |
 | `tools/mind/handoff.py` | 把 Luke 的个人画像导出成交接包，交给 Codex 的 Lukee（`private/handoff/`） |
-| `tools/mind/scrub.py` | 交给外部模型前去掉客户名和人名（名单在 `private/mind/scrub-names.json`），调本地 Qwen 出 JSON |
+| `tools/mind/scrub.py` | 交给外部模型前去掉客户名和人名（名单在 `private/mind/scrub-names.json`），调本地模型出 JSON |
 | `tools/mind/distill.py` | 每周提炼（2026-10-28 起暂停）：Luke 回答时补的话和纠正做成案例卡，攒够 3 张写成规律草稿，复核后请他认（数据只在 `private/mind/`） |
 | `docs/2026-10-26-mind-distill-spec.md` | 「每周提炼」的方案和回测 |
 | `docs/2026-10-20-ask-lukeemind-spec.md` | 「问 lukeeMind」的方案、放权阶梯、给 Codex 的接入说明 |
@@ -371,10 +371,17 @@ verified: true
 
 | 模型 | 用来做什么 | 能看什么 |
 |---|---|---|
-| 本地 Qwen（`.env` 里的 QWEN_*） | 点赞预测等"像 Luke"的判断 | 可以看私人数据，数据不出这台机器 |
-| Opus 5.5（Claude Code 订阅，`tools/evolve/opus_judge.py` 走 `claude -p`） | 决定预测（`l3_eval.py`，"Luke 会选哪个"）的主力；探索打分（`explore.py score`）仍然 Qwen 优先，Qwen 连不上时才用它兜底。都按批打分 | Luke 2026-10-20 同意它看打分要用的私人资料（档案、例子）。它给的概率和 Qwen 口径不同，每条记 `scorer`，成绩分开算 |
+| 本地模型（`.env` 里的 `LOCAL_MODEL`，2026-11-23 起是 Inkling 2 Mini；地址和密钥仍是 `QWEN_BASE_URL`、`QWEN_API_KEY`） | 点赞预测、探索打分、问口味等"像 Luke"的判断。概率过于自信，打分出口换算回原来 Qwen 的刻度（`tools/evolve/l1_eval.py` 的 `RESCALE`），下游门槛照旧 | 可以看私人数据，数据不出这台机器 |
+| Opus 5.5（Claude Code 订阅，`tools/evolve/opus_judge.py` 走 `claude -p`） | 决定预测（`l3_eval.py`，"Luke 会选哪个"）的主力；探索打分（`explore.py score`）仍然本地模型优先，本地模型不能用时才用它兜底。都按批打分 | Luke 2026-10-20 同意它看打分要用的私人资料（档案、例子）。它给的概率和本地模型口径不同，每条记 `scorer`，成绩分开算 |
 | TypeSafe Jev（`.env` 里的 TYPESAFE_API_KEY） | 分类、打分这类只需公开内容的判断，见流程二第零步 | 只能看公开内容，不发 Luke 的任何私人资料 |
 | 口味 skill（不做后训练） | Luke 2026-10-21 定：不训练模型，Luke 的口味靠一份 skill 一版一版刻画。`private/luke/taste-skill.md` 由 Opus 从点赞、常看作者没点的、Luke 自己发的帖、他亲口的回答里提炼；判断前先读它，再加 8 条相似点赞（当前冠军，见 `private/l1/champion.json`）。每周用 `tools/evolve/l1_skill.py refresh` 重写一版候选，未来考题上比冠军好的概率到 80%、难题上不变差才换 | 只在本地和 Opus 之间 |
+
+**换本地模型**（2026-11-23 从 Qwen 换到 Inkling 时定下）：
+
+- 先对照：同一批未来考题和日报回答，新旧模型用同样的提示词各打一遍，比现状好的概率到 80% 才换
+- 端口上挂的模型和 `LOCAL_MODEL` 对不上、或者回不出 A/B 时一律报错，不给默认分（11-22 晚换模型后旧代码把每道题都记成了 0.5，一夜写进 121 道废分）
+- 每条分数记 `scorer`，成绩按模型分开算；换模型后未来考题按新模型重打，旧分留在 `p_<旧模型>`
+- 新模型的概率刻度和原来不一样时，在打分出口拟合一次单调换算（不改排序），并在另一批题上验证换算后落在门槛以上的比例对得上，下游门槛不动
 
 ### 自主边界
 
@@ -394,7 +401,7 @@ verified: true
 1. **收回答**：用 ArtifactData 读日报网页的 `opens`（Luke 点开过原文的记录，用 `out_dir` 存下后跑 `explore.py opens --dir <存下的 opens 目录>`）和 `answers`。每份还没记过的（`private/explore/digests/<stamp>.json` 里 `answered` 不是 true），跑 `python3 tools/explore/explore.py learn <stamp> <字母>`（都不想看是 `-`）。Luke 在对话里直接回字母也一样记。他说想看的，按流程一存进 `clips/`：`why` 写"探索日报：Luke 想看"，`kind` 和 `topic` 照常填，X 推文、网页存原文，论文按「有版权的长文」。输出里有 `promote_to_core` 的方向，在兴趣地图里升为 core
 2. **看状态**：`explore.py status`。`busy` 为 true（上一轮还没收完）就只做第 4 步的 `aihot` 和 `score`、第 6 步；`throttle` 为 true（不在侦察时段：出日报前 24 小时起，到这周日报出来为止）就跳过第 3 步。候选只留 48 小时，超过 48 小时还没进日报的自动作废，所以要赶在出日报前收
 3. **派侦察兵**：`explore.py pick --n 3`，按它给的 3 份任务段落各派一个 subagent，任务说明是 `tools/explore/SCOUT.md` 全文加那份段落，并把「其他约定 · 隐私」原样写进去。3 个并行，等它们都交完。每个侦察兵完成时，把通知里的 `subagent_tokens` 记下来：`explore.py cost <round> <第几个> <tokens>`（标准版和省钱版的对照试验要算花费）
-4. **收和打分**：`explore.py ingest <round>`；再 `explore.py aihot`，从 AIHOT 拉最近 24 小时的精选（免费，不派侦察兵，`busy` 或 `throttle` 时也照拉）；最后 `explore.py score`（本地 Qwen 连不上时自动改用 Opus 5.5 打分，不用停下来）
+4. **收和打分**：`explore.py ingest <round>`；再 `explore.py aihot`，从 AIHOT 拉最近 24 小时的精选（免费，不派侦察兵，`busy` 或 `throttle` 时也照拉）；最后 `explore.py score`（本地模型不能用时，也就是关了、或端口上挂的不是 `LOCAL_MODEL`，自动改用 Opus 5.5 打分，不用停下来）
 5. **出日报**（第 4 步打完分以后跑 `explore.py due`，`digest` 为 true；或者网页数据库里 `requests/more` 比上一份日报新）：`explore.py digest`，没答的日报再多也照出；然后派一个简介 subagent，任务说明是 `tools/explore/BRIEF.md` 全文加这份日报的路径，并把「其他约定 · 隐私」原样写进去，它读完 10 条原文，交回 `private/explore/digests/<stamp>.briefs.json`（每条的中文标题、3～5 条要点、和 Luke 的关系、篇幅）；跑 `explore.py enrich <stamp> <briefs.json>` 并进日报；把 `.page.json` 用 ArtifactData `set` 写进 `digests/<stamp>`；推送一句"lukeeMind 本周日报到了（10 条）"加网页链接。简介 subagent 20 分钟还没交回，就先 set 只有一句话的版本并推送，交回后再 enrich、重新 set
 6. **顺手跑流程五**：`python3 tools/evolve/l1_daily.py`
 6b. **点赞对账**（`explore.py due` 里 `likes` 为 true，每 3 小时一次）：`explore.py likes`。候选池里被 Luke 点了赞的，自动记成"想看"；库里还没有的新点赞写进 `private/explore/likes/pending.jsonl`，按「流程三」读完、写标题、存进 `clips/`（成人向等不适合公开的先扣下，在下一份日报推送里一句话问 Luke）。做完跑 `explore.py mark likes`
@@ -434,8 +441,8 @@ Codex 里的接待 Lukee、各项目里的 Claude Code 和 Codex，遇到要替 
 - 每条依据引用原则时，后面接上"背后的道理"：脚本给每条原则挑 2 个最硬的源知识交给模型，模型只交编号，名字、证据类型和一句话由脚本从 `roots/` 里取，免得编。回答里另有 `sources` 字段列出用到的源知识。2026-10-25 用旧选择题回测，同样 124 题带的猜对 103、不带的 102，准确率没掉，默认开
 - `act` 只有两种：`ask_luke`（照旧问 Luke，附上建议）和 `follow`（按建议做，事后汇总）。只有某一类升到 1 级以上、这次又高确定、不在清单里时才会是 `follow`
 - Luke 回答后，提问的 agent 调 `ask.py record <id> --luke <字母> --note "原话"` 回填；本该问 Luke 却判成不用问的，加 `--should-ask yes`，记成漏报。`--note` 要写 Luke 自己的话，不写提问方的转述：他补的话会被当作例子用，也会被提炼
-- **每周提炼**（2026-10-28 起暂停，已认的规律已放进交给 Lukee 的 `profile.md`；Luke 2026-10-26 选了 B，参照"AI 草稿 → 人修改 → 定时提炼 → 人审过才用上"的知识循环）：找相似旧选择当例子时，带上 Luke 补的原话；`distill.py weekly` 把他补了话的、没按推荐选的、说过"不对"的事做成案例卡（人名、公司名换掉），同一方向攒够 3 张才写一条规律草稿，另一个模型复核（本地 Qwen 开着用它，连不上用一次独立的 Opus），每周最多 3 条交 Luke 认，没答完的不出新的。他认了，lukeeMind 下次回答就用上。这些规律是对他拿主意方式的推断，不算原则，不进 `framework.md`。2026-10-26 回测：同样 128 题各跑两遍，现状 107、105，带原话加规律 108、107，没变差才默认开
-- 别的 agent 想知道 Luke 的口味时，有两个口子：`ask.py taste --text "…" --author <作者> --from <谁>` 回"他会不会想看"的概率和最像的三条他点过赞的（用当前冠军，Qwen 连不上改用 Opus）；`ask.py profile` 打印当前的口味 skill 和 12 条原则，给别的 agent 先读。口味 skill 每周更新，别的 agent 每次现读，不要自己存一份旧的
+- **每周提炼**（2026-10-28 起暂停，已认的规律已放进交给 Lukee 的 `profile.md`；Luke 2026-10-26 选了 B，参照"AI 草稿 → 人修改 → 定时提炼 → 人审过才用上"的知识循环）：找相似旧选择当例子时，带上 Luke 补的原话；`distill.py weekly` 把他补了话的、没按推荐选的、说过"不对"的事做成案例卡（人名、公司名换掉），同一方向攒够 3 张才写一条规律草稿，另一个模型复核（本地模型开着用它，连不上用一次独立的 Opus），每周最多 3 条交 Luke 认，没答完的不出新的。他认了，lukeeMind 下次回答就用上。这些规律是对他拿主意方式的推断，不算原则，不进 `framework.md`。2026-10-26 回测：同样 128 题各跑两遍，现状 107、105，带原话加规律 108、107，没变差才默认开
+- 别的 agent 想知道 Luke 的口味时，有两个口子：`ask.py taste --text "…" --author <作者> --from <谁>` 回"他会不会想看"的概率和最像的三条他点过赞的（用当前冠军，本地模型不能用时改用 Opus）；`ask.py profile` 打印当前的口味 skill 和 12 条原则，给别的 agent 先读。口味 skill 每周更新，别的 agent 每次现读，不要自己存一份旧的
 
 ### 规矩
 
@@ -487,6 +494,7 @@ git -C "$M" push origin main
 
 | 版本 | 日期 | 改了什么 |
 |---|---|---|
+| v1.33 | 2026-11-23 | 本地打分模型从 Qwen 换成 Inkling 2 Mini：模型名写进 `.env` 的 `LOCAL_MODEL`，代码不再写死；每条分数记是哪个模型打的、成绩分开算；Inkling 的概率过于自信，打分出口换算回 Qwen 的刻度，门槛照旧；加了「换本地模型」的规矩（起因：11-22 晚 Luke 把本地端口换成了 Inkling，旧代码静默记 0.5；对照下来点赞预测 AUC 0.825 对 0.81、日报 0.72 对 0.62，Luke 选了 A） |
 | v1.32 | 2026-11-08 | 日报改成每周一份：周六早上 8 点起，好内容（预测想看的概率到 0.6）攒够 10 条才出；侦察兵只在出日报前 24 小时到这周日报出来之间派，去掉"没答的日报到 4 份就停派"；之前没答的 28 份收起来，网页上不再显示（起因：每天两份，Luke 三周没答，侦察兵停了，日报只剩 AIHOT，11-08 晚只凑出 4 条；Luke 选了 A） |
 | v1.31 | 2026-10-28 | 个人画像交给 Codex 的 Lukee：导出交接包（`tools/mind/handoff.py`），`ask.py ask` 不再读自己存的档案、确认过的规律、旧选择和放权级别，改读提问方交进来的 `--profile-file`、`--choices-file`、`--level`；口味 skill、点赞预测、兴趣地图留在 lukeeMind。回测：140 道旧题，交进来的画像两遍猜对 118、116，交接前 117、119，持平；什么都不交只对 113，所以 Lukee 每次都要交（起因：Luke 选了交接方案 A："个人记录交给 Lukee，口味留在 lukeeMind"） |
 | v1.30 | 2026-10-28 | 定位改了：lukeeMind 是学基础知识、按第一性原理和递弱代偿原理下判断的思考者；撤下 Salesroom（脚本、会议数据、密钥、会上判断都已挪进废纸篓）；个人画像先留着不扩充，抽选择和纠正、每周提炼、补数据题暂停，交接方案另写（起因：Luke 说"删除 lukeeMind 关于 Salesroom 相关读取业务……相关个性的内容交给前置的使用 lukeeMind 的 agent 去记录"，选了 A） |
