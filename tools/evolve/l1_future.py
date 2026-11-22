@@ -6,8 +6,8 @@
 10-21 到 10-24 他新点的 30 条赞里只有 2 条在快照里，快照考法连续 3 天没题。
 
 用法：
-  python3 tools/evolve/l1_future.py update [--neg-foryou 25] [--neg-following 15]
-      收新题、给还没打分的打分。每轮都可以跑，没有新题就什么都不做
+  python3 tools/evolve/l1_future.py update [--neg-foryou 25] [--neg-following 15] [--max 300]
+      收新题、给还没打分（或不是当前模型打的）的打分，一次最多 --max 道（0 不限）。每轮都可以跑，没有新题就什么都不做
   python3 tools/evolve/l1_future.py report [--write]
       只算当前冠军上任以后的：A 新点赞配对考，C 日报回答。--write 把成绩追加进 private/l1/metrics.jsonl（周报用）
 
@@ -16,7 +16,9 @@
   冠军上任以后才第一次出现、而且排在列表最前面那一段的点赞。只认最前面那一段：取消点赞时，列表底部会滑进一条旧赞，不能当成新点的
 - 负样本（A）：冠军上任以后的首页快照里没被点赞的，每份按编号哈希固定抽"为你推荐"25 条、关注流 15 条；
   快照满 48 小时才算负样本（他可能还会点），期间被点了赞的改算正样本
-- 打分用冠军原样（档案 + k 条相似点赞），相似点赞只从冠军上任时已知的点赞里找，正负样本条件一样。只用本地 Qwen，连不上就留到下一轮
+- 打分用冠军原样（档案 + k 条相似点赞），相似点赞只从冠军上任时已知的点赞里找，正负样本条件一样。只用本地模型（LOCAL_MODEL），
+  不能用就留到下一轮，不换 Opus（口径不同）。每道题记 scorer；换了本地模型（2026-11-23 Qwen → Inkling），旧分存进 p_<旧模型>，
+  题目按新模型重打，成绩只算当前模型打的
 - 正样本来自 Luke 刷到的所有地方，负样本来自快照抽样，两边来源不完全一样，成绩会偏乐观，所以按负样本来源分开报
 - 日报（C）：冠军上任以后出的日报里 Luke 答过的条目，日报打分时的概率对他的"想看 / 不想看"。两个打分引擎口径不同，分开算
 """
@@ -26,6 +28,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import l1_eval as E  # noqa: E402
 import l1_prospect as P  # noqa: E402
+import opus_judge as OJ  # noqa: E402
 from l1_report import auc_ci  # noqa: E402
 
 LIKES = E.PRIVATE / "explore" / "likes"
@@ -95,10 +98,15 @@ def cmd_update(a):
     ITEMS.parent.mkdir(parents=True, exist_ok=True)
     save = lambda: ITEMS.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in items))  # noqa: E731
     save()
-    todo = [r for r in items if r["champ"] == since and r.get("p") is None]
-    print(f"冠军 {since}：新收 {len(add)} 道题（正 {sum(r['role'] == 'pos' for r in add)}），待打分 {len(todo)} 道")
+    cur = OJ.local_name()
+    todo = [r for r in items if r["champ"] == since and (r.get("p") is None or r.get("scorer", "qwen") != cur)]
+    print(f"冠军 {since}：新收 {len(add)} 道题（正 {sum(r['role'] == 'pos' for r in add)}），待打分 {len(todo)} 道（{cur}）")
+    if todo and not OJ.local_ok():
+        print(f"本地模型不能用（LOCAL_MODEL={OJ.local_model()}），留到下一轮")
+        return
+    if todo and a.max:
+        todo = todo[:a.max]
     if todo:
-        E.load_env()
         profile = (E.PRIVATE / "luke" / ch["profile"]).read_text()
         # 相似点赞只从冠军上任时已知的里找：去掉之后新点的赞、之后日报里答的，以及考题本身
         frozen = set(new_likes) | {r["key"][2:] for r in jl(EXPLORE_LABELS) if r.get("digest", "") >= since} | {r["id"] for r in items}
@@ -106,11 +114,13 @@ def cmd_update(a):
         done = 0
         for r in todo:
             try:
-                r["p"] = E.qwen(E.prompt(r, ch["cond"], profile, index.top(r["text"], ch.get("k", 8)) if index else []))
-            except Exception as e:   # 本地 Qwen 连不上：不换引擎（概率口径不同），留到下一轮
-                print(f"Qwen 打分出错，打了 {done} 道先停：{e}")
+                p_new = E.local(E.prompt(r, ch["cond"], profile, index.top(r["text"], ch.get("k", 8)) if index else []))
+            except Exception as e:   # 本地模型不能用：不换引擎（概率口径不同），留到下一轮
+                print(f"本地模型打分出错，打了 {done} 道先停：{e}")
                 break
-            r["scored_at"] = f"{dt.datetime.now():{FMT}}"
+            if r.get("p") is not None:   # 换模型前的分留着
+                r["p_" + r.get("scorer", "qwen")] = r["p"]
+            r["p"], r["scorer"], r["scored_at"] = p_new, cur, f"{dt.datetime.now():{FMT}}"
             done += 1
             if done % 20 == 0:
                 save()
@@ -132,14 +142,19 @@ def cmd_report(a):
     since = ch["since"]
     now = dt.datetime.now()
     liked = liked_now(since)
-    items = [r for r in jl(ITEMS) if r["champ"] == since and r.get("p") is not None]
+    E.load_env()
+    cur = OJ.local_name()
+    allp = [r for r in jl(ITEMS) if r["champ"] == since and r.get("p") is not None]
+    items = [r for r in allp if r.get("scorer", "qwen") == cur]   # 只算当前本地模型打的，口径不混
     pos = [r for r in items if r["role"] == "pos" or r["id"] in liked]
     neg = [r for r in items if r["role"] == "neg" and r["id"] not in liked
            and now - dt.datetime.strptime(r["src"], FMT) >= dt.timedelta(hours=48)]
     lab = lambda rs, y: [{"id": r["id"], "p": r["p"], "label": y} for r in rs]  # noqa: E731
-    out = [summary("A 新点赞 vs 全部没点的", lab(pos, 1) + lab(neg, 0)),
-           summary("A 新点赞 vs 为你推荐里没点的", lab(pos, 1) + lab([r for r in neg if r["feed"] == "for-you"], 0)),
-           summary("A 新点赞 vs 关注流里没点的", lab(pos, 1) + lab([r for r in neg if r["feed"] == "following"], 0))]
+    out = [{**summary("A 新点赞 vs 全部没点的", lab(pos, 1) + lab(neg, 0)), "engine": cur},
+           {**summary("A 新点赞 vs 为你推荐里没点的", lab(pos, 1) + lab([r for r in neg if r["feed"] == "for-you"], 0)), "engine": cur},
+           {**summary("A 新点赞 vs 关注流里没点的", lab(pos, 1) + lab([r for r in neg if r["feed"] == "following"], 0)), "engine": cur}]
+    if len(allp) > len(items):
+        print(f"（还有 {len(allp) - len(items)} 道是别的模型打的分，没算进去，等 {cur} 重打）")
     digest = [r for r in jl(EXPLORE_LABELS) if r.get("source", "digest") == "digest" and r.get("digest", "") >= since and r.get("p") is not None]
     for sc in sorted({r.get("scorer", "qwen") for r in digest}):
         sub = [r for r in digest if r.get("scorer", "qwen") == sc]
@@ -147,7 +162,7 @@ def cmd_report(a):
                     "digests": len({r["digest"] for r in sub}), "engine": sc})
     if not digest:
         out.append(dict(name="C 日报回答", n=0, n_pos=0, note="冠军上任以后还没有答过的日报"))
-    print(f"冠军 {ch['profile']}（上任 {since}），未来考题成绩：")
+    print(f"冠军 {ch['profile']}（上任 {since}），未来考题成绩（A 由 {cur} 打分）：")
     for o in out:
         print(json.dumps(o, ensure_ascii=False))
     if a.write:
@@ -164,16 +179,23 @@ def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("update"); p.add_argument("--neg-foryou", type=int, default=25); p.add_argument("--neg-following", type=int, default=15)
+    p.add_argument("--max", type=int, default=300, help="一次最多打几道，0 不限；默认 300 道约 7 分钟，免得每小时的循环被拖住")
     p = sub.add_parser("report"); p.add_argument("--write", action="store_true")
     a = ap.parse_args()
     if a.cmd == "report":
         cmd_report(a)
         return
-    # 改题库的命令排队执行：每小时的循环和手动跑可能同时读改写 items.jsonl
+    # 改题库的命令不能同时跑：每小时的循环和手动跑可能同时读改写 items.jsonl。
+    # 有别的进程在跑（多半是一次长时间的重打分）就跳过这一轮，不排队等，免得把每小时的循环拖住
     import fcntl
+    E.load_env()
     ITEMS.parent.mkdir(parents=True, exist_ok=True)
     with open(ITEMS.parent / ".lock", "w") as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX)
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            print("另一个进程正在改未来考题（多半在重打分），这一轮跳过")
+            return
         cmd_update(a)
 
 

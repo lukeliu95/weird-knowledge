@@ -5,7 +5,7 @@
   python3 tools/evolve/l1_prospect.py snapshot [--limit 100] [--from-files a.json b.json]
       抓 following 和 for-you 两个时间线（只读），存成 private/l1/prospective/snapshot-时间.jsonl
   python3 tools/evolve/l1_prospect.py predict <snapshot> --cond c0|c1|c2
-      用 l1_eval 的同一套引擎和提示词打分（不知道答案），存 pred-*.jsonl
+      用 l1_eval 的同一套引擎和提示词打分（不知道答案），存 pred-*.jsonl（文件名见 pred_path：换模型前的 Qwen 不带后缀，别的模型加 @模型名）
   python3 tools/evolve/l1_prospect.py score <snapshot>
       抓最近的点赞（只读），给快照打标签，算每份预测的成绩，追加进 private/l1/metrics.jsonl
 
@@ -16,8 +16,24 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import l1_eval as E  # noqa: E402
+import opus_judge as OJ  # noqa: E402
 
 DIR = E.PRIVATE / "l1" / "prospective"
+
+
+def pred_path(snapshot, cond, profile, scorer):
+    """快照的盲测文件：pred-<时间>-<cond>-<档案>[@模型]。2026-11-22 以前都是本地 Qwen 打的，不带后缀；
+    换了本地模型（11-23 起 Inkling）就加 @模型名，两种口径的分不写进同一个文件。"""
+    tail = f"-{cond}-{Path(profile).stem if cond != 'c0' else 'none'}" + ("" if scorer == "qwen" else f"@{scorer}")
+    return Path(snapshot).with_name(Path(snapshot).stem.replace("snapshot", "pred") + tail + ".jsonl")
+
+
+def parse_pred(pf):
+    """pred_path 的反过来：→ (cond, 档案, 模型)。档案名里可能有 -（如 taste-skill），不能按 - 切到底。"""
+    rest = Path(pf).stem.split("-", 3)[3]
+    rest, _, scorer = rest.partition("@")
+    cond, _, profile = rest.partition("-")
+    return cond, profile, scorer or "qwen"
 
 
 def fetch(kind, limit):
@@ -78,9 +94,10 @@ def predict(a):
     index = E.Index(E.liked_docs({r["id"] for r in rows})) if a.cond == "c2" else None
     for r in rows:
         ex = index.top(r["text"], a.k) if index else []
-        r["p"] = E.qwen(E.prompt(r, a.cond, profile, ex))
-    out = Path(a.snapshot).with_name(Path(a.snapshot).stem.replace("snapshot", "pred") + f"-{a.cond}-{Path(a.profile).stem if a.cond != 'c0' else 'none'}.jsonl")
-    out.write_text("".join(json.dumps({"id": r["id"], "p": r["p"]}) + "\n" for r in rows))
+        r["p"] = E.local(E.prompt(r, a.cond, profile, ex))
+    scorer = OJ.local_name()
+    out = pred_path(a.snapshot, a.cond, a.profile, scorer)
+    out.write_text("".join(json.dumps({"id": r["id"], "p": r["p"], "scorer": scorer}) + "\n" for r in rows))
     print(f"{out}: {len(rows)} 条预测，平均概率 {sum(r['p'] for r in rows) / len(rows):.3f}")
 
 
@@ -91,9 +108,10 @@ def score(a):
     print(f"快照 {len(rows)} 条，其中后来被点赞 {pos} 条")
     stem = Path(a.snapshot).stem.replace("snapshot", "pred")
     for pf in sorted(Path(a.snapshot).parent.glob(stem + "-*.jsonl")):
+        cond, prof, scorer = parse_pred(pf)
         if pos == 0:   # 没题也记一行，不然连续几天没成绩也没人发现（2026-10-24）
-            rec = dict(time=f"{dt.datetime.now():%Y%m%d-%H%M}", testset=Path(a.snapshot).name, engine="qwen",
-                       cond=pf.stem.split("-")[-2], profile=pf.stem.split("-")[-1], tag="prospective",
+            rec = dict(time=f"{dt.datetime.now():%Y%m%d-%H%M}", testset=Path(a.snapshot).name, engine=scorer,
+                       cond=cond, profile=prof, tag="prospective",
                        n=len(rows), n_pos=0, note="没题：快照里没有后来被点赞的")
             with open(E.PRIVATE / "l1" / "metrics.jsonl", "a") as f:
                 f.write(json.dumps(rec, ensure_ascii=False) + "\n")
@@ -103,8 +121,8 @@ def score(a):
         told = {r["id"]: r["label"] for r in E.labels()}   # Luke's own answer overrides "liked or not"
         rs = [dict(p=x["p"], label=told.get(x["id"], int(x["id"] in liked))) for x in preds]
         m = E.metrics(rs)
-        rec = dict(time=f"{dt.datetime.now():%Y%m%d-%H%M}", testset=Path(a.snapshot).name, engine="qwen",
-                   cond=pf.stem.split("-")[-2], profile=pf.stem.split("-")[-1], tag="prospective", **m)
+        rec = dict(time=f"{dt.datetime.now():%Y%m%d-%H%M}", testset=Path(a.snapshot).name, engine=scorer,
+                   cond=cond, profile=prof, tag="prospective", **m)
         with open(E.PRIVATE / "l1" / "metrics.jsonl", "a") as f:
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
         print(json.dumps(rec, ensure_ascii=False))

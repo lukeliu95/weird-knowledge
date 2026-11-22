@@ -22,6 +22,8 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import l1_eval as E  # noqa: E402
 import l1_probe as P  # noqa: E402
+import l1_prospect as LP  # noqa: E402
+import opus_judge as OJ  # noqa: E402
 
 PRO = E.PRIVATE / "l1" / "prospective"
 EXTRA = E.PRIVATE / "l1" / "extra"
@@ -141,7 +143,8 @@ def cmd_run(_):
     champ = {}
     for s in {r["snap"] for r in test}:
         for f in PRO.glob(s.replace("snapshot", "pred").replace(".jsonl", "") + "-c2-*.jsonl"):
-            champ.update({x["id"]: x["p"] for x in jl(f)})
+            if LP.parse_pred(f)[2] == OJ.local_name():   # 只用当前本地模型打的，口径不混
+                champ.update({x["id"]: x["p"] for x in jl(f)})
     ids = [i for i in small if i in champ]
     res = {"time": f"{dt.datetime.now():%Y%m%d-%H%M}", "train": len(train), "train_pos": sum(r["label"] for r in train),
            "test": len(test), "test_pos": sum(y.values()), "paired": len(ids), "gate": st,

@@ -1,28 +1,39 @@
 #!/usr/bin/env python3
-"""判断引擎的兜底：本地 Qwen 连不上时，改用 Claude Code 订阅里的 Opus 5.5 打分。
+"""判断引擎的兜底：本地模型连不上时，改用 Claude Code 订阅里的 Opus 5.5 打分。另外放本地模型的配置（local_*）。
 
-Luke 2026-10-20 定的：本地 Qwen 无法服务时，用当前 Claude Code 订阅的 Opus 5.5 打分、评估。
+Luke 2026-10-20 定的：本地模型（当时是 Qwen，2026-11-23 起是 Inkling 2 Mini）无法服务时，用当前 Claude Code 订阅的 Opus 5.5 打分、评估。
 走命令行 `claude -p`（不带工具、不读 MCP、不留会话），一次调用固定开销约 6 千 token，所以按批打分。
-Opus 给的是它自己说的概率，不是 Qwen 那种从 token 概率算出来的，两者不可混着比：每条结果都记下是谁打的分。
+Opus 给的是它自己说的概率，不是本地模型那种从 token 概率算出来的，两者不可混着比：每条结果都记下是谁打的分。
 """
 import json, os, re, subprocess, urllib.request
 
 MODEL = "claude-opus-5-5"
 
 
-# 打分用的本地模型。端口上换成别的模型时（2026-11-22 晚换成过 mtplx-inkling-2-mini），
-# 它回不出 A/B，旧代码会把每道题都记成 0.5，所以要核对挂的是不是这个模型
+# 本地打分模型。地址和密钥仍是 .env 里的 QWEN_BASE_URL / QWEN_API_KEY（名字是历史留下的），
+# 模型名写在 LOCAL_MODEL，没写就是 2026-11-22 以前用的 Qwen。Luke 2026-11-23 选了 A：换成 Inkling 2 Mini。
+# 端口上挂的模型和 LOCAL_MODEL 对不上时不能打分（11-22 晚换模型后旧代码把每道题都记成了 0.5）
 QWEN_MODEL = "qwen3.8-27b-coder390-mlx-mixed4-mtp"
 
 
-def qwen_ok(timeout=4):
-    """本地 Qwen 能不能用：/models 能带 key 打开，而且挂的是 QWEN_MODEL。"""
+def local_model():
+    return os.environ.get("LOCAL_MODEL") or QWEN_MODEL
+
+
+def local_name(model=None):
+    """记进 scorer 的短名。不同模型的概率口径不同，成绩按它分开算。"""
+    m = (model or local_model()).lower()
+    return "inkling" if "inkling" in m else "qwen" if "qwen" in m else m
+
+
+def local_ok(timeout=4):
+    """本地模型能不能用：/models 能带 key 打开，而且挂的就是 LOCAL_MODEL。"""
     try:
         req = urllib.request.Request(os.environ["QWEN_BASE_URL"].rstrip("/") + "/models",
                                      headers={"Authorization": f"Bearer {os.environ.get('QWEN_API_KEY', '')}"})
         with urllib.request.urlopen(req, timeout=timeout) as r:
             ids = [m.get("id") for m in json.load(r).get("data", [])]
-            return r.status == 200 and QWEN_MODEL in ids
+            return r.status == 200 and local_model() in ids
     except Exception:
         return False
 

@@ -15,6 +15,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import l1_eval as E  # noqa: E402
+import l1_prospect as LP  # noqa: E402
 import opus_judge as OJ  # noqa: E402
 
 DIR = E.PRIVATE / "l1" / "prospective"
@@ -32,8 +33,8 @@ def stamp_of(p):
 
 
 def pred_path(snap, champ):
-    """和 l1_prospect.py predict 写出的文件名一致。"""
-    return snap.with_name(snap.stem.replace("snapshot", "pred") + f"-{champ['cond']}-{Path(champ['profile']).stem}.jsonl")
+    """当前冠军、当前本地模型在这份快照上的盲测文件（和 l1_prospect.py predict 写出的一致）。"""
+    return LP.pred_path(snap, champ["cond"], champ["profile"], OJ.local_name())
 
 
 def main():
@@ -46,12 +47,12 @@ def main():
             snaps = sorted(DIR.glob("snapshot-*.jsonl"))
     else:
         print(f"最近一份快照 {snaps[-1].name}，不到 6 小时，不抓")
-    # 盲测：还没对答案（不满 48 小时）、又没有冠军预测的快照都补上。本地 Qwen 不能用时（关了或端口换了模型）
+    # 盲测：还没对答案（不满 48 小时）、又没有冠军预测的快照都补上。本地模型不能用时（关了或端口上的模型和 LOCAL_MODEL 对不上）
     # 快照照抓、预测留空，等它回来再补，不换引擎（口径不同）。2026-11-23 加：之前抓完只预测一次，失败了就再也不补
     E.load_env()
     todo = [s for s in snaps if now - stamp_of(s) < dt.timedelta(hours=48) and not pred_path(s, champ).exists()]
-    if todo and not OJ.qwen_ok():
-        print(f"本地 Qwen 不能用，{len(todo)} 份快照的盲测先不打，等它回来补")
+    if todo and not OJ.local_ok():
+        print(f"本地模型不能用，{len(todo)} 份快照的盲测先不打，等它回来补")
     elif todo:
         for s in todo:
             run("predict", str(s), "--cond", champ["cond"], "--profile", str(E.PRIVATE / "luke" / champ["profile"]))

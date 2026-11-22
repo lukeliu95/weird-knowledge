@@ -9,8 +9,8 @@
   explore.py status                    状态 JSON：候选池、好候选几条、没答的日报、下一份日报、这一轮派不派侦察兵（throttle）
   explore.py pick [--n 3]              抽签选这一轮的方向和侦察兵，给每个侦察兵写一份任务段落
   explore.py ingest <round>            收 inbox/<round>-*.json：去重、进候选池、记线索
-  explore.py score [--engine auto]     给没打分的候选打分：Jev 分类（只发公开内容）、本地 Qwen 打"想不想看"；
-                                       Qwen 连不上时自动改用 Opus 5.5（claude -p，订阅用量），每条记 scorer
+  explore.py score [--engine auto]     给没打分的候选打分：Jev 分类（只发公开内容）、本地模型（LOCAL_MODEL，现在是 Inkling）打"想不想看"；
+                                       本地模型不能用时自动改用 Opus 5.5（claude -p，订阅用量），每条记 scorer；本地模型能用时，别的模型打过的新候选重打
   explore.py digest [--size 10]        出一份日报：6 条最可能想看 + 2 条最拿不准 + 2 条新方向，顺序打乱；没答的日报再多也照出
   explore.py enrich <digest> <briefs>  把简介 subagent（tools/explore/BRIEF.md）交回的 JSON 并进日报，重写网页数据
   explore.py learn <digest> <letters>  记 Luke 的回答：letters 是想看的字母，如 ACF；都不想看写 -
@@ -36,7 +36,7 @@ FRESH_HOURS = 48          # 候选只留 48 小时，没展示就作废（Luke 2
 DIGEST_WEEKDAY = 5        # 周六出（周一是 0）
 DIGEST_HOUR = 8           # 早上 8 点起
 DIGEST_LAST_HOUR = 21     # 晚上 10 点以后不出，不在夜里推送；没出成就等第二天 8 点
-GOOD_P = 0.6              # "好内容"：预测想看的概率到 0.6
+GOOD_P = 0.6              # "好内容"：预测想看的概率到 0.6（本地模型换成 Inkling 后，分数在出口换算回 Qwen 的刻度，见 l1_eval.RESCALE）
 GOOD_MIN = 10             # 攒够 10 条好内容才出
 SCOUT_LEAD_HOURS = 24     # 出日报前 24 小时开始派侦察兵，到这周日报出来为止；其余时间只拉 AIHOT（一天能收 60 条左右好候选，够用）
 
@@ -314,8 +314,8 @@ def explore_prompt(r, profile, examples):
         "Luke 会想看这条吗？A 想看，B 不想看。只回答一个字母。"])
 
 
-def qwen_p(text):
-    return round(E.qwen_ab(SYS, text), 4)   # 模型不对或回不出 A/B 时报错，score 会改用 Opus 兜底
+def local_p(text):
+    return round(E.local_ab(SYS, text, task="explore"), 4)   # 模型不对或回不出 A/B 时报错，score 会改用 Opus 兜底
 
 
 def jev_quality(author, text):
@@ -345,7 +345,7 @@ OPUS_SYS = ("你在模拟一个具体的人：Luke。给你他的档案、他喜
 
 
 def opus_batch(rows, profile, index, k=12):
-    """Qwen 不可用时的兜底：一批交给 Opus，回每条的概率。"""
+    """本地模型不可用时的兜底：一批交给 Opus，回每条的概率。"""
     import opus_judge as OJ
     seen, ex = set(), []
     for r in rows:   # 例子取这批内容各自最像的几条，合起来去重
@@ -369,7 +369,11 @@ def cmd_score(a):
     import opus_judge as OJ
     pool = read_jsonl(POOL)
     expire(pool)
-    todo = [r for r in pool if r["status"] == "new" and ("p" not in r or (a.quality and "q_primary" not in r))][: a.limit]
+    cur = OJ.local_name()
+    engine = "local" if (a.engine == "local" or (a.engine == "auto" and OJ.local_ok())) else "opus"
+    # 本地模型能用时，别的模型（换模型前的 Qwen、兜底的 Opus）打过分的新候选也重打，一份日报里的分尽量出自同一个模型
+    stale = lambda r: engine == "local" and "p" in r and r.get("scorer", "qwen") != cur  # noqa: E731
+    todo = [r for r in pool if r["status"] == "new" and ("p" not in r or stale(r) or (a.quality and "q_primary" not in r))][: a.limit]
     if not todo:
         print("没有要打分的候选")
         return
@@ -377,7 +381,6 @@ def cmd_score(a):
     profile = (E.PRIVATE / "luke" / champ["profile"]).read_text()
     index = E.Index(positives())
     jev_tokens = fails = 0
-    engine = "qwen" if (a.engine == "qwen" or (a.engine == "auto" and OJ.qwen_ok())) else "opus"
     for i, r in enumerate(todo, 1):
         text = f"{r['title']}\n{r['snippet']}"
         if "kind" not in r:
@@ -394,20 +397,22 @@ def cmd_score(a):
                 r.update(qq)
             except Exception:
                 pass
-        if engine != "qwen" or "p" in r:
+        if engine != "local" or ("p" in r and not stale(r)):
             continue
         try:
-            r["p"] = qwen_p(explore_prompt(r, profile, index.top(text, champ.get("k", 8))))
-            r["scorer"], r["scored"] = "qwen", now().isoformat(timespec="seconds")
+            p_new = local_p(explore_prompt(r, profile, index.top(text, champ.get("k", 8))))
+            if "p" in r:   # 换模型前的分留着
+                r["p_" + r.get("scorer", "qwen")] = r["p"]
+            r["p"], r["scorer"], r["scored"] = p_new, cur, now().isoformat(timespec="seconds")
         except Exception as e:
             fails += 1
             if fails >= 3:
-                print(f"本地 Qwen 连续出错，剩下的改用 Opus：{e}", file=sys.stderr)
+                print(f"本地模型连续出错，剩下的改用 Opus：{e}", file=sys.stderr)
                 engine = "opus"
         if i % 25 == 0:
             print(f"  {i}/{len(todo)}", file=sys.stderr, flush=True)
             write_jsonl(POOL, pool)
-    if engine == "opus" or fails:   # 兜底：没打上分的按 15 条一批交给 Opus（候选少于 3 条时 Qwen 出错也要兜底）
+    if engine == "opus" or fails:   # 兜底：没打上分的按 15 条一批交给 Opus（候选少于 3 条时本地模型出错也要兜底）
         rest = [r for r in todo if "p" not in r]
         for b in range(0, len(rest), 15):
             batch = rest[b:b + 15]
@@ -770,7 +775,7 @@ def cmd_report(_):
         print(f"\n按 {field}：")
         for k, v in sorted(g.items(), key=lambda kv: -len(kv[1])):
             print(f"  {k}: {rate(v)}")
-    for sc in ("qwen", "opus"):   # 两个打分引擎的概率口径不同，分开算
+    for sc in sorted({r.get("scorer", "qwen") for r in rows}):   # 各打分模型的概率口径不同，分开算
         sub = [r for r in rows if r.get("scorer", "qwen") == sc and r.get("p") is not None]
         if sub and 0 < sum(r["label"] for r in sub) < len(sub):
             m = E.metrics([{"p": r["p"], "label": r["label"]} for r in sub])
@@ -790,7 +795,7 @@ def main():
     p = sub.add_parser("pick"); p.add_argument("--n", type=int, default=3)
     p = sub.add_parser("ingest"); p.add_argument("round")
     p = sub.add_parser("score"); p.add_argument("--limit", type=int, default=300)
-    p.add_argument("--engine", default="auto", choices=["auto", "qwen", "opus"])
+    p.add_argument("--engine", default="auto", choices=["auto", "local", "opus"])
     p.add_argument("--quality", action="store_true", help="给已经打过分、但还没有客观题标签的候选补打")
     p = sub.add_parser("digest"); p.add_argument("--size", type=int, default=10)
     p = sub.add_parser("learn"); p.add_argument("digest"); p.add_argument("letters")

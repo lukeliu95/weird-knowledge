@@ -20,6 +20,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import l1_eval as E  # noqa: E402
 import l1_probe as P  # noqa: E402
+import l1_prospect as LP  # noqa: E402
 import l1_train as T  # noqa: E402
 import opus_judge as OJ  # noqa: E402
 
@@ -76,7 +77,8 @@ def cmd_build(a):
     return target
 
 
-def qwen_score(rows, mode, profile, skill, pos_index, neg_index):
+def local_score(rows, mode, profile, skill, pos_index, neg_index):
+    """本地模型（LOCAL_MODEL）打分。"""
     """mode：champ＝旧档案；skill＝口味 skill + 相似点赞；skill_neg＝再加相似没点。profile 参数就是 champ 用的那份文字。"""
     out = {}
     for r in rows:
@@ -91,7 +93,7 @@ def qwen_score(rows, mode, profile, skill, pos_index, neg_index):
             parts.append("【他刷到过、但没有点赞的相似推文】\n" + "\n\n".join(f"- {e['text'][:400]}" for e in neg_index.top(r["text"], 4)))
         parts.append(f"【要判断的内容】作者 @{r.get('author', '')}\n{r['text'][:1200]}")
         parts.append("Luke 会点赞或想看这条吗？A 会，B 不会。只回答一个字母。")
-        out[r["id"]] = E.qwen("\n\n".join(parts))
+        out[r["id"]] = E.local("\n\n".join(parts))
     return out
 
 
@@ -142,15 +144,16 @@ def cmd_eval(a):
         if tname.startswith("T1"):   # 冠军在快照上已有预测，直接用
             for s in {r["snap"] for r in rows}:
                 for f in T.PRO.glob(s.replace("snapshot", "pred").replace(".jsonl", "") + "-c2-*.jsonl"):
-                    champ.update({x["id"]: x["p"] for x in T.jl(f)})
+                    if LP.parse_pred(f)[2] == OJ.local_name():   # 只用当前本地模型打的，口径不混
+                        champ.update({x["id"]: x["p"] for x in T.jl(f)})
         missing = [r for r in rows if r["id"] not in champ]
-        champ.update(qwen_score(missing, "champ", profile, skill, pos_index, neg_index))
+        champ.update(local_score(missing, "champ", profile, skill, pos_index, neg_index))
         preds = {"champ": champ}
         for mode in a.modes:
             if mode == "skill_opus":
                 preds[mode] = opus_score(rows, skill)
             else:
-                preds[mode] = qwen_score(rows, mode, profile, skill, pos_index, neg_index)
+                preds[mode] = local_score(rows, mode, profile, skill, pos_index, neg_index)
             print(tname, mode, "完成", flush=True)
         results[tname] = [summary(k, rows, v, champ) for k, v in preds.items()]
         OUT.mkdir(parents=True, exist_ok=True)
@@ -161,9 +164,20 @@ def cmd_eval(a):
     print(json.dumps(results, ensure_ascii=False, indent=1))
 
 
+def exam_rows(t1, n_neg=2000):
+    """每周考试用的未来考题：全部点了赞的，加按编号哈希固定抽的 n_neg 道没点的。
+    2026-11-23 起：全量 1.28 万道、两版各打一遍要 10 小时左右（Inkling 每道约 1.4 秒），抽样后约 1.5 小时。"""
+    import hashlib
+    pos = [r for r in t1 if r["label"] == 1]
+    neg = sorted((r for r in t1 if r["label"] == 0), key=lambda r: hashlib.md5(r["id"].encode()).hexdigest())[:n_neg]
+    return pos + neg
+
+
 def cmd_refresh(_):
     """生成候选 skill → 当前冠军（skill + 8 条相似点赞）和候选在同一批考题上比 → 过门槛才换。"""
     E.load_env()
+    if not OJ.local_ok():   # 先看能不能考，再花 Opus 写候选（11-15、11-22 都是写完才发现考不了）
+        sys.exit(f"本地模型不能用（LOCAL_MODEL={OJ.local_model()}），这周不重提炼")
     OUT.mkdir(parents=True, exist_ok=True)
     stamp = dt.datetime.now().strftime("%Y%m%d-%H%M")
     cand = OUT / f"candidate-{stamp}.md"
@@ -173,9 +187,9 @@ def cmd_refresh(_):
     ban = {r["id"] for r in t1 + t2}
     pos_index = E.Index(E.liked_docs(ban))
     res = {}
-    for tname, rows in (("T1", t1), ("T2", t2)):
-        a_ = qwen_score(rows, "skill", "", champ_skill, pos_index, None)
-        b_ = qwen_score(rows, "skill", "", cand_skill, pos_index, None)
+    for tname, rows in (("T1", exam_rows(t1)), ("T2", t2)):
+        a_ = local_score(rows, "skill", "", champ_skill, pos_index, None)
+        b_ = local_score(rows, "skill", "", cand_skill, pos_index, None)
         y = {r["id"]: r["label"] for r in rows}
         ids = [i for i in y if i in a_ and i in b_]
         if ids and 0 < sum(y[i] for i in ids) < len(ids):
@@ -183,7 +197,7 @@ def cmd_refresh(_):
             res[tname] = {"n": len(ids), "auc_champion": P.auc(ids, a_, y), "auc_candidate": P.auc(ids, b_, y),
                           "gain": round(g, 3), "p_better": round(pb, 3)}
     adopt = res.get("T1", {}).get("p_better", 0) >= 0.8 and res.get("T2", {}).get("p_better", 0.5) >= 0.5
-    rec = {"time": stamp, "candidate": cand.name, "results": res, "adopted": adopt}
+    rec = {"time": stamp, "candidate": cand.name, "scorer": OJ.local_name(), "results": res, "adopted": adopt}
     with open(OUT / "refresh.jsonl", "a") as f:
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
     if adopt:

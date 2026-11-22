@@ -11,11 +11,11 @@
   q2  q1 再加 4 道他以前答过的相似题（只取这道题之前的，防止偷看未来）
 
 引擎：默认 Opus 5.5（opus_judge.py，订阅用量，按 10 题一批）。Luke 2026-10-20 定的：决定预测用 Opus 当主力
-（同一批 109 题上 Opus 93%、本地 Qwen 84%）。要和 Qwen 对比时加 --engine qwen。
+（同一批 109 题上 Opus 93%、本地 Qwen 84%）。要和本地模型（LOCAL_MODEL，2026-11-23 起是 Inkling 2 Mini）对比时加 --engine local。
 两种引擎的成绩分开记，不混着比。
 
 用法：
-  python3 tools/evolve/l3_eval.py [--cond q0|q1|q2|all] [--engine opus|qwen]
+  python3 tools/evolve/l3_eval.py [--cond q0|q1|q2|all] [--engine opus|local]
 """
 import argparse, collections, datetime as dt, json, math, re, sys
 from pathlib import Path
@@ -61,17 +61,13 @@ def prompt(r, cond, profile, examples):
     return "\n\n".join(parts)
 
 
-def qwen_dist(text, letters):
-    d = E.post(E.os.environ["QWEN_BASE_URL"] + "/chat/completions", {
-        "model": "qwen3.8-27b-coder390-mlx-mixed4-mtp",
-        "messages": [{"role": "system", "content": SYS}, {"role": "user", "content": text}],
-        "max_tokens": 1, "temperature": 0, "logprobs": True, "top_logprobs": 20,
-        "chat_template_kwargs": {"enable_thinking": False}}, E.os.environ["QWEN_API_KEY"])
+def local_dist(text, letters):
+    """本地模型（LOCAL_MODEL）对每个选项的概率，取答案第一个字的前 10 个候选。"""
     p = collections.defaultdict(float)
-    for t in d["choices"][0]["logprobs"]["content"][0]["top_logprobs"]:
-        k = t["token"].strip().upper()
+    for tok, lp in E.local_top(SYS, text).items():
+        k = tok.strip().upper()
         if k in letters:
-            p[k] += math.exp(t["logprob"])
+            p[k] += math.exp(lp)
     z = sum(p.values()) or 1
     return {k: p[k] / z for k in letters}
 
@@ -96,10 +92,10 @@ def opus_dists(prompts, letters_list):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--cond", default="all")
-    ap.add_argument("--engine", default="opus", choices=["opus", "qwen"])
+    ap.add_argument("--engine", default="opus", choices=["opus", "local"])
     a = ap.parse_args()
     E.load_env()
-    engine = a.engine
+    engine = a.engine if a.engine == "opus" else E.OJ.local_name()   # 记真实的模型名
     print("引擎：", engine, flush=True)
     rows = [json.loads(l) for l in (DIR / "decisions.jsonl").read_text().split("\n") if l.strip()]
     rows = [r for r in rows if r["choice"] in r["options"]]   # 选了"其他"的不考
@@ -121,7 +117,7 @@ def main():
             for b in range(0, len(rows), 10):
                 dists += opus_dists(prompts[b:b + 10], ["".join(r["options"].keys()) for r in rows[b:b + 10]])
         else:
-            dists = [qwen_dist(p, "".join(r["options"].keys())) for p, r in zip(prompts, rows)]
+            dists = [local_dist(p, "".join(r["options"].keys())) for p, r in zip(prompts, rows)]
         for r, dist in zip(rows, dists):
             pred = max(dist, key=dist.get)
             hits += pred == r["choice"]

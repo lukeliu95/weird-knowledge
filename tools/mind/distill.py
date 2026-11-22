@@ -4,7 +4,7 @@
 
 Luke 2026-10-26 选了 B（参照"工单 → AI 草稿 → 客服修改 → 定时蒸馏 → 人审发布 → 下次用上"的知识循环）：
 原来只把旧题和他选的字母当例子，他补的话和纠正存下了却没人提炼。这里补上"定时提炼"和"审过才用上"两步。
-方案和回测见 docs/2026-10-26-mind-distill-spec.md。数据只在 private/mind/，只交给 Opus 和本地 Qwen，不交给 Jev。
+方案和回测见 docs/2026-10-26-mind-distill-spec.md。数据只在 private/mind/，只交给 Opus 和本地模型，不交给 Jev。
 
 用法：
   distill.py cards                 给还没做卡的回答和纠正做案例卡（人名、公司名换掉）
@@ -163,16 +163,16 @@ def existing_text():
 
 
 def review(drafts, cards):
-    """复核用另一个模型：本地 Qwen 开着就用它，连不上才用一次独立的 Opus（不看写草稿时的推理）。"""
+    """复核用另一个模型：本地模型开着就用它，连不上才用一次独立的 Opus（不看写草稿时的推理）。"""
     text = REVIEW_PROMPT.format(
         rules="\n".join(f"{i}. {d['rule']}（不适用：{d.get('when_not', '')}）引用：{'、'.join(d['cards'])}"
                         for i, d in enumerate(drafts, 1)),
         cards="\n".join(card_line(c) for c in cards))
-    if OJ.qwen_ok():
+    if OJ.local_ok():
         try:
-            return S.qwen_json(text, max_tokens=4000).get("reviews", []), "qwen"
+            return S.local_json(text, max_tokens=4000).get("reviews", []), OJ.local_name()
         except Exception as e:
-            print(f"  Qwen 复核出错，改用 Opus：{e}", file=sys.stderr)
+            print(f"  本地模型复核出错，改用 Opus：{e}", file=sys.stderr)
     return OJ.ask_json("你是严格的复核员，只输出一个 JSON 对象。", text).get("reviews", []), "opus"
 
 

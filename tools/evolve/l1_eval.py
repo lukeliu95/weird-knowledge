@@ -2,7 +2,7 @@
 """L1 点赞预测：用判断引擎给测试集打分，记录一致率和校准度。
 
 用法：
-  python3 tools/evolve/l1_eval.py <testset.jsonl> --cond c0|c1|c2 [--engine qwen|jev] [--profile private/luke/profile.md] [--tag 说明]
+  python3 tools/evolve/l1_eval.py <testset.jsonl> --cond c0|c1|c2 [--engine local|jev] [--profile private/luke/profile.md] [--tag 说明]
 
 条件：
   c0  不给任何档案
@@ -10,11 +10,14 @@
   c2  给 Luke 档案 + 检索到的相似点赞（排除测试集里的条目）
   c3  c2 再加检索到的"刷到但没点"的推文做对照（取自时间线快照，排除测试集）
 
-私密内容（档案、点赞例子）只发给本地 Qwen；jev 只能配 c0（只有公开的推文文本）。
+私密内容（档案、点赞例子）只发给本地模型（.env 的 LOCAL_MODEL，2026-11-23 起是 Inkling 2 Mini）；jev 只能配 c0（只有公开的推文文本）。
 结果写进 private/l1/runs/ 和 private/l1/metrics.jsonl。
 """
 import argparse, collections, datetime as dt, json, math, os, re, sys, urllib.request
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import opus_judge as OJ  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
 PRIVATE = REPO / "private"   # gitignored; in a worktree it is a symlink to the main checkout's private/
@@ -117,31 +120,62 @@ def prompt(row, cond, profile, examples, negatives=()):
     return "\n\n".join(parts)
 
 
-def qwen_ab(system, text):
-    """问本地 Qwen 一道 A/B 题，返回选 A 的概率。模型不对、或者前 10 个候选字里没有 A 也没有 B，就报错，
-    不再记成 0.5（2026-11-22 端口换了模型，每道题都被记成 0.5）。调用方出错时按各自的规矩兜底或停下。"""
-    from opus_judge import QWEN_MODEL
-    d = post(os.environ["QWEN_BASE_URL"] + "/chat/completions", {
-        "model": QWEN_MODEL,
-        "messages": [{"role": "system", "content": system}, {"role": "user", "content": text}],
-        "max_tokens": 1, "temperature": 0, "logprobs": True, "top_logprobs": 10,
-        "chat_template_kwargs": {"enable_thinking": False}}, os.environ["QWEN_API_KEY"])
-    if d.get("model") and d["model"] != QWEN_MODEL:
-        raise RuntimeError(f"本地端口挂的是 {d['model']}，不是 {QWEN_MODEL}")
-    top = d["choices"][0]["logprobs"]["content"][0]["top_logprobs"]
+def local_top(system, text):
+    """问本地模型一道选择题，返回答案第一个字的前 10 个候选：{字: 对数概率}。模型名见 opus_judge.local_model()。
+    Inkling 的服务只给第一个生成字的概率，而对话接口下第一个字总是角色标记 <|message_model|>，
+    所以按它的对话模板（模型目录里的 chat_template.jinja）自己拼好前缀走 completions，思考强度设 0；Qwen 走原来的对话接口。"""
+    model = OJ.local_model()
+    base, key = os.environ["QWEN_BASE_URL"], os.environ["QWEN_API_KEY"]
+    if OJ.local_name(model) == "inkling":
+        d = post(base + "/completions", {
+            "model": model, "max_tokens": 1, "temperature": 0, "logprobs": 10,
+            "prompt": f"<|message_system|><|content_text|>{system}<|end_message|>"
+                      "<|message_system|><|content_text|>Thinking effort level: 0<|end_message|>"
+                      f"<|message_user|><|content_text|>{text}<|end_message|>"
+                      "<|message_model|><|content_text|>"}, key)
+        top = d["choices"][0]["logprobs"]["top_logprobs"][0]
+    else:
+        d = post(base + "/chat/completions", {
+            "model": model,
+            "messages": [{"role": "system", "content": system}, {"role": "user", "content": text}],
+            "max_tokens": 1, "temperature": 0, "logprobs": True, "top_logprobs": 10,
+            "chat_template_kwargs": {"enable_thinking": False}}, key)
+        top = {}
+        for t in d["choices"][0]["logprobs"]["content"][0]["top_logprobs"]:
+            top[t["token"]] = max(top.get(t["token"], -1e9), t["logprob"])
+    if d.get("model") and d["model"] != model:
+        raise RuntimeError(f"本地端口挂的是 {d['model']}，不是 LOCAL_MODEL={model}")
+    return top
+
+
+# Inkling 的概率过于自信（一半想看的给到 0.999 以上，不想看的大多压在 0.01 以下），排序是对的，但刻度不能和 Qwen 直接比。
+# 打分出口按任务做一次单调换算，换到 Qwen 的刻度：p = sigmoid(a·(log P(A) − log P(B)) + b)。只拉伸刻度、不改谁高谁低（AUC 不变），
+# 下游门槛照旧。a、b 按"换算后落在门槛以上的比例和 Qwen 一样"两点对齐：
+#   like（点赞预测、问口味的提示词）对齐 0.6 和 0.4；explore（探索打分的提示词）对齐 0.6（好内容）和 0.5（最拿不准的中心）。
+# 2026-11-23 用 600 道未来考题、300 条随机候选上两边的分数拟合，对半验证，见 docs/2026-11-23-local-model-inkling.md。换模型要重新拟合
+RESCALE = {("inkling", "like"): (0.260, -2.018), ("inkling", "explore"): (0.256, -2.809)}
+
+
+def local_ab(system, text, task="like"):
+    """问本地模型一道 A/B 题，返回选 A 的概率（按 task 换算到 Qwen 的刻度）。前 10 个候选字里没有 A 也没有 B 就报错，
+    不记成 0.5（2026-11-22 端口换了模型，每道题都被记成 0.5）。调用方出错时按各自的规矩兜底或停下。
+    直接用两个字的对数概率相减，不先换成概率再夹到 [1e-6, 1-1e-6]：那样会把 0.99999999 和 0.9999999999 压成同一个分。"""
+    top = local_top(system, text)
     p = collections.defaultdict(float)
-    for t in top:
-        k = t["token"].strip().upper()
+    for tok, lp in top.items():
+        k = tok.strip().upper()
         if k in ("A", "B"):
-            p[k] += math.exp(t["logprob"])
+            p[k] += math.exp(lp)
     if not p:
-        raise RuntimeError(f"Qwen 没回 A 或 B（第一个字是 {top[0]['token']!r}）")
-    a, b = p["A"] or 1e-6, p["B"] or 1e-6
-    return a / (a + b)
+        raise RuntimeError(f"本地模型没回 A 或 B（候选是 {list(top)[:5]}）")
+    floor = math.exp(min(top.values()))   # 只出现了一个字时，另一个按前 10 里最小的概率算（它的上限）
+    x = math.log(p["A"] or floor) - math.log(p["B"] or floor)
+    a, b = RESCALE.get((OJ.local_name(), task), (1.0, 0.0))
+    return 1 / (1 + math.exp(-(a * x + b)))
 
 
-def qwen(text):
-    return qwen_ab(SYS, text)
+def local(text):
+    return local_ab(SYS, text)
 
 
 def jev(row):
@@ -172,7 +206,7 @@ def main():
     ap.add_argument("testset")
     ap.add_argument("--cond", default="c1", choices=["c0", "c1", "c2", "c3"])
     ap.add_argument("--kneg", type=int, default=4)
-    ap.add_argument("--engine", default="qwen", choices=["qwen", "jev"])
+    ap.add_argument("--engine", default="local", choices=["local", "jev"])
     ap.add_argument("--profile", default=str(PRIVATE / "luke" / "profile.md"))
     ap.add_argument("--k", type=int, default=8)
     ap.add_argument("--tag", default="")
@@ -180,6 +214,7 @@ def main():
     if a.engine == "jev" and a.cond != "c0":
         sys.exit("jev 只能配 c0：档案和点赞例子是私密内容，不发给外部接口")
     load_env()
+    engine = a.engine if a.engine == "jev" else OJ.local_name()   # 记真实的模型名，成绩按它分开算
     rows = [json.loads(l) for l in Path(a.testset).read_text().split("\n") if l.strip()]
     profile = Path(a.profile).read_text() if a.cond != "c0" else ""
     ids = {r["id"] for r in rows}
@@ -193,15 +228,15 @@ def main():
         else:
             ex = index.top(r["text"], a.k) if index else []
             neg = nindex.top(r["text"], a.kneg) if nindex else []
-            r["p"] = qwen(prompt(r, a.cond, profile, ex, neg))
+            r["p"] = local(prompt(r, a.cond, profile, ex, neg))
         if i % 25 == 0:
             print(f"  {i}/{len(rows)}", file=sys.stderr, flush=True)
     m = metrics(rows)
     stamp = dt.datetime.now().strftime("%Y%m%d-%H%M")
-    run = PRIVATE / "l1" / "runs" / f"{stamp}-{a.engine}-{a.cond}.jsonl"
+    run = PRIVATE / "l1" / "runs" / f"{stamp}-{engine}-{a.cond}.jsonl"
     run.parent.mkdir(parents=True, exist_ok=True)
     run.write_text("".join(json.dumps({k: r[k] for k in ("id", "author", "label", "p")}) + "\n" for r in rows))
-    rec = dict(time=stamp, testset=Path(a.testset).name, engine=a.engine, cond=a.cond,
+    rec = dict(time=stamp, testset=Path(a.testset).name, engine=engine, cond=a.cond,
                profile=Path(a.profile).name if a.cond != "c0" else "", tag=a.tag, **m)
     if a.engine == "jev":
         rec["jev_input_tokens"] = tokens

@@ -1,4 +1,4 @@
-"""交给 Opus 或外部服务前去掉客户名、人名的小工具，和调本地 Qwen 出 JSON。
+"""交给 Opus 或外部服务前去掉客户名、人名的小工具，和调本地模型（LOCAL_MODEL）出 JSON。
 
 原来写在 salesroom.py 里。Luke 2026-10-28 让 lukeeMind 不再读 Salesroom（选了 A），salesroom.py 和会议数据已挪进废纸篓；
 客户名单留了一份在 private/mind/scrub-names.json，只用来去名，不做别的用。
@@ -24,12 +24,15 @@ def scrub(s, names):
     return HONORIFIC.sub("某人", s)
 
 
-def qwen_json(prompt, max_tokens=1800):
+def local_json(prompt, max_tokens=1800):
+    """Inkling 关不掉思考（思考的字也算进 max_tokens，答案单独放在 content），所以多留 2000 字。"""
+    model = E.OJ.local_model()
     d = E.post(E.os.environ["QWEN_BASE_URL"] + "/chat/completions", {
-        "model": "qwen3.8-27b-coder390-mlx-mixed4-mtp",
+        "model": model,
         "messages": [{"role": "system", "content": "只输出一个 JSON 对象，不要多余的字。"},
                      {"role": "user", "content": prompt}],
-        "max_tokens": max_tokens, "temperature": 0, "chat_template_kwargs": {"enable_thinking": False}},
+        "max_tokens": max_tokens + (2000 if E.OJ.local_name(model) == "inkling" else 0), "temperature": 0,
+        "chat_template_kwargs": {"enable_thinking": False}},
         E.os.environ["QWEN_API_KEY"])
     text = d["choices"][0]["message"]["content"]
     i = text.find("{")

@@ -307,7 +307,7 @@ def cmd_report(_):
 
 
 def cmd_taste(a):
-    """问口味：用当前冠军（本地 Qwen + 口味 skill + 8 条相似点赞）判 Luke 会不会想看。Qwen 连不上时改用 Opus 读 skill 判。"""
+    """问口味：用当前冠军（本地模型 + 口味 skill + 8 条相似点赞）判 Luke 会不会想看。本地模型不能用时改用 Opus 读 skill 判。"""
     E.load_env()
     champ = json.loads((E.PRIVATE / "l1" / "champion.json").read_text())
     skill = (E.PRIVATE / "luke" / champ["profile"]).read_text()
@@ -316,10 +316,10 @@ def cmd_taste(a):
     ex = idx.top(text, champ.get("k", 8))
     row = {"author": a.author, "text": text}
     try:
-        if not OJ.qwen_ok():
-            raise RuntimeError("Qwen 连不上")
-        p = E.qwen(E.prompt(row, champ["cond"], skill, ex))
-        engine = "qwen+skill"
+        if not OJ.local_ok():
+            raise RuntimeError("本地模型不能用")
+        p = E.local(E.prompt(row, champ["cond"], skill, ex))
+        engine = f"{OJ.local_name()}+skill"
     except Exception:
         out = OJ.ask_json("你在模拟一个具体的人 Luke，判断他会不会想看。只输出 JSON。",
                           f"【Luke 的阅读口味】\n{skill}\n\n【要判断的内容】作者 {a.author}\n{text[:2000]}\n\n"
