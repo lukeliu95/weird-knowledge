@@ -1,5 +1,5 @@
 ---
-title: "Manus 为什么放弃 AI 浏览器：少写死结构、多留给模型"
+title: "Manus 张涛分享的两个决定：停掉做了七个月的 AI 浏览器，少写死结构、多留给模型"
 author: "Tony出海 (@tonychuhai)"
 url: https://x.com/tonychuhai/status/2123216498714148871
 source: X
@@ -7,10 +7,10 @@ published: 2026-11-19 00:47 UTC
 saved: 2026-11-19
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: AI 产品与创业
+roots: [bitter-lesson, sunk-cost, gourville-2006-eager-sellers-stony-buyers, lee-2004-trust-in-automation]
 ---
 
 ## 原文
@@ -41,3 +41,11 @@ Manus 这段经历真正值得研究的，是两个决定：什么时候承认�
 
 ## 溯源
 
+- 核心主张：Manus 停掉 AI 浏览器，是因为用户总拿 Chrome、Safari 的老功能来比；后来做 agent 时，展示执行过程帮非技术用户建立信任，并且少写死流程，换上更强的模型产品就直接变好。
+- 源知识：
+  - [苦涩的教训](../roots/bitter-lesson.md) · 关系：相近 · 强弱：弱（模型复核通过）。「少把步骤写死」「花大量时间补今天模型的短板，却把明天更强的模型也限制住了」，是 Sutton 苦涩的教训在 agent 外壳上的说法；没有引用
+  - [沉没成本](../roots/sunk-cost.md) · 关系：相近 · 强弱：弱（模型复核通过）。转述把「什么时候承认做了七个月的产品不该发」列为两个关键决定之一，说的是不让已投入的七个月左右判断；没用这个词
+  - [热切的卖家与冷淡的买家（新产品采用心理，九比一错配）](../roots/gourville-2006-eager-sellers-stony-buyers.md) · 关系：相近 · 强弱：弱（模型复核通过）。放弃浏览器的原因是家人朋友先问「Safari、Chrome 里的某个功能在你这里去哪儿找」，即用户拿已有产品当参照来评判新产品
+  - [对自动化的信任：为恰当依赖而设计](../roots/lee-2004-trust-in-automation.md) · 关系：相近 · 强弱：弱（模型复核通过）。「非技术用户光看到一个结果，很难相信它真的完成了任务。把过程展示出来，也是在帮助用户建立信任」，对应 Lee 与 See 说的让人看懂自动化的运作过程来建立信任
+- 本质：这条新知识本质上是「苦涩的教训」在 AI 应用外壳设计上的应用（少写死结构，吃模型进步的红利），加上一次不被沉没成本绑住的止损决定。
+- 整理于：2026-11-23（第 12 轮）

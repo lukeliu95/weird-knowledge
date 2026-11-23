@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [Dify CEO 谈创业和 RAG](../clips/2026-10-18-tumeng05-dify-ceo-startup-rag-views.md) | 相近 | 弱（模型复核通过） |
+| [看起来没有壁垒的数据生意，为何如此繁荣](../clips/2026-11-18-sujinyan6-why-ai-data-business-booms.md) | 相近 | 弱（模型复核通过） |

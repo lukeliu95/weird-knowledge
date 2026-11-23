@@ -40,3 +40,8 @@ verified: true
 | [OpenAI FDE 实战：Codex 变强后删掉九成定制代码](../clips/2026-10-24-xudong07452910-xudong-openai-fde-codex-deleted-custom-code.md) | 相近 | 弱（模型复核通过） |
 | [Anthropic 应用 AI 团队：子 agent 什么时候该并回主循环（一个 agent 加 skill，常比一堆子 agent 答得更好、更省钱，有客户实测快约一倍）](../clips/2026-10-25-sarkis-anthropic-fold-subagents-into-main-loop.md) | 相近 | 弱（模型复核通过） |
 | [为什么 harness 加太多 AI 会迷路：删的是指示，强制机制要留](../clips/2026-10-25-hirakaw-trim-instructions-keep-enforcement.md) | 相近 | 弱（模型复核通过） |
+| [Kevin Roose 首次公开 Amodei 2017 年 OpenAI 内部文档《Big Blob of Compute》节选](../clips/2026-11-18-kevinroose-amodei-big-blob-of-compute-excerpt.md) | 相近 | 强 |
+| [Pliny 公开据称的 Claude Code 完整提示词，发帖人借此称 agent 的规矩是人写的](../clips/2026-11-18-tynric-carter-claude-code-system-prompt-leak.md) | 挑战 | 弱（模型复核通过） |
+| [Manus 张涛北大分享逐字稿：AI 时代如何做产品](../clips/2026-11-19-whereisvivien-manus-zhang-tao-pku-ai-product-talk.md) | 相近 | 弱（模型复核通过） |
+| [Manus 张涛分享的两个决定：停掉做了七个月的 AI 浏览器，少写死结构、多留给模型](../clips/2026-11-19-tonychuhai-manus-quit-ai-browser-less-structure.md) | 相近 | 弱（模型复核通过） |
+| [两人实验室 GSI 自称 250 多项科研突破，多数未经外部核验](../clips/2026-11-23-gntalktalk-gsi-harness-250-breakthroughs.md) | 挑战 | 弱（模型复核通过） |

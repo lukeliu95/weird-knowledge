@@ -28,3 +28,5 @@ verified: true
 |---|---|---|
 | [张一鸣 66 条成长心得与延迟满足](../clips/2026-10-18-sea-bitcoin-zhang-yiming-66-growth-tips.md) | 换了说法 | 强 |
 | [买两台 DGX 出租视频算力的生意](../clips/2026-10-18-boxmrchen-dgx-video-compute-rental.md) | 直接源自 | 强 |
+| [Manus 张涛北大分享逐字稿：AI 时代如何做产品](../clips/2026-11-19-whereisvivien-manus-zhang-tao-pku-ai-product-talk.md) | 直接源自 | 强 |
+| [Manus 张涛分享的两个决定：停掉做了七个月的 AI 浏览器，少写死结构、多留给模型](../clips/2026-11-19-tonychuhai-manus-quit-ai-browser-less-structure.md) | 相近 | 弱（模型复核通过） |

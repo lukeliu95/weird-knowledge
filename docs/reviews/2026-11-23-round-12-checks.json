@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "round": 12,
+  "scope": 75,
+  "processed": {
+    "已归档": 48,
+    "已整理": 27
+  },
+  "new_roots": 65,
+  "relationships_checked": 118,
+  "internal_links_checked": 1166,
+  "errors": []
+}

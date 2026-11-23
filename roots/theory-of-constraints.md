@@ -37,3 +37,4 @@ verified: true
 | [宝玉转述 Manus 组织改造：给全景上下文和验收工具，人保留产品及发布判断](../clips/2026-10-29-dotey-manus-ai-native-org-transformation.md) | 相近 | 弱（模型复核通过） |
 | [客户端开发的选型：原生、多端与借力](../clips/2026-10-29-hitw93-client-dev-native-vs-cross-platform.md) | 相近 | 弱（模型复核通过） |
 | [工具目录、工具搜索、PTC 要逐个瓶颈地改、每步都测](../clips/2026-10-29-ronny-minimax-tool-search-bottleneck-by-bottleneck.md) | 相近 | 弱（模型复核通过） |
+| [Steve Yegge 的 50 个 agent 软件工厂和几条预测](../clips/2026-11-18-theturingpost-steve-yegge-agent-software-factory.md) | 相近 | 弱（模型复核通过） |

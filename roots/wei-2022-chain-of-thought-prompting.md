@@ -31,3 +31,4 @@ verified: true
 | [Karpathy 谈 GPT 现状](../clips/2026-10-18-dotey-karpathy-state-of-gpt.md) | 直接源自 | 强 |
 | [Operator靠CUA操作屏幕的原理](../clips/2026-10-18-dotey-openai-operator-cua-how.md) | 直接源自 | 强 |
 | [提示词精髓：有什么、做什么、怎么做](../clips/2026-10-18-dotey-prompt-context-task-how.md) | 直接源自 | 强 |
+| [论文把长推理链比作分子：推理、反思、探索三种“键”（推文有夸大）](../clips/2026-11-18-thesupermannx-molecular-structure-of-thought.md) | 直接源自 | 强 |

@@ -7,10 +7,10 @@ published: 2026-11-12 01:38 UTC
 saved: 2026-11-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: Agent 与 Skill
+roots: [theory-of-constraints, complementary-good, commoditization, pine-1998-experience-economy]
 ---
 
 ## 原文
@@ -43,3 +43,11 @@ Thanks for insights and entertainment as well, Steve
 
 ## 溯源
 
+- 核心主张：Yegge 用约 50 个 agent 的软件工厂每天能出 50～100 个功能，但人消化不过来，人成了瓶颈，所以 agent 越多需要的人越多。他还预测：明年人人有一群 agent 随从，AI 员工普及；工厂会分成人人能搭的底层和个性化的上层；2027 年的大钱在体验类产品。
+- 源知识：
+  - [约束理论](../roots/theory-of-constraints.md) · 关系：相近 · 强弱：弱（模型复核通过）。工厂每天出 50～100 个功能，玩家求他慢一点，“人是瓶颈”。Yegge 11-14 的长帖进一步说要“把 AI 产出的节奏放慢到人的速度”，就是约束理论里让非瓶颈环节跟着瓶颈的节奏走。他没提约束理论。
+  - [互补品](../roots/complementary-good.md) · 关系：相近 · 强弱：弱（模型复核通过）。“agent 越多需要的人越多”：agent 干活变便宜、用得更多，和它搭配的人（审核、拍板、消化变化）需求就上升，是互补品的机制。这不是杰文斯悖论：杰文斯说的是变省的那种资源自己用得更多，这里多出来的是另一种投入，也就是人。
+  - [商品化（同质化）](../roots/commoditization.md) · 关系：相近 · 强弱：弱（模型复核通过）。“工厂会分成人人能搭的无聊底层和个性化的 agent 组织上层”：底层可以互相替代、没了差异，价值留在定制的上层。Yegge 11-14 长帖也说工厂“很容易让 Claude 替你搭”，最后会变得非常贴合各自的业务。
+  - [体验经济](../roots/pine-1998-experience-economy.md) · 关系：相近 · 强弱：弱（模型复核通过）。“2027 年的大钱在体验：别再做造工具的工具，去做游戏、电影这类人真想用的东西”，和体验经济说的“商品和服务同质化以后，值钱的是体验”是同一机制。Yegge 没引用 Pine 和 Gilmore。
+- 本质：这条新知识本质上是约束理论（agent 加速以后瓶颈移到人身上）和互补品需求用在 agent 软件工厂上。另外几条预测是“实现变便宜，价值往定制层和体验走”的商品化逻辑，都还是预测。
+- 整理于：2026-11-23（第 12 轮）

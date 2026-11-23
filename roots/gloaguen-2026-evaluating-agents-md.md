@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [为什么 harness 加太多 AI 会迷路：删的是指示，强制机制要留](../clips/2026-10-25-hirakaw-trim-instructions-keep-enforcement.md) | 直接源自 | 强 |
+| [Pliny 公开据称的 Claude Code 完整提示词，发帖人借此称 agent 的规矩是人写的](../clips/2026-11-18-tynric-carter-claude-code-system-prompt-leak.md) | 挑战 | 弱（模型复核通过） |

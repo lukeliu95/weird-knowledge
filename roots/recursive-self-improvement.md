@@ -37,3 +37,4 @@ AI 系统反复设计出比自己更强的下一代，可能引发「智能爆�
 | [智谱唐杰团队开源 HarnessPro：agent 无标签自己改 harness，按"省钱、均衡、性能"三档进化，成本最多降 53%](../clips/2026-10-24-qbitai-harnesspro-pareto-rsi.md) | 直接源自 | 强 |
 | [RRSI：agent 自己改 harness 会"背题"，Google Cloud AI Research 等把机器学习的正则化搬进来：每轮少改、记住试错、先筛泄题、涨分要超过噪声、多花的 token 要用涨分换、没用的就删；换考卷后也能涨分，比不加正则化的自我改进省约 30% token（比原始 harness 还是更贵）](../clips/2026-10-25-xia-rrsi-regularized-harness-self-improvement.md) | 直接源自 | 强 |
 | [作者判断奇点已开始：研发证据、反方理由与2027—2031年预测](../clips/2026-11-07-milesdeutscher-singularity-five-year-forecast.md) | 直接源自 | 强 |
+| [发帖人称 Anthropic 路演图显示算法效率超指数提升（图无刻度，仅为示意）](../clips/2026-11-18-hilbertspaess-anthropic-roadshow-compute-efficiency.md) | 直接源自 | 弱（模型复核通过） |

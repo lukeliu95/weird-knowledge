@@ -32,3 +32,4 @@ verified: true
 | [让模拟用户"先信任、再开口"：给陪伴 agent 评测加一道按对方表现开门的披露闸门](../clips/2026-10-22-liu-disclosure-gated-user-simulation.md) | 相近 | 弱（模型复核通过） |
 | [人在回路里只是摆设：agent 用得越久，人越没本事审它，要在产品和组织两头给人加"认知脚手架](../clips/2026-10-22-mitchell-agents-push-humans-out-of-loop.md) | 相近 | 弱（模型复核通过） |
 | [RRSI：agent 自己改 harness 会"背题"，Google Cloud AI Research 等把机器学习的正则化搬进来：每轮少改、记住试错、先筛泄题、涨分要超过噪声、多花的 token 要用涨分换、没用的就删；换考卷后也能涨分，比不加正则化的自我改进省约 30% token（比原始 harness 还是更贵）](../clips/2026-10-25-xia-rrsi-regularized-harness-self-improvement.md) | 相近 | 弱（模型复核通过） |
+| [作者称：微调 Qwen 在自家任务上追平前沿模型，靠私有测试集验证（未公开细节）](../clips/2026-11-18-simonhoiberg-private-benchmark-fine-tuned-qwen.md) | 相近 | 弱（模型复核通过） |

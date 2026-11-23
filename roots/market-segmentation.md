@@ -31,3 +31,4 @@ verified: true
 | [Headway：书籍摘要月入300万美元](../clips/2026-10-18-wanghao8080-headway-book-summary-app.md) | 直接源自 | 强 |
 | [拆解抖音商业大号清华陈晶的起号方法](../clips/2026-10-18-huangyun-122-douyin-chenjing-account-teardown.md) | 相近 | 弱（模型复核通过） |
 | [Clay：给 ToB 销售补全客户数据](../clips/2026-10-18-wanghao8080-clay-sales-data-enrichment.md) | 相近 | 弱（模型复核通过） |
+| [冷邮件外包商自测：AI 写的个性化开头回复率 0.27%，只带名字的 10% 以上（没给样本量）](../clips/2026-11-18-coldemailchris-stop-ai-personalized-first-lines.md) | 相近 | 弱（模型复核通过） |

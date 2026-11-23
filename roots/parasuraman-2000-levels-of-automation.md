@@ -32,3 +32,6 @@ verified: true
 | [常驻 agent 的 6 层结构（推文作者据 OpenAI 资料自制的 PDF）](../clips/2026-10-18-choopyplug1-openai-always-on-agent-six-layers.md) | 相近 | 弱（模型复核通过） |
 | [Anthropic 经济指数「节奏」：用法跟着作息走，越值钱的活越费算力，越放手交给 AI 的人越乐观](../clips/2026-10-20-anthropic-economic-index-cadences.md) | 相近 | 弱（模型复核通过） |
 | [PwC 调查（在用或打算用生成式 AI 的大企业部长级 487 人）：已导入者里只有 29% 说对收入有贡献，多数只感到生产率提升](../clips/2026-10-20-pwc-japan-b2b-sales-genai-survey-2025.md) | 相近 | 弱（模型复核通过） |
+| [24 小时在线的 agent 助理靠五样东西](../clips/2026-11-18-dotey-always-on-agent-five-parts.md) | 相近 | 弱（模型复核通过） |
+| [Anthropic 常驻 agent 指南的五个要点](../clips/2026-11-18-tekonburns-anthropic-always-on-agents-guide.md) | 相近 | 弱（模型复核通过） |
+| [Notion 万字手册：团队怎么和 AI 一起工作](../clips/2026-11-23-aiguide-notion-playbook-teams-with-ai.md) | 相近 | 弱（模型复核通过） |

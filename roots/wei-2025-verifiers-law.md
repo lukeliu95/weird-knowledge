@@ -32,3 +32,4 @@ verified: true
 | [Terminal-RSI：命令行 agent 拿自己验证过的成功经验反复训练自己，一轮比一轮强](../clips/2026-10-18-yang-terminal-rsi-recursive-self-improving-agents.md) | 相近 | 弱（模型复核通过） |
 | [拿 240 个真实外包项目考 AI agent：最好的也只做成 2.5%](../clips/2026-10-20-mazeika-remote-labor-index.md) | 相近 | 弱（模型复核通过） |
 | [马斯克：未来的发现全是工程（“最稀缺的是验证”是转述者加的）](../clips/2026-10-20-financeyf5-musk-future-discovery-is-engineering.md) | 相近 | 弱（模型复核通过） |
+| [两人实验室 GSI 自称 250 多项科研突破，多数未经外部核验](../clips/2026-11-23-gntalktalk-gsi-harness-250-breakthroughs.md) | 相近 | 弱（模型复核通过） |

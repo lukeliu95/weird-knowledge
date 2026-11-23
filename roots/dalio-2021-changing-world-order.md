@@ -28,3 +28,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [转述达利欧与沈南鹏 2022 年对谈：秩序在变，别押单一资产](../clips/2026-11-19-lesliedqbb-dalio-shen-old-order-diversify.md) | 直接源自 | 强 |

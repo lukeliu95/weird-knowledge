@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [MIT温斯顿教授经典演讲如何说话](../clips/2026-10-18-kkawsb-winston-how-to-speak.md) | 直接源自 | 强 |
+| [不知道学什么，就学会学习、写作和表达](../clips/2026-11-18-thedankoe-learn-to-learn-write-speak.md) | 相近 | 弱（模型复核通过） |

@@ -31,3 +31,4 @@ verified: true
 | [工具站出海月入 3000 刀的一年踩坑记](../clips/2026-10-18-gefei55-tool-site-overseas-lessons.md) | 相近 | 弱（模型复核通过） |
 | [Marc Lou 六月赚 8.3 万美元](../clips/2026-10-18-marclou-marclou-june-2026-revenue.md) | 相近 | 弱（模型复核通过） |
 | [天涯大佬：2027 年以后要活成的样子（英语、AI、个人 IP、轻资产）](../clips/2026-10-24-caomei-nz-tianya-how-to-live-after-2027.md) | 换了说法 | 强 |
+| [转述达利欧与沈南鹏 2022 年对谈：秩序在变，别押单一资产](../clips/2026-11-19-lesliedqbb-dalio-shen-old-order-diversify.md) | 换了说法 | 强 |

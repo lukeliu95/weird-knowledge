@@ -30,3 +30,4 @@ verified: true
 | [OpenAI 称九成潜在市场来自企业](../clips/2026-10-18-raycat2021-openai-enterprise-market-90.md) | 相近 | 弱（模型复核通过） |
 | [经产省 DXレポート：日本 CIO 倾向选大厂、接受老供应商的提案](../clips/2026-10-18-meti-dx-report-2025-digital-cliff.md) | 相近 | 强 |
 | [模型每周都在换：别把自己的上下文锁在一家产品里](../clips/2026-10-20-brian-lovin-portable-context-switching.md) | 相近 | 弱（模型复核通过） |
+| [Notion 万字手册：团队怎么和 AI 一起工作](../clips/2026-11-23-aiguide-notion-playbook-teams-with-ai.md) | 相近 | 弱（模型复核通过） |

@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [权重空间编程：直接改权重，修复小模型推理循环（作者实验）](../clips/2026-11-03-rikiyatakehi-weight-space-programming.md) | 直接源自 | 强 |
+| [agent 找出 Qwen3-TTS 里 417 个神经元，放大后会笑、耳语、插话（作者自测）](../clips/2026-11-18-tensorslay-qwen-tts-dormant-neurons.md) | 相近 | 弱（模型复核通过） |

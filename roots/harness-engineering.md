@@ -33,3 +33,4 @@ agent 等于模型加外壳，外壳是模型以外的一切（循环、工具�
 | [Wavestone 拆了 11 个编程 agent 的源码：每个都要在同样 7 个子系统上做取舍（推文转述，“90 行外壳覆盖全部 7 个部件”是说错的）](../clips/2026-10-25-arindam-1729-seven-building-blocks-of-coding-agents.md) | 直接源自 | 强 |
 | [拆 11 个编程 agent 的源码看外壳怎么搭：7 个子系统、29 种常见设计；没有一家用通用 agent 框架、没有一家用向量检索读代码，skill 的普及已略超 MCP（9/11 对 8/11），外壳正从工具变成平台](../clips/2026-10-25-barbaste-harness-engineering-eleven-coding-agents.md) | 直接源自 | 强 |
 | [Opus 4.5 的跃升可能来自 Claude Code 收集的数据；它能压住自身的发散，有合适的 harness 就能自己跑](../clips/2026-10-25-mizchi-opus-45-harness-data.md) | 相近 | 弱（模型复核通过） |
+| [Pliny 公开据称的 Claude Code 完整提示词，发帖人借此称 agent 的规矩是人写的](../clips/2026-11-18-tynric-carter-claude-code-system-prompt-leak.md) | 相近 | 弱（模型复核通过） |

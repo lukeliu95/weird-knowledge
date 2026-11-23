@@ -28,3 +28,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [不用反向传播预训练 Transformer，验证损失反超 Adam](../clips/2026-10-23-spicey-lemonade-pretrain-transformers-without-backprop.md) | 直接源自 | 强 |
+| [四个神经元怎么学会追光：《Watch a Brain Learn》图解](../clips/2026-11-18-dotey-four-neurons-learn-to-chase-light.md) | 相近 | 强 |

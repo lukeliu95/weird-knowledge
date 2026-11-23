@@ -32,3 +32,4 @@ verified: true
 |---|---|---|
 | [Samuel 的跳棋程序：机器靠自己对弈学习，下得比写它的人还好](../clips/2026-10-18-samuel-machine-learning-checkers.md) | 相近 | 强 |
 | [DeepSeek R1 论文解读：自学成才之路](../clips/2026-10-18-oran-ge-deepseek-r1-paper-explained.md) | 直接源自 | 强 |
+| [四个神经元怎么学会追光：《Watch a Brain Learn》图解](../clips/2026-11-18-dotey-four-neurons-learn-to-chase-light.md) | 直接源自 | 强 |

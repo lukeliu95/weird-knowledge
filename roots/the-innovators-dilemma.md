@@ -30,3 +30,4 @@ verified: true
 | [人和电脑的关系可能从一开始就是反的](../clips/2026-10-18-zuozizhen-human-computer-relationship-inverted.md) | 直接源自 | 强 |
 | [Qwen技术负责人离职与大厂内部创业](../clips/2026-10-18-dexteryy-qwen-lead-departure-big-tech.md) | 相近 | 弱（模型复核通过） |
 | [王煜全访谈：这波 AI 机会在哪](../clips/2026-10-18-yilunaiyyds-wang-yuquan-ai-opportunity-interview.md) | 相近 | 弱（模型复核通过） |
+| [2027 年的 agent 平台：应用层的终局](../clips/2026-11-23-john-ssuh-agent-platform-2027-endgame.md) | 直接源自 | 强 |

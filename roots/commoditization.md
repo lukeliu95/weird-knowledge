@@ -29,3 +29,5 @@ verified: true
 | [NVIDIA DGX Spark 从买机器到变现指南](../clips/2026-10-18-ai-goge-dgx-spark-monetization-guide.md) | 换了说法 | 强 |
 | [Gumloop四人团队冲击十亿公司](../clips/2026-10-18-wanghao8080-gumloop-small-team-unicorn.md) | 相近 | 弱（模型复核通过） |
 | [AIGC 作品的关键是加上人味](../clips/2026-10-18-jesselaunz-aigc-add-human-touch.md) | 相近 | 弱（模型复核通过） |
+| [Steve Yegge 的 50 个 agent 软件工厂和几条预测](../clips/2026-11-18-theturingpost-steve-yegge-agent-software-factory.md) | 相近 | 弱（模型复核通过） |
+| [看起来没有壁垒的数据生意，为何如此繁荣](../clips/2026-11-18-sujinyan6-why-ai-data-business-booms.md) | 相近 | 弱（模型复核通过） |

@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [Thiel一小时讲透从零做垄断的底层逻辑](../clips/2026-10-18-kkawsb-peter-thiel-monopoly-lecture.md) | 直接源自 | 强 |
 | [热情是最大的护城河](../clips/2026-10-18-zarazhangrui-passion-biggest-moat.md) | 直接源自 | 强 |
+| [看起来没有壁垒的数据生意，为何如此繁荣](../clips/2026-11-18-sujinyan6-why-ai-data-business-booms.md) | 相近 | 弱（模型复核通过） |

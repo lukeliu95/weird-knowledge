@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [Claude Code之父：配置越少越好](../clips/2026-10-18-xiaohu-claude-code-minimal-claude-md.md) | 相近 | 弱（模型复核通过） |
 | [Agent 循环工程晚宴讨论要点](../clips/2026-10-18-jerryjliu0-agent-loop-engineering-dinner.md) | 相近 | 弱（模型复核通过） |
+| [Notion 万字手册：团队怎么和 AI 一起工作](../clips/2026-11-23-aiguide-notion-playbook-teams-with-ai.md) | 相近 | 弱（模型复核通过） |

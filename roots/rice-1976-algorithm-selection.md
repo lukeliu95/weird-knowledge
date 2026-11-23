@@ -27,3 +27,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [agent 的外壳代码按"类继承"分家：按任务的共同毛病长出一族专用外壳，先跑一遍通用版看出毛病再挑；比只练一个全局外壳分数高、搜索快](../clips/2026-10-25-li-object-oriented-harness.md) | 相近 | 弱（模型复核通过） |
+| [两人实验室 GSI 自称 250 多项科研突破，多数未经外部核验](../clips/2026-11-23-gntalktalk-gsi-harness-250-breakthroughs.md) | 换了说法 | 弱（模型复核通过） |

@@ -7,10 +7,10 @@ published: 2026-11-14 00:56 UTC
 saved: 2026-11-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: Agent 与 Skill
+roots: [hu-2026-building-always-on-agents, actor-model, parasuraman-2000-levels-of-automation]
 ---
 
 ## 原文
@@ -37,3 +37,10 @@ Anthropic 刚发文拆开讲了这种一直在线的 Agent：
 
 ## 溯源
 
+- 核心主张：常驻 agent 其实大部分时间在睡，只在收件箱来了事件或定时器到点时醒来跑一次；靠事件收件箱、定时器、记忆文件夹、权限和发件箱五样东西，让它没人盯着也能主动、记得住、不乱来、不吵人。
+- 源知识：
+  - [构建常驻智能体（事件收件箱、定时器、记忆、权限、发件箱）](../roots/hu-2026-building-always-on-agents.md) · 关系：直接源自 · 强弱：强。帖子末尾写明来源是 Anthropic《Building always-on agents》（2026-11-13，William Hu）。五样东西、大部分时间在睡、两件事同时来怎么办、要紧的事等你批准、一开始安静一点，都出自原文的 The cycle、The core primitives、Outbox 几节。只有“不调用模型，也不花钱”里的“不花钱”是帖子自己加的，原文没这么说。
+  - [actor 模型](../roots/actor-model.md) · 关系：相近 · 强弱：弱（模型复核通过）。“两件事同时来会不会打架”对应原文 Event inbox 一节的“一个收件箱同一时间只有一个活跃 worker”：每个用户一个邮箱、逐条处理、状态不共享。actor 模型也是靠收发消息往来、不加锁，机制相同。原文没提 actor。
+  - [自动化的类型与等级模型](../roots/parasuraman-2000-levels-of-automation.md) · 关系：相近 · 强弱：弱（模型复核通过）。“要紧的事怎么等你拍板”对应原文 Permissions 一节：每次工具调用都要决定自己做、拦下还是等批准（延迟工具调用），等于给不同动作定不同的自动化等级。
+- 本质：这条新知识本质上是 Anthropic 常驻 agent 指南的中文转述，用的是老架构：事件驱动的消息队列，加上每个 actor 逐条处理消息，这次套在 LLM agent 上。
+- 整理于：2026-11-23（第 12 轮）

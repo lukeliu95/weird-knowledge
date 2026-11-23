@@ -29,3 +29,4 @@ verified: true
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
 | [yetone 用 3 个 /loop 循环让 Claude Code 自己维护 Magpie](../clips/2026-10-18-dotey-yetone-magpie-three-loops-workflow.md) | 相近 | 弱（模型复核通过） |
+| [Google 论文：harness 换模型时带上改动记录，接着优化更有效](../clips/2026-11-19-akshay-pachaar-google-rsi-harness-model-transfer.md) | 相近 | 弱（模型复核通过） |

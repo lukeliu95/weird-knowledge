@@ -28,3 +28,4 @@ verified: true
 |---|---|---|
 | [用户模拟器会是 agent 强化学习里被低估的一环：真考法是预测一个人的留出选择](../clips/2026-10-20-genai-is-real-user-simulation-agentic-rl.md) | 相近 | 弱（模型复核通过） |
 | [拿真实用户的说话方式喂模拟器：像不像真人从 24% 升到 45%，agent 成功率随之掉 3 个点](../clips/2026-10-22-zhu-realusersim-grounded-user-simulation.md) | 相近 | 弱（模型复核通过） |
+| [PyMC Labs 与高露洁论文：大模型扮演顾客，购买意向排序达真人重测信度的九成](../clips/2026-11-22-howtoprompt-colgate-llm-synthetic-consumer-ssr.md) | 相近 | 弱（模型复核通过） |

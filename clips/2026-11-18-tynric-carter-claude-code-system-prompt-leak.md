@@ -1,5 +1,5 @@
 ---
-title: "Claude Code 系统提示词被完整扒出：agent 的规矩是人写的"
+title: "Pliny 公开据称的 Claude Code 完整提示词，发帖人借此称 agent 的规矩是人写的"
 author: "Tintycke (@Tynric_carter)"
 url: https://x.com/Tynric_carter/status/2121765565018874099
 source: X
@@ -7,10 +7,10 @@ published: 2026-11-15 00:41 UTC
 saved: 2026-11-18
 why: "X 点赞（批量导入）"
 related_principles: []
-status: 未整理
-kind:
-topic:
-roots: []
+status: 已整理
+kind: 观点
+topic: 提示词与写作
+roots: [harness-engineering, bitter-lesson, gloaguen-2026-evaluating-agents-md]
 ---
 
 ## 原文
@@ -33,3 +33,10 @@ https://t.co/j06oDeu8eF
 
 ## 溯源
 
+- 核心主张：据称完整泄露的 Claude Code（Fable 5.2）提示词显示，agent 什么时候自己动手、什么时候停下问人、删文件要过几道关，都是人一条条写好的规矩；作者由此认为 agent 的智能一大半来自人写的提示词，模型是发动机、提示词是驾驶手册。
+- 源知识：
+  - [外壳工程（agent = 模型 + 外壳）](../roots/harness-engineering.md) · 关系：相近 · 强弱：弱（模型复核通过）。「模型是发动机，这份文件是驾驶手册」和「agent = 模型 + 外壳」同一个意思：系统提示、工具说明、权限和安全规则都属于模型以外的外壳。泄露文件里确有 128 个左右工具定义和「删除前先确认」等规则（文件第 1134 行一带）。作者没用这个词。
+  - [苦涩的教训](../roots/bitter-lesson.md) · 关系：挑战 · 强弱：弱（模型复核通过）。作者说 agent 的智能「一大半不是模型自己悟出来的，是人一条一条写出来的规矩」，和苦涩的教训「长期看靠算力扩展的通用方法胜过把人类知识写进系统」正好相反。但泄露文件里的规矩多是行为边界、工具用法和产品流程，不是解题能力本身，「一大半」也没有任何量化依据。
+  - [评测 AGENTS.md：仓库级上下文文件对编程 agent 有没有用](../roots/gloaguen-2026-evaluating-agents-md.md) · 关系：挑战 · 强弱：弱（模型复核通过）。Gloaguen 等实测：给编程 agent 加 AGENTS.md 这类人写的说明文件，里面的指令会被遵守，但任务成功率总体不提高、成本反而增加 20% 以上。这支持「规矩管得住行为」，却不支持「车开得稳不稳全看手册」。
+- 本质：这条新知识本质上是「agent = 模型 + 外壳」里外壳那一半（系统提示和规则）的一次展示；但「智能一大半来自人写的规矩」这个推论，和苦涩的教训、AGENTS.md 实测结果是反着的。
+- 整理于：2026-11-23（第 12 轮）

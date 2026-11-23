@@ -28,3 +28,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [四个神经元怎么学会追光：《Watch a Brain Learn》图解](../clips/2026-11-18-dotey-four-neurons-learn-to-chase-light.md) | 相近 | 弱（模型复核通过） |

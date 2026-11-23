@@ -26,3 +26,4 @@ verified: true
 
 | 新知识 | 关系 | 强弱 |
 |---|---|---|
+| [不知道学什么，就学会学习、写作和表达](../clips/2026-11-18-thedankoe-learn-to-learn-write-speak.md) | 挑战 | 弱（模型复核通过） |
