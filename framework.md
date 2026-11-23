@@ -1,6 +1,6 @@
 # 我的思考框架
 
-> 最近一次整理：2026-11-23（第 12 轮）· 新知识 2112 条（已整理 396、待整理 0、已归档 1716），另有补课找来、还没认可的 36 条 · 源知识 1098 个
+> 最近一次整理：2026-11-23（第 12 轮）· 新知识 2112 条（已整理 396、待整理 1、已归档 1715），另有补课找来、还没认可的 36 条 · 源知识 1098 个（待整理的 1 条是本轮开始后新存的；ClaudeMom 一条按 Luke 的决定撤出公开库）
 > 规则见 [AGENTS.md](AGENTS.md)。标"草稿"的是模型提炼的，Luke 确认后才改成"已确认"。本轮记录：[docs/reviews/2026-11-23-round-12.md](docs/reviews/2026-11-23-round-12.md)
 
 ## 一、我的原则
@@ -502,7 +502,7 @@
 | 主题 | 更早 | 2023 | 2024 | 2025 | 2026 | 未知 | 合计 | 观点 / 工具 / 教程 |
 |---|---|---|---|---|---|---|---|---|
 | Agent 与 Skill |  | 8 | 38 | 116 | 176 | 1 | 339 | 81 / 200 / 58 |
-| 其他 |  | 25 | 32 | 47 | 106 |  | 210 | 81 / 112 / 17 |
+| 其他 |  | 25 | 32 | 47 | 105 |  | 209 | 81 / 111 / 17 |
 | AI 产品与创业 |  | 18 | 32 | 43 | 109 |  | 202 | 149 / 43 / 10 |
 | 模型与本地部署 |  | 9 | 14 | 27 | 147 |  | 197 | 28 / 136 / 33 |
 | 视频生成 |  | 2 | 10 | 18 | 158 |  | 188 | 17 / 76 / 95 |
@@ -516,6 +516,7 @@
 | 思维与成长 |  | 6 | 12 | 8 | 34 | 1 | 61 | 60 / 1 / 0 |
 | 日本 | 5 | 8 | 4 | 6 | 17 | 1 | 41 | 28 / 12 / 1 |
 | 历史与冷知识 |  | 3 | 1 | 3 | 9 |  | 16 | 14 / 1 / 1 |
+| 未分类 |  |  |  |  | 1 |  | 1 | 0 / 0 / 0 |
 
 **每个主题的代表**（先选已溯源的，再选观点类，最后按发布时间取最新）
 
@@ -534,6 +535,7 @@
 - **思维与成长**：[张一鸣 66 条成长心得与延迟满足](clips/2026-10-18-sea-bitcoin-zhang-yiming-66-growth-tips.md)、[Paul Graham 谈超线性回报](clips/2026-10-18-dotey-paul-graham-superlinear-returns.md)、[一句话总结 AI 算法的含义](clips/2026-10-18-dotey-ai-algorithm-one-liner.md)
 - **日本**：[稟議和根回し：日本大企业里真正拍板的是起案人和事前协商](clips/2026-10-18-vogel-japanese-organization-decision-making.md)、[今天的上市公司还在用稟議管花钱：有预算也要再走一次稟議](clips/2026-10-18-kamiyama-budgeting-and-ringi-system.md)、[经产省 DXレポート：日本 CIO 倾向选大厂、接受老供应商的提案](clips/2026-10-18-meti-dx-report-2025-digital-cliff.md)
 - **历史与冷知识**：[日本稻田能否收二茬的回复](clips/2026-10-18-wangtianlaw-japan-rice-ratoon-crop.md)、[Kevin Roose 首次公开 Amodei 2017 年 OpenAI 内部文档《Big Blob of Compute》节选](clips/2026-11-18-kevinroose-amodei-big-blob-of-compute-excerpt.md)、[南明皇室受洗的冷知识：借调侃“历史老师去美国”说出来](clips/2026-10-18-tombkeeper-southern-ming-baptism.md)
+- **未分类**：[知识库20万token以内不用RAG：全文放进提示词加提示词缓存](clips/2026-11-23-nasuvit-z-nasuvit-z-skip-rag-full-context-prompt-caching.md)
 <!-- topic-map:end -->
 
 ## 五、补课

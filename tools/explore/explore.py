@@ -640,7 +640,9 @@ def cmd_likes(a):
         matched += 1
     write_jsonl(POOL, pool)
     in_clips = known_keys()
-    pending = [lk for lk in likes if "x:" + str(lk["id"]) not in in_clips]
+    skip_file = REPO / ".skip_ids"   # Luke 不要的推文编号（本地、不进 git），不再当新点赞拿回来
+    skip = set(skip_file.read_text().split()) if skip_file.exists() else set()
+    pending = [lk for lk in likes if "x:" + str(lk["id"]) not in in_clips and str(lk["id"]) not in skip]
     write_jsonl(d / "pending.jsonl", pending)
     print(json.dumps({"likes": len(likes), "matched_pool": matched, "pending_import": len(pending),
                       "pending_file": str(d / "pending.jsonl")}, ensure_ascii=False))
