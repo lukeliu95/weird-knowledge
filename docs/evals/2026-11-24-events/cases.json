@@ -1,0 +1,545 @@
+[
+  {
+    "id": "E01",
+    "title": "GitLab生产数据库误删",
+    "date": "2017-01-31",
+    "domain": "工程故障",
+    "source": {
+      "url": "https://about.gitlab.com/blog/postmortem-of-database-outage-of-january-31/",
+      "title": "GitLab官方事故复盘",
+      "reading": "读取事故摘要、Broken recovery procedures和改进部分；不是复现。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "官方复盘说主数据库数据被误删，部分项目、评论和新账号等数据库改动最终未能恢复；Git仓库和wiki未发生数据丢失。"
+      },
+      {
+        "id": "F2",
+        "text": "常规定时pg_dump用了不匹配的主版本而失败，错误通知邮件也被拒收；主从复制当时已损坏，数据库服务器未启用Azure磁盘快照。"
+      },
+      {
+        "id": "F3",
+        "text": "团队找到约6小时前人工创建的LVM快照用于恢复，并提出自动化恢复演练和明确负责人。"
+      }
+    ],
+    "claim": "本次已经部署多种备份与复制机制，因此误删后的全部数据库改动最终都实现了无损恢复。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E02",
+    "title": "Fastly合法配置触发全球故障",
+    "date": "2021-06-08",
+    "domain": "工程故障",
+    "source": {
+      "url": "https://www.fastly.com/blog/summary-of-june-8-outage",
+      "title": "Fastly官方Summary of June 8 outage",
+      "reading": "读取What happened和时间线。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "Fastly说5月12日开始部署的软件引入潜在缺陷；6月8日一名客户提交的有效配置在特定条件下触发它。"
+      },
+      {
+        "id": "F2",
+        "text": "约85%的网络返回错误；团队检测、定位并禁用触发配置，49分钟内95%的网络恢复正常。"
+      },
+      {
+        "id": "F3",
+        "text": "之后部署永久修复，并调查为什么原有质量保证和测试没有发现缺陷。"
+      }
+    ],
+    "claim": "在这次事故中，客户配置有效并不能保证平台运行安全；还需要检查配置与平台实现的交互及测试遗漏。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E03",
+    "title": "AWS内部网络重试拥塞",
+    "date": "2021-12-07",
+    "domain": "工程故障",
+    "source": {
+      "url": "https://aws.amazon.com/message/12721/",
+      "title": "AWS US-EAST-1事件总结（2021-12-10）",
+      "reading": "读取Issue Summary、缓解措施及服务影响。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "自动扩容活动触发内部客户端连接激增，压过连接内部网络和主网络的设备。"
+      },
+      {
+        "id": "F2",
+        "text": "延迟和错误引发更多连接尝试与重试，拥塞持续；监控与部署工具也受影响，延缓定位和修复。"
+      },
+      {
+        "id": "F3",
+        "text": "客户端本有退避逻辑，但一个潜在问题让其未充分退避；团队停用触发活动、隔离流量、增加容量并修复退避。"
+      }
+    ],
+    "claim": "本次事故里重试形成了放大拥塞的回路，监控和部署依赖同一受损网络又妨碍了恢复；仅重试更多并不能解决这个机制。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E04",
+    "title": "Atlassian备份恢复耗时",
+    "date": "2022-04-05",
+    "domain": "工程故障",
+    "source": {
+      "url": "https://www.atlassian.com/blog/how-we-build/post-incident-review-april-2022-outage",
+      "title": "Atlassian April 2022官方PIR",
+      "reading": "读取恢复过程、RPO总结和4月18日恢复时间。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "维护脚本导致客户站点被删除；恢复涉及多个数据存储和服务的协调。"
+      },
+      {
+        "id": "F2",
+        "text": "官方说本次达到1小时的恢复点目标RPO，使用全量及增量备份；典型数据恢复点设在删除前5分钟。"
+      },
+      {
+        "id": "F3",
+        "text": "全部受影响站点的服务恢复直到4月18日才完成；加速后的恢复方式每站点仍约需12小时。"
+      }
+    ],
+    "claim": "本次达到了1小时RPO，因此也证明所有客户在删除后1小时内恢复了可用服务。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E05",
+    "title": "Discord消息库迁移",
+    "date": "2023-03-06",
+    "domain": "工程优化",
+    "source": {
+      "url": "https://discord.com/blog/how-discord-stores-trillions-of-messages",
+      "title": "How Discord Stores Trillions of Messages",
+      "reading": "读取Several Months Later和数据校验段。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "团队说消息库在2022年5月从Cassandra迁移到ScyllaDB，节点由177个变成72个，每节点磁盘容量也变化。"
+      },
+      {
+        "id": "F2",
+        "text": "历史消息读取p99由40—125毫秒降至约15毫秒；消息写入p99由5—70毫秒变成稳定约5毫秒。"
+      },
+      {
+        "id": "F3",
+        "text": "工程工作还涉及Rust数据服务、请求合并、存储拓扑和自动化双读校验。这是该团队生产负载的迁移报告。"
+      }
+    ],
+    "claim": "另一家公司尚未测量的小型写多读少业务，只换成ScyllaDB，也能复现Discord相同的p99改善幅度。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E06",
+    "title": "GitHub跨中心切换故障",
+    "date": "2018-10-21",
+    "domain": "工程故障",
+    "source": {
+      "url": "https://github.blog/news-insights/company-news/oct21-post-incident-analysis/",
+      "title": "GitHub October 21 post-incident analysis",
+      "reading": "读取Background和22:52时间线。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "机房之间网络连接中断43秒后恢复，但事故造成24小时11分钟的服务降级。"
+      },
+      {
+        "id": "F2",
+        "text": "自动故障转移把写流量导向美国西岸；东岸保留了尚未复制的写入，两个中心各自含对方没有的写入。"
+      },
+      {
+        "id": "F3",
+        "text": "官方说因此不能安全地立即把主库切回东岸，需要恢复和协调数据；部分服务在事故期间仍可用。"
+      }
+    ],
+    "claim": "这次链路恢复并不等于系统状态恢复；处理已经分叉的数据与自动切换拓扑，是结束事故的必要工作。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E07",
+    "title": "eBay付费搜索现场实验",
+    "date": "2014-05",
+    "domain": "广告实验",
+    "source": {
+      "url": "https://www.nber.org/papers/w20171",
+      "title": "Consumer Heterogeneity and Paid Search Effectiveness",
+      "reading": "读取NBER及作者版摘要；没有通读工作论文。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "研究在eBay做大规模现场实验，对照付费搜索广告效果；作者强调搜索点击和购买行为相关。"
+      },
+      {
+        "id": "F2",
+        "text": "品牌关键词广告没有可测得的短期增量收益；非品牌词里，新或低频用户较受影响。"
+      },
+      {
+        "id": "F3",
+        "text": "高频用户消费行为未被广告改变，却占多数广告费用；平均回报小于常规非实验估计，部分平均回报为负。"
+      }
+    ],
+    "claim": "这项研究证实，高点击和高购买相关性已经足以证明eBay品牌词付费广告带来了可测得的短期增量收益。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E08",
+    "title": "Facebook广告因果估计对照",
+    "date": "2018-04",
+    "domain": "广告实验",
+    "source": {
+      "url": "https://www.kellogg.northwestern.edu/faculty/gordon_b/files/fb_comparison.pdf",
+      "title": "A Comparison of Approaches to Advertising Measurement（2018稿）",
+      "reading": "读取66页稿摘要与引言；没有通读。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "研究使用15个美国广告随机实验，包含约5亿个用户—实验观察和16亿次广告展示。"
+      },
+      {
+        "id": "F2",
+        "text": "研究者将匹配、回归等观察性方法估计，与随机实验结果比较。"
+      },
+      {
+        "id": "F3",
+        "text": "即使控制大量人口统计和行为变量，观察性估计也经常未能复现随机实验测得的效果。"
+      }
+    ],
+    "claim": "这组实验表明，只要观察性数据足够多并控制大量可见特征，观察性模型就已经稳定复现了随机实验的广告效果。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E09",
+    "title": "DoorDash区域时间切换实验",
+    "date": "2018-02-13",
+    "domain": "产品实验",
+    "source": {
+      "url": "https://careersatdoordash.com/blog/switchback-tests-and-randomized-experimentation-under-network-effects-at-doordash/",
+      "title": "DoorDash Switchback Tests",
+      "reading": "读取Overview、SOS定价示例与实验单位说明。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "用户、商户和骑手共用配送网络；改变一组用户的定价或调度，会改变共享骑手供给和另一组体验。"
+      },
+      {
+        "id": "F2",
+        "text": "团队用区域与时间段作为切换单位，在处理和对照之间来回切换。"
+      },
+      {
+        "id": "F3",
+        "text": "作者说分析仍需调整，不能把普通用户A/B的独立性假设原样照搬。"
+      }
+    ],
+    "claim": "当处理组和对照组共享骑手时，改用区域—时间单位切换，是针对组间干扰的一种合理设计调整。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E10",
+    "title": "Uber消费者剩余估计",
+    "date": "2016-09",
+    "domain": "经济研究",
+    "source": {
+      "url": "https://www.nber.org/papers/w22627",
+      "title": "Using Big Data to Estimate Consumer Surplus: The Case of Uber",
+      "reading": "读取NBER作者摘要及利益披露；未通读。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "研究利用接近5000万条个体观察，以及高峰价格跳点的回归不连续设计，在需求曲线多个位置估计弹性。"
+      },
+      {
+        "id": "F2",
+        "text": "作者估计2015年所研究4个美国城市的UberX消费者剩余约29亿美元，每花1美元产生约1.60美元消费者剩余。"
+      },
+      {
+        "id": "F3",
+        "text": "对全美国约68亿美元的数字是进一步粗略推算；部分作者为Uber雇员或股东。"
+      }
+    ],
+    "claim": "永久取消高峰加价，会使全市场乘客与司机的总净福利上升。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E11",
+    "title": "日本微软四天工作周试行",
+    "date": "2019-10-31",
+    "domain": "组织试验",
+    "source": {
+      "url": "https://news.microsoft.com/ja-jp/2019/10/31/191031-published-the-results-of-measuring-the-effectiveness-of-our-work-life-choice-challenge-summer-2019/",
+      "title": "日本微软2019夏效果测量公告",
+      "reading": "读取日文活动说明和指标比较年份；未补入媒体的39.9%说法。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "2019年8月所有周五休业，另有员工补助、会议规则调整和Teams使用等措施。"
+      },
+      {
+        "id": "F2",
+        "text": "公告报告工作日数比2018年8月少25.4%，用电量比2016年8月少23.1%；不同指标使用不同对比年份。"
+      },
+      {
+        "id": "F3",
+        "text": "公告不是随机分组实验，未在材料中给出只改变工作周天数的同期对照组。"
+      }
+    ],
+    "claim": "公告里观察到的用电减少23.1%，全部是每周少工作一天造成的。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E12",
+    "title": "Trip.com混合办公随机实验",
+    "date": "2024-06-12",
+    "domain": "组织实验",
+    "source": {
+      "url": "https://www.nature.com/articles/s41586-024-07500-2",
+      "title": "Hybrid working from home improves retention without damaging performance",
+      "reading": "初查网页索引因直连登录跳转；独立复核补读原论文PDF的随机分配和离职率结果，未通读全文。",
+      "additional_url": "https://www.nature.com/articles/s41586-024-07500-2.pdf"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "2021年在Trip.com的1612名工程、市场和财务员工中，按生日奇偶随机分配每周两天居家办公或五天到岗。"
+      },
+      {
+        "id": "F2",
+        "text": "试验中离职率由对照7.2%降至处理4.8%，绝对少2.4个百分点，约相对下降三分之一。"
+      },
+      {
+        "id": "F3",
+        "text": "研究没有发现绩效评价或后续晋升受到损害；研究范围是该企业这些岗位的混合办公。"
+      }
+    ],
+    "claim": "在这项具体随机试验中，混合办公降低离职率的证据，比只比较政策前后更有因果识别基础；收益大小应保留岗位与企业范围。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E13",
+    "title": "三家企业AI编程随机试验",
+    "date": "2025-06",
+    "domain": "工作实验",
+    "source": {
+      "url": "https://www.microsoft.com/en-us/research/publication/the-effects-of-generative-ai-on-high-skilled-work-evidence-from-three-field-experiments-with-software-developers/",
+      "title": "The Effects of Generative AI on High-Skilled Work",
+      "reading": "读取微软研究院作者摘要；未通读论文。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "研究汇合微软、埃森哲和一家匿名财富100企业的随机试验，4867名开发者中随机一部分获AI编程助手访问权。"
+      },
+      {
+        "id": "F2",
+        "text": "合并分析的完成任务数增加26.08%，标准误10.3%；每个单独实验都较嘈杂。"
+      },
+      {
+        "id": "F3",
+        "text": "作者摘要明确说较少经验的开发者采用率更高、生产率收益更大。"
+      }
+    ],
+    "claim": "这项研究报告，经验越丰富的开发者生产率收益越大，而低经验者收益更小。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E14",
+    "title": "METR资深开源开发者试验",
+    "date": "2025-07-10",
+    "domain": "工作实验",
+    "source": {
+      "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+      "title": "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity",
+      "reading": "读取方法、核心结果和不支持哪些外推表；只评价2025年初工具。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "16名熟悉各自项目的开发者完成246项真实任务；每任务随机允许或不允许使用当时AI工具。"
+      },
+      {
+        "id": "F2",
+        "text": "实际完成时间在允许AI时增加19%；事前预计会快24%，事后主观估计仍认为快20%。"
+      },
+      {
+        "id": "F3",
+        "text": "研究明确限定工具时期和这批资深开源开发者，不声称代表所有软件开发；后续另有新数据。"
+      }
+    ],
+    "claim": "因为开发者事后感觉快了20%，这份试验的实际计时也证明其生产率提高。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E15",
+    "title": "Google Willow纠错结果",
+    "date": "2024-12-09",
+    "domain": "科研结果",
+    "source": {
+      "url": "https://research.google/blog/making-quantum-error-correction-work/",
+      "title": "Making quantum error correction work",
+      "reading": "读取官方研究团队介绍及Nature论文摘要索引，未复算实验。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "团队研究表面码量子存储，在Willow处理器上将编码距离从3增至5再到7。"
+      },
+      {
+        "id": "F2",
+        "text": "论文报告距离每增加2，逻辑错误受到约2.14倍抑制，达到低于阈值的纠错表现。"
+      },
+      {
+        "id": "F3",
+        "text": "团队仍说大规模应用需要可靠执行大量操作；这组结果的任务是纠错量子存储。"
+      }
+    ],
+    "claim": "这组测量支持在所测处理器与编码范围内，增加纠错编码规模可以降低逻辑错误率。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E16",
+    "title": "氮掺杂镥氢化物论文撤稿",
+    "date": "2023-11-07",
+    "domain": "科研审查",
+    "source": {
+      "url": "https://www.nature.com/articles/s41586-023-06774-2",
+      "title": "Retraction Note: Evidence of near-ambient superconductivity in a N-doped lutetium hydride",
+      "reading": "读取出版方撤稿声明索引全文；直连登录跳转。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "Nature撤回该篇近常压超导论文，部分作者要求撤回，指出材料来源、测量及数据处理描述问题。"
+      },
+      {
+        "id": "F2",
+        "text": "期刊也收到独立提出的电阻数据可靠性问题，调查和发表后审查认为问题可信、重大且未解决。"
+      },
+      {
+        "id": "F3",
+        "text": "该声明针对这一篇论文与材料报告，没有给出适用于所有材料的物理不可能性证明。"
+      }
+    ],
+    "claim": "其他所有材料在室温近常压下也不可能实现超导。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E17",
+    "title": "RECOVERY地塞米松分组结果",
+    "date": "2020-06-16",
+    "domain": "临床研究",
+    "source": {
+      "url": "https://www.recoverytrial.net/news/low-cost-dexamethasone-reduces-death-by-up-to-one-third-in-hospitalised-patients-with-severe-respiratory-complications-of-covid-19/",
+      "title": "RECOVERY研究团队2020-06-16声明",
+      "reading": "读取研究团队原声明的索引全文及原PDF摘要摘录；直连403，不给个人用药建议。",
+      "additional_url": "https://www.recoverytrial.net/files/recovery_dexamethasone_statement_160620_v2final.pdf"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "随机试验比较2104名接受低剂量地塞米松者与4321名常规治疗者。"
+      },
+      {
+        "id": "F2",
+        "text": "团队声明呼吸机组死亡相对减少约三分之一，仅吸氧组约减少五分之一。"
+      },
+      {
+        "id": "F3",
+        "text": "不需要呼吸支持者没有观察到收益：相对风险1.22，95%区间0.86—1.75，p=0.14。"
+      }
+    ],
+    "claim": "这份结果报告，不需要任何呼吸支持的住院患者也获得了统计显著的死亡率下降。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E18",
+    "title": "NIF首次点火能量口径",
+    "date": "2022-12-05",
+    "domain": "科研结果",
+    "source": {
+      "url": "https://lmf.llnl.gov/news/iaea-webinar-explores-nifs-ignition-energy-gain-breakthroughs",
+      "title": "LLNL/IAEA研讨会2023-03-06官方报道",
+      "reading": "读取目标增益与墙插能量段；网页抽取含重写摘要，关键数字与原文引语位置逐项核对。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "2022年12月5日实验向靶提供2.05兆焦激光能量，产生3.15兆焦聚变能量，达到靶增益。"
+      },
+      {
+        "id": "F2",
+        "text": "团队在后续官方研讨会报道中说，该次点火从电网取用约300—400兆焦。"
+      },
+      {
+        "id": "F3",
+        "text": "报道明确区分科学收支平衡与发电工程，并说NIF是研究装置，激光效率和重复频率仍需提高。"
+      }
+    ],
+    "claim": "3.15大于2.05，证明该次实验整座设施的聚变输出已超过从电网输入的能量。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E19",
+    "title": "NASA DART改变双小行星轨道",
+    "date": "2022-10-11",
+    "domain": "科研结果",
+    "source": {
+      "url": "https://www.nasa.gov/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space/",
+      "title": "NASA DART轨道变化官方公告",
+      "reading": "读取2022年公告中的周期与测量说明；只用当时32分钟估计。"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "在DART撞击前，Dimorphos绕Didymos公转周期约11小时55分。"
+      },
+      {
+        "id": "F2",
+        "text": "地面观测确认撞击后周期约11小时23分，当时报告缩短32分钟；后续观测可能更新估计。"
+      },
+      {
+        "id": "F3",
+        "text": "这次任务是特定双小行星系统中的动能撞击演示，不是地球正在面临撞击的应急行动。"
+      }
+    ],
+    "claim": "这项观测支持动能撞击可以改变该被测小天体的轨道周期，是一次行星防御技术的实证演示。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  },
+  {
+    "id": "E20",
+    "title": "英国四天工作周试点",
+    "date": "2023-02-21",
+    "domain": "组织试验",
+    "source": {
+      "url": "https://www.cam.ac.uk/stories/fourdayweek",
+      "title": "剑桥研究团队四天工作周试点报告",
+      "reading": "初查研究团队网页索引；独立复核读原报告印刷第28—29页，核对多样安排及营收子样本。",
+      "additional_url": "https://autonomy.work/wp-content/uploads/2023/02/The-results-are-in-The-UKs-four-day-week-pilot.pdf"
+    },
+    "facts": [
+      {
+        "id": "F1",
+        "text": "61家自愿参与组织试行6个月缩短工作周、工资不降，具体工时安排多样；56家表示计划继续。"
+      },
+      {
+        "id": "F2",
+        "text": "起止营收变化的规模加权平均为约+1.4%，来自提供该项数据的23家组织。"
+      },
+      {
+        "id": "F3",
+        "text": "与较早可比六个月比较的营收约+35%来自另一组24家供数组织，是不同口径。"
+      }
+    ],
+    "claim": "试点报告中的+1.4%应标为23家供数组织的规模加权平均，不能当成61家完整总体营收统一增长的估计。",
+    "claim_author": "测试编写者提出的待判断推论，不是原作者引语"
+  }
+]

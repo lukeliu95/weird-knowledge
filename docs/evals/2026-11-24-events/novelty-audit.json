@@ -1,0 +1,102 @@
+[
+  {
+    "id": "E01",
+    "source_path": "/blog/postmortem-of-database-outage-of-january-31",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E02",
+    "source_path": "/blog/summary-of-june-8-outage",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E03",
+    "source_path": "/message/12721",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E04",
+    "source_path": "/blog/how-we-build/post-incident-review-april-2022-outage",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E05",
+    "source_path": "/blog/how-discord-stores-trillions-of-messages",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E06",
+    "source_path": "/news-insights/company-news/oct21-post-incident-analysis",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E07",
+    "source_path": "/papers/w20171",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E08",
+    "source_path": "/faculty/gordon_b/files/fb_comparison.pdf",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E09",
+    "source_path": "/blog/switchback-tests-and-randomized-experimentation-under-network-effects-at-doordash",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E10",
+    "source_path": "/papers/w22627",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E11",
+    "source_path": "/ja-jp/2019/10/31/191031-published-the-results-of-measuring-the-effectiveness-of-our-work-life-choice-challenge-summer-2019",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E12",
+    "source_path": "/articles/s41586-024-07500-2",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E13",
+    "source_path": "/en-us/research/publication/the-effects-of-generative-ai-on-high-skilled-work-evidence-from-three-field-experiments-with-software-developers",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E14",
+    "source_path": "/blog/2025-07-10-early-2025-ai-experienced-os-dev-study",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E15",
+    "source_path": "/blog/making-quantum-error-correction-work",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E16",
+    "source_path": "/articles/s41586-023-06774-2",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E17",
+    "source_path": "/news/low-cost-dexamethasone-reduces-death-by-up-to-one-third-in-hospitalised-patients-with-severe-respiratory-complications-of-covid-19",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E18",
+    "source_path": "/news/iaea-webinar-explores-nifs-ignition-energy-gain-breakthroughs",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E19",
+    "source_path": "/news-release/nasa-confirms-dart-mission-impact-changed-asteroids-motion-in-space",
+    "direct_source_hits": []
+  },
+  {
+    "id": "E20",
+    "source_path": "/stories/fourdayweek",
+    "direct_source_hits": []
+  }
+]

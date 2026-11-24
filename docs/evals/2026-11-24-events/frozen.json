@@ -1,0 +1,19 @@
+{
+  "created": "2026-11-24T14:04:11+09:00",
+  "model": "claude-opus-5-5",
+  "cli_version": "2.1.307 (Claude Code)",
+  "effort": "low",
+  "batch": 5,
+  "repeats": 2,
+  "hashes": {
+    "cases.json": "2a2fcf3af5575d690165e973430f7a6c8c15292d37d0ab0e90f1878a83a0f898",
+    "gold.json": "e4e6151fc8269ec15e4b9f834061ad11870d2f63207e5dc8761c40ad364122f4",
+    "knowledge-packets.json": "a289a293a795089645665dbc1829ba374fc6626434ca18cd085d1f19126d8680",
+    "corpus-manifest.json": "08353a6a0823994e8517ee5a461dac58aa94ca330b106711b40f55e6d2c2d89a",
+    "novelty-audit.json": "c26cff1465323fe7d24fa3818f9ec61f4d581d8c563d656f563dd8a3aefa3036",
+    "protocol.md": "04965fa4d90395dd847fa5a2b383260ffdeb286a56d92ea01eae6e7745831f6d",
+    "SCRIPT": "56d5f60a75b9e2d43599e4713e6d33b277706e10a24c941a3d9b4d6b0dce103b",
+    "MODEL_HELPER": "f7402533157c0e9d62d95f866ab04517dd03e463be4c6a110c8ae548a18cd192",
+    "INDEX_HELPER": "24c9f547a3155767c9f21cccc166875fdea26702ecd250c66b3dbaa9d6dcf241"
+  }
+}

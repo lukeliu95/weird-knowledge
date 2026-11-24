@@ -1,0 +1,232 @@
+{
+  "job": "knowledge-r2-b4",
+  "arm": "knowledge",
+  "repeat": 2,
+  "ids": [
+    "E02",
+    "E08",
+    "E15",
+    "E11",
+    "E01"
+  ],
+  "model": "claude-opus-5-5",
+  "started": "2026-11-24T14:04:39+09:00",
+  "prompt_hash": "3edace0166b9ed00c0f6a823eff9245a5d81f58b698c40da68a875d866463c57",
+  "frozen_hash": "83f1a337cf8883210ae93efafad4be5af3e3e397e6437b2bfd9d90036eaa010f",
+  "prompt_chars": 6832,
+  "attempts": [
+    {
+      "status": "complete",
+      "started": "2026-11-24T14:04:39+09:00",
+      "output": {
+        "answers": [
+          {
+            "id": "E02",
+            "label": "S",
+            "probs": {
+              "S": 0.85,
+              "C": 0.04,
+              "U": 0.11
+            },
+            "reason": "F1称有效客户配置触发了5月12日起部署的潜在缺陷，导致约85%网络报错；F3称团队调查为何质量保证和测试未发现缺陷。这说明配置有效不保证平台安全，配置与实现的交互及测试遗漏都需检查。",
+            "boundary": "仅限本次Fastly事故。材料未披露缺陷的具体机制，也不能推出所有有效配置都有风险。",
+            "next_check": "查Fastly事后报告中的触发条件与缺陷细节，并核对测试用例是否覆盖该配置组合。",
+            "used_knowledge": [
+              "mutation-testing"
+            ]
+          },
+          {
+            "id": "E08",
+            "label": "C",
+            "probs": {
+              "S": 0.03,
+              "C": 0.9,
+              "U": 0.07
+            },
+            "reason": "F3明确指出，即使控制大量人口统计和行为变量，观察性估计也经常未能复现随机实验结果。这与主张的“稳定复现”直接矛盾。",
+            "boundary": "结论限于这15个美国Facebook广告实验和所用的匹配、回归等方法，不代表所有观察性方法在任何场景下都失败。",
+            "next_check": "查论文中各方法估计值与随机实验估计值的逐实验偏差表。",
+            "used_knowledge": [
+              "a-b-testing"
+            ]
+          },
+          {
+            "id": "E15",
+            "label": "S",
+            "probs": {
+              "S": 0.88,
+              "C": 0.03,
+              "U": 0.09
+            },
+            "reason": "F1和F2显示，编码距离从3增至5再到7，每增加2，逻辑错误约受到2.14倍抑制，并达到低于阈值的表现。这直接支持主张在所测范围内成立。",
+            "boundary": "仅限Willow处理器、距离3至7和量子存储任务，不外推到大规模计算或执行大量逻辑操作（F3）。",
+            "next_check": "查论文中各距离逻辑错误率的误差范围，以及更大距离或逻辑门操作的后续结果。",
+            "used_knowledge": []
+          },
+          {
+            "id": "E11",
+            "label": "U",
+            "probs": {
+              "S": 0.05,
+              "C": 0.3,
+              "U": 0.65
+            },
+            "reason": "同期还实施了会议规则调整、Teams使用等措施（F1）；用电量以2016年为基准，与工作日数的2018年基准不同（F2）；也没有同期对照组（F3）。因此无法把23.1%的减少全部归因于少工作一天，但材料也没有给出相反的直接证据。",
+            "boundary": "现有材料只能说明减少与试行同时出现。“全部”这一归因既无法确认，也无法直接否定。",
+            "next_check": "取得2018和2019年8月的用电数据，并按气温、人数、远程办公情况做调整对比，或与未试行的同类办公室比较。",
+            "used_knowledge": [
+              "a-b-testing"
+            ]
+          },
+          {
+            "id": "E01",
+            "label": "C",
+            "probs": {
+              "S": 0.02,
+              "C": 0.93,
+              "U": 0.05
+            },
+            "reason": "官方复盘称部分项目、评论和新账号等数据库改动最终未能恢复（F1）；pg_dump失败、主从复制已损坏、磁盘快照未启用（F2），只能依靠约6小时前的人工LVM快照恢复（F3）。这与“全部无损恢复”直接矛盾。",
+            "boundary": "数据损失限于数据库改动；Git仓库和wiki没有丢失数据。",
+            "next_check": "查GitLab复盘中未恢复数据的时间窗口与受影响记录数量。",
+            "used_knowledge": []
+          }
+        ]
+      },
+      "meta": {
+        "cost_usd": 0.0708,
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 5769,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 1232,
+          "output_tokens_details": {
+            "thinking_tokens": 24
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 5769,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 1232,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 5769,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 5769
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        },
+        "duration_ms": 14814,
+        "model_usage": {
+          "claude-opus-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1232,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 5769,
+            "webSearchRequests": 0,
+            "costUSD": 0.0708,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 24,
+            "canonicalModel": "claude-opus-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "session_persisted": false,
+        "usage_status": "known"
+      },
+      "elapsed_seconds": 15.547,
+      "finished": "2026-11-24T14:04:54+09:00"
+    }
+  ],
+  "state": "finished",
+  "valid": true,
+  "answers": {
+    "E02": {
+      "id": "E02",
+      "label": "S",
+      "probs": {
+        "S": 0.85,
+        "C": 0.04,
+        "U": 0.11
+      },
+      "reason": "F1称有效客户配置触发了5月12日起部署的潜在缺陷，导致约85%网络报错；F3称团队调查为何质量保证和测试未发现缺陷。这说明配置有效不保证平台安全，配置与实现的交互及测试遗漏都需检查。",
+      "boundary": "仅限本次Fastly事故。材料未披露缺陷的具体机制，也不能推出所有有效配置都有风险。",
+      "next_check": "查Fastly事后报告中的触发条件与缺陷细节，并核对测试用例是否覆盖该配置组合。",
+      "used_knowledge": [
+        "mutation-testing"
+      ]
+    },
+    "E08": {
+      "id": "E08",
+      "label": "C",
+      "probs": {
+        "S": 0.03,
+        "C": 0.9,
+        "U": 0.07
+      },
+      "reason": "F3明确指出，即使控制大量人口统计和行为变量，观察性估计也经常未能复现随机实验结果。这与主张的“稳定复现”直接矛盾。",
+      "boundary": "结论限于这15个美国Facebook广告实验和所用的匹配、回归等方法，不代表所有观察性方法在任何场景下都失败。",
+      "next_check": "查论文中各方法估计值与随机实验估计值的逐实验偏差表。",
+      "used_knowledge": [
+        "a-b-testing"
+      ]
+    },
+    "E15": {
+      "id": "E15",
+      "label": "S",
+      "probs": {
+        "S": 0.88,
+        "C": 0.03,
+        "U": 0.09
+      },
+      "reason": "F1和F2显示，编码距离从3增至5再到7，每增加2，逻辑错误约受到2.14倍抑制，并达到低于阈值的表现。这直接支持主张在所测范围内成立。",
+      "boundary": "仅限Willow处理器、距离3至7和量子存储任务，不外推到大规模计算或执行大量逻辑操作（F3）。",
+      "next_check": "查论文中各距离逻辑错误率的误差范围，以及更大距离或逻辑门操作的后续结果。",
+      "used_knowledge": []
+    },
+    "E11": {
+      "id": "E11",
+      "label": "U",
+      "probs": {
+        "S": 0.05,
+        "C": 0.3,
+        "U": 0.65
+      },
+      "reason": "同期还实施了会议规则调整、Teams使用等措施（F1）；用电量以2016年为基准，与工作日数的2018年基准不同（F2）；也没有同期对照组（F3）。因此无法把23.1%的减少全部归因于少工作一天，但材料也没有给出相反的直接证据。",
+      "boundary": "现有材料只能说明减少与试行同时出现。“全部”这一归因既无法确认，也无法直接否定。",
+      "next_check": "取得2018和2019年8月的用电数据，并按气温、人数、远程办公情况做调整对比，或与未试行的同类办公室比较。",
+      "used_knowledge": [
+        "a-b-testing"
+      ]
+    },
+    "E01": {
+      "id": "E01",
+      "label": "C",
+      "probs": {
+        "S": 0.02,
+        "C": 0.93,
+        "U": 0.05
+      },
+      "reason": "官方复盘称部分项目、评论和新账号等数据库改动最终未能恢复（F1）；pg_dump失败、主从复制已损坏、磁盘快照未启用（F2），只能依靠约6小时前的人工LVM快照恢复（F3）。这与“全部无损恢复”直接矛盾。",
+      "boundary": "数据损失限于数据库改动；Git仓库和wiki没有丢失数据。",
+      "next_check": "查GitLab复盘中未恢复数据的时间窗口与受影响记录数量。",
+      "used_knowledge": []
+    }
+  },
+  "finished": "2026-11-24T14:04:54+09:00"
+}

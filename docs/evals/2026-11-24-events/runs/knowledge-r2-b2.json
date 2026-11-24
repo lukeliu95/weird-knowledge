@@ -1,0 +1,234 @@
+{
+  "job": "knowledge-r2-b2",
+  "arm": "knowledge",
+  "repeat": 2,
+  "ids": [
+    "E20",
+    "E14",
+    "E12",
+    "E05",
+    "E16"
+  ],
+  "model": "claude-opus-5-5",
+  "started": "2026-11-24T14:05:08+09:00",
+  "prompt_hash": "ec2055d84b03931af7a3c6f765b467366f8b1997fe0ab3a4bd10b00cda698fb5",
+  "frozen_hash": "83f1a337cf8883210ae93efafad4be5af3e3e397e6437b2bfd9d90036eaa010f",
+  "prompt_chars": 5917,
+  "attempts": [
+    {
+      "status": "complete",
+      "started": "2026-11-24T14:05:08+09:00",
+      "output": {
+        "answers": [
+          {
+            "id": "E20",
+            "label": "S",
+            "probs": {
+              "S": 0.88,
+              "C": 0.04,
+              "U": 0.08
+            },
+            "reason": "F2写明+1.4%是23家供数组织的规模加权平均，不是61家。F3说明另有24家用不同口径，可见各项数据的覆盖范围不一致，所以不能把它当成全体61家的统一营收估计。",
+            "boundary": "这些组织是自愿参与的，没有对照组。即便算出61家的总数，也不能外推到所有企业或证明因果效应。",
+            "next_check": "查报告附录中这23家的名单、规模与行业分布，并与未提供数据的38家比较，看是否存在选择偏差。",
+            "used_knowledge": []
+          },
+          {
+            "id": "E14",
+            "label": "C",
+            "probs": {
+              "S": 0.03,
+              "C": 0.92,
+              "U": 0.05
+            },
+            "reason": "F2显示，随机允许使用AI时，实际完成时间增加19%。事后主观感觉快20%与计时结果直接相反，主观感受不能替代计时证据。",
+            "boundary": "结论只适用于当时的AI工具和16名熟悉自身项目的资深开源开发者。Copilot实验只测单一任务，不能拿来推翻本结果。",
+            "next_check": "查METR后续新数据，看在新工具和同类开发者中，计时结果是否仍为变慢。",
+            "used_knowledge": [
+              "peng-2023-copilot-developer-productivity"
+            ]
+          },
+          {
+            "id": "E12",
+            "label": "S",
+            "probs": {
+              "S": 0.85,
+              "C": 0.04,
+              "U": 0.11
+            },
+            "reason": "F1按生日奇偶分组，属于近似随机分配。随机分配让两组在其他条件上大体可比，因此离职率差2.4个百分点的识别基础强于只比较政策前后。主张同时保留了范围限定。",
+            "boundary": "结论限于Trip.com在2021年的工程、市场和财务岗位，以及每周两天居家的安排。生日奇偶分配还需核实是否被人为操纵。",
+            "next_check": "核查两组基线特征是否平衡，并查看离职率差异的置信区间。",
+            "used_knowledge": [
+              "a-b-testing",
+              "evidence-based-management"
+            ]
+          },
+          {
+            "id": "E05",
+            "label": "U",
+            "probs": {
+              "S": 0.05,
+              "C": 0.3,
+              "U": 0.65
+            },
+            "reason": "Discord的改善同时来自Rust数据服务、请求合并和拓扑调整（F3），并非单靠更换数据库。另一家公司的业务规模和读写结构都不同，而且尚未测量，现有材料无法判断能否复现。",
+            "boundary": "Discord的结果只是一家团队在自身生产负载下的报告。迁移效果取决于两种场景的共同要素，而此处这些要素很少。",
+            "next_check": "在该业务的真实负载回放上分别压测Cassandra与ScyllaDB，比较两者的p99延迟。",
+            "used_knowledge": [
+              "transfer-of-learning"
+            ]
+          },
+          {
+            "id": "E16",
+            "label": "U",
+            "probs": {
+              "S": 0.03,
+              "C": 0.22,
+              "U": 0.75
+            },
+            "reason": "撤稿只说明这一篇论文的数据不可靠。F3明确表示声明没有证明所有材料都不可能实现超导，因此无法用它支持这个全称主张。现有材料也没有给出反例，所以判为证据不足。",
+            "boundary": "撤稿否定的是这篇论文的证据，不涉及其他材料的物理可能性。",
+            "next_check": "检索有无独立实验室重复验证、证实了室温近常压超导的其他材料报告。",
+            "used_knowledge": []
+          }
+        ]
+      },
+      "meta": {
+        "cost_usd": 0.06662799999999999,
+        "usage": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 5020,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 1323,
+          "output_tokens_details": {
+            "thinking_tokens": 130
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 5020,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "global",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 1323,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 5020,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 5020
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "fallback_credit": null
+        },
+        "duration_ms": 17752,
+        "model_usage": {
+          "claude-opus-5-5": {
+            "inputTokens": 2,
+            "outputTokens": 1323,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 5020,
+            "webSearchRequests": 0,
+            "costUSD": 0.06662799999999999,
+            "contextWindow": 1000000,
+            "maxOutputTokens": 128000,
+            "thinkingTokens": 130,
+            "canonicalModel": "claude-opus-5-5",
+            "provider": "firstParty",
+            "costBasis": "list"
+          }
+        },
+        "session_persisted": false,
+        "usage_status": "known"
+      },
+      "elapsed_seconds": 18.272,
+      "finished": "2026-11-24T14:05:26+09:00"
+    }
+  ],
+  "state": "finished",
+  "valid": true,
+  "answers": {
+    "E20": {
+      "id": "E20",
+      "label": "S",
+      "probs": {
+        "S": 0.88,
+        "C": 0.04,
+        "U": 0.08
+      },
+      "reason": "F2写明+1.4%是23家供数组织的规模加权平均，不是61家。F3说明另有24家用不同口径，可见各项数据的覆盖范围不一致，所以不能把它当成全体61家的统一营收估计。",
+      "boundary": "这些组织是自愿参与的，没有对照组。即便算出61家的总数，也不能外推到所有企业或证明因果效应。",
+      "next_check": "查报告附录中这23家的名单、规模与行业分布，并与未提供数据的38家比较，看是否存在选择偏差。",
+      "used_knowledge": []
+    },
+    "E14": {
+      "id": "E14",
+      "label": "C",
+      "probs": {
+        "S": 0.03,
+        "C": 0.92,
+        "U": 0.05
+      },
+      "reason": "F2显示，随机允许使用AI时，实际完成时间增加19%。事后主观感觉快20%与计时结果直接相反，主观感受不能替代计时证据。",
+      "boundary": "结论只适用于当时的AI工具和16名熟悉自身项目的资深开源开发者。Copilot实验只测单一任务，不能拿来推翻本结果。",
+      "next_check": "查METR后续新数据，看在新工具和同类开发者中，计时结果是否仍为变慢。",
+      "used_knowledge": [
+        "peng-2023-copilot-developer-productivity"
+      ]
+    },
+    "E12": {
+      "id": "E12",
+      "label": "S",
+      "probs": {
+        "S": 0.85,
+        "C": 0.04,
+        "U": 0.11
+      },
+      "reason": "F1按生日奇偶分组，属于近似随机分配。随机分配让两组在其他条件上大体可比，因此离职率差2.4个百分点的识别基础强于只比较政策前后。主张同时保留了范围限定。",
+      "boundary": "结论限于Trip.com在2021年的工程、市场和财务岗位，以及每周两天居家的安排。生日奇偶分配还需核实是否被人为操纵。",
+      "next_check": "核查两组基线特征是否平衡，并查看离职率差异的置信区间。",
+      "used_knowledge": [
+        "a-b-testing",
+        "evidence-based-management"
+      ]
+    },
+    "E05": {
+      "id": "E05",
+      "label": "U",
+      "probs": {
+        "S": 0.05,
+        "C": 0.3,
+        "U": 0.65
+      },
+      "reason": "Discord的改善同时来自Rust数据服务、请求合并和拓扑调整（F3），并非单靠更换数据库。另一家公司的业务规模和读写结构都不同，而且尚未测量，现有材料无法判断能否复现。",
+      "boundary": "Discord的结果只是一家团队在自身生产负载下的报告。迁移效果取决于两种场景的共同要素，而此处这些要素很少。",
+      "next_check": "在该业务的真实负载回放上分别压测Cassandra与ScyllaDB，比较两者的p99延迟。",
+      "used_knowledge": [
+        "transfer-of-learning"
+      ]
+    },
+    "E16": {
+      "id": "E16",
+      "label": "U",
+      "probs": {
+        "S": 0.03,
+        "C": 0.22,
+        "U": 0.75
+      },
+      "reason": "撤稿只说明这一篇论文的数据不可靠。F3明确表示声明没有证明所有材料都不可能实现超导，因此无法用它支持这个全称主张。现有材料也没有给出反例，所以判为证据不足。",
+      "boundary": "撤稿否定的是这篇论文的证据，不涉及其他材料的物理可能性。",
+      "next_check": "检索有无独立实验室重复验证、证实了室温近常压超导的其他材料报告。",
+      "used_knowledge": []
+    }
+  },
+  "finished": "2026-11-24T14:05:26+09:00"
+}
